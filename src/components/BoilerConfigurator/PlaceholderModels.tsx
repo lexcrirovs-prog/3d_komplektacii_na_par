@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, Edges } from '@react-three/drei'
 import * as THREE from 'three'
-import type { Mesh } from 'three'
+import type { Mesh, BufferGeometry } from 'three'
 import deaeratorGlb from '../../assets/deaerator.glb?url'
 
 interface PlaceholderProps {
@@ -215,37 +215,41 @@ export function PLCModel({ color, opacity, scale = 1 }: PlaceholderProps) {
 export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   const { scene } = useGLTF(deaeratorGlb)
 
-  const clonedScene = useMemo(() => {
-    const clone = scene.clone(true)
-    const material = new THREE.MeshStandardMaterial({
-      color: '#b0b8c0',
-      metalness: 0.4,
-      roughness: 0.45,
-      transparent: opacity !== undefined && opacity < 1,
-      opacity: opacity ?? 1,
-    })
-
-    clone.traverse((child) => {
+  const meshData = useMemo(() => {
+    const geometries: BufferGeometry[] = []
+    scene.traverse((child) => {
       if ((child as Mesh).isMesh) {
-        const mesh = child as Mesh
-        mesh.material = material
-        mesh.castShadow = true
-        mesh.receiveShadow = true
+        const geo = (child as Mesh).geometry.clone()
+        geo.computeVertexNormals()
+        geometries.push(geo)
       }
     })
-    return clone
-  }, [scene, color, opacity])
+    return geometries
+  }, [scene])
+
+  const material = useMemo(
+    () =>
+      new THREE.MeshPhongMaterial({
+        color: '#a8b0b8',
+        shininess: 60,
+        specular: '#666666',
+        flatShading: true,
+        transparent: opacity !== undefined && opacity < 1,
+        opacity: opacity ?? 1,
+      }),
+    [opacity]
+  )
 
   // Deaerator: ~1564 x 3859 x 3295 mm
-  // Scale down so the tallest dimension (~3.9m) becomes ~2 scene units
   const s = scale * 0.0005
 
   return (
-    <group>
-      <primitive
-        object={clonedScene}
-        scale={[s, s, s]}
-      />
+    <group scale={[s, s, s]}>
+      {meshData.map((geo, i) => (
+        <mesh key={i} geometry={geo} material={material} castShadow receiveShadow>
+          <Edges threshold={15} color="#5a6068" />
+        </mesh>
+      ))}
     </group>
   )
 }

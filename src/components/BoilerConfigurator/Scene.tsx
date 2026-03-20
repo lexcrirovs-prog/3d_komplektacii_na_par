@@ -22,10 +22,10 @@ function SceneContent() {
 
   return (
     <>
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.7} />
       <directionalLight
         position={[8, 12, 8]}
-        intensity={1.2}
+        intensity={1.5}
         castShadow
         shadow-mapSize={[1024, 1024]}
         shadow-camera-far={30}
@@ -34,7 +34,8 @@ function SceneContent() {
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-      <directionalLight position={[-5, 8, -5]} intensity={0.3} />
+      <directionalLight position={[-5, 8, -5]} intensity={0.6} />
+      <directionalLight position={[0, -3, 8]} intensity={0.3} />
 
       <CameraController />
 
@@ -78,7 +79,7 @@ function SceneContent() {
       ))}
 
       {/* Hemisphere light for natural ambient */}
-      <hemisphereLight args={['#b1e1ff', '#444444', 0.6]} />
+      <hemisphereLight args={['#ddeeff', '#667788', 0.8]} />
     </>
   )
 }

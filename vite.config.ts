@@ -7,5 +7,11 @@ export default defineConfig({
   base: './',
   build: {
     cssCodeSplit: false,
+    modulePreload: { polyfill: false },
+    rollupOptions: {
+      output: {
+        format: 'iife',
+      },
+    },
   },
 })

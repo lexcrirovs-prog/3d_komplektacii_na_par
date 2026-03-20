@@ -1,4 +1,7 @@
-import type { ReactNode } from 'react'
+import { useMemo } from 'react'
+import { useGLTF } from '@react-three/drei'
+import * as THREE from 'three'
+import type { Mesh } from 'three'
 
 interface PlaceholderProps {
   color: string
@@ -208,39 +211,48 @@ export function PLCModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   )
 }
 
+const DEAERATOR_GLB_PATH = './models/deaerator.glb'
+
 export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) {
+  const { scene } = useGLTF(DEAERATOR_GLB_PATH)
+
+  const clonedScene = useMemo(() => {
+    const clone = scene.clone(true)
+    const material = new THREE.MeshStandardMaterial({
+      color: color,
+      metalness: 0.5,
+      roughness: 0.35,
+      transparent: opacity !== undefined && opacity < 1,
+      opacity: opacity ?? 1,
+    })
+
+    clone.traverse((child) => {
+      if ((child as Mesh).isMesh) {
+        const mesh = child as Mesh
+        mesh.material = material
+        mesh.castShadow = true
+        mesh.receiveShadow = true
+      }
+    })
+    return clone
+  }, [scene, color, opacity])
+
+  // Deaerator: ~1564 x 3859 x 3295 mm
+  // Scale down so the tallest dimension (~3.9m) becomes ~2 scene units
+  const s = scale * 0.0005
+
   return (
-    <group scale={scale * 0.7}>
-      {/* Main tank - vertical cylinder */}
-      <mesh position={[0, 0.5, 0]} castShadow>
-        <cylinderGeometry args={[0.5, 0.5, 1.5, 24]} />
-        <Mat color={color} opacity={opacity} />
-      </mesh>
-      {/* Dome top */}
-      <mesh position={[0, 1.35, 0]} castShadow>
-        <sphereGeometry args={[0.5, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2]} />
-        <Mat color={color} opacity={opacity} />
-      </mesh>
-      {/* Storage tank below */}
-      <mesh position={[0, -0.6, 0]} castShadow>
-        <cylinderGeometry args={[0.6, 0.6, 0.7, 24]} />
-        <Mat color={color} opacity={opacity} />
-      </mesh>
-      {/* Legs */}
-      {[
-        [-0.4, 0, -0.4],
-        [0.4, 0, -0.4],
-        [-0.4, 0, 0.4],
-        [0.4, 0, 0.4],
-      ].map(([x, _y, z], i) => (
-        <mesh key={i} position={[x, -1.3, z]} castShadow>
-          <boxGeometry args={[0.08, 0.7, 0.08]} />
-          <Mat color="#666" opacity={opacity} />
-        </mesh>
-      ))}
+    <group>
+      <primitive
+        object={clonedScene}
+        scale={[s, s, s]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
     </group>
   )
 }
+
+useGLTF.preload(DEAERATOR_GLB_PATH)
 
 export function FeedPumpModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   return (

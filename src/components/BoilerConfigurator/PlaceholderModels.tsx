@@ -218,9 +218,9 @@ export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) 
   const clonedScene = useMemo(() => {
     const clone = scene.clone(true)
     const material = new THREE.MeshStandardMaterial({
-      color: color,
-      metalness: 0.5,
-      roughness: 0.35,
+      color: '#b0b8c0',
+      metalness: 0.4,
+      roughness: 0.45,
       transparent: opacity !== undefined && opacity < 1,
       opacity: opacity ?? 1,
     })
@@ -245,7 +245,6 @@ export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) 
       <primitive
         object={clonedScene}
         scale={[s, s, s]}
-        rotation={[-Math.PI / 2, 0, 0]}
       />
     </group>
   )

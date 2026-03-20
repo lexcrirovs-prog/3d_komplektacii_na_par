@@ -12,9 +12,9 @@ export function BoilerModel() {
     const clone = scene.clone(true)
 
     const material = new THREE.MeshStandardMaterial({
-      color: '#78909c',
-      metalness: 0.6,
-      roughness: 0.3,
+      color: '#b0b8c0',
+      metalness: 0.4,
+      roughness: 0.45,
     })
 
     clone.traverse((child) => {
@@ -31,7 +31,7 @@ export function BoilerModel() {
 
   // Model is in mm. Scale 0.001 converts to meters.
   // Boiler: ~2086 x 2130 x 3469 mm → ~2.1 x 2.1 x 3.5 m
-  // CAD uses Z-up, Three.js uses Y-up → rotate -90° around X
+  // CAD Y is already up — no X rotation needed (horizontal orientation)
   const s = 0.001
 
   return (
@@ -40,7 +40,6 @@ export function BoilerModel() {
         <primitive
           object={clonedScene}
           scale={[s, s, s]}
-          rotation={[-Math.PI / 2, 0, 0]}
         />
       </Center>
     </group>

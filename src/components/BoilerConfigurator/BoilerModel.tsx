@@ -2,12 +2,11 @@ import { useRef, useMemo } from 'react'
 import { useGLTF, Center } from '@react-three/drei'
 import type { Group, Mesh } from 'three'
 import * as THREE from 'three'
-
-const BOILER_GLB_PATH = './models/boiler.glb'
+import boilerGlb from '../../assets/boiler.glb?url'
 
 export function BoilerModel() {
   const groupRef = useRef<Group>(null)
-  const { scene } = useGLTF(BOILER_GLB_PATH)
+  const { scene } = useGLTF(boilerGlb)
 
   const clonedScene = useMemo(() => {
     const clone = scene.clone(true)
@@ -48,4 +47,4 @@ export function BoilerModel() {
   )
 }
 
-useGLTF.preload(BOILER_GLB_PATH)
+useGLTF.preload(boilerGlb)

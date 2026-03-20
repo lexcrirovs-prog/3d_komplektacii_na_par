@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Mesh } from 'three'
+import deaeratorGlb from '../../assets/deaerator.glb?url'
 
 interface PlaceholderProps {
   color: string
@@ -211,10 +212,8 @@ export function PLCModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   )
 }
 
-const DEAERATOR_GLB_PATH = './models/deaerator.glb'
-
 export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) {
-  const { scene } = useGLTF(DEAERATOR_GLB_PATH)
+  const { scene } = useGLTF(deaeratorGlb)
 
   const clonedScene = useMemo(() => {
     const clone = scene.clone(true)
@@ -252,7 +251,7 @@ export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) 
   )
 }
 
-useGLTF.preload(DEAERATOR_GLB_PATH)
+useGLTF.preload(deaeratorGlb)
 
 export function FeedPumpModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   return (

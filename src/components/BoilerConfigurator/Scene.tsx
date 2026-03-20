@@ -27,7 +27,7 @@ function SceneContent() {
         position={[8, 12, 8]}
         intensity={1.2}
         castShadow
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={[1024, 1024]}
         shadow-camera-far={30}
         shadow-camera-left={-10}
         shadow-camera-right={10}
@@ -94,7 +94,7 @@ export function Scene() {
           near: 0.1,
           far: 100,
         }}
-        gl={{ antialias: true, alpha: false }}
+        gl={{ antialias: true, alpha: false, powerPreference: 'default', failIfMajorPerformanceCaveat: false }}
         onCreated={({ gl }) => {
           gl.setClearColor('#1a1a2e')
         }}

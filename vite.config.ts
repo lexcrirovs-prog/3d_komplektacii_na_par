@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react(), viteSingleFile()],
   base: './',
   build: {
+    target: 'es2015',
     cssCodeSplit: false,
     modulePreload: { polyfill: false },
     rollupOptions: {

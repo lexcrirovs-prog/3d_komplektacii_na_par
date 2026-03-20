@@ -15,16 +15,24 @@ interface ResolvedPart extends PartDef {
   worldRotation: Vec3
 }
 
+interface OrbitTarget {
+  x: number
+  y: number
+  z: number
+}
+
 interface ConfiguratorState {
   activeConfig: ConfigKey
   activeAddons: Set<AddonKey>
   selectedPart: string | null
   hoveredPart: string | null
+  orbitTarget: OrbitTarget
 
   setConfig: (config: ConfigKey) => void
   toggleAddon: (addon: AddonKey) => void
   selectPart: (id: string | null) => void
   setHoveredPart: (id: string | null) => void
+  setOrbitTarget: (target: OrbitTarget) => void
   getActiveParts: () => ResolvedPart[]
   getAddonParts: () => ResolvedPart[]
   getAllVisibleParts: () => ResolvedPart[]
@@ -86,8 +94,9 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   activeAddons: new Set<AddonKey>(),
   selectedPart: null,
   hoveredPart: null,
+  orbitTarget: { x: 0, y: 0.5, z: 0 },
 
-  setConfig: (config) => set({ activeConfig: config, selectedPart: null }),
+  setConfig: (config) => set({ activeConfig: config, selectedPart: null, orbitTarget: { x: 0, y: 0.5, z: 0 } }),
 
   toggleAddon: (addon) =>
     set((state) => {
@@ -102,6 +111,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
 
   selectPart: (id) => set({ selectedPart: id }),
   setHoveredPart: (id) => set({ hoveredPart: id }),
+  setOrbitTarget: (target) => set({ orbitTarget: target }),
 
   getActiveParts: () => {
     const { activeConfig } = get()

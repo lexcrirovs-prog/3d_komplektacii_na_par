@@ -10,6 +10,7 @@ function SceneContent() {
   const getActiveParts = useConfigurator((s) => s.getActiveParts)
   const getAddonParts = useConfigurator((s) => s.getAddonParts)
   const selectPart = useConfigurator((s) => s.selectPart)
+  const setOrbitTarget = useConfigurator((s) => s.setOrbitTarget)
   const activeConfig = useConfigurator((s) => s.activeConfig)
   const activeAddons = useConfigurator((s) => s.activeAddons)
 
@@ -18,6 +19,7 @@ function SceneContent() {
 
   const handleMiss = () => {
     selectPart(null)
+    setOrbitTarget({ x: 0, y: 0.5, z: 0 })
   }
 
   return (
@@ -42,10 +44,9 @@ function SceneContent() {
       <OrbitControls
         makeDefault
         maxPolarAngle={Math.PI * 0.48}
-        minDistance={3}
+        minDistance={2}
         maxDistance={20}
-        enableDamping
-        dampingFactor={0.05}
+        enableDamping={false}
       />
 
       {/* Ground grid */}

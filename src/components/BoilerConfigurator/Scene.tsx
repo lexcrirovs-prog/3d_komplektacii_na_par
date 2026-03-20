@@ -1,5 +1,6 @@
+import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Grid, Environment } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import { BoilerModel } from './BoilerModel'
 import { AttachablePart } from './AttachablePart'
 import { CameraController } from './CameraController'
@@ -46,19 +47,8 @@ function SceneContent() {
         dampingFactor={0.05}
       />
 
-      {/* Ground */}
-      <Grid
-        position={[0, -1, 0]}
-        args={[30, 30]}
-        cellSize={1}
-        cellThickness={0.5}
-        cellColor="#334155"
-        sectionSize={5}
-        sectionThickness={1}
-        sectionColor="#475569"
-        fadeDistance={25}
-        infiniteGrid
-      />
+      {/* Ground grid */}
+      <gridHelper args={[30, 30, '#475569', '#334155']} position={[0, -1, 0]} />
 
       {/* Floor plane for click-miss detection */}
       <mesh
@@ -87,7 +77,8 @@ function SceneContent() {
         />
       ))}
 
-      <Environment preset="city" background={false} />
+      {/* Hemisphere light for natural ambient */}
+      <hemisphereLight args={['#b1e1ff', '#444444', 0.6]} />
     </>
   )
 }
@@ -108,7 +99,9 @@ export function Scene() {
           gl.setClearColor('#1a1a2e')
         }}
       >
-        <SceneContent />
+        <Suspense fallback={null}>
+          <SceneContent />
+        </Suspense>
       </Canvas>
     </div>
   )

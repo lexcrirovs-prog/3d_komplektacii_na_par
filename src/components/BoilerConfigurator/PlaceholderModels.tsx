@@ -3,6 +3,7 @@ import { useGLTF, Edges } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Mesh, BufferGeometry } from 'three'
 import deaeratorGlb from '../../assets/deaerator.glb?url'
+import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url'
 import { isMobile } from '../../utils/device'
 
 interface PlaceholderProps {
@@ -351,6 +352,51 @@ export function BurnerModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   )
 }
 
+export function ElbowPcF20Model({ color, opacity, scale = 1 }: PlaceholderProps) {
+  const { scene } = useGLTF(elbowPcF20Glb)
+  const mobile = useMemo(() => isMobile(), [])
+
+  const meshData = useMemo(() => {
+    const geometries: BufferGeometry[] = []
+    scene.traverse((child) => {
+      if ((child as Mesh).isMesh) {
+        const geo = (child as Mesh).geometry.clone()
+        geo.computeVertexNormals()
+        geometries.push(geo)
+      }
+    })
+    return geometries
+  }, [scene])
+
+  const material = useMemo(
+    () =>
+      new THREE.MeshPhongMaterial({
+        color: color || '#a8b0b8',
+        shininess: 60,
+        specular: '#666666',
+        flatShading: true,
+        transparent: opacity !== undefined && opacity < 1,
+        opacity: opacity ?? 1,
+      }),
+    [color, opacity]
+  )
+
+  // Elbow: ~105 x 159 x 142 mm → scale 0.001 to meters
+  const s = scale * 0.001
+
+  return (
+    <group scale={[s, s, s]}>
+      {meshData.map((geo, i) => (
+        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+          {!mobile && <Edges threshold={15} color="#5a6068" />}
+        </mesh>
+      ))}
+    </group>
+  )
+}
+
+useGLTF.preload(elbowPcF20Glb)
+
 // Model registry
 export const modelRegistry: Record<
   string,
@@ -368,4 +414,5 @@ export const modelRegistry: Record<
   feed_pump: FeedPumpModel,
   economizer: EconomizerModel,
   burner: BurnerModel,
+  elbow_pc_f20: ElbowPcF20Model,
 }

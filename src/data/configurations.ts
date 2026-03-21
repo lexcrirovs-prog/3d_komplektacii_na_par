@@ -49,6 +49,10 @@ export const attachPoints: Record<string, AttachPoint> = {
     position: { x: 0.8, y: 1.0, z: 0.8 },
     rotation: { x: 0, y: 0, z: Math.PI / 2 },
   },
+  tds_elbow_point: {
+    position: { x: 0.9, y: 0.75, z: 0.8 },
+    rotation: { x: 0, y: 0, z: Math.PI / 2 },
+  },
   pressure_point: {
     position: { x: 0.5, y: 1.9, z: 0.3 },
     rotation: { x: 0, y: 0, z: 0 },
@@ -112,6 +116,15 @@ export const configurations: Record<string, ConfigurationDef> = {
         color: '#e8963a',
         description:
           'Продувка по солесодержанию — удаление растворённых солей из котловой воды. Предотвращает накипеобразование на теплообменных поверхностях.',
+      },
+      {
+        id: 'tds_elbow',
+        label: 'Колено PC F20x20-PN25-DN20',
+        model: 'elbow_pc_f20',
+        attachTo: 'tds_elbow_point',
+        color: '#a8b0b8',
+        description:
+          'Колено PC F20x20-PN 25-DN 20xDN 20 — фитинг трубопровода продувки по солесодержанию. Обеспечивает поворот линии продувки от патрубка котла к продувочному клапану.',
       },
       {
         id: 'blowdown_valve_sludge',

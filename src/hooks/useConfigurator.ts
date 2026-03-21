@@ -114,7 +114,12 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   hoveredPart: null,
   orbitTarget: { x: 0, y: 0.5, z: 0 },
   cameraResetFlag: 0,
-  adminOverrides: {},
+  adminOverrides: (() => {
+    try {
+      const saved = localStorage.getItem('adminOverrides')
+      return saved ? JSON.parse(saved) : {}
+    } catch { return {} }
+  })(),
 
   setConfig: (config) => set({ activeConfig: config, selectedPart: null, orbitTarget: { x: 0, y: 0.5, z: 0 } }),
 
@@ -139,9 +144,11 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   })),
 
   setAdminOverride: (partId, override) =>
-    set((s) => ({
-      adminOverrides: { ...s.adminOverrides, [partId]: override },
-    })),
+    set((s) => {
+      const adminOverrides = { ...s.adminOverrides, [partId]: override }
+      try { localStorage.setItem('adminOverrides', JSON.stringify(adminOverrides)) } catch {}
+      return { adminOverrides }
+    }),
 
   getActiveParts: () => {
     const { activeConfig, adminOverrides } = get()

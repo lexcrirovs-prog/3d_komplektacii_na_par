@@ -271,6 +271,7 @@ export function AdminPanel() {
               // Reset by removing override — re-read from base
               const newOverrides = { ...adminOverrides }
               delete newOverrides[selectedPart]
+              try { localStorage.setItem('adminOverrides', JSON.stringify(newOverrides)) } catch {}
               useConfigurator.setState({ adminOverrides: newOverrides })
             }}
             style={{ ...btnStyle, background: '#7f1d1d' }}

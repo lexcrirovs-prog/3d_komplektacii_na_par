@@ -21,6 +21,11 @@ interface OrbitTarget {
   z: number
 }
 
+export interface AdminOverride {
+  position: Vec3
+  rotation: Vec3
+}
+
 interface ConfiguratorState {
   activeConfig: ConfigKey
   activeAddons: Set<AddonKey>
@@ -28,6 +33,7 @@ interface ConfiguratorState {
   hoveredPart: string | null
   orbitTarget: OrbitTarget
   cameraResetFlag: number
+  adminOverrides: Record<string, AdminOverride>
 
   setConfig: (config: ConfigKey) => void
   toggleAddon: (addon: AddonKey) => void
@@ -35,6 +41,7 @@ interface ConfiguratorState {
   setHoveredPart: (id: string | null) => void
   setOrbitTarget: (target: OrbitTarget) => void
   resetCamera: () => void
+  setAdminOverride: (partId: string, override: AdminOverride) => void
   getActiveParts: () => ResolvedPart[]
   getAddonParts: () => ResolvedPart[]
   getAllVisibleParts: () => ResolvedPart[]
@@ -81,8 +88,16 @@ function resolvePartPosition(part: PartDef): { position: Vec3; rotation: Vec3 } 
   }
 }
 
-function resolveparts(parts: PartDef[]): ResolvedPart[] {
+function resolveparts(parts: PartDef[], overrides: Record<string, AdminOverride>): ResolvedPart[] {
   return parts.map((part) => {
+    const override = overrides[part.id]
+    if (override) {
+      return {
+        ...part,
+        worldPosition: override.position,
+        worldRotation: override.rotation,
+      }
+    }
     const { position, rotation } = resolvePartPosition(part)
     return {
       ...part,
@@ -99,6 +114,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   hoveredPart: null,
   orbitTarget: { x: 0, y: 0.5, z: 0 },
   cameraResetFlag: 0,
+  adminOverrides: {},
 
   setConfig: (config) => set({ activeConfig: config, selectedPart: null, orbitTarget: { x: 0, y: 0.5, z: 0 } }),
 
@@ -122,14 +138,19 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
     cameraResetFlag: s.cameraResetFlag + 1,
   })),
 
+  setAdminOverride: (partId, override) =>
+    set((s) => ({
+      adminOverrides: { ...s.adminOverrides, [partId]: override },
+    })),
+
   getActiveParts: () => {
-    const { activeConfig } = get()
+    const { activeConfig, adminOverrides } = get()
     const parts = resolveConfigParts(activeConfig)
-    return resolveparts(parts)
+    return resolveparts(parts, adminOverrides)
   },
 
   getAddonParts: () => {
-    const { activeAddons } = get()
+    const { activeAddons, adminOverrides } = get()
     const allParts: PartDef[] = []
     activeAddons.forEach((key) => {
       const addon = addons[key]
@@ -137,7 +158,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
         allParts.push(...addon.parts)
       }
     })
-    return resolveparts(allParts)
+    return resolveparts(allParts, adminOverrides)
   },
 
   getAllVisibleParts: () => {

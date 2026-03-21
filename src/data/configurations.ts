@@ -54,16 +54,12 @@ export const attachPoints: Record<string, AttachPoint> = {
     rotation: { x: -Math.PI / 2, y: Math.PI / 2, z: -Math.PI / 2 },
   },
   bcv_925_point: {
-    position: { x: 1.2, y: 0.825, z: 1.2 },
-    rotation: { x: 0, y: 0, z: 0 },
-  },
-  bcv_7250_point: {
-    position: { x: 1.4, y: 0.825, z: 1.4 },
-    rotation: { x: 0, y: 0, z: 0 },
+    position: { x: 1.13, y: 0.638, z: 1.045 },
+    rotation: { x: Math.PI / 2, y: -Math.PI / 2, z: 0 },
   },
   cp_930_point: {
-    position: { x: 1.6, y: 0.825, z: 1.2 },
-    rotation: { x: 0, y: 0, z: 0 },
+    position: { x: 1.155, y: 0.821, z: 1.039 },
+    rotation: { x: 0, y: 0, z: -Math.PI / 2 },
   },
   pressure_point: {
     position: { x: 0.5, y: 1.9, z: 0.3 },
@@ -146,15 +142,6 @@ export const configurations: Record<string, ConfigurationDef> = {
         color: '#b0b8c0',
         description:
           'BCV 925-20-PN 25-DN 20 — запорно-регулирующий клапан линии продувки по солесодержанию. Обеспечивает управление потоком продувочной воды.',
-      },
-      {
-        id: 'bcv_7250',
-        label: 'Клапан BCV 7250-PN 25-DN 50',
-        model: 'bcv_7250',
-        attachTo: 'bcv_7250_point',
-        color: '#98a0a8',
-        description:
-          'BCV 7250-PN 25-DN 50 — запорный клапан большого диаметра линии продувки по солесодержанию. Обеспечивает надёжное перекрытие трубопровода.',
       },
       {
         id: 'cp_930',

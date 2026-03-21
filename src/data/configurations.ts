@@ -50,8 +50,8 @@ export const attachPoints: Record<string, AttachPoint> = {
     rotation: { x: 0, y: 0, z: Math.PI / 2 },
   },
   tds_elbow_point: {
-    position: { x: 0.9, y: 0.75, z: 0.8 },
-    rotation: { x: 0, y: 0, z: Math.PI / 2 },
+    position: { x: 0.85, y: 0.75, z: 0.85 },
+    rotation: { x: -Math.PI / 2, y: 0, z: Math.PI / 2 },
   },
   pressure_point: {
     position: { x: 0.5, y: 1.9, z: 0.3 },

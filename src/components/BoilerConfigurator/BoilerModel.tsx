@@ -4,6 +4,7 @@ import type { Group, Mesh, BufferGeometry } from 'three'
 import * as THREE from 'three'
 import boilerGlb from '../../assets/boiler.glb?url'
 import { useConfigurator } from '../../hooks/useConfigurator'
+import { isMobile } from '../../utils/device'
 
 export function BoilerModel() {
   const groupRef = useRef<Group>(null)
@@ -11,6 +12,7 @@ export function BoilerModel() {
   const selectPart = useConfigurator((s) => s.selectPart)
   const setOrbitTarget = useConfigurator((s) => s.setOrbitTarget)
   const [hovered, setHovered] = useState(false)
+  const mobile = useMemo(() => isMobile(), [])
 
   const meshData = useMemo(() => {
     const geometries: BufferGeometry[] = []
@@ -38,7 +40,6 @@ export function BoilerModel() {
     []
   )
 
-  // Model in mm → scale 0.001 to meters
   const s = 0.001
 
   const handleClick = (e: { stopPropagation: () => void }) => {
@@ -64,8 +65,8 @@ export function BoilerModel() {
       <Center position={[0, 0.5, 0]}>
         <group scale={[s, s, s]}>
           {meshData.map((geo, i) => (
-            <mesh key={i} geometry={geo} material={material} castShadow receiveShadow>
-              <Edges threshold={15} color={hovered ? '#4a90d9' : '#5a6068'} />
+            <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+              {!mobile && <Edges threshold={15} color={hovered ? '#4a90d9' : '#5a6068'} />}
             </mesh>
           ))}
         </group>

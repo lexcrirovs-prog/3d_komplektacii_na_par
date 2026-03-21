@@ -1,10 +1,11 @@
-import { Suspense } from 'react'
+import { Suspense, useMemo } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, AdaptiveDpr } from '@react-three/drei'
 import { BoilerModel } from './BoilerModel'
 import { AttachablePart } from './AttachablePart'
 import { CameraController } from './CameraController'
 import { useConfigurator } from '../../hooks/useConfigurator'
+import { isMobile } from '../../utils/device'
 
 function SceneContent() {
   const getActiveParts = useConfigurator((s) => s.getActiveParts)
@@ -17,6 +18,8 @@ function SceneContent() {
   const configParts = getActiveParts()
   const addonParts = getAddonParts()
 
+  const mobile = useMemo(() => isMobile(), [])
+
   const handleMiss = () => {
     selectPart(null)
     setOrbitTarget({ x: 0, y: 0.5, z: 0 })
@@ -24,20 +27,24 @@ function SceneContent() {
 
   return (
     <>
-      <ambientLight intensity={0.7} />
+      <ambientLight intensity={mobile ? 0.9 : 0.7} />
       <directionalLight
         position={[8, 12, 8]}
         intensity={1.5}
-        castShadow
-        shadow-mapSize={[1024, 1024]}
+        castShadow={!mobile}
+        shadow-mapSize={[512, 512]}
         shadow-camera-far={30}
         shadow-camera-left={-10}
         shadow-camera-right={10}
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-      <directionalLight position={[-5, 8, -5]} intensity={0.6} />
-      <directionalLight position={[0, -3, 8]} intensity={0.3} />
+      {!mobile && (
+        <>
+          <directionalLight position={[-5, 8, -5]} intensity={0.6} />
+          <directionalLight position={[0, -3, 8]} intensity={0.3} />
+        </>
+      )}
 
       <CameraController />
 
@@ -46,11 +53,19 @@ function SceneContent() {
         maxPolarAngle={Math.PI * 0.48}
         minDistance={2}
         maxDistance={20}
-        enableDamping={false}
+        enableDamping
+        dampingFactor={mobile ? 0.12 : 0.05}
+        touches={{
+          ONE: 0, // ROTATE
+          TWO: 2, // DOLLY (pinch zoom)
+        }}
       />
 
-      {/* Ground grid */}
-      <gridHelper args={[30, 30, '#475569', '#334155']} position={[0, -1, 0]} />
+      {/* Ground grid — simpler on mobile */}
+      <gridHelper
+        args={[mobile ? 20 : 30, mobile ? 10 : 30, '#475569', '#334155']}
+        position={[0, -1, 0]}
+      />
 
       {/* Floor plane for click-miss detection */}
       <mesh
@@ -79,28 +94,36 @@ function SceneContent() {
         />
       ))}
 
-      {/* Hemisphere light for natural ambient */}
-      <hemisphereLight args={['#ddeeff', '#667788', 0.8]} />
+      <hemisphereLight args={['#ddeeff', '#667788', mobile ? 0.6 : 0.8]} />
     </>
   )
 }
 
 export function Scene() {
+  const mobile = useMemo(() => isMobile(), [])
+
   return (
     <div className="canvas-container">
       <Canvas
-        shadows
+        shadows={!mobile}
         camera={{
           position: [6, 5, 8],
-          fov: 45,
+          fov: mobile ? 55 : 45,
           near: 0.1,
           far: 100,
         }}
-        gl={{ antialias: true, alpha: false, powerPreference: 'default', failIfMajorPerformanceCaveat: false }}
+        dpr={[1, mobile ? 1.5 : 2]}
+        gl={{
+          antialias: !mobile,
+          alpha: false,
+          powerPreference: mobile ? 'low-power' : 'default',
+          failIfMajorPerformanceCaveat: false,
+        }}
         onCreated={({ gl }) => {
           gl.setClearColor('#1a1a2e')
         }}
       >
+        <AdaptiveDpr pixelated />
         <Suspense fallback={null}>
           <SceneContent />
         </Suspense>

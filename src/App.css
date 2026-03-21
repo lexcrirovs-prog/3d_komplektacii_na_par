@@ -11,10 +11,14 @@
 
 .app {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background: var(--bg-dark);
   position: relative;
   overflow: hidden;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Left Config Panel */
@@ -225,6 +229,8 @@
 .canvas-container {
   width: 100%;
   height: 100%;
+  touch-action: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Mobile responsive */
@@ -236,8 +242,29 @@
     right: 0;
     width: 100%;
     border-radius: 16px 16px 0 0;
-    max-height: 45vh;
-    padding: 20px 16px;
+    max-height: 40dvh;
+    padding: 16px 12px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .config-panel h2 {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .config-radio label {
+    padding: 8px 10px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .addon-toggle {
+    padding: 8px 10px;
+    min-height: 44px;
+  }
+
+  .addon-toggle .addon-label {
+    font-size: 13px;
   }
 
   .info-panel {
@@ -248,9 +275,48 @@
     width: 100%;
     border-radius: 16px 16px 0 0;
     transform: translateY(100%);
+    max-height: 50dvh;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   }
 
   .info-panel.open {
     transform: translateY(0);
+  }
+
+  .info-panel h3 {
+    font-size: 16px;
+  }
+
+  .info-panel p {
+    font-size: 13px;
+  }
+}
+
+/* Landscape on short screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  .config-panel {
+    top: 10px;
+    bottom: auto;
+    left: 10px;
+    right: auto;
+    width: 200px;
+    max-height: calc(100dvh - 20px);
+    border-radius: 12px;
+    padding: 12px 10px;
+  }
+
+  .info-panel {
+    top: 10px;
+    bottom: auto;
+    right: 10px;
+    left: auto;
+    width: 240px;
+    max-height: calc(100dvh - 20px);
+    border-radius: 12px;
+    transform: translateX(260px);
+  }
+
+  .info-panel.open {
+    transform: translateX(0);
   }
 }

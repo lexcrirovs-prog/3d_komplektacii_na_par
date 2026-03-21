@@ -7,10 +7,10 @@ export default defineConfig({
   base: './',
   assetsInclude: ['**/*.glb'],
   build: {
-    target: 'es2015',
+    target: 'es2020',
     cssCodeSplit: false,
     modulePreload: { polyfill: false },
-    assetsInlineLimit: 10 * 1024 * 1024, // 10MB - inline GLB as base64 data URIs
+    assetsInlineLimit: 10 * 1024 * 1024,
     rollupOptions: {
       output: {
         format: 'iife',

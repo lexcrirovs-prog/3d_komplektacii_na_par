@@ -3,6 +3,7 @@ import { useGLTF, Edges } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Mesh, BufferGeometry } from 'three'
 import deaeratorGlb from '../../assets/deaerator.glb?url'
+import { isMobile } from '../../utils/device'
 
 interface PlaceholderProps {
   color: string
@@ -214,6 +215,7 @@ export function PLCModel({ color, opacity, scale = 1 }: PlaceholderProps) {
 
 export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   const { scene } = useGLTF(deaeratorGlb)
+  const mobile = useMemo(() => isMobile(), [])
 
   const meshData = useMemo(() => {
     const geometries: BufferGeometry[] = []
@@ -240,14 +242,13 @@ export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) 
     [opacity]
   )
 
-  // Deaerator: ~1564 x 3859 x 3295 mm
   const s = scale * 0.0005
 
   return (
     <group scale={[s, s, s]}>
       {meshData.map((geo, i) => (
-        <mesh key={i} geometry={geo} material={material} castShadow receiveShadow>
-          <Edges threshold={15} color="#5a6068" />
+        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+          {!mobile && <Edges threshold={15} color="#5a6068" />}
         </mesh>
       ))}
     </group>

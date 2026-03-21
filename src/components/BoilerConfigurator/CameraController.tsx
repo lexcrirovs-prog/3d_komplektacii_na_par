@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import { useThree, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useConfigurator } from '../../hooks/useConfigurator'
@@ -6,43 +6,31 @@ import { useConfigurator } from '../../hooks/useConfigurator'
 const BOILER_CENTER = new THREE.Vector3(0, 0.5, 0)
 const LERP_SPEED = 0.04
 
-/**
- * Determines orbit target and camera distance based on clicked part.
- */
 function getOrbitParams(part: { id: string; model: string; worldPosition: { x: number; y: number; z: number } }) {
   const pos = new THREE.Vector3(part.worldPosition.x, part.worldPosition.y, part.worldPosition.z)
 
-  // Deaerator — orbit around it
   if (part.id === 'deaerator_unit') {
     return { target: pos, distance: 4 }
   }
 
-  // Feed pumps — orbit around midpoint between pumps and deaerator
   if (part.model === 'feed_pump') {
-    return {
-      target: new THREE.Vector3(-3.5, 0, 0),
-      distance: 4,
-    }
+    return { target: new THREE.Vector3(-3.5, 0, 0), distance: 4 }
   }
 
-  // Economizer — orbit around it
   if (part.id === 'economizer_unit') {
     return { target: pos, distance: 4 }
   }
 
-  // Burner — orbit around it
   if (part.id === 'burner_unit') {
     return { target: pos, distance: 4 }
   }
 
-  // Config parts (valves, sensors, controllers on/near boiler) —
-  // orbit around boiler but shifted 40% toward the part
   const shifted = BOILER_CENTER.clone().lerp(pos, 0.4)
   return { target: shifted, distance: 4 }
 }
 
 export function CameraController() {
-  const { camera } = useThree()
+  const { camera, gl } = useThree()
   const selectedPart = useConfigurator((s) => s.selectedPart)
   const orbitTarget = useConfigurator((s) => s.orbitTarget)
   const getPartById = useConfigurator((s) => s.getPartById)
@@ -50,6 +38,45 @@ export function CameraController() {
 
   const desiredTarget = useRef(BOILER_CENTER.clone())
   const desiredDistance = useRef(10)
+  const userInteracting = useRef(false)
+  const returnTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Track touch/mouse interaction on the canvas
+  const onInteractStart = useCallback(() => {
+    userInteracting.current = true
+    if (returnTimer.current) {
+      clearTimeout(returnTimer.current)
+      returnTimer.current = null
+    }
+  }, [])
+
+  const onInteractEnd = useCallback(() => {
+    // Small delay so the last inertia frame doesn't fight
+    returnTimer.current = setTimeout(() => {
+      userInteracting.current = false
+    }, 150)
+  }, [])
+
+  useEffect(() => {
+    const dom = gl.domElement
+
+    dom.addEventListener('pointerdown', onInteractStart)
+    dom.addEventListener('pointerup', onInteractEnd)
+    dom.addEventListener('pointercancel', onInteractEnd)
+    dom.addEventListener('touchstart', onInteractStart, { passive: true })
+    dom.addEventListener('touchend', onInteractEnd)
+    dom.addEventListener('touchcancel', onInteractEnd)
+
+    return () => {
+      dom.removeEventListener('pointerdown', onInteractStart)
+      dom.removeEventListener('pointerup', onInteractEnd)
+      dom.removeEventListener('pointercancel', onInteractEnd)
+      dom.removeEventListener('touchstart', onInteractStart)
+      dom.removeEventListener('touchend', onInteractEnd)
+      dom.removeEventListener('touchcancel', onInteractEnd)
+      if (returnTimer.current) clearTimeout(returnTimer.current)
+    }
+  }, [gl, onInteractStart, onInteractEnd])
 
   // When a part is selected, compute orbit target
   useEffect(() => {
@@ -68,26 +95,26 @@ export function CameraController() {
     }
   }, [selectedPart, getPartById, setOrbitTarget])
 
-  // Sync from store (e.g., boiler click)
   useEffect(() => {
     desiredTarget.current.set(orbitTarget.x, orbitTarget.y, orbitTarget.z)
   }, [orbitTarget])
 
-  // Smoothly animate camera toward desired distance & orbit target
   useFrame(({ controls }) => {
     const orbitControls = controls as unknown as { target: THREE.Vector3; update: () => void } | undefined
     if (!orbitControls?.target) return
 
-    // Lerp orbit target
+    // Always lerp orbit target (pan center)
     orbitControls.target.lerp(desiredTarget.current, LERP_SPEED)
 
-    // Lerp camera distance
-    const dir = camera.position.clone().sub(orbitControls.target)
-    const currentDist = dir.length()
-    const newDist = THREE.MathUtils.lerp(currentDist, desiredDistance.current, LERP_SPEED)
-    if (currentDist > 0.01) {
-      dir.normalize().multiplyScalar(newDist)
-      camera.position.copy(orbitControls.target).add(dir)
+    // Only lerp camera distance when user is NOT interacting
+    if (!userInteracting.current) {
+      const dir = camera.position.clone().sub(orbitControls.target)
+      const currentDist = dir.length()
+      const newDist = THREE.MathUtils.lerp(currentDist, desiredDistance.current, LERP_SPEED)
+      if (currentDist > 0.01) {
+        dir.normalize().multiplyScalar(newDist)
+        camera.position.copy(orbitControls.target).add(dir)
+      }
     }
 
     orbitControls.update()

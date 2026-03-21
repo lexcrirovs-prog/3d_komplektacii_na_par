@@ -4,6 +4,9 @@ import * as THREE from 'three'
 import type { Mesh, BufferGeometry } from 'three'
 import deaeratorGlb from '../../assets/deaerator.glb?url'
 import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url'
+import bcv7250Glb from '../../assets/bcv_7250.glb?url'
+import bcv925Glb from '../../assets/bcv_925.glb?url'
+import cp930Glb from '../../assets/cp_930.glb?url'
 import { isMobile } from '../../utils/device'
 
 interface PlaceholderProps {
@@ -397,6 +400,138 @@ export function ElbowPcF20Model({ color, opacity, scale = 1 }: PlaceholderProps)
 
 useGLTF.preload(elbowPcF20Glb)
 
+export function Bcv7250Model({ color, opacity, scale = 1 }: PlaceholderProps) {
+  const { scene } = useGLTF(bcv7250Glb)
+  const mobile = useMemo(() => isMobile(), [])
+
+  const meshData = useMemo(() => {
+    const geometries: BufferGeometry[] = []
+    scene.traverse((child) => {
+      if ((child as Mesh).isMesh) {
+        const geo = (child as Mesh).geometry.clone()
+        geo.computeVertexNormals()
+        geometries.push(geo)
+      }
+    })
+    return geometries
+  }, [scene])
+
+  const material = useMemo(
+    () =>
+      new THREE.MeshPhongMaterial({
+        color: color || '#a8b0b8',
+        shininess: 60,
+        specular: '#666666',
+        flatShading: true,
+        transparent: opacity !== undefined && opacity < 1,
+        opacity: opacity ?? 1,
+      }),
+    [color, opacity]
+  )
+
+  const s = scale * 0.001
+
+  return (
+    <group scale={[s, s, s]}>
+      {meshData.map((geo, i) => (
+        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+          {!mobile && <Edges threshold={15} color="#5a6068" />}
+        </mesh>
+      ))}
+    </group>
+  )
+}
+
+useGLTF.preload(bcv7250Glb)
+
+export function Bcv925Model({ color, opacity, scale = 1 }: PlaceholderProps) {
+  const { scene } = useGLTF(bcv925Glb)
+  const mobile = useMemo(() => isMobile(), [])
+
+  const meshData = useMemo(() => {
+    const geometries: BufferGeometry[] = []
+    scene.traverse((child) => {
+      if ((child as Mesh).isMesh) {
+        const geo = (child as Mesh).geometry.clone()
+        geo.computeVertexNormals()
+        geometries.push(geo)
+      }
+    })
+    return geometries
+  }, [scene])
+
+  const material = useMemo(
+    () =>
+      new THREE.MeshPhongMaterial({
+        color: color || '#a8b0b8',
+        shininess: 60,
+        specular: '#666666',
+        flatShading: true,
+        transparent: opacity !== undefined && opacity < 1,
+        opacity: opacity ?? 1,
+      }),
+    [color, opacity]
+  )
+
+  const s = scale * 0.001
+
+  return (
+    <group scale={[s, s, s]}>
+      {meshData.map((geo, i) => (
+        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+          {!mobile && <Edges threshold={15} color="#5a6068" />}
+        </mesh>
+      ))}
+    </group>
+  )
+}
+
+useGLTF.preload(bcv925Glb)
+
+export function Cp930Model({ color, opacity, scale = 1 }: PlaceholderProps) {
+  const { scene } = useGLTF(cp930Glb)
+  const mobile = useMemo(() => isMobile(), [])
+
+  const meshData = useMemo(() => {
+    const geometries: BufferGeometry[] = []
+    scene.traverse((child) => {
+      if ((child as Mesh).isMesh) {
+        const geo = (child as Mesh).geometry.clone()
+        geo.computeVertexNormals()
+        geometries.push(geo)
+      }
+    })
+    return geometries
+  }, [scene])
+
+  const material = useMemo(
+    () =>
+      new THREE.MeshPhongMaterial({
+        color: color || '#a8b0b8',
+        shininess: 60,
+        specular: '#666666',
+        flatShading: true,
+        transparent: opacity !== undefined && opacity < 1,
+        opacity: opacity ?? 1,
+      }),
+    [color, opacity]
+  )
+
+  const s = scale * 0.001
+
+  return (
+    <group scale={[s, s, s]}>
+      {meshData.map((geo, i) => (
+        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+          {!mobile && <Edges threshold={15} color="#5a6068" />}
+        </mesh>
+      ))}
+    </group>
+  )
+}
+
+useGLTF.preload(cp930Glb)
+
 // Model registry
 export const modelRegistry: Record<
   string,
@@ -415,4 +550,7 @@ export const modelRegistry: Record<
   economizer: EconomizerModel,
   burner: BurnerModel,
   elbow_pc_f20: ElbowPcF20Model,
+  bcv_7250: Bcv7250Model,
+  bcv_925: Bcv925Model,
+  cp_930: Cp930Model,
 }

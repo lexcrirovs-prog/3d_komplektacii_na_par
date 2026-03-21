@@ -53,6 +53,18 @@ export const attachPoints: Record<string, AttachPoint> = {
     position: { x: 1.043, y: 0.825, z: 1.048 },
     rotation: { x: -Math.PI / 2, y: Math.PI / 2, z: -Math.PI / 2 },
   },
+  bcv_925_point: {
+    position: { x: 1.2, y: 0.825, z: 1.2 },
+    rotation: { x: 0, y: 0, z: 0 },
+  },
+  bcv_7250_point: {
+    position: { x: 1.4, y: 0.825, z: 1.4 },
+    rotation: { x: 0, y: 0, z: 0 },
+  },
+  cp_930_point: {
+    position: { x: 1.6, y: 0.825, z: 1.2 },
+    rotation: { x: 0, y: 0, z: 0 },
+  },
   pressure_point: {
     position: { x: 0.5, y: 1.9, z: 0.3 },
     rotation: { x: 0, y: 0, z: 0 },
@@ -125,6 +137,33 @@ export const configurations: Record<string, ConfigurationDef> = {
         color: '#a8b0b8',
         description:
           'Колено PC F20x20-PN 25-DN 20xDN 20 — фитинг трубопровода продувки по солесодержанию. Обеспечивает поворот линии продувки от патрубка котла к продувочному клапану.',
+      },
+      {
+        id: 'bcv_925',
+        label: 'Клапан BCV 925-20-PN 25-DN 20',
+        model: 'bcv_925',
+        attachTo: 'bcv_925_point',
+        color: '#b0b8c0',
+        description:
+          'BCV 925-20-PN 25-DN 20 — запорно-регулирующий клапан линии продувки по солесодержанию. Обеспечивает управление потоком продувочной воды.',
+      },
+      {
+        id: 'bcv_7250',
+        label: 'Клапан BCV 7250-PN 25-DN 50',
+        model: 'bcv_7250',
+        attachTo: 'bcv_7250_point',
+        color: '#98a0a8',
+        description:
+          'BCV 7250-PN 25-DN 50 — запорный клапан большого диаметра линии продувки по солесодержанию. Обеспечивает надёжное перекрытие трубопровода.',
+      },
+      {
+        id: 'cp_930',
+        label: 'Охладитель проб CP 930-500 мм',
+        model: 'cp_930',
+        attachTo: 'cp_930_point',
+        color: '#c0c8d0',
+        description:
+          'CP 930-500 мм — охладитель проб котловой воды. Обеспечивает охлаждение пробы до безопасной температуры для анализа солесодержания.',
       },
       {
         id: 'blowdown_valve_sludge',

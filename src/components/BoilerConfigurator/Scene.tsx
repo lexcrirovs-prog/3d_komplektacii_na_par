@@ -1,4 +1,4 @@
-import { Suspense, useMemo } from 'react'
+import { Suspense, useMemo, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, AdaptiveDpr } from '@react-three/drei'
 import { BoilerModel } from './BoilerModel'
@@ -13,6 +13,7 @@ function SceneContent() {
   const resetCamera = useConfigurator((s) => s.resetCamera)
   const activeConfig = useConfigurator((s) => s.activeConfig)
   const activeAddons = useConfigurator((s) => s.activeAddons)
+  const adminOverrides = useConfigurator((s) => s.adminOverrides)
 
   const configParts = getActiveParts()
   const addonParts = getAddonParts()

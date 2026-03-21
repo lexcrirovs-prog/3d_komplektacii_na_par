@@ -27,16 +27,19 @@ interface ConfiguratorState {
   selectedPart: string | null
   hoveredPart: string | null
   orbitTarget: OrbitTarget
+  cameraResetFlag: number
 
   setConfig: (config: ConfigKey) => void
   toggleAddon: (addon: AddonKey) => void
   selectPart: (id: string | null) => void
   setHoveredPart: (id: string | null) => void
   setOrbitTarget: (target: OrbitTarget) => void
+  resetCamera: () => void
   getActiveParts: () => ResolvedPart[]
   getAddonParts: () => ResolvedPart[]
   getAllVisibleParts: () => ResolvedPart[]
   getPartById: (id: string) => ResolvedPart | undefined
+  getConfigSummary: () => { config: string; addons: string[] }
 }
 
 function resolveConfigParts(configKey: ConfigKey): PartDef[] {
@@ -95,6 +98,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   selectedPart: null,
   hoveredPart: null,
   orbitTarget: { x: 0, y: 0.5, z: 0 },
+  cameraResetFlag: 0,
 
   setConfig: (config) => set({ activeConfig: config, selectedPart: null, orbitTarget: { x: 0, y: 0.5, z: 0 } }),
 
@@ -112,6 +116,11 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   selectPart: (id) => set({ selectedPart: id }),
   setHoveredPart: (id) => set({ hoveredPart: id }),
   setOrbitTarget: (target) => set({ orbitTarget: target }),
+  resetCamera: () => set((s) => ({
+    selectedPart: null,
+    orbitTarget: { x: 0, y: 0.5, z: 0 },
+    cameraResetFlag: s.cameraResetFlag + 1,
+  })),
 
   getActiveParts: () => {
     const { activeConfig } = get()
@@ -139,5 +148,16 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   getPartById: (id) => {
     const all = get().getAllVisibleParts()
     return all.find((p) => p.id === id)
+  },
+
+  getConfigSummary: () => {
+    const { activeConfig, activeAddons } = get()
+    const configLabel = configurations[activeConfig]?.label ?? activeConfig
+    const addonLabels: string[] = []
+    activeAddons.forEach((key) => {
+      const addon = addons[key]
+      if (addon) addonLabels.push(addon.label)
+    })
+    return { config: configLabel, addons: addonLabels }
   },
 }))

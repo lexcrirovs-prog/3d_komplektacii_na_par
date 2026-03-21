@@ -10,8 +10,7 @@ import { isMobile } from '../../utils/device'
 function SceneContent() {
   const getActiveParts = useConfigurator((s) => s.getActiveParts)
   const getAddonParts = useConfigurator((s) => s.getAddonParts)
-  const selectPart = useConfigurator((s) => s.selectPart)
-  const setOrbitTarget = useConfigurator((s) => s.setOrbitTarget)
+  const resetCamera = useConfigurator((s) => s.resetCamera)
   const activeConfig = useConfigurator((s) => s.activeConfig)
   const activeAddons = useConfigurator((s) => s.activeAddons)
 
@@ -21,8 +20,7 @@ function SceneContent() {
   const mobile = useMemo(() => isMobile(), [])
 
   const handleMiss = () => {
-    selectPart(null)
-    setOrbitTarget({ x: 0, y: 0.5, z: 0 })
+    resetCamera()
   }
 
   return (

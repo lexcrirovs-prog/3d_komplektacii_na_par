@@ -6,13 +6,43 @@ function round(v: number, d = 3) {
   return Math.round(v * 10 ** d) / 10 ** d
 }
 
+// Hide native number input spinners in admin panel
+const hideSpinnersCSS = `
+.admin-num-input::-webkit-outer-spin-button,
+.admin-num-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.admin-num-input {
+  -moz-appearance: textfield;
+}
+`
+
+const spinBtnStyle: React.CSSProperties = {
+  width: 28,
+  height: 28,
+  background: '#334155',
+  color: '#e2e8f0',
+  border: '1px solid #475569',
+  borderRadius: 4,
+  fontSize: 16,
+  fontWeight: 700,
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  lineHeight: 1,
+  userSelect: 'none',
+  flexShrink: 0,
+}
+
 function Slider({
   label,
   value,
   onChange,
   min = -3,
   max = 3,
-  step = 0.01,
+  step = 0.001,
 }: {
   label: string
   value: number
@@ -33,7 +63,15 @@ function Slider({
         onChange={(e) => onChange(parseFloat(e.target.value))}
         style={{ flex: 1, height: 4 }}
       />
+      <button
+        style={spinBtnStyle}
+        onClick={() => onChange(round(value - step, 4))}
+        title="Уменьшить"
+      >
+        −
+      </button>
       <input
+        className="admin-num-input"
         type="number"
         step={step}
         value={round(value)}
@@ -42,16 +80,24 @@ function Slider({
           if (!isNaN(v)) onChange(v)
         }}
         style={{
-          width: 60,
+          width: 70,
+          height: 28,
           background: '#1e293b',
           color: '#e2e8f0',
           border: '1px solid #475569',
           borderRadius: 4,
-          padding: '2px 4px',
-          fontSize: 11,
+          padding: '2px 6px',
+          fontSize: 13,
           textAlign: 'right',
         }}
       />
+      <button
+        style={spinBtnStyle}
+        onClick={() => onChange(round(value + step, 4))}
+        title="Увеличить"
+      >
+        +
+      </button>
     </div>
   )
 }
@@ -117,6 +163,7 @@ export function AdminPanel() {
   if (!selectedPart) {
     return (
       <div style={panelStyle}>
+        <style>{hideSpinnersCSS}</style>
         <div style={headerStyle}>Admin Mode</div>
         <p style={{ color: '#94a3b8', fontSize: 12, margin: 0 }}>
           Кликните на деталь в 3D сцене для редактирования позиции
@@ -132,6 +179,7 @@ export function AdminPanel() {
 
   return (
     <div style={panelStyle}>
+      <style>{hideSpinnersCSS}</style>
       <div style={headerStyle}>Admin: {part.label}</div>
       <div style={{ fontSize: 11, color: '#64748b', marginBottom: 8 }}>
         id: <code>{part.id}</code> | model: <code>{part.model}</code>
@@ -157,7 +205,7 @@ export function AdminPanel() {
           onChange={(v) => updateRot('x', v)}
           min={-Math.PI}
           max={Math.PI}
-          step={Math.PI / 12}
+          step={Math.PI / 36}
         />
         <Slider
           label="Y"
@@ -165,7 +213,7 @@ export function AdminPanel() {
           onChange={(v) => updateRot('y', v)}
           min={-Math.PI}
           max={Math.PI}
-          step={Math.PI / 12}
+          step={Math.PI / 36}
         />
         <Slider
           label="Z"
@@ -173,7 +221,7 @@ export function AdminPanel() {
           onChange={(v) => updateRot('z', v)}
           min={-Math.PI}
           max={Math.PI}
-          step={Math.PI / 12}
+          step={Math.PI / 36}
         />
       </div>
 

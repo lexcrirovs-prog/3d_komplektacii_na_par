@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useConfigurator } from '../../hooks/useConfigurator'
 import type { Vec3 } from '../../data/configurations'
 
@@ -51,6 +51,30 @@ function Slider({
   max?: number
   step?: number
 }) {
+  const valueRef = useRef(value)
+  valueRef.current = value
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const stopHold = useCallback(() => {
+    if (timeoutRef.current) { clearTimeout(timeoutRef.current); timeoutRef.current = null }
+    if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null }
+  }, [])
+
+  const startHold = useCallback((direction: 1 | -1) => {
+    stopHold()
+    // Initial delay before repeat starts (300ms), then repeat every 60ms
+    timeoutRef.current = setTimeout(() => {
+      intervalRef.current = setInterval(() => {
+        const next = round(valueRef.current + step * direction, 4)
+        onChange(next)
+      }, 60)
+    }, 300)
+  }, [step, onChange, stopHold])
+
+  // Cleanup on unmount
+  useEffect(() => stopHold, [stopHold])
+
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
       <label style={{ width: 16, fontWeight: 600, fontSize: 12 }}>{label}</label>
@@ -66,6 +90,11 @@ function Slider({
       <button
         style={spinBtnStyle}
         onClick={() => onChange(round(value - step, 4))}
+        onMouseDown={() => startHold(-1)}
+        onMouseUp={stopHold}
+        onMouseLeave={stopHold}
+        onTouchStart={() => startHold(-1)}
+        onTouchEnd={stopHold}
         title="Уменьшить"
       >
         −
@@ -94,6 +123,11 @@ function Slider({
       <button
         style={spinBtnStyle}
         onClick={() => onChange(round(value + step, 4))}
+        onMouseDown={() => startHold(1)}
+        onMouseUp={stopHold}
+        onMouseLeave={stopHold}
+        onTouchStart={() => startHold(1)}
+        onTouchEnd={stopHold}
         title="Увеличить"
       >
         +

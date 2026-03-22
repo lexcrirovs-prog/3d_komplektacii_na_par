@@ -62,12 +62,12 @@ export const attachPoints: Record<string, AttachPoint> = {
     rotation: { x: 0, y: 0, z: -Math.PI / 2 },
   },
   dn32h50_1_point: {
-    position: { x: 1.1, y: 0.5, z: 1.05 },
-    rotation: { x: 0, y: 0, z: 0 },
+    position: { x: -0.086, y: 1.518, z: -0.822 },
+    rotation: { x: -Math.PI / 2, y: 0, z: -Math.PI / 2 },
   },
   dn32h50_2_point: {
-    position: { x: 1.1, y: 0.3, z: 1.05 },
-    rotation: { x: 0, y: 0, z: 0 },
+    position: { x: -0.089, y: 1.516, z: -0.603 },
+    rotation: { x: -Math.PI / 2, y: 0, z: -Math.PI / 2 },
   },
   pressure_point: {
     position: { x: 0.5, y: 1.9, z: 0.3 },

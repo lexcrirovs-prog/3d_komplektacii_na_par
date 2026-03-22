@@ -61,6 +61,14 @@ export const attachPoints: Record<string, AttachPoint> = {
     position: { x: 1.155, y: 0.821, z: 1.039 },
     rotation: { x: 0, y: 0, z: -Math.PI / 2 },
   },
+  dn40h65_1_point: {
+    position: { x: 1.3, y: 0.825, z: 1.1 },
+    rotation: { x: 0, y: 0, z: 0 },
+  },
+  dn40h65_2_point: {
+    position: { x: 1.5, y: 0.825, z: 1.1 },
+    rotation: { x: 0, y: 0, z: 0 },
+  },
   pressure_point: {
     position: { x: 0.5, y: 1.9, z: 0.3 },
     rotation: { x: 0, y: 0, z: 0 },
@@ -151,6 +159,24 @@ export const configurations: Record<string, ConfigurationDef> = {
         color: '#c0c8d0',
         description:
           'CP 930-500 мм — охладитель проб котловой воды. Обеспечивает охлаждение пробы до безопасной температуры для анализа солесодержания.',
+      },
+      {
+        id: 'dn40h65_1',
+        label: 'Переход DN40h65 №1',
+        model: 'dn40h65',
+        attachTo: 'dn40h65_1_point',
+        color: '#a8b0b8',
+        description:
+          'DN40h65 — переходник трубопровода продувки по солесодержанию. Обеспечивает переход между различными диаметрами трубопровода.',
+      },
+      {
+        id: 'dn40h65_2',
+        label: 'Переход DN40h65 №2',
+        model: 'dn40h65',
+        attachTo: 'dn40h65_2_point',
+        color: '#a8b0b8',
+        description:
+          'DN40h65 — переходник трубопровода продувки по солесодержанию. Обеспечивает переход между различными диаметрами трубопровода.',
       },
       {
         id: 'blowdown_valve_sludge',

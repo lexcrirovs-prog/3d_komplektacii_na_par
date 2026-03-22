@@ -30,6 +30,7 @@ const glbModels: Record<string, { path: string; baseScale: number }> = {
   bcv_7250: { path: './models/bcv_7250.glb', baseScale: 0.001 },
   bcv_925: { path: './models/bcv_925.glb', baseScale: 0.001 },
   cp_930: { path: './models/cp_930.glb', baseScale: 0.001 },
+  dn40h65: { path: './models/dn40h65.glb', baseScale: 0.001 },
 }
 
 // Preload all GLB models

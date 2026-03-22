@@ -2,11 +2,6 @@ import { useMemo } from 'react'
 import { useGLTF, Edges } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Mesh, BufferGeometry } from 'three'
-import deaeratorGlb from '../../assets/deaerator.glb?url'
-import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url'
-import bcv7250Glb from '../../assets/bcv_7250.glb?url'
-import bcv925Glb from '../../assets/bcv_925.glb?url'
-import cp930Glb from '../../assets/cp_930.glb?url'
 import { isMobile } from '../../utils/device'
 
 interface PlaceholderProps {
@@ -26,6 +21,70 @@ function Mat({ color, opacity = 1 }: { color: string; opacity?: number }) {
     />
   )
 }
+
+// --- Universal GLB model component ---
+
+const glbModels: Record<string, { path: string; baseScale: number }> = {
+  deaerator: { path: './models/deaerator.glb', baseScale: 0.0005 },
+  elbow_pc_f20: { path: './models/elbow_pc_f20.glb', baseScale: 0.001 },
+  bcv_7250: { path: './models/bcv_7250.glb', baseScale: 0.001 },
+  bcv_925: { path: './models/bcv_925.glb', baseScale: 0.001 },
+  cp_930: { path: './models/cp_930.glb', baseScale: 0.001 },
+}
+
+// Preload all GLB models
+Object.values(glbModels).forEach((m) => useGLTF.preload(m.path))
+
+function GlbModel({ glbPath, baseScale, color, opacity, scale = 1 }: PlaceholderProps & { glbPath: string; baseScale: number }) {
+  const { scene } = useGLTF(glbPath)
+  const mobile = useMemo(() => isMobile(), [])
+
+  const meshData = useMemo(() => {
+    const geometries: BufferGeometry[] = []
+    scene.traverse((child) => {
+      if ((child as Mesh).isMesh) {
+        const geo = (child as Mesh).geometry.clone()
+        geo.computeVertexNormals()
+        geometries.push(geo)
+      }
+    })
+    return geometries
+  }, [scene])
+
+  const material = useMemo(
+    () =>
+      new THREE.MeshPhongMaterial({
+        color: color || '#a8b0b8',
+        shininess: 60,
+        specular: '#666666',
+        flatShading: true,
+        transparent: opacity !== undefined && opacity < 1,
+        opacity: opacity ?? 1,
+      }),
+    [color, opacity]
+  )
+
+  const s = scale * baseScale
+
+  return (
+    <group scale={[s, s, s]}>
+      {meshData.map((geo, i) => (
+        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+          {!mobile && <Edges threshold={15} color="#5a6068" />}
+        </mesh>
+      ))}
+    </group>
+  )
+}
+
+function makeGlbComponent(key: string) {
+  const { path, baseScale } = glbModels[key]
+  return function GlbModelWrapper(props: PlaceholderProps) {
+    return <GlbModel {...props} glbPath={path} baseScale={baseScale} />
+  }
+}
+
+// --- Procedural placeholder models ---
 
 export function GateValveModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   return (
@@ -217,50 +276,6 @@ export function PLCModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   )
 }
 
-export function DeaeratorModel({ color, opacity, scale = 1 }: PlaceholderProps) {
-  const { scene } = useGLTF(deaeratorGlb)
-  const mobile = useMemo(() => isMobile(), [])
-
-  const meshData = useMemo(() => {
-    const geometries: BufferGeometry[] = []
-    scene.traverse((child) => {
-      if ((child as Mesh).isMesh) {
-        const geo = (child as Mesh).geometry.clone()
-        geo.computeVertexNormals()
-        geometries.push(geo)
-      }
-    })
-    return geometries
-  }, [scene])
-
-  const material = useMemo(
-    () =>
-      new THREE.MeshPhongMaterial({
-        color: '#a8b0b8',
-        shininess: 60,
-        specular: '#666666',
-        flatShading: true,
-        transparent: opacity !== undefined && opacity < 1,
-        opacity: opacity ?? 1,
-      }),
-    [opacity]
-  )
-
-  const s = scale * 0.0005
-
-  return (
-    <group scale={[s, s, s]}>
-      {meshData.map((geo, i) => (
-        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
-          {!mobile && <Edges threshold={15} color="#5a6068" />}
-        </mesh>
-      ))}
-    </group>
-  )
-}
-
-useGLTF.preload(deaeratorGlb)
-
 export function FeedPumpModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   return (
     <group scale={scale * 0.4}>
@@ -355,184 +370,8 @@ export function BurnerModel({ color, opacity, scale = 1 }: PlaceholderProps) {
   )
 }
 
-export function ElbowPcF20Model({ color, opacity, scale = 1 }: PlaceholderProps) {
-  const { scene } = useGLTF(elbowPcF20Glb)
-  const mobile = useMemo(() => isMobile(), [])
+// --- Model registry ---
 
-  const meshData = useMemo(() => {
-    const geometries: BufferGeometry[] = []
-    scene.traverse((child) => {
-      if ((child as Mesh).isMesh) {
-        const geo = (child as Mesh).geometry.clone()
-        geo.computeVertexNormals()
-        geometries.push(geo)
-      }
-    })
-    return geometries
-  }, [scene])
-
-  const material = useMemo(
-    () =>
-      new THREE.MeshPhongMaterial({
-        color: color || '#a8b0b8',
-        shininess: 60,
-        specular: '#666666',
-        flatShading: true,
-        transparent: opacity !== undefined && opacity < 1,
-        opacity: opacity ?? 1,
-      }),
-    [color, opacity]
-  )
-
-  // Elbow: ~105 x 159 x 142 mm → scale 0.001 to meters
-  const s = scale * 0.001
-
-  return (
-    <group scale={[s, s, s]}>
-      {meshData.map((geo, i) => (
-        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
-          {!mobile && <Edges threshold={15} color="#5a6068" />}
-        </mesh>
-      ))}
-    </group>
-  )
-}
-
-useGLTF.preload(elbowPcF20Glb)
-
-export function Bcv7250Model({ color, opacity, scale = 1 }: PlaceholderProps) {
-  const { scene } = useGLTF(bcv7250Glb)
-  const mobile = useMemo(() => isMobile(), [])
-
-  const meshData = useMemo(() => {
-    const geometries: BufferGeometry[] = []
-    scene.traverse((child) => {
-      if ((child as Mesh).isMesh) {
-        const geo = (child as Mesh).geometry.clone()
-        geo.computeVertexNormals()
-        geometries.push(geo)
-      }
-    })
-    return geometries
-  }, [scene])
-
-  const material = useMemo(
-    () =>
-      new THREE.MeshPhongMaterial({
-        color: color || '#a8b0b8',
-        shininess: 60,
-        specular: '#666666',
-        flatShading: true,
-        transparent: opacity !== undefined && opacity < 1,
-        opacity: opacity ?? 1,
-      }),
-    [color, opacity]
-  )
-
-  const s = scale * 0.001
-
-  return (
-    <group scale={[s, s, s]}>
-      {meshData.map((geo, i) => (
-        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
-          {!mobile && <Edges threshold={15} color="#5a6068" />}
-        </mesh>
-      ))}
-    </group>
-  )
-}
-
-useGLTF.preload(bcv7250Glb)
-
-export function Bcv925Model({ color, opacity, scale = 1 }: PlaceholderProps) {
-  const { scene } = useGLTF(bcv925Glb)
-  const mobile = useMemo(() => isMobile(), [])
-
-  const meshData = useMemo(() => {
-    const geometries: BufferGeometry[] = []
-    scene.traverse((child) => {
-      if ((child as Mesh).isMesh) {
-        const geo = (child as Mesh).geometry.clone()
-        geo.computeVertexNormals()
-        geometries.push(geo)
-      }
-    })
-    return geometries
-  }, [scene])
-
-  const material = useMemo(
-    () =>
-      new THREE.MeshPhongMaterial({
-        color: color || '#a8b0b8',
-        shininess: 60,
-        specular: '#666666',
-        flatShading: true,
-        transparent: opacity !== undefined && opacity < 1,
-        opacity: opacity ?? 1,
-      }),
-    [color, opacity]
-  )
-
-  const s = scale * 0.001
-
-  return (
-    <group scale={[s, s, s]}>
-      {meshData.map((geo, i) => (
-        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
-          {!mobile && <Edges threshold={15} color="#5a6068" />}
-        </mesh>
-      ))}
-    </group>
-  )
-}
-
-useGLTF.preload(bcv925Glb)
-
-export function Cp930Model({ color, opacity, scale = 1 }: PlaceholderProps) {
-  const { scene } = useGLTF(cp930Glb)
-  const mobile = useMemo(() => isMobile(), [])
-
-  const meshData = useMemo(() => {
-    const geometries: BufferGeometry[] = []
-    scene.traverse((child) => {
-      if ((child as Mesh).isMesh) {
-        const geo = (child as Mesh).geometry.clone()
-        geo.computeVertexNormals()
-        geometries.push(geo)
-      }
-    })
-    return geometries
-  }, [scene])
-
-  const material = useMemo(
-    () =>
-      new THREE.MeshPhongMaterial({
-        color: color || '#a8b0b8',
-        shininess: 60,
-        specular: '#666666',
-        flatShading: true,
-        transparent: opacity !== undefined && opacity < 1,
-        opacity: opacity ?? 1,
-      }),
-    [color, opacity]
-  )
-
-  const s = scale * 0.001
-
-  return (
-    <group scale={[s, s, s]}>
-      {meshData.map((geo, i) => (
-        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
-          {!mobile && <Edges threshold={15} color="#5a6068" />}
-        </mesh>
-      ))}
-    </group>
-  )
-}
-
-useGLTF.preload(cp930Glb)
-
-// Model registry
 export const modelRegistry: Record<
   string,
   React.ComponentType<PlaceholderProps>
@@ -545,12 +384,11 @@ export const modelRegistry: Record<
   electric_valve: ElectricValveModel,
   controller: ControllerModel,
   plc: PLCModel,
-  deaerator: DeaeratorModel,
   feed_pump: FeedPumpModel,
   economizer: EconomizerModel,
   burner: BurnerModel,
-  elbow_pc_f20: ElbowPcF20Model,
-  bcv_7250: Bcv7250Model,
-  bcv_925: Bcv925Model,
-  cp_930: Cp930Model,
+  // GLB-based models (loaded from public/models/)
+  ...Object.fromEntries(
+    Object.keys(glbModels).map((key) => [key, makeGlbComponent(key)])
+  ),
 }

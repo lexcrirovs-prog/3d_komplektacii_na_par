@@ -3,4 +3,3 @@ node_modules/
 *.local
 .DS_Store
 *.tsbuildinfo
-dist/models/

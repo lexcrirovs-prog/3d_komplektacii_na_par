@@ -1,4 +1,4 @@
-import { Suspense, useMemo, useRef } from 'react'
+import { Suspense, useMemo, useRef, Component, type ReactNode } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, AdaptiveDpr } from '@react-three/drei'
 import { BoilerModel } from './BoilerModel'
@@ -6,6 +6,29 @@ import { AttachablePart } from './AttachablePart'
 import { CameraController } from './CameraController'
 import { useConfigurator } from '../../hooks/useConfigurator'
 import { isMobile } from '../../utils/device'
+
+// Error boundary to catch GLB loading errors
+class PartErrorBoundary extends Component<{ partId: string; children: ReactNode }, { error: string | null }> {
+  state = { error: null as string | null }
+  static getDerivedStateFromError(error: Error) {
+    return { error: error.message }
+  }
+  componentDidCatch(error: Error) {
+    console.error(`[PartErrorBoundary] Part "${this.props.partId}" failed:`, error.message)
+  }
+  render() {
+    if (this.state.error) {
+      // Show a red sphere where the part should be
+      return (
+        <mesh>
+          <sphereGeometry args={[0.1, 8, 8]} />
+          <meshBasicMaterial color="red" />
+        </mesh>
+      )
+    }
+    return this.props.children
+  }
+}
 
 function SceneContent() {
   const getActiveParts = useConfigurator((s) => s.getActiveParts)
@@ -83,7 +106,16 @@ function SceneContent() {
       {/* Configuration parts */}
       {configParts.map((part) => (
         <Suspense key={`${activeConfig}-${part.id}`} fallback={null}>
-          <AttachablePart part={part} />
+          <PartErrorBoundary partId={part.id}>
+            <AttachablePart part={part} />
+          </PartErrorBoundary>
+          {/* Debug: bright marker for dn32h50 parts */}
+          {part.id.startsWith('dn32h50') && (
+            <mesh position={[part.worldPosition.x, part.worldPosition.y, part.worldPosition.z]}>
+              <sphereGeometry args={[0.08, 16, 16]} />
+              <meshBasicMaterial color="#ff00ff" />
+            </mesh>
+          )}
         </Suspense>
       ))}
 

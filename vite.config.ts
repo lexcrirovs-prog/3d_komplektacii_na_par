@@ -10,7 +10,7 @@ export default defineConfig({
     target: 'es2020',
     cssCodeSplit: false,
     modulePreload: { polyfill: false },
-    assetsInlineLimit: 4096,
+    assetsInlineLimit: 100 * 1024 * 1024,
     rollupOptions: {
       output: {
         format: 'iife',

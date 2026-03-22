@@ -2,7 +2,7 @@ import { useRef, useMemo, useState } from 'react'
 import { useGLTF, Center, Edges } from '@react-three/drei'
 import type { Group, Mesh, BufferGeometry } from 'three'
 import * as THREE from 'three'
-const boilerGlb = './models/boiler.glb'
+import boilerGlb from '../../assets/boiler.glb?url'
 import { useConfigurator } from '../../hooks/useConfigurator'
 import { isMobile } from '../../utils/device'
 

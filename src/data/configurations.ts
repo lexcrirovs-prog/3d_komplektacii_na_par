@@ -62,11 +62,11 @@ export const attachPoints: Record<string, AttachPoint> = {
     rotation: { x: 0, y: 0, z: -Math.PI / 2 },
   },
   dn40h65_1_point: {
-    position: { x: 1.3, y: 0.825, z: 1.1 },
+    position: { x: 1.1, y: 0.5, z: 1.05 },
     rotation: { x: 0, y: 0, z: 0 },
   },
   dn40h65_2_point: {
-    position: { x: 1.5, y: 0.825, z: 1.1 },
+    position: { x: 1.1, y: 0.3, z: 1.05 },
     rotation: { x: 0, y: 0, z: 0 },
   },
   pressure_point: {

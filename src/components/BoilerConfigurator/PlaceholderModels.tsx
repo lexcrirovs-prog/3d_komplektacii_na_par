@@ -3,6 +3,12 @@ import { useGLTF, Edges } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Mesh, BufferGeometry } from 'three'
 import { isMobile } from '../../utils/device'
+import deaeratorGlb from '../../assets/deaerator.glb?url'
+import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url'
+import bcv7250Glb from '../../assets/bcv_7250.glb?url'
+import bcv925Glb from '../../assets/bcv_925.glb?url'
+import cp930Glb from '../../assets/cp_930.glb?url'
+import dn40h65Glb from '../../assets/dn40h65.glb?url'
 
 interface PlaceholderProps {
   color: string
@@ -25,12 +31,12 @@ function Mat({ color, opacity = 1 }: { color: string; opacity?: number }) {
 // --- Universal GLB model component ---
 
 const glbModels: Record<string, { path: string; baseScale: number }> = {
-  deaerator: { path: './models/deaerator.glb', baseScale: 0.0005 },
-  elbow_pc_f20: { path: './models/elbow_pc_f20.glb', baseScale: 0.001 },
-  bcv_7250: { path: './models/bcv_7250.glb', baseScale: 0.001 },
-  bcv_925: { path: './models/bcv_925.glb', baseScale: 0.001 },
-  cp_930: { path: './models/cp_930.glb', baseScale: 0.001 },
-  dn40h65: { path: './models/dn40h65.glb', baseScale: 0.001 },
+  deaerator: { path: deaeratorGlb, baseScale: 0.0005 },
+  elbow_pc_f20: { path: elbowPcF20Glb, baseScale: 0.001 },
+  bcv_7250: { path: bcv7250Glb, baseScale: 0.001 },
+  bcv_925: { path: bcv925Glb, baseScale: 0.001 },
+  cp_930: { path: cp930Glb, baseScale: 0.001 },
+  dn40h65: { path: dn40h65Glb, baseScale: 0.001 },
 }
 
 // Preload all GLB models

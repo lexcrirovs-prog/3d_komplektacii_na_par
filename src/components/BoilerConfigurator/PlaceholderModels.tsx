@@ -8,7 +8,7 @@ import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url'
 import bcv7250Glb from '../../assets/bcv_7250.glb?url'
 import bcv925Glb from '../../assets/bcv_925.glb?url'
 import cp930Glb from '../../assets/cp_930.glb?url'
-import dn40h65Glb from '../../assets/dn40h65.glb?url'
+import dn32h50Glb from '../../assets/dn32h50.glb?url'
 
 interface PlaceholderProps {
   color: string
@@ -36,7 +36,7 @@ const glbModels: Record<string, { path: string; baseScale: number }> = {
   bcv_7250: { path: bcv7250Glb, baseScale: 0.001 },
   bcv_925: { path: bcv925Glb, baseScale: 0.001 },
   cp_930: { path: cp930Glb, baseScale: 0.001 },
-  dn40h65: { path: dn40h65Glb, baseScale: 0.001 },
+  dn32h50: { path: dn32h50Glb, baseScale: 0.001 },
 }
 
 // Preload all GLB models

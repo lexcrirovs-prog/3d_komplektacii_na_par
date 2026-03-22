@@ -82,15 +82,16 @@ function SceneContent() {
 
       {/* Configuration parts */}
       {configParts.map((part) => (
-        <AttachablePart key={`${activeConfig}-${part.id}`} part={part} />
+        <Suspense key={`${activeConfig}-${part.id}`} fallback={null}>
+          <AttachablePart part={part} />
+        </Suspense>
       ))}
 
       {/* Addon parts */}
       {addonParts.map((part) => (
-        <AttachablePart
-          key={`addon-${part.id}-${Array.from(activeAddons).join(',')}`}
-          part={part}
-        />
+        <Suspense key={`addon-${part.id}-${Array.from(activeAddons).join(',')}`} fallback={null}>
+          <AttachablePart part={part} />
+        </Suspense>
       ))}
 
       <hemisphereLight args={['#ddeeff', '#667788', mobile ? 0.6 : 0.8]} />

@@ -18,11 +18,6 @@ function SceneContent() {
   const configParts = getActiveParts()
   const addonParts = getAddonParts()
 
-  // Debug: log parts with their models
-  if (typeof console !== 'undefined' && configParts.length > 0) {
-    console.log('[Scene] configParts:', configParts.map(p => `${p.id} (model=${p.model}, pos=${JSON.stringify(p.worldPosition)})`))
-  }
-
   const mobile = useMemo(() => isMobile(), [])
 
   const handleMiss = () => {

@@ -394,8 +394,11 @@ export const modelRegistry: Record<
   feed_pump: FeedPumpModel,
   economizer: EconomizerModel,
   burner: BurnerModel,
-  // GLB-based models (loaded from public/models/)
-  ...Object.fromEntries(
-    Object.keys(glbModels).map((key) => [key, makeGlbComponent(key)])
-  ),
+  // GLB-based models
+  deaerator: makeGlbComponent('deaerator'),
+  elbow_pc_f20: makeGlbComponent('elbow_pc_f20'),
+  bcv_7250: makeGlbComponent('bcv_7250'),
+  bcv_925: makeGlbComponent('bcv_925'),
+  cp_930: makeGlbComponent('cp_930'),
+  dn32h50: makeGlbComponent('dn32h50'),
 }

@@ -553,3 +553,417 @@
     transform: translateX(0);
   }
 }
+
+/* ============================================================
+   Воронка: интро, сравнение, подсказки, столпы ценности, доверие
+   ============================================================ */
+
+/* --- Экран входа (IntroOverlay) --- */
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+  pointer-events: none;
+}
+
+.intro-card {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 520px;
+  background: var(--panel-bg);
+  border-radius: 18px;
+  box-shadow: var(--panel-shadow);
+  padding: 28px 26px;
+  text-align: center;
+  animation: intro-rise 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes intro-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.intro-title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.intro-subtitle {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.intro-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.intro-pillar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.intro-pillar-icon { font-size: 20px; line-height: 1; }
+.intro-pillar-label { font-size: 13px; font-weight: 600; color: var(--text); }
+
+.intro-cta {
+  width: 100%;
+  padding: 15px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.intro-cta:hover { background: var(--accent-hover); }
+.intro-cta:active { transform: scale(0.98); }
+
+.intro-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* --- Подсказки «?» (HintTip) --- */
+.hint-tip {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.hint-tip-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s, color 0.15s;
+}
+.hint-tip-btn:hover { background: var(--accent); color: #fff; }
+
+.hint-tip-popover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 230px;
+  max-width: 70vw;
+  background: #0f172a;
+  color: #f1f5f9;
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  white-space: pre-line;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  z-index: 200;
+}
+.hint-tip-popover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #0f172a;
+}
+
+/* --- Кнопка «Сравнить комплектации» --- */
+.compare-link-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.compare-link-btn:hover { background: #eff6ff; }
+
+/* --- Сводка выбранной комплектации + столпы ценности --- */
+.config-summary-tagline {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.config-summary-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.config-pillars {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.config-pillar {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.config-pillar-icon { font-size: 16px; line-height: 1.3; flex-shrink: 0; }
+.config-pillar-body { display: flex; flex-direction: column; }
+.config-pillar-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+.config-pillar-value {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+/* --- Подсказка «что добавилось» при смене комплектации --- */
+.added-notice {
+  position: relative;
+  margin: 0 0 4px;
+  padding: 12px 14px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  animation: intro-rise 0.35s ease;
+}
+.added-notice-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #047857;
+  margin-bottom: 6px;
+  padding-right: 18px;
+}
+.added-notice ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.added-notice li {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #065f46;
+}
+.added-notice-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  color: #047857;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* --- Дополнения: строка label + «?» --- */
+.addon-text { flex: 1; min-width: 0; }
+.addon-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- Триггеры доверия --- */
+.trust-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.trust-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--text);
+}
+.trust-check {
+  color: #16a34a;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* --- InfoPanel: простой язык / выгода / тех. детали --- */
+.info-simple {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.info-benefit {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  background: #ecfdf5;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #065f46;
+  margin-bottom: 12px;
+}
+.info-benefit-icon { color: #16a34a; font-weight: 700; flex-shrink: 0; }
+.info-tech summary {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+.info-tech summary::-webkit-details-marker { display: none; }
+.info-tech summary::before { content: '▸ '; }
+.info-tech[open] summary::before { content: '▾ '; }
+.info-tech p {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* --- Панель сравнения (ComparePanel) --- */
+.compare-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 720px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  user-select: text;
+  -webkit-user-select: text;
+  max-height: 88vh;
+  overflow-y: auto;
+}
+.compare-modal h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+  padding-right: 30px;
+}
+.compare-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+.compare-scroll { overflow-x: auto; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+.compare-table th,
+.compare-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.compare-col-head {
+  text-align: center;
+  vertical-align: bottom;
+}
+.compare-col-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+}
+.compare-col-tagline { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.compare-col-price { font-size: 11px; color: #16a34a; font-weight: 700; margin-top: 2px; }
+.compare-col-head.active .compare-col-title { color: var(--accent); }
+.compare-axis {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  text-align: left;
+}
+.compare-axis span { margin-right: 4px; }
+.compare-table td {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  text-align: center;
+}
+.compare-table td.active {
+  background: #eff6ff;
+  color: var(--text);
+  font-weight: 600;
+}
+.compare-axis-head { background: transparent !important; border-bottom: none !important; }
+.compare-choose-btn {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--accent);
+  background: #fff;
+  color: var(--accent);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.compare-choose-btn:hover { background: #eff6ff; }
+.compare-choose-btn.is-active {
+  background: var(--accent);
+  color: #fff;
+  cursor: default;
+}
+
+/* --- Мобильная адаптация воронки --- */
+@media (max-width: 768px) {
+  .config-panel { max-height: 62dvh; }
+  .intro-overlay { align-items: flex-end; padding: 12px; }
+  .intro-card { padding: 20px 18px; border-radius: 16px 16px 0 0; }
+  .intro-title { font-size: 20px; }
+  .intro-subtitle { font-size: 14px; }
+  .intro-pillars { grid-template-columns: 1fr; gap: 8px; }
+  .compare-modal { padding: 22px 16px; max-height: 90vh; }
+}

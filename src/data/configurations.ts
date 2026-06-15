@@ -13,24 +13,125 @@ export interface PartDef {
   id: string
   label: string
   model: string
+  /** Технические детали (показываются в свёрнутом блоке) */
   description: string
+  /** Что это простыми словами */
+  simple?: string
+  /** Зачем нужно / что это даёт владельцу */
+  benefit?: string
   color: string
   attachTo?: string
   position?: Vec3
   scale?: number
 }
 
+export type PillarKey = 'readiness' | 'safety' | 'automation' | 'feedback'
+
 export interface ConfigurationDef {
   label: string
   extends?: string
+  /** Короткий слоган комплектации */
+  tagline?: string
+  /** Описание простым языком — кому и зачем */
+  summary?: string
+  /** Заметка о цене относительно базовой комплектации */
+  priceNote?: string
+  /** Значение по каждому из 4 столпов ценности (простым языком) */
+  pillars?: Record<PillarKey, string>
+  /** Значения по осям таблицы сравнения (ключ = CompareDimension.key) */
+  compare?: Record<string, string>
   parts: PartDef[]
 }
 
 export interface AddonDef {
   label: string
   description: string
+  simple?: string
+  benefit?: string
   parts: PartDef[]
 }
+
+/** 4 столпа ценности, вокруг которых строится воронка */
+export interface Pillar {
+  key: PillarKey
+  label: string
+  icon: string
+  description: string
+}
+
+export const pillars: Pillar[] = [
+  {
+    key: 'readiness',
+    label: 'Повышенная готовность',
+    icon: '📦',
+    description:
+      'Собрано и испытано на заводе как единое изделие. На объекте — только подключение по фланцам, без сборки «с нуля».',
+  },
+  {
+    key: 'safety',
+    label: 'Полная безопасность',
+    icon: '🛡️',
+    description:
+      'Предохранительный клапан, контроль уровня и давления, резервный насос, охлаждение стоков — всё по требованиям Ростехнадзора, ФНП и СНиП.',
+  },
+  {
+    key: 'automation',
+    label: 'Заводская автоматизация',
+    icon: '⚙️',
+    description:
+      'Чем выше комплектация, тем больше котёл делает сам: от простых реле до промышленного ПЛК с модуляцией и автопродувкой.',
+  },
+  {
+    key: 'feedback',
+    label: 'Обратная связь',
+    icon: '📡',
+    description:
+      'Котёл сообщает о своём состоянии: передаёт данные в диспетчеризацию и сам каждый день проверяет аварийные датчики.',
+  },
+]
+
+/** Оси таблицы сравнения комплектаций */
+export interface CompareDimension {
+  key: string
+  label: string
+  hint: string
+}
+
+export const compareDimensions: CompareDimension[] = [
+  {
+    key: 'automation',
+    label: 'Автоматика',
+    hint: '«Мозг» котла. Чем он умнее, тем меньше ручной работы у оператора и тем стабильнее работает котёл.',
+  },
+  {
+    key: 'pressure',
+    label: 'Стабильность давления',
+    hint: 'Насколько ровно держится давление пара. Ровное давление = стабильное качество продукта на вашем производстве.',
+  },
+  {
+    key: 'water',
+    label: 'Контроль воды',
+    hint: 'Кто следит за качеством воды и сливает лишнюю соль — оператор вручную или автоматика.',
+  },
+  {
+    key: 'feedback',
+    label: 'Обратная связь',
+    hint: 'Сообщает ли котёл о своём состоянии в общую систему и проверяет ли сам свои датчики.',
+  },
+  {
+    key: 'steam',
+    label: 'Управление паром',
+    hint: 'Как открывается главная паровая задвижка — вручную маховиком или мотором (можно автоматизировать пуск).',
+  },
+]
+
+/** Триггеры доверия (источник: kotelgavno.ru/komplcldcld2) */
+export const trustSignals: string[] = [
+  'Собрано и протестировано на заводе',
+  '3 года гарантии',
+  '60 дней до запуска',
+  'Монтаж на месте — только по фланцам',
+]
 
 export const attachPoints: Record<string, AttachPoint> = {
   steam_outlet: {
@@ -114,6 +215,22 @@ export const attachPoints: Record<string, AttachPoint> = {
 export const configurations: Record<string, ConfigurationDef> = {
   standard: {
     label: 'Стандарт',
+    tagline: 'Надёжная база',
+    summary:
+      'Проверенная релейная автоматика для типовых задач, где небольшие колебания давления некритичны.',
+    pillars: {
+      readiness: 'Собран и испытан на заводе, готов к подключению по фланцам',
+      safety: 'Предохранительный клапан, контроль уровня и давления',
+      automation: 'Релейная — простые реле, базовый набор',
+      feedback: 'Нет диспетчеризации — показания снимает оператор вручную',
+    },
+    compare: {
+      automation: 'Релейная (простые реле)',
+      pressure: '±0.5 кг/см² (заметные колебания)',
+      water: 'Продувка и контроль вручную',
+      feedback: 'Нет',
+      steam: 'Ручная задвижка',
+    },
     parts: [
       {
         id: 'gate_valve_manual_1',
@@ -121,6 +238,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'gate_valve',
         attachTo: 'steam_outlet',
         color: '#4a90d9',
+        simple: 'Кран на главной паровой трубе — открывают и закрывают вручную маховиком.',
+        benefit: 'Позволяет перекрыть пар для обслуживания и в аварийной ситуации.',
         description:
           'Задвижка запорная ручная на главном паропроводе. Обеспечивает перекрытие подачи пара для обслуживания и аварийных ситуаций.',
       },
@@ -130,6 +249,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'blowdown_valve',
         attachTo: 'blowdown_surface',
         color: '#e8963a',
+        simple: 'Клапан, через который сливают часть воды с накопившейся солью.',
+        benefit: 'Без него на стенках растёт накипь — а это перерасход топлива и риск перегрева котла.',
         description:
           'Продувка по солесодержанию — удаление растворённых солей из котловой воды. Предотвращает накипеобразование на теплообменных поверхностях.',
       },
@@ -139,6 +260,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'elbow_pc_f20',
         attachTo: 'tds_elbow_point',
         color: '#a8b0b8',
+        simple: 'Фитинг-уголок на линии слива солёной воды.',
+        benefit: 'Аккуратно разворачивает трубу продувки от котла к клапану.',
         description:
           'Колено PC F20x20-PN 25-DN 20xDN 20 — фитинг трубопровода продувки по солесодержанию. Обеспечивает поворот линии продувки от патрубка котла к продувочному клапану.',
       },
@@ -148,6 +271,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'bcv_925',
         attachTo: 'bcv_925_point',
         color: '#b0b8c0',
+        simple: 'Регулирующий клапан на линии продувки.',
+        benefit: 'Точно дозирует, сколько солёной воды слить.',
         description:
           'BCV 925-20-PN 25-DN 20 — запорно-регулирующий клапан линии продувки по солесодержанию. Обеспечивает управление потоком продувочной воды.',
       },
@@ -157,6 +282,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'cp_930',
         attachTo: 'cp_930_point',
         color: '#c0c8d0',
+        simple: 'Охлаждает пробу котловой воды перед замером.',
+        benefit: 'Чтобы можно было безопасно взять воду и проверить её на солёность.',
         description:
           'CP 930-500 мм — охладитель проб котловой воды. Обеспечивает охлаждение пробы до безопасной температуры для анализа солесодержания.',
       },
@@ -166,6 +293,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'dn32h50',
         attachTo: 'dn32h50_1_point',
         color: '#a8b0b8',
+        simple: 'Переходник между трубами разного диаметра.',
+        benefit: 'Соединяет участки трубопровода продувки.',
         description:
           'DN32h50 — переходник трубопровода продувки по солесодержанию. Обеспечивает переход между различными диаметрами трубопровода.',
       },
@@ -175,6 +304,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'dn32h50',
         attachTo: 'dn32h50_2_point',
         color: '#a8b0b8',
+        simple: 'Переходник между трубами разного диаметра.',
+        benefit: 'Соединяет участки трубопровода продувки.',
         description:
           'DN32h50 — переходник трубопровода продувки по солесодержанию. Обеспечивает переход между различными диаметрами трубопровода.',
       },
@@ -184,6 +315,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'blowdown_valve',
         attachTo: 'blowdown_bottom',
         color: '#d4762c',
+        simple: 'Клапан, который сливает грязь и осадок со дна котла.',
+        benefit: 'Держит воду чистой и защищает котёл от загрязнений.',
         description:
           'Продувка по шламу — удаление механических примесей со дна барабана. Выполняется периодически для поддержания качества котловой воды.',
       },
@@ -193,6 +326,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'pressure_sensor',
         attachTo: 'pressure_point',
         color: '#4caf50',
+        simple: 'Постоянно измеряет давление пара в котле.',
+        benefit: 'Основа безопасности — котёл «знает» своё давление в любой момент.',
         description:
           'Датчик давления пара. Обеспечивает непрерывный мониторинг давления в барабане котла для безопасной эксплуатации.',
       },
@@ -202,6 +337,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'level_sensor',
         attachTo: 'level_point',
         color: '#fdd835',
+        simple: 'Следит, сколько воды в котле.',
+        benefit: 'Не даёт котлу перегреться из-за нехватки воды.',
         description:
           'Датчик уровня воды в барабане. Критически важен для предотвращения перегрева при низком уровне воды.',
       },
@@ -211,6 +348,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'safety_valve',
         attachTo: 'safety_point',
         color: '#e53935',
+        simple: 'Аварийный клапан, который сам сбрасывает лишнее давление.',
+        benefit: 'Если давление поднялось выше нормы — стравит его. Без него эксплуатация запрещена.',
         description:
           'Предохранительный клапан. Автоматически сбрасывает избыточное давление пара при превышении допустимого значения.',
       },
@@ -219,6 +358,23 @@ export const configurations: Record<string, ConfigurationDef> = {
   comfort: {
     label: 'Комфорт',
     extends: 'standard',
+    tagline: 'Золотая середина',
+    summary:
+      'Дороже Стандарта всего на 2–3%, но вода и продувка уже на автомате, а котёл «на связи» с диспетчеризацией.',
+    priceNote: '+2–3% к Стандарту',
+    pillars: {
+      readiness: 'Заводская сборка + готовность к каскаду до 6 котлов',
+      safety: 'Всё из Стандарта + автоматический контроль качества воды',
+      automation: 'Программируемое реле ПР200, автопродувка по соли',
+      feedback: 'Передаёт данные в диспетчеризацию по Modbus',
+    },
+    compare: {
+      automation: 'Программируемая (ПР200)',
+      pressure: 'Стабильнее Стандарта',
+      water: 'Автопродувка по солесодержанию',
+      feedback: 'Данные в диспетчеризацию (Modbus)',
+      steam: 'Ручная задвижка',
+    },
     parts: [
       {
         id: 'gate_valve_electric_blowdown',
@@ -226,6 +382,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'electric_valve',
         attachTo: 'auto_blowdown_point',
         color: '#7b1fa2',
+        simple: 'Кран продувки, который открывается мотором, а не вручную.',
+        benefit: 'Котёл продувает воду сам по команде автоматики — без участия оператора.',
         description:
           'Задвижка с электроприводом для автоматической продувки. Управляется контроллером по сигналу датчика солесодержания.',
       },
@@ -235,6 +393,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'pressure_sensor',
         attachTo: 'conductivity_point',
         color: '#00acc1',
+        simple: 'Измеряет, насколько солёная вода в котле.',
+        benefit: 'Котёл продувает воду только когда реально нужно — экономит воду и тепло.',
         description:
           'Датчик солесодержания — автоматический контроль качества котловой воды. Измеряет электропроводность для определения концентрации солей.',
       },
@@ -244,6 +404,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'controller',
         attachTo: 'controller_point',
         color: '#546e7a',
+        simple: 'Небольшой «мозг», который управляет автопродувкой.',
+        benefit: 'Сам решает, когда слить солёную воду, по данным датчика.',
         description:
           'Контроллер автоматической продувки. Анализирует показания датчика солесодержания и управляет клапаном продувки.',
       },
@@ -254,6 +416,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         attachTo: 'plc_point',
         color: '#455a64',
         scale: 0.7,
+        simple: 'Передаёт показания котла в общую систему предприятия.',
+        benefit: 'Состояние котла видно на одном экране с другим оборудованием — это и есть обратная связь.',
         description:
           'Модуль Modbus для интеграции с АСУ ТП верхнего уровня. Обеспечивает передачу данных о состоянии котла в систему диспетчеризации.',
       },
@@ -262,6 +426,22 @@ export const configurations: Record<string, ConfigurationDef> = {
   comfort_plus: {
     label: 'Комфорт+',
     extends: 'comfort',
+    tagline: 'Максимум готовности',
+    summary:
+      'Котёл сам себя проверяет и держит давление ровно (±0.2 кг/см²). Максимум безопасности, автоматики и обратной связи.',
+    pillars: {
+      readiness: 'Полностью автоматизированное заводское изделие',
+      safety: 'Аналоговые датчики уровня с ежедневной самодиагностикой',
+      automation: 'ПЛК с дисплеем, модуляция, ГПЗ с электроприводом',
+      feedback: 'Ежедневная самодиагностика + полная диспетчеризация',
+    },
+    compare: {
+      automation: 'ПЛК с дисплеем',
+      pressure: '±0.2 кг/см² (держит ровно)',
+      water: '+ аналоговые датчики с самодиагностикой',
+      feedback: 'Самодиагностика каждый день + диспетчеризация',
+      steam: 'ГПЗ с электроприводом',
+    },
     parts: [
       {
         id: 'feed_water_modulation',
@@ -269,6 +449,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'electric_valve',
         attachTo: 'feed_water_inlet',
         color: '#1565c0',
+        simple: 'Плавно подаёт воду в котёл вместо режима «включил-выключил».',
+        benefit: 'Уровень держится точно (±20 мм), давление ровнее, насосы меньше изнашиваются.',
         description:
           'Модуляция питательной воды — плавное регулирование подачи воды в котёл, стабилизация уровня с точностью ±20мм. Снижает нагрузку на насосы.',
       },
@@ -278,6 +460,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'electric_valve',
         attachTo: 'steam_outlet',
         color: '#0d47a1',
+        simple: 'Главная паровая задвижка с мотором — открывается кнопкой или автоматически.',
+        benefit: 'Удобно и безопасно, можно автоматизировать пуск котла. Заменяет ручную задвижку.',
         description:
           'Главная паровая задвижка (ГПЗ) с электроприводом — моторизованное открытие/закрытие паропровода. Заменяет ручную задвижку из комплектации "Стандарт".',
       },
@@ -287,6 +471,8 @@ export const configurations: Record<string, ConfigurationDef> = {
         model: 'plc',
         attachTo: 'plc_mount',
         color: '#37474f',
+        simple: 'Промышленный «мозг» котла с экраном.',
+        benefit: 'Держит давление ±0.2 кг/см² и каждый день сам проверяет аварийные датчики — максимум автоматики и обратной связи.',
         description:
           'ПЛК с модуляцией питательной воды — давление пара ±0.2 кг/см², ежедневная самодиагностика аварийных датчиков уровня. Полная автоматизация работы котла.',
       },
@@ -299,6 +485,8 @@ export const addons: Record<string, AddonDef> = {
     label: 'Деаэратор',
     description:
       'Атмосферный деаэратор с питательными насосами. Удаляет растворённый кислород и CO₂ из питательной воды.',
+    simple: 'Выгоняет из воды кислород и углекислый газ.',
+    benefit: 'Без него вода ржавит трубы котла изнутри. Продлевает срок службы, обязателен для пищевых производств.',
     parts: [
       {
         id: 'deaerator_unit',
@@ -306,6 +494,8 @@ export const addons: Record<string, AddonDef> = {
         model: 'deaerator',
         color: '#00897b',
         position: { x: -4, y: 0.5, z: 0 },
+        simple: 'Бак, где вода нагревается и отдаёт растворённые газы.',
+        benefit: 'Защищает котёл от кислородной коррозии — особенно важно для пищевых и грибных производств.',
         description:
           'Атмосферный деаэратор — удаление растворённого кислорода и CO₂ из питательной воды. Критически важен для пищевых и грибных производств. Предотвращает кислородную коррозию труб.',
       },
@@ -315,6 +505,8 @@ export const addons: Record<string, AddonDef> = {
         model: 'feed_pump',
         color: '#1565c0',
         position: { x: -3, y: -0.5, z: -1 },
+        simple: 'Насос, который качает подготовленную воду в котёл.',
+        benefit: 'Подаёт воду под нужным давлением. Производительность подбирается под ваш котёл.',
         description:
           'Питательный насос №1 (рабочий). Подаёт деаэрированную воду в котёл под давлением. Производительность подбирается по паропроизводительности котла.',
       },
@@ -324,6 +516,8 @@ export const addons: Record<string, AddonDef> = {
         model: 'feed_pump',
         color: '#1976d2',
         position: { x: -3, y: -0.5, z: 1 },
+        simple: 'Второй, резервный насос.',
+        benefit: 'Страховка: если первый насос сломается — котёл не встанет. Резерв требует Ростехнадзор.',
         description:
           'Питательный насос №2 (резервный). Автоматически включается при отказе основного насоса. Требование Ростехнадзора для котлов свыше 0.7 МПа.',
       },
@@ -333,6 +527,8 @@ export const addons: Record<string, AddonDef> = {
     label: 'Экономайзер',
     description:
       'Утилизация тепла уходящих газов для подогрева питательной воды. Повышает КПД котла на 5-7%.',
+    simple: 'Догревает воду теплом, которое иначе улетело бы в дымоход.',
+    benefit: 'Экономит 5–7% топлива — окупается за один сезон.',
     parts: [
       {
         id: 'economizer_unit',
@@ -340,6 +536,8 @@ export const addons: Record<string, AddonDef> = {
         model: 'economizer',
         attachTo: 'economizer_rear',
         color: '#795548',
+        simple: 'Догревает воду теплом уходящих газов.',
+        benefit: 'Экономит 5–7% топлива и снижает температуру газов в трубе до 130–150 °C.',
         description:
           'Экономайзер — утилизация тепла уходящих газов для подогрева питательной воды. Повышает КПД котла на 5-7%. Снижает температуру уходящих газов до 130-150°C.',
       },
@@ -349,6 +547,8 @@ export const addons: Record<string, AddonDef> = {
     label: 'Горелка',
     description:
       'Газовая/дизельная горелка. Устанавливается в переднюю дверцу котла.',
+    simple: 'Сжигает газ или дизель — это «печка» котла.',
+    benefit: 'Модуляция мощности 30–100% экономит топливо на малых нагрузках.',
     parts: [
       {
         id: 'burner_unit',
@@ -356,6 +556,8 @@ export const addons: Record<string, AddonDef> = {
         model: 'burner',
         attachTo: 'burner_front',
         color: '#e65100',
+        simple: 'Сжигает газ или дизель — это «печка» котла.',
+        benefit: 'Модуляция мощности 30–100% обеспечивает экономичный режим работы.',
         description:
           'Горелка газовая/дизельная — устанавливается в переднюю дверцу котла. Модуляция мощности от 30% до 100% обеспечивает экономичный режим работы.',
       },

@@ -20,12 +20,29 @@ interface AttachablePartProps {
   part: ResolvedPart
 }
 
+/** Пульсирующее кольцо — подсветка деталей, добавленных при смене комплектации */
+function PulseRing() {
+  const { ringScale, ringOpacity } = useSpring({
+    from: { ringScale: 0.8, ringOpacity: 0.9 },
+    to: { ringScale: 2, ringOpacity: 0 },
+    loop: true,
+    config: { duration: 1200 },
+  })
+  return (
+    <animated.mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} scale={ringScale}>
+      <ringGeometry args={[0.16, 0.22, 32]} />
+      <animated.meshBasicMaterial color="#22c55e" transparent opacity={ringOpacity} />
+    </animated.mesh>
+  )
+}
+
 export function AttachablePart({ part }: AttachablePartProps) {
   const groupRef = useRef<Group>(null)
   const [mounted, setMounted] = useState(false)
   const [hovered, setHovered] = useState(false)
   const selectPart = useConfigurator((s) => s.selectPart)
   const selectedPart = useConfigurator((s) => s.selectedPart)
+  const isHighlighted = useConfigurator((s) => s.highlightedParts.has(part.id))
 
   const isSelected = selectedPart === part.id
 
@@ -74,6 +91,10 @@ export function AttachablePart({ part }: AttachablePartProps) {
           />
         </mesh>
       )}
+
+      {/* Подсветка добавленных деталей */}
+      {isHighlighted && !isSelected && <PulseRing />}
+
       <ModelComponent
         color={hovered ? '#60a5fa' : part.color}
         opacity={1}

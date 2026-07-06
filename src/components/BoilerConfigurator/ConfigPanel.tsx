@@ -11,6 +11,19 @@ const addonKeys: AddonKey[] = ['deaerator', 'economizer', 'burner']
 // Пока не задан — заявка уходит только в родительское окно через postMessage.
 const LEAD_ENDPOINT = (import.meta.env.VITE_LEAD_ENDPOINT as string | undefined) || ''
 
+// Лендинг с формой КП. Домен временный (переедет на kotelpremium.ru),
+// поэтому URL задаётся через VITE_LANDING_URL при сборке.
+const LANDING_URL =
+  (import.meta.env.VITE_LANDING_URL as string | undefined) ||
+  'https://kotelgavno.ru/komplcldcld2/'
+
+/** Ссылка на лендинг с выбранной сборкой: ?config=comfort_plus&addons=deaerator#contact */
+function buildLandingOfferUrl(config: ConfigKey, addonSet: Set<AddonKey>): string {
+  const params = new URLSearchParams({ config })
+  if (addonSet.size > 0) params.set('addons', Array.from(addonSet).join(','))
+  return `${LANDING_URL}?${params.toString()}#contact`
+}
+
 function addonHint(key: AddonKey): string {
   const a = addons[key]
   return [a.simple, a.benefit ? `Зачем: ${a.benefit}` : '']
@@ -227,6 +240,16 @@ export function ConfigPanel() {
           <button className="request-offer-btn" onClick={handleRequestOffer}>
             Заказать КП
           </button>
+          {/* Переход на лендинг с параметрами сборки; target=_top выводит из iframe */}
+          <a
+            className="landing-offer-link"
+            href={buildLandingOfferUrl(activeConfig, activeAddons)}
+            target="_top"
+            rel="noopener"
+            title="Откроется страница комплектаций с формой КП — выбранная сборка подставится автоматически"
+          >
+            Получить КП по этой сборке →
+          </a>
         </div>
       </div>
 

@@ -55,10 +55,13 @@ interface ConfiguratorState {
   boilerReady: boolean
   /** Пользователь вручную крутил/двигал камеру (для кнопки «К общей схеме») */
   cameraMoved: boolean
+  /** Маркеры-хотспоты на кликабельных деталях (гаснут после первого клика, тумблер «Метки») */
+  showHotspots: boolean
 
   start: () => void
   setBoilerReady: () => void
   setCameraMoved: (moved: boolean) => void
+  setShowHotspots: (show: boolean) => void
   setCompareOpen: (open: boolean) => void
   clearAddedNotice: () => void
   setConfig: (config: ConfigKey) => void
@@ -190,6 +193,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   cameraResetFlag: 0,
   boilerReady: false,
   cameraMoved: false,
+  showHotspots: true,
   adminOverrides: (() => {
     try {
       const saved = localStorage.getItem('adminOverrides')
@@ -200,6 +204,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   start: () => set({ started: true }),
   setBoilerReady: () => set({ boilerReady: true }),
   setCameraMoved: (moved) => set({ cameraMoved: moved }),
+  setShowHotspots: (show) => set({ showHotspots: show }),
   setCompareOpen: (open) => set({ compareOpen: open }),
   clearAddedNotice: () => set({ addedNotice: null }),
 
@@ -244,7 +249,13 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
       return { activeAddons: next, selectedPart: null }
     }),
 
-  selectPart: (id) => set({ selectedPart: id, highlightedParts: new Set<string>() }),
+  selectPart: (id) =>
+    set((s) => ({
+      selectedPart: id,
+      highlightedParts: new Set<string>(),
+      // после первого осознанного клика по детали метки больше не нужны
+      showHotspots: id ? false : s.showHotspots,
+    })),
   setHoveredPart: (id) => set({ hoveredPart: id }),
   setOrbitTarget: (target) => set({ orbitTarget: target }),
   resetCamera: () => set((s) => ({

@@ -2,10 +2,11 @@ import { useEffect, useRef, useCallback } from 'react'
 import { useThree, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useConfigurator } from '../../hooks/useConfigurator'
-import { isMobile } from '../../utils/device'
+import { isMobile, prefersReducedMotion } from '../../utils/device'
 
 const BOILER_CENTER = new THREE.Vector3(0, 0.5, 0)
-const LERP_SPEED = 0.04
+// prefers-reduced-motion: камера переходит мгновенно, без плавного облёта
+const LERP_SPEED = prefersReducedMotion() ? 1 : 0.04
 
 function getOrbitParams(part: { id: string; model: string; worldPosition: { x: number; y: number; z: number } }) {
   const pos = new THREE.Vector3(part.worldPosition.x, part.worldPosition.y, part.worldPosition.z)

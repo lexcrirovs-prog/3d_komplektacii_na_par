@@ -1,5 +1,6 @@
 import { useConfigurator } from '../../hooks/useConfigurator'
 import { pillars } from '../../data/configurations'
+import { PillarIcon } from './PillarIcon'
 
 /**
  * Шаг 1–2 воронки: пользователь видит котёл, затем — зачем нужна повышенная
@@ -24,7 +25,9 @@ export function IntroOverlay() {
         <div className="intro-pillars">
           {pillars.map((p) => (
             <div className="intro-pillar" key={p.key}>
-              <span className="intro-pillar-icon" aria-hidden="true">{p.icon}</span>
+              <span className="intro-pillar-icon" aria-hidden="true">
+                <PillarIcon name={p.key} size={22} />
+              </span>
               <span className="intro-pillar-label">{p.label}</span>
             </div>
           ))}

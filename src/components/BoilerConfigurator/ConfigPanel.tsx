@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useConfigurator, type ConfigKey, type AddonKey } from '../../hooks/useConfigurator'
 import { configurations, addons, pillars, trustSignals } from '../../data/configurations'
 import { HintTip } from './HintTip'
+import { PillarIcon } from './PillarIcon'
 
 const configKeys: ConfigKey[] = ['standard', 'comfort', 'comfort_plus']
 const addonKeys: AddonKey[] = ['deaerator', 'economizer', 'burner']
@@ -26,6 +27,8 @@ export function ConfigPanel() {
   const setCompareOpen = useConfigurator((s) => s.setCompareOpen)
   const addedNotice = useConfigurator((s) => s.addedNotice)
   const clearAddedNotice = useConfigurator((s) => s.clearAddedNotice)
+  const showHotspots = useConfigurator((s) => s.showHotspots)
+  const setShowHotspots = useConfigurator((s) => s.setShowHotspots)
   const [showForm, setShowForm] = useState(false)
   const [formSent, setFormSent] = useState(false)
 
@@ -100,6 +103,14 @@ export function ConfigPanel() {
           <button className="compare-link-btn" onClick={() => setCompareOpen(true)}>
             Сравнить комплектации
           </button>
+          <label className="hotspots-toggle" title="Показывать точки на кликабельных элементах">
+            <input
+              type="checkbox"
+              checked={showHotspots}
+              onChange={(e) => setShowHotspots(e.target.checked)}
+            />
+            Метки на деталях
+          </label>
         </div>
 
         {/* Краткое описание выбранной комплектации + 4 столпа ценности */}
@@ -110,7 +121,9 @@ export function ConfigPanel() {
             <ul className="config-pillars">
               {pillars.map((p) => (
                 <li className="config-pillar" key={p.key}>
-                  <span className="config-pillar-icon" aria-hidden="true">{p.icon}</span>
+                  <span className="config-pillar-icon" aria-hidden="true">
+                    <PillarIcon name={p.key} size={18} />
+                  </span>
                   <span className="config-pillar-body">
                     <span className="config-pillar-label">{p.label}</span>
                     <span className="config-pillar-value">{cfg.pillars![p.key]}</span>

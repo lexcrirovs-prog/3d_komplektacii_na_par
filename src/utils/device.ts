@@ -9,3 +9,12 @@ export function isMobile(): boolean {
     ('ontouchstart' in window && window.innerWidth < 1024)
   return _isMobile
 }
+
+/** Пользователь просит меньше анимаций (ОС/браузер) — камера и эффекты без облётов */
+export function prefersReducedMotion(): boolean {
+  try {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  } catch {
+    return false
+  }
+}

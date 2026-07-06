@@ -3,12 +3,7 @@ import { useGLTF, Edges } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Mesh, BufferGeometry } from 'three'
 import { isMobile } from '../../utils/device'
-import deaeratorGlb from '../../assets/deaerator.glb?url'
-import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url'
-import bcv7250Glb from '../../assets/bcv_7250.glb?url'
-import bcv925Glb from '../../assets/bcv_925.glb?url'
-import cp930Glb from '../../assets/cp_930.glb?url'
-import dn32h50Glb from '../../assets/dn32h50.glb?url'
+import { MODEL_URLS } from './modelAssets'
 
 interface PlaceholderProps {
   color: string
@@ -31,16 +26,14 @@ function Mat({ color, opacity = 1 }: { color: string; opacity?: number }) {
 // --- Universal GLB model component ---
 
 const glbModels: Record<string, { path: string; baseScale: number }> = {
-  deaerator: { path: deaeratorGlb, baseScale: 0.0005 },
-  elbow_pc_f20: { path: elbowPcF20Glb, baseScale: 0.001 },
-  bcv_7250: { path: bcv7250Glb, baseScale: 0.001 },
-  bcv_925: { path: bcv925Glb, baseScale: 0.001 },
-  cp_930: { path: cp930Glb, baseScale: 0.001 },
-  dn32h50: { path: dn32h50Glb, baseScale: 0.001 },
+  deaerator: { path: MODEL_URLS.deaerator, baseScale: 0.0005 },
+  elbow_pc_f20: { path: MODEL_URLS.elbow_pc_f20, baseScale: 0.001 },
+  bcv_7250: { path: MODEL_URLS.bcv_7250, baseScale: 0.001 },
+  bcv_925: { path: MODEL_URLS.bcv_925, baseScale: 0.001 },
+  cp_930: { path: MODEL_URLS.cp_930, baseScale: 0.001 },
+  dn32h50: { path: MODEL_URLS.dn32h50, baseScale: 0.001 },
 }
-
-// Preload all GLB models
-Object.values(glbModels).forEach((m) => useGLTF.preload(m.path))
+// Префетч всех моделей — фоном после загрузки корпуса, см. ModelPrefetcher в index.tsx
 
 function GlbModel({ glbPath, baseScale, color, opacity, scale = 1 }: PlaceholderProps & { glbPath: string; baseScale: number }) {
   const { scene } = useGLTF(glbPath)

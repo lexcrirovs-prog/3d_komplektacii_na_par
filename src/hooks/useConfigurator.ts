@@ -51,8 +51,11 @@ interface ConfiguratorState {
   orbitTarget: OrbitTarget
   cameraResetFlag: number
   adminOverrides: Record<string, AdminOverride>
+  /** Корпус котла загружен — можно подтягивать детали и префетчить остальное */
+  boilerReady: boolean
 
   start: () => void
+  setBoilerReady: () => void
   setCompareOpen: (open: boolean) => void
   clearAddedNotice: () => void
   setConfig: (config: ConfigKey) => void
@@ -182,6 +185,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   addedNotice: null,
   orbitTarget: { x: 0, y: 0.5, z: 0 },
   cameraResetFlag: 0,
+  boilerReady: false,
   adminOverrides: (() => {
     try {
       const saved = localStorage.getItem('adminOverrides')
@@ -190,6 +194,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   })(),
 
   start: () => set({ started: true }),
+  setBoilerReady: () => set({ boilerReady: true }),
   setCompareOpen: (open) => set({ compareOpen: open }),
   clearAddedNotice: () => set({ addedNotice: null }),
 

@@ -1,18 +1,24 @@
-import { useRef, useMemo, useState } from 'react'
+import { useRef, useMemo, useState, useEffect } from 'react'
 import { useGLTF, Center, Edges } from '@react-three/drei'
 import type { Group, Mesh, BufferGeometry } from 'three'
 import * as THREE from 'three'
-import boilerGlb from '../../assets/boiler.glb?url'
+import { BOILER_URL } from './modelAssets'
 import { useConfigurator } from '../../hooks/useConfigurator'
 import { isMobile } from '../../utils/device'
 
 export function BoilerModel() {
   const groupRef = useRef<Group>(null)
-  const { scene } = useGLTF(boilerGlb)
+  const { scene } = useGLTF(BOILER_URL)
   const selectPart = useConfigurator((s) => s.selectPart)
   const setOrbitTarget = useConfigurator((s) => s.setOrbitTarget)
+  const setBoilerReady = useConfigurator((s) => s.setBoilerReady)
   const [hovered, setHovered] = useState(false)
   const mobile = useMemo(() => isMobile(), [])
+
+  // Корпус загружен и декодирован — можно подтягивать детали комплектации
+  useEffect(() => {
+    setBoilerReady()
+  }, [setBoilerReady])
 
   const meshData = useMemo(() => {
     // Матрицы узлов обязательны: у meshopt-сжатых GLB на узле лежит
@@ -83,5 +89,3 @@ export function BoilerModel() {
     </group>
   )
 }
-
-useGLTF.preload(boilerGlb)

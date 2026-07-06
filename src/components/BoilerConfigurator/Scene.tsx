@@ -6,25 +6,38 @@ import { AttachablePart } from './AttachablePart'
 import { CameraController } from './CameraController'
 import { useConfigurator } from '../../hooks/useConfigurator'
 import { isMobile } from '../../utils/device'
+import type { Vec3 } from '../../data/configurations'
+
+interface PlaceholderPart {
+  id: string
+  worldPosition: Vec3
+}
+
+/**
+ * Лёгкий плейсхолдер на месте детали, пока её модель грузится
+ * (или не смогла загрузиться) — вместо «дыры» или красной сферы.
+ */
+function PartPlaceholder({ part }: { part: PlaceholderPart }) {
+  return (
+    <mesh position={[part.worldPosition.x, part.worldPosition.y, part.worldPosition.z]}>
+      <boxGeometry args={[0.15, 0.15, 0.15]} />
+      <meshStandardMaterial color="#94a3b8" transparent opacity={0.35} />
+    </mesh>
+  )
+}
 
 // Error boundary to catch GLB loading errors
-class PartErrorBoundary extends Component<{ partId: string; children: ReactNode }, { error: string | null }> {
+class PartErrorBoundary extends Component<{ part: PlaceholderPart; children: ReactNode }, { error: string | null }> {
   state = { error: null as string | null }
   static getDerivedStateFromError(error: Error) {
     return { error: error.message }
   }
   componentDidCatch(error: Error) {
-    console.error(`[PartErrorBoundary] Part "${this.props.partId}" failed:`, error.message)
+    console.error(`[PartErrorBoundary] Part "${this.props.part.id}" failed:`, error.message)
   }
   render() {
     if (this.state.error) {
-      // Show a red sphere where the part should be
-      return (
-        <mesh>
-          <sphereGeometry args={[0.1, 8, 8]} />
-          <meshBasicMaterial color="red" />
-        </mesh>
-      )
+      return <PartPlaceholder part={this.props.part} />
     }
     return this.props.children
   }
@@ -37,6 +50,8 @@ function SceneContent() {
   const activeConfig = useConfigurator((s) => s.activeConfig)
   const activeAddons = useConfigurator((s) => s.activeAddons)
   const adminOverrides = useConfigurator((s) => s.adminOverrides)
+  // Стадийная загрузка: сначала корпус, потом детали комплектации
+  const boilerReady = useConfigurator((s) => s.boilerReady)
 
   const configParts = getActiveParts()
   const addonParts = getAddonParts()
@@ -103,28 +118,28 @@ function SceneContent() {
       {/* Base boiler model */}
       <BoilerModel />
 
-      {/* Configuration parts */}
-      {configParts.map((part) => (
-        <Suspense key={`${activeConfig}-${part.id}`} fallback={null}>
-          <PartErrorBoundary partId={part.id}>
-            <AttachablePart part={part} />
-          </PartErrorBoundary>
-          {/* Debug: bright marker for dn32h50 parts */}
-          {part.id.startsWith('dn32h50') && (
-            <mesh position={[part.worldPosition.x, part.worldPosition.y, part.worldPosition.z]}>
-              <sphereGeometry args={[0.08, 16, 16]} />
-              <meshBasicMaterial color="#ff00ff" />
-            </mesh>
-          )}
-        </Suspense>
-      ))}
+      {/* Configuration parts (после загрузки корпуса; пока деталь грузится — плейсхолдер) */}
+      {boilerReady &&
+        configParts.map((part) => (
+          <Suspense key={`${activeConfig}-${part.id}`} fallback={<PartPlaceholder part={part} />}>
+            <PartErrorBoundary part={part}>
+              <AttachablePart part={part} />
+            </PartErrorBoundary>
+          </Suspense>
+        ))}
 
       {/* Addon parts */}
-      {addonParts.map((part) => (
-        <Suspense key={`addon-${part.id}-${Array.from(activeAddons).join(',')}`} fallback={null}>
-          <AttachablePart part={part} />
-        </Suspense>
-      ))}
+      {boilerReady &&
+        addonParts.map((part) => (
+          <Suspense
+            key={`addon-${part.id}-${Array.from(activeAddons).join(',')}`}
+            fallback={<PartPlaceholder part={part} />}
+          >
+            <PartErrorBoundary part={part}>
+              <AttachablePart part={part} />
+            </PartErrorBoundary>
+          </Suspense>
+        ))}
 
       <hemisphereLight args={['#ddeeff', '#667788', mobile ? 0.6 : 0.8]} />
     </>

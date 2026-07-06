@@ -29,6 +29,8 @@ export function ConfigPanel() {
   const clearAddedNotice = useConfigurator((s) => s.clearAddedNotice)
   const showHotspots = useConfigurator((s) => s.showHotspots)
   const setShowHotspots = useConfigurator((s) => s.setShowHotspots)
+  const safetyMode = useConfigurator((s) => s.safetyMode)
+  const setSafetyMode = useConfigurator((s) => s.setSafetyMode)
   const [showForm, setShowForm] = useState(false)
   const [formSent, setFormSent] = useState(false)
 
@@ -186,6 +188,26 @@ export function ConfigPanel() {
                 </label>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Режим «Безопасность» — подсветка элементов безопасности + УТП 2+2 */}
+        <div className="section">
+          <div className="addon-toggle safety-toggle" onClick={() => setSafetyMode(!safetyMode)}>
+            <div className="addon-text">
+              <div className="addon-label-row">
+                <span className="addon-label">Режим «Безопасность»</span>
+              </div>
+              <div className="addon-desc">Подсветить всё, что защищает котёл и людей</div>
+            </div>
+            <label className="toggle-switch" onClick={(e) => e.stopPropagation()}>
+              <input
+                type="checkbox"
+                checked={safetyMode}
+                onChange={(e) => setSafetyMode(e.target.checked)}
+              />
+              <span className="toggle-slider" />
+            </label>
           </div>
         </div>
 

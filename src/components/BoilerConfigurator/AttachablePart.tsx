@@ -13,6 +13,7 @@ interface ResolvedPart {
   description: string
   color: string
   scale?: number
+  safety?: boolean
   worldPosition: Vec3
   worldRotation: Vec3
 }
@@ -86,8 +87,10 @@ export function AttachablePart({ part }: AttachablePartProps) {
   const selectedPart = useConfigurator((s) => s.selectedPart)
   const isHighlighted = useConfigurator((s) => s.highlightedParts.has(part.id))
   const showHotspots = useConfigurator((s) => s.showHotspots)
+  const safetyMode = useConfigurator((s) => s.safetyMode)
 
   const isSelected = selectedPart === part.id
+  const safetyHighlighted = safetyMode && part.safety === true
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 50)
@@ -138,6 +141,14 @@ export function AttachablePart({ part }: AttachablePartProps) {
 
       {/* Подсветка добавленных деталей */}
       {isHighlighted && !isSelected && <PulseRing />}
+
+      {/* Режим «Безопасность»: янтарное кольцо под каждым элементом безопасности */}
+      {safetyHighlighted && !isSelected && (
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}>
+          <ringGeometry args={[0.14, 0.21, 24]} />
+          <meshBasicMaterial color="#f59e0b" transparent opacity={0.85} depthTest={false} />
+        </mesh>
+      )}
 
       {/* Маркер кликабельности */}
       {showHotspots && !isSelected && !hovered && <Hotspot />}

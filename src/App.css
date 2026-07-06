@@ -325,6 +325,81 @@
   height: 15px;
 }
 
+/* Плашка-сравнение режима «Безопасность» */
+.safety-banner {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: min(460px, calc(100vw - 40px));
+  background: var(--panel-bg);
+  border-radius: 14px;
+  box-shadow: var(--panel-shadow);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.safety-banner-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.safety-banner-them {
+  background: #f8fafc;
+  color: var(--text-muted);
+}
+
+.safety-banner-us {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+}
+
+.safety-banner-tag {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.safety-banner-them .safety-banner-tag {
+  color: #94a3b8;
+}
+
+.safety-banner-us .safety-banner-tag {
+  color: #b45309;
+}
+
+.safety-banner-cta {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.safety-banner-cta:hover {
+  background: var(--accent-hover);
+}
+
+.safety-banner-hint {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 /* Canvas container */
 .canvas-container {
   width: 100%;
@@ -624,6 +699,14 @@
     bottom: auto;
     top: 16px;
     right: 16px;
+  }
+
+  /* На мобильном панель комплектаций — нижний лист, плашку поднимаем наверх */
+  .safety-banner {
+    bottom: auto;
+    top: 64px;
+    width: min(420px, calc(100vw - 24px));
+    padding: 10px 12px;
   }
 
   .reset-view-btn {

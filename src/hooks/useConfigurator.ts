@@ -57,11 +57,14 @@ interface ConfiguratorState {
   cameraMoved: boolean
   /** Маркеры-хотспоты на кликабельных деталях (гаснут после первого клика, тумблер «Метки») */
   showHotspots: boolean
+  /** Режим «Безопасность»: подсветка всех элементов безопасности + плашка-сравнение */
+  safetyMode: boolean
 
   start: () => void
   setBoilerReady: () => void
   setCameraMoved: (moved: boolean) => void
   setShowHotspots: (show: boolean) => void
+  setSafetyMode: (on: boolean) => void
   setCompareOpen: (open: boolean) => void
   clearAddedNotice: () => void
   setConfig: (config: ConfigKey) => void
@@ -88,6 +91,10 @@ function resolveConfigParts(configKey: ConfigKey): PartDef[] {
 
   const filtered = inherited.filter((p) => {
     if (configKey === 'comfort_plus' && p.id === 'gate_valve_manual_1') {
+      return false
+    }
+    // В Комфорт+ одиночный датчик уровня заменяется набором 2+2
+    if (configKey === 'comfort_plus' && p.id === 'level_sensor') {
       return false
     }
     return true
@@ -194,6 +201,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   boilerReady: false,
   cameraMoved: false,
   showHotspots: true,
+  safetyMode: false,
   adminOverrides: (() => {
     try {
       const saved = localStorage.getItem('adminOverrides')
@@ -205,6 +213,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   setBoilerReady: () => set({ boilerReady: true }),
   setCameraMoved: (moved) => set({ cameraMoved: moved }),
   setShowHotspots: (show) => set({ showHotspots: show }),
+  setSafetyMode: (on) => set({ safetyMode: on }),
   setCompareOpen: (open) => set({ compareOpen: open }),
   clearAddedNotice: () => set({ addedNotice: null }),
 

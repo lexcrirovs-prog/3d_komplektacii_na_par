@@ -7,6 +7,7 @@ import { ResetViewButton } from './ResetViewButton'
 import { IntroOverlay } from './IntroOverlay'
 import { ComparePanel } from './ComparePanel'
 import { LoadingOverlay } from './LoadingOverlay'
+import { SafetyBanner } from './SafetyBanner'
 import { MODEL_URLS } from './modelAssets'
 import { useConfigurator } from '../../hooks/useConfigurator'
 
@@ -58,6 +59,7 @@ export function BoilerConfigurator() {
           <InfoPanel />
           <ResetViewButton />
           <ComparePanel />
+          <SafetyBanner />
         </>
       )}
       {isAdmin && AdminPanel && (

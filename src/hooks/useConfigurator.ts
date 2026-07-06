@@ -53,9 +53,12 @@ interface ConfiguratorState {
   adminOverrides: Record<string, AdminOverride>
   /** Корпус котла загружен — можно подтягивать детали и префетчить остальное */
   boilerReady: boolean
+  /** Пользователь вручную крутил/двигал камеру (для кнопки «К общей схеме») */
+  cameraMoved: boolean
 
   start: () => void
   setBoilerReady: () => void
+  setCameraMoved: (moved: boolean) => void
   setCompareOpen: (open: boolean) => void
   clearAddedNotice: () => void
   setConfig: (config: ConfigKey) => void
@@ -186,6 +189,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   orbitTarget: { x: 0, y: 0.5, z: 0 },
   cameraResetFlag: 0,
   boilerReady: false,
+  cameraMoved: false,
   adminOverrides: (() => {
     try {
       const saved = localStorage.getItem('adminOverrides')
@@ -195,6 +199,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
 
   start: () => set({ started: true }),
   setBoilerReady: () => set({ boilerReady: true }),
+  setCameraMoved: (moved) => set({ cameraMoved: moved }),
   setCompareOpen: (open) => set({ compareOpen: open }),
   clearAddedNotice: () => set({ addedNotice: null }),
 
@@ -246,6 +251,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
     selectedPart: null,
     orbitTarget: { x: 0, y: 0.5, z: 0 },
     cameraResetFlag: s.cameraResetFlag + 1,
+    cameraMoved: false,
   })),
 
   setAdminOverride: (partId, override) =>

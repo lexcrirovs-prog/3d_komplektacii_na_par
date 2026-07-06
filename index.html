@@ -20,18 +20,21 @@
     <div id="root"></div>
     <div id="error-display"><h2>Error</h2><pre id="error-text"></pre></div>
     <script>
-      window.onerror = function(msg, src, line, col, err) {
-        var el = document.getElementById('error-display');
-        var txt = document.getElementById('error-text');
-        el.className = 'show';
-        txt.textContent += msg + '\n at line ' + line + ':' + col + '\n' + (err && err.stack ? err.stack : '') + '\n\n';
-      };
-      window.addEventListener('unhandledrejection', function(e) {
-        var el = document.getElementById('error-display');
-        var txt = document.getElementById('error-text');
-        el.className = 'show';
-        txt.textContent += 'Unhandled Promise: ' + (e.reason && e.reason.stack ? e.reason.stack : e.reason) + '\n\n';
-      });
+      // Отладочный оверлей ошибок — только по флагу ?debug, в проде неактивен
+      if (/[?&]debug\b/.test(window.location.search)) {
+        window.onerror = function(msg, src, line, col, err) {
+          var el = document.getElementById('error-display');
+          var txt = document.getElementById('error-text');
+          el.className = 'show';
+          txt.textContent += msg + '\n at line ' + line + ':' + col + '\n' + (err && err.stack ? err.stack : '') + '\n\n';
+        };
+        window.addEventListener('unhandledrejection', function(e) {
+          var el = document.getElementById('error-display');
+          var txt = document.getElementById('error-text');
+          el.className = 'show';
+          txt.textContent += 'Unhandled Promise: ' + (e.reason && e.reason.stack ? e.reason.stack : e.reason) + '\n\n';
+        });
+      }
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>

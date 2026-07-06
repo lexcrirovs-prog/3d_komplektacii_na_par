@@ -247,30 +247,60 @@
   color: var(--text-muted);
 }
 
-/* Reset view button */
-.reset-view-btn {
+/* Кнопка «К общей схеме» + хлебная крошка */
+.view-context {
   position: absolute;
   bottom: 20px;
   right: 20px;
   z-index: 10;
-  width: 40px;
-  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.view-context > * {
+  pointer-events: auto;
+}
+
+.view-breadcrumb {
+  background: rgba(15, 23, 42, 0.85);
+  color: #f1f5f9;
+  font-size: 14px;
+  line-height: 1.3;
+  padding: 6px 12px;
+  border-radius: 8px;
+  max-width: 280px;
+  backdrop-filter: blur(4px);
+}
+
+.view-breadcrumb-sep {
+  color: #94a3b8;
+  margin: 0 2px;
+}
+
+.reset-view-btn {
   border: none;
-  border-radius: 50%;
+  border-radius: 20px;
+  padding: 9px 16px;
   background: var(--panel-bg);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
   transition: background 0.2s, color 0.2s, transform 0.1s;
 }
 
 .reset-view-btn:hover {
   background: white;
   color: var(--accent);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .reset-view-btn:active {
@@ -561,12 +591,18 @@
     font-size: 13px;
   }
 
-  .reset-view-btn {
+  .view-context {
     bottom: auto;
     top: 16px;
     right: 16px;
-    width: 36px;
-    height: 36px;
+  }
+
+  .reset-view-btn {
+    padding: 8px 12px;
+  }
+
+  .view-breadcrumb {
+    max-width: 200px;
   }
 
   .modal {

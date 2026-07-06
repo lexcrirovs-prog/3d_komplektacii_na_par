@@ -1,15 +1,20 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Scene } from './Scene'
 import { ConfigPanel } from './ConfigPanel'
 import { InfoPanel } from './InfoPanel'
 import { ResetViewButton } from './ResetViewButton'
-import { AdminPanel } from './AdminPanel'
 import { IntroOverlay } from './IntroOverlay'
 import { ComparePanel } from './ComparePanel'
 import { LoadingOverlay } from './LoadingOverlay'
 import { MODEL_URLS } from './modelAssets'
 import { useConfigurator } from '../../hooks/useConfigurator'
+
+// AdminPanel — инструмент позиционирования деталей, только в dev-сборке
+// (в проде ветка мертва и код панели не попадает в бандл)
+const AdminPanel = import.meta.env.DEV
+  ? lazy(() => import('./AdminPanel').then((m) => ({ default: m.AdminPanel })))
+  : null
 
 const isAdmin = new URLSearchParams(window.location.search).has('admin')
 
@@ -55,7 +60,11 @@ export function BoilerConfigurator() {
           <ComparePanel />
         </>
       )}
-      {isAdmin && <AdminPanel />}
+      {isAdmin && AdminPanel && (
+        <Suspense fallback={null}>
+          <AdminPanel />
+        </Suspense>
+      )}
       <ModelPrefetcher />
     </>
   )

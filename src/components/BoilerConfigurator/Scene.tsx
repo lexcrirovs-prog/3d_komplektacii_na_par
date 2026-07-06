@@ -56,9 +56,17 @@ function SceneContent() {
   const configParts = getActiveParts()
   const addonParts = getAddonParts()
 
+  const selectPart = useConfigurator((s) => s.selectPart)
+  const setCameraMoved = useConfigurator((s) => s.setCameraMoved)
+
   const mobile = useMemo(() => isMobile(), [])
 
+  // Одиночный клик мимо модели — только снять выделение (камера не дёргается);
+  // возврат к общей схеме — двойной клик по фону или кнопка «К общей схеме»
   const handleMiss = () => {
+    selectPart(null)
+  }
+  const handleMissDouble = () => {
     resetCamera()
   }
 
@@ -96,6 +104,7 @@ function SceneContent() {
           ONE: 0, // ROTATE
           TWO: 2, // DOLLY (pinch zoom)
         }}
+        onStart={() => setCameraMoved(true)}
       />
 
       {/* Ground grid — simpler on mobile */}
@@ -109,6 +118,7 @@ function SceneContent() {
         position={[0, -1.01, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
         onClick={handleMiss}
+        onDoubleClick={handleMissDouble}
         visible={false}
       >
         <planeGeometry args={[50, 50]} />

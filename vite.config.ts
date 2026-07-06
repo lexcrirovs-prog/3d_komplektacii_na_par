@@ -1,19 +1,23 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { viteSingleFile } from 'vite-plugin-singlefile'
 
+// Основная сборка: обычный многофайловый билд, GLB — отдельные кэшируемые
+// файлы с хешами в dist/models/. Fallback single-file: vite.config.singlefile.ts
 export default defineConfig({
-  plugins: [react(), viteSingleFile()],
+  plugins: [react()],
   base: './',
   assetsInclude: ['**/*.glb'],
   build: {
     target: 'es2020',
-    cssCodeSplit: false,
     modulePreload: { polyfill: false },
-    assetsInlineLimit: 100 * 1024 * 1024,
     rollupOptions: {
       output: {
-        format: 'iife',
+        assetFileNames: (info) => {
+          const name = info.names?.[0] ?? ''
+          return name.endsWith('.glb')
+            ? 'models/[name]-[hash][extname]'
+            : 'assets/[name]-[hash][extname]'
+        },
       },
     },
   },

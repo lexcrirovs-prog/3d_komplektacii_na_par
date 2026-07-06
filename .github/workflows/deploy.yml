@@ -1,6 +1,7 @@
 name: Build & Deploy to Beget
 
-# Собирает конфигуратор и заливает один файл dist/index.html на хостинг Beget по FTP.
+# Собирает конфигуратор и заливает всю папку dist/ (index.html + хешированные js/css/glb)
+# на хостинг Beget по FTP. Устаревшие файлы экшен удаляет сам через state-file sync.
 # Доступы НЕ хранятся в коде — они берутся из Secrets репозитория (Settings → Secrets and
 # variables → Actions). Нужны секреты: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, FTP_SERVER_DIR.
 
@@ -29,21 +30,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Деплоим только самодостаточный index.html (модели/JS/CSS внутри него)
-      - name: Prepare artifact
-        run: |
-          mkdir -p deploy
-          cp dist/index.html deploy/index.html
-
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Папка на хостинге, например: /kotelgavno.ru/public_html/komplektacii2/
+          # Папка на хостинге, например: /kotelgavno.ru/public_html/komplektacii3/
           # (путь должен заканчиваться слешем). Задаётся секретом FTP_SERVER_DIR.
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          local-dir: ./deploy/
+          # Заливаем весь dist: index.html + assets/ + models/ + .htaccess
+          local-dir: ./dist/
           # FTPS (шифрование). Если хостинг ругается на сертификат — поменяйте на ftp.
           protocol: ftps

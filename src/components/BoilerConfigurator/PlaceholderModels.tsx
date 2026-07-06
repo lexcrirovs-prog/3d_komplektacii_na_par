@@ -47,15 +47,17 @@ function GlbModel({ glbPath, baseScale, color, opacity, scale = 1 }: Placeholder
   const mobile = useMemo(() => isMobile(), [])
 
   const meshData = useMemo(() => {
-    const geometries: BufferGeometry[] = []
+    // Матрицы узлов обязательны: у meshopt-сжатых GLB на узле лежит
+    // декомпрессионный трансформ (KHR_mesh_quantization)
+    scene.updateMatrixWorld(true)
+    const items: { geometry: BufferGeometry; matrix: THREE.Matrix4 }[] = []
     scene.traverse((child) => {
       if ((child as Mesh).isMesh) {
-        const geo = (child as Mesh).geometry.clone()
-        geo.computeVertexNormals()
-        geometries.push(geo)
+        const mesh = child as Mesh
+        items.push({ geometry: mesh.geometry, matrix: mesh.matrixWorld.clone() })
       }
     })
-    return geometries
+    return items
   }, [scene])
 
   const material = useMemo(
@@ -75,8 +77,16 @@ function GlbModel({ glbPath, baseScale, color, opacity, scale = 1 }: Placeholder
 
   return (
     <group scale={[s, s, s]}>
-      {meshData.map((geo, i) => (
-        <mesh key={i} geometry={geo} material={material} castShadow={!mobile} receiveShadow={!mobile}>
+      {meshData.map((item, i) => (
+        <mesh
+          key={i}
+          geometry={item.geometry}
+          matrixAutoUpdate={false}
+          matrix={item.matrix}
+          material={material}
+          castShadow={!mobile}
+          receiveShadow={!mobile}
+        >
           {!mobile && <Edges threshold={15} color="#5a6068" />}
         </mesh>
       ))}

@@ -69,7 +69,10 @@ export function BoilerModel() {
         document.body.style.cursor = 'auto'
       }}
     >
-      <Center position={[0, 0.5, 0]}>
+      {/* precise=false обязателен: в precise-режиме Center обходит вершины
+          fat-line примитива Edges (юнит-квад), который у meshopt-моделей
+          умножается на декомпрессионную матрицу и раздувает bbox */}
+      <Center position={[0, 0.5, 0]} precise={false}>
         <group scale={[s, s, s]}>
           {meshData.map((item, i) => (
             <mesh

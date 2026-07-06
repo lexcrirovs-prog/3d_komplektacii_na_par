@@ -176,8 +176,12 @@ export function Scene() {
           powerPreference: mobile ? 'low-power' : 'default',
           failIfMajorPerformanceCaveat: false,
         }}
-        onCreated={({ gl }) => {
+        onCreated={({ gl, scene }) => {
           gl.setClearColor('#1a1a2e')
+          if (import.meta.env.DEV) {
+            // Доступ к сцене из консоли для отладки
+            ;(window as unknown as { __scene?: unknown }).__scene = scene
+          }
         }}
       >
         <AdaptiveDpr pixelated />

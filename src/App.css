@@ -185,6 +185,53 @@
   transform: scale(0.98);
 }
 
+/* Ориентировочная стоимость сборки */
+.price-section {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  padding: 12px 14px !important;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.price-model-note {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.price-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: #ea580c;
+  white-space: nowrap;
+}
+
+.price-term {
+  font-size: 14px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-top: 2px;
+}
+
+.price-note {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
 /* Ссылка «Получить КП по этой сборке» — переход на лендинг с параметрами */
 .landing-offer-link {
   display: block;

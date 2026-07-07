@@ -59,6 +59,8 @@ interface ConfiguratorState {
   showHotspots: boolean
   /** Режим «Безопасность»: подсветка всех элементов безопасности + плашка-сравнение */
   safetyMode: boolean
+  /** Типоразмер котла из ?model=s2000 (для цены и подписи; 3D-модель одна) */
+  modelId: string | null
 
   start: () => void
   setBoilerReady: () => void
@@ -148,16 +150,18 @@ function resolveparts(parts: PartDef[], overrides: Record<string, AdminOverride>
   })
 }
 
-/** Начальное состояние из URL — диплинк из каталога: ?config=comfort_plus&addons=deaerator,economizer&start=1 */
+/** Начальное состояние из URL — диплинк из каталога: ?config=comfort_plus&addons=deaerator,economizer&model=s2000&start=1 */
 function readInitialState(): {
   started: boolean
   activeConfig: ConfigKey
   activeAddons: Set<AddonKey>
+  modelId: string | null
 } {
   const fallback = {
     started: false,
     activeConfig: 'standard' as ConfigKey,
     activeAddons: new Set<AddonKey>(),
+    modelId: null,
   }
   try {
     const params = new URLSearchParams(window.location.search)
@@ -174,9 +178,13 @@ function readInitialState(): {
           if (ADDON_KEYS.includes(k as AddonKey)) activeAddons.add(k as AddonKey)
         })
     }
+    // Типоразмер (s500…s5000) — валидируется в pricing.getModel
+    const m = params.get('model')
+    const modelId = m && /^s\d{3,5}$/.test(m) ? m : null
+
     // Если пришли по диплинку с конкретной комплектацией/дополнениями — пропускаем интро
     const started = params.has('config') || params.has('addons') || params.has('start')
-    return { started, activeConfig, activeAddons }
+    return { started, activeConfig, activeAddons, modelId }
   } catch {
     return fallback
   }
@@ -202,6 +210,7 @@ export const useConfigurator = create<ConfiguratorState>((set, get) => ({
   cameraMoved: false,
   showHotspots: true,
   safetyMode: false,
+  modelId: initial.modelId,
   adminOverrides: (() => {
     try {
       const saved = localStorage.getItem('adminOverrides')

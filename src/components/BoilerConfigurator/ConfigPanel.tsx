@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useConfigurator, type ConfigKey, type AddonKey } from '../../hooks/useConfigurator'
 import { configurations, addons, pillars, trustSignals } from '../../data/configurations'
+import { estimate, fmtMln, DAYS_TO_LAUNCH } from '../../data/pricing'
 import { HintTip } from './HintTip'
 import { PillarIcon } from './PillarIcon'
 
@@ -17,10 +18,11 @@ const LANDING_URL =
   (import.meta.env.VITE_LANDING_URL as string | undefined) ||
   'https://kotelgavno.ru/komplcldcld2/'
 
-/** Ссылка на лендинг с выбранной сборкой: ?config=comfort_plus&addons=deaerator#contact */
-function buildLandingOfferUrl(config: ConfigKey, addonSet: Set<AddonKey>): string {
+/** Ссылка на лендинг с выбранной сборкой: ?config=comfort_plus&addons=deaerator&model=s2000#contact */
+function buildLandingOfferUrl(config: ConfigKey, addonSet: Set<AddonKey>, modelId: string | null): string {
   const params = new URLSearchParams({ config })
   if (addonSet.size > 0) params.set('addons', Array.from(addonSet).join(','))
+  if (modelId) params.set('model', modelId)
   return `${LANDING_URL}?${params.toString()}#contact`
 }
 
@@ -44,10 +46,12 @@ export function ConfigPanel() {
   const setShowHotspots = useConfigurator((s) => s.setShowHotspots)
   const safetyMode = useConfigurator((s) => s.safetyMode)
   const setSafetyMode = useConfigurator((s) => s.setSafetyMode)
+  const modelId = useConfigurator((s) => s.modelId)
   const [showForm, setShowForm] = useState(false)
   const [formSent, setFormSent] = useState(false)
 
   const cfg = configurations[activeConfig]
+  const price = estimate(modelId, activeConfig, activeAddons)
 
   const handleRequestOffer = () => {
     setShowForm(true)
@@ -67,6 +71,9 @@ export function ConfigPanel() {
       company: data.get('company'),
       config: summary.config,
       addons: summary.addons,
+      // новые поля (обратная совместимость postMessage сохранена)
+      model: price.model.name,
+      priceEstimate: `от ${fmtMln(price.total)}`,
       source: 'configurator',
       ts: new Date().toISOString(),
     }
@@ -236,6 +243,23 @@ export function ConfigPanel() {
           </ul>
         </div>
 
+        {/* Ориентировочная стоимость сборки */}
+        <div className="section price-section">
+          <div className="price-row">
+            <span className="price-label">
+              {price.model.name}
+              {!modelId && <span className="price-model-note"> (типовой размер)</span>}
+            </span>
+            <span className="price-value">от {fmtMln(price.total)}</span>
+          </div>
+          <div className="price-term">Запуск за {DAYS_TO_LAUNCH} дней</div>
+          <div className="price-note">
+            Ориентировочно, комплектация «{cfg.label}»
+            {price.onRequest.length > 0 && <> + {price.onRequest.join(', ')} — по подбору</>}
+            . Точное КП — после опросного листа.
+          </div>
+        </div>
+
         <div className="section">
           <button className="request-offer-btn" onClick={handleRequestOffer}>
             Заказать КП
@@ -243,7 +267,7 @@ export function ConfigPanel() {
           {/* Переход на лендинг с параметрами сборки; target=_top выводит из iframe */}
           <a
             className="landing-offer-link"
-            href={buildLandingOfferUrl(activeConfig, activeAddons)}
+            href={buildLandingOfferUrl(activeConfig, activeAddons, modelId)}
             target="_top"
             rel="noopener"
             title="Откроется страница комплектаций с формой КП — выбранная сборка подставится автоматически"

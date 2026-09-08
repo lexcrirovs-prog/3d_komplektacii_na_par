@@ -22,13 +22,14 @@ def verify(root):
     for key, nodes in assembly['bom_nodes'].items():
         assert len(nodes) == quantities[key], (key, 'quantity mismatch')
     joint = assembly['economizer_joint']
-    assert abs(joint['rotation_degrees'] - 90) < 1e-6
+    assert abs(joint['rotation_degrees'] - 270) < 1e-6
+    assert joint['additional_rotation_degrees'] == 180
     assert math.dist(joint['boiler_port'], joint['economizer_port']) < 1e-5
     assert sum(a*b for a,b in zip(joint['boiler_normal'], joint['economizer_normal'])) < -0.99999
     assert joint['boiler_bore_m'] == joint['economizer_bore_m'] == 0.45
     assert joint['boiler_outside_m'] == joint['economizer_outside_m'] == 0.456
     assert assembly['engineering_acceptance'] == 'NOT_VERIFIED'
-    assert assembly['version']=='2026.09.08.3'
+    assert assembly['version']=='2026.09.08.4'
     parts={p['id']:p for p in assembly['parts']}
     assert parts['pressure_header']['bounds_blender'][0][0]>.85, 'Header must be on the sight-glass side'
     assert parts['pressure_header']['bounds_blender'][0][1]<-.68
@@ -37,6 +38,43 @@ def verify(root):
     assert parts['burner']['source_kind']=='user_cad'
     assert parts['deaerator']['source_kind']=='drawing_photo'
     assert assembly['deaerator']['capacity_t_h']==25
+    feed=assembly['feed_routing']
+    assert feed['boiler_port']==[0,.565,2.085], 'Use the TOP feed nozzle, not the side instrument tap'
+    assert feed['economizer_lower']==[-.525,2.702,.700]
+    assert feed['economizer_upper']==[-.525,2.702,1.420]
+    assert feed['economizer_water_normals']==[0,1,0], 'Water ports face away from boiler'
+    endpoints={
+        'feed_to_economizer':(feed['pump_header'],feed['economizer_lower']),
+        'feed_from_economizer':(feed['economizer_upper'],feed['boiler_stack']),
+        'feed_direct':(feed['pump_header'],feed['boiler_stack']),
+    }
+    for key,(start,end) in endpoints.items():
+        path=feed['paths'][key]
+        assert path[0]==start and path[-1]==end, (key,'Disconnected water route')
+    assert all(parts[key]['requires']==['economizer'] for key in feed['with_economizer'])
+    assert parts['feed_direct']['excludes']==['economizer']
+    wiring=assembly['cable_routing']
+    assert wiring['cabinet_inputs']==9
+    assert {c['id'] for c in wiring['cables']}=={'lp200','lp400','pressure_switches_1','pressure_switches_2','pressure_switches_3','cp930','bcv925','feed_pumps_1','feed_pumps_2'}
+    for cable in wiring['cables']:
+        x,y,z=cable['end']
+        assert -1.22<x<-.92 and -.895<y<-.365 and 1.139<z<1.2, (cable['id'],'Cable must enter cabinet')
+        for p in cable['shell_samples']:
+            clearance=math.hypot(p[0],p[2]-1.06)-.919
+            assert .009<clearance<.025, (cable['id'],'Cable must follow shell')
+    assert len(wiring['cladding_clamps'])>=15
+    for clamp in wiring['cladding_clamps']:
+        p=clamp['surface']
+        assert abs(math.hypot(p[0],p[2]-1.06)-.919)<1e-6, 'Clamp foot must meet shell'
+    gauge=assembly['deaerator_gauge'];cfg=assembly['deaerator']
+    assert abs(gauge['gauge_x_m'])<.5, 'Gauge moved inboard'
+    assert len(gauge['connections'])==2
+    for conn in gauge['connections']:
+        x,y,z=conn['pipe_start']
+        radius=cfg['tank_bare_radius_m']+cfg['jacket_thickness_visual_m']
+        implicit=(x*x+(z-cfg['tank_center_height_m'])**2)/radius**2+((y+cfg['tank_straight_half_length_m'])/cfg['tank_dome_depth_visual_m'])**2
+        assert implicit<1, 'Gauge tap must penetrate tank head'
+        assert .05<conn['escutcheon_diameter_m']<.20
     content = (root / 's3000-assembly.glb').read_bytes()
     magic,version,size = struct.unpack_from('<4sII', content)
     assert magic == b'glTF' and version == 2 and size == len(content)
@@ -45,6 +83,7 @@ def verify(root):
     gltf = json.loads(content[20:20+length])
     names = {n.get('name') for n in gltf['nodes']}
     assert {'boiler', 'economizer', 'burner'} <= names
+    assert set(parts)<=names, 'Export every optional route for the configurator'
     for nodes in assembly['bom_nodes'].values():
         assert set(nodes) <= names, set(nodes)-names
     assert len(content) < 35_000_000, 'Detailed web model exceeds 35 MB budget'
@@ -54,7 +93,9 @@ def verify(root):
     assert logo.get('alphaMode')=='MASK' and 'baseColorTexture' in logo['pbrMetallicRoughness']
     print(json.dumps(dict(status='PASSED_LOCAL_ASSEMBLY', bom_rows=len(quantities),
                          components=sum(quantities.values()), joint_error_m=math.dist(joint['boiler_port'],joint['economizer_port']),
-                         glb_bytes=len(content), materials=len(gltf['materials'])), indent=2))
+                         glb_bytes=len(content), materials=len(gltf['materials']),
+                         water_route_variants=2, cabinet_inputs=wiring['cabinet_inputs'],
+                         da_gauge_connected_taps=len(gauge['connections'])), indent=2))
 
 if __name__ == '__main__':
     verify(Path(sys.argv[1]))

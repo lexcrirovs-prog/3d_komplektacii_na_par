@@ -6,10 +6,11 @@ import assemblyData from '../../assets/s3000/assembly.json'
 import bom from '../../assets/s3000/bom.json'
 import assemblyUrl from '../../assets/s3000/s3000-assembly.glb?url'
 import premiumLogo from '../../assets/s3000/premium-logo.png'
+import { isPartVisible, type VisibilityPart } from './assemblyVisibility'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
-type Part = { id: string; label: string; category: string; source_kind: string; note: string; center: number[] }
+type Part = VisibilityPart & { id: string; label: string; category: string; source_kind: string; note: string; center: number[] }
 const parts = assemblyData.parts as Part[]
 const byId = new Map(parts.map(p => [p.id, p]))
 const options = [
@@ -17,6 +18,7 @@ const options = [
   { id: 'economizer', title: 'Экономайзер EQS2', subtitle: 'Совмещён с дымовым патрубком' },
   { id: 'deaerator', title: 'Деаэратор ДА-25', subtitle: 'Оцинкованная обшивка по фотографиям' },
 ]
+const optionalIds = new Set(options.map(o => o.id))
 const sourceLabels: Record<string, string> = {
   user_cad: 'Исходная CAD-модель', manufacturer_step: 'CAD-модель ATECH', photo_parametric: 'Модель по фотографиям',
   drawing_photo: 'Модель по чертежу и фотографиям',
@@ -85,7 +87,7 @@ function Assembly({ enabled, selected, showAccessories, select }: {
     for (const part of parts) {
       const obj = scene.getObjectByName(part.id)
       if (!obj) throw new Error(`Missing assembly node: ${part.id}`)
-      obj.visible = part.id === 'boiler' || (options.some(o => o.id === part.id) ? enabled.has(part.id) : showAccessories)
+      obj.visible = isPartVisible(part, enabled, showAccessories, optionalIds)
       obj.traverse(child => {
         if (!(child instanceof Mesh)) return
         // Three.js raycasting does not skip an invisible ancestor automatically.
@@ -159,7 +161,7 @@ export function S3000Configurator() {
     const next = new Set(enabled)
     next.has(id) ? next.delete(id) : next.add(id)
     setEnabled(next)
-    if (selected === id && !next.has(id)) setSelected(null)
+    if (active && !isPartVisible(active, next, showAccessories, optionalIds)) setSelected(null)
     const url = new URL(window.location.href)
     url.searchParams.set('addons', options.filter(o => next.has(o.id)).map(o => o.id).join(','))
     window.history.replaceState(null, '', url)
@@ -170,6 +172,10 @@ export function S3000Configurator() {
     if (!p) return
     setSelected(id)
     if (!options.some(o => o.id === id) && id !== 'boiler') setShowAccessories(true)
+    if (id.startsWith('feed_') && ['feed_direct', 'feed_to_economizer', 'feed_from_economizer', 'feed_piping'].includes(id)) {
+      requestView([6.3,4.6,-6.5], [.3,1.45,-1.4])
+      return
+    }
     const c: Point = [p.center[0], p.center[1], p.center[2]]
     // Probe shafts are immersed; focus on their exposed heads above the shell.
     if (id === 'lp200' || id === 'lp400') c[1] = 2.24
@@ -212,6 +218,8 @@ export function S3000Configurator() {
         <button onClick={() => overview()} title="Показать всю сборку">Общий вид</button>
         <button onClick={() => { setSelected(null); requestView([-6,4.2,8],[0,1.3,0]) }}>Шкаф</button>
         <button onClick={() => focus('pressure_header')}>Приборы</button>
+        <button onClick={() => { setSelected(null); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
+        <button onClick={() => focus('cable_routes')}>Кабели</button>
         <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
         <button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>
         <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
@@ -241,7 +249,12 @@ export function S3000Configurator() {
             <input type="checkbox" checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
             <span className="s3-option-body"><strong>{option.title}</strong><small>{option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
           </label>)}</section>
-          <section className="s3-detail-callout"><span>90°</span><div><strong>Экономайзер развёрнут</strong><p>Дымовые патрубки совмещены по исходным CAD-моделям.</p></div></section>
+          <section className="s3-flow" aria-live="polite" data-feed-route={enabled.has('economizer') ? 'economizer' : 'direct'}>
+            <div className="s3-section-label">ПУТЬ ПИТАТЕЛЬНОЙ ВОДЫ</div>
+            <p>{enabled.has('economizer') ? 'Насосы → нижний фланец экономайзера → верхний фланец → котёл' : 'Насосы → верхний питательный патрубок котла'}</p>
+            <small>Вход в котёл — между паровым вентилем и двумя предохранительными клапанами.</small>
+          </section>
+          {enabled.has('economizer') && <section className="s3-detail-callout"><span>180°</span><div><strong>Экономайзер развёрнут</strong><p>Водяные фланцы обращены назад. Дымовой патрубок состыкован с котлом.</p></div></section>}
           <p className="s3-assembly-note">Сборка показывает внешний вид оборудования. Расположение обвязки и её присоединения требуют сверки с монтажной схемой.</p>
         </> : <>
           <label className="s3-search"><span className="s3-sr-only">Найти оборудование</span><input type="search" placeholder="Найти прибор или арматуру" value={query} onChange={e => setQuery(e.target.value)} /></label>

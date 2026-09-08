@@ -23,7 +23,7 @@ A = P.parse_args(sys.argv[sys.argv.index('--')+1:])
 OUT = A.repo / 'src/assets/s3000'
 OUT.mkdir(parents=True, exist_ok=True)
 A.delivery.mkdir(parents=True, exist_ok=True)
-VERSION = '2026.09.08.3'
+VERSION = '2026.09.08.4'
 SHIFT_Y, FLOOR = 1.035, 1.06
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)
@@ -279,6 +279,7 @@ def import_original(key, filename, label):
 
 sys.path.insert(0,str(Path(__file__).parent))
 from detail_geometry import DetailBuilder
+from routing_geometry import feed_network, build_cables
 DETAIL=DetailBuilder(globals())
 
 # Source CAD is tessellated more finely; its scale and coordinate frame are retained.
@@ -288,10 +289,11 @@ text('Door badge','PREMIUM',(-.23,-2.734,.66),.062,'white')
 DETAIL.boiler()
 
 eco=import_original('economizer','rs_410.glb','Экономайзер PREMIUM EQS2-3000-3500')
-eco.rotation_euler.z=math.pi/2
-# Original negative-X port (-507, 448, 0) mm -> matching boiler rear (+Y).
-eco.location=(.448,SHIFT_Y+1.160,FLOOR)
-eco['rotation_correction_degrees']=90
+eco.rotation_euler.z=3*math.pi/2
+# Additional 180 degrees: opposite flue port stays at the boiler; water ports face rear.
+eco.location=(-.448,SHIFT_Y+1.160,FLOOR)
+eco['rotation_correction_degrees']=180
+eco['rotation_absolute_degrees']=270
 
 # ADL steam valve and the two safety valves use the existing top nozzle locations.
 valve('steam_valve','Главный паровой вентиль АДЛ DN100',(0,.245,2.113),100,'steam_valve',hand=(-1,0,0))
@@ -392,20 +394,7 @@ for i,y in enumerate([.34,.95],1):
     flange('Check lower',(0,0,-.027),(0,0,1),.07,.016)
     cyl('Wafer check',(0,0,-.014),(0,0,.014),.045,'steel')
     flange('Check upper',(0,0,.027),(0,0,1),.07,.016)
-part('feed_piping','Коллекторы питательной воды',(0,0,0),category='Трубопроводы',note='Предварительная трассировка по габаритам CAD; проектной схемы нет.')
-for y in [.34,.95]:
-    bend_pipe('Pump discharge riser',[(1.95,y,.30),(2.13,y,.3),(2.13,y,1.08),(1.95,y,1.08),(1.95,y,1.17)],.021,'dark')
-    cyl('Pump outlet rise',(1.95,y,1.43),(1.95,y,1.58),.021,'dark')
-cyl('Feed suction header',(1.71,.2,.31),(1.71,1.11,.31),.025,'dark')
-for y in [.34,.95]: cyl('Pump suction branch',(1.71,y,.31),(1.77,y,.31),.021,'dark')
-bend_pipe('Feed discharge header',[(1.95,.34,1.58),(1.95,.95,1.58),(1.52,.95,1.98),(1.52,-.685,1.98),(1.28,-.685,1.98)],.025,'dark')
-bend_pipe('Feed nozzle elbow',[(.897,-.685,1.7955),(.897,-.685,1.98),(.949,-.685,1.98)],.021,'dark',.045)
-flange('Feed boiler mating flange',(.897,-.685,1.8035),(0,0,1),.0525,.016,4,'steel')
-valve('feed_valve','Питательный вентиль АДЛ DN32',(1.265,-.685,1.98),32,'feed_valve',flow=(-1,0,0),hand=(0,0,1))
-part('feed_check','Обратный клапан на котле DN32',(1.033,-.685,1.98),'feed_check',category='Питание водой',note='Упрощённый CVS40 DN32, L=28 мм.')
-cyl('Wafer check shell',(-.014,0,0),(.014,0,0),.044,'steel')
-flange('Feed check mating',(.03,0,0),(1,0,0),.07,.016)
-cyl('Feed connecting spool',(-.015,0,0),(-.084,0,0),.021,'steel')
+FEED_ROUTING=feed_network(globals(),DETAIL)
 
 # Red cabinet, buttons and the three genuine ATECH controller bodies.
 cab=part('control_cabinet','Шкаф релейного управления',(-1.07,-.63,1.50),'control_cabinet',category='Автоматика',
@@ -426,13 +415,10 @@ for key,y,label in [('lc220',-.16,'LC220'),('lc440',0,'LC440'),('bc970',.16,'BC9
     cube('Controller front panel',(-.063,0,0),(.012,.070,.137),'white',.004)
     cube('Controller display',(-.071,0,.028),(.003,.048,.040),'dark',.002)
     text('Controller model',label,(-.074,.026,-.049),.012,'dark',(math.pi/2,0,-math.pi/2))
-part('cable_routes','Кабельные трассы',(0,0,0),category='Автоматика')
-for j in range(4):
-    bend_pipe('Cabinet cable conduit',[(-1.03,-.48+j*.025,1.17),(-1.02,-.5+j*.025,.36),(-.76,-.96+j*.025,.15),(-.74,-1.42+j*.025,.5)],.009,'black',.18)
-
 DETAIL.burner()
 DETAIL.sight_glass_details()
 DETAIL.machinery()
+CABLE_ROUTING=build_cables(globals(),DETAIL)
 
 # The requested DA-25 replaces DA5/2. Its tank variant is explicit in metadata.
 da=DETAIL.deaerator()
@@ -469,8 +455,9 @@ manifest=dict(version=VERSION,date='2026-09-08',author='Codex / GPT-6 Astra',uni
               sensor_mounts={'lp200':[0,-.8925,2.1185],'lp400':[0,-.485,2.1185],
                              'basis':'User annotated screenshot 2026-09-08_17-29-46.png, CAD threaded port centres'},
               deaerator=json.loads(Path(__file__).with_name('da25-reference.json').read_text(encoding='utf8')),
-              economizer_joint=dict(rotation_degrees=90,boiler_port=[0,SHIFT_Y+.653,FLOOR],
-                 economizer_port=list(eco.matrix_world@Vector((-.507,.448,0))),
+              feed_routing=FEED_ROUTING, cable_routing=CABLE_ROUTING, deaerator_gauge=DA_GAUGE,
+              economizer_joint=dict(rotation_degrees=270,additional_rotation_degrees=180,boiler_port=[0,SHIFT_Y+.653,FLOOR],
+                 economizer_port=list(eco.matrix_world@Vector((.507,.448,0))),
                  boiler_normal=[0,1,0],economizer_normal=[0,-1,0],
                  boiler_bore_m=.45,economizer_bore_m=.45,boiler_outside_m=.456,economizer_outside_m=.456,
                  basis='Blender Z-up; cylinder axes and end planes read from source STEP'))
@@ -482,7 +469,14 @@ bpy.ops.export_scene.gltf(filepath=str(OUT/'s3000-assembly.glb'),export_format='
 
 # Studio layout stays in .blend, outside the web geometry export.
 ROOT=None
-for o in [bpy.data.objects['deaerator'], *bpy.data.objects['deaerator'].children]:o.hide_render=True
+def render_configuration(with_economizer=True, only_deaerator=False):
+    for key, meta in PARTS.items():
+        hidden=(key!='deaerator') if only_deaerator else (
+            key=='deaerator' or
+            (not with_economizer and (key=='economizer' or 'economizer' in meta.get('requires',[]))) or
+            (with_economizer and 'economizer' in meta.get('excludes',[])))
+        for obj in [bpy.data.objects[key],*bpy.data.objects[key].children]:obj.hide_render=hidden
+render_configuration()
 floor_mat=material('Studio warm grey',(.20,.225,.25),.1,.5)
 bpy.ops.mesh.primitive_plane_add(size=200,location=(0,0,-.004))
 bpy.context.object.name='STUDIO floor';bpy.context.object.data.materials.append(floor_mat)
@@ -505,23 +499,32 @@ camd=bpy.data.cameras.new('STUDIO camera');cam=bpy.data.objects.new('STUDIO came
 camd.type='ORTHO';camd.ortho_scale=7.6;scene.camera=cam
 views=[('front-left',(-5,-7,4.4),(0,-.1,1.25)),('front-right',(6,-7,4.6),(.2,-.1,1.3)),
        ('economizer',(5,6,4.0),(0,.6,1.25)),('level-detail',(5,-3,2.8),(1.15,-.8,1.9)),
-       ('burner-detail',(-2.5,-5,2.5),(0,-2.30,.80)),('sensor-detail',(3,-4,4.6),(0,-.73,2.18))]
+       ('burner-detail',(-2.5,-5,2.5),(0,-2.30,.80)),('sensor-detail',(3,-4,4.6),(0,-.73,2.18)),
+       ('cable-detail',(5,-5,2.5),(.75,-1.1,1.25)),('cabinet-cables',(-4,-4,2.2),(-.8,-1,1.0))]
 for name,loc,target in views:
     cam.location=loc;cam.rotation_euler=(Vector(target)-cam.location).to_track_quat('-Z','Y').to_euler()
-    camd.ortho_scale={'level-detail':2.9,'burner-detail':2.25,'sensor-detail':2.7}.get(name,7.6)
+    camd.ortho_scale={'level-detail':3.1,'burner-detail':2.25,'sensor-detail':2.7,'cable-detail':3.3,'cabinet-cables':3.1}.get(name,7.6)
     if A.render:
         scene.render.filepath=str(A.delivery/(name+'.png'));bpy.ops.render.render(write_still=True)
-for key in PARTS:
-    for o in [bpy.data.objects[key],*bpy.data.objects[key].children]:o.hide_render=(key!='deaerator')
+for name, with_economizer in [('feed-with-economizer',True),('feed-direct',False)]:
+    render_configuration(with_economizer)
+    cam.location=(5,7,4.8);target=Vector((.25,1.45,1.55))
+    cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler();camd.ortho_scale=6.6
+    if A.render:
+        scene.render.filepath=str(A.delivery/(name+'.png'));bpy.ops.render.render(write_still=True)
+render_configuration(only_deaerator=True)
 area('STUDIO DA key',(-7,-3,7),2300,5,(-4.25,.3,2))
 area('STUDIO DA rim',(-5,6,6),2500,5,(-4.25,.3,2))
 for name,loc,target,scale in [('deaerator-detail',(-10,-8,6.5),(-4.25,.3,2.13),9.2),
-                              ('deaerator-cladding',(-8,-7,3.5),(-4.25,-2.2,1.6),3.6)]:
+                              ('deaerator-cladding',(-8,-7,3.5),(-4.25,-2.2,1.6),3.6),
+                              ('deaerator-level',(-5.8,-7,2.8),(-3.9,-2.6,1.22),3.15)]:
     cam.location=loc;cam.rotation_euler=(Vector(target)-cam.location).to_track_quat('-Z','Y').to_euler();camd.ortho_scale=scale
     if A.render:
         scene.render.filepath=str(A.delivery/(name+'.png'));bpy.ops.render.render(write_still=True)
-for key in PARTS:
-    for o in [bpy.data.objects[key],*bpy.data.objects[key].children]:o.hide_render=(key=='deaerator')
+render_configuration()
+for o in [bpy.data.objects['feed_direct'],*bpy.data.objects['feed_direct'].children]:o.hide_set(True)
+scene['feed_route_default']='with_economizer'
+scene['feed_route_alternative']='Hide economizer + feed_to_economizer + feed_from_economizer; show feed_direct'
 cam.location=(-5,-7,4.4);cam.rotation_euler=(Vector((0,-.1,1.25))-cam.location).to_track_quat('-Z','Y').to_euler();camd.ortho_scale=7.6
 bpy.ops.object.select_all(action='DESELECT')
 bpy.context.view_layer.objects.active=boiler;boiler.select_set(True)

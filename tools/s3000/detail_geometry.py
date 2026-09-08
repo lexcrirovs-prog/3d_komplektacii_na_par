@@ -187,7 +187,6 @@ class DetailBuilder:
             for xx in [-.039,.039]:
                 for zz in [.117,.186]:self.screw((xx,-.035,zz),(0,-1,0),.0016,slotted=True)
             cyl('Cable compression gland',(.027,0,.112),(.027,0,.095),.009,'black',24)
-            self.corrugation([(.027,0,.095),(.06,.10,.04),(.075,.12,-.18),(.12,.11,-.70),(.10,.08,-1.65)],.005,.008)
         gauge=part('pressure_gauge','Манометр ТМ-510Р 0–1,6 МПа',(1.18,-.46,2.65),'pressure_gauge',category='Давление')
         gauge.rotation_euler.z=math.pi/2
         self.cock((0,0,.036))
@@ -217,15 +216,15 @@ class DetailBuilder:
         cyl('Cock spindle',c,c+Vector((.027,0,0)),.005,'gold',24)
         cube('Black isolation lever',c+Vector((.030,-.022,.005)),(.009,.054,.010),'black',.003)
 
-    def corrugation(self, points, radius=.008, pitch=.009):
-        # Cardinal spline smooths cable paths, rings follow the tangent.
+    def corrugation(self, points, radius=.008, pitch=.009, smooth_path=True):
+        # Keep explicitly filleted/shell-following paths bounded; smooth free hoses.
         ps=[Vector(p) for p in points];smooth=[]
         for i in range(len(ps)-1):
             a,b,c,d=ps[max(0,i-1)],ps[i],ps[i+1],ps[min(len(ps)-1,i+2)]
-            n=max(5,int((c-b).length/.008))
+            n=max(2,int((c-b).length/.008))
             for j in range(n):
                 t=j/n
-                smooth.append(.5*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t*t+(-a+3*b-3*c+d)*t*t*t))
+                smooth.append(.5*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t*t+(-a+3*b-3*c+d)*t*t*t) if smooth_path else b+(c-b)*t)
         smooth.append(ps[-1]);self.tube(smooth,radius*.82,'black',10)
         carry=0
         for i in range(1,len(smooth)):
@@ -285,7 +284,6 @@ class DetailBuilder:
                 self.g['cube']('Motor nameplate',(.111,0,.86),(.001,.077,.055),'steel',.001)
                 self.label('JETEX',(.113,-.031,.870),.014,(math.pi/2,0,math.pi/2))
                 self.label('V4-10',(.113,-.031,.853),.009,(math.pi/2,0,math.pi/2))
-                self.corrugation([(.14,.045,.78),(.19,.09,.74),(.21,.12,.15),(.22,.08,-.01)],.006,.007)
         self.root('control_cabinet');cube=self.g['cube'];cyl=self.g['cyl']
         for y in [-.265,.265]:self.tube([(-.158,y,-.35),(-.158,y,.35)],.0022,'gasket',8)
         for z in [-.350,.350]:self.tube([(-.158,-.26,z),(-.158,.26,z)],.0022,'gasket',8)
@@ -299,12 +297,6 @@ class DetailBuilder:
                 self.label(['ПИТАНИЕ','НАСОС 1','НАСОС 2','АВАРИЯ'][col],(-.177,y+.019,z+.032),.0055,(math.pi/2,0,-math.pi/2))
         self.mesh('Electrical warning triangle',[(-.176,-.246,.31),(-.176,-.216,.36),(-.176,-.186,.31)],[(0,1,2)],'yellow')
         self.label('!',(-.178,-.216,.316),.032,(math.pi/2,0,-math.pi/2),'dark',align='CENTER')
-        self.root('cable_routes')
-        for j in range(4):
-            self.corrugation([(-1.08,-.50+j*.024,1.14),(-1.07,-.52+j*.024,.52),(-.86,-.76+j*.024,.19),(-.72,-1.25+j*.024,.22),(-.75,-1.43+j*.024,.49)],.008,.010)
-        # Instrument cables cross the top and follow the shell toward the cabinet.
-        for y in [-.935,-.485]:
-            self.corrugation([(0,y,2.34),(-.18,y-.03,2.29),(-.39,y,2.13),(-.83,y,1.92),(-1.04,-.55,1.67)],.006,.008)
 
     def burner(self):
         g=self.g
@@ -504,20 +496,6 @@ class DetailBuilder:
                 self.ring((0,y,zc+r+.31),(0,0,1),rr*.86,.009,'blue')
                 for j in range(6):
                     a=j*math.pi/3;self.screw((rr*.64*math.cos(a),y+rr*.64*math.sin(a),zc+r+.35),radius=.006)
-        # Long level gauge at the dished end, with flange taps, white scale, drain.
-        gx,gy=.80,-3.17;bottom=.31;top=2.11
-        for z in [bottom,top]:
-            g['bend_pipe']('DA25 gauge impulse pipe',[(.80,-2.70,z),(.80,gy,z),(gx,gy-.09,z)],.012,'steel',.04)
-            flange('DA25 level connection',(.80,-2.73,z),(0,1,0),.052,.01,4,'steel')
-        cyl('DA25 level column',(gx,gy-.09,bottom-.055),(gx,gy-.09,top+.055),.021,'steel',48)
-        cube('DA25 gauge scale',(gx+.036,gy-.117,(top+bottom)/2),(.034,.012,top-bottom+.12),'white',.004)
-        cube('DA25 level indicator',(gx+.019,gy-.126,(top+bottom)/2),(.012,.004,top-bottom),'black',.002)
-        cube('DA25 red lower scale',(gx+.019,gy-.129,bottom+.21),(.010,.002,.42),'red')
-        for j in range(91):
-            z=bottom+j*.02
-            self.tube([(gx+.024,gy-.126,z),(gx+(.047 if j%5==0 else .039),gy-.126,z)],.0006,'dark',4)
-            if j%10==0:self.label(str(j*20),(gx+.046,gy-.128,z-.005),.008)
-        self.label('ДА-25',(gx+.02,gy-.13,top+.027),.012,align='CENTER')
-        cyl('DA25 gauge drain',(gx,gy-.09,bottom-.055),(gx,gy-.09,bottom-.115),.009,'gold',24)
-        cube('DA25 gauge drain grip',(gx+.02,gy-.09,bottom-.09),(.055,.008,.014),'red',.003)
+        from routing_geometry import deaerator_gauge
+        g['DA_GAUGE']=deaerator_gauge(g,self,cfg)
         return root

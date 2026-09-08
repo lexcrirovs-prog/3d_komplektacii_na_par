@@ -41,6 +41,29 @@ class InstallTests(unittest.TestCase):
         self.assertEqual(len(config['enabled_tools']), 6)
         self.assertNotIn('url', config)
 
+    def test_reviewed_upgrade_preserves_surrounding_bytes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config = root / 'config.toml'
+            old = config_block(root / 'python.exe', root / 'v1', root / 'acad.exe')
+            new = config_block(root / 'python.exe', root / 'v2', root / 'acad.exe')
+            prefix, suffix = b'# keep before\nmodel="gpt-6-astra"\n', b'\n# keep after\n[mcp_servers.blender]\ncommand="keep"\n'
+            config.write_bytes(prefix + old.encode() + suffix)
+            backup = append_config(config, root / 'backups', new, previous_block=old)
+            self.assertEqual(config.read_bytes(), prefix + new.encode() + suffix)
+            self.assertEqual(backup.read_bytes(), prefix + old.encode() + suffix)
+
+    def test_upgrade_rejects_modified_existing_connection(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config = root / 'config.toml'
+            old = config_block(root / 'python.exe', root / 'v1', root / 'acad.exe')
+            original = old.replace('enabled = true', 'enabled = false').encode()
+            config.write_bytes(original)
+            with self.assertRaises(ValueError):
+                append_config(config, root / 'backups', old, previous_block=old)
+            self.assertEqual(config.read_bytes(), original)
+
 
 if __name__ == '__main__':
     unittest.main()

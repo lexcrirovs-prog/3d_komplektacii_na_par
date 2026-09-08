@@ -1,4 +1,4 @@
-"""PREMIUM AutoCAD Bridge v2026.09.08.1. Codex / GPT-6 Astra."""
+"""PREMIUM AutoCAD Bridge v2026.09.08.2. Codex / GPT-6 Astra."""
 import argparse
 from typing import Literal
 from mcp.server.fastmcp import FastMCP
@@ -46,7 +46,7 @@ def build_server(bridge):
 
     @server.tool(annotations=annotation)
     def autocad_entity_info(document_name: str, handle: str) -> dict:
-        """Read standard ActiveX properties, bounds and block attributes for a hexadecimal handle. Includes OCS/bulge data for small 2D polylines; no complete BREP/Plant 3D metadata export."""
+        """Read standard ActiveX properties, bounds and editable block attributes for a hexadecimal handle. Constant attributes are explicitly excluded. Includes OCS data and the first 200 bulges of 2D polylines; no complete BREP/Plant 3D metadata export."""
         return bridge.entity_info(document_name, handle)
 
     return server

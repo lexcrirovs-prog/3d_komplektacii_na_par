@@ -1,4 +1,4 @@
-"""Read-only AutoCAD ActiveX adapter. Version 2026.09.08.1, Codex / GPT-6 Astra.
+"""Read-only AutoCAD ActiveX adapter. Version 2026.09.08.2, Codex / GPT-6 Astra.
 
 COM references never cross tool threads. All COM access is serialized and each
 call owns an STA apartment. No Dispatch() of the application, SendCommand,
@@ -15,7 +15,7 @@ import win32com.client
 
 from policy import select_document, validate_handle, validate_page, normalize_bounds
 
-VERSION = '2026.09.08.1'
+VERSION = '2026.09.08.2'
 BUSY_HRESULTS = {-2147418111, -2147417846}
 UNITS = {0: ('unspecified', None), 1: ('inches', 0.0254), 2: ('feet', 0.3048),
          4: ('millimeters', 0.001), 5: ('centimeters', 0.01), 6: ('meters', 1.0)}
@@ -175,14 +175,16 @@ class AutoCADBridge:
                     raise RuntimeError('AutoCAD became busy during geometry read') from exc
                 result['world_bounds'] = None
             if props.get('ObjectName') == 'AcDbPolyline':
+                result['coordinate_system'] = '2D polyline coordinates use OCS; apply Normal and Elevation before world-space reconstruction'
                 coordinates = props.get('Coordinates', [])
-                if isinstance(coordinates, list):
-                    count = len(coordinates) // 2
+                if isinstance(coordinates, (list, dict)):
+                    count = (coordinates['total_values'] if isinstance(coordinates, dict) else len(coordinates)) // 2
                     result['bulges'] = [float(obj.GetBulge(i)) for i in range(min(count, 200))]
                     result['bulges_truncated'] = count > 200
-                    result['coordinate_system'] = '2D polyline coordinates use OCS; apply Normal and Elevation before world-space reconstruction'
             if props.get('HasAttributes'):
                 attributes = obj.GetAttributes()
+                result['attributes_scope'] = 'editable attribute references only; constant attributes are not included'
+                result['constant_attributes_read'] = False
                 result['attributes'] = [optional_read(win32com.client.Dispatch(a), ('TagString', 'TextString', 'InsertionPoint'))[0]
                                         for a in attributes[:200]]
                 result['attributes_truncated'] = len(attributes) > 200

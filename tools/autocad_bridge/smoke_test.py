@@ -18,7 +18,7 @@ async def verify(args):
     document = fixture['document_name']
     parameters = StdioServerParameters(command=sys.executable,
                                       args=[str(Path(args.server).resolve()), '--autocad', args.autocad])
-    evidence = {'tested_at_utc': datetime.now(timezone.utc).isoformat(), 'version': '2026.09.08.1',
+    evidence = {'tested_at_utc': datetime.now(timezone.utc).isoformat(), 'version': '2026.09.08.2',
                 'author': 'Codex / GPT-6 Astra', 'fixture': str(Path(args.fixture).resolve())}
     async with stdio_client(parameters) as (reader, writer):
         async with ClientSession(reader, writer) as session:
@@ -41,6 +41,7 @@ async def verify(args):
 
             status = await call('autocad_status')
             assert status['connected'] and status['ready'] and status['read_only']
+            assert status['bridge_version'] == '2026.09.08.2'
             evidence['status'] = status
             documents = await call('autocad_list_documents')
             assert any(d['name'] == document for d in documents['documents'])
@@ -64,6 +65,8 @@ async def verify(args):
                        for lower, upper, expected in zip(bounds['min'], bounds['max'], fixture['expected']['box_extents']))
             assert objects['polyline']['bulges'][0] == 0.5
             assert objects['block']['attributes'][0]['TextString'] == 'MCP-001'
+            assert objects['block']['constant_attributes_read'] is False
+            assert 'editable' in objects['block']['attributes_scope']
             assert objects['text']['properties']['TextString'] == 'MCP CONNECTION CHECK 2026-09-08'
             for name, arguments in [
                 ('autocad_entity_info', {'document_name': document, 'handle': '(command "erase")'}),

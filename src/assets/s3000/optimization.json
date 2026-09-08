@@ -1,12 +1,12 @@
 {
   "status": "PASSED_MESHOPT_ROUNDTRIP",
-  "before_bytes": 95778544,
-  "after_bytes": 12773684,
-  "nodes": 92,
+  "before_bytes": 124986168,
+  "after_bytes": 16871620,
+  "nodes": 98,
   "compression": "EXT_meshopt_compression",
   "position_bits": 16,
   "normal_bits": 12,
-  "triangles": 2194136,
-  "bounds_max_error_m": 0.0000378775593707914,
+  "triangles": 3164288,
+  "bounds_max_error_m": 0.000027621245695108598,
   "offline_decoder": "three-stdlib / Drei useGLTF bundled MeshoptDecoder"
 }

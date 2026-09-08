@@ -1,0 +1,536 @@
+{
+  "version": "2026.09.08.4",
+  "date": "2026-09-08",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_LOCAL_VISUAL_ASSEMBLY",
+  "base_version": "2026.09.08.3",
+  "base_commit": "9720ae40c52540a945c2fbc0df33e5720dac312f",
+  "owner_requirements": [
+    "Additional 180 degree economizer rotation; two water flanges face rear",
+    "Pumps to lower economizer; upper economizer to boiler top port between steam and safety valves",
+    "When economizer disabled, exclusive direct pump-to-boiler route",
+    "Supported pressure/probe wiring, bottom trays, cabinet entry",
+    "DA25 level gauge inboard with two penetrating taps and local jacket escutcheons"
+  ],
+  "input_preservation": {
+    "status": "PASSED_SHA256",
+    "files": [
+      {
+        "name": "RS_410.dwg",
+        "sha256": "4ea1a043ff30777c2a379df818331760fe32e5aa8710f99025458479b05839c9",
+        "bytes": 119538,
+        "unchanged": true
+      },
+      {
+        "name": "Burner-ExEco-GAS-RS_310_610_M_BLU-M3-000002.rfa",
+        "sha256": "b00283860a1baa910fe27701663c3a4cd6ee6e8876b21a209192ab3f4888b424",
+        "bytes": 1560576,
+        "unchanged": true
+      },
+      {
+        "name": "Burner-ExEco-GAS-RS_310_610_M_BLU-M3-000002.txt",
+        "sha256": "54750f95dc7bcdd2bbecb4468ad52c08a49b3ee84d89c624704054b8fa3f33fb",
+        "bytes": 7510,
+        "unchanged": true
+      },
+      {
+        "name": "P1270830.jpg",
+        "sha256": "5cdfd43057e28937f0c78ed18788a076bfe7bb77434bed7ec41f018062ec8074",
+        "bytes": 9479278,
+        "unchanged": true
+      },
+      {
+        "name": "на карту (1).jpg",
+        "sha256": "0260f174d8cdf44fb58e494ed5df1e8bedfd28f728de7b72556d0a485309fa40",
+        "bytes": 4053157,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20250118_181257_586.jpg",
+        "sha256": "ef70840ce5de63c140223c1b3cd3662d80ed555677e5bb65716e6a359b09cad2",
+        "bytes": 202794,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20250118_181304_671.jpg",
+        "sha256": "977bb32ded59c0c30be03a39a476eebbe6c89e879cfddb34efb678d37001a464",
+        "bytes": 193655,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20250118_181305_140.jpg",
+        "sha256": "85845976b0bb3aa6adac22feaff509f0d7f6fd2ee0396445e27301f816fb0e67",
+        "bytes": 217518,
+        "unchanged": true
+      },
+      {
+        "name": "для календаря.png",
+        "sha256": "a1eda16e856ac8a72933a96c03a39875946bf3f1b5ccaa387f321663d5b74060",
+        "bytes": 1570555,
+        "unchanged": true
+      },
+      {
+        "name": "logo PG new.2.png",
+        "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665",
+        "bytes": 48635,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20241018_094121.jpg",
+        "sha256": "25fb185daa1fe882843b656066ce8e17ec654729870d450e44b468fe7b3b0033",
+        "bytes": 1959230,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20241018_094100.jpg",
+        "sha256": "f2f2bb7d56b04564bf51ab0673952c84fdb4a6794d764b5a494ba800820e2763",
+        "bytes": 3583234,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20241018_094209.jpg",
+        "sha256": "b654c5a9c8d19966dbc14ddc3f0e00a887634cc29f143f0c325226a978629dd0",
+        "bytes": 2194877,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20241018_094230.jpg",
+        "sha256": "cf2d1c2264f35602a03f5986bef354458743d531de63a83930df0b77d241967a",
+        "bytes": 2482314,
+        "unchanged": true
+      },
+      {
+        "name": "IMG_20250118_181304_479.jpg",
+        "sha256": "140c3c3f16483e7b9d32c639508e59ce7d349712ec0cef972a8418e24373bc16",
+        "bytes": 187919,
+        "unchanged": true
+      }
+    ],
+    "source_cad": "Repository STEP inputs not modified in this change",
+    "original_photographs_published": false
+  },
+  "specification": {
+    "supplier": "АДЛ",
+    "operating_pressure_bar": 8,
+    "bom_rows": 27,
+    "units_or_sets": 37,
+    "logical_components": 49,
+    "prices_exported": false
+  },
+  "economizer": {
+    "rotation_degrees": 270,
+    "additional_rotation_degrees": 180,
+    "boiler_port": [
+      0,
+      1.688,
+      1.06
+    ],
+    "economizer_port": [
+      6.045914879848624e-09,
+      1.687999963760376,
+      1.059999942779541
+    ],
+    "boiler_normal": [
+      0,
+      1,
+      0
+    ],
+    "economizer_normal": [
+      0,
+      -1,
+      0
+    ],
+    "boiler_bore_m": 0.45,
+    "economizer_bore_m": 0.45,
+    "boiler_outside_m": 0.456,
+    "economizer_outside_m": 0.456,
+    "basis": "Blender Z-up; cylinder axes and end planes read from source STEP"
+  },
+  "feed_routing": {
+    "authority": "Owner water-routing correction 2026-09-08; lower economizer inlet, upper outlet",
+    "boiler_port": [
+      0,
+      0.565,
+      2.085
+    ],
+    "boiler_stack": [
+      0,
+      0.565,
+      2.56
+    ],
+    "pump_header": [
+      1.95,
+      1.22,
+      1.58
+    ],
+    "economizer_lower": [
+      -0.525,
+      2.702,
+      0.7
+    ],
+    "economizer_upper": [
+      -0.525,
+      2.702,
+      1.42
+    ],
+    "economizer_water_normals": [
+      0,
+      1,
+      0
+    ],
+    "boiler_port_normal": [
+      0,
+      0,
+      1
+    ],
+    "original_water_port_source_mm": [
+      [
+        -507,
+        -360,
+        77
+      ],
+      [
+        -507,
+        360,
+        77
+      ]
+    ],
+    "paths": {
+      "feed_to_economizer": [
+        [
+          1.95,
+          1.22,
+          1.58
+        ],
+        [
+          1.95,
+          3.1,
+          1.58
+        ],
+        [
+          1.95,
+          3.1,
+          0.7
+        ],
+        [
+          -0.525,
+          3.1,
+          0.7
+        ],
+        [
+          -0.525,
+          2.702,
+          0.7
+        ]
+      ],
+      "feed_from_economizer": [
+        [
+          -0.525,
+          2.702,
+          1.42
+        ],
+        [
+          -0.525,
+          3.34,
+          1.42
+        ],
+        [
+          -0.525,
+          3.34,
+          2.73
+        ],
+        [
+          0.52,
+          3.34,
+          2.73
+        ],
+        [
+          0.52,
+          0.565,
+          2.73
+        ],
+        [
+          0,
+          0.565,
+          2.73
+        ],
+        [
+          0,
+          0.565,
+          2.56
+        ]
+      ],
+      "feed_direct": [
+        [
+          1.95,
+          1.22,
+          1.58
+        ],
+        [
+          1.95,
+          1.48,
+          1.58
+        ],
+        [
+          1.95,
+          1.48,
+          2.73
+        ],
+        [
+          0.52,
+          1.48,
+          2.73
+        ],
+        [
+          0.52,
+          0.565,
+          2.73
+        ],
+        [
+          0,
+          0.565,
+          2.73
+        ],
+        [
+          0,
+          0.565,
+          2.56
+        ]
+      ]
+    },
+    "with_economizer": [
+      "feed_to_economizer",
+      "feed_from_economizer"
+    ],
+    "without_economizer": [
+      "feed_direct"
+    ]
+  },
+  "wiring": {
+    "cabinet_inputs": 9,
+    "cables": [
+      "pressure_switches_1",
+      "pressure_switches_2",
+      "pressure_switches_3",
+      "lp200",
+      "lp400",
+      "cp930",
+      "bcv925",
+      "feed_pumps_1",
+      "feed_pumps_2"
+    ],
+    "cladding_clamps": 17,
+    "shell_center_radius_m": 0.934,
+    "tray": "two lower side trays, front cross-tray, pump skid tray and rigid cabinet duct",
+    "geometry_status": "VISUAL_SUPPORT_LAYOUT"
+  },
+  "deaerator_gauge": {
+    "basis": "Local DA25 metres; two points on an elliptical jacket head",
+    "gauge_x_m": 0.35,
+    "gauge_y_m": -3.245,
+    "connections": [
+      {
+        "surface": [
+          0.35,
+          -2.867442474097087,
+          0.31
+        ],
+        "pipe_start": [
+          0.35,
+          -2.747442474097087,
+          0.31
+        ],
+        "pipe_end": [
+          0.35,
+          -3.245,
+          0.31
+        ],
+        "penetration_m": 0.12,
+        "escutcheon_diameter_m": 0.134
+      },
+      {
+        "surface": [
+          0.35,
+          -2.8859712050743638,
+          2.11
+        ],
+        "pipe_start": [
+          0.35,
+          -2.7659712050743637,
+          2.11
+        ],
+        "pipe_end": [
+          0.35,
+          -3.245,
+          2.11
+        ],
+        "penetration_m": 0.12,
+        "escutcheon_diameter_m": 0.134
+      }
+    ]
+  },
+  "retained_sensor_mounts": {
+    "lp200": [
+      0,
+      -0.8925,
+      2.1185
+    ],
+    "lp400": [
+      0,
+      -0.485,
+      2.1185
+    ],
+    "basis": "User annotated screenshot 2026-09-08_17-29-46.png, CAD threaded port centres"
+  },
+  "export": {
+    "status": "PASSED_MESHOPT_ROUNDTRIP",
+    "before_bytes": 124986168,
+    "after_bytes": 16871620,
+    "nodes": 98,
+    "compression": "EXT_meshopt_compression",
+    "position_bits": 16,
+    "normal_bits": 12,
+    "triangles": 3164288,
+    "bounds_max_error_m": 2.7621245695108598e-05,
+    "offline_decoder": "three-stdlib / Drei useGLTF bundled MeshoptDecoder"
+  },
+  "blender_roundtrip": {
+    "status": "PASSED_BLENDER_DELIVERY_ROUNDTRIP",
+    "components": 49,
+    "max_bound_error_m": 2.384185791015625e-07,
+    "blender_version": "3.3.3",
+    "input": "S3000_ADL_8bar_v2026.09.08.4.glb",
+    "da_taps_inside_tank_geometry": [
+      [
+        0.3379998207092285,
+        -2.8124425411224365,
+        0.309999942779541
+      ],
+      [
+        0.3379998207092285,
+        -2.8309712409973145,
+        2.109999895095825
+      ]
+    ],
+    "engineering_acceptance": "NOT_VERIFIED"
+  },
+  "separate_glbs": {
+    "status": "PASSED_EXCLUSIVE_GLBS",
+    "exports": [
+      {
+        "file": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.08.4.glb",
+        "components": 47,
+        "bytes": 112007268,
+        "economizer": true,
+        "direct": false,
+        "deaerator": false
+      },
+      {
+        "file": "S3000_ADL_8bar_DIRECT_v2026.09.08.4.glb",
+        "components": 45,
+        "bytes": 110737756,
+        "economizer": false,
+        "direct": true,
+        "deaerator": false
+      }
+    ]
+  },
+  "delivery_package": {
+    "status": "PASSED_SHA256_COMPARE",
+    "site_files": 15,
+    "zip_entries": 36,
+    "renders": 13,
+    "zip_bytes": 236991351,
+    "zip_sha256": "faa6d189a8225720f66d0f350846660680fb347a6ba5cb24b79ae2be8eacb3e8",
+    "comparison": "Every ZIP entry against final files; copied site against dist; web GLB against repository"
+  },
+  "build": {
+    "status": "PASSED",
+    "command": "npm run build",
+    "typescript": true,
+    "vite": "6.4.1",
+    "node": "24.13.1",
+    "npm_version": "2026.9.8-4",
+    "built_html_bytes": 23865023,
+    "assembly_acceptance": "PASSED_LOCAL_ASSEMBLY",
+    "visibility_tests": {
+      "command": "node --test tools/s3000/visibility.test.mjs",
+      "passed": 4,
+      "failed": 0
+    }
+  },
+  "browser": {
+    "status": "PASSED_LOCAL_BUILT_SITE",
+    "desktop_viewport": [
+      1212,
+      986
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "checks": [
+      "Economizer feed pipes visible, direct pipe absent",
+      "Direct feed replaces economizer, both pipes and supports",
+      "Empty addons selection survives reopening",
+      "Accessories hidden removes pipe network",
+      "Hidden selected economizer card cleared",
+      "Mobile module labels toggle options and URL",
+      "All selected modules fit mobile overview",
+      "No horizontal page overflow"
+    ],
+    "console_errors_and_warnings_observed": 0,
+    "temporary_viewport_override": "RESET",
+    "automation_note": "Mobile hidden-input setChecked did not toggle; clicking the visible module label worked. Desktop checkbox actions worked."
+  },
+  "mcp": {
+    "blender": {
+      "connected": true,
+      "version": "3.3.3",
+      "mode": "isolated_background_session",
+      "scene_opened": "s3000-routing-v2026-09-08-4.blend",
+      "objects_read": [
+        "economizer",
+        "feed_valve",
+        "feed_direct",
+        "cable_routes",
+        "deaerator"
+      ]
+    },
+    "autocad": {
+      "connected": true,
+      "ready": true,
+      "product": "AutoCAD 2027",
+      "read_only": true
+    }
+  },
+  "renders": {
+    "inspected": [
+      "burner-detail",
+      "cabinet-cables",
+      "cable-detail",
+      "deaerator-cladding",
+      "deaerator-detail",
+      "deaerator-level",
+      "economizer",
+      "feed-direct",
+      "feed-with-economizer",
+      "front-left",
+      "front-right",
+      "level-detail",
+      "sensor-detail"
+    ],
+    "resolution": [
+      2000,
+      1400
+    ],
+    "count": 13
+  },
+  "native_blend_bytes": 258715416,
+  "engineering_acceptance": "NOT_VERIFIED",
+  "deaerator_tank_variant": "DA25/15_PRELIMINARY",
+  "website_deployment": "NOT_RUN",
+  "physical_phone_performance": "NOT_RUN",
+  "stl_print_preparation": "NOT_RUN",
+  "ci": "CI_NOT_CONFIGURED"
+}

@@ -22,9 +22,26 @@ for part in manifest['parts']:
     error=max(abs(bounds[j][i]-part['bounds_blender'][j][i]) for i in range(3) for j in range(2))
     assert error<.00002, (part['id'],error)
     errors.append(error)
-assert abs(bpy.data.objects['economizer'].matrix_world.to_euler().z-math.pi/2)<1e-5
+actual=bpy.data.objects['economizer'].matrix_world.to_euler().z
+expected=math.radians(manifest['economizer_joint']['rotation_degrees'])
+assert abs(math.sin(actual)-math.sin(expected))<1e-5 and abs(math.cos(actual)-math.cos(expected))<1e-5
+# Ray-cast the exported geometry itself across each tap INSIDE the tank head.
+# A disconnected pipe ending outside the jacket cannot pass this check.
+da=bpy.data.objects['deaerator']
+da_mesh=next(c for c in da.children_recursive if c.type=='MESH')
+tap_hits=[]
+for conn in manifest['deaerator_gauge']['connections']:
+    sx,sy,sz=conn['surface']
+    world=da.matrix_world@Vector((sx-.030,sy+.055,sz))
+    local=da_mesh.matrix_world.inverted()@world
+    direction=da_mesh.matrix_world.inverted().to_3x3()@Vector((1,0,0))
+    hit,loc,normal,face=da_mesh.ray_cast(local,direction.normalized(),distance=.065)
+    assert hit, 'Missing physical gauge tap inside tank head'
+    point=da.matrix_world.inverted()@(da_mesh.matrix_world@loc)
+    assert abs(point.x-(sx-.012))<.002, ('Unexpected gauge tap surface',list(point))
+    tap_hits.append(list(point))
 report=dict(status='PASSED_BLENDER_DELIVERY_ROUNDTRIP', components=len(errors),
             max_bound_error_m=max(errors), blender_version=bpy.app.version_string,
-            input=glb.name, engineering_acceptance='NOT_VERIFIED')
+            input=glb.name, da_taps_inside_tank_geometry=tap_hits, engineering_acceptance='NOT_VERIFIED')
 output.write_text(json.dumps(report,indent=2),encoding='utf-8')
 print(json.dumps(report),flush=True)

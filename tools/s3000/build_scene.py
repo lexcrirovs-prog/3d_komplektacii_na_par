@@ -23,7 +23,7 @@ A = P.parse_args(sys.argv[sys.argv.index('--')+1:])
 OUT = A.repo / 'src/assets/s3000'
 OUT.mkdir(parents=True, exist_ok=True)
 A.delivery.mkdir(parents=True, exist_ok=True)
-VERSION = '2026.09.08.2'
+VERSION = '2026.09.08.3'
 SHIFT_Y, FLOOR = 1.035, 1.06
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)
@@ -102,7 +102,7 @@ def cube(name, p, size, mat='dark', bevel=0):
         bpy.ops.object.modifier_apply(modifier=normal.name)
     return o
 
-def cyl(name, a, b, radius, mat='steel', segments=32, r2=None):
+def cyl(name, a, b, radius, mat='steel', segments=64, r2=None):
     av,bv = Vector(a),Vector(b)
     delta = bv-av
     bpy.ops.mesh.primitive_cone_add(vertices=segments, radius1=radius, radius2=radius if r2 is None else r2,
@@ -114,7 +114,7 @@ def cyl(name, a, b, radius, mat='steel', segments=32, r2=None):
 
 def torus(name, center, major, minor, mat='black', normal=(0,0,1), segments=40):
     bpy.ops.mesh.primitive_torus_add(major_radius=major, minor_radius=minor, major_segments=segments,
-                                    minor_segments=8, location=center)
+                                    minor_segments=12, location=center)
     o=finish(bpy.context.object,name,mat,True)
     o.rotation_mode='QUATERNION'
     o.rotation_quaternion=Vector(normal).to_track_quat('Z','Y')
@@ -122,7 +122,7 @@ def torus(name, center, major, minor, mat='black', normal=(0,0,1), segments=40):
 
 def pipe(name, points, radius=.02, mat='dark'):
     c=bpy.data.curves.new(name,'CURVE')
-    c.dimensions='3D'; c.resolution_u=2; c.bevel_depth=radius; c.bevel_resolution=3
+    c.dimensions='3D'; c.resolution_u=2; c.bevel_depth=radius; c.bevel_resolution=5
     spline=c.splines.new('POLY'); spline.points.add(len(points)-1)
     for p,co in zip(spline.points,points): p.co=(*co,1)
     o=bpy.data.objects.new(name,c);scene.collection.objects.link(o)
@@ -142,7 +142,7 @@ def bend_pipe(name, points, radius=.02, mat='dark', fillet=.06):
 def flange(name, center, normal, radius=.065, bore=.017, bolts=4, mat='blue', thickness=.016):
     # Actual open bore, with two rings and cylindrical walls.
     n=Vector(normal).normalized(); q=n.to_track_quat('Z','Y')
-    vs=[];fs=[];N=32
+    vs=[];fs=[];N=64
     for z in [-thickness/2,thickness/2]:
         for r in [radius,bore]:
             for i in range(N):
@@ -192,7 +192,7 @@ def valve(key, label, pos, dn=32, bom=None, flow=(0,0,1), hand=(1,0,0)):
 
 def vendor(key, model, pos, bom=None, basis=None, anchor=None, extend_probe=False, label=None, note=''):
     part(key,label or model.upper(),pos,bom=bom,source='manufacturer_step',note=note,category='ATECH')
-    data=json.load(gzip.open(A.cache/'meshes'/(model+'.json.gz'),'rt',encoding='utf-8'))
+    data=json.load(gzip.open(A.cache/'detail/meshes'/(model+'.json.gz'),'rt',encoding='utf-8'))
     allv=[v for s in data['solids'] for v in s['vertices']]
     mins=[min(v[i] for v in allv) for i in range(3)];maxs=[max(v[i] for v in allv) for i in range(3)]
     anchor=anchor or [(mins[i]+maxs[i])/2 for i in range(3)]
@@ -225,19 +225,28 @@ def vendor(key, model, pos, bom=None, basis=None, anchor=None, extend_probe=Fals
                 idx=2 if c[1]>maxs[1]-50 else 0
             poly.material_index=idx
             poly.use_smooth=False
-        # The source includes fine screws; planar dissolve cuts web size without scaling.
-        if len(mesh.polygons)>12000:
-            bpy.context.view_layer.objects.active=obj;obj.select_set(True)
-            dec=obj.modifiers.new('Planar CAD simplification','DECIMATE');dec.decimate_type='DISSOLVE';dec.angle_limit=.025
-            bpy.ops.object.modifier_apply(modifier=dec.name);obj.select_set(False)
+        # Fine source tessellation is kept, including screw threads and small radii.
+        bm=bmesh.new();bm.from_mesh(mesh)
+        bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.00000005)
+        bm.to_mesh(mesh);bm.free()
+        mesh.use_auto_smooth=True;mesh.auto_smooth_angle=math.radians(32)
+        for poly in mesh.polygons:poly.use_smooth=True
     return ROOT
 
 def import_original(key, filename, label):
     global ROOT
     parent=part(key,label,source='user_cad',category='Котёл' if key=='boiler' else 'Дополнения')
-    before=set(bpy.data.objects)
-    bpy.ops.import_scene.gltf(filepath=str(A.repo/'src/assets'/filename))
-    imported=set(bpy.data.objects)-before
+    fine=A.cache/'detail/meshes'/(key+'.json.gz')
+    if fine.exists():
+        data=json.load(gzip.open(fine,'rt',encoding='utf8'));imported=set()
+        for solid in data['solids']:
+            mesh=bpy.data.meshes.new(key+' fine STEP')
+            mesh.from_pydata([(v[0],-v[2],v[1]) for v in solid['vertices']],[],solid['triangles']);mesh.update()
+            obj=bpy.data.objects.new(key+' CAD',mesh);scene.collection.objects.link(obj);imported.add(obj)
+    else:
+        before=set(bpy.data.objects)
+        bpy.ops.import_scene.gltf(filepath=str(A.repo/'src/assets'/filename))
+        imported=set(bpy.data.objects)-before
     for obj in imported:
         if obj.type!='MESH': continue
         obj.data.transform(obj.matrix_world)
@@ -259,19 +268,24 @@ def import_original(key, filename, label):
         bm.to_mesh(obj.data);bm.free()
         obj.data.use_auto_smooth=True
         obj.data.auto_smooth_angle=math.radians(35)
-        for p in obj.data.polygons:p.use_smooth=True
+        # Large door/plate polygons must remain flat; averaging their triangle
+        # normals produces false dents around the flange and sight hole.
+        for p in obj.data.polygons:p.use_smooth=(p.material_index==0)
         obj.name=key+' original CAD mesh'
     for obj in imported:
         if obj.type!='MESH': bpy.data.objects.remove(obj,do_unlink=True)
     ROOT=parent
     return parent
 
-# Boiler geometry is exactly the existing mesh, in the same metric scale.
+sys.path.insert(0,str(Path(__file__).parent))
+from detail_geometry import DetailBuilder
+DETAIL=DetailBuilder(globals())
+
+# Source CAD is tessellated more finely; its scale and coordinate frame are retained.
 boiler=import_original('boiler','boiler.glb','PREMIUM S-3000')
 boiler.location=(0,SHIFT_Y,FLOOR)
-text('PREMIUM side mark','PREMIUM',(-.891,-.05,.23),.18,'dark',(math.pi/2,0,-math.pi/2))
-text('S3000 side mark','S 3000  /  STEAM',(-.91,-.08,.12),.055,'dark',(math.pi/2,0,-math.pi/2))
 text('Door badge','PREMIUM',(-.23,-2.734,.66),.062,'white')
+DETAIL.boiler()
 
 eco=import_original('economizer','rs_410.glb','Экономайзер PREMIUM EQS2-3000-3500')
 eco.rotation_euler.z=math.pi/2
@@ -297,37 +311,15 @@ part('safety_header','Группа безопасности / присоедин
 for y in [.785,1.005]:
     flange('Safety mating flange',(0,y,2.066),(0,0,1),.0675,.016)
 
-vendor('lp200','lp200',(0,.565,2.085),'lp200',anchor=[11.5,-38.55,-3],extend_probe=True,
+vendor('lp200','lp200',(0,-.8925,2.1185),'lp200',anchor=[11.5,-38.55,-3],extend_probe=True,
        label='LP210 / LP200, L=1000 мм',note='Заводская модель 500 мм: стержни удлинены на 500 мм, головка сохранена.')
-vendor('lp400','lp400',(0,-.485,2.1285),'lp400',anchor=[-10.9,-1.968,-24.17],extend_probe=True,
+vendor('lp400','lp400',(0,-.485,2.1185),'lp400',anchor=[-10.9,-1.968,-24.17],extend_probe=True,
        label='LP410 / LP400, L=1000 мм',note='Заводская модель 500 мм: стержни удлинены на 500 мм, головка сохранена.')
 part('electrode_flanges','Фланцы электродов',(0,0,0),'electrode_flanges',category='Металлоконструкции')
-for y,z,r in [(.565,2.086,.0675),(-.485,2.13,.08)]: flange('Electrode adapter',(0,y,z),(0,0,1),r,.013,4,'steel')
+for y in [-.8925,-.485]:
+    torus('Electrode sealing ring',(0,y,2.117),(0.02 if y<-.6 else .017),.0018,'gold',segments=64)
 
-# Pressure header: three KPI35R switches, gauge and isolation valve.
-part('pressure_header','Приборный коллектор',(0,0,0),category='Давление')
-bend_pipe('Pressure siphon',[(0,-.935,2.13),(0,-.935,2.43),(.18,-.935,2.43),(.18,-.935,2.65)],.013,fillet=.1)
-cyl('Instrument header',(-.49,-.935,2.65),(.48,-.935,2.65),.019,'dark')
-for i,x in enumerate([-.38,-.16,.06],1):
-    part(f'pressure_switches_{i}',f'Реле KPI35R №{i}',(x,-.935,2.65),'pressure_switches',category='Давление',
-         note='Корпус и штуцер восстановлены по P1270830, размеры приблизительные.')
-    cyl('Brass pressure connector',(0,0,0),(0,0,.095),.01,'gold',16)
-    cyl('Pressure switch hex',(0,0,.065),(0,0,.084),.018,'gold',6)
-    cube('KPI35R housing',(0,0,.149),(.095,.055,.085),'white',.005)
-    cube('KPI35R scale',(-.022,-.028,.153),(.018,.002,.039),'steel')
-    text('KPI scale','8',(-.024,-.03,.143),.018,'dark')
-    text('KPI badge','KPI35R',(.005,-.03,.148),.009,'red')
-    bend_pipe('Cable',[(0,.017,.112),(0,.075,.065),(.03,.065,-.45)],.004,'black',.04)
-part('pressure_gauge','Манометр ТМ-510Р 0–1,6 МПа',(.30,-.935,2.65),'pressure_gauge',category='Давление')
-cyl('Gauge cock',(0,0,0),(0,0,.10),.01,'gold')
-cyl('Gauge steel body',(0,-.022,.165),(0,.026,.165),.065,'steel',48)
-cyl('Gauge face',(0,-.024,.165),(0,-.026,.165),.058,'white',48)
-for k in range(13):
-    a=math.radians(-215+k*270/12)
-    cyl('Gauge tick',(.046*math.cos(a),-.028,.165+.046*math.sin(a)),(.054*math.cos(a),-.028,.165+.054*math.sin(a)),.001,'dark',6)
-cyl('Gauge needle',(0,-.031,.165),(.013,-.031,.200),.0016,'dark',8)
-text('Gauge units','MPa',(-.015,-.029,.137),.012,'dark')
-valve('instrument_valve','Вентиль приборной линии DN15',(.49,-.935,2.62),15,'instrument_valve',hand=(0,-1,0))
+DETAIL.header()
 
 # Sight glass centres match the 400 mm vertical spacing in the source boiler CAD.
 for i,y in enumerate([-.685,-.485],1):
@@ -437,54 +429,14 @@ for key,y,label in [('lc220',-.16,'LC220'),('lc440',0,'LC440'),('bc970',.16,'BC9
 part('cable_routes','Кабельные трассы',(0,0,0),category='Автоматика')
 for j in range(4):
     bend_pipe('Cabinet cable conduit',[(-1.03,-.48+j*.025,1.17),(-1.02,-.5+j*.025,.36),(-.76,-.96+j*.025,.15),(-.74,-1.42+j*.025,.5)],.009,'black',.18)
-bend_pipe('Top instrument cable',[(.06,-.90,2.77),(.23,-.83,2.6),(.32,-.72,2.16),(-.32,-.66,2.14),(-.92,-.65,1.8)],.009,'black',.12)
 
-# Burner is explicitly a photo reconstruction, independent of the economizer CAD.
-part('burner','Горелка по фото Riello RS 410',(0,0,0),source='photo_parametric',category='Дополнения',
-     note='Внешний вид по P1270769/P1270777. Геометрия приблизительная; выбор горелки S-3000 и монтажный фланец требуют подтверждения.')
-flange('Burner mounting flange',(0,-1.707,.802),(0,1,0),.255,.205,8,'dark',.025)
-cyl('Combustion head',(0,-1.70,.802),(0,-2.20,.802),.194,'dark',48)
-for y in [-1.84,-2.16]: flange('Burner coupling',(0,y,.802),(0,1,0),.215,.19,8,'dark',.018)
-cyl('Fan volute',(-.08,-2.53,.62),(-.08,-2.90,.62),.378,'shell',64)
-torus('Fan casing rim',(-.08,-2.906,.62),.334,.019,'steel',normal=(0,1,0),segments=56)
-cyl('Air intake',(-.08,-2.913,.62),(-.08,-2.934,.62),.19,'black',48)
-for i in range(-6,7):
-    x=-.08+i*.026; half=math.sqrt(max(0,.17**2-(i*.026)**2))
-    cyl('Air intake grille',(x,-2.94,.62-half),(x,-2.94,.62+half),.003,'dark',6)
-cyl('Burner motor',(.22,-2.54,.56),(.63,-2.54,.56),.18,'dark',40)
-for i in range(16):
-    t=i*2*math.pi/16
-    cyl('Burner motor rib',(.3,-2.54+.18*math.cos(t),.56+.18*math.sin(t)),(.60,-2.54+.18*math.cos(t),.56+.18*math.sin(t)),.007,'black',8)
-# Smooth red cowling with changing cross section, not a rectangular proxy.
-sections=[(-2.13,.27,1.03,.19),(-2.34,.43,1.08,.26),(-2.66,.45,1.04,.245),(-2.91,.36,.99,.20)]
-verts=[];faces=[];N=32
-for y,w,z,h in sections:
-    for i in range(N):
-        t=2*math.pi*i/N
-        cs,sn=math.cos(t),math.sin(t)
-        verts.append((w*math.copysign(abs(cs)**.58,cs),y,z+h*math.copysign(abs(sn)**.7,sn)))
-for j in range(len(sections)-1):
-    for i in range(N):faces.append((j*N+i,j*N+(i+1)%N,(j+1)*N+(i+1)%N,(j+1)*N+i))
-faces.extend([tuple(reversed(range(N))),tuple((len(sections)-1)*N+i for i in range(N))])
-mesh=bpy.data.meshes.new('Riello cowling mesh');mesh.from_pydata(verts,[],faces);mesh.update()
-obj=bpy.data.objects.new('Red RS410 photo cowling',mesh);scene.collection.objects.link(obj);finish(obj,obj.name,'red',True)
-cube('Burner front trim',(0,-2.917,.843),(.66,.018,.05),'white',.01)
-cube('Burner front display',(-.13,-2.927,1.095),(.20,.015,.082),'steel',.005)
-cube('Burner screen',(-.13,-2.938,1.10),(.146,.003,.045),'dark',.003)
-text('Burner mark','RIELLO  /  RS 410',(-.13,-2.934,.93),.034,'white')
-for i in range(5): cyl('Burner control button',(-.2+i*.065,-2.93,.843),(-.2+i*.065,-2.95,.843),.012,['red','green','black','green','red'][i],16)
-bend_pipe('Blue gas inlet',[(-.18,-1.87,.60),(-.52,-1.87,.60),(-.64,-2.12,.52),(-.64,-2.74,.52)],.042,'blue',.14)
-for y in [-2.2,-2.45]:
-    cube('Gas train valve',(-.64,y,.52),(.15,.16,.12),'steel',.015)
-    cyl('Solenoid',(-.64,y,.56),(-.64,y,.70),.027,'black')
-cyl('Gas filter',(-.64,-2.73,.48),(-.64,-2.73,.65),.078,'steel')
-flange('Gas train union',(-.64,-2.1,.52),(0,1,0),.08,.042,4,'gold')
+DETAIL.burner()
+DETAIL.sight_glass_details()
+DETAIL.machinery()
 
-# Existing deaerator at full scale, as a separate optional unit.
-da=import_original('deaerator','deaerator.glb','Деаэратор PREMIUM DA5/2')
-da.location=(-3.8,.5,.8223)
-PARTS['deaerator']['category']='Дополнения'
-PARTS['deaerator']['note']='Исходная модель в масштабе 1:1; обвязка деаэратора не включена.'
+# The requested DA-25 replaces DA5/2. Its tank variant is explicit in metadata.
+da=DETAIL.deaerator()
+DETAIL.flush()
 
 # Bake curves and modifiers, then join meshes per logical part (few draw calls).
 # Each BOM item remains independently selectable and carries its own provenance.
@@ -514,6 +466,9 @@ for key in PARTS:
 manifest=dict(version=VERSION,date='2026-09-08',author='Codex / GPT-6 Astra',units='m',
               supplier='АДЛ',operating_pressure_bar=8,engineering_acceptance='NOT_VERIFIED',
               parts=list(PARTS.values()),bom_nodes=BOM_NODES,
+              sensor_mounts={'lp200':[0,-.8925,2.1185],'lp400':[0,-.485,2.1185],
+                             'basis':'User annotated screenshot 2026-09-08_17-29-46.png, CAD threaded port centres'},
+              deaerator=json.loads(Path(__file__).with_name('da25-reference.json').read_text(encoding='utf8')),
               economizer_joint=dict(rotation_degrees=90,boiler_port=[0,SHIFT_Y+.653,FLOOR],
                  economizer_port=list(eco.matrix_world@Vector((-.507,.448,0))),
                  boiler_normal=[0,1,0],economizer_normal=[0,-1,0],
@@ -523,7 +478,7 @@ manifest=dict(version=VERSION,date='2026-09-08',author='Codex / GPT-6 Astra',uni
 (OUT/'sources.json').write_bytes((A.cache/'vendor/sources.json').read_bytes())
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.export_scene.gltf(filepath=str(OUT/'s3000-assembly.glb'),export_format='GLB',use_selection=True,
-    export_extras=True,export_yup=True,export_texcoords=False,export_normals=True,export_materials='EXPORT')
+    export_extras=True,export_yup=True,export_texcoords=True,export_normals=True,export_materials='EXPORT')
 
 # Studio layout stays in .blend, outside the web geometry export.
 ROOT=None
@@ -545,16 +500,28 @@ scene.render.engine='BLENDER_EEVEE'
 scene.eevee.use_gtao=True;scene.eevee.gtao_distance=3;scene.eevee.gtao_factor=1.15
 scene.eevee.use_soft_shadows=True;scene.eevee.taa_render_samples=96
 scene.view_settings.view_transform='Filmic';scene.view_settings.look='Medium High Contrast'
-scene.render.resolution_x=1600;scene.render.resolution_y=1100;scene.render.resolution_percentage=100
+scene.render.resolution_x=2000;scene.render.resolution_y=1400;scene.render.resolution_percentage=100
 camd=bpy.data.cameras.new('STUDIO camera');cam=bpy.data.objects.new('STUDIO camera',camd);scene.collection.objects.link(cam)
 camd.type='ORTHO';camd.ortho_scale=7.6;scene.camera=cam
 views=[('front-left',(-5,-7,4.4),(0,-.1,1.25)),('front-right',(6,-7,4.6),(.2,-.1,1.3)),
-       ('economizer',(5,6,4.0),(0,.6,1.25)),('level-detail',(5,-3,2.8),(1.15,-.8,1.55))]
+       ('economizer',(5,6,4.0),(0,.6,1.25)),('level-detail',(5,-3,2.8),(1.15,-.8,1.9)),
+       ('burner-detail',(-2.5,-5,2.5),(0,-2.30,.80)),('sensor-detail',(3,-4,4.6),(0,-.73,2.18))]
 for name,loc,target in views:
     cam.location=loc;cam.rotation_euler=(Vector(target)-cam.location).to_track_quat('-Z','Y').to_euler()
-    camd.ortho_scale=3.4 if name=='level-detail' else 7.6
+    camd.ortho_scale={'level-detail':2.9,'burner-detail':2.25,'sensor-detail':2.7}.get(name,7.6)
     if A.render:
         scene.render.filepath=str(A.delivery/(name+'.png'));bpy.ops.render.render(write_still=True)
+for key in PARTS:
+    for o in [bpy.data.objects[key],*bpy.data.objects[key].children]:o.hide_render=(key!='deaerator')
+area('STUDIO DA key',(-7,-3,7),2300,5,(-4.25,.3,2))
+area('STUDIO DA rim',(-5,6,6),2500,5,(-4.25,.3,2))
+for name,loc,target,scale in [('deaerator-detail',(-10,-8,6.5),(-4.25,.3,2.13),9.2),
+                              ('deaerator-cladding',(-8,-7,3.5),(-4.25,-2.2,1.6),3.6)]:
+    cam.location=loc;cam.rotation_euler=(Vector(target)-cam.location).to_track_quat('-Z','Y').to_euler();camd.ortho_scale=scale
+    if A.render:
+        scene.render.filepath=str(A.delivery/(name+'.png'));bpy.ops.render.render(write_still=True)
+for key in PARTS:
+    for o in [bpy.data.objects[key],*bpy.data.objects[key].children]:o.hide_render=(key=='deaerator')
 cam.location=(-5,-7,4.4);cam.rotation_euler=(Vector((0,-.1,1.25))-cam.location).to_track_quat('-Z','Y').to_euler();camd.ortho_scale=7.6
 bpy.ops.object.select_all(action='DESELECT')
 bpy.context.view_layer.objects.active=boiler;boiler.select_set(True)

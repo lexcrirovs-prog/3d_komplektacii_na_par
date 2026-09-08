@@ -24,18 +24,19 @@ def children(shape, kind):
         explorer.Next()
     return result
 
-def convert(source, destination):
+def convert(source, destination, linear_deflection=0.35, angular_deflection=0.22):
     reader = STEPControl_Reader()
     if reader.ReadFile(str(source)) != IFSelect_RetDone:
         raise ValueError(f'Cannot read STEP: {source.name}')
     reader.TransferRoots()
     shape = reader.OneShape()
-    mesher = BRepMesh_IncrementalMesh(shape, 0.35, False, 0.22, False)
+    mesher = BRepMesh_IncrementalMesh(shape, linear_deflection, False, angular_deflection, False)
     mesher.Perform()
     if not mesher.IsDone():
         raise ValueError('Tessellation failed')
     solids = children(shape, TopAbs_SOLID) or [shape]
-    result = dict(source=source.name, units='mm', solids=[])
+    result = dict(source=source.name, units='mm', linear_deflection_mm=linear_deflection,
+                  angular_deflection_rad=angular_deflection, solids=[])
     for index, solid in enumerate(solids):
         vertices, triangles = [], []
         for item in children(solid, TopAbs_FACE):

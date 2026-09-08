@@ -1,0 +1,189 @@
+{
+  "version": "2026.09.08.3",
+  "date": "2026-09-08",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_LOCAL_VISUAL_ASSEMBLY",
+  "input_preservation": {
+    "status": "PASSED_SHA256",
+    "files": 15,
+    "scope": "14 files in the detail input manifest plus the DA25/15 factory DWG",
+    "logo_copy": "BYTE_IDENTICAL",
+    "original_inputs_published": false
+  },
+  "specification": {
+    "supplier": "АДЛ",
+    "operating_pressure_bar": 8,
+    "safety_valve_setting_bar": 9,
+    "pumps": "Jetex V4-10",
+    "bom_rows": 27,
+    "units_or_sets": 37,
+    "logical_components": 46,
+    "prices_exported": false
+  },
+  "sensor_placement": {
+    "authority": "Owner annotated screenshot 2026-09-08_17-29-46.png",
+    "coordinate_system": "Blender metres, Z up, -Y towards burner",
+    "lp200": [
+      0,
+      -0.8925,
+      2.1185
+    ],
+    "lp400": [
+      0,
+      -0.485,
+      2.1185
+    ],
+    "lp200_role": "front large flange",
+    "lp400_role": "following flange",
+    "third_sensor_added": false,
+    "pressure_header_location": [
+      1.1799999475479126,
+      -0.6600000262260437,
+      0
+    ],
+    "header_side": "above sight glasses on +X side"
+  },
+  "burner": {
+    "source": "RS_410.dwg",
+    "source_sha256": "4ea1a043ff30777c2a379df818331760fe32e5aa8710f99025458479b05839c9",
+    "input_kind": "3D polyface block",
+    "meshes": 168,
+    "source_polygon_faces": 1244,
+    "units": "mm",
+    "conversion": "AutoCAD Core Console private DWG copy -> DXF -> Blender",
+    "details_added": "edge bevels, fasteners, motor grille/fins, control panel, labels and cables from photographs",
+    "rfa_converted": false
+  },
+  "deaerator": {
+    "replaces": "DA5/2",
+    "owner_requested": "ДА-25",
+    "modeled_variant": "ДА-25/15",
+    "tank_volume_m3": 15,
+    "variant_status": "PRELIMINARY_PENDING_OWNER_VARIANT",
+    "geometry_source": "factory 2D drawing plus photographs",
+    "parameters": "tools/s3000/da25-reference.json",
+    "cladding": "galvanized barrel and column; radial head panels, lap seams and rivets",
+    "dimensions_from_mcp_m": [
+      2.3282904624938965,
+      6.440080165863037,
+      4.36899995803833
+    ]
+  },
+  "economizer": {
+    "rotation_degrees": 90,
+    "center_gap_m": 1.671217684586219e-7,
+    "matched_inner_diameter_m": 0.45,
+    "matched_outer_diameter_m": 0.456,
+    "port_normals": "opposite",
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  "export": {
+    "web_glb_bytes": 12773684,
+    "uncompressed_glb_bytes": 95778544,
+    "blend_bytes": 185987264,
+    "named_nodes": 92,
+    "triangles": 2194136,
+    "materials": 18,
+    "embedded_textures": 2,
+    "meshopt_status": "PASSED_MESHOPT_ROUNDTRIP",
+    "meshopt_bounds_difference_m": 0.0000378775593707914,
+    "blender_roundtrip_components": 46,
+    "blender_roundtrip_bounds_difference_m": 2.384185791015625e-7
+  },
+  "build": {
+    "status": "PASSED",
+    "command": "npm run build",
+    "typescript": true,
+    "vite": "6.4.1",
+    "node": "24.13.1",
+    "npm_version": "2026.9.8-3",
+    "built_html_bytes": 18397387,
+    "python_modules_compile": "PASSED",
+    "burner_converter_repeat": "PASSED_168_MESHES",
+    "assembly_acceptance": "PASSED_LOCAL_ASSEMBLY",
+    "git_diff_check": "PASSED"
+  },
+  "browser": {
+    "status": "PASSED_LOCAL_BUILT_SITE",
+    "desktop_viewport": [
+      1280,
+      720
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "horizontal_overflow": false,
+    "checks": [
+      "Meshopt model and embedded logo loaded",
+      "corrected complete instrument-header detail view",
+      "RS410 detail view",
+      "DA25 module, material and variant note",
+      "LP200 equipment search and selection",
+      "all three optional module toggles update URL",
+      "empty addons selection survives reopening",
+      "all modules fit in mobile overview",
+      "mobile options accessible by scroll"
+    ],
+    "console_errors_and_warnings_observed": 0,
+    "temporary_viewport_override": "RESET"
+  },
+  "delivery_package": {
+    "status": "PASSED_SHA256_COMPARE",
+    "site_files": 15,
+    "zip_entries": 28,
+    "renders": 8,
+    "zip_bytes": 126255784,
+    "zip_sha256": "fbd5ee45c4a70c0fa5e0bf7d57dc95bad08d444756c648e2c1124a554e0d2165",
+    "comparison": "Copied site against final dist; every ZIP entry against final files; web GLB against repository"
+  },
+  "mcp": {
+    "blender": {
+      "connected": true,
+      "version": "3.3.3",
+      "bridge_version": "2026.09.08.1",
+      "mode": "isolated_background_session",
+      "detailed_scene_opened": true,
+      "objects_read": [
+        "pressure_header",
+        "lp200",
+        "lp400",
+        "deaerator"
+      ],
+      "filename": "s3000-detail-v2026-09-08-3.blend"
+    },
+    "autocad": {
+      "connected": true,
+      "ready": true,
+      "product": "AutoCAD 2027",
+      "read_only": true,
+      "bridge_version": "2026.09.08.2"
+    }
+  },
+  "renders": {
+    "inspected": [
+      "front-left",
+      "front-right",
+      "economizer",
+      "level-detail",
+      "burner-detail",
+      "sensor-detail",
+      "deaerator-detail",
+      "deaerator-cladding"
+    ],
+    "resolution": [
+      2000,
+      1400
+    ]
+  },
+  "engineering_acceptance": "NOT_VERIFIED",
+  "physical_phone_performance": "NOT_RUN",
+  "website_deployment": "NOT_RUN",
+  "stl_print_preparation": "NOT_RUN",
+  "cad_boiler_house_reconstruction": "NOT_RUN",
+  "ci": "CI_NOT_CONFIGURED"
+}

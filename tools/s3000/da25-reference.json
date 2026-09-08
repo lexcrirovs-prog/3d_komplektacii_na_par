@@ -1,0 +1,22 @@
+{
+  "designation": "ДА-25/15",
+  "capacity_t_h": 25,
+  "tank_working_volume_m3": 15,
+  "variant_status": "PRELIMINARY_PENDING_OWNER_VARIANT",
+  "drawing": "PR.25.01.269СБ Деаэратор ДА-25_15.pdf",
+  "cross_check_dwg": "Деаэратор ДА-25.15.dwg",
+  "cross_check_dwg_sha256": "920ddc69071eb4edf82a22d66ba417d0fb3231bab98845adf7aea67ae777a477",
+  "drawing_overall_length_m": 6.450,
+  "tank_bare_radius_m": 1.110,
+  "tank_center_height_m": 1.223,
+  "support_pitch_m": 3.460,
+  "drawing_assembly_height_m": 4.383,
+  "jacket_thickness_visual_m": 0.05,
+  "tank_straight_half_length_m": 2.550,
+  "tank_dome_depth_visual_m": 0.590,
+  "column_center_y_m": -1.263,
+  "column_bare_radius_visual_m": 0.410,
+  "column_base_z_m": 2.460,
+  "column_top_z_m": 4.210,
+  "note": "Владелец выбрал ДА-25. Бак 15 м³ принят по найденному заводскому чертежу до уточнения исполнения. Толщина изоляции, раскрой обшивки и детали по фото приблизительные."
+}

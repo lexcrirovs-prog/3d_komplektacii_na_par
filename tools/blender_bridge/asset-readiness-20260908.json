@@ -1,6 +1,8 @@
 {
   "date": "2026-09-08",
   "version": "2026.09.08.1",
+  "superseded_by": "2026.09.08.2",
+  "role_correction": "rs_410.glb is the EQS2 economizer, not a burner. The archived pilot placement is not an accepted assembly.",
   "author": "Codex / GPT-6 Astra",
   "status": "PASSED_NATIVE_IMPORT_AND_PILOT_EXPORT",
   "blender_bridge": "2026.09.08.1",

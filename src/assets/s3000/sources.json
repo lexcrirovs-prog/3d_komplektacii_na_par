@@ -1,0 +1,142 @@
+[
+  {
+    "id": "lc440",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/On-Off%20Level%20-%20On-Off%20Seviye/LC%20440%20Smart.zip",
+    "archive_sha256": "03c1d4e4eee740e0e5dc1276b5ee8424e495270e2c9c8c2344c5b9dadadea90d",
+    "files": [
+      {
+        "name": "LC 440 Smart.STEP",
+        "sha256": "b82cbd989c87f67f92dcc81b8e68df36aa151ae99c292a7e2214ace9ce2cadb1",
+        "bytes": 2290191
+      }
+    ]
+  },
+  {
+    "id": "lp400",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/On-Off%20Level%20-%20On-Off%20Seviye/LP%20400-500%20mm.zip",
+    "archive_sha256": "9d5eb843dd3f619f90973ef32fa6fec6c5b9aa37df570d04edb70400031a9d44",
+    "files": [
+      {
+        "name": "LP 400-500 mm.STEP",
+        "sha256": "624eca2002096d15b25da45df7c46b9d9fe609a4acb075ede0f80632563778f1",
+        "bytes": 500618
+      }
+    ]
+  },
+  {
+    "id": "lc220",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/Level%20Alarm-Seviye%20Alarm/LC%20220%20Smart.zip",
+    "archive_sha256": "d603d7dac8b3ccbd7c1f4c3e05508586f7272ff6582cb28a02fdf21f847b87f7",
+    "files": [
+      {
+        "name": "LC 220 Smart.STEP",
+        "sha256": "9dae4beea154cbf6a112b6b3a463b7f37ca0af5b5cfc65c54a00fd67bc091e66",
+        "bytes": 1882181
+      }
+    ]
+  },
+  {
+    "id": "lp200",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/Level%20Alarm-Seviye%20Alarm/LP%20200%20-%20500%20mm.zip",
+    "archive_sha256": "9d65306ab8cad5c64f5966acff7d370cc0d0eeedd6f3aa4510e0294fb2b534a0",
+    "files": [
+      {
+        "name": "LP 200 - 500 mm.STEP",
+        "sha256": "43f367d3a8dad24595b7803d243c2ce5943b8870ec177c29180ccbc84eaf459f",
+        "bytes": 393398
+      }
+    ]
+  },
+  {
+    "id": "bc970",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/TDS-Blowdown-Yuzey-Blof/BC-970-Combi.zip",
+    "archive_sha256": "841734472f80ca9be78095d2d8cbb7fc78cd59810f9638769347cb7035a8841f",
+    "files": [
+      {
+        "name": "BC 970 Combi.STEP",
+        "sha256": "209c8b74b067ee9714c3f8408330152909e1d93384f155ea45bb6bf534c69a4a",
+        "bytes": 2524929
+      }
+    ]
+  },
+  {
+    "id": "bcv925",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/TDS-Blowdown-Yuzey-Blof/BCV-925-20-PN25-DN20.zip",
+    "archive_sha256": "6b707a87da99c8a6a04fa3708a31438ddb7c3230746fc9baf3631cb6d3a0ee4b",
+    "files": [
+      {
+        "name": "BCV 925-20-PN 25-DN 20.STEP",
+        "sha256": "28f8d2e338de993e14ffc36fae0572129fb2a99dd4363332c931e0d24b96876a",
+        "bytes": 7443915
+      }
+    ]
+  },
+  {
+    "id": "cp930",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/TDS-Blowdown-Yuzey-Blof/CP-930-500mm.zip",
+    "archive_sha256": "1be211f71ea793d30f754c74a4d5de41c2f521f69875670206d67e081bed555a",
+    "files": [
+      {
+        "name": "CP 930-500 mm.STEP",
+        "sha256": "c4e1232a08c60317a01513e80d0359ba3e37a21b3d50e0e3f59d54c69a89a394",
+        "bytes": 1241531
+      }
+    ]
+  },
+  {
+    "id": "pcf20",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/TDS-Blowdown-Yuzey-Blof/PCF20x20-PN25-DN20xDN20.zip",
+    "archive_sha256": "bb598063b384967cef2e60863cdccedf45b8956e5c43ebfe26c9b17eec7b0481",
+    "files": [
+      {
+        "name": "PC F20x20-PN 25-DN 20xDN 20.STEP",
+        "sha256": "86617ab0e8d1113c09694eddb9dcc0fcf2e1b4756d6c9931352609dbf07a76d5",
+        "bytes": 132925
+      }
+    ]
+  },
+  {
+    "id": "sc9",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/TDS-Blowdown-Yuzey-Blof/SC-9.zip",
+    "archive_sha256": "6e7cd22ba7fea2d84cb87a8014cc9111836ff5158000eaa7ff6ad4f547e173a4",
+    "files": [
+      {
+        "name": "SC 9.STEP",
+        "sha256": "cb9a9bd8443e9fe4d2e0bc469107e641daacf1080bef60642013a9964e5fec9a",
+        "bytes": 494882
+      }
+    ]
+  },
+  {
+    "id": "bcv7432",
+    "manufacturer": "ATECH",
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "url": "https://atech-ltd.com/wp-content/uploads/3d-draw/BottomBlowdown-DipBlof/BCV%207432-PN%2040-DN%2032.zip",
+    "archive_sha256": "1de5e677efc2927d797a6fd1074b27196a78ee241c367771796bb8bc7dc49785",
+    "files": [
+      {
+        "name": "BCV 7432-PN 40-DN 32.STEP",
+        "sha256": "1bdd44f6ecaef5af9242741694fbb169e94bd366041408b539529d875bfee7ca",
+        "bytes": 3060600
+      }
+    ]
+  }
+]

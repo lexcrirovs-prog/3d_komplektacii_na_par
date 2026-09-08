@@ -1,0 +1,134 @@
+{
+  "version": "2026.09.08.2",
+  "date": "2026-09-08",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_LOCAL_VISUAL_ASSEMBLY",
+  "input_preservation": {
+    "status": "PASSED_SHA256",
+    "files": 10,
+    "includes": "2 workbooks, 7 photographs, 1 economizer screenshot"
+  },
+  "specification": {
+    "supplier": "АДЛ",
+    "operating_pressure_bar": 8,
+    "safety_valve_setting_bar": 9,
+    "pumps": "Jetex V4-10",
+    "bom_rows": 27,
+    "units_or_sets": 37,
+    "logical_components": 46,
+    "prices_exported": false
+  },
+  "vendor_cad": {
+    "models": 10,
+    "source_page": "https://atech-ltd.com/?page_id=9984",
+    "hashes": "sources.json; verified against downloaded STEP files"
+  },
+  "economizer": {
+    "rotation_degrees": 90,
+    "center_gap_m": 1.671217684586219e-7,
+    "matched_inner_diameter_m": 0.45,
+    "matched_outer_diameter_m": 0.456,
+    "mcp_location": [
+      0.4480000138282776,
+      2.194999933242798,
+      1.059999942779541
+    ],
+    "mcp_rotation_radians": [
+      0,
+      0,
+      1.5707963705062866
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  "export": {
+    "web_glb_bytes": 4204832,
+    "uncompressed_glb_bytes": 21217076,
+    "named_nodes": 92,
+    "triangles": 511193,
+    "materials": 12,
+    "meshopt_bounds_difference_m": 0.0000065699191051926675,
+    "blender_roundtrip_components": 46,
+    "blender_roundtrip_bounds_difference_m": 2.384185791015625e-7,
+    "repeat_compression_guard": "PASSED; existing compressed input rejected and uncompressed delivery SHA256 unchanged"
+  },
+  "build": {
+    "status": "PASSED",
+    "command": "npm run build",
+    "typescript": true,
+    "vite": "6.4.1",
+    "node": "24.13.1"
+  },
+  "browser": {
+    "status": "PASSED_LOCAL_BUILT_SITE",
+    "desktop_viewport": [1280, 720],
+    "mobile_viewport": [390, 844],
+    "horizontal_overflow": false,
+    "checks": [
+      "Meshopt model loaded in the built site",
+      "all three addon toggles update URL and visible geometry",
+      "empty addons selection survives reload",
+      "deaerator URL restores initial framing on a narrow viewport",
+      "mobile sidebar scroll reaches every option",
+      "equipment search accepts BCV-7432 and selects the rear valve",
+      "cabinet and rear detail views visually inspected",
+      "legacy prototype loads its external GLB files"
+    ],
+    "console_errors_and_warnings_observed": 0,
+    "temporary_viewport_override": "RESET"
+  },
+  "delivery_package": {
+    "status": "PASSED_SHA256_COMPARE",
+    "site_files": 8,
+    "comparison": "copied files and every ZIP entry against final dist"
+  },
+  "mcp": {
+    "blender": {
+      "connected": true,
+      "version": "3.3.3",
+      "bridge_version": "2026.09.08.1",
+      "mode": "isolated_background_session",
+      "detailed_scene_opened": true
+    },
+    "autocad": {
+      "connected": true,
+      "ready": true,
+      "product": "AutoCAD 2027",
+      "read_only": true,
+      "bridge_version": "2026.09.08.2"
+    }
+  },
+  "renders": {
+    "inspected": [
+      "front-left",
+      "front-right",
+      "economizer",
+      "level-detail"
+    ],
+    "resolution": [
+      1600,
+      1100
+    ]
+  },
+  "independent_review": {
+    "status": "PASSED_AFTER_FIXES",
+    "critical": 0,
+    "important": 0,
+    "checks": [
+      "hidden geometry no longer receives raycasts; re-enabled burner does",
+      "cabinet controls seen from exterior side",
+      "LP200/400 target on exposed heads",
+      "initial view accounts for deaerator URL selection",
+      "optimizer preserves uncompressed archive on repeat invocation"
+    ]
+  },
+  "engineering_acceptance": "NOT_VERIFIED",
+  "physical_phone_performance": "NOT_RUN",
+  "website_deployment": "NOT_RUN",
+  "stl_print_preparation": "NOT_RUN",
+  "cad_boiler_house_reconstruction": "NOT_RUN",
+  "ci": "CI_NOT_CONFIGURED"
+}

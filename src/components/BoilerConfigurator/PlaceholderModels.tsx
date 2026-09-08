@@ -3,12 +3,12 @@ import { useGLTF, Edges } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Mesh, BufferGeometry } from 'three'
 import { isMobile } from '../../utils/device'
-import deaeratorGlb from '../../assets/deaerator.glb?url'
-import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url'
-import bcv7250Glb from '../../assets/bcv_7250.glb?url'
-import bcv925Glb from '../../assets/bcv_925.glb?url'
-import cp930Glb from '../../assets/cp_930.glb?url'
-import dn32h50Glb from '../../assets/dn32h50.glb?url'
+import deaeratorGlb from '../../assets/deaerator.glb?url&no-inline'
+import elbowPcF20Glb from '../../assets/elbow_pc_f20.glb?url&no-inline'
+import bcv7250Glb from '../../assets/bcv_7250.glb?url&no-inline'
+import bcv925Glb from '../../assets/bcv_925.glb?url&no-inline'
+import cp930Glb from '../../assets/cp_930.glb?url&no-inline'
+import dn32h50Glb from '../../assets/dn32h50.glb?url&no-inline'
 
 interface PlaceholderProps {
   color: string
@@ -40,7 +40,9 @@ const glbModels: Record<string, { path: string; baseScale: number }> = {
 }
 
 // Preload all GLB models
-Object.values(glbModels).forEach((m) => useGLTF.preload(m.path))
+if (new URLSearchParams(window.location.search).get('assembly') === 'legacy') {
+  Object.values(glbModels).forEach((m) => useGLTF.preload(m.path))
+}
 
 function GlbModel({ glbPath, baseScale, color, opacity, scale = 1 }: PlaceholderProps & { glbPath: string; baseScale: number }) {
   const { scene } = useGLTF(glbPath)

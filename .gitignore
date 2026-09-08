@@ -3,3 +3,5 @@ node_modules/
 *.local
 .DS_Store
 *.tsbuildinfo
+__pycache__/
+*.py[cod]

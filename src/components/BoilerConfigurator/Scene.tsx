@@ -109,13 +109,6 @@ function SceneContent() {
           <PartErrorBoundary partId={part.id}>
             <AttachablePart part={part} />
           </PartErrorBoundary>
-          {/* Debug: bright marker for dn32h50 parts */}
-          {part.id.startsWith('dn32h50') && (
-            <mesh position={[part.worldPosition.x, part.worldPosition.y, part.worldPosition.z]}>
-              <sphereGeometry args={[0.08, 16, 16]} />
-              <meshBasicMaterial color="#ff00ff" />
-            </mesh>
-          )}
         </Suspense>
       ))}
 

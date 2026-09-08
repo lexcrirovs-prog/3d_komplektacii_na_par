@@ -1,0 +1,204 @@
+{
+  "version": "2026.09.08.2",
+  "date": "2026-09-08",
+  "author": "Codex / GPT-6 Astra",
+  "boiler": "PREMIUM S-3000",
+  "supplier": "АДЛ",
+  "operating_pressure_bar": 8,
+  "safety_valve_setting_bar": 9,
+  "pump_model": "Jetex V4-10",
+  "source_workbook": "1. СТАНДАРТ. Прайс цен на обвязку паровых котлов S.xlsx",
+  "source_sha256": "aa17fd2ab88217218d663758b73f4ac8bd452a95153a814821127d5ad3cd1228",
+  "source_heading": "котел S-3000 обвязка ЭКОНОМ (АДЛ)",
+  "items": [
+    {
+      "id": "steam_valve",
+      "description": "ГРАНВЕНТ® KV31.01.02.100.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN100 PN16 tmax=300oC",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J4:K4"
+    },
+    {
+      "id": "feed_valve",
+      "description": "ГРАНВЕНТ® KV31.01.02.032.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN32 PN16 tmax=300oC",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J5:K5"
+    },
+    {
+      "id": "tds_isolation",
+      "description": "ГРАНВЕНТ® KV31.01.02.020.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN20 PN16 tmax=300oC",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J6:K6"
+    },
+    {
+      "id": "drain_isolation",
+      "description": "ГРАНВЕНТ® KV31.01.02.032.16.Ф/Ф вентиль чугунный с\nсильфонным уплотнением DN32 PN16 tmax=300oC",
+      "quantity": 2,
+      "sheet": "S-3000",
+      "source_range": "J7:K7"
+    },
+    {
+      "id": "instrument_valve",
+      "description": "ГРАНВЕНТ® KV31.01.02.015.16.Ф/Ф вентиль чугунный с\nсильфонным уплотнением DN15 PN16 tmax=300oC",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J8:K8"
+    },
+    {
+      "id": "feed_check",
+      "description": "ГРАНЛОК® Обратный клапан CVS40.04.032.40.М/Ф, из нерж.стали AISI 304 (08Х18Н10) DN032 PN40 Tmax=300oC( L стр.=28 мм )",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J9:K9"
+    },
+    {
+      "id": "safety_pair",
+      "description": "ПРЕГРАН КПП 496-01-16-ЗН-032x050- 9,0 Pн= 9,0 бар\nпредохр клапан ф/ф DN32х50 PN16 tmax=300oC чугун",
+      "quantity": 2,
+      "sheet": "S-3000",
+      "source_range": "J11:K11"
+    },
+    {
+      "id": "sight_glasses",
+      "description": "Индикатор уровня в сборе с группой кранов RLG-16 (400 мм) DN20 PN16",
+      "quantity": 2,
+      "sheet": "S-3000",
+      "source_range": "J14:K14"
+    },
+    {
+      "id": "lp200",
+      "description": "Датчик уровня LP 200 (LP 210, L=1000 мм) 2-х контактный",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J15:K15"
+    },
+    {
+      "id": "lc220",
+      "description": "Контроллер уровня LC 220 (230В) с RS485",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J16:K16"
+    },
+    {
+      "id": "lp400",
+      "description": "Датчик уровня LP 400 (LP 410, L=1000 мм) 4-х контактный",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J17:K17"
+    },
+    {
+      "id": "lc440",
+      "description": "Контроллер уровня LC 440 (230В) с RS485",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J18:K18"
+    },
+    {
+      "id": "bc970",
+      "description": "Контроллер продувок BC 970 (верхняя + нижняя продувки), 4-20 mA, Тк, 230В с RS485",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J20:K20"
+    },
+    {
+      "id": "cp930",
+      "description": "Датчик проводимости CP 930 (L=500 мм, 1/2\")",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J21:K21"
+    },
+    {
+      "id": "bcv925",
+      "description": "Клапан верхней продувки с эл.приводом BCV 925 (DN20, PN25)",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J22:K22"
+    },
+    {
+      "id": "pcf20",
+      "description": "Колено соединительное TDS/датчик проводимости PC F25-2020 (DN20xDN20)",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J23:K23"
+    },
+    {
+      "id": "bcv7432",
+      "description": "Клапан нижней продувки с пневмоприводом BCV 700 (BCV 740/220, DN32 PN40)",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J24:K24"
+    },
+    {
+      "id": "pressure_switches",
+      "description": "Реле давления KPI35R, диапазон уставки -0,2-8 бар, дифференциал 0,4-1,5 бар, G 1/2",
+      "quantity": 3,
+      "sheet": "S-3000",
+      "source_range": "J26:K26"
+    },
+    {
+      "id": "pressure_gauge",
+      "description": "Манометр ТМ -510 Р.00 (0...1,6 МПа) G1/2.1,5 + 3-х ходовй кран",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J27:K27"
+    },
+    {
+      "id": "sc9",
+      "description": "Охладитель проб одноточечный SC9",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J29:K29"
+    },
+    {
+      "id": "sc9_mount",
+      "description": "Комплект монтажный для охладителя проб SC 9",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J30:K30"
+    },
+    {
+      "id": "feed_pumps",
+      "description": "Питательный насос V 4-10",
+      "quantity": 2,
+      "sheet": "S-3000",
+      "source_range": "J32:K32"
+    },
+    {
+      "id": "pump_valves",
+      "description": "ГРАНВЕНТ® KV31.01.02.032.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN32 PN16 tmax=300oC",
+      "quantity": 4,
+      "sheet": "S-3000",
+      "source_range": "J34:K34"
+    },
+    {
+      "id": "pump_checks",
+      "description": "ГРАНЛОК® Обратный клапан CVS40.04.032.40.М/Ф, из нерж.стали AISI 304 (08Х18Н10) DN032 PN40 Tmax=300oC( L стр.=28 мм )",
+      "quantity": 2,
+      "sheet": "S-3000",
+      "source_range": "J35:K35"
+    },
+    {
+      "id": "safety_header",
+      "description": "Группа безопасности",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J37:K37"
+    },
+    {
+      "id": "electrode_flanges",
+      "description": "Фланцы для монтажа электродов на котле  (копмлект)",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J38:K38"
+    },
+    {
+      "id": "control_cabinet",
+      "description": "Релейная автоматика",
+      "quantity": 1,
+      "sheet": "S-3000",
+      "source_range": "J40:K40"
+    }
+  ]
+}

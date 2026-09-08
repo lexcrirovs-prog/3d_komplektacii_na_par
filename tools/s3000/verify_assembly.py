@@ -28,6 +28,15 @@ def verify(root):
     assert joint['boiler_bore_m'] == joint['economizer_bore_m'] == 0.45
     assert joint['boiler_outside_m'] == joint['economizer_outside_m'] == 0.456
     assert assembly['engineering_acceptance'] == 'NOT_VERIFIED'
+    assert assembly['version']=='2026.09.08.3'
+    parts={p['id']:p for p in assembly['parts']}
+    assert parts['pressure_header']['bounds_blender'][0][0]>.85, 'Header must be on the sight-glass side'
+    assert parts['pressure_header']['bounds_blender'][0][1]<-.68
+    assert assembly['sensor_mounts']['lp200']==[0,-.8925,2.1185]
+    assert assembly['sensor_mounts']['lp400']==[0,-.485,2.1185]
+    assert parts['burner']['source_kind']=='user_cad'
+    assert parts['deaerator']['source_kind']=='drawing_photo'
+    assert assembly['deaerator']['capacity_t_h']==25
     content = (root / 's3000-assembly.glb').read_bytes()
     magic,version,size = struct.unpack_from('<4sII', content)
     assert magic == b'glTF' and version == 2 and size == len(content)
@@ -38,8 +47,11 @@ def verify(root):
     assert {'boiler', 'economizer', 'burner'} <= names
     for nodes in assembly['bom_nodes'].values():
         assert set(nodes) <= names, set(nodes)-names
-    assert len(content) < 18_000_000, 'Web model exceeds 18 MB budget'
+    assert len(content) < 35_000_000, 'Detailed web model exceeds 35 MB budget'
     assert gltf.get('materials') and len(gltf['materials']) > 5
+    assert len(gltf.get('images',[]))>=2, 'Original logo and galvanized metal map must be embedded'
+    logo=next(m for m in gltf['materials'] if m['name']=='Original PREMIUM PNG decal')
+    assert logo.get('alphaMode')=='MASK' and 'baseColorTexture' in logo['pbrMetallicRoughness']
     print(json.dumps(dict(status='PASSED_LOCAL_ASSEMBLY', bom_rows=len(quantities),
                          components=sum(quantities.values()), joint_error_m=math.dist(joint['boiler_port'],joint['economizer_port']),
                          glb_bytes=len(content), materials=len(gltf['materials'])), indent=2))

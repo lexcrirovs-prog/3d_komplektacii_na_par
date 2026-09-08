@@ -5,6 +5,7 @@ import { Color, Mesh, MeshStandardMaterial, PerspectiveCamera, Vector3, type Obj
 import assemblyData from '../../assets/s3000/assembly.json'
 import bom from '../../assets/s3000/bom.json'
 import assemblyUrl from '../../assets/s3000/s3000-assembly.glb?url'
+import premiumLogo from '../../assets/s3000/premium-logo.png'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
@@ -12,12 +13,13 @@ type Part = { id: string; label: string; category: string; source_kind: string; 
 const parts = assemblyData.parts as Part[]
 const byId = new Map(parts.map(p => [p.id, p]))
 const options = [
-  { id: 'burner', title: 'Горелка', subtitle: 'Внешний вид по Riello RS 410' },
+  { id: 'burner', title: 'Riello RS 410', subtitle: '3D-геометрия из приложенного DWG' },
   { id: 'economizer', title: 'Экономайзер EQS2', subtitle: 'Совмещён с дымовым патрубком' },
-  { id: 'deaerator', title: 'Деаэратор DA5/2', subtitle: 'Дополнительный модуль' },
+  { id: 'deaerator', title: 'Деаэратор ДА-25', subtitle: 'Оцинкованная обшивка по фотографиям' },
 ]
 const sourceLabels: Record<string, string> = {
   user_cad: 'Исходная CAD-модель', manufacturer_step: 'CAD-модель ATECH', photo_parametric: 'Модель по фотографиям',
+  drawing_photo: 'Модель по чертежу и фотографиям',
 }
 const bomParts = bom.items.map(item => ({ ...item, nodes: (assemblyData.bom_nodes as Record<string, string[]>)[item.id] }))
 const searchText = (value: string) => value.toLowerCase().replace(/[\s_–—-]+/g, '')
@@ -106,7 +108,7 @@ function Assembly({ enabled, selected, showAccessories, select }: {
 type ViewRequest = { id: number; position: Point; target: Point }
 function overviewView(withDeaerator: boolean): Omit<ViewRequest, 'id'> {
   return withDeaerator
-    ? { position: [8,6.4,11], target: [-1.1,1.6,0] }
+    ? { position: [10,8.5,15], target: [-1.8,2,0] }
     : { position: [6.5,4.5,8.2], target: [.2,1.35,.05] }
 }
 function CameraMotion({ request, moving }: { request: ViewRequest; moving: React.MutableRefObject<boolean> }) {
@@ -174,7 +176,8 @@ export function S3000Configurator() {
     const cabinetSide = ['control_cabinet', 'lc220', 'lc440', 'bc970'].includes(id)
     const rearLow = ['bcv7432', 'drain_isolation_1', 'drain_isolation_2', 'bottom_piping'].includes(id)
     const offset: Point = id === 'economizer' ? [3,1.7,-3]
-      : id === 'boiler' ? [5,3,6] : id === 'deaerator' ? [-4,2.6,5]
+      : id === 'boiler' ? [5,3,6] : id === 'deaerator' ? [-7,4,8]
+      : id === 'burner' ? [1.8,.9,2.2]
       : id === 'bcv7432' ? [-1,.65,-3] : id === 'drain_isolation_1' ? [-2.5,.65,-2.8]
       : cabinetSide ? [-2.6,1.3,2.6] : rearLow ? [2.5,.65,-2.8] : [2.6,1.3,2.6]
     requestView([c[0]+offset[0],c[1]+offset[1],c[2]+offset[2]], c)
@@ -182,7 +185,7 @@ export function S3000Configurator() {
 
   return <div className="s3-app">
     <main className="s3-viewer" aria-label="3D-визуализация котла">
-      <header className="s3-brand"><div className="s3-brand-mark">P</div><div><strong>PREMIUM</strong><span>ПАРОВЫЕ КОТЛЫ</span></div><div className="s3-edition">S 3000 <span>3D</span></div></header>
+      <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium gas company" /><div className="s3-edition">S 3000 <span>3D</span></div></header>
       {!active && <div className="s3-view-title"><span>КОТЁЛ С ОБВЯЗКОЙ АДЛ</span><h1>S-3000 в сборе.</h1><p>Вращайте модель. Нажмите на оборудование,<br className="s3-desktop" /> чтобы рассмотреть его и узнать состав.</p></div>}
       <ModelBoundary><Canvas shadows camera={{ position: initialView.position, fov: 39, near: .05, far: 100 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
@@ -208,8 +211,10 @@ export function S3000Configurator() {
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
         <button onClick={() => overview()} title="Показать всю сборку">Общий вид</button>
         <button onClick={() => { setSelected(null); requestView([-6,4.2,8],[0,1.3,0]) }}>Шкаф</button>
-        <button onClick={() => focus('sight_glasses_1')}>Приборы</button>
+        <button onClick={() => focus('pressure_header')}>Приборы</button>
+        <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
         <button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>
+        <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
       </nav>
       {active && <section className="s3-part-card" aria-live="polite">
         <button className="s3-close" aria-label="Закрыть сведения о детали" onClick={() => setSelected(null)}>×</button>

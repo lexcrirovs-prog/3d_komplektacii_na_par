@@ -1,9 +1,9 @@
 {
-  "version": "2026.09.09.1",
+  "version": "2026.09.09.2",
   "date": "2026-09-09",
   "executor": "Codex / GPT-6",
   "detailed_assembly_version": "2026.09.08.4",
   "baseline_source_commit": "023cac30d706fa1a37aafa98f037ed2c96393244",
-  "source_commit": "4b98b341616f9b1d787bbf0ce9a844cef2b3356f",
+  "source_commit": "a1a525c60171c78552bda2c664c43e2f5a7d24b6",
   "url": "https://prgz.ru/komplektacii4/"
 }

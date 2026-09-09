@@ -1,12 +1,12 @@
 {
   "release": {
-    "version": "2026.09.09.1",
+    "version": "2026.09.09.2",
     "date": "2026-09-09",
     "executor": "Codex / GPT-6",
     "detailed_assembly_version": "2026.09.08.4",
     "baseline_source_commit": "023cac30d706fa1a37aafa98f037ed2c96393244"
   },
-  "source_commit": "4b98b341616f9b1d787bbf0ce9a844cef2b3356f",
+  "source_commit": "a1a525c60171c78552bda2c664c43e2f5a7d24b6",
   "files": [
     {
       "path": ".htaccess",
@@ -54,9 +54,9 @@
       "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904"
     },
     {
-      "path": "assets/index-CrZmGE1N.js",
-      "bytes": 1278726,
-      "sha256": "b161c678e9e39a46f81d4e72d5aa7fd3c379ef9a15cb98f2ed3a8d65943f8681"
+      "path": "assets/index-7QVkEiq6.js",
+      "bytes": 1278444,
+      "sha256": "8ebc82a59504f66ad5513515cd2b3df7edb682821c0d590f31ade5c1f21f0e9f"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -90,8 +90,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 2045,
-      "sha256": "805dfb18c1a19f887a46bfb6a32591577a6cc832ea9e06cf1ac491abd185d5e2"
+      "bytes": 2055,
+      "sha256": "332cdcaf90b57c3c6d7f5c7b09fd96017c3a6cb02db0a24a37e3833c0a1187cc"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -131,7 +131,7 @@
     {
       "path": "version.json",
       "bytes": 312,
-      "sha256": "fcf65800d3872b41975a78a0ada162b6a70c552c6c2a776a97f13e4fae7b3c08"
+      "sha256": "619addd4386b407bc131ec584053a60339c11b5ad3a12786e75093d7b4032f72"
     }
   ]
 }

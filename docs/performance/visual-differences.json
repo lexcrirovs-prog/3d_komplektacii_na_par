@@ -1,0 +1,45 @@
+{
+  "meaning": "Descriptive pixel differences; not a geometric tolerance or an automatic visual approval",
+  "views": [
+    {
+      "view": "overview",
+      "meanAbsoluteChannelDifference0to255": 0.15180446661914945
+    },
+    {
+      "view": "cabinet",
+      "meanAbsoluteChannelDifference0to255": 0.17908113566167735
+    },
+    {
+      "view": "instruments",
+      "meanAbsoluteChannelDifference0to255": 0.23397303397481586
+    },
+    {
+      "view": "cables",
+      "meanAbsoluteChannelDifference0to255": 0.6727227369921597
+    },
+    {
+      "view": "burner",
+      "meanAbsoluteChannelDifference0to255": 0.931812188168211
+    },
+    {
+      "view": "feed-economizer",
+      "meanAbsoluteChannelDifference0to255": 0.1925368258493704
+    },
+    {
+      "view": "feed-direct",
+      "meanAbsoluteChannelDifference0to255": 0.15813910667617012
+    },
+    {
+      "view": "economizer",
+      "meanAbsoluteChannelDifference0to255": 0.28437158469945356
+    },
+    {
+      "view": "all-modules",
+      "meanAbsoluteChannelDifference0to255": 0.09002316464718461
+    },
+    {
+      "view": "deaerator",
+      "meanAbsoluteChannelDifference0to255": 0.11776966025184128
+    }
+  ]
+}

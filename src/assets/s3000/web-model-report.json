@@ -1,0 +1,524 @@
+{
+  "version": "2026.09.09.1",
+  "date": "2026-09-09",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_DERIVATIVE_STRUCTURE",
+  "sourceSha256": "02c6a58ae655ea4fd79dcf5d137f6da153d63584f2f40b9d2d915083e695dd20",
+  "outputSha256": "d843b3e975f68deec0c03276f163f53bcf37c5d609d2c9b1ba581ca90228ba71",
+  "beforeBytes": 124986168,
+  "afterBytes": 9597904,
+  "simplifier": {
+    "ratio": 0.15,
+    "relativeError": 0.0003,
+    "lockBorder": true,
+    "note": "Algorithm error setting, not an independently measured surface-distance tolerance"
+  },
+  "beforeTriangles": 3164288,
+  "afterTriangles": 1163573,
+  "nodes": 98,
+  "boundsMaxErrorM": 0.000027621245695108598,
+  "partBoundsErrors": [
+    {
+      "name": "boiler",
+      "maxErrorM": 0.00001894743833918966
+    },
+    {
+      "name": "economizer",
+      "maxErrorM": 0.0000036163866852234605
+    },
+    {
+      "name": "steam_valve",
+      "maxErrorM": 0.000002279982257769042
+    },
+    {
+      "name": "safety_pair_1",
+      "maxErrorM": 0.000002872418924493303
+    },
+    {
+      "name": "safety_pair_2",
+      "maxErrorM": 0.0000028683546950958316
+    },
+    {
+      "name": "safety_header",
+      "maxErrorM": 0.0000016761859825825676
+    },
+    {
+      "name": "lp200",
+      "maxErrorM": 0.000008277411205952212
+    },
+    {
+      "name": "lp400",
+      "maxErrorM": 0.00000557194985151277
+    },
+    {
+      "name": "electrode_flanges",
+      "maxErrorM": 0.0000016923823960013351
+    },
+    {
+      "name": "pressure_header",
+      "maxErrorM": 0.000006289582406449057
+    },
+    {
+      "name": "pressure_switches_1",
+      "maxErrorM": 0.0000013986970659463083
+    },
+    {
+      "name": "pressure_switches_2",
+      "maxErrorM": 0.0000013986970657242637
+    },
+    {
+      "name": "pressure_switches_3",
+      "maxErrorM": 0.0000013986970657242637
+    },
+    {
+      "name": "pressure_gauge",
+      "maxErrorM": 0.0000016677480291216185
+    },
+    {
+      "name": "instrument_valve",
+      "maxErrorM": 8.730191154160405e-7
+    },
+    {
+      "name": "sight_glasses_1",
+      "maxErrorM": 0.00000389037106895973
+    },
+    {
+      "name": "sight_glasses_2",
+      "maxErrorM": 0.000003907781147893807
+    },
+    {
+      "name": "tds_isolation",
+      "maxErrorM": 0.0000012469614294463582
+    },
+    {
+      "name": "pcf20",
+      "maxErrorM": 4.2729739901936625e-7
+    },
+    {
+      "name": "bcv925",
+      "maxErrorM": 0.000002797386391417689
+    },
+    {
+      "name": "cp930",
+      "maxErrorM": 0.0000019325094346989147
+    },
+    {
+      "name": "sc9",
+      "maxErrorM": 0.0000020901795148020597
+    },
+    {
+      "name": "sc9_mount",
+      "maxErrorM": 0.00000858187350782913
+    },
+    {
+      "name": "bcv7432",
+      "maxErrorM": 0.0000020441617294419956
+    },
+    {
+      "name": "drain_isolation_1",
+      "maxErrorM": 0.000002070302769274779
+    },
+    {
+      "name": "drain_isolation_2",
+      "maxErrorM": 0.00000207154131137699
+    },
+    {
+      "name": "bottom_piping",
+      "maxErrorM": 0.000002119458990590406
+    },
+    {
+      "name": "feed_skid",
+      "maxErrorM": 0.000006569919105414712
+    },
+    {
+      "name": "feed_pumps_1",
+      "maxErrorM": 0.000006991887994689527
+    },
+    {
+      "name": "pump_valves_1",
+      "maxErrorM": 0.0000020715414312810765
+    },
+    {
+      "name": "pump_valves_2",
+      "maxErrorM": 0.0000020290713876880417
+    },
+    {
+      "name": "pump_checks_1",
+      "maxErrorM": 3.4163286466437626e-7
+    },
+    {
+      "name": "feed_pumps_2",
+      "maxErrorM": 0.000006991887989471479
+    },
+    {
+      "name": "pump_valves_3",
+      "maxErrorM": 0.000002071541428838586
+    },
+    {
+      "name": "pump_valves_4",
+      "maxErrorM": 0.0000020290713876880417
+    },
+    {
+      "name": "pump_checks_2",
+      "maxErrorM": 3.407015420897608e-7
+    },
+    {
+      "name": "feed_piping",
+      "maxErrorM": 0.00001315190859707549
+    },
+    {
+      "name": "feed_check",
+      "maxErrorM": 7.447286418660326e-7
+    },
+    {
+      "name": "feed_valve",
+      "maxErrorM": 0.0000020680121369798243
+    },
+    {
+      "name": "feed_to_economizer",
+      "maxErrorM": 0.000013880764684337521
+    },
+    {
+      "name": "feed_from_economizer",
+      "maxErrorM": 0.000021539219893895734
+    },
+    {
+      "name": "feed_direct",
+      "maxErrorM": 0.000003195728237148643
+    },
+    {
+      "name": "control_cabinet",
+      "maxErrorM": 0.000004426425813330859
+    },
+    {
+      "name": "lc220",
+      "maxErrorM": 7.476834211761485e-7
+    },
+    {
+      "name": "lc440",
+      "maxErrorM": 0.000001052546229063367
+    },
+    {
+      "name": "bc970",
+      "maxErrorM": 0.000001052546229063367
+    },
+    {
+      "name": "burner",
+      "maxErrorM": 0.000014134085618233705
+    },
+    {
+      "name": "cable_routes",
+      "maxErrorM": 0.00000786068245428595
+    },
+    {
+      "name": "deaerator",
+      "maxErrorM": 0.000027621245695108598
+    }
+  ],
+  "meshes": [
+    {
+      "name": "boiler fine dark",
+      "before": 543693,
+      "after": 471609,
+      "primitives": 7
+    },
+    {
+      "name": "economizer fine STEP.004",
+      "before": 12164,
+      "after": 12164,
+      "primitives": 1
+    },
+    {
+      "name": "Cone.001",
+      "before": 7340,
+      "after": 7340,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.034",
+      "before": 6760,
+      "after": 6712,
+      "primitives": 3
+    },
+    {
+      "name": "DN50 discharge.001",
+      "before": 6760,
+      "after": 6632,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.053",
+      "before": 2784,
+      "after": 2784,
+      "primitives": 2
+    },
+    {
+      "name": "lp200 CAD",
+      "before": 9068,
+      "after": 2962,
+      "primitives": 3
+    },
+    {
+      "name": "lp400 CAD",
+      "before": 14758,
+      "after": 3864,
+      "primitives": 3
+    },
+    {
+      "name": "Torus.001",
+      "before": 3072,
+      "after": 1412,
+      "primitives": 1
+    },
+    {
+      "name": "pressure_header fine dark",
+      "before": 8996,
+      "after": 7164,
+      "primitives": 2
+    },
+    {
+      "name": "Cube.002",
+      "before": 4452,
+      "after": 4312,
+      "primitives": 7
+    },
+    {
+      "name": "Cube.008",
+      "before": 4452,
+      "after": 4308,
+      "primitives": 7
+    },
+    {
+      "name": "Cube.014",
+      "before": 4452,
+      "after": 4316,
+      "primitives": 7
+    },
+    {
+      "name": "Cone.090",
+      "before": 11320,
+      "after": 10770,
+      "primitives": 6
+    },
+    {
+      "name": "Cone.096",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.135",
+      "before": 10660,
+      "after": 9942,
+      "primitives": 6
+    },
+    {
+      "name": "Cone.158",
+      "before": 10660,
+      "after": 9980,
+      "primitives": 6
+    },
+    {
+      "name": "Cone.161",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "pcf20 CAD",
+      "before": 7360,
+      "after": 3266,
+      "primitives": 1
+    },
+    {
+      "name": "bcv925 CAD",
+      "before": 227042,
+      "after": 38014,
+      "primitives": 3
+    },
+    {
+      "name": "cp930 CAD",
+      "before": 30428,
+      "after": 5774,
+      "primitives": 2
+    },
+    {
+      "name": "sc9 CAD",
+      "before": 8144,
+      "after": 1544,
+      "primitives": 1
+    },
+    {
+      "name": "Cube.025",
+      "before": 1000,
+      "after": 916,
+      "primitives": 2
+    },
+    {
+      "name": "bcv7432 CAD",
+      "before": 119450,
+      "after": 22056,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.180",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.199",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Bottom blowdown route",
+      "before": 532,
+      "after": 532,
+      "primitives": 1
+    },
+    {
+      "name": "Cube.026",
+      "before": 188,
+      "after": 188,
+      "primitives": 1
+    },
+    {
+      "name": "Cone.223",
+      "before": 19520,
+      "after": 18550,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.244",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.263",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.281",
+      "before": 3036,
+      "after": 3036,
+      "primitives": 2
+    },
+    {
+      "name": "Cone.296",
+      "before": 19520,
+      "after": 18504,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.317",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.336",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Check lower.001",
+      "before": 3036,
+      "after": 3036,
+      "primitives": 2
+    },
+    {
+      "name": "Boiler feed gasket",
+      "before": 9152,
+      "after": 5938,
+      "primitives": 4
+    },
+    {
+      "name": "Check lower mating",
+      "before": 3288,
+      "after": 3288,
+      "primitives": 1
+    },
+    {
+      "name": "Cone.407",
+      "before": 5580,
+      "after": 5580,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.424",
+      "before": 7940,
+      "after": 4932,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.440",
+      "before": 7724,
+      "after": 4642,
+      "primitives": 3
+    },
+    {
+      "name": "Boiler branch mating.001",
+      "before": 4072,
+      "after": 3268,
+      "primitives": 2
+    },
+    {
+      "name": "Cube.039",
+      "before": 20341,
+      "after": 17287,
+      "primitives": 9
+    },
+    {
+      "name": "Cube.052",
+      "before": 60886,
+      "after": 9912,
+      "primitives": 3
+    },
+    {
+      "name": "Cube.054",
+      "before": 72442,
+      "after": 11544,
+      "primitives": 3
+    },
+    {
+      "name": "bc970 CAD",
+      "before": 76612,
+      "after": 12413,
+      "primitives": 3
+    },
+    {
+      "name": "Boiler burner adapter",
+      "before": 50290,
+      "after": 40352,
+      "primitives": 9
+    },
+    {
+      "name": "Cube.088",
+      "before": 1277340,
+      "after": 234720,
+      "primitives": 3
+    },
+    {
+      "name": "Cone.623",
+      "before": 423334,
+      "after": 83370,
+      "primitives": 10
+    }
+  ],
+  "textures": [
+    {
+      "name": "premium-logo",
+      "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665"
+    },
+    {
+      "name": "Galvanized spangle procedural tile",
+      "sha256": "6bdf54414e428c3e624f473112686bdc3755e453641f62c02bf37d51fd29b34a"
+    }
+  ]
+}

@@ -1,12 +1,13 @@
 {
   "name": "boiler-configurator-3d",
   "private": true,
-  "version": "2026.9.8-4",
+  "version": "2026.9.9-1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node --input-type=module -e \"import{readFileSync,writeFileSync}from'fs';const f='dist/index.html';writeFileSync(f,readFileSync(f,'utf8').replace('type=\\\"module\\\" crossorigin',''))\"",
-    "preview": "vite preview"
+    "build": "tsc -b && vite build && node tools/s3000/prepare-web-release.mjs",
+    "preview": "vite preview",
+    "test:s3000": "node --test tools/s3000/visibility.test.mjs tools/s3000/web-budget.test.mjs"
   },
   "dependencies": {
     "@react-spring/three": "^9.7.5",
@@ -23,7 +24,6 @@
     "@types/three": "^0.170.0",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "~5.6.2",
-    "vite": "^6.0.1",
-    "vite-plugin-singlefile": "^2.3.2"
+    "vite": "^6.0.1"
   }
 }

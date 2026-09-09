@@ -1,15 +1,20 @@
 import { Component, Suspense, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, useProgress } from '@react-three/drei'
-import { Color, Mesh, MeshStandardMaterial, PerspectiveCamera, Vector3, type Object3D } from 'three'
+import { Color, Group, Mesh, MeshStandardMaterial, PerspectiveCamera, Vector3, type Object3D } from 'three'
 import assemblyData from '../../assets/s3000/assembly.json'
+import webVersion from '../../assets/s3000/web-version.json'
 import bom from '../../assets/s3000/bom.json'
-import assemblyUrl from '../../assets/s3000/s3000-assembly.glb?url'
+import boilerUrl from '../../assets/s3000/web/s3000-boiler.glb?url'
+import equipmentUrl from '../../assets/s3000/web/s3000-equipment.glb?url'
+import cablesUrl from '../../assets/s3000/web/s3000-cables.glb?url'
+import deaeratorUrl from '../../assets/s3000/web/s3000-deaerator.glb?url'
 import premiumLogo from '../../assets/s3000/premium-logo.png'
 import { isPartVisible, type VisibilityPart } from './assemblyVisibility'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
+const assemblyUrls = [boilerUrl, equipmentUrl, cablesUrl, deaeratorUrl]
 type Part = VisibilityPart & { id: string; label: string; category: string; source_kind: string; note: string; center: number[] }
 const parts = assemblyData.parts as Part[]
 const byId = new Map(parts.map(p => [p.id, p]))
@@ -59,12 +64,14 @@ function rootPart(object: Object3D | null): string | undefined {
 
 const ignoreRaycast: Mesh['raycast'] = () => {}
 
-function Assembly({ enabled, selected, showAccessories, select }: {
-  enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void
+function Assembly({ enabled, selected, showAccessories, select, dragging }: {
+  enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>
 }) {
-  const gltf = useGLTF(assemblyUrl)
+  const gltfs = useGLTF(assemblyUrls)
+  const { gl, invalidate, camera } = useThree()
   const scene = useMemo(() => {
-    const copy = gltf.scene.clone(true)
+    const copy = new Group()
+    for (const gltf of gltfs) copy.add(gltf.scene.clone(true))
     copy.traverse(object => {
       if (object instanceof Mesh) {
         object.castShadow = true
@@ -73,7 +80,7 @@ function Assembly({ enabled, selected, showAccessories, select }: {
       }
     })
     return copy
-  }, [gltf.scene])
+  }, [gltfs])
   useEffect(() => () => {
     scene.traverse(object => {
       if (object instanceof Mesh) {
@@ -91,7 +98,9 @@ function Assembly({ enabled, selected, showAccessories, select }: {
       obj.traverse(child => {
         if (!(child instanceof Mesh)) return
         // Three.js raycasting does not skip an invisible ancestor automatically.
-        child.raycast = obj.visible ? Mesh.prototype.raycast : ignoreRaycast
+        child.raycast = obj.visible ? function(this: Mesh, raycaster, hits) {
+          if (!dragging.current) Mesh.prototype.raycast.call(this, raycaster, hits)
+        } : ignoreRaycast
         const materials = Array.isArray(child.material) ? child.material : [child.material]
         for (const m of materials) if (m instanceof MeshStandardMaterial) {
           m.emissive = new Color(part.id === selected ? '#204775' : '#000000')
@@ -99,7 +108,21 @@ function Assembly({ enabled, selected, showAccessories, select }: {
         }
       })
     }
-  }, [scene, enabled, selected, showAccessories])
+    invalidate()
+  }, [scene, enabled, selected, showAccessories, dragging, invalidate])
+  useEffect(() => {
+    // Geometry and light stay fixed during orbiting. Refresh only on composition changes.
+    gl.shadowMap.autoUpdate = false
+    gl.shadowMap.needsUpdate = true
+    invalidate()
+  }, [scene, enabled, showAccessories, gl, invalidate])
+  useEffect(() => {
+    // Opt-in inspection used by reproducible browser acceptance; no telemetry or requests.
+    if (!new URLSearchParams(window.location.search).has('inspect3d')) return
+    const host = window as typeof window & { __s3000?: unknown }
+    host.__s3000 = { scene, gl, camera }
+    return () => { delete host.__s3000 }
+  }, [scene, gl, camera])
   return <primitive object={scene} dispose={null}
     onClick={(e: any) => { const id = rootPart(e.object); if (id) { e.stopPropagation(); select(id) } }}
     onPointerOver={(e: any) => { if (rootPart(e.object)) { e.stopPropagation(); document.body.style.cursor = 'pointer' } }}
@@ -114,7 +137,7 @@ function overviewView(withDeaerator: boolean): Omit<ViewRequest, 'id'> {
     : { position: [6.5,4.5,8.2], target: [.2,1.35,.05] }
 }
 function CameraMotion({ request, moving }: { request: ViewRequest; moving: React.MutableRefObject<boolean> }) {
-  const { camera, controls, size } = useThree()
+  const { camera, controls, size, invalidate } = useThree()
   useEffect(() => {
     if (camera instanceof PerspectiveCamera) {
       camera.fov = size.width < size.height ? 45 : 39
@@ -123,15 +146,17 @@ function CameraMotion({ request, moving }: { request: ViewRequest; moving: React
   }, [camera, size.width, size.height])
   const desired = useMemo(() => new Vector3(...request.position), [request])
   const target = useMemo(() => new Vector3(...request.target), [request])
-  useEffect(() => { moving.current = true }, [request, moving])
+  useEffect(() => { moving.current = true; invalidate() }, [request, moving, invalidate])
   useFrame((_, dt) => {
     const orbit = controls as any
     if (!moving.current || !orbit) return
-    const alpha = 1 - Math.exp(-dt * 6)
+    // In demand mode dt includes time spent idle; do not jump on the first frame.
+    const alpha = 1 - Math.exp(-Math.min(dt, 1 / 30) * 6)
     camera.position.lerp(desired, alpha)
     orbit.target.lerp(target, alpha)
     orbit.update()
     if (camera.position.distanceTo(desired) < .005 && orbit.target.distanceTo(target) < .005) moving.current = false
+    else invalidate()
   })
   return null
 }
@@ -145,6 +170,7 @@ export function S3000Configurator() {
   const [initialView] = useState(() => overviewView(enabled.has('deaerator')))
   const [view, setView] = useState<ViewRequest>(() => ({ id: 0, ...initialView }))
   const moving = useRef(false)
+  const dragging = useRef(false)
   const active = selected ? byId.get(selected) : undefined
   const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected)) : undefined
   const visibleRows = bomParts.filter(row => searchText(`${row.id} ${row.description} ${byId.get(row.nodes[0])?.label} ${byId.get(row.nodes[0])?.note}`).includes(searchText(query)))
@@ -193,7 +219,7 @@ export function S3000Configurator() {
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium gas company" /><div className="s3-edition">S 3000 <span>3D</span></div></header>
       {!active && <div className="s3-view-title"><span>КОТЁЛ С ОБВЯЗКОЙ АДЛ</span><h1>S-3000 в сборе.</h1><p>Вращайте модель. Нажмите на оборудование,<br className="s3-desktop" /> чтобы рассмотреть его и узнать состав.</p></div>}
-      <ModelBoundary><Canvas shadows camera={{ position: initialView.position, fov: 39, near: .05, far: 100 }} dpr={[1,1.6]}
+      <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .05, far: 100 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
         onPointerMissed={() => setSelected(null)}>
         <ambientLight intensity={.7} />
@@ -206,11 +232,11 @@ export function S3000Configurator() {
             <Lightformer intensity={2.5} position={[3,6,-4]} scale={[7,4,1]} rotation={[Math.PI/3,0,0]} />
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
-          <Assembly enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} />
+          <Assembly enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging} />
           <ContactShadows key={[...enabled].join(',')+showAccessories} position={[0,-.007,0]} opacity={.38} scale={25} blur={2.4} far={5} resolution={512} frames={1} />
         </Suspense>
         <OrbitControls makeDefault target={initialView.target} minDistance={1.2} maxDistance={24} maxPolarAngle={Math.PI*.49}
-          enableDamping dampingFactor={.08} onStart={() => { moving.current = false }} />
+          enableDamping dampingFactor={.08} onStart={() => { moving.current = false; dragging.current = true }} onEnd={() => { dragging.current = false }} />
         <CameraMotion request={view} moving={moving} />
       </Canvas></ModelBoundary>
       <Loading />
@@ -233,7 +259,7 @@ export function S3000Configurator() {
         {active.note && <p className="s3-part-note">{active.note}</p>}
         <button className="s3-focus" onClick={() => focus(active.id)}>Приблизить деталь ↗</button>
       </section>}
-      <div className="s3-caption">Визуальная сборка <span>•</span> 08.09.2026 <span>•</span> v{assemblyData.version}</div>
+      <div className="s3-caption">Визуальная сборка <span>•</span> 09.09.2026 <span>•</span> v{webVersion.version}</div>
     </main>
 
     <aside className="s3-sidebar" aria-label="Комплектация S-3000">
@@ -270,4 +296,4 @@ export function S3000Configurator() {
   </div>
 }
 
-useGLTF.preload(assemblyUrl)
+useGLTF.preload(assemblyUrls)

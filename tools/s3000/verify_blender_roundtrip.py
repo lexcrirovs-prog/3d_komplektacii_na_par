@@ -40,8 +40,27 @@ for conn in manifest['deaerator_gauge']['connections']:
     point=da.matrix_world.inverted()@(da_mesh.matrix_world@loc)
     assert abs(point.x-(sx-.012))<.002, ('Unexpected gauge tap surface',list(point))
     tap_hits.append(list(point))
+spacer=bpy.data.objects['economizer_spacer_500mm']
+assert spacer.parent.name=='economizer'
+assert all(m.name=='PREMIUM charcoal enamel' for m in spacer.data.materials)
+points=[spacer.matrix_world@v.co for v in spacer.data.vertices]
+length=max(v.y for v in points)-min(v.y for v in points)
+assert abs(length-.500)<.000001, ('Incorrect spacer length',length)
+inv=spacer.matrix_world.inverted()
+radial_hits=[]
+for y in [1.788,1.938,2.088]:
+    origin=inv@Vector((0,y,1.06));direction=(inv.to_3x3()@Vector((1,0,0))).normalized()
+    hit,loc,_,_=spacer.ray_cast(origin,direction,distance=.3)
+    assert hit, 'Spacer wall missing'
+    world=spacer.matrix_world@loc
+    assert abs(world.x-.225)<.00015, ('Unexpected bore radius',list(world))
+    radial_hits.append(list(world))
+hit,_,_,_=spacer.ray_cast(inv@Vector((0,1.68,1.06)),(inv.to_3x3()@Vector((0,1,0))).normalized(),distance=.52)
+assert not hit, 'Spacer bore is obstructed by an end cap'
 report=dict(status='PASSED_BLENDER_DELIVERY_ROUNDTRIP', components=len(errors),
             max_bound_error_m=max(errors), blender_version=bpy.app.version_string,
-            input=glb.name, da_taps_inside_tank_geometry=tap_hits, engineering_acceptance='NOT_VERIFIED')
+            input=glb.name, da_taps_inside_tank_geometry=tap_hits, spacer_length_mm=length*1000,
+            spacer_bore_rays=radial_hits, spacer_bore_open=True, spacer_material_match=True,
+            engineering_acceptance='NOT_VERIFIED')
 output.write_text(json.dumps(report,indent=2),encoding='utf-8')
 print(json.dumps(report),flush=True)

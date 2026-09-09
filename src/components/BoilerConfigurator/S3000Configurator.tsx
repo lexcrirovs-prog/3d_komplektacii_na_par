@@ -21,7 +21,7 @@ const parts = assemblyData.parts as Part[]
 const byId = new Map(parts.map(p => [p.id, p]))
 const options = [
   { id: 'burner', title: 'Горелка', subtitle: 'Газовая горелка котла' },
-  { id: 'economizer', title: 'Экономайзер EQS2', subtitle: 'Совмещён с дымовым патрубком' },
+  { id: 'economizer', title: 'Экономайзер EQS2', subtitle: 'Дымовой канал с проставкой 500 мм' },
   { id: 'deaerator', title: 'Деаэратор', subtitle: 'Оцинкованная обшивка' },
 ]
 const optionalIds = new Set(options.map(o => o.id))
@@ -357,7 +357,7 @@ export function S3000Configurator() {
             <p>{enabled.has('economizer') ? 'Насосы → нижний фланец экономайзера → верхний фланец → котёл' : 'Насосы → верхний питательный патрубок котла'}</p>
             <small>Вход в котёл — между паровым вентилем и двумя предохранительными клапанами.</small>
           </section>
-          {enabled.has('economizer') && <section className="s3-detail-callout"><span>180°</span><div><strong>Экономайзер развёрнут</strong><p>Водяные фланцы обращены назад. Дымовой патрубок состыкован с котлом.</p></div></section>}
+          {enabled.has('economizer') && <section className="s3-detail-callout"><span>500 мм</span><div><strong>Проставка дымового канала</strong><p>В цвет экономайзера. Водяные фланцы обращены назад, трубы подведены к новому положению.</p></div></section>}
           <p className="s3-assembly-note">Сборка показывает внешний вид оборудования. Расположение обвязки и её присоединения требуют сверки с монтажной схемой.</p>
         </> : <>
           <label className="s3-search"><span className="s3-sr-only">Найти оборудование</span><input type="search" placeholder="Найти прибор или арматуру" value={query} onChange={e => setQuery(e.target.value)} /></label>

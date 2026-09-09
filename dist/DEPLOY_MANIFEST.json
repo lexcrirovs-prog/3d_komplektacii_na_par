@@ -1,12 +1,12 @@
 {
   "release": {
-    "version": "2026.09.09.3",
+    "version": "2026.09.09.4",
     "date": "2026-09-09",
     "executor": "Codex / GPT-6 Astra",
-    "detailed_assembly_version": "2026.09.09.3",
-    "baseline_source_commit": "b47c73b6f38848fca89d6781d7afb48509ef9123"
+    "detailed_assembly_version": "2026.09.09.4",
+    "baseline_source_commit": "27eb79686f12c16e013ce2263230cb5343b36b7d"
   },
-  "source_commit": "118703d8dbf8bea0429b1ee5e50b6f43ef5229a8",
+  "source_commit": "355a3faa8186eb9c79e52c4e100d9afc27c40fcc",
   "files": [
     {
       "path": ".htaccess",
@@ -54,9 +54,9 @@
       "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904"
     },
     {
-      "path": "assets/index-BGUxSU_7.js",
-      "bytes": 1282665,
-      "sha256": "67ca0a4926fa2cfb8f2a630af2af342a8bcc51ffde6dec1cc13b19c2206ca961"
+      "path": "assets/index-BokQnLUK.js",
+      "bytes": 1282847,
+      "sha256": "744018639902e525bd6d162e172242820858d1719b073197f1dd76120a71714f"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -64,24 +64,24 @@
       "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665"
     },
     {
-      "path": "assets/s3000-boiler-3ylXMtEx.glb",
-      "bytes": 4032512,
-      "sha256": "10048b799f9371ea496edc2949ec0327d81a6f1b422cdc8b46e5eefafbdc3a8a"
+      "path": "assets/s3000-boiler-BgA5lRlU.glb",
+      "bytes": 4032580,
+      "sha256": "6c31e460cce00181ce3d688c8624cdea9c0680f8a9442164164db996fd6ed046"
     },
     {
-      "path": "assets/s3000-cables-Dja0Rd4r.glb",
-      "bytes": 1279664,
-      "sha256": "5756778576626cdd3163e10304efefeed9f6f2b1967054c0b502e6cfba680cfc"
+      "path": "assets/s3000-cables-DbuupMTU.glb",
+      "bytes": 1279732,
+      "sha256": "9602f6cef42875fb3cc85f8f887997dffbf63ea3ed2e02cc6660f6ff77ee513f"
     },
     {
-      "path": "assets/s3000-deaerator-DQ5726GO.glb",
-      "bytes": 882512,
-      "sha256": "df27ecf8063fa7331b1fcc611de757319727b0c9296f385de2983c4af24d5150"
+      "path": "assets/s3000-deaerator-BjhBIlYM.glb",
+      "bytes": 882584,
+      "sha256": "156d21f00276ffbc6961d9f38c86c5de3ed0a167b500100b1a50710c89aac1fe"
     },
     {
-      "path": "assets/s3000-equipment-Cz427eU4.glb",
-      "bytes": 5280384,
-      "sha256": "a2f9a04d598124e0d5a6ddb4dae361e21afc35f32c5ecdbf173104068c9b8480"
+      "path": "assets/s3000-equipment-BTyk9N4j.glb",
+      "bytes": 5289980,
+      "sha256": "8faebf6c818c91932ce4a823b341aa10bb29f713a622f367a68fb16853873774"
     },
     {
       "path": "assets/style-_ULG7SaW.css",
@@ -91,7 +91,7 @@
     {
       "path": "index.html",
       "bytes": 2056,
-      "sha256": "e022c4d390a69e2c386ce2359ea1209c88d50b7747f79d72b35c4c1593445566"
+      "sha256": "9a1499fc888b37f5388705ba4c7ecf9d2a2233265118a3ffff54970e7c1a39df"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -131,7 +131,7 @@
     {
       "path": "version.json",
       "bytes": 318,
-      "sha256": "7c45be7183a364fc1a678ee27fa5a18f00ddde53b5ed63bdf054f76e2b18ded6"
+      "sha256": "ced2443f0d180f5b0ddd7892161d349c08c2b4ad3291bc3af353d80b1aef1e16"
     }
   ]
 }

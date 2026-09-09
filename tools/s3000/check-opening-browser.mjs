@@ -16,6 +16,7 @@ try {
     return createHash('sha256').update(await response.body()).digest('hex');
   };
   const manifestSha256=await manifestHash();
+  const version=(await (await page.request.get(new URL('version.json',base).href)).json()).version;
   page.on('pageerror',e=>errors.push(e.message));
   const url=new URL(base);url.searchParams.set('inspect3d','1');url.searchParams.set('addons','burner,economizer');
   await page.goto(url.href,{waitUntil:'domcontentloaded',timeout:180000});
@@ -69,6 +70,6 @@ try {
   assert.equal(frames,0);checks.push('Zero idle frames after doors and camera settle');
   assert.deepEqual(errors,[]);
   assert.equal(await manifestHash(),manifestSha256,'Publication changed during acceptance');
-  const result={version:'2026.09.09.3',status:'PASSED_OPENING_BROWSER',url:base,manifestSha256,checks,errors,idleFrames:frames};
+  const result={version,status:'PASSED_OPENING_BROWSER',url:base,manifestSha256,checks,errors,idleFrames:frames};
   await writeFile(resolve(out,'opening-browser.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
 }finally{await browser.close();}

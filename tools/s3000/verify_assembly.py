@@ -24,12 +24,17 @@ def verify(root):
     joint = assembly['economizer_joint']
     assert abs(joint['rotation_degrees'] - 270) < 1e-6
     assert joint['additional_rotation_degrees'] == 180
-    assert math.dist(joint['boiler_port'], joint['economizer_port']) < 1e-5
+    spacer = joint['spacer']
+    assert spacer['length_mm'] == 500 and spacer['bore_mm'] == 450
+    assert spacer['visibility_owner'] == 'economizer'
+    assert math.dist(spacer['start'], joint['boiler_port']) < 1e-5
+    assert math.dist(spacer['end'], joint['economizer_port']) < 1e-5
+    assert abs(math.dist(spacer['start'], spacer['end']) - .500) < 1e-6
     assert sum(a*b for a,b in zip(joint['boiler_normal'], joint['economizer_normal'])) < -0.99999
     assert joint['boiler_bore_m'] == joint['economizer_bore_m'] == 0.45
     assert joint['boiler_outside_m'] == joint['economizer_outside_m'] == 0.456
     assert assembly['engineering_acceptance'] == 'NOT_VERIFIED'
-    assert assembly['version']=='2026.09.08.4'
+    assert assembly['version']=='2026.09.09.4'
     parts={p['id']:p for p in assembly['parts']}
     assert parts['pressure_header']['bounds_blender'][0][0]>.85, 'Header must be on the sight-glass side'
     assert parts['pressure_header']['bounds_blender'][0][1]<-.68
@@ -40,8 +45,8 @@ def verify(root):
     assert assembly['deaerator']['capacity_t_h']==25
     feed=assembly['feed_routing']
     assert feed['boiler_port']==[0,.565,2.085], 'Use the TOP feed nozzle, not the side instrument tap'
-    assert feed['economizer_lower']==[-.525,2.702,.700]
-    assert feed['economizer_upper']==[-.525,2.702,1.420]
+    assert feed['economizer_lower']==[-.525,3.202,.700]
+    assert feed['economizer_upper']==[-.525,3.202,1.420]
     assert feed['economizer_water_normals']==[0,1,0], 'Water ports face away from boiler'
     endpoints={
         'feed_to_economizer':(feed['pump_header'],feed['economizer_lower']),
@@ -92,7 +97,8 @@ def verify(root):
     logo=next(m for m in gltf['materials'] if m['name']=='Original PREMIUM PNG decal')
     assert logo.get('alphaMode')=='MASK' and 'baseColorTexture' in logo['pbrMetallicRoughness']
     print(json.dumps(dict(status='PASSED_LOCAL_ASSEMBLY', bom_rows=len(quantities),
-                         components=sum(quantities.values()), joint_error_m=math.dist(joint['boiler_port'],joint['economizer_port']),
+                         components=sum(quantities.values()), joint_error_m=math.dist(spacer['end'],joint['economizer_port']),
+                         spacer_length_mm=spacer['length_mm'],
                          glb_bytes=len(content), materials=len(gltf['materials']),
                          water_route_variants=2, cabinet_inputs=wiring['cabinet_inputs'],
                          da_gauge_connected_taps=len(gauge['connections'])), indent=2))

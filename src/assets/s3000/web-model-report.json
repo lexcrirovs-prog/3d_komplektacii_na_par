@@ -1,21 +1,21 @@
 {
-  "version": "2026.09.09.3",
+  "version": "2026.09.09.4",
   "date": "2026-09-09",
   "executor": "Codex / GPT-6 Astra",
   "status": "PASSED_DERIVATIVE_STRUCTURE",
-  "sourceSha256": "b258632ae26935516a61e22633b7ecee75b7f5aeb8ecb550dda11240ee3fa742",
-  "outputSha256": "dd9f1f34b901be5d3e648bc4b6657eebf9b7fb9c1352ce7b62df02d41a676ca7",
-  "beforeBytes": 132902144,
-  "afterBytes": 10875240,
+  "sourceSha256": "72978649525b0ac94c52982b91dfd59c381b10dac7dc4755ec89b4314442b201",
+  "outputSha256": "7b6d1395f90624a103dadcbd21694aa7942d3daf04d8f697128636b0b77acd7d",
+  "beforeBytes": 132958524,
+  "afterBytes": 10884400,
   "simplifier": {
     "ratio": 0.15,
     "relativeError": 0.0003,
     "lockBorder": true,
     "note": "Algorithm error setting, not an independently measured surface-distance tolerance"
   },
-  "beforeTriangles": 3270373,
-  "afterTriangles": 1269997,
-  "nodes": 108,
+  "beforeTriangles": 3272421,
+  "afterTriangles": 1271717,
+  "nodes": 109,
   "boundsMaxErrorM": 0.000027621245695108598,
   "partBoundsErrors": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "name": "economizer",
-      "maxErrorM": 0.0000036163866852234605
+      "maxErrorM": 0.000003616386075044886
     },
     {
       "name": "steam_valve",
@@ -176,11 +176,11 @@
     },
     {
       "name": "feed_to_economizer",
-      "maxErrorM": 0.000013880764684337521
+      "maxErrorM": 0.000010788424861019053
     },
     {
       "name": "feed_from_economizer",
-      "maxErrorM": 0.000021539219893895734
+      "maxErrorM": 0.000019736113458179716
     },
     {
       "name": "feed_direct",
@@ -246,6 +246,12 @@
       "name": "economizer fine STEP.004",
       "before": 12164,
       "after": 12164,
+      "primitives": 1
+    },
+    {
+      "name": "500 mm hollow flue spacer",
+      "before": 2048,
+      "after": 2040,
       "primitives": 1
     },
     {
@@ -471,15 +477,15 @@
       "primitives": 3
     },
     {
-      "name": "Cone.424",
+      "name": "Cone.003",
       "before": 7940,
-      "after": 4932,
+      "after": 4966,
       "primitives": 3
     },
     {
-      "name": "Cone.440",
+      "name": "Cone.002",
       "before": 7724,
-      "after": 4642,
+      "after": 4288,
       "primitives": 3
     },
     {

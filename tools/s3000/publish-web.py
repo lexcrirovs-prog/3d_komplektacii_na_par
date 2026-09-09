@@ -14,13 +14,13 @@ import tarfile
 import urllib.request
 
 REPO = Path(__file__).resolve().parents[2]
-VERSION = '2026.09.09.3'
+VERSION = '2026.09.09.4'
 OUT = REPO / 'artifacts' / ('publication-v' + VERSION)
 ROOT = '/home/p/premiuig/prgz.ru/public_html'
 LIVE = ROOT + '/komplektacii4'
 STAGE = ROOT + '/komplektacii4-stage-v' + VERSION
-BACKUP = ROOT + '/komplektacii4-v2026.09.09.2'
-BASELINE_HASH = '332cdcaf90b57c3c6d7f5c7b09fd96017c3a6cb02db0a24a37e3833c0a1187cc'
+BACKUP = ROOT + '/komplektacii4-v2026.09.09.3'
+BASELINE_HASH = 'e022c4d390a69e2c386ce2359ea1209c88d50b7747f79d72b35c4c1593445566'
 HOST = 'premiuig@premiuig.beget.tech'
 SSH = ['ssh', '-o', 'BatchMode=yes', '-o', 'StrictHostKeyChecking=yes', '-o', 'ConnectTimeout=20', HOST]
 URL = 'https://prgz.ru/komplektacii4/'
@@ -78,7 +78,7 @@ print(json.dumps({{'files':files,'neighbors':neighbors}}))
     with tarfile.open(OUT/'candidate.tar.gz','w:gz') as tar:
         for p in sorted((REPO/'dist').rglob('*')):
             if p.is_file(): tar.add(p,arcname=p.relative_to(REPO/'dist').as_posix(),recursive=False)
-    save('prepared.json',{'version':VERSION,'candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/komplektacii4-v2026.09.09.2/'})
+    save('prepared.json',{'version':VERSION,'candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/komplektacii4-v2026.09.09.3/'})
     print('PREPARED_AND_PREVIOUS_PUBLICATION_BACKED_UP')
 
 def stage():
@@ -111,12 +111,15 @@ def cutover():
     assert http['status']=='PASSED_HTTPS_HASHES' and http['url']==STAGE_URL
     assert http['manifestSha256']==prepared['manifestSha256']
     # A separate browser acceptance record must exist for the staged URL.
-    checks=json.loads((REPO/'artifacts/qa/opening-stage-baseline/checks.json').read_text(encoding='utf-8'))
+    checks=json.loads((REPO/'artifacts/qa/spacer-stage-baseline/checks.json').read_text(encoding='utf-8'))
     assert checks['status']=='PASSED_BROWSER' and checks['url']==STAGE_URL and checks['mode']=='candidate'
     assert checks['manifestSha256']==prepared['manifestSha256']
-    doors=json.loads((REPO/'artifacts/qa/opening-stage/opening-browser.json').read_text(encoding='utf8'))
+    doors=json.loads((REPO/'artifacts/qa/spacer-stage-doors/opening-browser.json').read_text(encoding='utf8'))
     assert doors['status']=='PASSED_OPENING_BROWSER' and doors['url']==STAGE_URL
     assert doors['manifestSha256']==prepared['manifestSha256']
+    spacer=json.loads((REPO/'artifacts/qa/spacer-stage/spacer-browser.json').read_text(encoding='utf8'))
+    assert spacer['status']=='PASSED_SPACER_BROWSER' and spacer['url']==STAGE_URL
+    assert spacer['manifestSha256']==prepared['manifestSha256']
     result=remote(f'''import json,pathlib,hashlib,os
 root=pathlib.Path({ROOT!r});live=pathlib.Path({LIVE!r});stage=pathlib.Path({STAGE!r});backup=pathlib.Path({BACKUP!r})
 assert root.resolve()==root and all(p.parent==root and not p.is_symlink() for p in [live,stage,backup])

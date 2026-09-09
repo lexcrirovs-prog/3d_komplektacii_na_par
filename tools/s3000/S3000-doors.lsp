@@ -1,4 +1,4 @@
-; PREMIUM S3000 opening commands, 2026-09-09, v2026.09.09.3.
+; PREMIUM S3000 opening commands, 2026-09-09, v2026.09.09.4.
 ; Codex / GPT-6 Astra. Moves only the explicitly named exported blocks.
 (defun s3:objects (names / ss i e result)
   (setq ss (ssget "_X" '((0 . "INSERT"))) result nil i 0)
@@ -47,7 +47,7 @@
       (if (member which '("all" "cabinet")) (s3:set "cabinet" opened))
       (if (member which '("all" "boiler")) (s3:set "boiler" opened))
       (command "_.REGEN") (command "_.UNDO" "_END") (setq *error* olderr))
-    (princ "Open the S3000 v2026.09.09.3 drawing in millimetres first."))
+    (princ "Open the S3000 v2026.09.09.4 drawing in millimetres first."))
   (princ))
 (defun c:S3000OPEN () (s3:run "all" T))
 (defun c:S3000CLOSE () (s3:run "all" nil))
@@ -73,6 +73,8 @@
   (s3:view "S3000_INSIDE_CABINET" '(-1.0 -0.45 0.23) '(-1270.0 -220.0 1500.0) 1150.0))
 (defun c:S3000DOORVIEW ()
   (s3:view "S3000_INSIDE_BOILER" '(0.45 -1.0 0.22) '(-150.0 -1300.0 1100.0) 3200.0))
+(defun c:S3000ECOVIEW ()
+  (s3:view "S3000_SPACER_500" '(-1.0 0.45 0.30) '(0.0 1800.0 1100.0) 2600.0))
 (defun c:S3000ALLVIEW ()
   (if (and (s3:valid) (tblsearch "VIEW" "S3000_ALL_ISO"))
     (command "_.-VIEW" "_R" "S3000_ALL_ISO")) (princ))
@@ -96,6 +98,7 @@
             (action_tile "cv" "(done_dialog 7)")
             (action_tile "bv" "(done_dialog 8)")
             (action_tile "av" "(done_dialog 9)")
+            (action_tile "ev" "(done_dialog 10)")
             (setq result (start_dialog))
             (cond ((= result 1) (s3:run "cabinet" T))
                   ((= result 2) (s3:run "cabinet" nil))
@@ -105,7 +108,8 @@
                   ((= result 6) (s3:run "all" nil))
                   ((= result 7) (c:S3000CABINETVIEW))
                   ((= result 8) (c:S3000DOORVIEW))
-                  ((= result 9) (c:S3000ALLVIEW))))
+                  ((= result 9) (c:S3000ALLVIEW))
+                  ((= result 10) (c:S3000ECOVIEW))))
           (setq result 0)))
       (unload_dialog dialog))
     (princ "Keep S3000-doors.dcl next to the DWG."))

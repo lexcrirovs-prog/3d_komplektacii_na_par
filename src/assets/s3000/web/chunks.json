@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 54,
-  "bytes": 11475072,
+  "bytes": 11484876,
   "files": [
     {
       "group": "boiler",
@@ -9,8 +9,8 @@
       "parts": [
         "boiler"
       ],
-      "bytes": 4032512,
-      "sha256": "10048b799f9371ea496edc2949ec0327d81a6f1b422cdc8b46e5eefafbdc3a8a"
+      "bytes": 4032580,
+      "sha256": "6c31e460cce00181ce3d688c8624cdea9c0680f8a9442164164db996fd6ed046"
     },
     {
       "group": "cables",
@@ -18,8 +18,8 @@
       "parts": [
         "cable_routes"
       ],
-      "bytes": 1279664,
-      "sha256": "5756778576626cdd3163e10304efefeed9f6f2b1967054c0b502e6cfba680cfc"
+      "bytes": 1279732,
+      "sha256": "9602f6cef42875fb3cc85f8f887997dffbf63ea3ed2e02cc6660f6ff77ee513f"
     },
     {
       "group": "deaerator",
@@ -27,8 +27,8 @@
       "parts": [
         "deaerator"
       ],
-      "bytes": 882512,
-      "sha256": "df27ecf8063fa7331b1fcc611de757319727b0c9296f385de2983c4af24d5150"
+      "bytes": 882584,
+      "sha256": "156d21f00276ffbc6961d9f38c86c5de3ed0a167b500100b1a50710c89aac1fe"
     },
     {
       "group": "equipment",
@@ -86,8 +86,8 @@
         "cabinet_door",
         "cabinet_interior"
       ],
-      "bytes": 5280384,
-      "sha256": "a2f9a04d598124e0d5a6ddb4dae361e21afc35f32c5ecdbf173104068c9b8480"
+      "bytes": 5289980,
+      "sha256": "8faebf6c818c91932ce4a823b341aa10bb29f713a622f367a68fb16853873774"
     }
   ]
 }

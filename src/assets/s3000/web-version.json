@@ -1,7 +1,7 @@
 {
-  "version": "2026.09.09.3",
+  "version": "2026.09.09.4",
   "date": "2026-09-09",
   "executor": "Codex / GPT-6 Astra",
-  "detailed_assembly_version": "2026.09.09.3",
-  "baseline_source_commit": "b47c73b6f38848fca89d6781d7afb48509ef9123"
+  "detailed_assembly_version": "2026.09.09.4",
+  "baseline_source_commit": "27eb79686f12c16e013ce2263230cb5343b36b7d"
 }

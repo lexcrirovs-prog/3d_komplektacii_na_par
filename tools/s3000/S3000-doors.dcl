@@ -20,6 +20,7 @@ s3000 : dialog {
     : button { key = "cv"; label = "Шкаф крупно"; }
     : button { key = "bv"; label = "Трубки котла"; }
     : button { key = "av"; label = "Вся сборка"; }
+    : button { key = "ev"; label = "Проставка 500 мм"; }
   }
   : button { key = "cancel"; label = "Вернуться к модели"; is_cancel = true; }
 }

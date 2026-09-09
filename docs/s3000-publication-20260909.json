@@ -1,0 +1,242 @@
+{
+  "status": "PASSED_LIVE_PUBLIC",
+  "publication_date": "2026-09-09",
+  "version": "2026.09.08.4",
+  "source_date": "2026-09-08",
+  "source_commit": "023cac30d706fa1a37aafa98f037ed2c96393244",
+  "executor": "Codex / GPT-6 Astra",
+  "url": "https://prgz.ru/komplektacii4/",
+  "build": {
+    "reused_validated_dist": true,
+    "application_files_changed": false,
+    "source_files": 15
+  },
+  "prepared": {
+    "status": "PREPARED",
+    "files": 17,
+    "archive_bytes": 17102607,
+    "archive_sha256": "98514cb46e20a50c8737d71c12570a0053b327eb86e7ea2e177ccf804585b003",
+    "target": "https://prgz.ru/komplektacii4/",
+    "target_exists": false
+  },
+  "server": {
+    "status": "CUTOVER_OK_NEW_DIRECTORY",
+    "files": 17,
+    "manifest_matches": true,
+    "neighbors_unchanged": true,
+    "archive_retained": true
+  },
+  "access_fix": {
+    "initial_http_status": 403,
+    "cause": "Extraction in the service release directory omitted the site web-user ACL on files",
+    "resolution": "Re-extracted under the website root to inherit site ACL; manifest-checked before and after cutover",
+    "manual_setfacl": "Host returned Operation not permitted; no permission change was applied by that attempt",
+    "result": {
+      "status": "WEB_ROOT_ACL_INHERITED",
+      "checked_paths": 19,
+      "file_hashes_preserved": true,
+      "previous_upload_retained": true
+    }
+  },
+  "live_verification": {
+    "status": "PASSED_LIVE_HTTP_MANIFEST",
+    "url": "https://prgz.ru/komplektacii4/",
+    "checked_at_utc": "2026-09-09T08:12:13.870146+00:00",
+    "files": [
+      {
+        "url": "https://prgz.ru/komplektacii4/bcv_7250-CkMcE7H9.glb",
+        "final_url": "https://prgz.ru/komplektacii4/bcv_7250-CkMcE7H9.glb",
+        "status": 200,
+        "bytes": 2227100,
+        "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/bcv_925-k9_oO04u.glb",
+        "final_url": "https://prgz.ru/komplektacii4/bcv_925-k9_oO04u.glb",
+        "status": 200,
+        "bytes": 2878432,
+        "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/boiler-DinVE5OY.glb",
+        "final_url": "https://prgz.ru/komplektacii4/boiler-DinVE5OY.glb",
+        "status": 200,
+        "bytes": 1627716,
+        "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/cp_930--TKERaHD.glb",
+        "final_url": "https://prgz.ru/komplektacii4/cp_930--TKERaHD.glb",
+        "status": 200,
+        "bytes": 596536,
+        "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/deaerator-BbqYfy15.glb",
+        "final_url": "https://prgz.ru/komplektacii4/deaerator-BbqYfy15.glb",
+        "status": 200,
+        "bytes": 1297432,
+        "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/dn32h50-DWIQZzpu.glb",
+        "final_url": "https://prgz.ru/komplektacii4/dn32h50-DWIQZzpu.glb",
+        "status": 200,
+        "bytes": 1258964,
+        "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/elbow_pc_f20-DO38bAlJ.glb",
+        "final_url": "https://prgz.ru/komplektacii4/elbow_pc_f20-DO38bAlJ.glb",
+        "status": 200,
+        "bytes": 157820,
+        "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/index.html",
+        "final_url": "https://prgz.ru/komplektacii4/index.html",
+        "status": 200,
+        "bytes": 23865023,
+        "sha256": "ee71767abd7644f7aa1353c88d1ac95f94eac248de596840013d61a6959aef9e",
+        "content_type": "text/html"
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/models/bcv_7250.glb",
+        "final_url": "https://prgz.ru/komplektacii4/models/bcv_7250.glb",
+        "status": 200,
+        "bytes": 2227100,
+        "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/models/bcv_925.glb",
+        "final_url": "https://prgz.ru/komplektacii4/models/bcv_925.glb",
+        "status": 200,
+        "bytes": 2878432,
+        "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/models/boiler.glb",
+        "final_url": "https://prgz.ru/komplektacii4/models/boiler.glb",
+        "status": 200,
+        "bytes": 1627716,
+        "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/models/cp_930.glb",
+        "final_url": "https://prgz.ru/komplektacii4/models/cp_930.glb",
+        "status": 200,
+        "bytes": 596536,
+        "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/models/deaerator.glb",
+        "final_url": "https://prgz.ru/komplektacii4/models/deaerator.glb",
+        "status": 200,
+        "bytes": 1297432,
+        "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/models/dn32h50.glb",
+        "final_url": "https://prgz.ru/komplektacii4/models/dn32h50.glb",
+        "status": 200,
+        "bytes": 1258964,
+        "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/models/elbow_pc_f20.glb",
+        "final_url": "https://prgz.ru/komplektacii4/models/elbow_pc_f20.glb",
+        "status": 200,
+        "bytes": 157820,
+        "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+        "content_type": null
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/version.json",
+        "final_url": "https://prgz.ru/komplektacii4/version.json",
+        "status": 200,
+        "bytes": 250,
+        "sha256": "90166dbc06ad43009fda4d0b8d4d7466bf98ab5fe945a7fec23dba55123fba75",
+        "content_type": "application/json"
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/DEPLOY_MANIFEST.json",
+        "final_url": "https://prgz.ru/komplektacii4/DEPLOY_MANIFEST.json",
+        "status": 200,
+        "bytes": 2883,
+        "sha256": "b31be225c452da28cbfa682977489a48b4b63bde588eded34b9165991c3532e3",
+        "content_type": "application/json"
+      }
+    ],
+    "neighbors": [
+      {
+        "url": "https://prgz.ru/",
+        "final_url": "https://prgz.ru/",
+        "status": 200,
+        "bytes": 35472,
+        "sha256": "816e5c7c77f3ae47ee3cabee6ffb9d0d355022a02a5e3ad30cbb38485ab45c94",
+        "content_type": "text/html"
+      },
+      {
+        "url": "https://prgz.ru/kaskad/",
+        "final_url": "https://prgz.ru/kaskad/",
+        "status": 200,
+        "bytes": 698,
+        "sha256": "15c66f1b6c8fcb9b34ab8c4cec5d3c622d667db80d473f7b56c58e10a4cb4506",
+        "content_type": "text/html"
+      },
+      {
+        "url": "https://prgz.ru/komplektacii3/",
+        "final_url": "https://prgz.ru/komplektacii3/",
+        "status": 404,
+        "bytes": 267,
+        "sha256": "ba488590a8cbd6c872ddb6c88da6927c24c67d5f7e68ce3bbec5b064cc053b42",
+        "content_type": "text/html; charset=iso-8859-1"
+      }
+    ],
+    "slashless_url": {
+      "url": "https://prgz.ru/komplektacii4",
+      "final_url": "https://prgz.ru/komplektacii4/",
+      "status": 200,
+      "bytes": 23865023,
+      "sha256": "ee71767abd7644f7aa1353c88d1ac95f94eac248de596840013d61a6959aef9e",
+      "content_type": "text/html"
+    }
+  },
+  "http_compression": {
+    "html": "gzip",
+    "observed": true
+  },
+  "browser": {
+    "url": "https://prgz.ru/komplektacii4/",
+    "viewport": [
+      1280,
+      720
+    ],
+    "checks": [
+      "3D assembly loads",
+      "Economizer feed visible",
+      "Direct feed replaces economizer feed when disabled",
+      "Deaerator can be enabled",
+      "All-module overview available"
+    ],
+    "observed_console_warnings_or_errors": 0,
+    "old_local_preview": "ERR_CONNECTION_REFUSED",
+    "old_tab_handoff": "Old error page could not be bound; created a fresh public-page tab"
+  },
+  "ci": "CI_NOT_CONFIGURED",
+  "engineering_acceptance": "NOT_VERIFIED",
+  "main_catalog_embedding": "NOT_RUN"
+}

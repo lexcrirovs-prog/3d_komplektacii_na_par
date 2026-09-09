@@ -1,0 +1,74 @@
+import {createRequire} from 'node:module';
+import {resolve} from 'node:path';
+import {mkdir,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+const require=createRequire(resolve(process.env.S3000_BROWSER_RUNTIME,'package.json'));
+const {chromium}=require('playwright');
+const [base,out]=process.argv.slice(2);await mkdir(out,{recursive:true});
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const errors=[],checks=[];
+try {
+  const page=await browser.newPage({viewport:{width:1400,height:960}});
+  const manifestHash=async()=>{
+    const response=await page.request.get(new URL('DEPLOY_MANIFEST.json',base).href);
+    assert.equal(response.status(),200);
+    return createHash('sha256').update(await response.body()).digest('hex');
+  };
+  const manifestSha256=await manifestHash();
+  page.on('pageerror',e=>errors.push(e.message));
+  const url=new URL(base);url.searchParams.set('inspect3d','1');url.searchParams.set('addons','burner,economizer');
+  await page.goto(url.href,{waitUntil:'domcontentloaded',timeout:180000});
+  await page.waitForFunction(()=>window.__s3000?.scene,null,{timeout:120000});
+  await page.waitForTimeout(1500);
+  const pose=()=>page.evaluate(()=>{
+    const s=window.__s3000.scene;s.updateMatrixWorld(true);
+    return Object.fromEntries(['boiler','boiler_door','burner','control_cabinet','cabinet_door','lc220','lc440','bc970','boiler_tubes'].map(n=>[n,s.getObjectByName(n).matrixWorld.toArray()]));
+  });
+  const original=await pose();
+  const waitAngle=async(id,degrees)=>page.waitForFunction(([id,d])=>Math.abs(window.__s3000.scene.getObjectByName('opening_'+id).rotation.y-d*Math.PI/180)<.0001,[id,degrees],{timeout:15000});
+  const shot=async name=>{await page.waitForTimeout(1800);await page.screenshot({path:resolve(out,name+'.png')});};
+  const unchanged=(a,b,keys)=>{for(const key of keys)assert(a[key].every((v,i)=>Math.abs(v-b[key][i])<.00001),'Unexpected movement: '+key);};
+  await shot('closed');
+  await page.getByRole('button',{name:'Открыть шкаф',exact:true}).click();await waitAngle('cabinet',-110);
+  let current=await pose();unchanged(original,current,['boiler','boiler_door','burner','control_cabinet','boiler_tubes']);
+  for(const id of ['cabinet_door','lc220','lc440','bc970'])assert.notDeepEqual(current[id],original[id]);
+  assert.equal(await page.getByRole('button',{name:'Закрыть шкаф',exact:true}).getAttribute('aria-pressed'),'true');
+  await shot('cabinet-open');checks.push('Cabinet and all three door controllers move together; body remains fixed');
+  await page.getByRole('button',{name:'Открыть дверь котла',exact:true}).click();await waitAngle('boiler',-105);
+  current=await pose();unchanged(original,current,['boiler','control_cabinet','boiler_tubes']);
+  assert.notDeepEqual(current.burner,original.burner);assert.notDeepEqual(current.boiler_door,original.boiler_door);
+  await shot('boiler-open');checks.push('Boiler door and burner move together; tube bundle remains fixed');
+  const economy=page.locator('.s3-option').filter({hasText:'Экономайзер EQS2'});
+  await economy.click();await page.waitForTimeout(100);
+  assert.equal(await page.locator('[data-feed-route]').getAttribute('data-feed-route'),'direct');
+  await economy.click();checks.push('Economizer route still switches while both doors are open');
+  await page.getByRole('button',{name:'Закрыть дверь котла',exact:true}).click();await waitAngle('boiler',0);
+  await page.getByRole('button',{name:'Закрыть шкаф',exact:true}).click();await waitAngle('cabinet',0);
+  unchanged(original,await pose(),Object.keys(original));checks.push('Closing restores every component to the initial transform');
+  // Reverse during movement. The actual current pose, not an assumed endpoint,
+  // must be the starting point of the reverse animation.
+  await page.getByRole('button',{name:'Открыть шкаф',exact:true}).click();await page.waitForTimeout(120);
+  await page.getByRole('button',{name:'Закрыть шкаф',exact:true}).click();await waitAngle('cabinet',0);
+  unchanged(original,await pose(),Object.keys(original));checks.push('Rapid reversal returns exactly to closed');
+  await page.getByRole('checkbox',{name:'Показать навесное оборудование'}).uncheck();
+  await page.waitForFunction(()=>!window.__s3000.scene.getObjectByName('cabinet_door').visible && !window.__s3000.scene.getObjectByName('cabinet_interior').visible);
+  const hidden=await page.evaluate(()=>Object.fromEntries(['cabinet_door','cabinet_interior','boiler_door','boiler_tubes'].map(n=>[n,window.__s3000.scene.getObjectByName(n).visible])));
+  assert.deepEqual(hidden,{cabinet_door:false,cabinet_interior:false,boiler_door:true,boiler_tubes:true});
+  await page.getByRole('button',{name:'Открыть шкаф',exact:true}).click();await waitAngle('cabinet',-110);
+  assert(await page.getByRole('checkbox',{name:'Показать навесное оборудование'}).isChecked());checks.push('Cabinet open restores accessory visibility; boiler door is never hidden with accessories');
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.getByRole('button',{name:'Закрыть шкаф',exact:true}).click();await waitAngle('cabinet',0);
+  checks.push('Reduced-motion preference supported');
+  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'no-preference'});
+  await page.getByRole('button',{name:'Открыть дверь котла',exact:true}).click();await waitAngle('boiler',-105);
+  await shot('mobile-open');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
+  checks.push('Mobile controls remain usable without horizontal overflow');
+  await page.waitForTimeout(2500);
+  const frames=await page.evaluate(async()=>{const gl=window.__s3000.gl;const start=gl.info.render.frame;await new Promise(r=>setTimeout(r,1500));return gl.info.render.frame-start;});
+  assert.equal(frames,0);checks.push('Zero idle frames after doors and camera settle');
+  assert.deepEqual(errors,[]);
+  assert.equal(await manifestHash(),manifestSha256,'Publication changed during acceptance');
+  const result={version:'2026.09.09.3',status:'PASSED_OPENING_BROWSER',url:base,manifestSha256,checks,errors,idleFrames:frames};
+  await writeFile(resolve(out,'opening-browser.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+}finally{await browser.close();}

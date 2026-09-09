@@ -4,6 +4,7 @@ import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, usePr
 import { Color, Group, Mesh, MeshStandardMaterial, PerspectiveCamera, Vector3, type Object3D } from 'three'
 import assemblyData from '../../assets/s3000/assembly.json'
 import webVersion from '../../assets/s3000/web-version.json'
+import openingData from '../../assets/s3000/opening.json'
 import bom from '../../assets/s3000/bom.json'
 import boilerUrl from '../../assets/s3000/web/s3000-boiler.glb?url'
 import equipmentUrl from '../../assets/s3000/web/s3000-equipment.glb?url'
@@ -64,8 +65,9 @@ function rootPart(object: Object3D | null): string | undefined {
 
 const ignoreRaycast: Mesh['raycast'] = () => {}
 
-function Assembly({ enabled, selected, showAccessories, select, dragging }: {
-  enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>
+function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen }: {
+  enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
+  cabinetOpen: boolean; boilerOpen: boolean
 }) {
   const gltfs = useGLTF(assemblyUrls)
   const { gl, invalidate, camera } = useThree()
@@ -79,8 +81,42 @@ function Assembly({ enabled, selected, showAccessories, select, dragging }: {
         object.material = Array.isArray(object.material) ? object.material.map(m => m.clone()) : object.material.clone()
       }
     })
+    copy.updateMatrixWorld(true)
+    for (const motion of openingData.groups) {
+      const hinge = new Group()
+      hinge.name = `opening_${motion.id}`
+      hinge.position.set(motion.pivot[0], motion.pivot[2], -motion.pivot[1])
+      copy.add(hinge)
+      hinge.updateMatrixWorld(true)
+      for (const id of motion.parts) {
+        const part = copy.getObjectByName(id)
+        if (!part) throw new Error(`Missing moving assembly part: ${id}`)
+        hinge.attach(part)
+      }
+    }
     return copy
   }, [gltfs])
+  useEffect(() => { invalidate() }, [cabinetOpen, boilerOpen, invalidate])
+  useFrame((_, delta) => {
+    let movingDoor = false
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    for (const motion of openingData.groups) {
+      const hinge = scene.getObjectByName(`opening_${motion.id}`)!
+      const opened = motion.id === 'cabinet' ? cabinetOpen : boilerOpen
+      const target = opened ? motion.angle_degrees * Math.PI / 180 : 0
+      const error = target - hinge.rotation.y
+      if (Math.abs(error) < .00005) continue
+      // Clamp time after an idle demand loop, and converge from the actual pose
+      // so a second click can reverse the movement without a jump.
+      hinge.rotation.y = reduced || Math.abs(error) < .001
+        ? target : hinge.rotation.y + error * (1 - Math.exp(-Math.min(delta, .05) * 9))
+      movingDoor = true
+    }
+    if (movingDoor) {
+      gl.shadowMap.needsUpdate = true
+      invalidate()
+    }
+  })
   useEffect(() => () => {
     scene.traverse(object => {
       if (object instanceof Mesh) {
@@ -165,6 +201,8 @@ export function S3000Configurator() {
   const [enabled, setEnabled] = useState(initialOptions)
   const [selected, setSelected] = useState<string | null>(null)
   const [showAccessories, setShowAccessories] = useState(true)
+  const [cabinetOpen, setCabinetOpen] = useState(false)
+  const [boilerOpen, setBoilerOpen] = useState(false)
   const [tab, setTab] = useState<'assembly' | 'equipment'>('assembly')
   const [query, setQuery] = useState('')
   const [initialView] = useState(() => overviewView(enabled.has('deaerator')))
@@ -205,7 +243,15 @@ export function S3000Configurator() {
     const c: Point = [p.center[0], p.center[1], p.center[2]]
     // Probe shafts are immersed; focus on their exposed heads above the shell.
     if (id === 'lp200' || id === 'lp400') c[1] = 2.24
-    const cabinetSide = ['control_cabinet', 'lc220', 'lc440', 'bc970'].includes(id)
+    const cabinetSide = ['control_cabinet', 'cabinet_door', 'cabinet_interior', 'lc220', 'lc440', 'bc970'].includes(id)
+    if (cabinetSide && cabinetOpen) {
+      requestView([-3.4,2.05,1.75], [-1.20,1.50,.39])
+      return
+    }
+    if (['boiler_door','boiler_tubes','boiler_tubeplate'].includes(id)) {
+      requestView([2.8,2.7,6.1], [-.2,1.12,1.4])
+      return
+    }
     const rearLow = ['bcv7432', 'drain_isolation_1', 'drain_isolation_2', 'bottom_piping'].includes(id)
     const offset: Point = id === 'economizer' ? [3,1.7,-3]
       : id === 'boiler' ? [5,3,6] : id === 'deaerator' ? [-7,4,8]
@@ -213,6 +259,27 @@ export function S3000Configurator() {
       : id === 'bcv7432' ? [-1,.65,-3] : id === 'drain_isolation_1' ? [-2.5,.65,-2.8]
       : cabinetSide ? [-2.6,1.3,2.6] : rearLow ? [2.5,.65,-2.8] : [2.6,1.3,2.6]
     requestView([c[0]+offset[0],c[1]+offset[1],c[2]+offset[2]], c)
+  }
+
+  function showModelOnMobile() {
+    if (window.innerWidth <= 700) {
+      document.querySelector('.s3-viewer')?.scrollIntoView({
+        block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      })
+    }
+  }
+  function openCabinet() {
+    setCabinetOpen(value => !value)
+    setShowAccessories(true)
+    setSelected(null)
+    requestView([-3.4,2.05,1.75], [-1.20,1.50,.39])
+    showModelOnMobile()
+  }
+  function openBoiler() {
+    setBoilerOpen(value => !value)
+    setSelected(null)
+    requestView([2.8,2.7,6.1], [-.2,1.12,1.4])
+    showModelOnMobile()
   }
 
   return <div className="s3-app">
@@ -232,8 +299,9 @@ export function S3000Configurator() {
             <Lightformer intensity={2.5} position={[3,6,-4]} scale={[7,4,1]} rotation={[Math.PI/3,0,0]} />
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
-          <Assembly enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging} />
-          <ContactShadows key={[...enabled].join(',')+showAccessories} position={[0,-.007,0]} opacity={.38} scale={25} blur={2.4} far={5} resolution={512} frames={1} />
+          <Assembly enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging}
+            cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} />
+          {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[0,-.007,0]} opacity={.38} scale={25} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>
         <OrbitControls makeDefault target={initialView.target} minDistance={1.2} maxDistance={24} maxPolarAngle={Math.PI*.49}
           enableDamping dampingFactor={.08} onStart={() => { moving.current = false; dragging.current = true }} onEnd={() => { dragging.current = false }} />
@@ -270,6 +338,16 @@ export function S3000Configurator() {
       <div id="s3-panel" role="tabpanel" aria-labelledby={tab === 'assembly' ? 's3-assembly-tab' : 's3-equipment-tab'} className="s3-sidebar-body">
         {tab === 'assembly' ? <>
           <section className="s3-base-summary"><div className="s3-section-label">ОСНОВНАЯ КОМПЛЕКТАЦИЯ</div><h3>Обвязка уже в сборе</h3><p>Два указателя уровня, три реле давления, приборы контроля, продувка, шкаф и два питательных насоса.</p><label className="s3-check"><input type="checkbox" checked={showAccessories} onChange={e => { setShowAccessories(e.target.checked); setSelected(null) }} /><span>Показать навесное оборудование</span></label><button className="s3-text-button" onClick={() => setTab('equipment')}>Посмотреть состав →</button></section>
+          <section className="s3-opening" aria-label="Открывание дверей">
+            <div className="s3-section-label">ЗАГЛЯНУТЬ ВНУТРЬ</div>
+            <button aria-pressed={cabinetOpen} onClick={openCabinet}>
+              <span>{cabinetOpen ? 'Закрыть шкаф' : 'Открыть шкаф'}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
+            </button>
+            <button aria-pressed={boilerOpen} onClick={openBoiler}>
+              <span>{boilerOpen ? 'Закрыть дверь котла' : 'Открыть дверь котла'}</span><span aria-hidden="true">{boilerOpen ? '↶' : '↗'}</span>
+            </button>
+            <p>{boilerOpen ? 'Внутри — 80 дымогарных труб и жаровая труба.' : 'Рассмотрите внутреннее оборудование шкафа и трубки котла.'}</p>
+          </section>
           <section className="s3-option-section"><div className="s3-section-label">ДОПОЛНИТЕЛЬНЫЕ МОДУЛИ</div>{options.map(option => <label className={`s3-option ${enabled.has(option.id) ? 'enabled' : ''}`} key={option.id}>
             <input type="checkbox" checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
             <span className="s3-option-body"><strong>{option.title}</strong><small>{option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />

@@ -90,7 +90,7 @@ try {
     await page.waitForFunction(()=>window.__s3000.scene.getObjectByName('cable_routes').visible===false);
     const meta=JSON.parse(await readFile(new URL('../../src/assets/s3000/assembly.json',import.meta.url),'utf8'));
     const visible=await page.evaluate(ids=>ids.filter(id=>window.__s3000.scene.getObjectByName(id)?.visible),meta.parts.map(p=>p.id));
-    assert.deepEqual(visible.sort(),['boiler','burner','economizer']);
+    assert.deepEqual(visible.sort(),['boiler','boiler_door','boiler_tubeplate','boiler_tubes','burner','economizer']);
     checks.push('Accessories toggle hides every accessory node');
   }
   await page.getByRole('checkbox',{name:'Показать навесное оборудование'}).check();

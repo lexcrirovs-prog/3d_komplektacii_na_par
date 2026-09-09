@@ -1,26 +1,26 @@
 {
-  "version": "2026.09.09.1",
+  "version": "2026.09.09.3",
   "date": "2026-09-09",
-  "executor": "Codex / GPT-6",
+  "executor": "Codex / GPT-6 Astra",
   "status": "PASSED_DERIVATIVE_STRUCTURE",
-  "sourceSha256": "02c6a58ae655ea4fd79dcf5d137f6da153d63584f2f40b9d2d915083e695dd20",
-  "outputSha256": "d843b3e975f68deec0c03276f163f53bcf37c5d609d2c9b1ba581ca90228ba71",
-  "beforeBytes": 124986168,
-  "afterBytes": 9597904,
+  "sourceSha256": "b258632ae26935516a61e22633b7ecee75b7f5aeb8ecb550dda11240ee3fa742",
+  "outputSha256": "dd9f1f34b901be5d3e648bc4b6657eebf9b7fb9c1352ce7b62df02d41a676ca7",
+  "beforeBytes": 132902144,
+  "afterBytes": 10875240,
   "simplifier": {
     "ratio": 0.15,
     "relativeError": 0.0003,
     "lockBorder": true,
     "note": "Algorithm error setting, not an independently measured surface-distance tolerance"
   },
-  "beforeTriangles": 3164288,
-  "afterTriangles": 1163573,
-  "nodes": 98,
+  "beforeTriangles": 3270373,
+  "afterTriangles": 1269997,
+  "nodes": 108,
   "boundsMaxErrorM": 0.000027621245695108598,
   "partBoundsErrors": [
     {
       "name": "boiler",
-      "maxErrorM": 0.00001894743833918966
+      "maxErrorM": 0.00002165690392308406
     },
     {
       "name": "economizer",
@@ -188,7 +188,7 @@
     },
     {
       "name": "control_cabinet",
-      "maxErrorM": 0.000004426425813330859
+      "maxErrorM": 0.000004814116014051351
     },
     {
       "name": "lc220",
@@ -204,7 +204,7 @@
     },
     {
       "name": "burner",
-      "maxErrorM": 0.000014134085618233705
+      "maxErrorM": 0.00001413408543571304
     },
     {
       "name": "cable_routes",
@@ -213,14 +213,34 @@
     {
       "name": "deaerator",
       "maxErrorM": 0.000027621245695108598
+    },
+    {
+      "name": "boiler_door",
+      "maxErrorM": 0.000005706450316833589
+    },
+    {
+      "name": "boiler_tubes",
+      "maxErrorM": 0.000019573237085790396
+    },
+    {
+      "name": "boiler_tubeplate",
+      "maxErrorM": 0.000010707205796434138
+    },
+    {
+      "name": "cabinet_door",
+      "maxErrorM": 0.00006643957416796464
+    },
+    {
+      "name": "cabinet_interior",
+      "maxErrorM": 8.187634858991544e-7
     }
   ],
   "meshes": [
     {
-      "name": "boiler fine dark",
-      "before": 543693,
-      "after": 471609,
-      "primitives": 7
+      "name": "boiler fine dark.002",
+      "before": 437963,
+      "after": 368663,
+      "primitives": 6
     },
     {
       "name": "economizer fine STEP.004",
@@ -469,27 +489,27 @@
       "primitives": 2
     },
     {
-      "name": "Cube.039",
-      "before": 20341,
-      "after": 17287,
-      "primitives": 9
+      "name": "control_cabinet red",
+      "before": 292,
+      "after": 292,
+      "primitives": 2
     },
     {
-      "name": "Cube.052",
-      "before": 60886,
-      "after": 9912,
+      "name": "lc220 geometry clean normals",
+      "before": 60854,
+      "after": 9790,
       "primitives": 3
     },
     {
-      "name": "Cube.054",
-      "before": 72442,
-      "after": 11544,
+      "name": "lc440 geometry clean normals",
+      "before": 72410,
+      "after": 11450,
       "primitives": 3
     },
     {
-      "name": "bc970 CAD",
-      "before": 76612,
-      "after": 12413,
+      "name": "bc970 geometry clean normals",
+      "before": 76580,
+      "after": 12260,
       "primitives": 3
     },
     {
@@ -509,6 +529,36 @@
       "before": 423334,
       "after": 83370,
       "primitives": 10
+    },
+    {
+      "name": "boiler_door ceramic",
+      "before": 111047,
+      "after": 109365,
+      "primitives": 5
+    },
+    {
+      "name": "boiler_tubes tube",
+      "before": 58014,
+      "after": 58014,
+      "primitives": 1
+    },
+    {
+      "name": "boiler_tubeplate plate",
+      "before": 26848,
+      "after": 26848,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door black",
+      "before": 22039,
+      "after": 18495,
+      "primitives": 10
+    },
+    {
+      "name": "cabinet_interior black",
+      "before": 14012,
+      "after": 14012,
+      "primitives": 9
     }
   ],
   "textures": [

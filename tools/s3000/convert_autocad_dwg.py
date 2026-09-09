@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import time
 
@@ -19,6 +20,18 @@ def save_view(name):
     return ['(command "_.-VIEW" "_S" "' + name + '")',
             '(command "_.-VIEW" "_E" "_L" "' + name + '" "_S" "" "")',
             '(command "_.-VIEW" "_E" "_V" "' + name + '" "PREMIUM_SOLID" "" "")']
+
+
+def archive_script(script, private):
+    """Move only our generated file; private storage may be on another drive."""
+    if script.exists():
+        target = private.resolve() / script.name
+        assert script.is_file() and script.name.endswith('_save.scr')
+        assert target.parent == private.resolve() and not target.exists()
+        original = hashlib.sha256(script.read_bytes()).hexdigest()
+        shutil.copy2(script, target)
+        assert hashlib.sha256(target.read_bytes()).hexdigest() == original
+        script.unlink()
 
 
 def snapshot(path):
@@ -152,7 +165,7 @@ def convert(source, executable, private, verify_existing=False):
                   bytes=output.stat().st_size, sha256=hashlib.sha256(output.read_bytes()).hexdigest())
     output.with_suffix('.verification.json').write_text(json.dumps(report, indent=2), encoding='utf8')
     # Keep execution artifacts out of the user's delivery folder.
-    if script.exists(): script.rename(private / script.name)
+    archive_script(script, private)
     print('AUTOCAD_PASSED', json.dumps(report), flush=True)
 
 

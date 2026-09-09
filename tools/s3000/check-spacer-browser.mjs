@@ -46,15 +46,8 @@ try {
   assert(geometry.ancestors.includes('economizer'));
   assert(geometry.materials.length>0&&geometry.materials.every(m=>m.name==='PREMIUM charcoal enamel'));
   await page.getByRole('button',{name:'Экономайзер',exact:true}).click();await page.waitForTimeout(2200);
-  const focus=async()=>{
-    await page.evaluate(()=>{
-      const {scene,camera,gl}=window.__s3000;
-      camera.position.set(-3.6,2.35,-.45);camera.lookAt(0,1.1,-1.93);camera.updateMatrixWorld(true);
-      gl.render(scene,camera);
-    });
-    await page.locator('.s3-viewer').screenshot({path:resolve(out,'economizer-spacer.png')});
-  };
-  await focus();
+  // Capture the app's real render, including its lights and environment.
+  await page.locator('.s3-viewer').screenshot({path:resolve(out,'economizer-spacer.png')});
   const visible=()=>page.evaluate(()=>{
     const s=window.__s3000.scene;const active=o=>{for(let p=o;p;p=p.parent)if(!p.visible)return false;return true;};
     return Object.fromEntries(['economizer_spacer_500mm','economizer','feed_to_economizer','feed_from_economizer','feed_direct'].map(n=>[n,active(s.getObjectByName(n))]));

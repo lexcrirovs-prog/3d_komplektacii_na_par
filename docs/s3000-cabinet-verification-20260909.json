@@ -1,0 +1,1114 @@
+{
+  "version": "2026.09.09.5",
+  "date": "2026-09-09",
+  "executor": "Codex / GPT-6 Astra",
+  "status": "PASSED_WEB_AND_NATIVE_AUTOCAD",
+  "source_commit": "3edc7255f2331b368a6b35ae74009fd54b3da1d6",
+  "build": {
+    "version": "2026.09.09.5",
+    "status": "PASSED_CABINET_ALIGNMENT_BUILD",
+    "source_sha256": "1592356a7500b1ca471ae59f01924b99ec2fba9d6fb1f416ca5b6a0fa371933d",
+    "source_unchanged": true,
+    "unchanged_parts": 52,
+    "unchanged_part_fingerprints": {
+      "boiler": "3e3672aabf0dc6cf18180f981e1218da42f3e09835fd8006930c552511dd99e2",
+      "economizer": "f9dd1cd1e84a9f3e854a7b94b6ca75d85e19ec13ddbf2b47eb32589a3ac589f5",
+      "steam_valve": "52c2bfea769a8ab3d678cf4bea1fc5f2f18fdd8848d8bace9fb360f72286c7ce",
+      "safety_pair_1": "e3f3b500574dbd6ab9959d5aba1c68ed96b75a9e4179b8a3bef6724376800751",
+      "safety_pair_2": "cafc74298da13c530f4adb103bb9f8953135a4284f724873b151c91f3331789a",
+      "safety_header": "bc63b84d13a1ed7b9595a8dd28b0dc2792daaa782f8628e3fa704c248e361168",
+      "lp200": "79c45c7c549242835b94922a01360d81a96979729c55bee80b98e467f203db21",
+      "lp400": "e3e70a5d4cb7754e66500f7a18ef5803457714e2817ea2b7210c76786f26fbba",
+      "electrode_flanges": "5ba3a7928bc96126c961c507da52d8c183167e1dce8cc1c668af824e12343ff4",
+      "pressure_header": "7e9853ac32d594bbfb3e9a1058e31a70255ae53a13eb91cb9f5c3a295de7fefe",
+      "pressure_switches_1": "cc96d82874e84a258a0b49f01dffa057e5dda887a94dc3a48b9bd8dcfe10530c",
+      "pressure_switches_2": "23dce3b68ef91071144f0cba97c74894bbab71d0810be8fbdbb963ec0e62513f",
+      "pressure_switches_3": "95e8e1e9465d768308b1a0d259535a944bfd46028eb51c0536073ee01ae0c5f7",
+      "pressure_gauge": "cf9eaacaabcc67283d4d2b652dd41037e714d21af458077b817fc130eed7c6eb",
+      "instrument_valve": "92efa183f476bb80265d02f067488b4c9af98476ee62464cf4da17a179dc0ddd",
+      "sight_glasses_1": "9dfb227bab8553081d9bca8b36425c69213d971c25e15326e58521f5d75d7be6",
+      "sight_glasses_2": "02fb438ceebd7966bfb9daa79c25db04434b63a819805b568cbd673fb2513579",
+      "tds_isolation": "970940b640937a6d707eb05f4bb528d19f09f479f63e0d2dcf9765885565a1dd",
+      "pcf20": "97775d3ab1bc999b4c0e96689354ce11d0f6f48aabcfebf9cc167cee6d9d449f",
+      "bcv925": "0aee94ff744624d7a0590b0f87d2f44a0b53432588b96868cc4251de0eb989d1",
+      "cp930": "9e6368ad3837fba3d38e64d3fe82635cc3ebba1bf107f43f67a6440d750a0534",
+      "sc9": "06e80765ff68e21c053496a14749643f9b286dcb39219506d5c54c1a93fb77ae",
+      "sc9_mount": "2b24cb1ca0487332674bbfb0c880a67a4bbfda82eb36ae562f219330adf91666",
+      "bcv7432": "7f1ad255e13229da7bd06f0a6f17aba899b7399ec878a7c6f71d3c6cc1134d3d",
+      "drain_isolation_1": "2a65761cf9785a973f3de28abcc3d38bed176a217cd1a43ccae628f2d7c81780",
+      "drain_isolation_2": "f790cfe8bce846218dcf6a37e311b02ea9a1271924ae8fd7a2eb44c66e6c7d82",
+      "bottom_piping": "0f3ff1098253d0509e5bda10253e0ee871df7aa77866f630b72a9fb05d138eb6",
+      "feed_skid": "d3c3a06ea3f786611fc799cb2fd4238e1bb0a8a5df5de94717efede05adfb1b1",
+      "feed_pumps_1": "38e65bf8ab90c66f22b2cc7c4b110a2739c38d3554bdecd670b8d9869b9d10c0",
+      "pump_valves_1": "d7c2964c942cd3b61ef1dcaa4fa82e76df7d161c6908d85651a091f39b864956",
+      "pump_valves_2": "e2b78ba71114c2c86982b0165cc6463a96ba8295b4e1d4f9a64792faf7133a6a",
+      "pump_checks_1": "e7bc1d0ad19c55fe1b62e9e3afdc36de896d3423082269be6c6137d305eedd46",
+      "feed_pumps_2": "762aea5d4a6939b1b1d10ec3652d2457f422d46ee0f52b48c104ab7e5b7d183c",
+      "pump_valves_3": "f23ce74878e80b9a4f4e0cba50a9df6ffdeb1ff87a5dbb482f0217b79a7c4f66",
+      "pump_valves_4": "5fb2b11a70d09678896bea21f5d92bd9f6e2fab0811df714bb763014f833d7cf",
+      "pump_checks_2": "a84b9cb177ec0f21de3e17c3db642e930f83c3b8f46be4431284ff3b7e03300d",
+      "feed_piping": "5e8ec9837ba054205daf645f5cf3ac66dd498a2cc4590c050a45fdb5d30aff39",
+      "feed_check": "af930ece722867cc97667e7c71cc7d6303d7fd953f9949af5a296651ce1ed90c",
+      "feed_valve": "cae111291c778e689310d8a66ab301b563c8c347cd5f7a8f0e27966761dc6241",
+      "feed_to_economizer": "5654358d0eb53b271bdd83b6757fc6db0b85efdeb7257413ae20a4d824f0f630",
+      "feed_from_economizer": "b33c3ce8eb6f84cb09a6324226b95a8536dd31e2ed34229ac7a06dd2958aa3b8",
+      "feed_direct": "8b993dafaaf4d365092fc251b05a5c1e7e27247a04e15abcdd14054e9448202e",
+      "control_cabinet": "a03ee38a1be0ef7dace3f5ad4e8c783161e2cea84f6dc7ccec9e74b7cea54d8d",
+      "lc440": "d6cfacac6301fbbe30aa219e6ffe60539b4843f667bfecd5eedec41897f9ec90",
+      "bc970": "5db3263e661a56f9236ba5b78b1d91677d52c9f24d8b984e4de6f6c408aa9a91",
+      "burner": "1bbd90c285ba30c524191cc990ac0c0644b31ab412df5dad30c991605fc1e846",
+      "cable_routes": "421e301cc0dff77dae2b81c806938834454e51929945b737c0d38d7078db222f",
+      "deaerator": "5fd876435dfb077f29d8bbcd51c8a82f6ce20c65a7684215e3ba9688ddac792a",
+      "boiler_door": "b2c8be581181d62efe76e2e12fa2b1ce0f437d1186c1eaf55ac36b2a57b9c687",
+      "boiler_tubes": "f082e483e6da4fc83f82426aeb19d7ae2e42355f81a2a86657530be1ddadd094",
+      "boiler_tubeplate": "91ad15ad6c07553e5a60c30fb446e0bcd146b78ba914cfde601e4773b358deee",
+      "cabinet_interior": "038e21a252d63b115f30bff67ef021cf9dcd4a72c2b8d41f9064561ec683effc"
+    },
+    "removed_components": [
+      {
+        "kind": "controller_branch",
+        "vertices": 30
+      },
+      {
+        "kind": "controller_branch",
+        "vertices": 30
+      },
+      {
+        "kind": "controller_branch",
+        "vertices": 30
+      },
+      {
+        "kind": "common_harness",
+        "vertices": 70
+      },
+      {
+        "kind": "floating_terminal",
+        "vertices": 8
+      },
+      {
+        "kind": "floating_terminal",
+        "vertices": 8
+      },
+      {
+        "kind": "floating_terminal",
+        "vertices": 8
+      },
+      {
+        "kind": "earth_lead",
+        "vertices": 30
+      }
+    ],
+    "controller": "lc220",
+    "source_roll_degrees": 15.866010779450322,
+    "corrected_roll_degrees": 0.0,
+    "supplier_mesh_sha256": "839de06be32f9e28142c5d6b7b9c928b49166169dd966552771c89df8d1b0b7f",
+    "corrected_supplier_vertices": 29947,
+    "unchanged_presentation_vertices": 512,
+    "harness_owner": "cabinet_door",
+    "hinge_endpoint": [
+      -1.225000023841858,
+      -0.3630000054836273,
+      1.5449999570846558
+    ],
+    "trunk": [
+      [
+        -1.225000023841858,
+        -0.3630000054836273,
+        1.5449999570846558
+      ],
+      [
+        -1.204,
+        -0.363,
+        1.545
+      ],
+      [
+        -1.204,
+        -0.393,
+        1.545
+      ],
+      [
+        -1.204,
+        -0.393,
+        1.475
+      ],
+      [
+        -1.204,
+        -0.833,
+        1.475
+      ]
+    ],
+    "branches": [
+      [
+        [
+          -1.204,
+          -0.79,
+          1.475
+        ],
+        [
+          -1.204,
+          -0.79,
+          1.4
+        ],
+        [
+          -1.144,
+          -0.79,
+          1.4
+        ],
+        [
+          -1.144,
+          -0.79,
+          1.378
+        ]
+      ],
+      [
+        [
+          -1.204,
+          -0.63,
+          1.475
+        ],
+        [
+          -1.204,
+          -0.63,
+          1.4
+        ],
+        [
+          -1.144,
+          -0.63,
+          1.4
+        ],
+        [
+          -1.144,
+          -0.63,
+          1.378
+        ]
+      ],
+      [
+        [
+          -1.204,
+          -0.47,
+          1.475
+        ],
+        [
+          -1.204,
+          -0.47,
+          1.4
+        ],
+        [
+          -1.144,
+          -0.47,
+          1.4
+        ],
+        [
+          -1.144,
+          -0.47,
+          1.378
+        ]
+      ]
+    ],
+    "terminal_centers": [
+      [
+        -1.144,
+        -0.79,
+        1.375
+      ],
+      [
+        -1.144,
+        -0.63,
+        1.375
+      ],
+      [
+        -1.144,
+        -0.47,
+        1.375
+      ]
+    ],
+    "clamps": 7
+  },
+  "blender_roundtrip": {
+    "status": "PASSED_BLENDER_DELIVERY_ROUNDTRIP",
+    "components": 54,
+    "max_bound_error_m": 1.1920928955078125e-07,
+    "blender_version": "3.3.3",
+    "input": "s3000-assembly.glb",
+    "da_taps_inside_tank_geometry": [
+      [
+        0.3379998207092285,
+        -2.8124425411224365,
+        0.309999942779541
+      ],
+      [
+        0.3379998207092285,
+        -2.8309712409973145,
+        2.109999895095825
+      ]
+    ],
+    "spacer_length_mm": 500.0,
+    "spacer_bore_rays": [
+      [
+        0.22499990463256836,
+        1.788000226020813,
+        1.0600000619888306
+      ],
+      [
+        0.22499991953372955,
+        1.938000202178955,
+        1.0600000619888306
+      ],
+      [
+        0.22499994933605194,
+        2.0880002975463867,
+        1.0600000619888306
+      ]
+    ],
+    "spacer_bore_open": true,
+    "spacer_material_match": true,
+    "engineering_acceptance": "NOT_VERIFIED"
+  },
+  "local_tests": {
+    "passed": 7,
+    "failed": 0,
+    "build": "PASSED_TYPESCRIPT_VITE"
+  },
+  "web_model": {
+    "beforeTriangles": 3277745,
+    "afterTriangles": 1277077,
+    "boundsMaxErrorM": 2.7621245695108598e-05
+  },
+  "web_chunks": {
+    "status": "PASSED_EXACT_CHUNK_GEOMETRY",
+    "parts": 54,
+    "bytes": 11551412,
+    "files": [
+      {
+        "group": "boiler",
+        "file": "s3000-boiler.glb",
+        "parts": [
+          "boiler"
+        ],
+        "bytes": 4032608,
+        "sha256": "0db244b19e3c61fabee53cf19b253ff056860d2d6cf30ef3d1cb47559f1d6045"
+      },
+      {
+        "group": "cables",
+        "file": "s3000-cables.glb",
+        "parts": [
+          "cable_routes"
+        ],
+        "bytes": 1279760,
+        "sha256": "7f1bf5fd9d0f424d39c7d729db7a8d7fc99f80a8c60e1873489f7d6e6d4daf9e"
+      },
+      {
+        "group": "deaerator",
+        "file": "s3000-deaerator.glb",
+        "parts": [
+          "deaerator"
+        ],
+        "bytes": 882612,
+        "sha256": "55542f45911906fa8b478dfc17b496250175ee20f9ce6c54cf9a066702bbd733"
+      },
+      {
+        "group": "equipment",
+        "file": "s3000-equipment.glb",
+        "parts": [
+          "economizer",
+          "steam_valve",
+          "safety_pair_1",
+          "safety_pair_2",
+          "safety_header",
+          "lp200",
+          "lp400",
+          "electrode_flanges",
+          "pressure_header",
+          "pressure_switches_1",
+          "pressure_switches_2",
+          "pressure_switches_3",
+          "pressure_gauge",
+          "instrument_valve",
+          "sight_glasses_1",
+          "sight_glasses_2",
+          "tds_isolation",
+          "pcf20",
+          "bcv925",
+          "cp930",
+          "sc9",
+          "sc9_mount",
+          "bcv7432",
+          "drain_isolation_1",
+          "drain_isolation_2",
+          "bottom_piping",
+          "feed_skid",
+          "feed_pumps_1",
+          "pump_valves_1",
+          "pump_valves_2",
+          "pump_checks_1",
+          "feed_pumps_2",
+          "pump_valves_3",
+          "pump_valves_4",
+          "pump_checks_2",
+          "feed_piping",
+          "feed_check",
+          "feed_valve",
+          "feed_to_economizer",
+          "feed_from_economizer",
+          "feed_direct",
+          "control_cabinet",
+          "lc220",
+          "lc440",
+          "bc970",
+          "burner",
+          "boiler_door",
+          "boiler_tubes",
+          "boiler_tubeplate",
+          "cabinet_door",
+          "cabinet_interior"
+        ],
+        "bytes": 5356432,
+        "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
+      }
+    ]
+  },
+  "stage": {
+    "baseline": {
+      "status": "PASSED_BROWSER",
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.5/",
+      "mode": "candidate",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "checks": [
+        "Smooth camera transition after 3 seconds idle",
+        "Economizer changes route and URL",
+        "Actual 3D visibility: direct branch only",
+        "Actual 3D visibility: both economizer branches only",
+        "Deaerator and URL state survive reload",
+        "All 27 equipment cards and focus",
+        "Actual mouse picking on model",
+        "Accessories toggle hides every accessory node",
+        "Burner toggle and disabled focus",
+        "Emulated touch rotation and mouse picking after drag",
+        "Mobile viewport: no horizontal overflow (desktop emulation)"
+      ],
+      "errors": [],
+      "physicalPhone": false,
+      "date": "2026-09-09T15:54:32.083Z"
+    },
+    "doors": {
+      "version": "2026.09.09.5",
+      "status": "PASSED_OPENING_BROWSER",
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.5/",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "checks": [
+        "Cabinet and all three door controllers move together; body remains fixed",
+        "Boiler door and burner move together; tube bundle remains fixed",
+        "Economizer route still switches while both doors are open",
+        "Closing restores every component to the initial transform",
+        "Rapid reversal returns exactly to closed",
+        "Cabinet open restores accessory visibility; boiler door is never hidden with accessories",
+        "Reduced-motion preference supported",
+        "Mobile controls remain usable without horizontal overflow",
+        "Zero idle frames after doors and camera settle"
+      ],
+      "errors": [],
+      "idleFrames": 0
+    },
+    "spacer": {
+      "version": "2026.09.09.5",
+      "status": "PASSED_SPACER_BROWSER",
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.5/",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "geometry": {
+        "bounds": [
+          [
+            -0.22920166407398168,
+            0.830798279664469,
+            -2.188000011160435
+          ],
+          [
+            0.22920171310796145,
+            1.2892016058946132,
+            -1.6879999074014036
+          ]
+        ],
+        "lengthMm": 500.0001037590314,
+        "materials": [
+          {
+            "name": "PREMIUM charcoal enamel",
+            "color": [
+              0.04600000008940697,
+              0.06300000101327896,
+              0.08500000089406967
+            ],
+            "metalness": 0.30000001192092896,
+            "roughness": 0.33000001311302185
+          }
+        ],
+        "ancestors": [
+          "economizer_spacer_500mm",
+          "economizer",
+          "Scene",
+          "",
+          ""
+        ],
+        "vertexCount": 1867,
+        "bodyMaterials": []
+      },
+      "checks": [
+        "Actual decoded spacer is 500 mm long at the two flue end planes",
+        "Same charcoal material as economizer",
+        "Spacer hides and reappears with economizer",
+        "Water routes and direct alternative switch correctly",
+        "Hiding accessories retains the economizer flue connection"
+      ],
+      "errors": []
+    },
+    "alignment": {
+      "version": "2026.09.09.5",
+      "status": "PASSED_CABINET_BROWSER",
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.5/",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "opened": {
+        "controllers": {
+          "lc220": {
+            "rollDegrees": 0,
+            "areaSum": 0.02202281368736955,
+            "faces": 4
+          },
+          "lc440": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          },
+          "bc970": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          }
+        },
+        "wireMeshes": 5,
+        "wireBounds": [
+          [
+            -0.0019974971596477854,
+            -0.13199786421033313,
+            -0.006999993801117155
+          ],
+          [
+            0.08799781080457172,
+            0.05182319657062667,
+            0.4700000042915342
+          ]
+        ]
+      },
+      "closed": {
+        "controllers": {
+          "lc220": {
+            "rollDegrees": 0,
+            "areaSum": 0.02202281368736955,
+            "faces": 4
+          },
+          "lc440": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          },
+          "bc970": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          }
+        },
+        "wireMeshes": 5,
+        "wireBounds": [
+          [
+            -0.0019974971596480075,
+            -0.13199786421033313,
+            -0.006999993801116933
+          ],
+          [
+            0.0879978108045715,
+            0.05182319657062667,
+            0.47000000429153443
+          ]
+        ]
+      },
+      "checks": [
+        "All three housing side faces parallel to door edges in both poses",
+        "Lower feed remains attached to door",
+        "Identical wire geometry relative to door when opened and closed"
+      ],
+      "errors": []
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.09.09.5",
+      "candidateSha256": "816ddaef675a73da0fecab31338f32dbfc57cd95568d14c396012a7fdcea5bdd",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "backupSha256": "8cbcc680ea4dc014d3cf0c6804e97f27fc0040d3a9cc5dd0575d9816cfb5f5cf",
+      "backupFiles": 26,
+      "backupUrl": "https://prgz.ru/komplektacii4-v2026.09.09.4/"
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-v2026.09.09.4",
+      "neighborsUnchanged": true,
+      "files": 26
+    },
+    "http-live": {
+      "url": "https://prgz.ru/komplektacii4/",
+      "status": "PASSED_HTTPS_HASHES",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "files": [
+        {
+          "path": "assets/bcv_7250-CkMcE7H9.glb",
+          "status": 200,
+          "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+          "wireBytes": 973498,
+          "decodedBytes": 2227100,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/bcv_925-k9_oO04u.glb",
+          "status": 200,
+          "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+          "wireBytes": 1262075,
+          "decodedBytes": 2878432,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/boiler-DinVE5OY.glb",
+          "status": 200,
+          "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+          "wireBytes": 593643,
+          "decodedBytes": 1627716,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/cp_930--TKERaHD.glb",
+          "status": 200,
+          "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+          "wireBytes": 249745,
+          "decodedBytes": 596536,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/deaerator-BbqYfy15.glb",
+          "status": 200,
+          "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+          "wireBytes": 530641,
+          "decodedBytes": 1297432,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/dn32h50-DWIQZzpu.glb",
+          "status": 200,
+          "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+          "wireBytes": 468430,
+          "decodedBytes": 1258964,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/elbow_pc_f20-DO38bAlJ.glb",
+          "status": 200,
+          "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+          "wireBytes": 56270,
+          "decodedBytes": 157820,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/index-CpGbdp6m.js",
+          "status": 200,
+          "sha256": "3e49c3d1039bfdc9f5f7217ac7d63048074f6f8c08e12a67da4e5110a7753ad2",
+          "wireBytes": 365354,
+          "decodedBytes": 1282849,
+          "encoding": "gzip",
+          "cacheControl": "max-age=604800",
+          "contentType": "application/x-javascript"
+        },
+        {
+          "path": "assets/premium-logo--EbfrTdO.png",
+          "status": 200,
+          "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665",
+          "wireBytes": 48635,
+          "decodedBytes": 48635,
+          "encoding": null,
+          "cacheControl": "max-age=2592000",
+          "contentType": "image/png"
+        },
+        {
+          "path": "assets/s3000-boiler-D6a3-OHI.glb",
+          "status": 200,
+          "sha256": "0db244b19e3c61fabee53cf19b253ff056860d2d6cf30ef3d1cb47559f1d6045",
+          "wireBytes": 2253632,
+          "decodedBytes": 4032608,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-cables-BoAppqsS.glb",
+          "status": 200,
+          "sha256": "7f1bf5fd9d0f424d39c7d729db7a8d7fc99f80a8c60e1873489f7d6e6d4daf9e",
+          "wireBytes": 824165,
+          "decodedBytes": 1279760,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-deaerator-BeCqQUxq.glb",
+          "status": 200,
+          "sha256": "55542f45911906fa8b478dfc17b496250175ee20f9ce6c54cf9a066702bbd733",
+          "wireBytes": 615033,
+          "decodedBytes": 882612,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-equipment-uXmb6TQJ.glb",
+          "status": 200,
+          "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4",
+          "wireBytes": 2651960,
+          "decodedBytes": 5356432,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/style-_ULG7SaW.css",
+          "status": 200,
+          "sha256": "14adfbf57d611a4e6a61526d85903db2e984cd90dd289e3e23d3d44765db552f",
+          "wireBytes": 5763,
+          "decodedBytes": 24797,
+          "encoding": "gzip",
+          "cacheControl": "max-age=604800",
+          "contentType": "text/css"
+        },
+        {
+          "path": "index.html",
+          "status": 200,
+          "sha256": "3f513eec0c415e269b702804aba2480b60840a64bd226370d8719ee771dbdb35",
+          "wireBytes": 994,
+          "decodedBytes": 2056,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "text/html"
+        },
+        {
+          "path": "models/bcv_7250.glb",
+          "status": 200,
+          "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+          "wireBytes": 973498,
+          "decodedBytes": 2227100,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/bcv_925.glb",
+          "status": 200,
+          "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+          "wireBytes": 1262075,
+          "decodedBytes": 2878432,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/boiler.glb",
+          "status": 200,
+          "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+          "wireBytes": 593643,
+          "decodedBytes": 1627716,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/cp_930.glb",
+          "status": 200,
+          "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+          "wireBytes": 249745,
+          "decodedBytes": 596536,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/deaerator.glb",
+          "status": 200,
+          "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+          "wireBytes": 530641,
+          "decodedBytes": 1297432,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/dn32h50.glb",
+          "status": 200,
+          "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+          "wireBytes": 468430,
+          "decodedBytes": 1258964,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/elbow_pc_f20.glb",
+          "status": 200,
+          "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+          "wireBytes": 56270,
+          "decodedBytes": 157820,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "version.json",
+          "status": 200,
+          "sha256": "fce8d223f731344c98e1f743c9841ed327b67b3d5867e69bf89e08df910fb91d",
+          "wireBytes": 229,
+          "decodedBytes": 318,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "application/json"
+        },
+        {
+          "path": "DEPLOY_MANIFEST.json",
+          "status": 200,
+          "sha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+          "wireBytes": 1427,
+          "decodedBytes": 4336,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "application/json"
+        }
+      ]
+    }
+  },
+  "live": {
+    "alignment": {
+      "version": "2026.09.09.5",
+      "status": "PASSED_CABINET_BROWSER",
+      "url": "https://prgz.ru/komplektacii4/",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "opened": {
+        "controllers": {
+          "lc220": {
+            "rollDegrees": 0,
+            "areaSum": 0.02202281368736955,
+            "faces": 4
+          },
+          "lc440": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          },
+          "bc970": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          }
+        },
+        "wireMeshes": 5,
+        "wireBounds": [
+          [
+            -0.0019974971596477854,
+            -0.13199786421033313,
+            -0.006999993801117155
+          ],
+          [
+            0.08799781080457172,
+            0.05182319657062667,
+            0.4700000042915342
+          ]
+        ]
+      },
+      "closed": {
+        "controllers": {
+          "lc220": {
+            "rollDegrees": 0,
+            "areaSum": 0.02202281368736955,
+            "faces": 4
+          },
+          "lc440": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          },
+          "bc970": {
+            "rollDegrees": 0,
+            "areaSum": 0.022022489798493906,
+            "faces": 4
+          }
+        },
+        "wireMeshes": 5,
+        "wireBounds": [
+          [
+            -0.0019974971596480075,
+            -0.13199786421033313,
+            -0.006999993801116933
+          ],
+          [
+            0.0879978108045715,
+            0.05182319657062667,
+            0.47000000429153443
+          ]
+        ]
+      },
+      "checks": [
+        "All three housing side faces parallel to door edges in both poses",
+        "Lower feed remains attached to door",
+        "Identical wire geometry relative to door when opened and closed"
+      ],
+      "errors": []
+    },
+    "doors": {
+      "version": "2026.09.09.5",
+      "status": "PASSED_OPENING_BROWSER",
+      "url": "https://prgz.ru/komplektacii4/",
+      "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+      "checks": [
+        "Cabinet and all three door controllers move together; body remains fixed",
+        "Boiler door and burner move together; tube bundle remains fixed",
+        "Economizer route still switches while both doors are open",
+        "Closing restores every component to the initial transform",
+        "Rapid reversal returns exactly to closed",
+        "Cabinet open restores accessory visibility; boiler door is never hidden with accessories",
+        "Reduced-motion preference supported",
+        "Mobile controls remain usable without horizontal overflow",
+        "Zero idle frames after doors and camera settle"
+      ],
+      "errors": [],
+      "idleFrames": 0
+    }
+  },
+  "native": {
+    "WITH_ECONOMIZER": {
+      "roundtrip": {
+        "status": "PASSED_AUTOCAD_SAVE_REOPEN_ROUNDTRIP",
+        "file": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.5.dwg",
+        "autocad": "2027 Core Console",
+        "dwg_format": "AutoCAD 2018 / AC1032",
+        "units": "mm",
+        "blocks": 53,
+        "meshes": 230,
+        "faces": 3277471,
+        "triangles": 3285365,
+        "topology_preserved": true,
+        "whole_mesh_winding_normalized": [
+          {
+            "block": "S3000_control_cabinet",
+            "mesh": 0,
+            "faces": 108
+          },
+          {
+            "block": "S3000_cabinet_door",
+            "mesh": 1,
+            "faces": 36
+          },
+          {
+            "block": "S3000_cabinet_door",
+            "mesh": 2,
+            "faces": 2872
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 2,
+            "faces": 12
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 3,
+            "faces": 3844
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 4,
+            "faces": 248
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 5,
+            "faces": 168
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 6,
+            "faces": 1188
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 7,
+            "faces": 60
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 8,
+            "faces": 60
+          }
+        ],
+        "coordinates_preserved_at_mm": 0.001,
+        "colours_preserved": true,
+        "audit_errors_on_save": 0,
+        "audit_errors_on_reopen": 0,
+        "bytes": 164319868,
+        "sha256": "2013b0ea95d82cb189c3c27afd205ae705b84325111f1276020042c88e739c7a"
+      },
+      "opening": {
+        "version": "2026.09.09.5",
+        "status": "PASSED_NATIVE_AUTOCAD_OPENING",
+        "drawing": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.5.dwg",
+        "drawingSha256": "2013b0ea95d82cb189c3c27afd205ae705b84325111f1276020042c88e739c7a",
+        "fixture": false,
+        "states": [
+          "closed",
+          "cabinet",
+          "both",
+          "both-repeat",
+          "boiler-only",
+          "closed-again",
+          "closed-repeat"
+        ],
+        "blocksChecked": 53,
+        "maximumPositionErrorMm": 1e-12,
+        "auditErrors": 0,
+        "sourceUnchanged": true,
+        "plots": [
+          "cabinet-open.pdf",
+          "cabinet-closed.pdf",
+          "boiler-open.pdf",
+          "economizer-spacer.pdf"
+        ]
+      }
+    },
+    "DIRECT": {
+      "roundtrip": {
+        "status": "PASSED_AUTOCAD_SAVE_REOPEN_ROUNDTRIP",
+        "file": "S3000_ADL_8bar_DIRECT_v2026.09.09.5.dwg",
+        "autocad": "2027 Core Console",
+        "dwg_format": "AutoCAD 2018 / AC1032",
+        "units": "mm",
+        "blocks": 51,
+        "meshes": 224,
+        "faces": 3251667,
+        "triangles": 3259561,
+        "topology_preserved": true,
+        "whole_mesh_winding_normalized": [
+          {
+            "block": "S3000_control_cabinet",
+            "mesh": 0,
+            "faces": 108
+          },
+          {
+            "block": "S3000_cabinet_door",
+            "mesh": 1,
+            "faces": 36
+          },
+          {
+            "block": "S3000_cabinet_door",
+            "mesh": 2,
+            "faces": 2872
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 2,
+            "faces": 12
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 3,
+            "faces": 3844
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 4,
+            "faces": 248
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 5,
+            "faces": 168
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 6,
+            "faces": 1188
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 7,
+            "faces": 60
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 8,
+            "faces": 60
+          }
+        ],
+        "coordinates_preserved_at_mm": 0.001,
+        "colours_preserved": true,
+        "audit_errors_on_save": 0,
+        "audit_errors_on_reopen": 0,
+        "bytes": 162688220,
+        "sha256": "89765f589e2081c0aa64672d8d37d386b48a4368ce083fce8e96334628cdfd92"
+      },
+      "opening": {
+        "version": "2026.09.09.5",
+        "status": "PASSED_NATIVE_AUTOCAD_OPENING",
+        "drawing": "S3000_ADL_8bar_DIRECT_v2026.09.09.5.dwg",
+        "drawingSha256": "89765f589e2081c0aa64672d8d37d386b48a4368ce083fce8e96334628cdfd92",
+        "fixture": false,
+        "states": [
+          "closed",
+          "cabinet",
+          "both",
+          "both-repeat",
+          "boiler-only",
+          "closed-again",
+          "closed-repeat"
+        ],
+        "blocksChecked": 51,
+        "maximumPositionErrorMm": 1e-12,
+        "auditErrors": 0,
+        "sourceUnchanged": true,
+        "plots": []
+      }
+    }
+  },
+  "package": {
+    "status": "PASSED_PACKAGE_SHA256_AND_CRC",
+    "version": "2026.09.09.5",
+    "file": "S3000_AutoCAD_OPENING_v2026.09.09.5.zip",
+    "files": 15,
+    "bytes": 174977941,
+    "sha256": "b2906b9a4cb7b9960ee3860036578f6b3fa625456cd707a1a5d10c12cee08826"
+  },
+  "visual_review": {
+    "browser": [
+      "cabinet-closed",
+      "cabinet-open"
+    ],
+    "native": [
+      "cabinet-closed",
+      "cabinet-open",
+      "boiler-open",
+      "economizer-spacer"
+    ],
+    "status": "INSPECTED"
+  },
+  "ci": "NOT_CONFIGURED"
+}

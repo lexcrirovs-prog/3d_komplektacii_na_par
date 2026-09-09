@@ -1,0 +1,901 @@
+{
+  "version": "2026.09.09.5",
+  "verifiedDate": "2026-09-09",
+  "verifier": "Codex / GPT-6",
+  "status": "PASSED_EXISTING_OPTIMIZED_LIVE_RELEASE",
+  "sourceTask": "Спроектировать 3D-визуализацию котла",
+  "sourceTaskId": "01a07f75-fda8-79b0-aaf4-3fbca0dc630e",
+  "sourceReleaseCommit": "f6105e38b23006152245fe8937ef7fd253fe5b0b",
+  "applicationSourceCommit": "3edc7255f2331b368a6b35ae74009fd54b3da1d6",
+  "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+  "action": "Adopted the latest committed design release into an isolated web work branch. It already contained the optimized derivative and was already published. Independently verified live bytes, opening/cabinet behavior and measured current performance. No new simplification, version bump or live overwrite was necessary.",
+  "localTests": {
+    "passed": 7,
+    "assembly": "PASSED_LOCAL_ASSEMBLY",
+    "parts": 54
+  },
+  "derivedModel": {
+    "beforeTriangles": 3277745,
+    "afterTriangles": 1277077,
+    "decodedBytes": 11551412,
+    "wireBytes": 6344790,
+    "files": [
+      {
+        "path": "assets/s3000-boiler-D6a3-OHI.glb",
+        "status": 200,
+        "sha256": "0db244b19e3c61fabee53cf19b253ff056860d2d6cf30ef3d1cb47559f1d6045",
+        "wireBytes": 2253632,
+        "decodedBytes": 4032608,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/s3000-cables-BoAppqsS.glb",
+        "status": 200,
+        "sha256": "7f1bf5fd9d0f424d39c7d729db7a8d7fc99f80a8c60e1873489f7d6e6d4daf9e",
+        "wireBytes": 824165,
+        "decodedBytes": 1279760,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/s3000-deaerator-BeCqQUxq.glb",
+        "status": 200,
+        "sha256": "55542f45911906fa8b478dfc17b496250175ee20f9ce6c54cf9a066702bbd733",
+        "wireBytes": 615033,
+        "decodedBytes": 882612,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/s3000-equipment-uXmb6TQJ.glb",
+        "status": 200,
+        "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4",
+        "wireBytes": 2651960,
+        "decodedBytes": 5356432,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      }
+    ],
+    "source": "Existing verified derivative report from the design release; not regenerated in this audit."
+  },
+  "liveHttp": {
+    "url": "https://prgz.ru/komplektacii4/",
+    "status": "PASSED_HTTPS_HASHES",
+    "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+    "files": [
+      {
+        "path": "assets/bcv_7250-CkMcE7H9.glb",
+        "status": 200,
+        "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+        "wireBytes": 973498,
+        "decodedBytes": 2227100,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/bcv_925-k9_oO04u.glb",
+        "status": 200,
+        "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+        "wireBytes": 1262075,
+        "decodedBytes": 2878432,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/boiler-DinVE5OY.glb",
+        "status": 200,
+        "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+        "wireBytes": 593643,
+        "decodedBytes": 1627716,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/cp_930--TKERaHD.glb",
+        "status": 200,
+        "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+        "wireBytes": 249745,
+        "decodedBytes": 596536,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/deaerator-BbqYfy15.glb",
+        "status": 200,
+        "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+        "wireBytes": 530641,
+        "decodedBytes": 1297432,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/dn32h50-DWIQZzpu.glb",
+        "status": 200,
+        "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+        "wireBytes": 468430,
+        "decodedBytes": 1258964,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/elbow_pc_f20-DO38bAlJ.glb",
+        "status": 200,
+        "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+        "wireBytes": 56270,
+        "decodedBytes": 157820,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/index-CpGbdp6m.js",
+        "status": 200,
+        "sha256": "3e49c3d1039bfdc9f5f7217ac7d63048074f6f8c08e12a67da4e5110a7753ad2",
+        "wireBytes": 365354,
+        "decodedBytes": 1282849,
+        "encoding": "gzip",
+        "cacheControl": "max-age=604800",
+        "contentType": "application/x-javascript"
+      },
+      {
+        "path": "assets/premium-logo--EbfrTdO.png",
+        "status": 200,
+        "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665",
+        "wireBytes": 48635,
+        "decodedBytes": 48635,
+        "encoding": null,
+        "cacheControl": "max-age=2592000",
+        "contentType": "image/png"
+      },
+      {
+        "path": "assets/s3000-boiler-D6a3-OHI.glb",
+        "status": 200,
+        "sha256": "0db244b19e3c61fabee53cf19b253ff056860d2d6cf30ef3d1cb47559f1d6045",
+        "wireBytes": 2253632,
+        "decodedBytes": 4032608,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/s3000-cables-BoAppqsS.glb",
+        "status": 200,
+        "sha256": "7f1bf5fd9d0f424d39c7d729db7a8d7fc99f80a8c60e1873489f7d6e6d4daf9e",
+        "wireBytes": 824165,
+        "decodedBytes": 1279760,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/s3000-deaerator-BeCqQUxq.glb",
+        "status": 200,
+        "sha256": "55542f45911906fa8b478dfc17b496250175ee20f9ce6c54cf9a066702bbd733",
+        "wireBytes": 615033,
+        "decodedBytes": 882612,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/s3000-equipment-uXmb6TQJ.glb",
+        "status": 200,
+        "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4",
+        "wireBytes": 2651960,
+        "decodedBytes": 5356432,
+        "encoding": "gzip",
+        "cacheControl": "public, max-age=31536000, immutable",
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "assets/style-_ULG7SaW.css",
+        "status": 200,
+        "sha256": "14adfbf57d611a4e6a61526d85903db2e984cd90dd289e3e23d3d44765db552f",
+        "wireBytes": 5763,
+        "decodedBytes": 24797,
+        "encoding": "gzip",
+        "cacheControl": "max-age=604800",
+        "contentType": "text/css"
+      },
+      {
+        "path": "index.html",
+        "status": 200,
+        "sha256": "3f513eec0c415e269b702804aba2480b60840a64bd226370d8719ee771dbdb35",
+        "wireBytes": 994,
+        "decodedBytes": 2056,
+        "encoding": "gzip",
+        "cacheControl": "no-cache",
+        "contentType": "text/html"
+      },
+      {
+        "path": "models/bcv_7250.glb",
+        "status": 200,
+        "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+        "wireBytes": 973498,
+        "decodedBytes": 2227100,
+        "encoding": "gzip",
+        "cacheControl": null,
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "models/bcv_925.glb",
+        "status": 200,
+        "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+        "wireBytes": 1262075,
+        "decodedBytes": 2878432,
+        "encoding": "gzip",
+        "cacheControl": null,
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "models/boiler.glb",
+        "status": 200,
+        "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+        "wireBytes": 593643,
+        "decodedBytes": 1627716,
+        "encoding": "gzip",
+        "cacheControl": null,
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "models/cp_930.glb",
+        "status": 200,
+        "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+        "wireBytes": 249745,
+        "decodedBytes": 596536,
+        "encoding": "gzip",
+        "cacheControl": null,
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "models/deaerator.glb",
+        "status": 200,
+        "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+        "wireBytes": 530641,
+        "decodedBytes": 1297432,
+        "encoding": "gzip",
+        "cacheControl": null,
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "models/dn32h50.glb",
+        "status": 200,
+        "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+        "wireBytes": 468430,
+        "decodedBytes": 1258964,
+        "encoding": "gzip",
+        "cacheControl": null,
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "models/elbow_pc_f20.glb",
+        "status": 200,
+        "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+        "wireBytes": 56270,
+        "decodedBytes": 157820,
+        "encoding": "gzip",
+        "cacheControl": null,
+        "contentType": "model/gltf-binary"
+      },
+      {
+        "path": "version.json",
+        "status": 200,
+        "sha256": "fce8d223f731344c98e1f743c9841ed327b67b3d5867e69bf89e08df910fb91d",
+        "wireBytes": 229,
+        "decodedBytes": 318,
+        "encoding": "gzip",
+        "cacheControl": "no-cache",
+        "contentType": "application/json"
+      },
+      {
+        "path": "DEPLOY_MANIFEST.json",
+        "status": 200,
+        "sha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+        "wireBytes": 1427,
+        "decodedBytes": 4336,
+        "encoding": "gzip",
+        "cacheControl": "no-cache",
+        "contentType": "application/json"
+      }
+    ]
+  },
+  "openingBrowser": {
+    "version": "2026.09.09.5",
+    "status": "PASSED_OPENING_BROWSER",
+    "url": "https://prgz.ru/komplektacii4/",
+    "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+    "checks": [
+      "Cabinet and all three door controllers move together; body remains fixed",
+      "Boiler door and burner move together; tube bundle remains fixed",
+      "Economizer route still switches while both doors are open",
+      "Closing restores every component to the initial transform",
+      "Rapid reversal returns exactly to closed",
+      "Cabinet open restores accessory visibility; boiler door is never hidden with accessories",
+      "Reduced-motion preference supported",
+      "Mobile controls remain usable without horizontal overflow",
+      "Zero idle frames after doors and camera settle"
+    ],
+    "errors": [],
+    "idleFrames": 0
+  },
+  "cabinetBrowser": {
+    "version": "2026.09.09.5",
+    "status": "PASSED_CABINET_BROWSER",
+    "url": "https://prgz.ru/komplektacii4/",
+    "manifestSha256": "97388a681f45c8427680537077084f54aa666007374a53dcb5c28e2610b0d1e4",
+    "opened": {
+      "controllers": {
+        "lc220": {
+          "rollDegrees": 0,
+          "areaSum": 0.02202281368736955,
+          "faces": 4
+        },
+        "lc440": {
+          "rollDegrees": 0,
+          "areaSum": 0.022022489798493906,
+          "faces": 4
+        },
+        "bc970": {
+          "rollDegrees": 0,
+          "areaSum": 0.022022489798493906,
+          "faces": 4
+        }
+      },
+      "wireMeshes": 5,
+      "wireBounds": [
+        [
+          -0.0019974971596477854,
+          -0.13199786421033313,
+          -0.006999993801117155
+        ],
+        [
+          0.08799781080457172,
+          0.05182319657062667,
+          0.4700000042915342
+        ]
+      ]
+    },
+    "closed": {
+      "controllers": {
+        "lc220": {
+          "rollDegrees": 0,
+          "areaSum": 0.02202281368736955,
+          "faces": 4
+        },
+        "lc440": {
+          "rollDegrees": 0,
+          "areaSum": 0.022022489798493906,
+          "faces": 4
+        },
+        "bc970": {
+          "rollDegrees": 0,
+          "areaSum": 0.022022489798493906,
+          "faces": 4
+        }
+      },
+      "wireMeshes": 5,
+      "wireBounds": [
+        [
+          -0.0019974971596480075,
+          -0.13199786421033313,
+          -0.006999993801116933
+        ],
+        [
+          0.0879978108045715,
+          0.05182319657062667,
+          0.47000000429153443
+        ]
+      ]
+    },
+    "checks": [
+      "All three housing side faces parallel to door edges in both poses",
+      "Lower feed remains attached to door",
+      "Identical wire geometry relative to door when opened and closed"
+    ],
+    "errors": []
+  },
+  "profiles": {
+    "desktop": [
+      {
+        "url": "https://prgz.ru/komplektacii4/",
+        "run": 0,
+        "cache": "cold",
+        "profile": "desktop",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "deviceScaleFactor": 1,
+        "physicalPhone": false,
+        "networkMbps": 10,
+        "latencyMs": 100,
+        "browser": "152.0.7977.83",
+        "measuredAt": "2026-09-09T19:18:54.002Z",
+        "firstSceneMs": 9029.1,
+        "domContentLoadedMs": 2090.10000000149,
+        "transferBytes": 6769783,
+        "encodedBytes": 6767083,
+        "heapPeakBytes": 85620292,
+        "webglBufferPeakBytes": 45864414,
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "rotation": {
+          "durationMs": 3760.4000000059605,
+          "frames": 276,
+          "fps": 73.39644718635319,
+          "renderedFps": 71.26901393457483,
+          "p50Ms": 13.300000000001091,
+          "p95Ms": 13.5,
+          "maxMs": 53.399999999999636,
+          "meanDrawCalls": 183,
+          "meanTrianglesAllPasses": 1190441
+        },
+        "idleDrawFrames": 0,
+        "resources": [
+          {
+            "name": "/komplektacii4/",
+            "transferSize": 2574,
+            "encodedBodySize": 2274,
+            "decodedBodySize": 2274,
+            "duration": 2090.8000000044703
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 274
+          },
+          {
+            "name": "/komplektacii4/assets/index-CpGbdp6m.js",
+            "transferSize": 365654,
+            "encodedBodySize": 365354,
+            "decodedBodySize": 1282849,
+            "duration": 1175.5
+          },
+          {
+            "name": "/komplektacii4/assets/style-_ULG7SaW.css",
+            "transferSize": 6063,
+            "encodedBodySize": 5763,
+            "decodedBodySize": 24797,
+            "duration": 166.10000000149012
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 130.40000000596046
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 136.10000000149012
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-boiler-D6a3-OHI.glb",
+            "transferSize": 2253932,
+            "encodedBodySize": 2253632,
+            "decodedBodySize": 4032608,
+            "duration": 5114.10000000149
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-equipment-uXmb6TQJ.glb",
+            "transferSize": 2652260,
+            "encodedBodySize": 2651960,
+            "decodedBodySize": 5356432,
+            "duration": 6451.20000000298
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-cables-BoAppqsS.glb",
+            "transferSize": 824465,
+            "encodedBodySize": 824165,
+            "decodedBodySize": 1279760,
+            "duration": 4695.60000000149
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-deaerator-BeCqQUxq.glb",
+            "transferSize": 615333,
+            "encodedBodySize": 615033,
+            "decodedBodySize": 882612,
+            "duration": 4377.20000000298
+          },
+          {
+            "name": "/komplektacii4/assets/premium-logo--EbfrTdO.png",
+            "transferSize": 48935,
+            "encodedBodySize": 48635,
+            "decodedBodySize": 48635,
+            "duration": 242.29999999701977
+          },
+          {
+            "name": "/favicon.ico",
+            "transferSize": 567,
+            "encodedBodySize": 267,
+            "decodedBodySize": 267,
+            "duration": 4047.7000000029802
+          }
+        ],
+        "errors": []
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/",
+        "run": 0,
+        "cache": "warm",
+        "profile": "desktop",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "deviceScaleFactor": 1,
+        "physicalPhone": false,
+        "networkMbps": 10,
+        "latencyMs": 100,
+        "browser": "152.0.7977.83",
+        "measuredAt": "2026-09-09T19:19:03.314Z",
+        "firstSceneMs": 683.7,
+        "domContentLoadedMs": 420.8999999985099,
+        "transferBytes": 300,
+        "encodedBytes": 6766816,
+        "heapPeakBytes": 159289591,
+        "webglBufferPeakBytes": 45864414,
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "rotation": {
+          "durationMs": 3692.5,
+          "frames": 271,
+          "fps": 73.39201083276913,
+          "renderedFps": 71.49627623561273,
+          "p50Ms": 13.300000000000182,
+          "p95Ms": 13.5,
+          "maxMs": 53.40000000000009,
+          "meanDrawCalls": 183,
+          "meanTrianglesAllPasses": 1190441
+        },
+        "idleDrawFrames": 0,
+        "resources": [
+          {
+            "name": "/komplektacii4/",
+            "transferSize": 300,
+            "encodedBodySize": 2274,
+            "decodedBodySize": 2274,
+            "duration": 421.1000000014901
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 234.10000000149012
+          },
+          {
+            "name": "/komplektacii4/assets/index-CpGbdp6m.js",
+            "transferSize": 0,
+            "encodedBodySize": 365354,
+            "decodedBodySize": 1282849,
+            "duration": 0
+          },
+          {
+            "name": "/komplektacii4/assets/style-_ULG7SaW.css",
+            "transferSize": 0,
+            "encodedBodySize": 5763,
+            "decodedBodySize": 24797,
+            "duration": 0
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 131
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-boiler-D6a3-OHI.glb",
+            "transferSize": 0,
+            "encodedBodySize": 2253632,
+            "decodedBodySize": 4032608,
+            "duration": 32
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-equipment-uXmb6TQJ.glb",
+            "transferSize": 0,
+            "encodedBodySize": 2651960,
+            "decodedBodySize": 5356432,
+            "duration": 49.29999999701977
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-cables-BoAppqsS.glb",
+            "transferSize": 0,
+            "encodedBodySize": 824165,
+            "decodedBodySize": 1279760,
+            "duration": 14.100000001490116
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-deaerator-BeCqQUxq.glb",
+            "transferSize": 0,
+            "encodedBodySize": 615033,
+            "decodedBodySize": 882612,
+            "duration": 12.600000001490116
+          },
+          {
+            "name": "/komplektacii4/assets/premium-logo--EbfrTdO.png",
+            "transferSize": 0,
+            "encodedBodySize": 48635,
+            "decodedBodySize": 48635,
+            "duration": 0
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 143.89999999850988
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "mobile": [
+      {
+        "url": "https://prgz.ru/komplektacii4/",
+        "run": 0,
+        "cache": "cold",
+        "profile": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 2,
+        "physicalPhone": false,
+        "networkMbps": 4,
+        "latencyMs": 150,
+        "browser": "152.0.7977.83",
+        "measuredAt": "2026-09-09T19:19:29.962Z",
+        "firstSceneMs": 17032.5,
+        "domContentLoadedMs": 2573.3000000044703,
+        "transferBytes": 6769783,
+        "encodedBytes": 6767083,
+        "heapPeakBytes": 83051307,
+        "webglBufferPeakBytes": 45864414,
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "rotation": {
+          "durationMs": 3706.39999999851,
+          "frames": 272,
+          "fps": 73.38657457373985,
+          "renderedFps": 71.49794949279801,
+          "p50Ms": 13.30000000000291,
+          "p95Ms": 13.5,
+          "maxMs": 53.400000000001455,
+          "meanDrawCalls": 183,
+          "meanTrianglesAllPasses": 1190441
+        },
+        "idleDrawFrames": 0,
+        "resources": [
+          {
+            "name": "/komplektacii4/",
+            "transferSize": 2574,
+            "encodedBodySize": 2274,
+            "decodedBodySize": 2274,
+            "duration": 2573.7000000029802
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 515.5
+          },
+          {
+            "name": "/komplektacii4/assets/index-CpGbdp6m.js",
+            "transferSize": 365654,
+            "encodedBodySize": 365354,
+            "decodedBodySize": 1282849,
+            "duration": 1619.5
+          },
+          {
+            "name": "/komplektacii4/assets/style-_ULG7SaW.css",
+            "transferSize": 6063,
+            "encodedBodySize": 5763,
+            "decodedBodySize": 24797,
+            "duration": 177.70000000298023
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 173.69999999552965
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 178.79999999701977
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-boiler-D6a3-OHI.glb",
+            "transferSize": 2253932,
+            "encodedBodySize": 2253632,
+            "decodedBodySize": 4032608,
+            "duration": 12801.39999999851
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-equipment-uXmb6TQJ.glb",
+            "transferSize": 2652260,
+            "encodedBodySize": 2651960,
+            "decodedBodySize": 5356432,
+            "duration": 13957.70000000298
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-cables-BoAppqsS.glb",
+            "transferSize": 824465,
+            "encodedBodySize": 824165,
+            "decodedBodySize": 1279760,
+            "duration": 8094.0999999940395
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-deaerator-BeCqQUxq.glb",
+            "transferSize": 615333,
+            "encodedBodySize": 615033,
+            "decodedBodySize": 882612,
+            "duration": 4353.39999999851
+          },
+          {
+            "name": "/komplektacii4/assets/premium-logo--EbfrTdO.png",
+            "transferSize": 48935,
+            "encodedBodySize": 48635,
+            "decodedBodySize": 48635,
+            "duration": 387.6000000014901
+          },
+          {
+            "name": "/favicon.ico",
+            "transferSize": 567,
+            "encodedBodySize": 267,
+            "decodedBodySize": 267,
+            "duration": 2747.6999999955297
+          }
+        ],
+        "errors": []
+      },
+      {
+        "url": "https://prgz.ru/komplektacii4/",
+        "run": 0,
+        "cache": "warm",
+        "profile": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 2,
+        "physicalPhone": false,
+        "networkMbps": 4,
+        "latencyMs": 150,
+        "browser": "152.0.7977.83",
+        "measuredAt": "2026-09-09T19:19:39.448Z",
+        "firstSceneMs": 906.7,
+        "domContentLoadedMs": 675.1000000014901,
+        "transferBytes": 300,
+        "encodedBytes": 6766816,
+        "heapPeakBytes": 161080630,
+        "webglBufferPeakBytes": 43764646,
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "rotation": {
+          "durationMs": 3621.2000000029802,
+          "frames": 266,
+          "fps": 73.45631282441762,
+          "renderedFps": 71.79940351258865,
+          "p50Ms": 13.300000000000182,
+          "p95Ms": 13.5,
+          "maxMs": 53.5,
+          "meanDrawCalls": 183,
+          "meanTrianglesAllPasses": 1190441
+        },
+        "idleDrawFrames": 0,
+        "resources": [
+          {
+            "name": "/komplektacii4/",
+            "transferSize": 300,
+            "encodedBodySize": 2274,
+            "decodedBodySize": 2274,
+            "duration": 675.2000000029802
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 488.19999999552965
+          },
+          {
+            "name": "/komplektacii4/assets/index-CpGbdp6m.js",
+            "transferSize": 0,
+            "encodedBodySize": 365354,
+            "decodedBodySize": 1282849,
+            "duration": 0
+          },
+          {
+            "name": "/komplektacii4/assets/style-_ULG7SaW.css",
+            "transferSize": 0,
+            "encodedBodySize": 5763,
+            "decodedBodySize": 24797,
+            "duration": 0
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 167.19999999552965
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-boiler-D6a3-OHI.glb",
+            "transferSize": 0,
+            "encodedBodySize": 2253632,
+            "decodedBodySize": 4032608,
+            "duration": 30.200000002980232
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-equipment-uXmb6TQJ.glb",
+            "transferSize": 0,
+            "encodedBodySize": 2651960,
+            "decodedBodySize": 5356432,
+            "duration": 47
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-cables-BoAppqsS.glb",
+            "transferSize": 0,
+            "encodedBodySize": 824165,
+            "decodedBodySize": 1279760,
+            "duration": 13.5
+          },
+          {
+            "name": "/komplektacii4/assets/s3000-deaerator-BeCqQUxq.glb",
+            "transferSize": 0,
+            "encodedBodySize": 615033,
+            "decodedBodySize": 882612,
+            "duration": 12
+          },
+          {
+            "name": "/komplektacii4/assets/premium-logo--EbfrTdO.png",
+            "transferSize": 0,
+            "encodedBodySize": 48635,
+            "decodedBodySize": 48635,
+            "duration": 0
+          },
+          {
+            "name": "https://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+            "transferSize": 0,
+            "encodedBodySize": 0,
+            "decodedBodySize": 0,
+            "duration": 189.89999999850988
+          }
+        ],
+        "errors": []
+      }
+    ]
+  },
+  "backup": {
+    "url": "https://prgz.ru/komplektacii4-v2026.09.09.4/",
+    "indexSha256": "9a1499fc888b37f5388705ba4c7ecf9d2a2233265118a3ffff54970e7c1a39df",
+    "freshCheck": "HTTPS and index hash; full archive not re-audited in this task"
+  },
+  "limits": {
+    "samples": "One cold and one warm per viewport, on the same PC, sequentially. Actual initial rendering heuristic; not an average or a service guarantee.",
+    "physicalPhone": "NOT_RUN",
+    "fullProcessAndGpuMemory": "NOT_MEASURED",
+    "ci": "CI_NOT_CONFIGURED",
+    "historicalComparisons": "No claim of a speedup over version 2026.09.09.2: old measurements were performed at a different time.",
+    "trafficInspection": "Installed traffic inspection was not disabled."
+  }
+}

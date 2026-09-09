@@ -1,9 +1,9 @@
 {
-  "version": "2026.09.09.2",
+  "version": "2026.09.09.3",
   "date": "2026-09-09",
-  "executor": "Codex / GPT-6",
-  "detailed_assembly_version": "2026.09.08.4",
-  "baseline_source_commit": "023cac30d706fa1a37aafa98f037ed2c96393244",
-  "source_commit": "a1a525c60171c78552bda2c664c43e2f5a7d24b6",
+  "executor": "Codex / GPT-6 Astra",
+  "detailed_assembly_version": "2026.09.09.3",
+  "baseline_source_commit": "b47c73b6f38848fca89d6781d7afb48509ef9123",
+  "source_commit": "118703d8dbf8bea0429b1ee5e50b6f43ef5229a8",
   "url": "https://prgz.ru/komplektacii4/"
 }

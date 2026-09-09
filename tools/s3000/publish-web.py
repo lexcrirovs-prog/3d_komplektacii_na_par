@@ -14,16 +14,16 @@ import tarfile
 import urllib.request
 
 REPO = Path(__file__).resolve().parents[2]
-OUT = REPO / 'artifacts' / 'publication'
+OUT = REPO / 'artifacts' / 'publication-v2026.09.09.2'
 ROOT = '/home/p/premiuig/prgz.ru/public_html'
 LIVE = ROOT + '/komplektacii4'
-STAGE = ROOT + '/komplektacii4-stage-v2026.09.09.1'
-BACKUP = ROOT + '/komplektacii4-v2026.09.08.4'
-BASELINE_HASH = 'ee71767abd7644f7aa1353c88d1ac95f94eac248de596840013d61a6959aef9e'
+STAGE = ROOT + '/komplektacii4-stage-v2026.09.09.2'
+BACKUP = ROOT + '/komplektacii4-v2026.09.09.1'
+BASELINE_HASH = '805dfb18c1a19f887a46bfb6a32591577a6cc832ea9e06cf1ac491abd185d5e2'
 HOST = 'premiuig@premiuig.beget.tech'
 SSH = ['ssh', '-o', 'BatchMode=yes', '-o', 'StrictHostKeyChecking=yes', '-o', 'ConnectTimeout=20', HOST]
 URL = 'https://prgz.ru/komplektacii4/'
-STAGE_URL = 'https://prgz.ru/komplektacii4-stage-v2026.09.09.1/'
+STAGE_URL = 'https://prgz.ru/komplektacii4-stage-v2026.09.09.2/'
 
 def sha(data):
     return hashlib.sha256(data).hexdigest()
@@ -42,7 +42,7 @@ def verify_http(base):
     records = [r for r in manifest['files'] if '.htaccess' not in r['path']]
     records.append({'path':'DEPLOY_MANIFEST.json','sha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes())})
     def fetch(record):
-        req = urllib.request.Request(base + record['path'], headers={'Accept-Encoding':'gzip', 'User-Agent':'S3000-Release-Check/2026.09.09.1'})
+        req = urllib.request.Request(base + record['path'], headers={'Accept-Encoding':'gzip', 'User-Agent':'S3000-Release-Check/2026.09.09.2'})
         with urllib.request.urlopen(req, timeout=180) as response:
             wire = response.read()
             data = gzip.decompress(wire) if response.headers.get('Content-Encoding') == 'gzip' else wire
@@ -77,13 +77,13 @@ print(json.dumps({{'files':files,'neighbors':neighbors}}))
     with tarfile.open(OUT/'candidate.tar.gz','w:gz') as tar:
         for p in sorted((REPO/'dist').rglob('*')):
             if p.is_file(): tar.add(p,arcname=p.relative_to(REPO/'dist').as_posix(),recursive=False)
-    save('prepared.json',{'version':'2026.09.09.1','candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/komplektacii4-v2026.09.08.4/'})
+    save('prepared.json',{'version':'2026.09.09.2','candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/komplektacii4-v2026.09.09.1/'})
     print('PREPARED_AND_PREVIOUS_PUBLICATION_BACKED_UP')
 
 def stage():
     prepared=json.loads((OUT/'prepared.json').read_text(encoding='utf-8'))
     assert sha((OUT/'candidate.tar.gz').read_bytes()) == prepared['candidateSha256']
-    archive=ROOT+'/.s3000-v2026.09.09.1.tar.gz'
+    archive=ROOT+'/.s3000-v2026.09.09.2.tar.gz'
     subprocess.run(['scp','-q','-o','BatchMode=yes','-o','StrictHostKeyChecking=yes',str(OUT/'candidate.tar.gz'),HOST+':'+archive],check=True)
     result=remote(f'''import json,pathlib,hashlib,tarfile
 root=pathlib.Path({ROOT!r});stage=pathlib.Path({STAGE!r});archive=pathlib.Path({archive!r})
@@ -110,7 +110,7 @@ def cutover():
     assert http['status']=='PASSED_HTTPS_HASHES' and http['url']==STAGE_URL
     assert http['manifestSha256']==prepared['manifestSha256']
     # A separate browser acceptance record must exist for the staged URL.
-    checks=json.loads((REPO/'artifacts/qa/stage/checks.json').read_text(encoding='utf-8'))
+    checks=json.loads((REPO/'artifacts/qa/text-stage/checks.json').read_text(encoding='utf-8'))
     assert checks['status']=='PASSED_BROWSER' and checks['url']==STAGE_URL and checks['mode']=='candidate'
     assert checks['manifestSha256']==prepared['manifestSha256']
     result=remote(f'''import json,pathlib,hashlib,os
@@ -136,10 +136,10 @@ print(json.dumps({{'status':'CUTOVER_OK','backup':str(backup),'neighborsUnchange
 def rollback():
     before=json.loads((OUT/'before.json').read_text(encoding='utf-8'))
     result=remote(f'''import json,pathlib,os,hashlib
-root=pathlib.Path({ROOT!r});live=pathlib.Path({LIVE!r});backup=pathlib.Path({BACKUP!r});hold=root/'komplektacii4-held-v2026.09.09.1'
+root=pathlib.Path({ROOT!r});live=pathlib.Path({LIVE!r});backup=pathlib.Path({BACKUP!r});hold=root/'komplektacii4-held-v2026.09.09.2'
 assert root.resolve()==root and all(p.parent==root and not p.is_symlink() for p in [live,backup,hold])
 assert live.is_dir() and backup.is_dir() and not hold.exists()
-assert json.loads((live/'version.json').read_text())['version']=='2026.09.09.1'
+assert json.loads((live/'version.json').read_text())['version']=='2026.09.09.2'
 assert hashlib.sha256((backup/'index.html').read_bytes()).hexdigest()=={BASELINE_HASH!r}
 actual={{p.relative_to(backup).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in backup.rglob('*') if p.is_file()}}
 assert actual=={before['files']!r},'BACKUP_CHANGED'

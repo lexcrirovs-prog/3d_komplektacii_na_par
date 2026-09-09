@@ -19,16 +19,16 @@ type Part = VisibilityPart & { id: string; label: string; category: string; sour
 const parts = assemblyData.parts as Part[]
 const byId = new Map(parts.map(p => [p.id, p]))
 const options = [
-  { id: 'burner', title: 'Riello RS 410', subtitle: '3D-геометрия из приложенного DWG' },
+  { id: 'burner', title: 'Горелка', subtitle: 'Газовая горелка котла' },
   { id: 'economizer', title: 'Экономайзер EQS2', subtitle: 'Совмещён с дымовым патрубком' },
-  { id: 'deaerator', title: 'Деаэратор ДА-25', subtitle: 'Оцинкованная обшивка по фотографиям' },
+  { id: 'deaerator', title: 'Деаэратор', subtitle: 'Оцинкованная обшивка' },
 ]
 const optionalIds = new Set(options.map(o => o.id))
 const sourceLabels: Record<string, string> = {
-  user_cad: 'Исходная CAD-модель', manufacturer_step: 'CAD-модель ATECH', photo_parametric: 'Модель по фотографиям',
+  user_cad: 'Исходная CAD-модель', manufacturer_step: 'CAD-модель', photo_parametric: 'Модель по фотографиям',
   drawing_photo: 'Модель по чертежу и фотографиям',
 }
-const bomParts = bom.items.map(item => ({ ...item, nodes: (assemblyData.bom_nodes as Record<string, string[]>)[item.id] }))
+const bomParts = bom.items.map(item => ({ id: item.id, quantity: item.quantity, nodes: (assemblyData.bom_nodes as Record<string, string[]>)[item.id] }))
 const searchText = (value: string) => value.toLowerCase().replace(/[\s_–—-]+/g, '')
 
 function initialOptions() {
@@ -173,7 +173,7 @@ export function S3000Configurator() {
   const dragging = useRef(false)
   const active = selected ? byId.get(selected) : undefined
   const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected)) : undefined
-  const visibleRows = bomParts.filter(row => searchText(`${row.id} ${row.description} ${byId.get(row.nodes[0])?.label} ${byId.get(row.nodes[0])?.note}`).includes(searchText(query)))
+  const visibleRows = bomParts.filter(row => searchText(`${byId.get(row.nodes[0])?.label} ${byId.get(row.nodes[0])?.note}`).includes(searchText(query)))
 
   function requestView(position: Point, target: Point) {
     setView(old => ({ id: old.id + 1, position, target }))
@@ -218,7 +218,7 @@ export function S3000Configurator() {
   return <div className="s3-app">
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium gas company" /><div className="s3-edition">S 3000 <span>3D</span></div></header>
-      {!active && <div className="s3-view-title"><span>КОТЁЛ С ОБВЯЗКОЙ АДЛ</span><h1>S-3000 в сборе.</h1><p>Вращайте модель. Нажмите на оборудование,<br className="s3-desktop" /> чтобы рассмотреть его и узнать состав.</p></div>}
+      {!active && <div className="s3-view-title"><span>КОТЁЛ С ОБВЯЗКОЙ</span><h1>S-3000 в сборе.</h1><p>Вращайте модель. Нажмите на оборудование,<br className="s3-desktop" /> чтобы рассмотреть его и узнать состав.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .05, far: 100 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
         onPointerMissed={() => setSelected(null)}>
@@ -255,7 +255,6 @@ export function S3000Configurator() {
         <div className="s3-part-type">{sourceLabels[active.source_kind] || active.source_kind}</div>
         <h2>{active.label}</h2>
         {selectionBom && <p className="s3-part-count">В комплектации: <b>{selectionBom.quantity} {selectionBom.quantity === 1 ? 'шт. / комплект' : 'шт.'}</b></p>}
-        {selectionBom && <details><summary>Наименование по спецификации</summary><p>{selectionBom.description}</p></details>}
         {active.note && <p className="s3-part-note">{active.note}</p>}
         <button className="s3-focus" onClick={() => focus(active.id)}>Приблизить деталь ↗</button>
       </section>}
@@ -263,14 +262,14 @@ export function S3000Configurator() {
     </main>
 
     <aside className="s3-sidebar" aria-label="Комплектация S-3000">
-      <div className="s3-sidebar-heading"><div className="s3-eyebrow">ПОД ВАШУ ЗАДАЧУ</div><h2>PREMIUM S-3000</h2><p>Паровой котёл с навесным оборудованием</p><div className="s3-specs"><span>АДЛ</span><span>8 бар</span><span>Стандарт</span></div></div>
+      <div className="s3-sidebar-heading"><div className="s3-eyebrow">ПОД ВАШУ ЗАДАЧУ</div><h2>PREMIUM S-3000</h2><p>Паровой котёл с навесным оборудованием</p><div className="s3-specs"><span>8 бар</span><span>Стандарт</span></div></div>
       <div className="s3-tabs" role="tablist" aria-label="Панель оборудования">
         <button role="tab" id="s3-assembly-tab" aria-controls="s3-panel" aria-selected={tab === 'assembly'} className={tab === 'assembly' ? 'active' : ''} onClick={() => setTab('assembly')}>Сборка</button>
         <button role="tab" id="s3-equipment-tab" aria-controls="s3-panel" aria-selected={tab === 'equipment'} className={tab === 'equipment' ? 'active' : ''} onClick={() => setTab('equipment')}>Оборудование <small>27</small></button>
       </div>
       <div id="s3-panel" role="tabpanel" aria-labelledby={tab === 'assembly' ? 's3-assembly-tab' : 's3-equipment-tab'} className="s3-sidebar-body">
         {tab === 'assembly' ? <>
-          <section className="s3-base-summary"><div className="s3-section-label">ОСНОВНАЯ КОМПЛЕКТАЦИЯ</div><h3>Обвязка уже в сборе</h3><p>Два указателя уровня, три реле давления, приборы ATECH, продувка, шкаф и два питательных насоса.</p><label className="s3-check"><input type="checkbox" checked={showAccessories} onChange={e => { setShowAccessories(e.target.checked); setSelected(null) }} /><span>Показать навесное оборудование</span></label><button className="s3-text-button" onClick={() => setTab('equipment')}>Посмотреть состав →</button></section>
+          <section className="s3-base-summary"><div className="s3-section-label">ОСНОВНАЯ КОМПЛЕКТАЦИЯ</div><h3>Обвязка уже в сборе</h3><p>Два указателя уровня, три реле давления, приборы контроля, продувка, шкаф и два питательных насоса.</p><label className="s3-check"><input type="checkbox" checked={showAccessories} onChange={e => { setShowAccessories(e.target.checked); setSelected(null) }} /><span>Показать навесное оборудование</span></label><button className="s3-text-button" onClick={() => setTab('equipment')}>Посмотреть состав →</button></section>
           <section className="s3-option-section"><div className="s3-section-label">ДОПОЛНИТЕЛЬНЫЕ МОДУЛИ</div>{options.map(option => <label className={`s3-option ${enabled.has(option.id) ? 'enabled' : ''}`} key={option.id}>
             <input type="checkbox" checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
             <span className="s3-option-body"><strong>{option.title}</strong><small>{option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
@@ -284,7 +283,7 @@ export function S3000Configurator() {
           <p className="s3-assembly-note">Сборка показывает внешний вид оборудования. Расположение обвязки и её присоединения требуют сверки с монтажной схемой.</p>
         </> : <>
           <label className="s3-search"><span className="s3-sr-only">Найти оборудование</span><input type="search" placeholder="Найти прибор или арматуру" value={query} onChange={e => setQuery(e.target.value)} /></label>
-          <p className="s3-list-note">Лист S-3000 · АДЛ · 8 бар<br />Выберите позицию, чтобы приблизить её в модели.</p>
+          <p className="s3-list-note">PREMIUM S-3000 · 8 бар<br />Выберите позицию, чтобы приблизить её в модели.</p>
           <div className="s3-equipment-list">{visibleRows.map(row => <button key={row.id} onClick={() => focus(row.nodes[0])} className={row.nodes.includes(selected || '') ? 'selected' : ''}>
             <span><strong>{byId.get(row.nodes[0])?.label}</strong><small>{sourceLabels[byId.get(row.nodes[0])?.source_kind || '']}</small></span><b>×{row.quantity}</b>
           </button>)}</div>

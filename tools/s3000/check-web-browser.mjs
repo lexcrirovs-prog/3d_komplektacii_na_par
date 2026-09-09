@@ -62,14 +62,14 @@ try {
     checks.push('Actual 3D visibility: both economizer branches only');
   }
   await view('economizer','Экономайзер');
-  await page.locator('.s3-option').filter({hasText:'Деаэратор ДА-25'}).click();
+  await page.locator('.s3-option').filter({hasText:'Деаэратор'}).click();
   await view('all-modules','Общий вид');
   await view('deaerator','Деаэратор');
   await page.reload({waitUntil:'domcontentloaded',timeout:180000});
   if(mode==='candidate') await page.waitForFunction(()=>window.__s3000?.scene,null,{timeout:120000});
-  assert(await page.locator('.s3-option').filter({hasText:'Деаэратор ДА-25'}).locator('input').isChecked());
+  assert(await page.locator('.s3-option').filter({hasText:'Деаэратор'}).locator('input').isChecked());
   checks.push('Deaerator and URL state survive reload');
-  await page.locator('.s3-option').filter({hasText:'Деаэратор ДА-25'}).click();
+  await page.locator('.s3-option').filter({hasText:'Деаэратор'}).click();
   await page.getByRole('tab',{name:/Оборудование/}).click();
   assert.equal(await page.locator('.s3-equipment-list button').count(),27);
   await page.locator('.s3-equipment-list button').first().click();
@@ -94,7 +94,7 @@ try {
     checks.push('Accessories toggle hides every accessory node');
   }
   await page.getByRole('checkbox',{name:'Показать навесное оборудование'}).check();
-  await page.locator('.s3-option').filter({hasText:'Riello RS 410'}).click();
+  await page.locator('.s3-option').filter({hasText:mode==='baseline'?'Riello RS 410':'Горелка'}).click();
   assert(await page.getByRole('button',{name:'Горелка',exact:true}).isDisabled());
   checks.push('Burner toggle and disabled focus');
   await page.setViewportSize({width:390,height:844});

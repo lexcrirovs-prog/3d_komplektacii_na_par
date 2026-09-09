@@ -1,0 +1,120 @@
+{
+  "version": "2026.09.09.1",
+  "date": "2026-09-09",
+  "author": "Codex / GPT-6 Astra",
+  "source_geometry_version": "2026.09.08.4",
+  "source_commit": "023cac30d706fa1a37aafa98f037ed2c96393244",
+  "status": "PASSED_AUTOCAD_CORE_ROUNDTRIPS_AND_VISUAL_QA",
+  "autocad_visual_style": "PREMIUM_SOLID",
+  "hidden_and_visible_mesh_edges": false,
+  "named_view_layer_snapshots": true,
+  "pdf_pages_reviewed": 3,
+  "native_dwg_checks": [
+    {
+      "status": "PASSED_AUTOCAD_SAVE_REOPEN_ROUNDTRIP",
+      "file": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.1.dwg",
+      "autocad": "2027 Core Console",
+      "dwg_format": "AutoCAD 2018 / AC1032",
+      "units": "mm",
+      "blocks": 48,
+      "meshes": 207,
+      "faces": 3164014,
+      "triangles": 3171908,
+      "topology_preserved": true,
+      "coordinates_preserved_at_mm": 0.001,
+      "colours_preserved": true,
+      "audit_errors_on_save": 0,
+      "audit_errors_on_reopen": 0,
+      "bytes": 158068037,
+      "sha256": "709c20889506b2d61a3d387aeb56a5a0ad17b3cb4d435a4f6b13db126d01a72c"
+    },
+    {
+      "status": "PASSED_AUTOCAD_SAVE_REOPEN_ROUNDTRIP",
+      "file": "S3000_ADL_8bar_DIRECT_v2026.09.09.1.dwg",
+      "autocad": "2027 Core Console",
+      "dwg_format": "AutoCAD 2018 / AC1032",
+      "units": "mm",
+      "blocks": 46,
+      "meshes": 202,
+      "faces": 3140258,
+      "triangles": 3148152,
+      "topology_preserved": true,
+      "coordinates_preserved_at_mm": 0.001,
+      "colours_preserved": true,
+      "audit_errors_on_save": 0,
+      "audit_errors_on_reopen": 0,
+      "bytes": 156531401,
+      "sha256": "70c6de6f779b862e2a656ca9d862d036206b8b717ff6452687bd81ec093ecb8c"
+    }
+  ],
+  "website_changed": false,
+  "parametric_solids_created": false,
+  "notes": [
+    "Zinc microtexture is represented by uniform grey; seams and rivets remain geometry.",
+    "The source-resolution PNG logo becomes 3-colour cylindrical CAD geometry.",
+    "DA25/15 tank variant remains preliminary as in the source assembly."
+  ],
+  "files": [
+    {
+      "file": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.1.dwg",
+      "bytes": 158068037,
+      "sha256": "709c20889506b2d61a3d387aeb56a5a0ad17b3cb4d435a4f6b13db126d01a72c"
+    },
+    {
+      "file": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.1.verification.json",
+      "bytes": 563,
+      "sha256": "67dde12e961aaf3a5048d7def829ae5eaea020e8a5f8e95dc737074e3fbe1c2a"
+    },
+    {
+      "file": "S3000_ADL_8bar_DIRECT_v2026.09.09.1.dwg",
+      "bytes": 156531401,
+      "sha256": "70c6de6f779b862e2a656ca9d862d036206b8b717ff6452687bd81ec093ecb8c"
+    },
+    {
+      "file": "S3000_ADL_8bar_DIRECT_v2026.09.09.1.verification.json",
+      "bytes": 554,
+      "sha256": "4078766fdf4d01d73c03acdcb59d0b2d3791c368d3880551b288b0451a8b9d7c"
+    },
+    {
+      "file": "S3000_AutoCAD_views_v2026.09.09.1.pdf",
+      "bytes": 1907786,
+      "sha256": "841fd4ffa0b0ee0ed3704c37ec4e2e527ce92c1e241d3138ad0dec1426991943"
+    },
+    {
+      "file": "S3000_AutoCAD_overview.png",
+      "bytes": 614325,
+      "sha256": "c0e6a11bc297a5c0e84e3b3f2870f17b35c4ea3f2bce6b189948ff9ddb528767"
+    },
+    {
+      "file": "ОТКРЫТЬ В AUTOCAD.md",
+      "bytes": 2591,
+      "sha256": "e74a241e5b92f42315d53b69003810f6efa3f94e9c10a64d68b8a36538ba39f4"
+    }
+  ],
+  "archive": {
+    "file": "S3000_AutoCAD_v2026.09.09.1.zip",
+    "entries": 8,
+    "bytes": 168798571,
+    "sha256": "a0c68930ef4b4a8313cc6bbedd1f69b9f76efc2549c96dadc4f61c6cf5807502"
+  },
+  "desktop_open": {
+    "file": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.1.dwg",
+    "read_only": false,
+    "model_space_count": 48,
+    "layers": 50,
+    "units": 4,
+    "view_edges": 0,
+    "hidden_edges": 0,
+    "face_opacity": 100,
+    "named_views": [
+      "S3000_ALL_ISO",
+      "S3000_BOILER_DETAIL",
+      "DA25_DETAIL"
+    ]
+  },
+  "source_blend": {
+    "file": "S3000_ADL_8bar_v2026.09.08.4.blend",
+    "sha256": "2ed8602f487c5edf2fc26adf16cb702c923ce8c0d57b0f24e8011e20605fbc76",
+    "unchanged_after_extraction": true
+  }
+}

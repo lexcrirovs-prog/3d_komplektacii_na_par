@@ -1,0 +1,584 @@
+{
+  "version": "2026.09.09.2",
+  "date": "2026-09-09",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_LIVE_PUBLIC_COPY",
+  "sourceCommit": "a1a525c60171c78552bda2c664c43e2f5a7d24b6",
+  "manifestSha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+  "scope": "Remove specification names and non-Premium brands from S3000 descriptions, labels and search. Preserve original source BOM and model assets.",
+  "unchanged": [
+    "49 component identities and geometric metadata",
+    "27 equipment quantities and relationships",
+    "GLB geometry",
+    "Images and textures",
+    "Styles and cache configuration"
+  ],
+  "evidence": {
+    "prepared": {
+      "version": "2026.09.09.2",
+      "candidateSha256": "9ceef180918e1c15f05423d1279ed1d2fa21d0c855fb067267a40bcf5e4ed6c3",
+      "manifestSha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+      "backupSha256": "3eabf4d369aed7f640be5078f1d7c229a3539ade18d298a27d1b9ff1dc1be3f7",
+      "backupFiles": 26,
+      "backupUrl": "https://prgz.ru/komplektacii4-v2026.09.09.1/"
+    },
+    "http-stage": {
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.2/",
+      "status": "PASSED_HTTPS_HASHES",
+      "manifestSha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+      "files": [
+        {
+          "path": "assets/bcv_7250-CkMcE7H9.glb",
+          "status": 200,
+          "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+          "wireBytes": 973498,
+          "decodedBytes": 2227100,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/bcv_925-k9_oO04u.glb",
+          "status": 200,
+          "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+          "wireBytes": 1262075,
+          "decodedBytes": 2878432,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/boiler-DinVE5OY.glb",
+          "status": 200,
+          "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+          "wireBytes": 593643,
+          "decodedBytes": 1627716,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/cp_930--TKERaHD.glb",
+          "status": 200,
+          "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+          "wireBytes": 249745,
+          "decodedBytes": 596536,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/deaerator-BbqYfy15.glb",
+          "status": 200,
+          "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+          "wireBytes": 530641,
+          "decodedBytes": 1297432,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/dn32h50-DWIQZzpu.glb",
+          "status": 200,
+          "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+          "wireBytes": 468430,
+          "decodedBytes": 1258964,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/elbow_pc_f20-DO38bAlJ.glb",
+          "status": 200,
+          "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+          "wireBytes": 56270,
+          "decodedBytes": 157820,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/index-7QVkEiq6.js",
+          "status": 200,
+          "sha256": "8ebc82a59504f66ad5513515cd2b3df7edb682821c0d590f31ade5c1f21f0e9f",
+          "wireBytes": 363928,
+          "decodedBytes": 1278444,
+          "encoding": "gzip",
+          "cacheControl": "max-age=604800",
+          "contentType": "application/x-javascript"
+        },
+        {
+          "path": "assets/premium-logo--EbfrTdO.png",
+          "status": 200,
+          "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665",
+          "wireBytes": 48635,
+          "decodedBytes": 48635,
+          "encoding": null,
+          "cacheControl": "max-age=2592000",
+          "contentType": "image/png"
+        },
+        {
+          "path": "assets/s3000-boiler-JP6nEqh_.glb",
+          "status": 200,
+          "sha256": "dc53eecc1828055c220afcbbb4307886a8363e6aac208de2da73166b012c9254",
+          "wireBytes": 2827788,
+          "decodedBytes": 5122904,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-cables-D9RkW-q8.glb",
+          "status": 200,
+          "sha256": "1614f0932523711aa6c2b193226295199db3a0a0a376ed22ccafc346849efb0b",
+          "wireBytes": 824054,
+          "decodedBytes": 1279520,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-deaerator-BW_SZHCe.glb",
+          "status": 200,
+          "sha256": "d639ea54a216c3a2a48ea41f7a078627de83979f20143ba683ba4a6f91d4e298",
+          "wireBytes": 614916,
+          "decodedBytes": 882368,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-equipment-2GW13d3O.glb",
+          "status": 200,
+          "sha256": "f2378c68a4a13fcc57fa5170043a612a29010afe861c3803bfb3c9b0af2d3aa7",
+          "wireBytes": 1527340,
+          "decodedBytes": 2917484,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/style-DKpP2yyi.css",
+          "status": 200,
+          "sha256": "e9a5cf9303dcc4634ab38493fbd3982ce2d1aefbed98afb2eb9284a727c76600",
+          "wireBytes": 5642,
+          "decodedBytes": 24215,
+          "encoding": "gzip",
+          "cacheControl": "max-age=604800",
+          "contentType": "text/css"
+        },
+        {
+          "path": "index.html",
+          "status": 200,
+          "sha256": "332cdcaf90b57c3c6d7f5c7b09fd96017c3a6cb02db0a24a37e3833c0a1187cc",
+          "wireBytes": 992,
+          "decodedBytes": 2055,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "text/html"
+        },
+        {
+          "path": "models/bcv_7250.glb",
+          "status": 200,
+          "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+          "wireBytes": 973498,
+          "decodedBytes": 2227100,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/bcv_925.glb",
+          "status": 200,
+          "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+          "wireBytes": 1262075,
+          "decodedBytes": 2878432,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/boiler.glb",
+          "status": 200,
+          "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+          "wireBytes": 593643,
+          "decodedBytes": 1627716,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/cp_930.glb",
+          "status": 200,
+          "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+          "wireBytes": 249745,
+          "decodedBytes": 596536,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/deaerator.glb",
+          "status": 200,
+          "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+          "wireBytes": 530641,
+          "decodedBytes": 1297432,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/dn32h50.glb",
+          "status": 200,
+          "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+          "wireBytes": 468430,
+          "decodedBytes": 1258964,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/elbow_pc_f20.glb",
+          "status": 200,
+          "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+          "wireBytes": 56270,
+          "decodedBytes": 157820,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "version.json",
+          "status": 200,
+          "sha256": "619addd4386b407bc131ec584053a60339c11b5ad3a12786e75093d7b4032f72",
+          "wireBytes": 228,
+          "decodedBytes": 312,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "application/json"
+        },
+        {
+          "path": "DEPLOY_MANIFEST.json",
+          "status": 200,
+          "sha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+          "wireBytes": 1422,
+          "decodedBytes": 4330,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/komplektacii4-v2026.09.09.1/",
+      "neighborsUnchanged": true,
+      "files": 26
+    },
+    "http-live": {
+      "url": "https://prgz.ru/komplektacii4/",
+      "status": "PASSED_HTTPS_HASHES",
+      "manifestSha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+      "files": [
+        {
+          "path": "assets/bcv_7250-CkMcE7H9.glb",
+          "status": 200,
+          "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+          "wireBytes": 973498,
+          "decodedBytes": 2227100,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/bcv_925-k9_oO04u.glb",
+          "status": 200,
+          "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+          "wireBytes": 1262075,
+          "decodedBytes": 2878432,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/boiler-DinVE5OY.glb",
+          "status": 200,
+          "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+          "wireBytes": 593643,
+          "decodedBytes": 1627716,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/cp_930--TKERaHD.glb",
+          "status": 200,
+          "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+          "wireBytes": 249745,
+          "decodedBytes": 596536,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/deaerator-BbqYfy15.glb",
+          "status": 200,
+          "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+          "wireBytes": 530641,
+          "decodedBytes": 1297432,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/dn32h50-DWIQZzpu.glb",
+          "status": 200,
+          "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+          "wireBytes": 468430,
+          "decodedBytes": 1258964,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/elbow_pc_f20-DO38bAlJ.glb",
+          "status": 200,
+          "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+          "wireBytes": 56270,
+          "decodedBytes": 157820,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/index-7QVkEiq6.js",
+          "status": 200,
+          "sha256": "8ebc82a59504f66ad5513515cd2b3df7edb682821c0d590f31ade5c1f21f0e9f",
+          "wireBytes": 363928,
+          "decodedBytes": 1278444,
+          "encoding": "gzip",
+          "cacheControl": "max-age=604800",
+          "contentType": "application/x-javascript"
+        },
+        {
+          "path": "assets/premium-logo--EbfrTdO.png",
+          "status": 200,
+          "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665",
+          "wireBytes": 48635,
+          "decodedBytes": 48635,
+          "encoding": null,
+          "cacheControl": "max-age=2592000",
+          "contentType": "image/png"
+        },
+        {
+          "path": "assets/s3000-boiler-JP6nEqh_.glb",
+          "status": 200,
+          "sha256": "dc53eecc1828055c220afcbbb4307886a8363e6aac208de2da73166b012c9254",
+          "wireBytes": 2827788,
+          "decodedBytes": 5122904,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-cables-D9RkW-q8.glb",
+          "status": 200,
+          "sha256": "1614f0932523711aa6c2b193226295199db3a0a0a376ed22ccafc346849efb0b",
+          "wireBytes": 824054,
+          "decodedBytes": 1279520,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-deaerator-BW_SZHCe.glb",
+          "status": 200,
+          "sha256": "d639ea54a216c3a2a48ea41f7a078627de83979f20143ba683ba4a6f91d4e298",
+          "wireBytes": 614916,
+          "decodedBytes": 882368,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/s3000-equipment-2GW13d3O.glb",
+          "status": 200,
+          "sha256": "f2378c68a4a13fcc57fa5170043a612a29010afe861c3803bfb3c9b0af2d3aa7",
+          "wireBytes": 1527340,
+          "decodedBytes": 2917484,
+          "encoding": "gzip",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "assets/style-DKpP2yyi.css",
+          "status": 200,
+          "sha256": "e9a5cf9303dcc4634ab38493fbd3982ce2d1aefbed98afb2eb9284a727c76600",
+          "wireBytes": 5642,
+          "decodedBytes": 24215,
+          "encoding": "gzip",
+          "cacheControl": "max-age=604800",
+          "contentType": "text/css"
+        },
+        {
+          "path": "index.html",
+          "status": 200,
+          "sha256": "332cdcaf90b57c3c6d7f5c7b09fd96017c3a6cb02db0a24a37e3833c0a1187cc",
+          "wireBytes": 992,
+          "decodedBytes": 2055,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "text/html"
+        },
+        {
+          "path": "models/bcv_7250.glb",
+          "status": 200,
+          "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64",
+          "wireBytes": 973498,
+          "decodedBytes": 2227100,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/bcv_925.glb",
+          "status": 200,
+          "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba",
+          "wireBytes": 1262075,
+          "decodedBytes": 2878432,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/boiler.glb",
+          "status": 200,
+          "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03",
+          "wireBytes": 593643,
+          "decodedBytes": 1627716,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/cp_930.glb",
+          "status": 200,
+          "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1",
+          "wireBytes": 249745,
+          "decodedBytes": 596536,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/deaerator.glb",
+          "status": 200,
+          "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac",
+          "wireBytes": 530641,
+          "decodedBytes": 1297432,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/dn32h50.glb",
+          "status": 200,
+          "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+          "wireBytes": 468430,
+          "decodedBytes": 1258964,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "models/elbow_pc_f20.glb",
+          "status": 200,
+          "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904",
+          "wireBytes": 56270,
+          "decodedBytes": 157820,
+          "encoding": "gzip",
+          "cacheControl": null,
+          "contentType": "model/gltf-binary"
+        },
+        {
+          "path": "version.json",
+          "status": 200,
+          "sha256": "619addd4386b407bc131ec584053a60339c11b5ad3a12786e75093d7b4032f72",
+          "wireBytes": 228,
+          "decodedBytes": 312,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "application/json"
+        },
+        {
+          "path": "DEPLOY_MANIFEST.json",
+          "status": 200,
+          "sha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+          "wireBytes": 1422,
+          "decodedBytes": 4330,
+          "encoding": "gzip",
+          "cacheControl": "no-cache",
+          "contentType": "application/json"
+        }
+      ]
+    },
+    "browserStage": {
+      "status": "PASSED_BROWSER",
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.2/",
+      "mode": "candidate",
+      "manifestSha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+      "checks": [
+        "Smooth camera transition after 3 seconds idle",
+        "Economizer changes route and URL",
+        "Actual 3D visibility: direct branch only",
+        "Actual 3D visibility: both economizer branches only",
+        "Deaerator and URL state survive reload",
+        "All 27 equipment cards and focus",
+        "Actual mouse picking on model",
+        "Accessories toggle hides every accessory node",
+        "Burner toggle and disabled focus",
+        "Emulated touch rotation and mouse picking after drag",
+        "Mobile viewport: no horizontal overflow (desktop emulation)"
+      ],
+      "errors": [],
+      "physicalPhone": false,
+      "date": "2026-09-09T09:52:18.812Z"
+    },
+    "copyStage": {
+      "status": "PASSED_PUBLIC_COPY",
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.2/",
+      "manifestSha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+      "metadataParts": 49,
+      "renderedEquipmentCards": 27,
+      "optionalCards": [
+        "burner",
+        "deaerator"
+      ],
+      "specificationDetails": 0,
+      "forbiddenTextMatches": 0,
+      "premiumRetained": true,
+      "errors": [],
+      "date": "2026-09-09T09:51:05.649Z"
+    },
+    "copyLive": {
+      "status": "PASSED_PUBLIC_COPY",
+      "url": "https://prgz.ru/komplektacii4/",
+      "manifestSha256": "c65c1cf0a6c0a66a6681b9a26ec28ae8cd78ca3d0fba5fc4f1a5c3a4ad645b3d",
+      "metadataParts": 49,
+      "renderedEquipmentCards": 27,
+      "optionalCards": [
+        "burner",
+        "deaerator"
+      ],
+      "specificationDetails": 0,
+      "forbiddenTextMatches": 0,
+      "premiumRetained": true,
+      "errors": [],
+      "date": "2026-09-09T09:52:57.585Z"
+    }
+  },
+  "physicalPhone": "NOT_RUN",
+  "performance": "Text-only update; performance was not remeasured. Previous measurements belong to 2026.09.09.1.",
+  "ci": "CI_NOT_CONFIGURED",
+  "liveRollback": "NOT_RUN"
+}

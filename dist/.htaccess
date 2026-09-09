@@ -1,0 +1,10 @@
+# PREMIUM S-3000 only. Do not move to the website root.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+AddType model/gltf-binary .glb
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE model/gltf-binary application/javascript text/javascript text/css application/json text/html
+</IfModule>

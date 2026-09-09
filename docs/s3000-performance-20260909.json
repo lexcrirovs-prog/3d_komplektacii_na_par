@@ -1,0 +1,167 @@
+{
+  "version": "2026.09.09.1",
+  "date": "2026-09-09",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_LOCAL_COMPARISON",
+  "hardware": {
+    "cpu": "Intel Core i7-12700K",
+    "gpu": "Intel UHD Graphics 770 / ANGLE D3D11",
+    "browser": "Chrome 152.0.7977.83",
+    "os": "Windows"
+  },
+  "physicalPhone": "NOT_RUN",
+  "fullBrowserOrGpuPeakMemory": "NOT_MEASURED",
+  "ci": "CI_NOT_CONFIGURED",
+  "method": "s3000-performance-design-20260909.md",
+  "measurements": {
+    "before": {
+      "desktop": {
+        "cold": {
+          "firstSceneMs": 22316.9,
+          "domContentLoadedMs": 21245.100000000093,
+          "transferBytes": 23865840.0,
+          "heapPeakBytes": 169188792.0,
+          "samples": 2
+        },
+        "warm": {
+          "firstSceneMs": 21832.75,
+          "domContentLoadedMs": 21058.0,
+          "transferBytes": 23865840.0,
+          "heapPeakBytes": 172094929.0,
+          "samples": 2
+        },
+        "rotation": {
+          "fps": 15.237343298381136,
+          "p95Ms": 307.0499999999993,
+          "meanDrawCalls": 319.0,
+          "meanTrianglesAllPasses": 5473766.0,
+          "renderedFpsMedian": 15.237343298381136,
+          "renderedFpsRange": [
+            15.017183122996707,
+            15.325892082586522
+          ]
+        },
+        "idleDrawFrames": [
+          93,
+          55,
+          112,
+          113
+        ],
+        "webglBufferPeakBytesRange": null
+      },
+      "mobile": {
+        "cold": {
+          "firstSceneMs": 51396.45,
+          "domContentLoadedMs": 50396.049999999814,
+          "transferBytes": 23865840.0,
+          "heapPeakBytes": 182643780.0,
+          "samples": 2
+        },
+        "warm": {
+          "firstSceneMs": 50909.95,
+          "domContentLoadedMs": 50216.65000000037,
+          "transferBytes": 23865840.0,
+          "heapPeakBytes": 185699393.5,
+          "samples": 2
+        },
+        "rotation": {
+          "fps": 15.384233185522195,
+          "p95Ms": 300.2499999999927,
+          "meanDrawCalls": 319.0,
+          "meanTrianglesAllPasses": 5473766.0,
+          "renderedFpsMedian": 15.384233185522195,
+          "renderedFpsRange": [
+            15.155204558918232,
+            15.826850531223803
+          ]
+        },
+        "idleDrawFrames": [
+          114,
+          102,
+          113,
+          113
+        ],
+        "webglBufferPeakBytesRange": [
+          72319858,
+          81546530
+        ]
+      }
+    },
+    "after": {
+      "desktop": {
+        "cold": {
+          "firstSceneMs": 9553.05,
+          "domContentLoadedMs": 751.9000000003725,
+          "transferBytes": 10627607.0,
+          "heapPeakBytes": 72774472.0,
+          "samples": 2
+        },
+        "warm": {
+          "firstSceneMs": 657.3,
+          "domContentLoadedMs": 417.35000000009313,
+          "transferBytes": 600.0,
+          "heapPeakBytes": 150636194.0,
+          "samples": 2
+        },
+        "rotation": {
+          "fps": 51.55703594952489,
+          "p95Ms": 40.100000000000364,
+          "meanDrawCalls": 160.0,
+          "meanTrianglesAllPasses": 1076937.0,
+          "renderedFpsMedian": 50.15392941512724,
+          "renderedFpsRange": [
+            49.67364177386183,
+            53.241543261846886
+          ]
+        },
+        "idleDrawFrames": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "webglBufferPeakBytesRange": [
+          39187556,
+          41287324
+        ]
+      },
+      "mobile": {
+        "cold": {
+          "firstSceneMs": 22821.1,
+          "domContentLoadedMs": 1520.1000000000931,
+          "transferBytes": 10627607.0,
+          "heapPeakBytes": 71779143.5,
+          "samples": 2
+        },
+        "warm": {
+          "firstSceneMs": 978.75,
+          "domContentLoadedMs": 727.8500000000931,
+          "transferBytes": 600.0,
+          "heapPeakBytes": 146092296.5,
+          "samples": 2
+        },
+        "rotation": {
+          "fps": 51.41116217649255,
+          "p95Ms": 46.65000000000009,
+          "meanDrawCalls": 160.0,
+          "meanTrianglesAllPasses": 1076937.0,
+          "renderedFpsMedian": 49.9788261602079,
+          "renderedFpsRange": [
+            38.44639507144842,
+            54.742295755035705
+          ]
+        },
+        "idleDrawFrames": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "webglBufferPeakBytesRange": [
+          39187556,
+          41287324
+        ]
+      }
+    }
+  }
+}

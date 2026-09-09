@@ -1,0 +1,137 @@
+{
+  "release": {
+    "version": "2026.09.09.2",
+    "date": "2026-09-09",
+    "executor": "Codex / GPT-6",
+    "detailed_assembly_version": "2026.09.08.4",
+    "baseline_source_commit": "023cac30d706fa1a37aafa98f037ed2c96393244"
+  },
+  "source_commit": "a1a525c60171c78552bda2c664c43e2f5a7d24b6",
+  "files": [
+    {
+      "path": ".htaccess",
+      "bytes": 374,
+      "sha256": "a83833b8c02ef8af4b64773ab487598c3819dd125f71c24714e402a06f848c1d"
+    },
+    {
+      "path": "assets/.htaccess",
+      "bytes": 151,
+      "sha256": "40f247e99857f693365b9a81b71af2e0493dca740c92ef25f9d07e65f581f09c"
+    },
+    {
+      "path": "assets/bcv_7250-CkMcE7H9.glb",
+      "bytes": 2227100,
+      "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64"
+    },
+    {
+      "path": "assets/bcv_925-k9_oO04u.glb",
+      "bytes": 2878432,
+      "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba"
+    },
+    {
+      "path": "assets/boiler-DinVE5OY.glb",
+      "bytes": 1627716,
+      "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03"
+    },
+    {
+      "path": "assets/cp_930--TKERaHD.glb",
+      "bytes": 596536,
+      "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1"
+    },
+    {
+      "path": "assets/deaerator-BbqYfy15.glb",
+      "bytes": 1297432,
+      "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac"
+    },
+    {
+      "path": "assets/dn32h50-DWIQZzpu.glb",
+      "bytes": 1258964,
+      "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2"
+    },
+    {
+      "path": "assets/elbow_pc_f20-DO38bAlJ.glb",
+      "bytes": 157820,
+      "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904"
+    },
+    {
+      "path": "assets/index-7QVkEiq6.js",
+      "bytes": 1278444,
+      "sha256": "8ebc82a59504f66ad5513515cd2b3df7edb682821c0d590f31ade5c1f21f0e9f"
+    },
+    {
+      "path": "assets/premium-logo--EbfrTdO.png",
+      "bytes": 48635,
+      "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665"
+    },
+    {
+      "path": "assets/s3000-boiler-JP6nEqh_.glb",
+      "bytes": 5122904,
+      "sha256": "dc53eecc1828055c220afcbbb4307886a8363e6aac208de2da73166b012c9254"
+    },
+    {
+      "path": "assets/s3000-cables-D9RkW-q8.glb",
+      "bytes": 1279520,
+      "sha256": "1614f0932523711aa6c2b193226295199db3a0a0a376ed22ccafc346849efb0b"
+    },
+    {
+      "path": "assets/s3000-deaerator-BW_SZHCe.glb",
+      "bytes": 882368,
+      "sha256": "d639ea54a216c3a2a48ea41f7a078627de83979f20143ba683ba4a6f91d4e298"
+    },
+    {
+      "path": "assets/s3000-equipment-2GW13d3O.glb",
+      "bytes": 2917484,
+      "sha256": "f2378c68a4a13fcc57fa5170043a612a29010afe861c3803bfb3c9b0af2d3aa7"
+    },
+    {
+      "path": "assets/style-DKpP2yyi.css",
+      "bytes": 24215,
+      "sha256": "e9a5cf9303dcc4634ab38493fbd3982ce2d1aefbed98afb2eb9284a727c76600"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2055,
+      "sha256": "332cdcaf90b57c3c6d7f5c7b09fd96017c3a6cb02db0a24a37e3833c0a1187cc"
+    },
+    {
+      "path": "models/bcv_7250.glb",
+      "bytes": 2227100,
+      "sha256": "5595f8d550a6350fb76dd5c867ebb4bc250ffd6833472529988dccb54cd2fd64"
+    },
+    {
+      "path": "models/bcv_925.glb",
+      "bytes": 2878432,
+      "sha256": "b5c519a28e781e1aa071670c433d7db16dae9cdb101fe5bcbedaadadc3be76ba"
+    },
+    {
+      "path": "models/boiler.glb",
+      "bytes": 1627716,
+      "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03"
+    },
+    {
+      "path": "models/cp_930.glb",
+      "bytes": 596536,
+      "sha256": "38ab6e5e2fb15002a4178e528792253ab57ed21790bd86df2f6a9509b7b57ff1"
+    },
+    {
+      "path": "models/deaerator.glb",
+      "bytes": 1297432,
+      "sha256": "6195270c344ef1646d0877ef8ee3462515bb40c05488aa21a20123851c68f1ac"
+    },
+    {
+      "path": "models/dn32h50.glb",
+      "bytes": 1258964,
+      "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2"
+    },
+    {
+      "path": "models/elbow_pc_f20.glb",
+      "bytes": 157820,
+      "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904"
+    },
+    {
+      "path": "version.json",
+      "bytes": 312,
+      "sha256": "619addd4386b407bc131ec584053a60339c11b5ad3a12786e75093d7b4032f72"
+    }
+  ]
+}

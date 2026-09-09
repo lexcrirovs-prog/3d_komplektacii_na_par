@@ -1,0 +1,910 @@
+[
+  {
+    "url": "http://127.0.0.1:4174/after/",
+    "run": 0,
+    "cache": "cold",
+    "profile": "desktop",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "deviceScaleFactor": 1,
+    "physicalPhone": false,
+    "networkMbps": 10,
+    "latencyMs": 100,
+    "browser": "152.0.7977.83",
+    "measuredAt": "2026-09-09T09:18:09.268Z",
+    "firstSceneMs": 9746.8,
+    "domContentLoadedMs": 761.6000000005588,
+    "transferBytes": 10627607,
+    "encodedBytes": 10624907,
+    "heapPeakBytes": 72622041,
+    "webglBufferPeakBytes": 41287324,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "rotation": {
+      "durationMs": 4313.799999999814,
+      "frames": 224,
+      "fps": 51.92637581714722,
+      "renderedFps": 50.53549075061649,
+      "p50Ms": 13.399999999999636,
+      "p95Ms": 40.100000000000364,
+      "maxMs": 66.69999999999891,
+      "meanDrawCalls": 160,
+      "meanTrianglesAllPasses": 1076937
+    },
+    "idleDrawFrames": 0,
+    "resources": [
+      {
+        "name": "/after/",
+        "transferSize": 2562,
+        "encodedBodySize": 2262,
+        "decodedBodySize": 2262,
+        "duration": 761.7000000001863
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 404.5
+      },
+      {
+        "name": "/after/assets/style-DKpP2yyi.css",
+        "transferSize": 5920,
+        "encodedBodySize": 5620,
+        "decodedBodySize": 24215,
+        "duration": 128.80000000074506
+      },
+      {
+        "name": "/after/assets/index-CrZmGE1N.js",
+        "transferSize": 366414,
+        "encodedBodySize": 366114,
+        "decodedBodySize": 1278726,
+        "duration": 573.1000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 129.90000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 122.70000000018626
+      },
+      {
+        "name": "/after/assets/s3000-boiler-JP6nEqh_.glb",
+        "transferSize": 5123204,
+        "encodedBodySize": 5122904,
+        "decodedBodySize": 5122904,
+        "duration": 8465.700000000186
+      },
+      {
+        "name": "/after/assets/s3000-equipment-2GW13d3O.glb",
+        "transferSize": 2917784,
+        "encodedBodySize": 2917484,
+        "decodedBodySize": 2917484,
+        "duration": 6651.5
+      },
+      {
+        "name": "/after/assets/s3000-cables-D9RkW-q8.glb",
+        "transferSize": 1279820,
+        "encodedBodySize": 1279520,
+        "decodedBodySize": 1279520,
+        "duration": 3977.9000000003725
+      },
+      {
+        "name": "/after/assets/s3000-deaerator-BW_SZHCe.glb",
+        "transferSize": 882668,
+        "encodedBodySize": 882368,
+        "decodedBodySize": 882368,
+        "duration": 3010.7999999998137
+      },
+      {
+        "name": "/after/assets/premium-logo--EbfrTdO.png",
+        "transferSize": 48935,
+        "encodedBodySize": 48635,
+        "decodedBodySize": 48635,
+        "duration": 314.20000000018626
+      },
+      {
+        "name": "/favicon.ico",
+        "transferSize": 300,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 119.70000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 105.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 125.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 129.59999999962747
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 122.29999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 110.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124.30000000074506
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 128.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 120.29999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 109.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 131.30000000074506
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 127.59999999962747
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 120.69999999925494
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 120.70000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 128
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 122.79999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124.40000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.6000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 130.09999999962747
+      }
+    ],
+    "errors": []
+  },
+  {
+    "url": "http://127.0.0.1:4174/after/",
+    "run": 0,
+    "cache": "warm",
+    "profile": "desktop",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "deviceScaleFactor": 1,
+    "physicalPhone": false,
+    "networkMbps": 10,
+    "latencyMs": 100,
+    "browser": "152.0.7977.83",
+    "measuredAt": "2026-09-09T09:18:18.901Z",
+    "firstSceneMs": 670.9,
+    "domContentLoadedMs": 419.70000000018626,
+    "transferBytes": 600,
+    "encodedBytes": 10624907,
+    "heapPeakBytes": 149155754,
+    "webglBufferPeakBytes": 41287324,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "rotation": {
+      "durationMs": 4038.2000000001863,
+      "frames": 221,
+      "fps": 54.72735377147982,
+      "renderedFps": 53.241543261846886,
+      "p50Ms": 13.399999999999636,
+      "p95Ms": 40.100000000000364,
+      "maxMs": 53.40000000000009,
+      "meanDrawCalls": 160,
+      "meanTrianglesAllPasses": 1076937
+    },
+    "idleDrawFrames": 0,
+    "resources": [
+      {
+        "name": "/after/",
+        "transferSize": 300,
+        "encodedBodySize": 2262,
+        "decodedBodySize": 2262,
+        "duration": 419.79999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 265.79999999981374
+      },
+      {
+        "name": "/after/assets/index-CrZmGE1N.js",
+        "transferSize": 0,
+        "encodedBodySize": 366114,
+        "decodedBodySize": 1278726,
+        "duration": 0
+      },
+      {
+        "name": "/after/assets/style-DKpP2yyi.css",
+        "transferSize": 0,
+        "encodedBodySize": 5620,
+        "decodedBodySize": 24215,
+        "duration": 0
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 132.30000000074506
+      },
+      {
+        "name": "/after/assets/s3000-boiler-JP6nEqh_.glb",
+        "transferSize": 0,
+        "encodedBodySize": 5122904,
+        "decodedBodySize": 5122904,
+        "duration": 27
+      },
+      {
+        "name": "/after/assets/s3000-equipment-2GW13d3O.glb",
+        "transferSize": 0,
+        "encodedBodySize": 2917484,
+        "decodedBodySize": 2917484,
+        "duration": 31.899999999441206
+      },
+      {
+        "name": "/after/assets/s3000-cables-D9RkW-q8.glb",
+        "transferSize": 0,
+        "encodedBodySize": 1279520,
+        "decodedBodySize": 1279520,
+        "duration": 2.2999999998137355
+      },
+      {
+        "name": "/after/assets/s3000-deaerator-BW_SZHCe.glb",
+        "transferSize": 0,
+        "encodedBodySize": 882368,
+        "decodedBodySize": 882368,
+        "duration": 2.7000000001862645
+      },
+      {
+        "name": "/after/assets/premium-logo--EbfrTdO.png",
+        "transferSize": 0,
+        "encodedBodySize": 48635,
+        "decodedBodySize": 48635,
+        "duration": 0
+      },
+      {
+        "name": "/favicon.ico",
+        "transferSize": 300,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 121.19999999925494
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 130.6000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 128.90000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 128.6000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 121.90000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 127.90000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 130.8999999994412
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 129.5
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 120.09999999962747
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 126.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 122.69999999925494
+      }
+    ],
+    "errors": []
+  },
+  {
+    "url": "http://127.0.0.1:4174/after/",
+    "run": 1,
+    "cache": "cold",
+    "profile": "desktop",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "deviceScaleFactor": 1,
+    "physicalPhone": false,
+    "networkMbps": 10,
+    "latencyMs": 100,
+    "browser": "152.0.7977.83",
+    "measuredAt": "2026-09-09T09:18:37.644Z",
+    "firstSceneMs": 9359.3,
+    "domContentLoadedMs": 742.2000000001863,
+    "transferBytes": 10627607,
+    "encodedBytes": 10624907,
+    "heapPeakBytes": 72926903,
+    "webglBufferPeakBytes": 41287324,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "rotation": {
+      "durationMs": 4239.299999999814,
+      "frames": 217,
+      "fps": 51.187696081902565,
+      "renderedFps": 49.77236807963798,
+      "p50Ms": 13.399999999999636,
+      "p95Ms": 40.100000000000364,
+      "maxMs": 80,
+      "meanDrawCalls": 160,
+      "meanTrianglesAllPasses": 1076937
+    },
+    "idleDrawFrames": 0,
+    "resources": [
+      {
+        "name": "/after/",
+        "transferSize": 2562,
+        "encodedBodySize": 2262,
+        "decodedBodySize": 2262,
+        "duration": 742.3000000007451
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 415.90000000037253
+      },
+      {
+        "name": "/after/assets/style-DKpP2yyi.css",
+        "transferSize": 5920,
+        "encodedBodySize": 5620,
+        "decodedBodySize": 24215,
+        "duration": 134.90000000037253
+      },
+      {
+        "name": "/after/assets/index-CrZmGE1N.js",
+        "transferSize": 366414,
+        "encodedBodySize": 366114,
+        "decodedBodySize": 1278726,
+        "duration": 568.5999999996275
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 107.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 114.8999999994412
+      },
+      {
+        "name": "/after/assets/s3000-boiler-JP6nEqh_.glb",
+        "transferSize": 5123204,
+        "encodedBodySize": 5122904,
+        "decodedBodySize": 5122904,
+        "duration": 8474.899999999441
+      },
+      {
+        "name": "/after/assets/s3000-equipment-2GW13d3O.glb",
+        "transferSize": 2917784,
+        "encodedBodySize": 2917484,
+        "decodedBodySize": 2917484,
+        "duration": 6645.299999999814
+      },
+      {
+        "name": "/after/assets/s3000-cables-D9RkW-q8.glb",
+        "transferSize": 1279820,
+        "encodedBodySize": 1279520,
+        "decodedBodySize": 1279520,
+        "duration": 3969.7999999998137
+      },
+      {
+        "name": "/after/assets/s3000-deaerator-BW_SZHCe.glb",
+        "transferSize": 882668,
+        "encodedBodySize": 882368,
+        "decodedBodySize": 882368,
+        "duration": 3009.0999999996275
+      },
+      {
+        "name": "/after/assets/premium-logo--EbfrTdO.png",
+        "transferSize": 48935,
+        "encodedBodySize": 48635,
+        "decodedBodySize": 48635,
+        "duration": 309.1000000005588
+      },
+      {
+        "name": "/favicon.ico",
+        "transferSize": 300,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.40000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 104.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 107.80000000074506
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.5
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 125.69999999925494
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 119
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 101
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.5
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 110.1000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124.5
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 121.70000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 117.90000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 125.40000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 129.5
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 119.29999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 128.79999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.6000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 127.1000000005588
+      }
+    ],
+    "errors": []
+  },
+  {
+    "url": "http://127.0.0.1:4174/after/",
+    "run": 1,
+    "cache": "warm",
+    "profile": "desktop",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "deviceScaleFactor": 1,
+    "physicalPhone": false,
+    "networkMbps": 10,
+    "latencyMs": 100,
+    "browser": "152.0.7977.83",
+    "measuredAt": "2026-09-09T09:18:47.400Z",
+    "firstSceneMs": 643.7,
+    "domContentLoadedMs": 415,
+    "transferBytes": 600,
+    "encodedBytes": 10624907,
+    "heapPeakBytes": 152116634,
+    "webglBufferPeakBytes": 39187556,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 770 (0x00004680) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "rotation": {
+      "durationMs": 4167.199999999255,
+      "frames": 213,
+      "fps": 51.11345747745202,
+      "renderedFps": 49.67364177386183,
+      "p50Ms": 13.399999999999636,
+      "p95Ms": 40.100000000000364,
+      "maxMs": 80.10000000000036,
+      "meanDrawCalls": 160,
+      "meanTrianglesAllPasses": 1076937
+    },
+    "idleDrawFrames": 0,
+    "resources": [
+      {
+        "name": "/after/",
+        "transferSize": 300,
+        "encodedBodySize": 2262,
+        "decodedBodySize": 2262,
+        "duration": 415.1000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 260.40000000037253
+      },
+      {
+        "name": "/after/assets/index-CrZmGE1N.js",
+        "transferSize": 0,
+        "encodedBodySize": 366114,
+        "decodedBodySize": 1278726,
+        "duration": 0
+      },
+      {
+        "name": "/after/assets/style-DKpP2yyi.css",
+        "transferSize": 0,
+        "encodedBodySize": 5620,
+        "decodedBodySize": 24215,
+        "duration": 0
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 118.29999999981374
+      },
+      {
+        "name": "/after/assets/s3000-boiler-JP6nEqh_.glb",
+        "transferSize": 0,
+        "encodedBodySize": 5122904,
+        "decodedBodySize": 5122904,
+        "duration": 23.600000000558794
+      },
+      {
+        "name": "/after/assets/s3000-equipment-2GW13d3O.glb",
+        "transferSize": 0,
+        "encodedBodySize": 2917484,
+        "decodedBodySize": 2917484,
+        "duration": 25.90000000037253
+      },
+      {
+        "name": "/after/assets/s3000-cables-D9RkW-q8.glb",
+        "transferSize": 0,
+        "encodedBodySize": 1279520,
+        "decodedBodySize": 1279520,
+        "duration": 1.7999999998137355
+      },
+      {
+        "name": "/after/assets/s3000-deaerator-BW_SZHCe.glb",
+        "transferSize": 0,
+        "encodedBodySize": 882368,
+        "decodedBodySize": 882368,
+        "duration": 2.1000000005587935
+      },
+      {
+        "name": "/after/assets/premium-logo--EbfrTdO.png",
+        "transferSize": 0,
+        "encodedBodySize": 48635,
+        "decodedBodySize": 48635,
+        "duration": 0
+      },
+      {
+        "name": "/favicon.ico",
+        "transferSize": 300,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 117.40000000037253
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 144.29999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.1000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 128.70000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 127.1000000005588
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.59999999962747
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 130.29999999981374
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124.59999999962747
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 123.70000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 127.80000000074506
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 124
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 132.20000000018626
+      },
+      {
+        "name": "http://gc.kis.v2.scr.kaspersky-labs.com/[external-resource]",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0,
+        "duration": 126.79999999981374
+      }
+    ],
+    "errors": []
+  }
+]

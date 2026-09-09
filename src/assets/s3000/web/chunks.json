@@ -1,0 +1,88 @@
+{
+  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
+  "parts": 49,
+  "bytes": 10202276,
+  "files": [
+    {
+      "group": "boiler",
+      "file": "s3000-boiler.glb",
+      "parts": [
+        "boiler"
+      ],
+      "bytes": 5122904,
+      "sha256": "dc53eecc1828055c220afcbbb4307886a8363e6aac208de2da73166b012c9254"
+    },
+    {
+      "group": "cables",
+      "file": "s3000-cables.glb",
+      "parts": [
+        "cable_routes"
+      ],
+      "bytes": 1279520,
+      "sha256": "1614f0932523711aa6c2b193226295199db3a0a0a376ed22ccafc346849efb0b"
+    },
+    {
+      "group": "deaerator",
+      "file": "s3000-deaerator.glb",
+      "parts": [
+        "deaerator"
+      ],
+      "bytes": 882368,
+      "sha256": "d639ea54a216c3a2a48ea41f7a078627de83979f20143ba683ba4a6f91d4e298"
+    },
+    {
+      "group": "equipment",
+      "file": "s3000-equipment.glb",
+      "parts": [
+        "economizer",
+        "steam_valve",
+        "safety_pair_1",
+        "safety_pair_2",
+        "safety_header",
+        "lp200",
+        "lp400",
+        "electrode_flanges",
+        "pressure_header",
+        "pressure_switches_1",
+        "pressure_switches_2",
+        "pressure_switches_3",
+        "pressure_gauge",
+        "instrument_valve",
+        "sight_glasses_1",
+        "sight_glasses_2",
+        "tds_isolation",
+        "pcf20",
+        "bcv925",
+        "cp930",
+        "sc9",
+        "sc9_mount",
+        "bcv7432",
+        "drain_isolation_1",
+        "drain_isolation_2",
+        "bottom_piping",
+        "feed_skid",
+        "feed_pumps_1",
+        "pump_valves_1",
+        "pump_valves_2",
+        "pump_checks_1",
+        "feed_pumps_2",
+        "pump_valves_3",
+        "pump_valves_4",
+        "pump_checks_2",
+        "feed_piping",
+        "feed_check",
+        "feed_valve",
+        "feed_to_economizer",
+        "feed_from_economizer",
+        "feed_direct",
+        "control_cabinet",
+        "lc220",
+        "lc440",
+        "bc970",
+        "burner"
+      ],
+      "bytes": 2917484,
+      "sha256": "f2378c68a4a13fcc57fa5170043a612a29010afe861c3803bfb3c9b0af2d3aa7"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-; PREMIUM S3000 opening commands, 2026-09-09, v2026.09.09.4.
+; PREMIUM S3000 opening commands, 2026-09-09, v2026.09.09.5.
 ; Codex / GPT-6 Astra. Moves only the explicitly named exported blocks.
 (defun s3:objects (names / ss i e result)
   (setq ss (ssget "_X" '((0 . "INSERT"))) result nil i 0)
@@ -47,7 +47,7 @@
       (if (member which '("all" "cabinet")) (s3:set "cabinet" opened))
       (if (member which '("all" "boiler")) (s3:set "boiler" opened))
       (command "_.REGEN") (command "_.UNDO" "_END") (setq *error* olderr))
-    (princ "Open the S3000 v2026.09.09.4 drawing in millimetres first."))
+    (princ "Open the S3000 v2026.09.09.5 drawing in millimetres first."))
   (princ))
 (defun c:S3000OPEN () (s3:run "all" T))
 (defun c:S3000CLOSE () (s3:run "all" nil))

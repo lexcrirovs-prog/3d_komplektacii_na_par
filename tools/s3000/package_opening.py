@@ -1,6 +1,6 @@
 """Package verified native drawings with commands and two local launchers.
 
-Version 2026.09.09.4, 2026-09-09, Codex / GPT-6 Astra.
+Version 2026.09.09.5, 2026-09-09, Codex / GPT-6 Astra.
 Never includes the original STEP, photographs or intermediate DXF files.
 """
 import argparse
@@ -10,7 +10,7 @@ from pathlib import Path
 import shutil
 import zipfile
 
-VERSION = '2026.09.09.4'
+VERSION = '2026.09.09.5'
 
 
 def package(delivery, autocad):
@@ -36,21 +36,21 @@ def package(delivery, autocad):
     # Use the same multiline LISP definitions checked in Core Console. No
     # SECURELOAD/TRUSTEDPATHS changes, startup plugins or persistent installation.
     startup = (root / 'S3000-doors.lsp').read_text(encoding='utf8') + '\n'.join([
-        '', '(c:S3000CLOSE)', '(c:S3000ECOVIEW)',
+        '', '(c:S3000CLOSE)', '(c:S3000CABINETOPEN)', '(c:S3000CABINETVIEW)',
         '(setq s3:status (open (strcat (getvar "DWGPREFIX") "S3000-start-status.txt") "w"))',
-        '(write-line (strcat (getvar "DWGNAME") "|READY|2026.09.09.4") s3:status)',
+        '(write-line (strcat (getvar "DWGNAME") "|READY|2026.09.09.5") s3:status)',
         '(close s3:status)', '(princ "Type S3000PANEL for door buttons and views.")', '(princ)', ''])
     (root / 'S3000-start.scr').write_text(startup, encoding='ascii')
     files.append(root / 'S3000-start.scr')
-    text = '''PREMIUM S-3000 — проставка 500 мм и открывание в AutoCAD
-Версия 2026.09.09.4 от 9 сентября 2026 года.
+    text = '''PREMIUM S-3000 — выровненный контроллер и проводка шкафа
+Версия 2026.09.09.5 от 9 сентября 2026 года.
 Исполнитель: Codex / GPT-6 Astra.
 
 БЫСТРЫЙ ЗАПУСК НА ЭТОМ КОМПЬЮТЕРЕ
 1. Полностью распакуйте архив.
 2. Запустите OPEN_WITH_ECONOMIZER.cmd — с экономайзером,
    либо OPEN_DIRECT.cmd — прямое питание котла.
-3. Откроется AutoCAD с ракурсом дымового соединения и проставки 500 мм.
+3. Откроется AutoCAD с открытым шкафом крупным планом.
 4. Введите S3000PANEL. Появится панель кнопок.
    После выбора действия нажмите «Вернуться к модели» для вращения вида.
 
@@ -72,6 +72,9 @@ S3000ECOVIEW — проставка дымового канала 500 мм кр�
 
 СОСТАВ
 DWG в миллиметрах, формат AutoCAD 2018. Подробные цветные блоки MESH.
+Исправлен наклон корпуса правого нижнего контроллера LC220 на 15,866°.
+Нижний жгут уложен вдоль двери с ровными отводами и семью креплениями.
+Корпус и подводка сохраняют положение относительно двери при открывании.
 Между дымовым выходом котла и экономайзером установлена полая проставка
 500 мм, с проходом 450 мм, в том же цвете, что и корпус экономайзера.
 Экономайзер отодвинут на 500 мм. Две водяные трассы удлинены до его фланцев.
@@ -92,7 +95,7 @@ DWG в миллиметрах, формат AutoCAD 2018. Подробные ц�
 Сайт: https://prgz.ru/komplektacii4/
 '''
     (root / 'README.txt').write_text(text, encoding='utf-8-sig')
-    files += [root / 'README.txt', root / 'cabinet-open.png', root / 'boiler-open.png', root / 'economizer-spacer.png']
+    files += [root / 'README.txt', root / 'cabinet-open.png', root / 'cabinet-closed.png', root / 'boiler-open.png', root / 'economizer-spacer.png']
     manifest = {'version': VERSION, 'date': '2026-09-09', 'executor': 'Codex / GPT-6 Astra',
                 'files': [{'name': p.name, 'bytes': p.stat().st_size,
                            'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]}

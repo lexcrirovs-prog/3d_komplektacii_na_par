@@ -15,7 +15,7 @@ from ezdxf.colors import rgb2int
 import numpy as np
 from PIL import Image
 
-VERSION = '2026.09.09.4'
+VERSION = '2026.09.09.5'
 AUTHOR = 'Codex / GPT-6 Astra'
 EXCLUSIONS = {'WITH_ECONOMIZER': {'feed_direct'},
               'DIRECT': {'economizer', 'feed_to_economizer', 'feed_from_economizer'}}

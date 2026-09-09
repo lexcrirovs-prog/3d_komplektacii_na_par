@@ -1,21 +1,21 @@
 {
-  "version": "2026.09.09.4",
+  "version": "2026.09.09.5",
   "date": "2026-09-09",
   "executor": "Codex / GPT-6 Astra",
   "status": "PASSED_DERIVATIVE_STRUCTURE",
-  "sourceSha256": "72978649525b0ac94c52982b91dfd59c381b10dac7dc4755ec89b4314442b201",
-  "outputSha256": "7b6d1395f90624a103dadcbd21694aa7942d3daf04d8f697128636b0b77acd7d",
-  "beforeBytes": 132958524,
-  "afterBytes": 10884400,
+  "sourceSha256": "f65f38b591d3f2af1e0caaadaf19bbfd44002f5c7a28bb3c5d66ec82e8cd3597",
+  "outputSha256": "c912c41f9681e28c1133671f57be024da618e75fbc07361e54d78c8072be9f81",
+  "beforeBytes": 133239380,
+  "afterBytes": 10946828,
   "simplifier": {
     "ratio": 0.15,
     "relativeError": 0.0003,
     "lockBorder": true,
     "note": "Algorithm error setting, not an independently measured surface-distance tolerance"
   },
-  "beforeTriangles": 3272421,
-  "afterTriangles": 1271717,
-  "nodes": 109,
+  "beforeTriangles": 3277745,
+  "afterTriangles": 1277077,
+  "nodes": 114,
   "boundsMaxErrorM": 0.000027621245695108598,
   "partBoundsErrors": [
     {
@@ -192,7 +192,7 @@
     },
     {
       "name": "lc220",
-      "maxErrorM": 7.476834211761485e-7
+      "maxErrorM": 9.923061691230473e-7
     },
     {
       "name": "lc440",
@@ -501,9 +501,9 @@
       "primitives": 2
     },
     {
-      "name": "lc220 geometry clean normals",
+      "name": "lc220 geometry clean normals.001",
       "before": 60854,
-      "after": 9790,
+      "after": 9826,
       "primitives": 3
     },
     {
@@ -555,10 +555,40 @@
       "primitives": 1
     },
     {
+      "name": "cabinet_door black.001",
+      "before": 1428,
+      "after": 1428,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door green",
+      "before": 36,
+      "after": 36,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door steel",
+      "before": 2872,
+      "after": 2872,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door duct",
+      "before": 808,
+      "after": 808,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door yellow",
+      "before": 576,
+      "after": 576,
+      "primitives": 1
+    },
+    {
       "name": "cabinet_door black",
-      "before": 22039,
-      "after": 18495,
-      "primitives": 10
+      "before": 21643,
+      "after": 18099,
+      "primitives": 9
     },
     {
       "name": "cabinet_interior black",

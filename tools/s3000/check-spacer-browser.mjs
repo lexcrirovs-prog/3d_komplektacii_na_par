@@ -64,7 +64,7 @@ try {
   assert((await visible()).economizer_spacer_500mm,'The flue connection belongs to the economizer itself');
   assert.deepEqual(errors,[]);
   assert.equal(await manifestHash(),manifestSha256);
-  const report={version:'2026.09.09.4',status:'PASSED_SPACER_BROWSER',url:base,manifestSha256,geometry,
+  const report={version:(await (await page.request.get(new URL('version.json',base).href)).json()).version,status:'PASSED_SPACER_BROWSER',url:base,manifestSha256,geometry,
     checks:['Actual decoded spacer is 500 mm long at the two flue end planes','Same charcoal material as economizer','Spacer hides and reappears with economizer','Water routes and direct alternative switch correctly','Hiding accessories retains the economizer flue connection'],errors};
   await writeFile(resolve(out,'spacer-browser.json'),JSON.stringify(report,null,2));
   console.log(JSON.stringify(report));

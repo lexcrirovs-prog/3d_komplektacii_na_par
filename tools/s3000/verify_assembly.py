@@ -34,7 +34,7 @@ def verify(root):
     assert joint['boiler_bore_m'] == joint['economizer_bore_m'] == 0.45
     assert joint['boiler_outside_m'] == joint['economizer_outside_m'] == 0.456
     assert assembly['engineering_acceptance'] == 'NOT_VERIFIED'
-    assert assembly['version']=='2026.09.09.4'
+    assert assembly['version']=='2026.09.09.5'
     parts={p['id']:p for p in assembly['parts']}
     assert parts['pressure_header']['bounds_blender'][0][0]>.85, 'Header must be on the sight-glass side'
     assert parts['pressure_header']['bounds_blender'][0][1]<-.68

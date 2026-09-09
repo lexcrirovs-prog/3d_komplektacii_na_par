@@ -50,7 +50,7 @@ const partBoundsErrors = before.partBounds.map(b => {
 });
 assert(partBoundsErrors.every(p=>p.maxErrorM < .002), 'A component bounding box changed by 2 mm or more');
 assert.equal(sha(await readFile(source)), originalHash);
-const report = { version: '2026.09.09.4', date: '2026-09-09', executor: 'Codex / GPT-6 Astra', status: 'PASSED_DERIVATIVE_STRUCTURE', sourceSha256: originalHash, outputSha256: sha(await readFile(target)), beforeBytes: (await stat(source)).size, afterBytes: (await stat(target)).size,
+const report = { version: '2026.09.09.5', date: '2026-09-09', executor: 'Codex / GPT-6 Astra', status: 'PASSED_DERIVATIVE_STRUCTURE', sourceSha256: originalHash, outputSha256: sha(await readFile(target)), beforeBytes: (await stat(source)).size, afterBytes: (await stat(target)).size,
   simplifier: { ratio: .15, relativeError: Number(tolerance), lockBorder: true, note: 'Algorithm error setting, not an independently measured surface-distance tolerance' },
   beforeTriangles: before.meshes.reduce((n,m)=>n+m.triangles,0), afterTriangles: after.meshes.reduce((n,m)=>n+m.triangles,0), nodes: after.nodes.length, boundsMaxErrorM: boundsMaxError,
   partBoundsErrors, meshes: before.meshes.map(m => ({ name: m.name, before: m.triangles, after: after.meshes.find(a=>a.name===m.name).triangles, primitives: m.materials.length })), textures: after.textures };

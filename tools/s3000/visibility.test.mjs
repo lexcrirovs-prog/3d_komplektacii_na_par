@@ -16,8 +16,8 @@ test('Removing economizer replaces both branches with direct pipe', () => {
   assert.ok(ids.includes('feed_direct'))
   assert.ok(!ids.includes('feed_to_economizer') && !ids.includes('feed_from_economizer') && !ids.includes('economizer'))
 })
-test('Hiding accessories hides all pipes but preserves enabled optional modules', () => {
-  assert.deepEqual(new Set(visible(['economizer', 'deaerator'], false)), new Set(['boiler', 'economizer', 'deaerator']))
+test('Hiding accessories preserves the boiler body, opening door and internal tubes', () => {
+  assert.deepEqual(new Set(visible(['economizer', 'deaerator'], false)), new Set(['boiler', 'boiler_door', 'boiler_tubes', 'boiler_tubeplate', 'economizer', 'deaerator']))
 })
 test('Deaerator and burner selection do not alter feed route', () => {
   for (const econ of [[], ['economizer']]) {

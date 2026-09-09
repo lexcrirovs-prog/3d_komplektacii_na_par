@@ -1,0 +1,348 @@
+{
+  "version": "2026.09.09.3",
+  "date": "2026-09-09",
+  "executor": "Codex / GPT-6 Astra",
+  "sourceCommit": "118703d8dbf8bea0429b1ee5e50b6f43ef5229a8",
+  "localTests": {
+    "passed": 7,
+    "failed": 0,
+    "build": "PASSED_TYPESCRIPT_VITE"
+  },
+  "sourceTubes": {
+    "source": "PR.3000.01.001(S)СБ Котел паровой (1,2 МПа).stp",
+    "sha256": "0685c791c2b7fe277a2b99595d1048afb08aed18c734e168d04166e5380e1651",
+    "selected_solids": [
+      0,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208
+    ],
+    "excluded_solid_count": 534,
+    "smoke_tubes": 80,
+    "smoke_outer_diameter_mm": 51,
+    "smoke_inner_diameter_mm": 46,
+    "smoke_length_mm": 2770
+  },
+  "originalBlendUnchangedSha256": "2ed8602f487c5edf2fc26adf16cb702c923ce8c0d57b0f24e8011e20605fbc76",
+  "website": {
+    "live": {
+      "version": "2026.09.09.3",
+      "status": "PASSED_OPENING_BROWSER",
+      "url": "https://prgz.ru/komplektacii4/",
+      "manifestSha256": "e72c3b3f7d18442bbd6707b7164e8d8f64a47cf52794e5135c37077380d87d4b",
+      "checks": [
+        "Cabinet and all three door controllers move together; body remains fixed",
+        "Boiler door and burner move together; tube bundle remains fixed",
+        "Economizer route still switches while both doors are open",
+        "Closing restores every component to the initial transform",
+        "Rapid reversal returns exactly to closed",
+        "Cabinet open restores accessory visibility; boiler door is never hidden with accessories",
+        "Reduced-motion preference supported",
+        "Mobile controls remain usable without horizontal overflow",
+        "Zero idle frames after doors and camera settle"
+      ],
+      "errors": [],
+      "idleFrames": 0
+    },
+    "previousFeatureChecks": {
+      "status": "PASSED_BROWSER",
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.09.09.3/",
+      "mode": "candidate",
+      "manifestSha256": "e72c3b3f7d18442bbd6707b7164e8d8f64a47cf52794e5135c37077380d87d4b",
+      "checks": [
+        "Smooth camera transition after 3 seconds idle",
+        "Economizer changes route and URL",
+        "Actual 3D visibility: direct branch only",
+        "Actual 3D visibility: both economizer branches only",
+        "Deaerator and URL state survive reload",
+        "All 27 equipment cards and focus",
+        "Actual mouse picking on model",
+        "Accessories toggle hides every accessory node",
+        "Burner toggle and disabled focus",
+        "Emulated touch rotation and mouse picking after drag",
+        "Mobile viewport: no horizontal overflow (desktop emulation)"
+      ],
+      "errors": [],
+      "physicalPhone": false,
+      "date": "2026-09-09T14:40:47.987Z"
+    },
+    "httpsFilesChecked": 24,
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-v2026.09.09.2",
+      "neighborsUnchanged": true,
+      "files": 26
+    },
+    "previousVersionUrl": "https://prgz.ru/komplektacii4-v2026.09.09.2/",
+    "webTriangles": 1269997,
+    "fullTriangles": 3270373,
+    "modelBytes": 11475072
+  },
+  "autocad": [
+    {
+      "geometry": {
+        "status": "PASSED_AUTOCAD_SAVE_REOPEN_ROUNDTRIP",
+        "file": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.3.dwg",
+        "autocad": "2027 Core Console",
+        "dwg_format": "AutoCAD 2018 / AC1032",
+        "units": "mm",
+        "blocks": 53,
+        "meshes": 225,
+        "faces": 3270099,
+        "triangles": 3277993,
+        "topology_preserved": true,
+        "whole_mesh_winding_normalized": [
+          {
+            "block": "S3000_control_cabinet",
+            "mesh": 0,
+            "faces": 108
+          },
+          {
+            "block": "S3000_cabinet_door",
+            "mesh": 3,
+            "faces": 264
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 2,
+            "faces": 12
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 3,
+            "faces": 3844
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 4,
+            "faces": 248
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 5,
+            "faces": 168
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 6,
+            "faces": 1188
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 7,
+            "faces": 60
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 8,
+            "faces": 60
+          }
+        ],
+        "coordinates_preserved_at_mm": 0.001,
+        "colours_preserved": true,
+        "audit_errors_on_save": 0,
+        "audit_errors_on_reopen": 0,
+        "bytes": 164065653,
+        "sha256": "3279be07e89543500ed47153958646518ac3144ed4c7084b9ae7fc26f35bb70e"
+      },
+      "motion": {
+        "version": "2026.09.09.3",
+        "status": "PASSED_NATIVE_AUTOCAD_OPENING",
+        "drawing": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.3.dwg",
+        "drawingSha256": "3279be07e89543500ed47153958646518ac3144ed4c7084b9ae7fc26f35bb70e",
+        "fixture": false,
+        "states": [
+          "closed",
+          "cabinet",
+          "both",
+          "both-repeat",
+          "boiler-only",
+          "closed-again",
+          "closed-repeat"
+        ],
+        "blocksChecked": 53,
+        "maximumPositionErrorMm": 1e-12,
+        "auditErrors": 0,
+        "sourceUnchanged": true,
+        "plots": [
+          "cabinet-open.pdf",
+          "boiler-open.pdf"
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "status": "PASSED_AUTOCAD_SAVE_REOPEN_ROUNDTRIP",
+        "file": "S3000_ADL_8bar_DIRECT_v2026.09.09.3.dwg",
+        "autocad": "2027 Core Console",
+        "dwg_format": "AutoCAD 2018 / AC1032",
+        "units": "mm",
+        "blocks": 51,
+        "meshes": 220,
+        "faces": 3246343,
+        "triangles": 3254237,
+        "topology_preserved": true,
+        "whole_mesh_winding_normalized": [
+          {
+            "block": "S3000_control_cabinet",
+            "mesh": 0,
+            "faces": 108
+          },
+          {
+            "block": "S3000_cabinet_door",
+            "mesh": 3,
+            "faces": 264
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 2,
+            "faces": 12
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 3,
+            "faces": 3844
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 4,
+            "faces": 248
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 5,
+            "faces": 168
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 6,
+            "faces": 1188
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 7,
+            "faces": 60
+          },
+          {
+            "block": "S3000_cabinet_interior",
+            "mesh": 8,
+            "faces": 60
+          }
+        ],
+        "coordinates_preserved_at_mm": 0.001,
+        "colours_preserved": true,
+        "audit_errors_on_save": 0,
+        "audit_errors_on_reopen": 0,
+        "bytes": 162612745,
+        "sha256": "57112008116fe49bdf9c4c4e001a4f1d9d73bfd92b9b7858f3b07eabb39c3b2c"
+      },
+      "motion": {
+        "version": "2026.09.09.3",
+        "status": "PASSED_NATIVE_AUTOCAD_OPENING",
+        "drawing": "S3000_ADL_8bar_DIRECT_v2026.09.09.3.dwg",
+        "drawingSha256": "57112008116fe49bdf9c4c4e001a4f1d9d73bfd92b9b7858f3b07eabb39c3b2c",
+        "fixture": false,
+        "states": [
+          "closed",
+          "cabinet",
+          "both",
+          "both-repeat",
+          "boiler-only",
+          "closed-again",
+          "closed-repeat"
+        ],
+        "blocksChecked": 51,
+        "maximumPositionErrorMm": 1e-12,
+        "auditErrors": 0,
+        "sourceUnchanged": true,
+        "plots": []
+      }
+    }
+  ],
+  "autocadPackage": {
+    "status": "PASSED_PACKAGE_SHA256_AND_CRC",
+    "version": "2026.09.09.3",
+    "file": "S3000_AutoCAD_OPENING_v2026.09.09.3.zip",
+    "files": 13,
+    "bytes": 173870700,
+    "sha256": "ecd2c5e6dbc89b62e1b7a43eda0522b9915b726ed7088f4af6f7f0e9438cf7ee"
+  },
+  "nativeWindowStartup": "S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.3.dwg|READY|2026.09.09.3"
+}

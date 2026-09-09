@@ -1,25 +1,12 @@
 {
-  "status": "PASSED_DERIVATIVE_STRUCTURE",
-  "version": "2026.09.09.1",
-  "date": "2026-09-09",
-  "executor": "Codex / GPT-6",
-  "detailed_source_version": "2026.09.08.4",
-  "before_bytes": 124986168,
-  "previous_web_bytes": 16871620,
-  "after_bytes": 9597904,
-  "nodes": 98,
+  "status": "PASSED_MESHOPT_ROUNDTRIP",
+  "before_bytes": 132902144,
+  "after_bytes": 18203904,
+  "nodes": 108,
   "compression": "EXT_meshopt_compression",
   "position_bits": 16,
   "normal_bits": 12,
-  "triangles": 1163573,
-  "original_triangles": 3164288,
+  "triangles": 3270373,
   "bounds_max_error_m": 0.000027621245695108598,
-  "simplification": {
-    "ratio": 0.15,
-    "relativeError": 0.0003,
-    "lockBorder": true,
-    "note": "Algorithm error setting, not an independently measured surface-distance tolerance"
-  },
-  "details": "web-model-report.json",
   "offline_decoder": "three-stdlib / Drei useGLTF bundled MeshoptDecoder"
 }

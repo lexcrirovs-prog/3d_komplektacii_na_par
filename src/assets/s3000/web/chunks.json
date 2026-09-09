@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
-  "parts": 49,
-  "bytes": 10202276,
+  "parts": 54,
+  "bytes": 11475072,
   "files": [
     {
       "group": "boiler",
@@ -9,8 +9,8 @@
       "parts": [
         "boiler"
       ],
-      "bytes": 5122904,
-      "sha256": "dc53eecc1828055c220afcbbb4307886a8363e6aac208de2da73166b012c9254"
+      "bytes": 4032512,
+      "sha256": "10048b799f9371ea496edc2949ec0327d81a6f1b422cdc8b46e5eefafbdc3a8a"
     },
     {
       "group": "cables",
@@ -18,8 +18,8 @@
       "parts": [
         "cable_routes"
       ],
-      "bytes": 1279520,
-      "sha256": "1614f0932523711aa6c2b193226295199db3a0a0a376ed22ccafc346849efb0b"
+      "bytes": 1279664,
+      "sha256": "5756778576626cdd3163e10304efefeed9f6f2b1967054c0b502e6cfba680cfc"
     },
     {
       "group": "deaerator",
@@ -27,8 +27,8 @@
       "parts": [
         "deaerator"
       ],
-      "bytes": 882368,
-      "sha256": "d639ea54a216c3a2a48ea41f7a078627de83979f20143ba683ba4a6f91d4e298"
+      "bytes": 882512,
+      "sha256": "df27ecf8063fa7331b1fcc611de757319727b0c9296f385de2983c4af24d5150"
     },
     {
       "group": "equipment",
@@ -79,10 +79,15 @@
         "lc220",
         "lc440",
         "bc970",
-        "burner"
+        "burner",
+        "boiler_door",
+        "boiler_tubes",
+        "boiler_tubeplate",
+        "cabinet_door",
+        "cabinet_interior"
       ],
-      "bytes": 2917484,
-      "sha256": "f2378c68a4a13fcc57fa5170043a612a29010afe861c3803bfb3c9b0af2d3aa7"
+      "bytes": 5280384,
+      "sha256": "a2f9a04d598124e0d5a6ddb4dae361e21afc35f32c5ecdbf173104068c9b8480"
     }
   ]
 }

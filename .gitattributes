@@ -1,5 +1,7 @@
 # Vite output contains vendor shader strings; review the source files instead.
 dist/** linguist-generated=true
+dist/** -text
 dist/index.html -whitespace
+dist/assets/*.js -whitespace
 *.glb binary
 docs/previews/*.png binary

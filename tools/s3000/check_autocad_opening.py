@@ -63,7 +63,8 @@ def check(source, executable, output, plots=False, fixture=False):
             lines += ['(c:S3000DOORVIEW)',
                       *plot_lines('boiler-open')]
         if plots and state == 'closed-repeat':
-            lines += ['(c:S3000ECOVIEW)', *plot_lines('economizer-spacer')]
+            lines += ['(c:S3000CABINETVIEW)', *plot_lines('cabinet-closed'),
+                      '(c:S3000ECOVIEW)', *plot_lines('economizer-spacer')]
     lines += ['(command "_.AUDIT" "_N")', '(princ "S3000_OPENING_CHECK_FINISHED")',
               '(command "_.QUIT" "_Y")', '']
     script = output / 'check.scr'; script.write_text('\n'.join(lines), encoding='ascii')
@@ -98,11 +99,11 @@ def check(source, executable, output, plots=False, fixture=False):
             assert np.max(np.abs(difference[:3])) < 0.000001, (state, name, 'position', difference.tolist())
             assert abs(difference[3]) < 0.00000001, (state, name, 'angle')
     assert source_hash == hashlib.sha256(source.read_bytes()).hexdigest()
-    result = {'version': '2026.09.09.4', 'status': 'PASSED_NATIVE_AUTOCAD_OPENING',
+    result = {'version': '2026.09.09.5', 'status': 'PASSED_NATIVE_AUTOCAD_OPENING',
               'drawing': source.name, 'drawingSha256': source_hash, 'fixture': fixture,
               'states': [s for s, _ in STATES], 'blocksChecked': len(initial),
               'maximumPositionErrorMm': max_error, 'auditErrors': 0, 'sourceUnchanged': True,
-              'plots': ['cabinet-open.pdf', 'boiler-open.pdf', 'economizer-spacer.pdf'] if plots else []}
+              'plots': ['cabinet-open.pdf', 'cabinet-closed.pdf', 'boiler-open.pdf', 'economizer-spacer.pdf'] if plots else []}
     (output / 'opening-autocad.json').write_text(json.dumps(result, indent=2), encoding='utf8')
     print(json.dumps(result), flush=True)
 

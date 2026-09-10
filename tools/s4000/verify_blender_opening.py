@@ -91,6 +91,21 @@ def main(a):
             maximum_matrix_error=maximum_error, outlet_connected=True,
             source_normal_respected=True, fixed_pump_supply_boundary=True,
             level_gauge_rotated_with_tank=True)
+    if 'pressure_revision' in report:
+        pressure = report['pressure_revision']
+        points = np.asarray(pressure['centerline_m'])
+        assert np.allclose(points[0], [.948531,-.99,1.925])
+        assert np.allclose(points[-1], [1.42,-.99,2.85])
+        assert len(set(map(tuple, np.round(points,8)))) == len(points)
+        assert np.all(np.diff(points[:,0]) >= -1e-8), 'The pressure bend must not return into a loop'
+        for key, value in pressure['retained_instrument_fingerprints'].items():
+            assert fingerprint(bpy.data.objects[key]) == value, key
+        for cable_path in pressure['cable_paths_m']:
+            assert np.allclose(cable_path[-1][2], 1.225), 'Cable must reach cabinet gland'
+        verification['pressure_group'] = dict(open_centerline=True, closed_loop=False,
+            boiler_endpoints_preserved=True, unchanged_instruments=5,
+            instrument_positions_preserved=True, unchanged_other_parts=pressure['retained_other_parts'],
+            cable_leads_rerouted=3, references=pressure['reference_files'])
     (d/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(verification, ensure_ascii=False), flush=True)
     if not a.render: return
@@ -105,6 +120,8 @@ def main(a):
     ]
     if 'rotation' in report:
         renders.append(('07-deaerator-rotated', 1, 'CAM_Deaerator'))
+    if 'pressure_revision' in report:
+        renders.append(('08-pressure-gooseneck', 1, 'CAM_Pressure'))
     for name, frame, cam in renders:
         if a.views and name not in a.views: continue
         s.frame_set(frame); s.camera = bpy.data.objects[cam]

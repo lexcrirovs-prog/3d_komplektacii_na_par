@@ -22,6 +22,8 @@ def controls(manifest,destination):
  template=Path(__file__).with_name('options-template.lsp').read_text(encoding='ascii')
  template=template.replace('2026.09.10.1',manifest['version'])
  options=template.replace('__RULES__',rules).replace('__DEFAULT__',default)
+ if 'pressure_revision' in manifest:
+  options+='\n(defun c:S4000PRESSUREVIEW () (command "_.-VIEW" "_R" "S4000_PRESSURE") (princ))\n'
  destination.joinpath('S4000-options.lsp').write_text(options,encoding='ascii')
  import shutil
  shutil.copy2(Path(__file__).with_name('S4000-options.dcl'),destination/'S4000-options.dcl')
@@ -73,6 +75,9 @@ def create(cache,manifest_path,destination):
   doc.views.get('S4000_DEAERATOR').dxf.target=(-3650,30,1650)
   doc.views.get('S4000_ALL').dxf.direction=(-1,-1,.72)
   doc.views.get('S4000_ALL').dxf.target=(-500,150,1700)
+ if 'pressure_revision' in manifest:
+  doc.views.new('S4000_PRESSURE',dxfattribs={'height':1900,'width':2850,
+   'direction':(1,-.7,.45),'target':(1120,-980,2450),'render_mode':4})
  audit=doc.audit();assert not audit.errors and not audit.fixes,(audit.errors,audit.fixes)
  target=destination/('S4000_COMFORT_8-12bar_v'+manifest['version']+'.dxf');assert not target.exists(),target
  doc.saveas(target,fmt='bin');report.update(blocks=len(report['parts']),triangles=sum(x['triangles'] for x in report['parts']),

@@ -1,0 +1,15 @@
+{
+  "version": "2026.09.10.5",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_DESKTOP_LOAD_AND_DIALOG_PARSE",
+  "file": "S4000_COMFORT_8-12bar_v2026.09.10.5.dwg",
+  "sha256": "75129b1788de408c0611a01338b47eee77cdb3ebb425b6c90efb1e0932dfd80f",
+  "source_file_unchanged": true,
+  "door_blocks_ready": true,
+  "pressure_view_ready": true,
+  "door_dialog_parsed": true,
+  "options_dialog_parsed": true,
+  "button_click_test": "NOT_RUN",
+  "evidence": "Native AutoCAD GUI startup script readback; separate from Core Console tests"
+}

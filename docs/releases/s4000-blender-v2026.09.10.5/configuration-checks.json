@@ -1,0 +1,1162 @@
+{
+  "status": "PASSED_64_CONFIGURATION_GRAPHS",
+  "configurations": 64,
+  "maximum_endpoint_gap_m": 0,
+  "cad_rotations_rigid": true,
+  "boiler_feed": "native rear DN32",
+  "flue_spacer_mm": 500,
+  "checks": [
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 57,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 58,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 58,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 59,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 58,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 59,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 59,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 60,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 58,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 59,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 59,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 60,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 59,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 60,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 60,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 60,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 64,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 60,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 61,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 62,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 64,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 63,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 64,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 64,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 65,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 64,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 65,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 65,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 66,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 64,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 65,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 65,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 66,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 65,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 66,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 66,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 67,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ]
+    }
+  ]
+}

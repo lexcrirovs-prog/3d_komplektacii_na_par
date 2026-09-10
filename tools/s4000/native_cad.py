@@ -104,6 +104,7 @@ def run(a):
  expected=snapshot(a.source);source_hash=hashlib.sha256(a.source.read_bytes()).hexdigest()
  view_names=['S4000_ALL','S4000_REAR','S4000_PUMPS','S4000_DEAERATOR','S4000_TOP']
  if 'door_groups' in manifest:view_names+=['S4000_DOOR','S4000_CABINET']
+ if 'pressure_revision' in manifest:view_names+=['S4000_PRESSURE']
  style_views='(foreach v \'('+' '.join('"'+v+'"' for v in view_names)+') (command "_.-VIEW" "_E" "_V" v "PREMIUM_SOLID" "" ""))'
  overview_direction='-1,-1,0.72' if 'door_groups' in manifest else '1,-1,0.8'
  # Use full ASCII paths only in AutoLISP; source is passed as a structured arg.

@@ -144,3 +144,19 @@ Review all six actual AutoCAD PNGs before running the packager. The native PDFs 
 ```
 
 The optional local launcher targets the user's installed `E:\AutoCAD 2027\acad.exe`. Its startup script defines the reviewed commands in the opened drawing only. Portable manual use is `APPLOAD` of `S4000-controls.lsp`, followed by `S4000PANEL` or `S4000OPTIONS`; keep both DCL files alongside the DWG. No startup suite, registry, trusted-path or `SECURELOAD` settings are changed. Native command tests and desktop dialog button clicks remain distinct verification facts.
+
+## Pressure gooseneck correction — 2026.09.10.5
+
+Version `2026.09.10.5`, 2026-09-10, Codex / GPT-6 Astra replaces only the incorrect closed oval in `pressure_header` and the three associated pressure-instrument cable leads. The user explicitly selected the open bend form from the DA-15 reference while retaining the boiler instruments. Absolute DA installation dimensions, DN32 and DA instruments are not substituted for the installed boiler takeoff and instruments.
+
+Use the immutable Blender `.3` delivery as `$s4PressureSource`, fresh `$s4PressureBlender` and `$s4PressureCad` delivery directories, and private `$s4PressureCache`. Supply the owner's three local reference image paths as `$s4PressureReferences`; do not commit those images. The revision verifies the old scene hash, identifies the exact three-lead vertex/face prefix, replaces that prefix, and verifies the untouched cable tail plus all 72 other existing parts and five instrument objects.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/revise_pressure_gooseneck.py -- --source $s4PressureSource --output $s4PressureBlender --references $s4PressureReferences
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4PressureBlender --render --views 01-closed 08-pressure-gooseneck
+& $s4Py tools/s4000/verify_options.py "$s4PressureBlender/assembly-source.json" --output "$s4PressureBlender/configuration-checks.json"
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/prepare_opening_cad.py -- --source $s4PressureBlender --output $s4PressureCad --cache "$s4PressureCache/meshes" --version 2026.09.10.5
+& $s4Py tools/s4000/create_cad.py --cache "$s4PressureCache/meshes" --manifest "$s4PressureCad/assembly.json" --output "$s4PressureCad/AutoCAD"
+```
+
+Then run the same native/door/configuration verification commands above with `.5` paths and fresh private verification directories. The pressure revision automatically adds the saved view `S4000_PRESSURE` and command `S4000PRESSUREVIEW`. The full door plot run also creates `S4000-pressure-gooseneck.pdf`. Render and inspect all **seven** current AutoCAD views before packaging; the packager requires the pressure proof and the extra native view for this revision. The previous CAD and Blender releases remain separate and unchanged.

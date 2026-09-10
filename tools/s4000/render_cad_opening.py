@@ -1,4 +1,4 @@
-"""Render all six native CAD plot pages for visual review, without modifying PDFs."""
+"""Render native CAD plot pages for visual review, without modifying PDFs."""
 import argparse
 from pathlib import Path
 import pypdfium2 as pdfium
@@ -12,6 +12,8 @@ def render(a):
              (a.doors, 'S4000-boiler-open', '04-autocad-boiler-open'),
              (a.doors, 'S4000-both-open', '05-autocad-both-open'),
              (a.doors, 'S4000-deaerator-rotated', '06-autocad-deaerator')]
+    if (a.doors/'S4000-pressure-gooseneck.pdf').exists():
+        views.append((a.doors, 'S4000-pressure-gooseneck', '07-autocad-pressure-gooseneck'))
     for folder, source, stem in views:
         document = pdfium.PdfDocument(folder/(source+'.pdf'))
         assert len(document) == 1

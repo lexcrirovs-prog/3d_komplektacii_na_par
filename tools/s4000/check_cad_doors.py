@@ -94,6 +94,8 @@ def check(a):
               '(c:S4000ALL)', '(sd4:record "both-all.txt")', '(c:S4000CLOSE)']
     if a.plots:
         lines += ['(c:S4000DAVIEW)', *plot_lines('S4000-deaerator-rotated')]
+        if 'pressure_revision' in manifest:
+            lines += ['(c:S4000PRESSUREVIEW)', *plot_lines('S4000-pressure-gooseneck')]
     if a.open_copy:
         assert not a.fixture and not a.open_copy.exists() and str(a.open_copy).isascii()
         lines += ['(c:S4000OPEN)', '(c:S4000VIEW)', '(command "_.ZOOM" "_E")',
@@ -130,6 +132,8 @@ def check(a):
                                    sha256=open_sha, fresh_reopen_passed=True)
     if a.plots:
         result['native_pdfs'] = ['S4000-'+x+'.pdf' for x in ['cabinet-open','boiler-open','both-open','deaerator-rotated']]
+        if 'pressure_revision' in manifest:
+            result['native_pdfs'].append('S4000-pressure-gooseneck.pdf')
         for name in result['native_pdfs']: assert (out/name).stat().st_size > 10000
     (out/'doors-verification.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(result, ensure_ascii=False), flush=True)

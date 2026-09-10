@@ -13,13 +13,14 @@ VERSION = '2026.09.10.4'
 
 
 def main(a):
-    source = a.source/'S4000_COMFORT_OPENING_v2026.09.10.3.blend'
+    source_opening = json.loads((a.source/'opening.json').read_text(encoding='utf8'))
+    source = a.source/('S4000_COMFORT_OPENING_v'+source_opening['version']+'.blend')
     proof = json.loads((a.source/'verification.json').read_text(encoding='utf8'))
     assert sha256(source) == proof['checked_file_sha256']
     assert proof['deaerator_rotation']['degrees'] == 180
     manifest = json.loads((a.source/'assembly-source.json').read_text(encoding='utf8'))
     opening = json.loads((a.source/'opening.json').read_text(encoding='utf8'))
-    assert manifest['version'] == '2026.09.10.3'
+    assert manifest['version'] == source_opening['version']
     a.output.mkdir(parents=True, exist_ok=True)
     target = a.output/'assembly.json'
     assert not target.exists(), 'Use a fresh CAD delivery'
@@ -40,7 +41,7 @@ def main(a):
         assert points
         part['bounds_blender'] = [[float(fn(v[i] for v in points)) for i in range(3)] for fn in [min, max]]
     manifest['source_blender_version'] = manifest['version']
-    manifest['version'] = VERSION
+    manifest['version'] = a.version
     manifest['date'] = '2026-09-10'
     manifest['author'] = 'Codex / GPT-6 Astra'
     manifest['source_scene_sha256'] = sha256(source)
@@ -49,7 +50,7 @@ def main(a):
     target.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf8')
     extract(source, target, a.cache)
     assert sha256(source) == proof['checked_file_sha256']
-    provenance = dict(version=VERSION, date=manifest['date'], author=manifest['author'],
+    provenance = dict(version=a.version, date=manifest['date'], author=manifest['author'],
         source=source.name, source_version=manifest['source_blender_version'],
         source_sha256=proof['checked_file_sha256'], source_unchanged=True,
         source_opening_verification=proof['status'], exported_parts=len(manifest['parts']),
@@ -63,4 +64,5 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     for name in ['source', 'output', 'cache']:
         p.add_argument('--'+name, type=Path, required=True)
+    p.add_argument('--version', default=VERSION)
     main(p.parse_args(sys.argv[sys.argv.index('--')+1:]))

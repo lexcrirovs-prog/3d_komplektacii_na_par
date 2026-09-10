@@ -21,7 +21,7 @@ def write(path, value):
 
 
 def package(a):
-    assert a.native_plots_reviewed, 'Review all six native AutoCAD views before packaging'
+    assert a.native_plots_reviewed, 'Review all native AutoCAD views before packaging'
     root = a.delivery.resolve(); cad = root/'AutoCAD'
     manifest = read(root/'assembly.json'); source = read(root/'source-scene.json')
     version = manifest['version']; stem = 'S4000_COMFORT_8-12bar_v'+version
@@ -45,7 +45,21 @@ def package(a):
     prior_proof = read(old_dwg.with_suffix('.verification.json'))
     assert digest(old_dwg) == prior_proof['sha256']
     assert prior_proof['status'] == 'PASSED_AUTOCAD_SAVE_OPTIONS_REOPEN'
-    assert len(list((root/'previews').glob('*.png'))) == 6
+    view_count = 7 if 'pressure_revision' in manifest else 6
+    assert len(list((root/'previews').glob('*.png'))) == view_count
+    if 'pressure_revision' in manifest:
+        pressure = read(a.blender_source/'verification.json')['pressure_group']
+        assert pressure['open_centerline'] and not pressure['closed_loop']
+        assert pressure['unchanged_instruments'] == 5 and pressure['instrument_positions_preserved']
+        assert pressure['unchanged_other_parts'] == 72 and pressure['cable_leads_rerouted'] == 3
+        source['pressure_group'] = pressure
+        write(root/'source-scene.json', source)
+        previous = read(root/'source-preservation.json')
+        assert previous['status'] == 'PASSED_PREVIOUS_RELEASE_HASHES'
+        assert previous['version'] == version and len(previous['files']) == 3
+        assert all(p['unchanged'] for p in previous['files'])
+        source['previous_release_files'] = previous['files']
+        write(root/'source-scene.json', source)
 
     for name in ['Комплектация-Комфорт.csv', 'Комплектация-Комфорт.json', 'sources.json']:
         shutil.copy2(a.previous_cad/name, root/name)
@@ -57,6 +71,8 @@ def package(a):
     pdfs = [(a.native_plots, 'S4000-native-overview'), (a.native_plots, 'S4000-native-direct')]
     pdfs += [(a.door_plots, name) for name in ['S4000-cabinet-open', 'S4000-boiler-open',
                                              'S4000-both-open', 'S4000-deaerator-rotated']]
+    if 'pressure_revision' in manifest:
+        pdfs.append((a.door_plots, 'S4000-pressure-gooseneck'))
     for folder, name in pdfs:
         assert (folder/(name+'.pdf')).stat().st_size > 10000
 
@@ -74,7 +90,7 @@ def package(a):
                  native=native, doors=doors, door_fixture=fixture,
                  flow_check={k:v for k,v in graphs.items() if k != 'checks'},
                  previous_dwg_unchanged=True, source_blender_unchanged=True,
-                 native_plots_reviewed=6, desktop_dialog_click_test='NOT_RUN',
+                 native_plots_reviewed=view_count, desktop_dialog_click_test='NOT_RUN',
                  model_representation='Detailed native AutoCAD MESH entities in named blocks; no decimation',
                  source_catalog_version='2026.09.10.1',
                  unresolved=['LCS supplied 600 mm versus BOM 800 mm',
@@ -89,6 +105,8 @@ def package(a):
         'Комплектация-Комфорт.csv', 'Комплектация-Комфорт.json', 'Недостающие-модели.md',
         'sources.json', 'assembly.json', 'source-scene.json', 'configuration-checks.json', 'verification.json']]
     selected += sorted((root/'previews').glob('*.png'))
+    if 'pressure_revision' in manifest:
+        selected.append(root/'source-preservation.json')
     assert len(set(selected)) == len(selected) and all(p.stat().st_size for p in selected)
     hashes = {p.relative_to(root).as_posix(): digest(p) for p in selected}
     checksum = root/'SHA256SUMS.txt'

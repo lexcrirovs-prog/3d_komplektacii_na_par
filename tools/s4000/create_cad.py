@@ -24,6 +24,9 @@ def controls(manifest,destination):
  options=template.replace('__RULES__',rules).replace('__DEFAULT__',default)
  if 'pressure_revision' in manifest:
   options+='\n(defun c:S4000PRESSUREVIEW () (command "_.-VIEW" "_R" "S4000_PRESSURE") (princ))\n'
+ if 'blowdown_revision' in manifest:
+  options+='\n(defun c:S4000BLOWDOWNVIEW () (command "_.-VIEW" "_R" "S4000_BLOWDOWN") (princ))\n'
+  options+='\n(defun c:S4000ROUTINGVIEW () (command "_.-VIEW" "_R" "S4000_ROUTING") (princ))\n'
  destination.joinpath('S4000-options.lsp').write_text(options,encoding='ascii')
  import shutil
  shutil.copy2(Path(__file__).with_name('S4000-options.dcl'),destination/'S4000-options.dcl')
@@ -78,6 +81,10 @@ def create(cache,manifest_path,destination):
  if 'pressure_revision' in manifest:
   doc.views.new('S4000_PRESSURE',dxfattribs={'height':1900,'width':2850,
    'direction':(1,-.7,.45),'target':(1120,-980,2450),'render_mode':4})
+ if 'blowdown_revision' in manifest:
+  for name,direction,target,height in [('S4000_BLOWDOWN',(1,1,.55),(2700,2680,1720),4500),
+                                      ('S4000_ROUTING',(1,1,.72),(0,1000,1700),7700)]:
+   doc.views.new(name,dxfattribs={'height':height,'width':height*1.5,'direction':direction,'target':target,'render_mode':4})
  audit=doc.audit();assert not audit.errors and not audit.fixes,(audit.errors,audit.fixes)
  target=destination/('S4000_COMFORT_8-12bar_v'+manifest['version']+'.dxf');assert not target.exists(),target
  doc.saveas(target,fmt='bin');report.update(blocks=len(report['parts']),triangles=sum(x['triangles'] for x in report['parts']),

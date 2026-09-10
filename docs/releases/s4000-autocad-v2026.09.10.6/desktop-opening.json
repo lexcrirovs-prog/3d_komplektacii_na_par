@@ -1,0 +1,19 @@
+{
+  "version": "2026.09.10.6",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_DESKTOP_OPEN_AND_SCRIPT_READBACK",
+  "file": "S4000_COMFORT_8-12bar_v2026.09.10.6.dwg",
+  "sha256": "5212154743df171ca1e92475ca0f2edd9e8aea98dc1d6af44de43d81fbbec77f",
+  "source_file_unchanged": true,
+  "opened_view": "S4000_ROUTING",
+  "readback": [
+    "S4000_COMFORT_8-12bar_v2026.09.10.6.dwg",
+    "DOOR_BLOCKS_READY",
+    "BLOWDOWN_VIEW_READY",
+    "ROUTING_VIEW_READY",
+    "DOOR_DIALOG_PARSED",
+    "OPTIONS_DIALOG_PARSED"
+  ],
+  "graphical_button_clicks": "NOT_RUN"
+}

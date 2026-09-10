@@ -1,6 +1,6 @@
 # S-4000 Comfort CAD build
 
-Latest CAD release: `2026.09.10.4`, 2026-09-10, Codex / GPT-6 Astra. Its separate Blender source is `2026.09.10.3`. The original assembly recipe below remains version `2026.09.10.1`; the opening CAD handoff is documented at the end.
+Latest CAD and Blender revision: `2026.09.10.6`, 2026-09-10, Codex / GPT-6 Astra. The original assembly recipe below remains version `2026.09.10.1`; subsequent source revisions and their CAD handoff are documented below.
 
 The pipeline produces a detailed, editable AutoCAD assembly from the supplied S-4000, EQS2-4000, DA-15, V4-19 and LCS600 STEP files, two KM125/KM225 DWGs, separator PDFs and the S-4000 equipment worksheets. Reused burner/instrument geometry comes from the S-3000 cabinet release `2026.09.09.5`.
 
@@ -160,3 +160,25 @@ Use the immutable Blender `.3` delivery as `$s4PressureSource`, fresh `$s4Pressu
 ```
 
 Then run the same native/door/configuration verification commands above with `.5` paths and fresh private verification directories. The pressure revision automatically adds the saved view `S4000_PRESSURE` and command `S4000PRESSUREVIEW`. The full door plot run also creates `S4000-pressure-gooseneck.pdf`. Render and inspect all **seven** current AutoCAD views before packaging; the packager requires the pressure proof and the extra native view for this revision. The previous CAD and Blender releases remain separate and unchanged.
+
+## Blowdown piping revision — 2026.09.10.6
+
+The owner's other plant thermal PDF/DWG supplies functional stream relationships, not dimensions or an expanded Comfort Plus BOM. Its K5/K6 boiler callouts conflict with the K6/K7 vessel schedule. The function/name-based interpretation and missing equipment are recorded in `docs/s4000-piping-audit-20260910.md`. The actual DWG is mostly paper-space entities on `Лист1`, with repeated alternatives; do not infer an empty scheme from the two model-space text entities.
+
+`blowdown_layout.py` defines physical ports and independently selectable piping groups. Existing source meshes provide BCV7432/BCV925 faces; each separator's own PDF provides its ports. `revise_blowdown_layout.py` opens immutable `.5`, preserves 66 untouched source-part fingerprints, adjusts only eight existing parts, and adds 27 groups. It retains all door controllers and the previous pressure/instrument revision. No source CAD, reference drawing, web file or application setting is modified.
+
+Use fresh private paths `$s4BlowdownBlender`, `$s4BlowdownCad`, `$s4BlowdownCache`, and the four reference PDF/DWG paths in `$s4BlowdownReferences`. `--connect-da` is intentionally omitted for this release: the DN50 recipient remains unconfirmed. Add that argument only after the owner confirms the port's function, then create another fresh revision and repeat downstream checks. It archives only the old DN50 blind cover; tank, flange and bolts are retained.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/revise_blowdown_layout.py -- --source $s4PressureBlender --output $s4BlowdownBlender --references $s4BlowdownReferences
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4BlowdownBlender --render --views 09-blowdown 10-routing 11-lower-blowdown
+& $s4Py tools/s4000/verify_options.py "$s4BlowdownBlender/assembly-source.json" --output "$s4BlowdownBlender/configuration-checks.json"
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/prepare_opening_cad.py -- --source $s4BlowdownBlender --output $s4BlowdownCad --cache "$s4BlowdownCache/meshes" --version 2026.09.10.6
+& $s4Py tools/s4000/create_cad.py --cache "$s4BlowdownCache/meshes" --manifest "$s4BlowdownCad/assembly.json" --output "$s4BlowdownCad/AutoCAD"
+```
+
+Run the native, door, graph, render and packaging commands above with `.6` paths and fresh output directories. This derivative has 105 parts including the four opening-only parts. Two new named views/commands are `S4000_BLOWDOWN` / `S4000BLOWDOWNVIEW` and `S4000_ROUTING` / `S4000ROUTINGVIEW`; inspect all **nine** native CAD review images. Each saved view's visual style is set on a separate short command-stream line to avoid Core Console truncation.
+
+`verify_blowdown.py` checks all 64 configurations: continuous blowdown destination, periodic route through the main/bypass branches, independent vents, preserved feed routing, non-increasing liquid elevations, and the explicit 320 mm missing-trap gap. It must never interpret that gap, the SC9 interface or the unconfirmed DA inlet as a connected device. This is a visual assembly with pending interfaces, not hydraulic sizing or a full interference audit.
+
+The release packager records prior `.5` Blender/closed DWG/open DWG hashes in `source-preservation.json`, carries the piping audit and missing-device notes into the archive, and verifies its contents. Keep the supplied thermal PDF/DWG, vessel PDFs, private logs, full `.blend` / `.dwg` / `.dxf` and mesh cache outside public Git.

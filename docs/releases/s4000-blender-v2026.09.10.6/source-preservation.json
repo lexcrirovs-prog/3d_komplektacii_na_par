@@ -1,0 +1,48 @@
+{
+  "status": "PASSED_PREVIOUS_RELEASE_HASHES",
+  "version": "2026.09.10.6",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "files": [
+    {
+      "file": "S4000_COMFORT_OPENING_v2026.09.10.5.blend",
+      "bytes": 138886378,
+      "sha256": "74004fb0c3d6b3df88669dac48ac469f36972aea82ff3c786e1a638dae9a1843",
+      "unchanged": true
+    },
+    {
+      "file": "S4000_COMFORT_8-12bar_v2026.09.10.5.dwg",
+      "bytes": 390091667,
+      "sha256": "75129b1788de408c0611a01338b47eee77cdb3ebb425b6c90efb1e0932dfd80f",
+      "unchanged": true
+    },
+    {
+      "file": "S4000_COMFORT_8-12bar_OPEN_v2026.09.10.5.dwg",
+      "bytes": 390169831,
+      "sha256": "0224b0f7580171e7f131937ad43d955ba3acde871162773a7fedd597d640ba81",
+      "unchanged": true
+    }
+  ],
+  "references": [
+    {
+      "file": "Тепловая схема 30 т.pdf",
+      "sha256": "1178e723e6e093ea9a60ea5cc09bd3cc535821e3a76110690c772c49dd7eb539",
+      "unchanged": true
+    },
+    {
+      "file": "Тепловая схема.30 тон.dwg",
+      "sha256": "25adfb3a2b3dc1c34bc4725cf78c8d8428782c31da526a5ee4fdc32de3fbe99a",
+      "unchanged": true
+    },
+    {
+      "file": "Сепаратор тип FV8 16.09.2025-Разметка.pdf",
+      "sha256": "e9fc48eec3f6027d09e08780994e56b0f7f0bba70340c5c18d4f14612991979f",
+      "unchanged": true
+    },
+    {
+      "file": "сепаратор тип BDV60-5.pdf",
+      "sha256": "1249a3e7e536ebe543cfb7b16f90f5787d8bd749d31c2c77024557e82444e041",
+      "unchanged": true
+    }
+  ]
+}

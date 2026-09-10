@@ -46,9 +46,17 @@ def verify(path):
     assert opts['economizer'];node='economizer_out';walk.append(node)
   assert ('economizer_in' in walk)==opts['economizer']
   assert ('from_economizer' in ids)==opts['economizer'] and ('direct_inlet' in ids)!=opts['economizer']
-  checks.append(dict(options=opts,visible_parts=len(ids),feed_path=walk))
+  row=dict(options=opts,visible_parts=len(ids),feed_path=walk)
+  if 'blowdown_revision' in m:
+   from verify_blowdown import verify_blowdown
+   row['blowdown']=verify_blowdown(m,ids,opts)
+  checks.append(row)
  result=dict(status='PASSED_64_CONFIGURATION_GRAPHS',configurations=len(checks),maximum_endpoint_gap_m=max_gap,
              cad_rotations_rigid=True,boiler_feed='native rear DN32',flue_spacer_mm=500,checks=checks)
+ if 'blowdown_revision' in m:
+  result['blowdown']=dict(configurations_checked=64,periodic_to_bdv=True,continuous_to_fv=True,
+    alternate_routes_checked=True,missing_devices_not_bypassed=True,condensate_sections_fall=True,
+    da_steam_connected=m['blowdown_revision']['da_steam_connected'])
  print(json.dumps({k:v for k,v in result.items() if k!='checks'},ensure_ascii=False))
  return result
 

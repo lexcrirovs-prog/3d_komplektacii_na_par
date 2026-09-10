@@ -96,6 +96,9 @@ def check(a):
         lines += ['(c:S4000DAVIEW)', *plot_lines('S4000-deaerator-rotated')]
         if 'pressure_revision' in manifest:
             lines += ['(c:S4000PRESSUREVIEW)', *plot_lines('S4000-pressure-gooseneck')]
+        if 'blowdown_revision' in manifest:
+            lines += ['(c:S4000BLOWDOWNVIEW)', *plot_lines('S4000-blowdown'),
+                      '(c:S4000ROUTINGVIEW)', *plot_lines('S4000-routing')]
     if a.open_copy:
         assert not a.fixture and not a.open_copy.exists() and str(a.open_copy).isascii()
         lines += ['(c:S4000OPEN)', '(c:S4000VIEW)', '(command "_.ZOOM" "_E")',
@@ -134,6 +137,8 @@ def check(a):
         result['native_pdfs'] = ['S4000-'+x+'.pdf' for x in ['cabinet-open','boiler-open','both-open','deaerator-rotated']]
         if 'pressure_revision' in manifest:
             result['native_pdfs'].append('S4000-pressure-gooseneck.pdf')
+        if 'blowdown_revision' in manifest:
+            result['native_pdfs'] += ['S4000-blowdown.pdf','S4000-routing.pdf']
         for name in result['native_pdfs']: assert (out/name).stat().st_size > 10000
     (out/'doors-verification.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(result, ensure_ascii=False), flush=True)

@@ -1,0 +1,1619 @@
+{
+  "status": "PASSED_64_CONFIGURATION_GRAPHS",
+  "configurations": 64,
+  "maximum_endpoint_gap_m": 0,
+  "cad_rotations_rigid": true,
+  "boiler_feed": "native rear DN32",
+  "flue_spacer_mm": 500,
+  "checks": [
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 68,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 75,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 76,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 84,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 69,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 76,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 77,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 85,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 69,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 76,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 77,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 85,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 70,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 77,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 78,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 86,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 71,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 78,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 79,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 87,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 72,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 79,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 80,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 88,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 72,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 79,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 80,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 88,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 73,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 80,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 81,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": false,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 89,
+      "feed_path": [
+        "pump_delivery",
+        "direct_slot_in",
+        "direct_slot_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 71,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 78,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 79,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 87,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 72,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 79,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 80,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 88,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 72,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 79,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 80,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 88,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 73,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 80,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 81,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": false,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 89,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 74,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 81,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 82,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 90,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 75,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 82,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 83,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": false,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 91,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 75,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 82,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 83,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": false,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 91,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": false
+      },
+      "visible_parts": 76,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "external boundary",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": false,
+        "fv": true
+      },
+      "visible_parts": 83,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "external boundary",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": false
+      },
+      "visible_parts": 84,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "BDV",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    },
+    {
+      "options": {
+        "economizer": true,
+        "deaerator": true,
+        "modulation": true,
+        "gpz": true,
+        "bdv": true,
+        "fv": true
+      },
+      "visible_parts": 92,
+      "feed_path": [
+        "pump_delivery",
+        "eco_slot_in",
+        "eco_slot_out",
+        "economizer_in",
+        "economizer_out",
+        "boiler_feed_train"
+      ],
+      "blowdown": {
+        "continuous": "FV8",
+        "periodic": "BDV",
+        "flash_steam": "boundary",
+        "condensate_trap": "explicit missing device, no direct bypass",
+        "condensate_no_uphill_segment": true
+      }
+    }
+  ],
+  "blowdown": {
+    "configurations_checked": 64,
+    "periodic_to_bdv": true,
+    "continuous_to_fv": true,
+    "alternate_routes_checked": true,
+    "missing_devices_not_bypassed": true,
+    "condensate_sections_fall": true,
+    "da_steam_connected": false
+  }
+}

@@ -105,7 +105,8 @@ def run(a):
  view_names=['S4000_ALL','S4000_REAR','S4000_PUMPS','S4000_DEAERATOR','S4000_TOP']
  if 'door_groups' in manifest:view_names+=['S4000_DOOR','S4000_CABINET']
  if 'pressure_revision' in manifest:view_names+=['S4000_PRESSURE']
- style_views='(foreach v \'('+' '.join('"'+v+'"' for v in view_names)+') (command "_.-VIEW" "_E" "_V" v "PREMIUM_SOLID" "" ""))'
+ if 'blowdown_revision' in manifest:view_names+=['S4000_BLOWDOWN','S4000_ROUTING']
+ style_views=['(command "_.-VIEW" "_E" "_V" "'+v+'" "PREMIUM_SOLID" "" "")' for v in view_names]
  overview_direction='-1,-1,0.72' if 'door_groups' in manifest else '1,-1,0.8'
  # Use full ASCII paths only in AutoLISP; source is passed as a structured arg.
  assert str(output).isascii()
@@ -113,7 +114,7 @@ def run(a):
   '(command "_.VSCURRENT" "_Shaded")','(setvar "VSEDGES" 0)','(setvar "VSSILHEDGES" 0)',
   '(setvar "VSOCCLUDEDEDGES" 0)','(setvar "VSINTERSECTIONEDGES" 0)','(setvar "VSFACEOPACITY" 100)','(setvar "VSSHADOWS" 0)',
   '(command "_.-VISUALSTYLES" "_S" "PREMIUM_SOLID")',*lisp_lines(commands),'(c:S4000ALL)',
-  style_views,
+  *style_views,
   '(command "_.VPOINT" "'+overview_direction+'")','(command "_.ZOOM" "_E")','(command "_.ZOOM" "0.94x")',
   '(command "_.-VIEW" "_D" "S4000_ALL")','(command "_.-VIEW" "_S" "S4000_ALL")',
   '(command "_.AUDIT" "_N")','(setvar "FILEDIA" 1)','(setvar "CMDDIA" 1)',

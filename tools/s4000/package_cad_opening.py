@@ -36,7 +36,7 @@ def package(a):
     assert doors['checked_sha256'] == native['sha256']
     assert doors['open_copy']['fresh_reopen_passed']
     assert digest(cad/doors['open_copy']['file']) == doors['open_copy']['sha256']
-    assert doors['blocks_checked'] == native['blocks'] == len(manifest['parts']) == 78
+    assert doors['blocks_checked'] == native['blocks'] == len(manifest['parts']) == source['exported_parts']
     assert native['fixture']['combinations'] == 64 and native['native_options']['combinations'] == 20
     assert graphs['status'] == 'PASSED_64_CONFIGURATION_GRAPHS' and graphs['maximum_endpoint_gap_m'] == 0
     assert source['deaerator_rotation_degrees'] == 180 and not source['decimation']
@@ -46,6 +46,14 @@ def package(a):
     assert digest(old_dwg) == prior_proof['sha256']
     assert prior_proof['status'] == 'PASSED_AUTOCAD_SAVE_OPTIONS_REOPEN'
     view_count = 7 if 'pressure_revision' in manifest else 6
+    if 'blowdown_revision' in manifest:
+        view_count += 2
+        assert graphs['blowdown']['configurations_checked'] == 64
+        assert graphs['blowdown']['missing_devices_not_bypassed']
+        bp = read(a.blender_source/'verification.json')['blowdown']
+        assert bp['fixed_pipework_during_door_animation']
+        assert bp['da_steam_connected'] == manifest['blowdown_revision']['da_steam_connected']
+        source['blowdown'] = bp
     assert len(list((root/'previews').glob('*.png'))) == view_count
     if 'pressure_revision' in manifest:
         pressure = read(a.blender_source/'verification.json')['pressure_group']
@@ -65,6 +73,11 @@ def package(a):
         shutil.copy2(a.previous_cad/name, root/name)
     missing = (a.previous_cad/'Недостающие-модели.md').read_text(encoding='utf8')
     missing = missing.replace('Версия 2026.09.10.1', 'Версия '+version)
+    if 'blowdown_revision' in manifest:
+        missing = missing.replace('| BDV60/5 и FV8 | Отдельные модели по PDF, без внешней обвязки | Для FV8 отметка дренажа 300 мм восстановлена по виду; подтвердить при деталировке |',
+            '| BDV60/5 и FV8 | Добавлены линии продувок и отводы. Отметка S FV8 уточнена по чертежу: 400 мм над основанием; опора +1200 мм | Заводские CAD; уточнение рабочего узла конденсатоотводчика и охлаждения BDV |')
+        missing += '\nТекущие пропуски обвязки и неподтверждённые соединения подробно перечислены в **«Проверка-обвязки.md»**. Место конденсатоотводчика после FV8 оставлено разрывом. Назначение выбранного DN50 ДА-15 и штуцеров CAD охладителя SC9 требует уточнения.\n'
+        shutil.copy2(a.repo/'docs/s4000-piping-audit-20260910.md', root/'Проверка-обвязки.md')
     (root/'Недостающие-модели.md').write_text(missing, encoding='utf8')
     shutil.copy2(a.repo/'docs/s4000-autocad-opening-guide-20260910.md', root/'Открыть-сборку.md')
     shutil.copy2(a.door_plots/'doors-verification.json', cad/'doors-verification.json')
@@ -73,6 +86,8 @@ def package(a):
                                              'S4000-both-open', 'S4000-deaerator-rotated']]
     if 'pressure_revision' in manifest:
         pdfs.append((a.door_plots, 'S4000-pressure-gooseneck'))
+    if 'blowdown_revision' in manifest:
+        pdfs += [(a.door_plots, name) for name in ['S4000-blowdown', 'S4000-routing']]
     for folder, name in pdfs:
         assert (folder/(name+'.pdf')).stat().st_size > 10000
 
@@ -96,6 +111,10 @@ def package(a):
                  unresolved=['LCS supplied 600 mm versus BOM 800 mm',
                              'Exact Comfort cabinet layout and PR200 installation',
                              'Temporary models retained from the accepted assembly'])
+    if 'blowdown_revision' in manifest:
+        proof['unresolved'] += ['FV8 condensate trap intentionally absent; 320 mm interface gap',
+            'BDV cooling control, FV8 safety valve and vessel instrumentation/drain valves absent',
+            'DA-15 flash-steam inlet designation and SC9 CAD connection key awaiting confirmation']
     write(root/'verification.json', proof)
     selected = [cad/(stem+suffix) for suffix in ['.dwg', '.verification.json', '.cad.json']]
     selected += [cad/doors['open_copy']['file']]
@@ -107,6 +126,8 @@ def package(a):
     selected += sorted((root/'previews').glob('*.png'))
     if 'pressure_revision' in manifest:
         selected.append(root/'source-preservation.json')
+    if 'blowdown_revision' in manifest:
+        selected.append(root/'Проверка-обвязки.md')
     assert len(set(selected)) == len(selected) and all(p.stat().st_size for p in selected)
     hashes = {p.relative_to(root).as_posix(): digest(p) for p in selected}
     checksum = root/'SHA256SUMS.txt'

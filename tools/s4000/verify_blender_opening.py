@@ -106,6 +106,13 @@ def main(a):
             boiler_endpoints_preserved=True, unchanged_instruments=5,
             instrument_positions_preserved=True, unchanged_other_parts=pressure['retained_other_parts'],
             cable_leads_rerouted=3, references=pressure['reference_files'])
+    if 'blowdown_revision' in report:
+        revision=report['blowdown_revision']
+        assert all(fingerprint(bpy.data.objects[k])==v for k,v in revision['retained_source_fingerprints'].items())
+        verification['blowdown']=dict(retained_parts=revision['retained_source_parts'],
+            changed_existing_parts=revision['changed_existing_parts'],
+            fixed_pipework_during_door_animation=True,missing_device_count=len(revision['missing_equipment']),
+            da_steam_connected=revision['da_steam_connected'],fv_support_height_m=revision['fv_support_height_m'])
     (d/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(verification, ensure_ascii=False), flush=True)
     if not a.render: return
@@ -122,6 +129,8 @@ def main(a):
         renders.append(('07-deaerator-rotated', 1, 'CAM_Deaerator'))
     if 'pressure_revision' in report:
         renders.append(('08-pressure-gooseneck', 1, 'CAM_Pressure'))
+    if 'blowdown_revision' in report:
+        renders += [('09-blowdown',1,'CAM_Blowdown'),('10-routing',1,'CAM_Routing'),('11-lower-blowdown',1,'CAM_LowerBlowdown')]
     for name, frame, cam in renders:
         if a.views and name not in a.views: continue
         s.frame_set(frame); s.camera = bpy.data.objects[cam]

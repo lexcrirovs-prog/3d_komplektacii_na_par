@@ -73,3 +73,28 @@ After the actual image review, run:
 ```
 
 The archive includes DWG, controls, BOM, missing-model register, source hashes, previews and proof. The detailed Blender scene and intermediary DXF remain outside this portable archive. ZIP CRC and every included file's SHA-256 are checked after packaging. Use `native_cad.py --plots-only` with a fresh private directory to adjust plot framing without changing the verified DWG.
+
+## Separate Blender opening release — 2026.09.10.2
+
+Version `2026.09.10.2`, 2026-09-10, Codex / GPT-6 Astra adds two independent native hinges to a **new copy** of the accepted S-4000 scene. The CAD release above is preserved. The animation uses ordinary rotation keyframes and constraints; there are no drivers, auto-run text modules or required add-ons.
+
+Use the full construction STEP `PR.4000.01.001(S)СБ Котел паровой (1,2 МПа).stp`, SHA-256 `5d649d598b9a101cb9b273da51c9fc9091253da4faf72fc3e10124253d32d28f`. This is a different input from the exterior BIM STEP. The extractor whitelists its 96 smoke tubes and one furnace tube, excluding 571 other solids. The hole mask and inner door lining are generated presentation geometry. Do not substitute or scale S-3000 tubes.
+
+Supply `$s4ConstructionStep`, the previous detailed `$s4SourceBlend`, its `$s4SourceManifest`, the unchanged `$s4SourceDwg`, and fresh private `$s4OpeningCache` / `$s4OpeningOutput` paths. The inspector used for the inventory is the shared `tools/s3000/inspect_step_internals.py` tool; its input must be the S-4000 construction STEP.
+
+```powershell
+& $s4Py tools/s3000/inspect_step_internals.py $s4ConstructionStep "$s4OpeningCache/s4000-internals.json"
+& $s4Py tools/s4000/extract_opening_tubes.py --source $s4ConstructionStep --inventory "$s4OpeningCache/s4000-internals.json" --output "$s4OpeningCache/visible-tubes.json.gz"
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/build_blender_opening.py -- --source $s4SourceBlend --manifest $s4SourceManifest --tubes "$s4OpeningCache/visible-tubes.json.gz" --output $s4OpeningOutput
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4OpeningOutput --render
+```
+
+The verifier checks every one of the 193 animation frames for fixed hinge positions, pure rotation and rigid attachment. It compares 67 retained source-part fingerprints, the placement of 10 source meshes, and 71 static part fingerprints in open states. Review all six final PNGs, then open the exact saved file in native Blender and verify play/pause and direct frame entry. These checks do not constitute a stable-FPS benchmark or full collision-clearance analysis.
+
+Copy the release README to `$s4OpeningOutput/README.md` and `docs/s4000-missing-models-20260910.md` to `$s4OpeningOutput/Недостающие модели.md`. Only after the image and native UI review, run:
+
+```powershell
+& $s4Py tools/s4000/package_blender_opening.py --delivery $s4OpeningOutput --source-scene $s4SourceBlend --source-step $s4ConstructionStep --source-dwg $s4SourceDwg --reviewed --native-ui-reviewed
+```
+
+The packager checks source hashes again and verifies ZIP CRC and every archived file's hash. The receipt `package.json` remains outside the archive to avoid a circular archive hash. Publish only code, review images and summary proofs; the `.blend`, source CAD, mesh caches and prices stay in the private delivery.

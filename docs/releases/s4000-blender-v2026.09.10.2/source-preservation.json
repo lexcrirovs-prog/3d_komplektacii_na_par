@@ -1,0 +1,20 @@
+{
+  "status": "PASSED_SOURCE_PRESERVATION",
+  "sources": [
+    {
+      "file": "S4000_COMFORT_v2026.09.10.1.blend",
+      "sha256": "639704db50fda3fb8825f8e26c609d7c944e82a52250c88ffd88a350008fd8c0",
+      "unchanged": true
+    },
+    {
+      "file": "PR.4000.01.001(S)СБ Котел паровой (1,2 МПа).stp",
+      "sha256": "5d649d598b9a101cb9b273da51c9fc9091253da4faf72fc3e10124253d32d28f",
+      "unchanged": true
+    },
+    {
+      "file": "S4000_COMFORT_8-12bar_v2026.09.10.1.dwg",
+      "sha256": "bc9302ec4c77f211d6cdf6e25f524b5e2fcd3e7a945876437c40af18e5e476f6",
+      "unchanged": true
+    }
+  ]
+}

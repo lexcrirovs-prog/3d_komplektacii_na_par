@@ -1,0 +1,99 @@
+{
+  "status": "PASSED_BLENDER_PACKAGE",
+  "version": "2026.09.10.2",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "archive": "S4000_Blender_OPENING_v2026.09.10.2.zip",
+  "archive_bytes": 144036736,
+  "archive_sha256": "2d5161ad9508d6620076ee6ca8ef9e1180b6f7df1cdafe583748e98479f16ccc",
+  "archive_files": 16,
+  "crc_verified": true,
+  "all_file_hashes_verified": true,
+  "blend": "S4000_COMFORT_OPENING_v2026.09.10.2.blend",
+  "blend_bytes": 131821880,
+  "blend_sha256": "d6ec32a8ea6e4c10f4cd9aa371ed12aa6d6c59a766c337a5f245c729c4d9fab5",
+  "source_files_unchanged": 3,
+  "receipt_outside_archive": true,
+  "files": [
+    {
+      "file": "S4000_COMFORT_OPENING_v2026.09.10.2.blend",
+      "bytes": 131821880,
+      "sha256": "d6ec32a8ea6e4c10f4cd9aa371ed12aa6d6c59a766c337a5f245c729c4d9fab5"
+    },
+    {
+      "file": "README.md",
+      "bytes": 7706,
+      "sha256": "40e67755bb393cec780f9fac32a2a84e0573499e62e65a231fd037063960f60b"
+    },
+    {
+      "file": "Как открыть двери.txt",
+      "bytes": 1951,
+      "sha256": "c6439d1a53f2c691f000871ea20fda76d6d073b1b98ccd339b22ae6c4042906c"
+    },
+    {
+      "file": "Недостающие модели.md",
+      "bytes": 4696,
+      "sha256": "cd030c84e1f40035a76120bc048e31ad3b3281dcf374b1e22ba49e7f02a31530"
+    },
+    {
+      "file": "assembly-source.json",
+      "bytes": 60611,
+      "sha256": "3ab17e3ecbfc6ea48e5b1a535d8ad4b8856187af7cf4172a1acf25f56160de73"
+    },
+    {
+      "file": "opening.json",
+      "bytes": 13713,
+      "sha256": "418b23446758845e8554e3dc70711b131f42b17c8360356c0358882072bb63e3"
+    },
+    {
+      "file": "verification.json",
+      "bytes": 1135,
+      "sha256": "c86d864719b107ab5cac5da0fe0d70394e417f1c523e3a7d16244425fad07b90"
+    },
+    {
+      "file": "source-preservation.json",
+      "bytes": 637,
+      "sha256": "6ca544a3424276ad356b23888e92bbbce406d61fe33db1f4fda1e70e797689f6"
+    },
+    {
+      "file": "native-ui-review.json",
+      "bytes": 730,
+      "sha256": "523a8fbe6b92a9d1e6e1f5248abf6af8946af63bee4e0c809d5070d5850b2e79"
+    },
+    {
+      "file": "previews/01-closed.png",
+      "bytes": 2678139,
+      "sha256": "96078e704279bf1a56c799d58d5ea08ea21413ab923dabd17f947ac71a424d23"
+    },
+    {
+      "file": "previews/02-both-open.png",
+      "bytes": 2694305,
+      "sha256": "948301cf631db044b78b391ba67bfb07f32ced695f04ea9ef3a32fe57e4aa9f0"
+    },
+    {
+      "file": "previews/03-boiler-open.png",
+      "bytes": 2906821,
+      "sha256": "9e560636dafc86f1f6c229ab939a82e6e6f4bbec9eb21fc6fae09fa26e38ec05"
+    },
+    {
+      "file": "previews/04-cabinet-open.png",
+      "bytes": 2628127,
+      "sha256": "308463eadb9635d38603d47b2850923d3e0643bc0f6343241f1f73911e745908"
+    },
+    {
+      "file": "previews/05-cabinet-closed.png",
+      "bytes": 2455329,
+      "sha256": "d983f91694c64b322b06ac67aaa217d0d99767f470b908d7387c77600b2d6a03"
+    },
+    {
+      "file": "previews/06-boiler-half-open.png",
+      "bytes": 2858521,
+      "sha256": "4a3513fc0417c4cd3dee3dbba5d87b0a656f12cfef8299e50097acb2249540d1"
+    },
+    {
+      "file": "SHA256.json",
+      "bytes": 2559,
+      "sha256": "e86a60ab49af28d051326140bbf5f3133b3f086d955262fed824db825dc42994"
+    }
+  ]
+}

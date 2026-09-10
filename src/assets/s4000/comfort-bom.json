@@ -1,0 +1,605 @@
+{
+  "version": "2026.09.10.1",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "title": "PREMIUM S-4000 · 8–12 бар · Комфорт",
+  "pressure_bar": 12,
+  "source_workbook": "2. КОМФОРТ. Прайс цен на обвязку паровых котлов S.xlsx",
+  "source_sheet": "S-4000",
+  "supplier": "АДЛ",
+  "prices_included": false,
+  "rows": [
+    {
+      "row": 4,
+      "description": "ГРАНВЕНТ® KV31.01.02.100.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN100 PN16 tmax=300oC",
+      "quantity": 1,
+      "purpose": "ГПЗ (обычн.)",
+      "cells": [
+        "J4",
+        "K4"
+      ],
+      "option": null,
+      "model_status": "Временная модель KV31 DN100",
+      "assembly_parts": [
+        "steam_manual"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 6,
+      "description": "ГРАНРЕГ КМ225Ф - 100 - 90,0 / СМП10 - 220В Клапан\nрегулирующий разгруженный с заниженным kvs с\nэлектроприводом трёхпозиционным 220В - Ду100, Ру16,\nф\\ф dP = 16 bar, Kvs=90 м3/ч",
+      "quantity": 1,
+      "purpose": "ГПЗ с эл.приводом для котла12 бар",
+      "cells": [
+        "J6",
+        "K6"
+      ],
+      "option": "gpz",
+      "model_status": "Корпус из DWG КМ225 DN100; привод по размерам каталога",
+      "assembly_parts": [
+        "gpz"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 7,
+      "description": "ГРАНВЕНТ® KV31.01.02.032.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN32 PN16 tmax=300oC",
+      "quantity": 1,
+      "purpose": "Питательная линия (обычн.)",
+      "cells": [
+        "J7",
+        "K7"
+      ],
+      "option": null,
+      "model_status": "Временная модель KV31 DN32",
+      "assembly_parts": [
+        "feed_valve"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 9,
+      "description": "ГРАНРЕГ КМ125Ф - 032 - 5,0 / СМП1,6 А - 220В Клапан\nрегулирующий с заниженным Kvs с электроприводом\nаналоговым Ду32, Ру16, ф\\ф dP = 16bar, Tmax = 250C",
+      "quantity": 1,
+      "purpose": "Питательная линия (модуляция) для котла 12 бар ",
+      "cells": [
+        "J9",
+        "K9"
+      ],
+      "option": "modulation",
+      "model_status": "Корпус из DWG КМ125 DN32; привод по размерам каталога",
+      "assembly_parts": [
+        "mod_eco",
+        "mod_direct"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 10,
+      "description": "ГРАНВЕНТ® KV31.01.02.020.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN20 PN16 tmax=300oC",
+      "quantity": 1,
+      "purpose": "Непрерывная продувка",
+      "cells": [
+        "J10",
+        "K10"
+      ],
+      "option": null,
+      "model_status": "Модель по фото",
+      "assembly_parts": [
+        "tds_isolation"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 11,
+      "description": "ГРАНВЕНТ® KV31.01.02.032.16.Ф/Ф вентиль чугунный с\nсильфонным уплотнением DN32 PN16 tmax=300oC",
+      "quantity": 2,
+      "purpose": "Периодическая продувка",
+      "cells": [
+        "J11",
+        "K11"
+      ],
+      "option": null,
+      "model_status": "Модели по фото",
+      "assembly_parts": [
+        "drain_isolation_1",
+        "drain_isolation_2"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 12,
+      "description": "ГРАНВЕНТ® KV31.01.02.015.16.Ф/Ф вентиль чугунный с\nсильфонным уплотнением DN15 PN16 tmax=300oC",
+      "quantity": 1,
+      "purpose": "Удаление воздуха",
+      "cells": [
+        "J12",
+        "K12"
+      ],
+      "option": null,
+      "model_status": "Модель по фото",
+      "assembly_parts": [
+        "instrument_valve"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 13,
+      "description": "ГРАНЛОК® Обратный клапан CVS40.04.032.40.М/Ф, из нерж.стали AISI 304 (08Х18Н10) DN032 PN40 Tmax=300oC( L стр.=28 мм )",
+      "quantity": 1,
+      "purpose": "Питательная линия",
+      "cells": [
+        "J13",
+        "K13"
+      ],
+      "option": null,
+      "model_status": "Временная модель CVS40, строительная длина 28 мм",
+      "assembly_parts": [
+        "feed_check"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 15,
+      "description": "ПРЕГРАН КПП 496-01-16-ЗН-040x065- 13,0 Pн= 13,0 бар\nпредохр клапан ф/ф DN40х65 PN16 tmax=300oC чугун",
+      "quantity": 2,
+      "purpose": "Клапан предохранительный полноподъёмный",
+      "cells": [
+        "J15",
+        "K15"
+      ],
+      "option": null,
+      "model_status": "Временные корпуса DN40×65",
+      "assembly_parts": [
+        "safety_1",
+        "safety_2"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 18,
+      "description": "Индикатор уровня в сборе с группой кранов RLG-16 (400 мм) DN20 PN16",
+      "quantity": 2,
+      "purpose": "Указатель уровня воды (Визульный контроль)",
+      "cells": [
+        "J18",
+        "K18"
+      ],
+      "option": null,
+      "model_status": "По фото; межосевое расстояние 400 мм",
+      "assembly_parts": [
+        "sight_glasses_1",
+        "sight_glasses_2"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 19,
+      "description": "Датчик уровня LP 200 (LP 210, L=1000 мм) 2-х контактный",
+      "quantity": 1,
+      "purpose": "Электрод сигнализации уровня",
+      "cells": [
+        "J19",
+        "K19"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000, стержень ранее удлинён до 1000 мм",
+      "assembly_parts": [
+        "lp200"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 20,
+      "description": "Контроллер уровня LC 220 (230В)",
+      "quantity": 1,
+      "purpose": "Устанавливается в шкафу",
+      "cells": [
+        "J20",
+        "K20"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000",
+      "assembly_parts": [
+        "lc220"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 21,
+      "description": "Датчик уровня емкостной LCS 600 (LCS 607, L=800 мм)",
+      "quantity": 1,
+      "purpose": "Датчик уровня емкостной",
+      "cells": [
+        "J21",
+        "K21"
+      ],
+      "option": null,
+      "model_status": "Приложенный STEP на 600 мм; ведомость требует 800 мм",
+      "assembly_parts": [
+        "lcs600"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 22,
+      "description": "Датчик уровня LP 400 (LP 410, L=1000 мм) 4-х контактный",
+      "quantity": 1,
+      "purpose": "Электрод сигнализации уровня",
+      "cells": [
+        "J22",
+        "K22"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000, стержень ранее удлинён до 1000 мм",
+      "assembly_parts": [
+        "lp400"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 23,
+      "description": "Контроллер уровня LC 440 (230В)",
+      "quantity": 1,
+      "purpose": "Устанавливается в шкафу",
+      "cells": [
+        "J23",
+        "K23"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000",
+      "assembly_parts": [
+        "lc440"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 25,
+      "description": "Контроллер продувок BC 970 (верхняя + нижняя продувки), 4-20 mA, Тк, 230В",
+      "quantity": 1,
+      "purpose": "Устанавливается в шкафу",
+      "cells": [
+        "J25",
+        "K25"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000",
+      "assembly_parts": [
+        "bc970"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 26,
+      "description": "Датчик проводимости CP 930 (L=500 мм, 1/2\")",
+      "quantity": 1,
+      "purpose": "Электрод электропроводности",
+      "cells": [
+        "J26",
+        "K26"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000",
+      "assembly_parts": [
+        "cp930"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 27,
+      "description": "Клапан верхней продувки с эл.приводом BCV 925 (DN20, PN25)",
+      "quantity": 1,
+      "purpose": "Верхняя продувка",
+      "cells": [
+        "J27",
+        "K27"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000",
+      "assembly_parts": [
+        "bcv925"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 28,
+      "description": "Колено соединительное TDS/датчик проводимости PC F25-2020 (DN20xDN20)",
+      "quantity": 1,
+      "purpose": "Содинение",
+      "cells": [
+        "J28",
+        "K28"
+      ],
+      "option": null,
+      "model_status": "CAD PCF20×20; соответствие артикулу PCF25-2020 уточняется",
+      "assembly_parts": [
+        "pcf20"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 29,
+      "description": "Клапан нижней продувки с пневмоприводом BCV 700 (BCV 740/220, DN32 PN40)",
+      "quantity": 1,
+      "purpose": "Нижняя продувка",
+      "cells": [
+        "J29",
+        "K29"
+      ],
+      "option": null,
+      "model_status": "CAD BCV7432; соответствие приводу BCV740/220 уточняется",
+      "assembly_parts": [
+        "bcv7432"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 31,
+      "description": "Реле давления KPI35R, диапазон уставки -0,2-8 бар, дифференциал 0,4-1,5 бар, G 1/2",
+      "quantity": 2,
+      "purpose": "Устанавливается  на группе безопасности",
+      "cells": [
+        "J31",
+        "K31"
+      ],
+      "option": null,
+      "model_status": "Два корпуса KPI35R по фото; одинаковая визуализация исполнений 8 и 12 бар подтверждена владельцем",
+      "assembly_parts": [
+        "pressure_switch_1",
+        "pressure_switch_2"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 32,
+      "description": "Датчик по давлению MBS 1700R, 0-16 бар, 4-20 mA, G 1/2",
+      "quantity": 1,
+      "purpose": "Устанавливается  на группе безопасности",
+      "cells": [
+        "J32",
+        "K32"
+      ],
+      "option": null,
+      "model_status": "Временный корпус MBS1700R",
+      "assembly_parts": [
+        "pressure_transmitter"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 33,
+      "description": "Манометр ТМ -510 Р.00 (0...1,6 МПа) G1/2.1,5 + 3-х ходовй кран",
+      "quantity": 1,
+      "purpose": "Устанавливается  на группе безопасности",
+      "cells": [
+        "J33",
+        "K33"
+      ],
+      "option": null,
+      "model_status": "По фото",
+      "assembly_parts": [
+        "pressure_gauge"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 35,
+      "description": "Охладитель проб одноточечный SC9",
+      "quantity": 1,
+      "purpose": "Охладитель проб",
+      "cells": [
+        "J35",
+        "K35"
+      ],
+      "option": null,
+      "model_status": "ATECH из S-3000",
+      "assembly_parts": [
+        "sc9"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 36,
+      "description": "Комплект монтажный для охладителя проб SC 9",
+      "quantity": 1,
+      "purpose": "Обвязка охладителя проб ",
+      "cells": [
+        "J36",
+        "K36"
+      ],
+      "option": null,
+      "model_status": "Временные крепления и подводы",
+      "assembly_parts": [
+        "sample_piping"
+      ],
+      "pressure_bar": 12,
+      "unit": "комплект"
+    },
+    {
+      "row": 39,
+      "description": "Питательный насос V 4-19",
+      "quantity": 2,
+      "purpose": "для котла 12 бар",
+      "cells": [
+        "J39",
+        "K39"
+      ],
+      "option": null,
+      "model_status": "Приложенный STEP JETEX V4-19, два экземпляра",
+      "assembly_parts": [
+        "pump_1",
+        "pump_2"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 40,
+      "description": "ГРАНВЕНТ® KV31.01.02.032.16.Ф/Ф вентиль чугунный с сильфонным уплотнением DN32 PN16 tmax=300oC",
+      "quantity": 4,
+      "purpose": "Запорная арматура",
+      "cells": [
+        "J40",
+        "K40"
+      ],
+      "option": null,
+      "model_status": "Четыре временных корпуса KV31 DN32",
+      "assembly_parts": [
+        "pump_in_valve_1",
+        "pump_out_valve_1",
+        "pump_in_valve_2",
+        "pump_out_valve_2"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 41,
+      "description": "ГРАНЛОК® Обратный клапан CVS40.04.032.40.М/Ф, из нерж.стали AISI 304 (08Х18Н10) DN032 PN40 Tmax=300oC( L стр.=28 мм )",
+      "quantity": 2,
+      "purpose": "Обратный клапан",
+      "cells": [
+        "J41",
+        "K41"
+      ],
+      "option": null,
+      "model_status": "Два временных корпуса CVS40, строительная длина 28 мм",
+      "assembly_parts": [
+        "pump_check_1",
+        "pump_check_2"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    },
+    {
+      "row": 43,
+      "description": "Группа безопасности",
+      "quantity": 1,
+      "purpose": "",
+      "cells": [
+        "J43",
+        "K43"
+      ],
+      "option": null,
+      "model_status": "Коллектор по фото, приборы учтены отдельными строками",
+      "assembly_parts": [
+        "pressure_header"
+      ],
+      "pressure_bar": 12,
+      "unit": "комплект"
+    },
+    {
+      "row": 44,
+      "description": "Фланцы для монтажа электродов на котле  (копмлект) ",
+      "quantity": 1,
+      "purpose": "",
+      "cells": [
+        "J44",
+        "K44"
+      ],
+      "option": null,
+      "model_status": "Фланцы исходного STEP котла; отдельное количество в геометрии не дублируется",
+      "assembly_parts": [
+        "boiler"
+      ],
+      "pressure_bar": 12,
+      "unit": "комплект"
+    },
+    {
+      "row": 46,
+      "description": "ПР-200",
+      "quantity": 1,
+      "purpose": "Шкаф управления",
+      "cells": [
+        "J46",
+        "K46"
+      ],
+      "option": null,
+      "model_status": "ПР200 и шкаф — временная компоновка",
+      "assembly_parts": [
+        "control_cabinet",
+        "pr200"
+      ],
+      "pressure_bar": 12,
+      "unit": "шт."
+    }
+  ],
+  "excluded_alternatives": [
+    {
+      "row": 5,
+      "reason": "Вариант ГПЗ для 8 бар"
+    },
+    {
+      "row": 8,
+      "reason": "Дублирующая строка модуляции для 8 бар"
+    },
+    {
+      "row": 16,
+      "reason": "Предохранительные клапаны 9 бар для исполнения 8 бар"
+    },
+    {
+      "row": 38,
+      "reason": "Насос V4-12 для 8 бар"
+    },
+    {
+      "row": 47,
+      "reason": "Каскадный шкаф СПК107 не выбран"
+    }
+  ],
+  "additional_models": [
+    {
+      "id": "boiler",
+      "quantity": 1
+    },
+    {
+      "id": "burner",
+      "quantity": 1
+    },
+    {
+      "id": "economizer",
+      "quantity": 1
+    },
+    {
+      "id": "deaerator",
+      "quantity": 1
+    },
+    {
+      "id": "separator_bdv60_5",
+      "quantity": 1
+    },
+    {
+      "id": "separator_fv8",
+      "quantity": 1
+    }
+  ],
+  "assumptions": [
+    "В базовой комплектации остаётся ручной вентиль DN100; опциональная ГПЗ с электроприводом стоит далее на паропроводе.",
+    "В модель включены оба приложенных сепаратора; каждый отключается отдельно.",
+    "Геометрия LCS600 оставлена по приложенному STEP на 600 мм до уточнения длины 800 мм из ведомости.",
+    "Владелец подтвердил одинаковую визуализацию реле KPI35R для двух вариантов котла: 8 и 12 бар. Модель на 8 бар сохранена как общая внешняя геометрия; это не изменение диапазона физического прибора."
+  ]
+}

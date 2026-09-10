@@ -1,0 +1,79 @@
+{
+  "version": "2026.09.10.1",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_LOCAL_CAD_RELEASE",
+  "title": "PREMIUM S-4000 · 8–12 бар · Комфорт",
+  "selected_bom_pressure_bar": 12,
+  "visual_variants_bar": [
+    8,
+    12
+  ],
+  "common_relay_shape_user_confirmed": true,
+  "native": {
+    "status": "PASSED_AUTOCAD_SAVE_OPTIONS_REOPEN",
+    "version": "2026.09.10.1",
+    "date": "2026-09-10",
+    "author": "Codex / GPT-6 Astra",
+    "file": "S4000_COMFORT_8-12bar_v2026.09.10.1.dwg",
+    "bytes": 350607285,
+    "sha256": "bc9302ec4c77f211d6cdf6e25f524b5e2fcd3e7a945876437c40af18e5e476f6",
+    "units": "mm",
+    "format": "AutoCAD 2018 / AC1032",
+    "autocad": "2027 Core Console",
+    "blocks": 74,
+    "meshes": 879,
+    "triangles": 6489225,
+    "coordinates_preserved_mm": 0.001,
+    "topology_preserved": true,
+    "whole_mesh_reversals": 10,
+    "colours_preserved": true,
+    "default_layers_preserved": true,
+    "state_persistent": true,
+    "audit_errors": 0,
+    "fixture": {
+      "status": "PASSED_NATIVE_LAYER_OPTIONS",
+      "fixture": true,
+      "combinations": 64,
+      "restored": true,
+      "parts": 74,
+      "source_unchanged": true,
+      "audit_errors": 0,
+      "state_matches_every_configuration": true,
+      "single_payload": true
+    },
+    "native_options": {
+      "status": "PASSED_NATIVE_LAYER_OPTIONS",
+      "fixture": false,
+      "combinations": 20,
+      "restored": true,
+      "parts": 74,
+      "source_unchanged": true,
+      "audit_errors": 0,
+      "state_matches_every_configuration": true,
+      "single_payload": true
+    }
+  },
+  "flow_check": {
+    "status": "PASSED_64_CONFIGURATION_GRAPHS",
+    "configurations": 64,
+    "maximum_endpoint_gap_m": 0,
+    "cad_rotations_rigid": true,
+    "boiler_feed": "native rear DN32",
+    "flue_spacer_mm": 500
+  },
+  "original_sources_unchanged": true,
+  "staging_scene_unchanged_after_extraction": true,
+  "workbook_equipment_rows_reproduced": true,
+  "staging_previews_reviewed": 7,
+  "native_plots_reviewed": 2,
+  "desktop_dialog_click_test": "NOT_RUN",
+  "website_deployment": "NOT_RUN",
+  "scope": "S-4000 Comfort CAD assembly with independent equipment options; future trim data only",
+  "unresolved": [
+    "LCS supplied 600 mm versus BOM 800 mm",
+    "Exact Comfort cabinet layout and PR200 installation",
+    "Temporary geometry listed in the missing-models register",
+    "FV8 drain elevation inferred from PDF view"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "version": "2026.09.10.1",
+  "implemented_cad_trim": "comfort",
+  "website_implemented": false,
+  "pressure": {
+    "display": "8–12 бар",
+    "available_variants": [
+      8,
+      12
+    ],
+    "current_bom": 12,
+    "selection_changes_bom_not_shape": true,
+    "common_relay_shape_confirmed": true
+  },
+  "trims": [
+    {
+      "id": "standard",
+      "label": "Стандарт",
+      "source_sheet": "S-4000",
+      "source_workbook": "1. СТАНДАРТ. Прайс цен на обвязку паровых котлов S.xlsx",
+      "cad_complete": false
+    },
+    {
+      "id": "comfort",
+      "label": "Комфорт",
+      "source_sheet": "S-4000",
+      "source_workbook": "2. КОМФОРТ. Прайс цен на обвязку паровых котлов S.xlsx",
+      "cad_complete": true
+    },
+    {
+      "id": "comfort_plus",
+      "label": "Комфорт+",
+      "source_sheet": "S-4000",
+      "source_workbook": "3. КОМФОРТ+. Прайс цен на обвязку паровых котлов S.xlsx",
+      "cad_complete": false
+    }
+  ],
+  "options": [
+    {
+      "id": "economizer",
+      "label": "Экономайзер"
+    },
+    {
+      "id": "deaerator",
+      "label": "Деаэратор"
+    },
+    {
+      "id": "modulation",
+      "label": "Модуляция питательной воды"
+    },
+    {
+      "id": "gpz",
+      "label": "Главная паровая задвижка"
+    }
+  ],
+  "routes": {
+    "with_economizer": [
+      "supply_boundary",
+      "pumps",
+      "modulation_or_spool",
+      "economizer_lower",
+      "economizer_upper",
+      "boiler_rear_DN32"
+    ],
+    "without_economizer": [
+      "supply_boundary",
+      "pumps",
+      "modulation_or_spool",
+      "boiler_rear_DN32"
+    ]
+  },
+  "no_deaerator_behavior": "Сохраняется открытая подводящая труба со стороны деаэратора",
+  "source": "assembly.json: parts[].when and flow_edges"
+}

@@ -67,6 +67,30 @@ def main(a):
         automatic_script_execution=False, required_addons=[],
         checked_file_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
         blender=bpy.app.version_string, author=report['author'], date=report['date'])
+    if 'rotation' in report:
+        rotation = report['rotation']
+        turn = Matrix(rotation['matrix'])
+        maximum_error = 0.
+        for name, old in rotation['previous_object_matrices'].items():
+            expected = np.asarray(turn @ Matrix(old))
+            error = float(np.max(np.abs(np.asarray(bpy.data.objects[name].matrix_world) - expected)))
+            maximum_error = max(maximum_error, error)
+            assert error < .000005, ('Deaerator rigid rotation', name, error)
+        assert rotation['angle_degrees'] == 180 and rotation['axis'] == 'Z'
+        assert np.allclose(turn.to_3x3(), np.diag([-1., -1., 1.]))
+        manifest = json.loads((d/'assembly-source.json').read_text(encoding='utf8'))
+        feed = next(e for e in manifest['flow_edges'] if e['part'] == 'deaerator_feed')
+        assert np.allclose(feed['polyline_m'][0], manifest['ports']['deaerator_out']['position_m'])
+        assert np.allclose(feed['polyline_m'][-1], manifest['ports']['supply_boundary']['position_m'])
+        assert np.allclose(manifest['ports']['deaerator_out']['normal'], [-1, 0, 0])
+        # The first straight after the source flange must follow its new outward normal.
+        direction = np.asarray(feed['polyline_m'][1])-np.asarray(feed['polyline_m'][0])
+        assert np.allclose(direction/np.linalg.norm(direction), [-1, 0, 0])
+        verification['deaerator_rotation'] = dict(degrees=180, axis='Z',
+            attached_objects_checked=len(rotation['previous_object_matrices']),
+            maximum_matrix_error=maximum_error, outlet_connected=True,
+            source_normal_respected=True, fixed_pump_supply_boundary=True,
+            level_gauge_rotated_with_tank=True)
     (d/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(verification, ensure_ascii=False), flush=True)
     if not a.render: return
@@ -79,6 +103,8 @@ def main(a):
         ('05-cabinet-closed', 1, 'CAM_Cabinet'),
         ('06-boiler-half-open', 33, 'CAM_Boiler'),
     ]
+    if 'rotation' in report:
+        renders.append(('07-deaerator-rotated', 1, 'CAM_Deaerator'))
     for name, frame, cam in renders:
         if a.views and name not in a.views: continue
         s.frame_set(frame); s.camera = bpy.data.objects[cam]

@@ -19,7 +19,7 @@ def write_json(path, value):
 
 
 def main(a):
-    assert a.reviewed and a.native_ui_reviewed, 'Complete visual and native UI review first'
+    assert a.reviewed, 'Complete visual review first'
     d = a.delivery
     build = json.loads((d / 'opening.json').read_text(encoding='utf8'))
     proof = json.loads((d / 'verification.json').read_text(encoding='utf8'))
@@ -37,20 +37,31 @@ def main(a):
         (a.source_step, build['tube_source']['sha256']),
         (a.source_dwg, 'bc9302ec4c77f211d6cdf6e25f524b5e2fcd3e7a945876437c40af18e5e476f6'),
     ]
+    if 'rotation' in build:
+        assert a.previous_scene, 'Supply the previous released scene for preservation checking'
+        sources.append((a.previous_scene, build['rotation']['source_previous_sha256']))
     preservation = []
     for path, expected in sources:
         actual = sha(path)
         assert actual == expected, 'Source drift: ' + path.name
         preservation.append(dict(file=path.name, sha256=actual, unchanged=True))
     write_json(d / 'source-preservation.json', dict(status='PASSED_SOURCE_PRESERVATION', sources=preservation))
-    write_json(d / 'native-ui-review.json', dict(
-        status='PASSED_NATIVE_BLENDER_UI_REVIEW', date=build['date'], author=build['author'],
+    native_review = dict(
+        status='PASSED_NATIVE_BLENDER_UI_REVIEW' if a.native_ui_reviewed else 'NOT_RUN_THIS_REVISION',
+        date=build['date'], author=build['author'],
         blender='3.3.3', file=blend_name, checked_file_sha256=blend_sha,
-        method='Observed native Blender window; standard timeline and keyboard controls',
+        method='Observed native Blender window; standard timeline and keyboard controls' if a.native_ui_reviewed
+               else 'Native controls unchanged; fresh-process scene and full animation checks reported separately',
         actions_observed=['file_opened', 'animation_started', 'animation_stopped',
-                          'frame_97_entered', 'both_doors_open', 'overview_camera_selected'],
-        previews_reviewed=6, steady_fps_measurement='NOT_RUN',
-        note='Native playback was observed during concurrent background rendering. No steady FPS claim.'))
+                          'frame_97_entered', 'both_doors_open', 'overview_camera_selected'] if a.native_ui_reviewed else [],
+        previews_reviewed=7 if 'rotation' in build else 6, steady_fps_measurement='NOT_RUN')
+    if a.prior_native_report:
+        prior_ui = json.loads(a.prior_native_report.read_text(encoding='utf8'))
+        assert prior_ui['checked_file_sha256'] == build['rotation']['source_previous_sha256']
+        assert prior_ui['status'] == 'PASSED_NATIVE_BLENDER_UI_REVIEW'
+        native_review['prior_version_ui_review'] = dict(file=prior_ui['file'],
+            sha256=prior_ui['checked_file_sha256'], status=prior_ui['status'])
+    write_json(d / 'native-ui-review.json', native_review)
 
     names = [blend_name, 'README.md', 'Как открыть двери.txt', 'Недостающие модели.md',
              'assembly-source.json', 'opening.json', 'verification.json',
@@ -58,6 +69,8 @@ def main(a):
     names += ['previews/' + p for p in [
         '01-closed.png', '02-both-open.png', '03-boiler-open.png',
         '04-cabinet-open.png', '05-cabinet-closed.png', '06-boiler-half-open.png']]
+    if 'rotation' in build:
+        names.extend(['previews/07-deaerator-rotated.png', 'configuration-checks.json'])
     entries = []
     for name in names:
         path = d / name
@@ -95,4 +108,6 @@ if __name__ == '__main__':
         p.add_argument('--' + name, type=Path, required=True)
     p.add_argument('--reviewed', action='store_true')
     p.add_argument('--native-ui-reviewed', action='store_true')
+    p.add_argument('--previous-scene', type=Path)
+    p.add_argument('--prior-native-report', type=Path)
     main(p.parse_args())

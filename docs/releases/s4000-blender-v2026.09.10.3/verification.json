@@ -1,0 +1,56 @@
+{
+  "status": "PASSED_BLENDER_NATIVE_OPENING",
+  "version": "2026.09.10.3",
+  "frames_checked": 193,
+  "retained_static_parts": 64,
+  "total_checked_static_parts": 71,
+  "source_closed_mesh_placements": 10,
+  "max_rigid_transform_error": 4.76837158203125e-07,
+  "poses": [
+    {
+      "frame": 1,
+      "boiler": 0.0,
+      "cabinet": 0.0
+    },
+    {
+      "frame": 49,
+      "boiler": -104.99999950679661,
+      "cabinet": 0.0
+    },
+    {
+      "frame": 97,
+      "boiler": -104.99999950679661,
+      "cabinet": -109.99999850756943
+    },
+    {
+      "frame": 145,
+      "boiler": 0.0,
+      "cabinet": -109.99999850756943
+    },
+    {
+      "frame": 193,
+      "boiler": 0.0,
+      "cabinet": 0.0
+    }
+  ],
+  "actual_smoke_tubes": 96,
+  "source_step_solids_imported": 97,
+  "source_step_solids_excluded": 571,
+  "reopened_in_fresh_process": true,
+  "automatic_script_execution": false,
+  "required_addons": [],
+  "checked_file_sha256": "e1f7b361b5ba810b6b7afa2e4d5b007d39b21b4a06824445c3b502a5aaa382fb",
+  "blender": "3.3.3",
+  "author": "Codex / GPT-6 Astra",
+  "date": "2026-09-10",
+  "deaerator_rotation": {
+    "degrees": 180,
+    "axis": "Z",
+    "attached_objects_checked": 548,
+    "maximum_matrix_error": 8.742277657347586e-08,
+    "outlet_connected": true,
+    "source_normal_respected": true,
+    "fixed_pump_supply_boundary": true,
+    "level_gauge_rotated_with_tank": true
+  }
+}

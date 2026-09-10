@@ -1,0 +1,109 @@
+{
+  "status": "PASSED_BLENDER_PACKAGE",
+  "version": "2026.09.10.3",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "archive": "S4000_Blender_OPENING_v2026.09.10.3.zip",
+  "archive_bytes": 146958499,
+  "archive_sha256": "5f9d881e6b6ab9164c36300ece18153ed0420a19ab8b4a7ff3d2bbcdfa70d8d4",
+  "archive_files": 18,
+  "crc_verified": true,
+  "all_file_hashes_verified": true,
+  "blend": "S4000_COMFORT_OPENING_v2026.09.10.3.blend",
+  "blend_bytes": 131910297,
+  "blend_sha256": "e1f7b361b5ba810b6b7afa2e4d5b007d39b21b4a06824445c3b502a5aaa382fb",
+  "source_files_unchanged": 4,
+  "receipt_outside_archive": true,
+  "files": [
+    {
+      "file": "S4000_COMFORT_OPENING_v2026.09.10.3.blend",
+      "bytes": 131910297,
+      "sha256": "e1f7b361b5ba810b6b7afa2e4d5b007d39b21b4a06824445c3b502a5aaa382fb"
+    },
+    {
+      "file": "README.md",
+      "bytes": 7112,
+      "sha256": "a634d9403bbc413170230ee1ac072040904917b5c227c1d0850f420629f31286"
+    },
+    {
+      "file": "Как открыть двери.txt",
+      "bytes": 2335,
+      "sha256": "ed497bbb3929d28cb84db85db694ac348b246e8b8b7ab6a0949626598bf93d42"
+    },
+    {
+      "file": "Недостающие модели.md",
+      "bytes": 4696,
+      "sha256": "cd030c84e1f40035a76120bc048e31ad3b3281dcf374b1e22ba49e7f02a31530"
+    },
+    {
+      "file": "assembly-source.json",
+      "bytes": 60945,
+      "sha256": "9d8466a0dd98d38072028c93357de4413b748a86b0004c2be97d31d00e157116"
+    },
+    {
+      "file": "opening.json",
+      "bytes": 229183,
+      "sha256": "994eb53181562147348bdb2b7b4fba554b943f66352e536953de71aab9592aa8"
+    },
+    {
+      "file": "verification.json",
+      "bytes": 1450,
+      "sha256": "7d6047c596e4e13cc6f48294ffa301a33b3d1d516979d7c070c461cdfd058077"
+    },
+    {
+      "file": "source-preservation.json",
+      "bytes": 822,
+      "sha256": "8e856d544b99827a9af36140d026afc2e5241a9158b205ebdcf44da5c8d512a3"
+    },
+    {
+      "file": "native-ui-review.json",
+      "bytes": 708,
+      "sha256": "d342ab15806dd9fbf518e0f62642f7c656552807afd8b5875821ab43e6c4fadb"
+    },
+    {
+      "file": "previews/01-closed.png",
+      "bytes": 2690596,
+      "sha256": "5332c8d8e8410c32d350e5ee17004551bed605e7ac1a1257f112303b325e60a3"
+    },
+    {
+      "file": "previews/02-both-open.png",
+      "bytes": 2709279,
+      "sha256": "eed4707ec2bc0f601f76329b37de760253ca49ab4367655e527a17452ad68186"
+    },
+    {
+      "file": "previews/03-boiler-open.png",
+      "bytes": 2900175,
+      "sha256": "393bb010271cc61d494936b0353536d2c6912e61fc77056b461a7263f6b7c404"
+    },
+    {
+      "file": "previews/04-cabinet-open.png",
+      "bytes": 2628735,
+      "sha256": "fb22000968f95eb1b8411b142ad96652d9904accdddf9949f800667a04d4401f"
+    },
+    {
+      "file": "previews/05-cabinet-closed.png",
+      "bytes": 2455479,
+      "sha256": "f2ef1a69cfb26f75039fe9d5e286b522be29bbab5dae0def3b9b1abe68a1d297"
+    },
+    {
+      "file": "previews/06-boiler-half-open.png",
+      "bytes": 2848431,
+      "sha256": "9725dabbcacffca0dbf182db65b9d34ede2d1a20d26ab56443abc607f20bcda4"
+    },
+    {
+      "file": "previews/07-deaerator-rotated.png",
+      "bytes": 2822146,
+      "sha256": "6196df5a00d816772b0d4e7d9f7ed163ba73bafb5e0df6b594422c3d7c05fea1"
+    },
+    {
+      "file": "configuration-checks.json",
+      "bytes": 25215,
+      "sha256": "7d21d706650b17e26c233a8f665ba963281069417555ddf869e32f851d2045fd"
+    },
+    {
+      "file": "SHA256.json",
+      "bytes": 2902,
+      "sha256": "63b608dcde9520a427ef875635db1721756089caef85cf7e7313abcce4865c34"
+    }
+  ]
+}

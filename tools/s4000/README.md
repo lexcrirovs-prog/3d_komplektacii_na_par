@@ -98,3 +98,23 @@ Copy the release README to `$s4OpeningOutput/README.md` and `docs/s4000-missing-
 ```
 
 The packager checks source hashes again and verifies ZIP CRC and every archived file's hash. The receipt `package.json` remains outside the archive to avoid a circular archive hash. Publish only code, review images and summary proofs; the `.blend`, source CAD, mesh caches and prices stay in the private delivery.
+
+## Deaerator rotation revision — 2026.09.10.3
+
+Version `2026.09.10.3`, 2026-09-10, Codex / GPT-6 Astra rotates DA-15 and all its attached details exactly 180 degrees about the vertical line through `(-3.65, 0, 0.84414)` metres. The original local geometry is preserved. The source outlet moves from `(-2.84, 1.525, 0.84414)` to `(-4.46, -1.525, 0.84414)` and faces negative X. Only the DA-to-supply-boundary pipe is rebuilt; all downstream equipment and door controls remain unchanged.
+
+Use the verified `2026.09.10.2` directory as `$s4OpeningPrevious` and a fresh `$s4RotatedOutput`. The revision refuses to overwrite an existing released scene.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/rotate_blender_deaerator.py -- --source $s4OpeningPrevious --output $s4RotatedOutput
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4RotatedOutput --render
+& $s4Py tools/s4000/verify_options.py "$s4RotatedOutput/assembly-source.json" --output "$s4RotatedOutput/configuration-checks.json"
+```
+
+Review all seven images. Copy this revision's release README and the missing-model register to the delivery, as above. The following packaging command records that native UI actions were checked in the previous revision, while the current file is checked through fresh-process loading, all animation frames and rendered review. Pass `--native-ui-reviewed` only after actually repeating those native UI actions on the current revision.
+
+```powershell
+& $s4Py tools/s4000/package_blender_opening.py --delivery $s4RotatedOutput --source-scene $s4SourceBlend --source-step $s4ConstructionStep --source-dwg $s4SourceDwg --previous-scene "$s4OpeningPrevious/S4000_COMFORT_OPENING_v2026.09.10.2.blend" --prior-native-report "$s4OpeningPrevious/native-ui-review.json" --reviewed
+```
+
+The fresh-process verifier checks every deaerator object's matrix against its prior matrix multiplied by the 180-degree turn, verifies the changed outlet normal and both pipe endpoints, then checks unchanged door animation and static equipment. The separate graph verifier rechecks all 64 option combinations against the updated manifest.

@@ -102,14 +102,18 @@ def run(a):
  if a.fixture_only:return
  output=a.source.with_suffix('.dwg');assert not output.exists(),output
  expected=snapshot(a.source);source_hash=hashlib.sha256(a.source.read_bytes()).hexdigest()
+ view_names=['S4000_ALL','S4000_REAR','S4000_PUMPS','S4000_DEAERATOR','S4000_TOP']
+ if 'door_groups' in manifest:view_names+=['S4000_DOOR','S4000_CABINET']
+ style_views='(foreach v \'('+' '.join('"'+v+'"' for v in view_names)+') (command "_.-VIEW" "_E" "_V" v "PREMIUM_SOLID" "" ""))'
+ overview_direction='-1,-1,0.72' if 'door_groups' in manifest else '1,-1,0.8'
  # Use full ASCII paths only in AutoLISP; source is passed as a structured arg.
  assert str(output).isascii()
  lines=['(setvar "FILEDIA" 0)','(setvar "CMDDIA" 0)','(setvar "INSUNITS" 4)','(setvar "UCSICON" 0)','(setvar "GRIDMODE" 0)',
   '(command "_.VSCURRENT" "_Shaded")','(setvar "VSEDGES" 0)','(setvar "VSSILHEDGES" 0)',
   '(setvar "VSOCCLUDEDEDGES" 0)','(setvar "VSINTERSECTIONEDGES" 0)','(setvar "VSFACEOPACITY" 100)','(setvar "VSSHADOWS" 0)',
   '(command "_.-VISUALSTYLES" "_S" "PREMIUM_SOLID")',*lisp_lines(commands),'(c:S4000ALL)',
-  '(foreach v \'("S4000_ALL" "S4000_REAR" "S4000_PUMPS" "S4000_DEAERATOR" "S4000_TOP") (command "_.-VIEW" "_E" "_V" v "PREMIUM_SOLID" "" ""))',
-  '(command "_.VPOINT" "1,-1,0.8")','(command "_.ZOOM" "_E")','(command "_.ZOOM" "0.94x")',
+  style_views,
+  '(command "_.VPOINT" "'+overview_direction+'")','(command "_.ZOOM" "_E")','(command "_.ZOOM" "0.94x")',
   '(command "_.-VIEW" "_D" "S4000_ALL")','(command "_.-VIEW" "_S" "S4000_ALL")',
   '(command "_.AUDIT" "_N")','(setvar "FILEDIA" 1)','(setvar "CMDDIA" 1)',
   '(command "_.SAVEAS" "_2018" "'+output.as_posix()+'")','(command "_.QUIT")','']

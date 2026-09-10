@@ -1,6 +1,6 @@
 # S-4000 Comfort CAD build
 
-Release `2026.09.10.1`, 2026-09-10, Codex / GPT-6 Astra.
+Latest CAD release: `2026.09.10.4`, 2026-09-10, Codex / GPT-6 Astra. Its separate Blender source is `2026.09.10.3`. The original assembly recipe below remains version `2026.09.10.1`; the opening CAD handoff is documented at the end.
 
 The pipeline produces a detailed, editable AutoCAD assembly from the supplied S-4000, EQS2-4000, DA-15, V4-19 and LCS600 STEP files, two KM125/KM225 DWGs, separator PDFs and the S-4000 equipment worksheets. Reused burner/instrument geometry comes from the S-3000 cabinet release `2026.09.09.5`.
 
@@ -118,3 +118,29 @@ Review all seven images. Copy this revision's release README and the missing-mod
 ```
 
 The fresh-process verifier checks every deaerator object's matrix against its prior matrix multiplied by the 180-degree turn, verifies the changed outlet normal and both pipe endpoints, then checks unchanged door animation and static equipment. The separate graph verifier rechecks all 64 option combinations against the updated manifest.
+
+## AutoCAD handoff with opening doors — 2026.09.10.4
+
+This release exports all 74 existing parts and the four added boiler opening parts from the immutable `2026.09.10.3` Blender scene at closed frame 1. It exports 78 named native blocks, 978 MESH entities and 6,598,419 triangles. No decimation is applied. The four additional roots are the boiler door, door labels, selected real tubes and presentation tubeplate mask.
+
+`$s4CadOpeningOutput` and `$s4CadOpeningCache` must be fresh local directories outside the repository. `$s4RotatedOutput` is the verified Blender `.3` delivery and `$s4Output` is the original `.1` CAD delivery. Paths handed to AutoLISP scripts must be ASCII; original source paths are read by Python/Blender.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/prepare_opening_cad.py -- --source $s4RotatedOutput --output $s4CadOpeningOutput --cache "$s4CadOpeningCache/meshes"
+& $s4Py tools/s4000/create_cad.py --cache "$s4CadOpeningCache/meshes" --manifest "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningOutput/AutoCAD"
+& $s4Py tools/s4000/verify_options.py "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningOutput/configuration-checks.json"
+& $s4Py tools/s4000/check_cad_doors.py "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.10.4.dxf" --manifest "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningCache/door-fixture" --fixture
+& $s4Py tools/s4000/native_cad.py "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.10.4.dxf" --manifest "$s4CadOpeningOutput/assembly.json" --private "$s4CadOpeningCache/native" --plots
+& $s4Py tools/s4000/check_cad_doors.py "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.10.4.dwg" --manifest "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningCache/doors-full" --plots --open-copy "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_OPEN_v2026.09.10.4.dwg"
+& $s4OfficePy tools/s4000/render_cad_opening.py --native "$s4CadOpeningCache/native/full-options" --doors "$s4CadOpeningCache/doors-full" --output "$s4CadOpeningOutput/previews"
+```
+
+Native `sd4:` functions avoid the existing `s4:` equipment namespace. The seven explicitly declared moving blocks use independent closed/open target angles about the Blender hinge coordinates, with one metre-to-millimetre conversion. Nine tests compare every block, exercise idempotent calls, preserve open poses while changing equipment, and reopen the separately saved open DWG. The immutable closed DWG also passes the full vertex/topology roundtrip proof and all native equipment-state checks.
+
+Review all six actual AutoCAD PNGs before running the packager. The native PDFs are retained as private QA intermediates; the portable delivery contains the reviewed images. The packager checks the `.3` Blender and `.1` DWG hashes again, includes both new DWGs and the inherited catalog without prices, and checks every ZIP member's CRC and SHA-256.
+
+```powershell
+& $s4Py tools/s4000/package_cad_opening.py --delivery $s4CadOpeningOutput --repo . --blender-source $s4RotatedOutput --previous-cad $s4Output --native-plots "$s4CadOpeningCache/native/full-options" --door-plots "$s4CadOpeningCache/doors-full" --fixture "$s4CadOpeningCache/door-fixture" --native-plots-reviewed
+```
+
+The optional local launcher targets the user's installed `E:\AutoCAD 2027\acad.exe`. Its startup script defines the reviewed commands in the opened drawing only. Portable manual use is `APPLOAD` of `S4000-controls.lsp`, followed by `S4000PANEL` or `S4000OPTIONS`; keep both DCL files alongside the DWG. No startup suite, registry, trusted-path or `SECURELOAD` settings are changed. Native command tests and desktop dialog button clicks remain distinct verification facts.

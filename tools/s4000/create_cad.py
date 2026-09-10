@@ -20,9 +20,22 @@ def controls(manifest,destination):
  rules='\n'.join('  ("S4000_'+p['id']+'" '+ ' '.join('("'+k+'" . '+str(int(v))+')' for k,v in p['when'].items())+')' for p in manifest['parts'])
  default='('+' '.join('("'+k+'" . '+str(int(manifest['default_options'][k]))+')' for k in OPTIONS)+')'
  template=Path(__file__).with_name('options-template.lsp').read_text(encoding='ascii')
- destination.joinpath('S4000-options.lsp').write_text(template.replace('__RULES__',rules).replace('__DEFAULT__',default),encoding='ascii')
+ template=template.replace('2026.09.10.1',manifest['version'])
+ options=template.replace('__RULES__',rules).replace('__DEFAULT__',default)
+ destination.joinpath('S4000-options.lsp').write_text(options,encoding='ascii')
  import shutil
  shutil.copy2(Path(__file__).with_name('S4000-options.dcl'),destination/'S4000-options.dcl')
+ if 'door_groups' in manifest:
+  groups=[]
+  for g in manifest['door_groups']:
+   pivot=' '.join(str(round(x*1000,6)) for x in g['pivot_m'])
+   names=' '.join('"S4000_'+name+'"' for name in g['parts'])
+   groups.append(' ("'+g['id']+'" ('+pivot+') '+str(g['open_degrees'])+' ('+names+'))')
+  doors=Path(__file__).with_name('doors-template.lsp').read_text(encoding='ascii')
+  doors=doors.replace('__VERSION__',manifest['version']).replace('__GROUPS__','(\n'+'\n'.join(groups)+'\n)')
+  destination.joinpath('S4000-doors.lsp').write_text(doors,encoding='ascii')
+  destination.joinpath('S4000-controls.lsp').write_text(options+'\n'+doors,encoding='ascii')
+  shutil.copy2(Path(__file__).with_name('S4000-doors.dcl'),destination/'S4000-doors.dcl')
 
 def create(cache,manifest_path,destination):
  source=json.loads((cache/'meshes.json').read_text(encoding='utf8'));manifest=json.loads(manifest_path.read_text(encoding='utf8'))
@@ -51,6 +64,15 @@ def create(cache,manifest_path,destination):
  for name,direction,target,height in [('S4000_ALL',(1,-1,.8),(-300,800,1700),8000),('S4000_REAR',(1,1,.8),(0,1700,1600),6000),
     ('S4000_PUMPS',(1,-1,.6),(1750,500,1600),3700),('S4000_DEAERATOR',(1,1,.6),(-3650,100,1400),4800),('S4000_TOP',(0,0,1),(0,800,1600),8000)]:
   doc.views.new(name,dxfattribs={'height':height,'width':height*1.5,'direction':direction,'target':target,'render_mode':4})
+ if 'door_groups' in manifest:
+  for name,direction,target,height in [
+   ('S4000_DOOR',(1,-2.8,1.1),(-400,-1700,1250),3800),
+   ('S4000_CABINET',(-1,-.55,.35),(-1450,-910,1580),1100)]:
+   doc.views.new(name,dxfattribs={'height':height,'width':height*1.5,'direction':direction,'target':target,'render_mode':4})
+  doc.views.get('S4000_DEAERATOR').dxf.direction=(-1,-1.1,.6)
+  doc.views.get('S4000_DEAERATOR').dxf.target=(-3650,30,1650)
+  doc.views.get('S4000_ALL').dxf.direction=(-1,-1,.72)
+  doc.views.get('S4000_ALL').dxf.target=(-500,150,1700)
  audit=doc.audit();assert not audit.errors and not audit.fixes,(audit.errors,audit.fixes)
  target=destination/('S4000_COMFORT_8-12bar_v'+manifest['version']+'.dxf');assert not target.exists(),target
  doc.saveas(target,fmt='bin');report.update(blocks=len(report['parts']),triangles=sum(x['triangles'] for x in report['parts']),

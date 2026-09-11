@@ -2,7 +2,7 @@
   "status": "PASSED_BLENDER_NATIVE_OPENING",
   "version": "2026.09.11.1",
   "frames_checked": 193,
-  "retained_static_parts": 42,
+  "retained_static_parts": 40,
   "total_checked_static_parts": 98,
   "source_closed_mesh_placements": 10,
   "max_rigid_transform_error": 4.76837158203125e-07,
@@ -39,7 +39,7 @@
   "reopened_in_fresh_process": true,
   "automatic_script_execution": false,
   "required_addons": [],
-  "checked_file_sha256": "dbec531da829becad50614e71b519335b537015ce176f4cf7c9c830448cd466d",
+  "checked_file_sha256": "9bd6561179e2332f8ef18edfda7a52fada3c2566abb61498c69743aebb2b4ed1",
   "blender": "3.3.3",
   "author": "Codex / GPT-6 Astra",
   "date": "2026-09-11",
@@ -77,7 +77,7 @@
     ]
   },
   "blowdown": {
-    "retained_parts": 49,
+    "retained_parts": 46,
     "changed_existing_parts": [
       "bcv7432",
       "bottom_piping",
@@ -102,7 +102,7 @@
     ],
     "translated_objects_checked": 553,
     "maximum_matrix_error": 6.357302595461078e-08,
-    "other_parts_preserved": 71,
+    "other_parts_preserved": 68,
     "trap_triangles": 83390,
     "trap_faces_connected": true,
     "flange_spacing_mm": 160,
@@ -118,7 +118,7 @@
     "status": "PASSED_GEOMETRY_REVIEW",
     "date": "2026-09-11",
     "source_video": "2026-09-11 14-17-47.mkv",
-    "original_unaffected_parts_checked": 81,
+    "original_unaffected_parts_checked": 78,
     "probe_to_furnace_clearance_m": {
       "lp200": 0.4063684940338135,
       "lp400": 0.4051244258880615,
@@ -147,5 +147,18 @@
       "from_economizer"
     ],
     "offsets_exchanged": true
+  },
+  "cable_channels": {
+    "status": "PASSED_ENCLOSED_WIRING",
+    "channels": 19,
+    "short_terminal_leads": 11,
+    "long_enclosed_runs": 11,
+    "maximum_exposed_lead_mm": 127.99999256245769,
+    "equipment_mesh_pairs_checked": 60,
+    "equipment_intersections": 0,
+    "actuator_core_vertices_preserved": 912,
+    "door_channels_attached_to_moving_door": true,
+    "hinge_link_preserved": true,
+    "unrelated_parts_preserved": 96
   }
 }

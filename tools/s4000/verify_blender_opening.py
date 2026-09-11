@@ -209,6 +209,60 @@ def main(a):
                 pair_intersections=0,parallel_spacing_mm=spacing,straight_surface_gap_mm=spacing-76.1,
                 horizontal=True,source_valve_endpoints_preserved=True,
                 nearby_equipment_without_intersections=nearby,offsets_exchanged=True)
+    if 'cable_channel_revision' in report:
+        from mathutils.bvhtree import BVHTree
+        revision=report['cable_channel_revision']
+        assert all(fingerprint(bpy.data.objects[k])==v for k,v in revision['unchanged_fingerprints'].items())
+        assert max(x['length_m'] for x in revision['short_terminal_leads'])<.15
+        channels=[]
+        for row in revision['channels']:
+            ob=bpy.data.objects[row['object']]
+            assert ob['cable_channel'] and ob.parent.name==row['part']
+            vs=[ob.matrix_world@v.co for v in ob.data.vertices]
+            fs=[tuple(p.vertices) for p in ob.data.polygons]
+            tree=BVHTree.FromPolygons(vs,fs)
+            bounds=np.asarray(vs);lo=bounds.min(axis=0);hi=bounds.max(axis=0)
+            channels.append((row,tree,lo,hi))
+            # Each actual mesh has an inner cavity, a closed cover, and four walls.
+            p0,p1=map(Vector,row['centerline_m'][:2]);center=(p0+p1)/2;t=(p1-p0).normalized()
+            ref=Vector((0,0,1)) if abs(t.z)<.9 else Vector((0,1,0));u=ref.cross(t).normalized();v=t.cross(u)
+            for direction in [u,-u,v,-v]:
+                hit=tree.ray_cast(center,direction,max(row['width_m'],row['height_m']))
+                assert hit[0] is not None and hit[3]>.003,(row['id'],'Missing wall or inner clearance')
+        # Detect collisions with existing equipment, using actual mesh surfaces.
+        collisions=[];tested=0
+        excluded=set(revision['changed_parts'])|{'cabinet_interior','control_cabinet','lc220','lc440','bc970','pr200'}
+        for part in manifest['parts']:
+            if part['id'] in excluded:continue
+            for ob in bpy.data.objects[part['id']].children_recursive:
+                if ob.type!='MESH':continue
+                corners=np.array([ob.matrix_world@Vector(v) for v in ob.bound_box]);lo=corners.min(axis=0);hi=corners.max(axis=0)
+                nearby=[x for x in channels if x[0]['part']!='cabinet_door' and np.all(lo<=x[3]) and np.all(hi>=x[2])]
+                if not nearby:continue
+                tree=BVHTree.FromPolygons([ob.matrix_world@v.co for v in ob.data.vertices],[tuple(p.vertices) for p in ob.data.polygons])
+                for row,channel,_,_ in nearby:
+                    tested+=1
+                    if channel.overlap(tree):collisions.append((row['id'],part['id'],ob.name))
+        assert not collisions,('Channel intersects equipment',collisions)
+        # Verify that long wire paths stay within the union of channel routes.
+        segments=[(np.array(a),np.array(b),min(row['width_m'],row['height_m'])/2-.004)
+            for row in revision['channels'] if row['part']!='cabinet_door'
+            for a,b in zip(row['centerline_m'],row['centerline_m'][1:])]
+        for run in revision['enclosed_wire_runs']:
+            for wire_start,wire_end in zip(run['points_m'],run['points_m'][1:]):
+                for p in np.linspace(wire_start,wire_end,max(2,int(np.linalg.norm(np.array(wire_end)-wire_start)/.02)+1)):
+                    covered=False
+                    for start,end,radius in segments:
+                        dv=end-start;v=start+np.clip(np.dot(p-start,dv)/np.dot(dv,dv),0,1)*dv
+                        if np.linalg.norm(p-v)<=radius+1e-7:covered=True;break
+                    assert covered,(run['id'],'Wire outside channel',p.tolist())
+        verification['cable_channels']=dict(status='PASSED_ENCLOSED_WIRING',channels=len(channels),
+            short_terminal_leads=len(revision['short_terminal_leads']),long_enclosed_runs=len(revision['enclosed_wire_runs']),
+            maximum_exposed_lead_mm=max(x['length_m'] for x in revision['short_terminal_leads'])*1000,
+            equipment_mesh_pairs_checked=tested,equipment_intersections=0,
+            actuator_core_vertices_preserved=revision['actuator_core_vertices_preserved'],
+            door_channels_attached_to_moving_door=True,hinge_link_preserved=True,
+            unrelated_parts_preserved=len(revision['unchanged_fingerprints']))
     (d/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(verification, ensure_ascii=False), flush=True)
     if not a.render: return

@@ -305,6 +305,170 @@ def review_in_place(directory, fv_dn):
     print('VIDEO_REVIEW_SAVED_IN_PLACE',str(target),flush=True)
 
 
+def cable_channel(g, name, points, width=.06, height=.05):
+    """Closed sheet-metal trunking with an inner cavity and separate lid seams."""
+    ps=[Vector(p) for p in points];vs=[];frames=[];previous=None;u=None
+    for i,p in enumerate(ps):
+        tangent=(ps[min(i+1,len(ps)-1)]-ps[max(0,i-1)]).normalized()
+        if previous is None:
+            ref=Vector((0,0,1)) if abs(tangent.z)<.9 else Vector((0,1,0))
+            u=ref.cross(tangent).normalized()
+        else:
+            u=previous.rotation_difference(tangent)@u
+            u=(u-tangent*u.dot(tangent)).normalized()
+        v=tangent.cross(u).normalized();previous=tangent;frames.append((u.copy(),v.copy()))
+        for w,h in [(width,height),(width-.004,height-.004)]:
+            vs.extend(p+u*x*w/2+v*y*h/2 for x,y in [(-1,-1),(1,-1),(1,1),(-1,1)])
+    fs=[]
+    for i in range(len(ps)-1):
+        for j in range(4):
+            k=(j+1)%4;a=i*8;b=a+8
+            fs.extend([(a+j,a+k,b+k,b+j),(a+4+k,a+4+j,b+4+j,b+4+k)])
+    for i in [0,len(ps)-1]:
+        a=i*8
+        for j in range(4):
+            k=(j+1)%4;fs.append((a+j,a+4+j,a+4+k,a+k))
+    ob=g.mesh('Кабель-канал / '+name,vs,fs,'zinc',False)
+    ob.matrix_world=Matrix.Identity(4);ob['cable_channel']=True
+    # Fine cover seams and regular clips distinguish trunking from a solid beam.
+    for sign in [-1,1]:
+        seam=[p+u*sign*(width/2-.001)+v*(height/2+.00025) for p,(u,v) in zip(ps,frames)]
+        g.pipe(seam,.00055,'dark',0,6,.0005)
+    for i,(a,b) in enumerate(zip(ps,ps[1:])):
+        length=(b-a).length;t=(b-a).normalized();u,v=frames[i]
+        if length<.18:continue
+        for j in range(max(1,math.ceil(length/.45))):
+            p=a+(b-a)*(j+.5)/max(1,math.ceil(length/.45))
+            q=p+v*(height/2+.002)
+            g.cyl(q,q+v*.003,.003,'steel',6)
+    return dict(id=name,part=g.owner,object=ob.name,centerline_m=[list(p) for p in ps],
+                width_m=width,height_m=height,wall_m=.002,closed_cover=True)
+
+
+def enclose_cables(directory):
+    """Owner-requested cable channels, in the same verified S4000 files."""
+    from revise_pressure_gooseneck import builder
+    from build_assembly import actuator
+    d=Path(directory);m=json.loads((d/'assembly-source.json').read_text(encoding='utf8'))
+    r=json.loads((d/'opening.json').read_text(encoding='utf8'))
+    target=d/('S4000_COMFORT_OPENING_v'+m['version']+'.blend')
+    prior_sha=sha(target)
+    assert prior_sha==json.loads((d/'verification.json').read_text(encoding='utf8'))['checked_file_sha256']
+    assert m['version']=='2026.09.11.1' and 'cable_channel_revision' not in r
+    bpy.ops.wm.open_mainfile(filepath=str(target),load_ui=False,use_scripts=False)
+    bpy.context.scene.frame_set(1);bpy.context.view_layer.update()
+    changed={'cables','mod_eco_drive','mod_direct_drive','gpz_drive','cabinet_door'}
+    parts={p['id']:p for p in m['parts']}
+    kept={k:fingerprint(bpy.data.objects[k]) for k in parts if k not in changed}
+    core_vertices=0
+    # Confirm the generated drive bodies before replacing their cable tails.
+    for key,base,big in [('mod_eco_drive',(.60,1.26,2.98),False),('mod_direct_drive',(.60,1.26,2.98),False),('gpz_drive',(0,.60,3.24),True)]:
+        probe=builder(key);probe.part=lambda *args,**kwargs:None;actuator(probe,key,base,big)
+        for (_,mat),(vs,fs) in probe.batches.items():
+            candidates=[o for o in bpy.data.objects[key].children_recursive if o.type=='MESH' and o.data.materials[0].name==mat]
+            assert len(candidates)==1,(key,mat)
+            actual=[candidates[0].matrix_world@v.co for v in candidates[0].data.vertices][:len(vs)]
+            assert np.allclose(actual,vs,atol=1e-6),(key,'drive body changed',mat)
+            core_vertices+=len(vs)
+    clear('cables');g=builder(None)
+    g.part('cables','Закрытые кабель-каналы с крышками, креплениями и вводами шкафа','photo_parametric')
+    ducts=[];leads=[];runs=[]
+    def duct(name,points,w=.06,h=.05):
+        row=cable_channel(g,name,points,w,h);ducts.append(row);return row
+    def lead(name,points):
+        points=[list(p) for p in points];g.pipe(points,.006,'black',.016,12)
+        leads.append(dict(id=name,part=g.owner,points_m=points,length_m=sum((Vector(b)-Vector(a)).length for a,b in zip(points,points[1:]))))
+    def wire(name,points):
+        # Wires are present inside the covers, with only the terminal lead exposed.
+        g.pipe(points,.004,'black',0,8);runs.append(dict(id=name,part=g.owner,points_m=[list(p) for p in points]))
+    left=[(-1.075,1.45,.30),(-1.075,-1.80,.30),(-1.075,-2.18,.30),(-1.075,-2.18,.10),(1.075,-2.18,.10),(1.075,-2.18,.30),(1.075,-1.80,.30),(1.075,1.45,.30)]
+    duct('Нижняя трасса и переход под дверью котла',left,.08,.045)
+    gland=(-1.19,-1.22,1.225)
+    cabinet=[(-1.075,-1.22,.30),(-1.19,-1.22,.30),gland]
+    duct('Ввод в шкаф снизу',cabinet,.085,.065)
+    right=[(1.075,-1.76,.30),(1.075,-1.76,2.08),(1.55,-1.76,2.08),(1.55,-1.76,2.98)]
+    duct('Стояк приборной группы',right,.07,.055)
+    bus=[(1.55,-1.76,2.98),(1.55,-1.01,2.98)]
+    duct('Приборный коллектор',bus,.05,.045)
+    for j,y in enumerate([-1.52,-1.28,-1.04]):
+        start=(1.469,y,2.995) if j<2 else (1.441,y,3.024)
+        end=(1.55,y,2.98);lead('Прибор давления '+str(j+1),[start,end])
+        pts=[end,bus[0],*reversed(right[:-1]),(1.075,-2.18,.30),(1.075,-2.18,.10),(-1.075,-2.18,.10),(-1.075,-2.18,.30),(-1.075,-1.22,.30),*cabinet[1:]]
+        wire('Давление '+str(j+1),pts)
+    roof=[(.74,1.50,2.20),(.74,-1.76,2.20),(1.075,-1.76,2.08)]
+    duct('Каналы приводов на верхней площадке',roof,.05,.04)
+    shoulder=[(-.26,-1.36,2.32),(-.68,-1.36,2.32),(-.98,-1.36,1.71),(-1.075,-1.36,1.50),(-1.075,-1.36,.30)]
+    duct('Канал датчиков по обшивке',shoulder,.055,.04)
+    duct('Общий канал датчиков уровня',[(-.26,-1.36,2.32),(-.26,-.54,2.32)],.045,.035)
+    # Keep the original connector positions; only the downstream wire route changes.
+    probe_points=[(-.03680608,-1.21125,2.515),(0,-.64,2.515),(.13680608,-1.24625,2.475)]
+    branches=[(-.10680608,-1.21125,2.515),(-.070,-.64,2.515),(.13680608,-1.31625,2.475)]
+    for j,(start,end) in enumerate(zip(probe_points,branches)):
+        lead('Датчик уровня '+str(j+1),[start,end])
+        pts=[end,(-.26,end[1],end[2]),(-.26,end[1],2.32)]
+        duct('Подвод датчика уровня '+str(j+1),pts,.032,.028)
+        wire('Уровень '+str(j+1),[*pts,shoulder[0],*shoulder[1:],(-1.075,-1.22,.30),*cabinet[1:]])
+    pump_paths=[]
+    for i,(y,lane) in enumerate([(.20,.50),(.95,1.40)]):
+        start=(2.205,y,1.22);end=(2.30,y,1.22)
+        lead('Насос '+str(i+1),[start,end])
+        pts=[end,(2.30,lane,1.22),(2.30,lane,.30),(1.075,lane,.30)]
+        duct('Подвод насоса '+str(i+1),pts,.05,.045)
+        full=[start,*pts,(1.075,-2.18,.30),(1.075,-2.18,.10),(-1.075,-2.18,.10),(-1.075,-2.18,.30),(-1.075,-1.22,.30),*cabinet[1:]]
+        wire('Насос '+str(i+1),full[1:]);pump_paths.append(full)
+        g.box((2.34,lane,.605),(.035,.035,1.21),'steel');g.box((2.34,lane,.01),(.10,.10,.02),'steel')
+        for z in [.32,.70,1.18]:g.box((2.32,lane,z),(.065,.06,.012),'steel')
+    # Fasten the side risers and bottom channels to the existing shell/frame.
+    for x,y in [(1.075,-1.76),(-1.075,-1.36)]:
+        for z in [.50,.90,1.30,1.70]:
+            shell=math.copysign(math.sqrt(max(0,.987**2-(z-1.135)**2)),x)
+            g.box(((shell+x)/2,y,z),(abs(x-shell),.055,.014),'steel')
+    for x in [-1.075,1.075]:
+        for y in [-1.65,-.9,-.15,.6,1.3]:g.box((x,y,.254),(.13,.045,.025),'steel')
+    for y in [-1.60,-.90,-.20,.5,1.25]:
+        z=1.135+math.sqrt(.987**2-.74**2)
+        g.box((.74,y,(z+2.18)/2),(.022,.035,2.18-z),'steel')
+    for key,base,big in [('mod_eco_drive',(.60,1.26,2.98),False),('mod_direct_drive',(.60,1.26,2.98),False),('gpz_drive',(0,.60,3.24),True)]:
+        clear(key);start=actuator(g,key,base,big,parts[key]['when'])
+        if big:
+            end=(.22,.60,start.z);pts=[end,(.22,.60,2.20),(.74,.60,2.20)]
+        else:
+            end=(.80,1.26,start.z);pts=[end,(.80,1.50,start.z),(.80,1.50,2.20),(.74,1.50,2.20)]
+        lead(key,[start,end]);duct(key+' / канал',pts,.04,.035)
+        tail=[(.74,-1.76,2.20),(1.075,-1.76,2.08),(1.075,-1.76,.30),(1.075,-2.18,.30),(1.075,-2.18,.10),(-1.075,-2.18,.10),(-1.075,-2.18,.30),(-1.075,-1.22,.30),*cabinet[1:]]
+        wire(key,[*pts,*tail]);g.parts[key]['cable_termination_m']=list(gland)
+        # The small bracket attaches the drive-side duct to its existing support.
+        g.box(((start.x+end[0])/2,start.y,start.z-.07),(end[0]-start.x,.02,.008),'steel')
+    g.flush();bpy.context.view_layer.update()
+    # Cover the long wire runs on the moving door; retain its flexible hinge link.
+    g.owner='cabinet_door'
+    for z in [1.801,1.696,1.591]:duct('Дверца шкафа / ряд '+str(z),[(-1.255,-1.226,z),(-1.255,-.817,z)],.014,.014)
+    duct('Дверца шкафа / сборный канал',[(-1.255,-.817,1.807),(-1.255,-.817,1.535)],.014,.014)
+    g.flush();bpy.context.view_layer.update()
+    parts.update(g.parts)
+    for key in changed:
+        for mapping in [r['unchanged_part_fingerprints'],r['new_static_part_fingerprints'],r['floor_revision']['preserved_fingerprints'],r['blowdown_revision']['retained_source_fingerprints'],r['video_review']['unchanged_fingerprints']]:mapping.pop(key,None)
+        if key!='cabinet_door':r['new_static_part_fingerprints'][key]=fingerprint(bpy.data.objects[key])
+        parts[key]['bounds_blender']=bounds(bpy.data.objects[key])
+    assert all(fingerprint(bpy.data.objects[k])==v for k,v in kept.items())
+    revision=dict(date='2026-09-11',author='Codex / GPT-6 Astra',in_place=True,prior_sha256=prior_sha,
+        changed_parts=sorted(changed),unchanged_fingerprints=kept,channels=ducts,short_terminal_leads=leads,
+        enclosed_wire_runs=runs,actuator_core_vertices_preserved=core_vertices,door_hinge_link_preserved=True,
+        cabinet_gland_m=list(gland),pressure_wires_no_longer_follow_pipe_arch=True)
+    for data in [m,r]:
+        data['cable_channel_revision']=copy.deepcopy(revision)
+        data['video_review']['pump_cable_paths_m']=pump_paths
+        data['video_review']['changed_parts']=sorted(set(data['video_review']['changed_parts'])|changed)
+    m['parts']=list(parts.values())
+    for key in ['video_review','floor_revision','blowdown_revision']:m[key]=copy.deepcopy(r[key])
+    g.parts=parts;g.apply_options(m['default_options'])
+    for name,data in [('assembly-source.json',m),('opening.json',r)]:
+        (d/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
+    bpy.context.preferences.filepaths.save_version=0
+    bpy.ops.wm.save_as_mainfile(filepath=str(target),compress=True)
+    print('CABLE_CHANNELS_SAVED_IN_PLACE',len(ducts),len(leads),flush=True)
+
+
 def separate_safety_discharges(directory):
     """11 Sep owner correction: exchange the two offsets in the existing scene."""
     from revise_pressure_gooseneck import builder
@@ -352,6 +516,9 @@ def separate_safety_discharges(directory):
 
 
 if __name__=='__main__':
+    if '--enclose-cables-in-place' in sys.argv:
+        cli=argparse.ArgumentParser();cli.add_argument('--enclose-cables-in-place',type=Path,required=True)
+        args=cli.parse_args(sys.argv[sys.argv.index('--')+1:]);enclose_cables(args.enclose_cables_in_place);sys.exit(0)
     if '--separate-safety-in-place' in sys.argv:
         cli=argparse.ArgumentParser();cli.add_argument('--separate-safety-in-place',type=Path,required=True)
         args=cli.parse_args(sys.argv[sys.argv.index('--')+1:]);separate_safety_discharges(args.separate_safety_in_place);sys.exit(0)

@@ -6,5 +6,7 @@
   "bytes": 505732489,
   "sha256": "4da7575b4e813d01a210ab630dbd69509e555083af032ecf994bbda5f03e7d81",
   "files": 35,
-  "status": "PASSED_ZIP_CONTENT_HASHES"
+  "status": "PRE_VIDEO_ARCHIVE_UNCHANGED_PENDING_DWG",
+  "last_archive_verification": "PASSED_ZIP_CONTENT_HASHES_BEFORE_VIDEO",
+  "current_video_amendment_in_archive": false
 }

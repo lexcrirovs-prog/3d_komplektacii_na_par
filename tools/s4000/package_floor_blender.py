@@ -23,8 +23,8 @@ def main(a):
     rows=[dict(file=n,bytes=(d/n).stat().st_size,sha256=sha(d/n))for n in files]
     (d/'SHA256.json').write_text(json.dumps(dict(version=version,files=rows),indent=2,ensure_ascii=False),encoding='utf8')
     files.append('SHA256.json');archive=d.parent/('S4000_Blender_OPENING_v'+version+'.zip')
-    assert not archive.exists()
-    with zipfile.ZipFile(archive,'x',zipfile.ZIP_DEFLATED,compresslevel=3)as z:
+    assert not archive.exists() or a.update_existing
+    with zipfile.ZipFile(archive,'w' if a.update_existing else 'x',zipfile.ZIP_DEFLATED,compresslevel=3)as z:
         for n in files:z.write(d/n,n)
     with zipfile.ZipFile(archive)as z:
         assert z.testzip()is None and len(z.namelist())==len(files)
@@ -33,9 +33,10 @@ def main(a):
     receipt=dict(status='PASSED_BLENDER_PACKAGE',version=version,date=report['date'],author=report['author'],
         archive=archive.name,archive_bytes=archive.stat().st_size,archive_sha256=sha(archive),archive_files=len(files),
         blend=name,blend_sha256=proof['checked_file_sha256'],previews_reviewed=len(views),
-        crc_verified=True,all_file_hashes_verified=True,native_ui_click_test='NOT_RUN_THIS_REVISION')
+        crc_verified=True,all_file_hashes_verified=True,native_ui_click_test='NOT_RUN_THIS_REVISION',in_place_amendment=a.update_existing)
     (d/'package.json').write_text(json.dumps(receipt,indent=2),encoding='utf8');print(json.dumps(receipt),flush=True)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--delivery',type=Path,required=True);p.add_argument('--reviewed',action='store_true')
+    p.add_argument('--update-existing',action='store_true',help='Update the same owner-selected archive name')
     main(p.parse_args())

@@ -36,6 +36,20 @@ def lisp_lines(source):
  assert max(map(len,lines))<255,'Keep AutoLISP command-stream lines below 255 characters'
  return lines
 
+def plot_style_lines(manifest):
+ """DXF imports need native visual styles bound before named-view plot checks."""
+ views=['S4000_ALL','S4000_REAR','S4000_PUMPS','S4000_DEAERATOR','S4000_TOP']
+ if 'door_groups' in manifest:views+=['S4000_DOOR','S4000_CABINET']
+ if 'pressure_revision' in manifest:views+=['S4000_PRESSURE']
+ if 'blowdown_revision' in manifest:views+=['S4000_BLOWDOWN','S4000_ROUTING']
+ if 'floor_revision' in manifest:views+=['S4000_TRAP']
+ return ['(command "_.VSCURRENT" "_Shaded")','(setvar "VSEDGES" 0)',
+  '(setvar "VSSILHEDGES" 0)','(setvar "VSOCCLUDEDEDGES" 0)',
+  '(setvar "VSINTERSECTIONEDGES" 0)','(setvar "VSFACEOPACITY" 100)','(setvar "VSSHADOWS" 0)',
+  '(if (not (dictsearch (cdr (assoc -1 (dictsearch (namedobjdict) "ACAD_VISUALSTYLE"))) "PREMIUM_SOLID"))',
+  ' (command "_.-VISUALSTYLES" "_S" "PREMIUM_SOLID"))',
+  *['(command "_.-VIEW" "_E" "_V" "'+v+'" "PREMIUM_SOLID" "" "")' for v in views]]
+
 def state(values):return "'("+' '.join('("'+k+'" . '+str(int(v))+')' for k,v in zip(KEYS,values))+')'
 def config_script(commands,manifest,out,full=True,plots=False):
  configs=list(itertools.product([0,1],repeat=6)) if not full else [(*v,1,1) for v in itertools.product([0,1],repeat=4)]+[(1,1,1,1,0,0),(1,1,1,1,0,1),(1,1,1,1,1,0),(1,1,1,1,1,1)]
@@ -47,7 +61,8 @@ def config_script(commands,manifest,out,full=True,plots=False):
   ' (setq f (open (strcat filename ".options") "w"))',
   ' (write-line (vl-prin1-to-string (s4:read)) f)',
   ' (setq d (dictsearch (namedobjdict) "S4000_STATE"))',
-  ' (write-line (itoa (length (vl-remove-if-not \'(lambda (x) (= (car x) 1)) d))) f) (close f))']
+ ' (write-line (itoa (length (vl-remove-if-not \'(lambda (x) (= (car x) 1)) d))) f) (close f))']
+ if plots:lines+=plot_style_lines(manifest)
  for i,values in enumerate(configs):
   lines+=['(s4:apply '+state(values)+')','(s4:record "state-'+str(i)+'.txt")']
   if full and plots and values==(0,1,1,1,1,1):lines+=['(c:S4000REAR)','(command "_.ZOOM" "_E")','(command "_.ZOOM" "0.90x")',*plot_lines('S4000-native-direct')]

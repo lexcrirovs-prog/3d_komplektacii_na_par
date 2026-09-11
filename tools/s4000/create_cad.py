@@ -51,7 +51,7 @@ def controls(manifest,destination):
   destination.joinpath('S4000-controls.lsp').write_text(options+'\n'+doors,encoding='ascii')
   shutil.copy2(Path(__file__).with_name('S4000-doors.dcl'),destination/'S4000-doors.dcl')
 
-def create(cache,manifest_path,destination):
+def create(cache,manifest_path,destination,update_existing=False):
  source=json.loads((cache/'meshes.json').read_text(encoding='utf8'));manifest=json.loads(manifest_path.read_text(encoding='utf8'))
  destination.mkdir(parents=True,exist_ok=True);doc=ezdxf.new('R2018',setup=True);doc.units=4
  for key,value in {'$MEASUREMENT':1,'$LUNITS':2,'$LUPREC':2,'$INSBASE':(0,0,0),'$DISPSILH':0}.items():doc.header[key]=value
@@ -104,7 +104,7 @@ def create(cache,manifest_path,destination):
   doc.views.new('S4000_TRAP',dxfattribs={'height':1220,'width':1830,
    'direction':(1,1,.75),'target':(3120,4230,550),'render_mode':4})
  audit=doc.audit();assert not audit.errors and not audit.fixes,(audit.errors,audit.fixes)
- target=destination/('S4000_COMFORT_8-12bar_v'+manifest['version']+'.dxf');assert not target.exists(),target
+ target=destination/('S4000_COMFORT_8-12bar_v'+manifest['version']+'.dxf');assert not target.exists() or update_existing,target
  doc.saveas(target,fmt='bin');report.update(blocks=len(report['parts']),triangles=sum(x['triangles'] for x in report['parts']),
   meshes=sum(x['mesh_entities'] for x in report['parts']),audit_errors=0,sha256=hashlib.sha256(target.read_bytes()).hexdigest(),bytes=target.stat().st_size)
  target.with_suffix('.cad.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8');controls(manifest,destination)
@@ -112,4 +112,5 @@ def create(cache,manifest_path,destination):
 
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--cache',type=Path,required=True);p.add_argument('--manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
- a=p.parse_args();create(a.cache,a.manifest,a.output)
+ p.add_argument('--update-existing',action='store_true')
+ a=p.parse_args();create(a.cache,a.manifest,a.output,a.update_existing)

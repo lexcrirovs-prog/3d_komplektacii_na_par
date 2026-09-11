@@ -2,8 +2,8 @@
   "status": "PASSED_BLENDER_NATIVE_OPENING",
   "version": "2026.09.11.1",
   "frames_checked": 193,
-  "retained_static_parts": 54,
-  "total_checked_static_parts": 99,
+  "retained_static_parts": 42,
+  "total_checked_static_parts": 98,
   "source_closed_mesh_placements": 10,
   "max_rigid_transform_error": 4.76837158203125e-07,
   "poses": [
@@ -39,7 +39,7 @@
   "reopened_in_fresh_process": true,
   "automatic_script_execution": false,
   "required_addons": [],
-  "checked_file_sha256": "82fb6779e7361143a7b850fd1326d42ed219453b8b47e680c5ec7c763722db9a",
+  "checked_file_sha256": "2aacbb83bb4560f342b848b96ffdbd61cd2ba993c089ac85f72cf5fb2e9cf08a",
   "blender": "3.3.3",
   "author": "Codex / GPT-6 Astra",
   "date": "2026-09-11",
@@ -57,8 +57,8 @@
     "open_centerline": true,
     "closed_loop": false,
     "boiler_endpoints_preserved": true,
-    "unchanged_instruments": 5,
-    "instrument_positions_preserved": true,
+    "unchanged_instruments": 4,
+    "instrument_positions_preserved": false,
     "unchanged_other_parts": 72,
     "cable_leads_rerouted": 3,
     "references": [
@@ -77,7 +77,7 @@
     ]
   },
   "blowdown": {
-    "retained_parts": 63,
+    "retained_parts": 49,
     "changed_existing_parts": [
       "bcv7432",
       "bottom_piping",
@@ -89,7 +89,7 @@
       "separator_fv8"
     ],
     "fixed_pipework_during_door_animation": true,
-    "missing_device_count": 6,
+    "missing_device_count": 5,
     "da_steam_connected": false,
     "fv_support_height_m": 0.0
   },
@@ -102,7 +102,7 @@
     ],
     "translated_objects_checked": 553,
     "maximum_matrix_error": 6.357302595461078e-08,
-    "other_parts_preserved": 90,
+    "other_parts_preserved": 71,
     "trap_triangles": 83390,
     "trap_faces_connected": true,
     "flange_spacing_mm": 160,
@@ -113,5 +113,24 @@
       1.2
     ],
     "hydraulic_selection": "NOT_VERIFIED"
+  },
+  "video_review": {
+    "status": "PASSED_GEOMETRY_REVIEW",
+    "date": "2026-09-11",
+    "source_video": "2026-09-11 14-17-47.mkv",
+    "original_unaffected_parts_checked": 81,
+    "probe_to_furnace_clearance_m": {
+      "lp200": 0.4063684940338135,
+      "lp400": 0.4051244258880615,
+      "lcs600": 0.4063684940338135
+    },
+    "pump_cable_centerlines_do_not_cross_pumps": true,
+    "fv_to_da_removed": true,
+    "fv_safety_dn": 25,
+    "trap_rotated_90": true,
+    "lower_blowdown_drive_up": true,
+    "discharge_horizontal": true,
+    "sample_source_on_valve": true,
+    "receiving_SC9_port": "UNCONFIRMED_EXISTING_INTERFACE"
   }
 }

@@ -103,13 +103,13 @@ def main(a):
         for cable_path in pressure['cable_paths_m']:
             assert np.allclose(cable_path[-1][2], 1.225), 'Cable must reach cabinet gland'
         verification['pressure_group'] = dict(open_centerline=True, closed_loop=False,
-            boiler_endpoints_preserved=True, unchanged_instruments=5,
-            instrument_positions_preserved=True, unchanged_other_parts=pressure['retained_other_parts'],
+            boiler_endpoints_preserved=True, unchanged_instruments=len(pressure['retained_instrument_fingerprints']),
+            instrument_positions_preserved='video_review' not in report, unchanged_other_parts=pressure['retained_other_parts'],
             cable_leads_rerouted=3, references=pressure['reference_files'])
     if 'blowdown_revision' in report:
         revision=report['blowdown_revision']
         assert all(fingerprint(bpy.data.objects[k])==v for k,v in revision['retained_source_fingerprints'].items())
-        verification['blowdown']=dict(retained_parts=revision['retained_source_parts'],
+        verification['blowdown']=dict(retained_parts=len(revision['retained_source_fingerprints']),
             changed_existing_parts=revision['changed_existing_parts'],
             fixed_pipework_during_door_animation=True,missing_device_count=len(revision['missing_equipment']),
             da_steam_connected=revision['da_steam_connected'],fv_support_height_m=revision['fv_support_height_m'])
@@ -149,13 +149,44 @@ def main(a):
             rim=points[np.abs(points[:,0]-shoulder)<1e-5]
             assert np.any(np.abs(np.linalg.norm(rim[:,1:]-face[1:],axis=1)-.0575)<1e-5),'Flange OD115'
         assert abs(np.linalg.norm(np.array(floor['trap_in_m'])-floor['trap_out_m'])-.16)<1e-8
-        assert points[:,2].max()>.70 and points[:,2].min()>.40,'Float housing upright and above floor'
+        if 'video_review' in report:
+            assert points[:,2].max()>.58 and points[:,2].max()<.60 and points[:,2].min()>.40,'A31 rolled 90 degrees, top plug up'
+        else:assert points[:,2].max()>.70 and points[:,2].min()>.40,'Float housing upright and above floor'
         verification['floor_layout']=dict(fv_bottom_m=fv[0],deaerator_bottom_m=da[0],support_z_m=support,
             translated_objects_checked=count,maximum_matrix_error=maximum_error,
             other_parts_preserved=len(floor['preserved_fingerprints']),trap_triangles=triangles,
             trap_faces_connected=True,flange_spacing_mm=160,condensate_lift_m=1.125,
             both_saddles_supported=True,support_centers_y_m=centers,
             hydraulic_selection='NOT_VERIFIED')
+    if 'video_review' in report:
+        from mathutils.bvhtree import BVHTree
+        video=report['video_review'];manifest=json.loads((d/'assembly-source.json').read_text(encoding='utf8'))
+        assert all(fingerprint(bpy.data.objects[k])==h for k,h in video['unchanged_fingerprints'].items())
+        assert 'flash_return_marker' not in bpy.data.objects
+        tube_trees=[BVHTree.FromPolygons([o.matrix_world@v.co for v in o.data.vertices],[tuple(p.vertices)for p in o.data.polygons])
+                    for o in bpy.data.objects['boiler_tubes'].children if o.type=='MESH']
+        clearances={}
+        for key,(x,y) in {'lp200':(-.0368,-1.21125),'lp400':(0,-.64),'lcs600':(.0368,-1.21125)}.items():
+            vs=[o.matrix_world@v.co for o in bpy.data.objects[key].children_recursive if o.type=='MESH' for v in o.data.vertices]
+            tip=min(v.z for v in vs);assert abs(tip-1.8)<1e-5
+            hits=[h[0].z for tree in tube_trees if (h:=tree.ray_cast(Vector((x,y,2.21)),Vector((0,0,-1)),2))[0]]
+            assert hits and tip-max(hits)>.30
+            clearances[key]=tip-max(hits)
+        for pump in ['pump_1','pump_2']:
+            trees=[BVHTree.FromPolygons([o.matrix_world@v.co for v in o.data.vertices],[tuple(p.vertices)for p in o.data.polygons])for o in bpy.data.objects[pump].children_recursive if o.type=='MESH']
+            for pts in video['pump_cable_paths_m']:
+                for aa,bb in zip(pts[1:],pts[2:]):
+                    aa,bb=Vector(aa),Vector(bb);distance=(bb-aa).length
+                    assert all(tree.ray_cast(aa,(bb-aa).normalized(),distance)[0] is None for tree in trees),'Pump cable crosses pump'
+        for key in ['safety_vent_1','safety_vent_2']:
+            e=next(e for e in manifest['flow_edges']if e['part']==key)
+            assert max(p[2]for p in e['polyline_m'])-min(p[2]for p in e['polyline_m'])<1e-8
+            assert e['polyline_m'][-1][1]>3.492
+        verification['video_review']=dict(status='PASSED_GEOMETRY_REVIEW',date=video['date'],source_video=video['source_video'],
+            original_unaffected_parts_checked=len(video['unchanged_fingerprints']),probe_to_furnace_clearance_m=clearances,
+            pump_cable_centerlines_do_not_cross_pumps=True,fv_to_da_removed=True,fv_safety_dn=video['fv_safety_dn'],
+            trap_rotated_90=True,lower_blowdown_drive_up=True,discharge_horizontal=True,
+            sample_source_on_valve=True,receiving_SC9_port='UNCONFIRMED_EXISTING_INTERFACE')
     (d/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(verification, ensure_ascii=False), flush=True)
     if not a.render: return

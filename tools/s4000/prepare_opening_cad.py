@@ -23,7 +23,7 @@ def main(a):
     assert manifest['version'] == source_opening['version']
     a.output.mkdir(parents=True, exist_ok=True)
     target = a.output/'assembly.json'
-    assert not target.exists(), 'Use a fresh CAD delivery'
+    assert not target.exists() or getattr(a,'update_existing',False), 'Use a fresh CAD delivery or explicit --update-existing'
     bpy.ops.wm.open_mainfile(filepath=str(source), use_scripts=False)
     bpy.context.scene.frame_set(1)
     bpy.context.view_layer.update()
@@ -65,4 +65,5 @@ if __name__ == '__main__':
     for name in ['source', 'output', 'cache']:
         p.add_argument('--'+name, type=Path, required=True)
     p.add_argument('--version', default=VERSION)
+    p.add_argument('--update-existing',action='store_true',help='Owner-authorized in-place amendment')
     main(p.parse_args(sys.argv[sys.argv.index('--')+1:]))

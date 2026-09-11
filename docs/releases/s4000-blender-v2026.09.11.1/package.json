@@ -4,13 +4,14 @@
   "date": "2026-09-11",
   "author": "Codex / GPT-6 Astra",
   "archive": "S4000_Blender_OPENING_v2026.09.11.1.zip",
-  "archive_bytes": 161015656,
-  "archive_sha256": "9d6309e85bf07d569061be710b971549b81e22b3de5841e7f56e1c15fcf82467",
+  "archive_bytes": 161451410,
+  "archive_sha256": "65c1e9d7064db888a92b52ea3d41ded111671c40fd41ddf7ce59e1626795d06c",
   "archive_files": 18,
   "blend": "S4000_COMFORT_OPENING_v2026.09.11.1.blend",
-  "blend_sha256": "82fb6779e7361143a7b850fd1326d42ed219453b8b47e680c5ec7c763722db9a",
+  "blend_sha256": "2aacbb83bb4560f342b848b96ffdbd61cd2ba993c089ac85f72cf5fb2e9cf08a",
   "previews_reviewed": 6,
   "crc_verified": true,
   "all_file_hashes_verified": true,
-  "native_ui_click_test": "NOT_RUN_THIS_REVISION"
+  "native_ui_click_test": "NOT_RUN_THIS_REVISION",
+  "in_place_amendment": true
 }

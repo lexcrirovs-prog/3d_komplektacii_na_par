@@ -9,7 +9,7 @@ import ezdxf
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from native_cad import lisp_lines
+from native_cad import lisp_lines, plot_style_lines
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'s3000'))
 from convert_autocad_dwg import run_core
 from check_autocad_opening import plot_lines
@@ -68,6 +68,7 @@ def check(a):
     commands = (a.source.parent/'S4000-controls.lsp').read_text(encoding='ascii')
     lines = ['(setvar "FILEDIA" 0)', '(setvar "CMDDIA" 0)', '(setvar "BACKGROUNDPLOT" 0)',
              '(command "_.AUDIT" "_N")', *lisp_lines(commands), *lisp_lines(RECORD)]
+    if a.plots: lines += plot_style_lines(manifest)
     source = a.source
     if a.fixture:
         source = out/'door-fixture.dxf'; assert not source.exists()
@@ -80,7 +81,7 @@ def check(a):
     original = digest(source)
     lines += ['(c:S4000ALL)', '(c:S4000CLOSE)']
     for name, action, _ in STATES:
-        assert not (out/(name+'.txt')).exists()
+        assert not (out/(name+'.txt')).exists() or a.update_existing
         if action: lines.append(action)
         lines.append('(sd4:record "'+name+'.txt")')
         if a.plots and name == 'cabinet':
@@ -154,4 +155,5 @@ if __name__ == '__main__':
     p.add_argument('--autocad', type=Path, default=Path('E:/AutoCAD 2027/accoreconsole.exe'))
     p.add_argument('--fixture', action='store_true'); p.add_argument('--plots', action='store_true')
     p.add_argument('--open-copy', type=Path)
+    p.add_argument('--update-existing',action='store_true',help='Overwrite the existing verification records only')
     check(p.parse_args())

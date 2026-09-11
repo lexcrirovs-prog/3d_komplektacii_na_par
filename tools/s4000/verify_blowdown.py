@@ -37,7 +37,12 @@ def verify_blowdown(manifest,ids,options):
         assert reachable('fv_P','bdv_D')==(installed and options['bdv'])
         assert reachable('trap_in','trap_out')==installed
         assert reachable('trap_out','bdv_D')==options['bdv']
-        assert reachable('fv_O','flash_boundary')
+        if revision.get('fv_to_da_removed'):
+            assert not reachable('fv_O','flash_boundary')
+            assert not reachable('fv_O','da_flash_in')
+            assert 'flash_return_marker' not in ids
+            assert reachable('fv_O' if manifest['video_review']['fv_safety_dn']==50 else 'fv_safety_in','fv_safety_out')
+        else:assert reachable('fv_O','flash_boundary')
         assert reachable('fv_O','da_flash_in')==(options['deaerator'] and revision['da_steam_connected'])
         assert not reachable('fv_O','bdv_A')
     assert ('bdv_vent' in ids)==options['bdv']

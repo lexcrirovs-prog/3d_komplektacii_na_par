@@ -45,7 +45,10 @@ def verify(path):
    if node=='economizer_in':
     assert opts['economizer'];node='economizer_out';walk.append(node)
   assert ('economizer_in' in walk)==opts['economizer']
-  assert ('from_economizer' in ids)==opts['economizer'] and ('direct_inlet' in ids)!=opts['economizer']
+  assert ('from_economizer' in ids)==opts['economizer']
+  assert ('direct_inlet' in ids)==(True if 'video_review' in m else not opts['economizer'])
+  if 'video_review' in m:
+   assert walk.index('direct_slot_in')>walk.index('economizer_out') if opts['economizer'] else 'economizer_out' not in walk
   row=dict(options=opts,visible_parts=len(ids),feed_path=walk)
   if 'blowdown_revision' in m:
    from verify_blowdown import verify_blowdown

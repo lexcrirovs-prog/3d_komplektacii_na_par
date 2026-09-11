@@ -1,0 +1,30 @@
+{
+  "status": "REMOVED_VERIFIED",
+  "version": "2026.09.11.1",
+  "date": "2026-09-11",
+  "author": "Codex / GPT-6 Astra",
+  "removed_files": 112,
+  "removed_bytes": 51229497332,
+  "removed_GiB": 47.71118735149503,
+  "by_extension": {
+    ".zip": 12,
+    ".dxf": 51,
+    ".dwg": 19,
+    ".bak": 9,
+    ".blend": 15,
+    ".blend1": 6
+  },
+  "retained_files_rehashed": 112,
+  "previous_junction_aliases_resolved": 23,
+  "retained_versions": {
+    "S3000_AutoCAD_Blender": "2026.09.09.5",
+    "S4000_AutoCAD_Blender": "2026.09.11.1"
+  },
+  "cleanup_plan_sha256": "67e08a87b5eb5c7a448b11fc96602f4d88e4f755f7e8a4f328a594d143f6507e",
+  "cleanup_receipt_sha256": "2127a18e7c1819851d44feceac8e16c98111d156b6b8dfeb4577025dee228dbf",
+  "retained_file_receipt_sha256": "2e34a5e35094c29a247161b9b75a2e38c22a2213d9cf6d9e90f8ab646ccc2b29",
+  "removed_paths_absent": true,
+  "previous_aliases_absent": true,
+  "original_equipment_inputs_preserved": true,
+  "scope": "Obsolete assembly drawings and intermediate CAD/Blender/ZIP files only; local source components and Git history retained"
+}

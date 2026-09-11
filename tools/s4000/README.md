@@ -1,6 +1,20 @@
 # S-4000 Comfort CAD build
 
-Latest CAD and Blender revision: `2026.09.10.6`, 2026-09-10, Codex / GPT-6 Astra. The original assembly recipe below remains version `2026.09.10.1`; subsequent source revisions and their CAD handoff are documented below.
+Latest CAD and Blender revision: `2026.09.11.1`, 2026-09-11, Codex / GPT-6 Astra. The original assembly recipe below remains version `2026.09.10.1`; subsequent source revisions and their CAD handoff are documented below.
+
+## Floor layout and supplied A31 — 2026.09.11.1
+
+`floor_layout.py` derives only changed route groups from the immutable .6 schedule. `revise_floor_layout.py` consumes a verified .6 scene, puts FV at Z=0, translates DA and its details by +1 m, and regenerates the DA feed. A braced frame supports both actual saddle plates at Y=-1.2/+1.2 m. The source CAD has bolt tips below its bearing plates; measured 26/36 mm pads bridge that difference. Do not use the bolt positions as saddle centres.
+
+The owner-supplied A31 DN25 FF DWG is a flat ModelSpace SURFACE. `SurfaceMeshExport.cs` uses AutoCAD 2027 `SubDMesh.GetObjectMesh` with 0.1 drawing-unit surface deviation, normal setting 6 and triangular mesh type 2, without modifying the source. Compile against AutoCAD 2027 .NET assemblies; load the DLL in a private read-only copy. Restore any temporary trusted path immediately after NETLOAD. `S4SURFACEMESH` writes `flat-mesh.json` in a fresh directory. The importer accepts `trap-mesh.json.gz` containing the same `solids` array plus `source.json` with the ZIP-entry name and SHA-256. Keep these vendor files outside public Git.
+
+The supplied file incorrectly declares inches. Validate numeric flange spacing 160, outer diameter 115 and raised-face diameter 68 before applying 0.001 m/mm. The accepted geometry has 41,681 vertices and 83,390 triangles. Its original SHA-256 and a fresh-original mesh comparison are recorded in `manufacturer-source-verification.json`. CAD-to-world orientation is rigid: raw X upward, raw Z along negative world X.
+
+Run `revise_floor_layout.py --source <verified-.6> --output <fresh-.11.1> --trap <private-trap-folder>` inside Blender. Then run `verify_blender_opening.py` with six review views: `01-closed 02-both-open 07-deaerator-rotated 09-blowdown 10-routing 12-condensate-trap`. The usual graph, extraction, native CAD and door checks below apply with version `2026.09.11.1`. Review ten CAD views, including `S4000TRAPVIEW`.
+
+`verify_blowdown.py` now distinguishes a real A31 edge from the previous missing-device gap. There is a single 1.125 m pressure-driven rise after the trap; it is explicitly not gravity discharge. Hydraulic capacity, orifice and pressure differential remain unverified. The auxiliary strainer/check valve are not silently added. The test checks all option branches; the .6 missing-device behavior remains supported.
+
+Package with `package_cad_opening.py` and `package_floor_blender.py` only after visual review. Date metadata is inherited from the new source, not hardcoded to the previous day. The owner explicitly requested removal of obsolete drawing deliveries. Retain the latest S3000 .5 and S4000 .11.1, original construction/vendor inputs and Git history; remove only inventoried obsolete binaries after current package verification. Historical recipes below require rebuilding their intermediate scenes after that cleanup.
 
 The pipeline produces a detailed, editable AutoCAD assembly from the supplied S-4000, EQS2-4000, DA-15, V4-19 and LCS600 STEP files, two KM125/KM225 DWGs, separator PDFs and the S-4000 equipment worksheets. Reused burner/instrument geometry comes from the S-3000 cabinet release `2026.09.09.5`.
 

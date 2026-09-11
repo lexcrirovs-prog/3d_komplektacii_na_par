@@ -55,7 +55,10 @@ def verify(path):
              cad_rotations_rigid=True,boiler_feed='native rear DN32',flue_spacer_mm=500,checks=checks)
  if 'blowdown_revision' in m:
   result['blowdown']=dict(configurations_checked=64,periodic_to_bdv=True,continuous_to_fv=True,
-    alternate_routes_checked=True,missing_devices_not_bypassed=True,condensate_sections_fall=True,
+    alternate_routes_checked=True,missing_devices_not_bypassed=True,
+    condensate_sections_fall=not m['blowdown_revision'].get('trap_installed',False),
+    condensate_trap_installed=m['blowdown_revision'].get('trap_installed',False),
+    pressure_driven_lift_m=m['blowdown_revision'].get('condensate_riser_m',0),
     da_steam_connected=m['blowdown_revision']['da_steam_connected'])
  print(json.dumps({k:v for k,v in result.items() if k!='checks'},ensure_ascii=False))
  return result

@@ -16,6 +16,8 @@ def render(a):
         views.append((a.doors, 'S4000-pressure-gooseneck', '07-autocad-pressure-gooseneck'))
     if (a.doors/'S4000-blowdown.pdf').exists():
         views += [(a.doors,'S4000-blowdown','08-autocad-blowdown'),(a.doors,'S4000-routing','09-autocad-routing')]
+    if (a.doors/'S4000-condensate-trap.pdf').exists():
+        views.append((a.doors,'S4000-condensate-trap','10-autocad-condensate-trap'))
     for folder, source, stem in views:
         document = pdfium.PdfDocument(folder/(source+'.pdf'))
         assert len(document) == 1

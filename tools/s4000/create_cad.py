@@ -27,6 +27,8 @@ def controls(manifest,destination):
  if 'blowdown_revision' in manifest:
   options+='\n(defun c:S4000BLOWDOWNVIEW () (command "_.-VIEW" "_R" "S4000_BLOWDOWN") (princ))\n'
   options+='\n(defun c:S4000ROUTINGVIEW () (command "_.-VIEW" "_R" "S4000_ROUTING") (princ))\n'
+ if 'floor_revision' in manifest:
+  options+='\n(defun c:S4000TRAPVIEW () (command "_.-VIEW" "_R" "S4000_TRAP") (princ))\n'
  destination.joinpath('S4000-options.lsp').write_text(options,encoding='ascii')
  import shutil
  shutil.copy2(Path(__file__).with_name('S4000-options.dcl'),destination/'S4000-options.dcl')
@@ -38,6 +40,13 @@ def controls(manifest,destination):
    groups.append(' ("'+g['id']+'" ('+pivot+') '+str(g['open_degrees'])+' ('+names+'))')
   doors=Path(__file__).with_name('doors-template.lsp').read_text(encoding='ascii')
   doors=doors.replace('__VERSION__',manifest['version']).replace('__GROUPS__','(\n'+'\n'.join(groups)+'\n)')
+  if 'floor_revision' in manifest:
+   # The raised DA obscures the former cabinet angle. Update only the named
+   # view when requested; retain all equipment visibility and block transforms.
+   doors=doors.replace('(defun c:S4000CABINETVIEW () (command "_.-VIEW" "_R" "S4000_CABINET") (princ))',
+    '(defun c:S4000CABINETVIEW (/ e d) (if (setq e (tblobjname "VIEW" "S4000_CABINET")) '
+    '(progn (setq d (entget e)) (entmod (subst (cons 11 (list -1 -1.05 0.8)) (assoc 11 d) d)))) '
+    '(command "_.-VIEW" "_R" "S4000_CABINET") (princ))')
   destination.joinpath('S4000-doors.lsp').write_text(doors,encoding='ascii')
   destination.joinpath('S4000-controls.lsp').write_text(options+'\n'+doors,encoding='ascii')
   shutil.copy2(Path(__file__).with_name('S4000-doors.dcl'),destination/'S4000-doors.dcl')
@@ -85,6 +94,15 @@ def create(cache,manifest_path,destination):
   for name,direction,target,height in [('S4000_BLOWDOWN',(1,1,.55),(2700,2680,1720),4500),
                                       ('S4000_ROUTING',(1,1,.72),(0,1000,1700),7700)]:
    doc.views.new(name,dxfattribs={'height':height,'width':height*1.5,'direction':direction,'target':target,'render_mode':4})
+ if 'floor_revision' in manifest:
+  if doc.views.has_entry('S4000_CABINET'):
+   doc.views.get('S4000_CABINET').dxf.direction=(-1,-1.05,.8)
+  for name,target,height in [('S4000_DEAERATOR',(-3650,0,2350),6700),
+                             ('S4000_BLOWDOWN',(3250,3180,1150),4850),
+                             ('S4000_ROUTING',(-400,1000,2000),8300)]:
+   view=doc.views.get(name);view.dxf.target=target;view.dxf.height=height;view.dxf.width=height*1.5
+  doc.views.new('S4000_TRAP',dxfattribs={'height':1220,'width':1830,
+   'direction':(1,1,.75),'target':(3120,4230,550),'render_mode':4})
  audit=doc.audit();assert not audit.errors and not audit.fixes,(audit.errors,audit.fixes)
  target=destination/('S4000_COMFORT_8-12bar_v'+manifest['version']+'.dxf');assert not target.exists(),target
  doc.saveas(target,fmt='bin');report.update(blocks=len(report['parts']),triangles=sum(x['triangles'] for x in report['parts']),

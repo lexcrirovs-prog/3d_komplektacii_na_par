@@ -1,0 +1,293 @@
+{
+  "version": "2026.09.11.1",
+  "date": "2026-09-11",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_LOCAL_CAD_OPENING_RELEASE",
+  "source": {
+    "version": "2026.09.11.1",
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "source": "S4000_COMFORT_OPENING_v2026.09.11.1.blend",
+    "source_version": "2026.09.11.1",
+    "source_sha256": "82fb6779e7361143a7b850fd1326d42ed219453b8b47e680c5ec7c763722db9a",
+    "source_unchanged": true,
+    "source_opening_verification": "PASSED_BLENDER_NATIVE_OPENING",
+    "exported_parts": 106,
+    "units": "mm",
+    "decimation": false,
+    "deaerator_rotation_degrees": 180,
+    "door_groups": [
+      {
+        "id": "boiler",
+        "control": "DOOR_BOILER",
+        "pivot_m": [
+          -0.8936025,
+          -1.895,
+          1.135
+        ],
+        "open_degrees": -105,
+        "parts": [
+          "boiler_door",
+          "boiler_door_labels",
+          "burner"
+        ]
+      },
+      {
+        "id": "cabinet",
+        "control": "DOOR_CABINET",
+        "pivot_m": [
+          -1.3,
+          -0.763,
+          1.575
+        ],
+        "open_degrees": -110,
+        "parts": [
+          "cabinet_door",
+          "lc220",
+          "lc440",
+          "bc970"
+        ]
+      }
+    ],
+    "source_tube_counts": {
+      "smoke": 96,
+      "furnace": 1,
+      "excluded_solids": 571
+    },
+    "blowdown": {
+      "retained_parts": 63,
+      "changed_existing_parts": [
+        "bcv7432",
+        "bottom_piping",
+        "drain_isolation_1",
+        "drain_isolation_2",
+        "safety_1",
+        "safety_2",
+        "sample_piping",
+        "separator_fv8"
+      ],
+      "fixed_pipework_during_door_animation": true,
+      "missing_device_count": 6,
+      "da_steam_connected": false,
+      "fv_support_height_m": 0.0
+    },
+    "floor_layout": {
+      "fv_bottom_m": 0.0,
+      "deaerator_bottom_m": 0.9999997019767761,
+      "support_z_m": [
+        0.0,
+        1.0359997749328613
+      ],
+      "translated_objects_checked": 553,
+      "maximum_matrix_error": 6.357302595461078e-08,
+      "other_parts_preserved": 90,
+      "trap_triangles": 83390,
+      "trap_faces_connected": true,
+      "flange_spacing_mm": 160,
+      "condensate_lift_m": 1.125,
+      "both_saddles_supported": true,
+      "support_centers_y_m": [
+        -1.2,
+        1.2
+      ],
+      "hydraulic_selection": "NOT_VERIFIED"
+    },
+    "manufacturer_verification": {
+      "status": "PASSED_ORIGINAL_ARCHIVE_GEOMETRY",
+      "original_dwg_sha256": "d640712d5bdcd7a527f4089a3f340c4d0c9d472f461693c54e2590a5bf80d5de",
+      "original_dwg_readonly_and_unchanged": true,
+      "scene_mesh_matches_fresh_original": true,
+      "vertices": 41681,
+      "triangles": 83390,
+      "spacing_mm": 160,
+      "units": "Physical millimetres; mismatched INSUNITS header=1 ignored after dimensional check"
+    },
+    "pressure_group": {
+      "open_centerline": true,
+      "closed_loop": false,
+      "boiler_endpoints_preserved": true,
+      "unchanged_instruments": 5,
+      "instrument_positions_preserved": true,
+      "unchanged_other_parts": 72,
+      "cable_leads_rerouted": 3,
+      "references": [
+        {
+          "file": "photo_2026-09-10_18-47-53.jpg",
+          "sha256": "af8f0cd8c2e530411b8f637fb2bcdbc60382a6151d51b272bb377c22ea07acd0"
+        },
+        {
+          "file": "photo_2026-09-10_18-47-49.jpg",
+          "sha256": "b9f955babfa97d91e74ec7aedf52624fdb7e5dd36f6b291fdbe3fef6529e1e78"
+        },
+        {
+          "file": "photo_2026-09-10_18-50-01.jpg",
+          "sha256": "6842f24176173944af540674017aca4c34e173ace193babffeda7ad87c699a5d"
+        }
+      ]
+    },
+    "previous_release_files": [
+      {
+        "file": "S4000_COMFORT_OPENING_v2026.09.10.6.blend",
+        "bytes": 146539915,
+        "sha256": "492752e73892372ce0acae9ef85559af36a80771b56c021daad0290de41cc66e",
+        "unchanged": true
+      },
+      {
+        "file": "S4000_COMFORT_8-12bar_v2026.09.10.6.dwg",
+        "bytes": 412856515,
+        "sha256": "2e5fe63f5b5a0bb8a704f2f640e6c40270574e1d915ae2d681bf9378d0584d95",
+        "unchanged": true
+      },
+      {
+        "file": "S4000_COMFORT_8-12bar_OPEN_v2026.09.10.6.dwg",
+        "bytes": 412961154,
+        "sha256": "16c6797d47b1bdec4bbd900f32ca35b5cc6e1377b9460276a48acf426d5a2304",
+        "unchanged": true
+      }
+    ]
+  },
+  "native": {
+    "status": "PASSED_AUTOCAD_SAVE_OPTIONS_REOPEN",
+    "version": "2026.09.11.1",
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dwg",
+    "bytes": 418617806,
+    "sha256": "99a453790c5ae5df3807ad5e1749bd12593da3be54e12ac3072d379bf481969b",
+    "units": "mm",
+    "format": "AutoCAD 2018 / AC1032",
+    "autocad": "2027 Core Console",
+    "blocks": 106,
+    "meshes": 1029,
+    "triangles": 7603777,
+    "coordinates_preserved_mm": 0.001,
+    "topology_preserved": true,
+    "whole_mesh_reversals": 10,
+    "colours_preserved": true,
+    "default_layers_preserved": true,
+    "state_persistent": true,
+    "audit_errors": 0,
+    "fixture": {
+      "status": "PASSED_NATIVE_LAYER_OPTIONS",
+      "fixture": true,
+      "combinations": 64,
+      "restored": true,
+      "parts": 106,
+      "source_unchanged": true,
+      "audit_errors": 0,
+      "state_matches_every_configuration": true,
+      "single_payload": true
+    },
+    "native_options": {
+      "status": "PASSED_NATIVE_LAYER_OPTIONS",
+      "fixture": false,
+      "combinations": 20,
+      "restored": true,
+      "parts": 106,
+      "source_unchanged": true,
+      "audit_errors": 0,
+      "state_matches_every_configuration": true,
+      "single_payload": true
+    }
+  },
+  "doors": {
+    "status": "PASSED_NATIVE_S4000_DOORS",
+    "version": "2026.09.11.1",
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "fixture": false,
+    "checked_file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dwg",
+    "checked_sha256": "99a453790c5ae5df3807ad5e1749bd12593da3be54e12ac3072d379bf481969b",
+    "states": 9,
+    "blocks_checked": 106,
+    "maximum_position_error_mm": 1e-12,
+    "source_unchanged": true,
+    "audit_errors": 0,
+    "option_commands_preserve_open_doors": true,
+    "desktop_dialog_click_test": "NOT_RUN",
+    "open_copy": {
+      "file": "S4000_COMFORT_8-12bar_OPEN_v2026.09.11.1.dwg",
+      "bytes": 418714694,
+      "sha256": "f8ce4adcffc4329f06256b5a7cfafbe7c57415bd3db9187b4982c098434a5d11",
+      "fresh_reopen_passed": true
+    },
+    "native_pdfs": [
+      "S4000-cabinet-open.pdf",
+      "S4000-boiler-open.pdf",
+      "S4000-both-open.pdf",
+      "S4000-deaerator-rotated.pdf",
+      "S4000-pressure-gooseneck.pdf",
+      "S4000-blowdown.pdf",
+      "S4000-routing.pdf",
+      "S4000-condensate-trap.pdf"
+    ]
+  },
+  "door_fixture": {
+    "status": "PASSED_NATIVE_S4000_DOORS",
+    "version": "2026.09.11.1",
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "fixture": true,
+    "checked_file": "door-fixture.dxf",
+    "checked_sha256": "763e54cb592853f5f45061e29e4ce75440bfeef6db0c2bea8c6056e106c40a77",
+    "states": 9,
+    "blocks_checked": 106,
+    "maximum_position_error_mm": 1e-12,
+    "source_unchanged": true,
+    "audit_errors": 0,
+    "option_commands_preserve_open_doors": true,
+    "desktop_dialog_click_test": "NOT_RUN"
+  },
+  "flow_check": {
+    "status": "PASSED_64_CONFIGURATION_GRAPHS",
+    "configurations": 64,
+    "maximum_endpoint_gap_m": 0,
+    "cad_rotations_rigid": true,
+    "boiler_feed": "native rear DN32",
+    "flue_spacer_mm": 500,
+    "blowdown": {
+      "configurations_checked": 64,
+      "periodic_to_bdv": true,
+      "continuous_to_fv": true,
+      "alternate_routes_checked": true,
+      "missing_devices_not_bypassed": true,
+      "condensate_sections_fall": false,
+      "condensate_trap_installed": true,
+      "pressure_driven_lift_m": 1.125,
+      "da_steam_connected": false
+    }
+  },
+  "previous_dwg_unchanged": true,
+  "source_blender_unchanged": true,
+  "native_plots_reviewed": 10,
+  "desktop_dialog_click_test": "NOT_RUN",
+  "model_representation": "Detailed native AutoCAD MESH entities in named blocks; no decimation",
+  "source_catalog_version": "2026.09.10.1",
+  "unresolved": [
+    "LCS supplied 600 mm versus BOM 800 mm",
+    "Exact Comfort cabinet layout and PR200 installation",
+    "Temporary models retained from the accepted assembly",
+    "BDV cooling control, FV8 safety valve and vessel instrumentation/drain valves absent",
+    "DA-15 flash-steam inlet designation and SC9 CAD connection key awaiting confirmation",
+    "A31 DN25 is a layout selection: capacity/orifice/pressure differential not verified",
+    "Condensate rises 1.125 m after trap; upstream strainer and downstream check valve absent",
+    "DA support and adapter plates have no structural load calculation"
+  ],
+  "cabinet_view": {
+    "status": "PASSED_NATIVE_CABINET_VIEW",
+    "version": "2026.09.11.1",
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "source_sha256": "99a453790c5ae5df3807ad5e1749bd12593da3be54e12ac3072d379bf481969b",
+    "controls_sha256": "b0ec8f30844f3a35395ef99afcaf6bac2721f9ca56eefb9b7a0e768b90c8d689",
+    "blocks_unchanged": 106,
+    "source_unchanged": true,
+    "direction": [
+      -1,
+      -1.05,
+      0.8
+    ],
+    "geometry_mutation": false,
+    "pdf_sha256": "f9f747632cb21f33127fefafd3a5e41cdb3237363918d3ab0f4a1331d99939bb"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASSED_ORIGINAL_ARCHIVE_GEOMETRY",
+  "original_dwg_sha256": "d640712d5bdcd7a527f4089a3f340c4d0c9d472f461693c54e2590a5bf80d5de",
+  "original_dwg_readonly_and_unchanged": true,
+  "scene_mesh_matches_fresh_original": true,
+  "vertices": 41681,
+  "triangles": 83390,
+  "spacing_mm": 160,
+  "units": "Physical millimetres; mismatched INSUNITS header=1 ignored after dimensional check"
+}

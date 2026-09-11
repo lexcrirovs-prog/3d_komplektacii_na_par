@@ -113,6 +113,49 @@ def main(a):
             changed_existing_parts=revision['changed_existing_parts'],
             fixed_pipework_during_door_animation=True,missing_device_count=len(revision['missing_equipment']),
             da_steam_connected=revision['da_steam_connected'],fv_support_height_m=revision['fv_support_height_m'])
+    if 'floor_revision' in report:
+        floor=report['floor_revision'];maximum_error=0.;count=0
+        for key,delta in [('separator_fv8',-1.2),('deaerator',1.),('deaerator_details',1.)]:
+            turn=Matrix.Translation(Vector((0,0,delta)))
+            for name,old in floor['previous_matrices'][key].items():
+                error=float(np.max(np.abs(np.asarray(bpy.data.objects[name].matrix_world)-np.asarray(turn@Matrix(old)))))
+                maximum_error=max(maximum_error,error);count+=1
+                assert error<.000005,(key,name,error)
+        for key,value in floor['preserved_fingerprints'].items():
+            assert fingerprint(bpy.data.objects[key])==value,key
+        def z_bounds(key):
+            vs=[o.matrix_world@Vector(v) for o in bpy.data.objects[key].children_recursive if o.type=='MESH' for v in o.bound_box]
+            return min(v.z for v in vs),max(v.z for v in vs)
+        fv=z_bounds('separator_fv8');da=z_bounds('deaerator');support=z_bounds('deaerator_support')
+        assert abs(fv[0])<.000005 and abs(da[0]-1)<.000005
+        assert abs(support[0])<.000005
+        centers=floor['deaerator_support_centers_y_m']
+        assert len(centers)==2 and centers[1]-centers[0]>2
+        assert abs(support[1]-max(p['top_m']for p in floor['support_pads']))<.000005
+        for pad in floor['support_pads']:
+            plates=[p for p in floor['load_bearing_plates'] if abs((p['low'][1]+p['high'][1])/2-pad['y_m'])<.01]
+            assert abs(min(p['low'][2]for p in plates)-pad['top_m'])<.000005
+        assert not any(key in bpy.data.objects for key in ['fv_support','fv_missing_device_marker'])
+        trap=bpy.data.objects['condensate_trap']
+        triangles=sum(len(o.data.polygons) for o in trap.children_recursive if o.type=='MESH')
+        assert triangles==floor['trap_triangle_count']==83390
+        points=np.array([tuple(o.matrix_world@v.co) for o in trap.children_recursive if o.type=='MESH' for v in o.data.vertices])
+        for key in ['trap_in_m','trap_out_m']:
+            face=np.array(floor[key]);verts=points[np.abs(points[:,0]-face[0])<1e-5]
+            assert len(verts)>40,(key,len(verts))
+            yz=verts[:,1:]-face[1:];radii=np.linalg.norm(yz,axis=1)
+            assert np.any(np.abs(radii-.034)<1e-5),'DN25 raised face OD68'
+            shoulder=face[0]+(-.002 if key=='trap_in_m' else .002)
+            rim=points[np.abs(points[:,0]-shoulder)<1e-5]
+            assert np.any(np.abs(np.linalg.norm(rim[:,1:]-face[1:],axis=1)-.0575)<1e-5),'Flange OD115'
+        assert abs(np.linalg.norm(np.array(floor['trap_in_m'])-floor['trap_out_m'])-.16)<1e-8
+        assert points[:,2].max()>.70 and points[:,2].min()>.40,'Float housing upright and above floor'
+        verification['floor_layout']=dict(fv_bottom_m=fv[0],deaerator_bottom_m=da[0],support_z_m=support,
+            translated_objects_checked=count,maximum_matrix_error=maximum_error,
+            other_parts_preserved=len(floor['preserved_fingerprints']),trap_triangles=triangles,
+            trap_faces_connected=True,flange_spacing_mm=160,condensate_lift_m=1.125,
+            both_saddles_supported=True,support_centers_y_m=centers,
+            hydraulic_selection='NOT_VERIFIED')
     (d/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(verification, ensure_ascii=False), flush=True)
     if not a.render: return
@@ -131,6 +174,8 @@ def main(a):
         renders.append(('08-pressure-gooseneck', 1, 'CAM_Pressure'))
     if 'blowdown_revision' in report:
         renders += [('09-blowdown',1,'CAM_Blowdown'),('10-routing',1,'CAM_Routing'),('11-lower-blowdown',1,'CAM_LowerBlowdown')]
+    if 'floor_revision' in report:
+        renders.append(('12-condensate-trap',1,'CAM_Trap'))
     for name, frame, cam in renders:
         if a.views and name not in a.views: continue
         s.frame_set(frame); s.camera = bpy.data.objects[cam]

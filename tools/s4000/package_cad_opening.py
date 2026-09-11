@@ -54,6 +54,23 @@ def package(a):
         assert bp['fixed_pipework_during_door_animation']
         assert bp['da_steam_connected'] == manifest['blowdown_revision']['da_steam_connected']
         source['blowdown'] = bp
+    if 'floor_revision' in manifest:
+        view_count += 1
+        cabinet_view = read(cad/'cabinet-view-verification.json')
+        assert cabinet_view['status'] == 'PASSED_NATIVE_CABINET_VIEW'
+        assert cabinet_view['source_sha256'] == native['sha256']
+        assert cabinet_view['controls_sha256'] == digest(cad/'S4000-controls.lsp')
+        assert cabinet_view['blocks_unchanged'] == native['blocks']
+        assert cabinet_view['source_unchanged'] and not cabinet_view['geometry_mutation']
+        floor = read(a.blender_source/'verification.json')['floor_layout']
+        assert abs(floor['fv_bottom_m']) < 1e-5 and abs(floor['deaerator_bottom_m']-1) < 1e-5
+        assert floor['both_saddles_supported'] and floor['trap_faces_connected']
+        assert graphs['blowdown']['condensate_trap_installed']
+        manufacturer = read(a.blender_source/'manufacturer-source-verification.json')
+        assert manufacturer['status'] == 'PASSED_ORIGINAL_ARCHIVE_GEOMETRY'
+        source['floor_layout'] = floor
+        source['manufacturer_verification'] = manufacturer
+        write(root/'source-scene.json', source)
     assert len(list((root/'previews').glob('*.png'))) == view_count
     if 'pressure_revision' in manifest:
         pressure = read(a.blender_source/'verification.json')['pressure_group']
@@ -76,8 +93,16 @@ def package(a):
     if 'blowdown_revision' in manifest:
         missing = missing.replace('| BDV60/5 и FV8 | Отдельные модели по PDF, без внешней обвязки | Для FV8 отметка дренажа 300 мм восстановлена по виду; подтвердить при деталировке |',
             '| BDV60/5 и FV8 | Добавлены линии продувок и отводы. Отметка S FV8 уточнена по чертежу: 400 мм над основанием; опора +1200 мм | Заводские CAD; уточнение рабочего узла конденсатоотводчика и охлаждения BDV |')
-        missing += '\nТекущие пропуски обвязки и неподтверждённые соединения подробно перечислены в **«Проверка-обвязки.md»**. Место конденсатоотводчика после FV8 оставлено разрывом. Назначение выбранного DN50 ДА-15 и штуцеров CAD охладителя SC9 требует уточнения.\n'
-        shutil.copy2(a.repo/'docs/s4000-piping-audit-20260910.md', root/'Проверка-обвязки.md')
+        if 'floor_revision' in manifest:
+            missing = missing.replace('опора +1200 мм', 'аппарат на полу Z=0')
+            missing = missing.replace('уточнение рабочего узла конденсатоотводчика и охлаждения BDV',
+                'А31 DN25 установлен из DWG; расчёт пропускной способности и охлаждения BDV не выполнен')
+            missing += '\nДА-15 поднят на 1000 мм. FV8 установлен на пол. После FV8 установлен Стимакс А31 DN25 Ф/Ф из переданного DWG. В Excel Комфорт/Комфорт+ точной позиции нет; это выбор для компоновки. После А31 показан напорный подъём 1125 мм к BDV. Перепад давления, расход и исполнение отверстия не определены. Фильтр перед А31 и обратный клапан после него не добавлены.\n'
+            shutil.copy2(a.repo/'docs/s4000-floor-layout-20260911.md', root/'Проверка-обвязки.md')
+        else:
+            missing += '\nМесто конденсатоотводчика после FV8 оставлено разрывом.\n'
+            shutil.copy2(a.repo/'docs/s4000-piping-audit-20260910.md', root/'Проверка-обвязки.md')
+        missing += '\nНазначение выбранного DN50 ДА-15 и штуцеров CAD охладителя SC9 требует уточнения.\n'
     (root/'Недостающие-модели.md').write_text(missing, encoding='utf8')
     shutil.copy2(a.repo/'docs/s4000-autocad-opening-guide-20260910.md', root/'Открыть-сборку.md')
     shutil.copy2(a.door_plots/'doors-verification.json', cad/'doors-verification.json')
@@ -88,6 +113,8 @@ def package(a):
         pdfs.append((a.door_plots, 'S4000-pressure-gooseneck'))
     if 'blowdown_revision' in manifest:
         pdfs += [(a.door_plots, name) for name in ['S4000-blowdown', 'S4000-routing']]
+    if 'floor_revision' in manifest:
+        pdfs.append((a.door_plots,'S4000-condensate-trap'))
     for folder, name in pdfs:
         assert (folder/(name+'.pdf')).stat().st_size > 10000
 
@@ -112,9 +139,16 @@ def package(a):
                              'Exact Comfort cabinet layout and PR200 installation',
                              'Temporary models retained from the accepted assembly'])
     if 'blowdown_revision' in manifest:
-        proof['unresolved'] += ['FV8 condensate trap intentionally absent; 320 mm interface gap',
-            'BDV cooling control, FV8 safety valve and vessel instrumentation/drain valves absent',
+        proof['unresolved'] += ['BDV cooling control, FV8 safety valve and vessel instrumentation/drain valves absent',
             'DA-15 flash-steam inlet designation and SC9 CAD connection key awaiting confirmation']
+        if 'floor_revision' in manifest:
+            proof['unresolved'] += ['A31 DN25 is a layout selection: capacity/orifice/pressure differential not verified',
+                'Condensate rises 1.125 m after trap; upstream strainer and downstream check valve absent',
+                'DA support and adapter plates have no structural load calculation']
+        else:
+            proof['unresolved'].append('FV8 condensate trap intentionally absent; 320 mm interface gap')
+    if 'floor_revision' in manifest:
+        proof['cabinet_view'] = cabinet_view
     write(root/'verification.json', proof)
     selected = [cad/(stem+suffix) for suffix in ['.dwg', '.verification.json', '.cad.json']]
     selected += [cad/doors['open_copy']['file']]
@@ -128,6 +162,8 @@ def package(a):
         selected.append(root/'source-preservation.json')
     if 'blowdown_revision' in manifest:
         selected.append(root/'Проверка-обвязки.md')
+    if 'floor_revision' in manifest:
+        selected.append(cad/'cabinet-view-verification.json')
     assert len(set(selected)) == len(selected) and all(p.stat().st_size for p in selected)
     hashes = {p.relative_to(root).as_posix(): digest(p) for p in selected}
     checksum = root/'SHA256SUMS.txt'

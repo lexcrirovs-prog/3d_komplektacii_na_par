@@ -42,7 +42,7 @@ def main(a):
         part['bounds_blender'] = [[float(fn(v[i] for v in points)) for i in range(3)] for fn in [min, max]]
     manifest['source_blender_version'] = manifest['version']
     manifest['version'] = a.version
-    manifest['date'] = '2026-09-10'
+    manifest['date'] = source_opening['date']
     manifest['author'] = 'Codex / GPT-6 Astra'
     manifest['source_scene_sha256'] = sha256(source)
     manifest['door_groups'] = opening['groups']

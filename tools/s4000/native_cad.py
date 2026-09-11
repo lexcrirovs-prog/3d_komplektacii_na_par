@@ -106,6 +106,7 @@ def run(a):
  if 'door_groups' in manifest:view_names+=['S4000_DOOR','S4000_CABINET']
  if 'pressure_revision' in manifest:view_names+=['S4000_PRESSURE']
  if 'blowdown_revision' in manifest:view_names+=['S4000_BLOWDOWN','S4000_ROUTING']
+ if 'floor_revision' in manifest:view_names+=['S4000_TRAP']
  style_views=['(command "_.-VIEW" "_E" "_V" "'+v+'" "PREMIUM_SOLID" "" "")' for v in view_names]
  overview_direction='-1,-1,0.72' if 'door_groups' in manifest else '1,-1,0.8'
  # Use full ASCII paths only in AutoLISP; source is passed as a structured arg.

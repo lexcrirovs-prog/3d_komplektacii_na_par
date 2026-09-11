@@ -469,6 +469,135 @@ def enclose_cables(directory):
     print('CABLE_CHANNELS_SAVED_IN_PLACE',len(ducts),len(leads),flush=True)
 
 
+def restore_corrugated_cables(directory):
+    """11 Sep: undo the rejected covers, retaining previous secured wire routes."""
+    from revise_pressure_gooseneck import builder
+    from pressure_gooseneck import pressure_cables
+    from build_assembly import actuator
+    from types import MethodType
+    d=Path(directory);m=json.loads((d/'assembly-source.json').read_text(encoding='utf8'))
+    r=json.loads((d/'opening.json').read_text(encoding='utf8'))
+    target=d/('S4000_COMFORT_OPENING_v'+m['version']+'.blend');prior=sha(target)
+    assert prior==json.loads((d/'verification.json').read_text(encoding='utf8'))['checked_file_sha256']
+    assert 'cable_channel_revision' in r and 'corrugated_wiring_revision' not in r
+    bpy.ops.wm.open_mainfile(filepath=str(target),load_ui=False,use_scripts=False)
+    bpy.context.scene.frame_set(1);bpy.context.view_layer.update()
+    changed=set(r['cable_channel_revision']['changed_parts']);parts={p['id']:p for p in m['parts']}
+    kept={k:fingerprint(bpy.data.objects[k]) for k in parts if k not in changed}
+    # Door source meshes were not edited by the cover revision. Remove its six
+    # appended objects only, then compare to the pre-cover Git receipt.
+    original_door='e020cfbbea60ea8fa368a86b09d76b906f91ea9677713e761d8d3c8dfbcfa0c9'
+    appended=[row['object'] for row in r['cable_channel_revision']['channels'] if row['part']=='cabinet_door']
+    appended+=['cabinet_door / dark','cabinet_door / steel']
+    assert len(appended)==6
+    for name in appended:
+        ob=bpy.data.objects[name];assert ob.parent.name=='cabinet_door'
+        mesh=ob.data;bpy.data.objects.remove(ob,do_unlink=True)
+        if not mesh.users:bpy.data.meshes.remove(mesh)
+    bpy.context.view_layer.update();assert fingerprint(bpy.data.objects['cabinet_door'])==original_door
+    g=builder(None);conduits=[];core=0
+    def conduit(self,points,r=.021,mat='green',fillet=.08,sides=40,wall=.003):
+        if mat!='black' or r<.005:return Geometry.pipe(self,points,r,mat,fillet,sides,wall)
+        # Closed outer skin with real shallow annular ribs; no texture dependency.
+        raw=[Vector(p) for p in points];smooth=[raw[0]]
+        for i in range(1,len(raw)-1):
+            c=raw[i];u=raw[i-1]-c;v=raw[i+1]-c
+            if u.cross(v).length<1e-8:smooth.append(c);continue
+            distance=min(fillet,u.length*.4,v.length*.4);a=c+u.normalized()*distance;b=c+v.normalized()*distance
+            smooth.extend(a*(1-t)**2+c*2*t*(1-t)+b*t*t for t in np.linspace(0,1,9))
+        smooth.append(raw[-1]);clean=[smooth[0]]
+        for p in smooth[1:]:
+            if (p-clean[-1]).length>1e-7:clean.append(p)
+        line=np.asarray(clean);lengths=np.r_[0,np.cumsum(np.linalg.norm(np.diff(line,axis=0),axis=1))]
+        pitch=.008;steps=math.ceil(lengths[-1]/pitch)*4
+        distances=np.linspace(0,lengths[-1],steps+1)
+        centers=np.column_stack([np.interp(distances,lengths,line[:,i]) for i in range(3)])
+        vs=[];fs=[];previous=None;normal=None;n=12
+        radii=r*(.91-.09*np.cos(np.arange(steps+1)*math.pi/2))
+        for i,p in enumerate(centers):
+            tangent=Vector(centers[min(i+1,steps)]-centers[max(0,i-1)]).normalized()
+            if previous is None:
+                ref=Vector((0,0,1)) if abs(tangent.z)<.9 else Vector((0,1,0));normal=ref.cross(tangent).normalized()
+            else:
+                normal=previous.rotation_difference(tangent)@normal;normal=(normal-tangent*normal.dot(tangent)).normalized()
+            binormal=tangent.cross(normal).normalized();previous=tangent
+            vs.extend(Vector(p)+float(radii[i])*(normal*math.cos(j*2*math.pi/n)+binormal*math.sin(j*2*math.pi/n)) for j in range(n))
+        for i in range(steps):
+            a=i*n;b=a+n
+            fs.extend((a+j,a+(j+1)%n,b+(j+1)%n,b+j) for j in range(n))
+        fs.extend([tuple(reversed(range(n))),tuple(steps*n+j for j in range(n))])
+        offset=len(self.batches.get((self.owner,mat),([],[]))[0]);self.batch(vs,fs,mat)
+        samples=sorted(set([0,1,2,3,4,steps//2,steps-2,steps-1,steps]))
+        conduits.append(dict(part=self.owner,vertex_offset=offset,ring_sides=n,ring_count=steps+1,
+            radius_m=r,length_m=float(lengths[-1]),rib_pitch_m=float(lengths[-1]/steps*4),
+            points_m=[list(p) for p in raw],samples=[dict(index=i,center=centers[i].tolist(),radius=float(radii[i])) for i in samples]))
+    g.pipe=MethodType(conduit,g)
+    clear('cables');g.part('cables','Чёрная гофра с креплениями и нижними монтажными лотками','photo_parametric')
+    # Restore the original thin open trays and supports, not the rejected boxes.
+    for x in [1.045,-1.045]:
+        g.box((x,-.6,.24),(.095,2.7,.025),'zinc')
+        for side in [-1,1]:g.box((x+side*.043,-.6,.28),(.009,2.7,.07),'zinc')
+        for j in range(30):g.box((x+.049,-1.88+j*.089,.28),(.003,.034,.018),'dark')
+    g.box((1.014,-1.10,1.16),(.004,.094,1.82),'zinc')
+    for y in [-1.147,-1.053]:g.box((1.045,y,1.16),(.065,.004,1.82),'zinc')
+    g.box((0,-2.18,.082),(2.16,.085,.018),'zinc')
+    g.box((-1.126,-1.22,.76),(.005,.10,.96),'zinc')
+    for y in [-1.272,-1.168]:g.box((-1.175,y,.76),(.10,.004,.96),'zinc')
+    pressure_paths=pressure_cables(g)
+    for z in [.50,.9,1.3,1.7]:
+        x=math.sqrt(.987**2-(z-1.135)**2)
+        g.box(((x+1.014)/2,-1.10,z),(1.014-x,.045,.012),'steel')
+        g.box((1.052,-1.10,z),(.020,.09,.012),'steel')
+    for j,(start,y) in enumerate([((-.03680608,-1.21125,2.515),-1.29125),((0,-.64,2.515),-.72),((.13680608,-1.24625,2.475),-1.29125)]):
+        arc=[]
+        for k in range(17):
+            angle=math.pi/2+k*math.pi/32;arc.append((1.028*math.cos(angle),y,1.135+1.028*math.sin(angle)))
+            if k%4==0:
+                n=Vector((math.cos(angle),0,math.sin(angle)));v=Vector(arc[-1])
+                g.cyl(v-n*.041,v,.0035,'steel',12);g.cyl(v+Vector((0,-.012,0)),v+Vector((0,.012,0)),.003,'steel',12)
+        g.pipe([start,(0,y,2.28),*arc,(-1.045,y,.30),(-1.045,-1.22,.30),(-1.195+j*.009,-1.22,.30),(-1.195+j*.009,-1.22,1.225)],.006,'black',.025,16)
+    for z in [.42,.65,.88,1.11]:g.box((-1.225,-1.22,z),(.012,.09,.016),'steel')
+    pump_paths=[]
+    for i,y in enumerate([.20,.95]):
+        pts=[(2.205,y,1.22),(2.35,y,1.22),(2.35,y+.30,1.22),(2.35,y+.30,.30),(1.045,y+.30,.30),
+             (1.045,-2.18,.30),(1.045,-2.18,.12),(-1.045,-2.18,.12),(-1.045,-2.18,.30),
+             (-1.045,-1.22,.30),(-1.15+i*.009,-1.22,.30),(-1.15+i*.009,-1.22,1.225)]
+        g.pipe(pts,.007,'black',.045,16);pump_paths.append(pts)
+        for z in [.45,.7,.95,1.2]:g.box((2.35,y+.30,z),(.035,.06,.012),'steel')
+        g.box((2.35,y+.30,.71),(.025,.025,.95),'steel')
+    for key,base,big in [('mod_eco_drive',(.60,1.26,2.98),False),('mod_direct_drive',(.60,1.26,2.98),False),('gpz_drive',(0,.60,3.24),True)]:
+        probe=builder(key);probe.part=lambda *args,**kwargs:None;actuator(probe,key,base,big)
+        for (_,mat),(vs,fs) in probe.batches.items():
+            candidates=[o for o in bpy.data.objects[key].children_recursive if o.type=='MESH' and o.data.materials[0].name==mat]
+            body=next(o for o in candidates if len(o.data.vertices)>=len(vs) and np.allclose([o.matrix_world@v.co for v in list(o.data.vertices)[:len(vs)]],vs,atol=1e-6))
+            core+=len(vs)
+        clear(key);gland=actuator(g,key,base,big,parts[key]['when']);y=-.19 if big else 1.26
+        dz=3.10 if big else 2.86;dx=.025 if key=='mod_eco_drive' else .012
+        pts=[gland,(gland.x+dx,gland.y,gland.z),(gland.x+dx,gland.y,dz),(gland.x+dx,y,dz),(0,y,2.19)]
+        pts.extend((1.028*math.cos(math.pi/2+k*math.pi/32),y,1.135+1.028*math.sin(math.pi/2+k*math.pi/32)) for k in range(17))
+        pts.extend([(-1.045,y,.30),(-1.045,-1.22,.30),(-1.205,-1.22,.30),(-1.205,-1.22,1.225)])
+        g.pipe(pts,.006,'black',.035,16);g.parts[key]['cable_termination_m']=[-1.205,-1.22,1.225]
+    g.flush();bpy.context.view_layer.update();parts.update(g.parts)
+    for key in changed:
+        parts[key]['bounds_blender']=bounds(bpy.data.objects[key])
+        if key!='cabinet_door':r['new_static_part_fingerprints'][key]=fingerprint(bpy.data.objects[key])
+    assert all(fingerprint(bpy.data.objects[k])==v for k,v in kept.items())
+    assert not any(o.get('cable_channel') for o in bpy.data.objects)
+    revision=dict(date='2026-09-11',author='Codex / GPT-6 Astra',in_place=True,prior_sha256=prior,
+        changed_parts=sorted(changed),unchanged_fingerprints=kept,conduits=conduits,removed_channels=19,
+        cabinet_door_restored_sha256=original_door,actuator_core_vertices_preserved=core,
+        prior_secured_routes_restored=True,lower_open_trays_preserved=True)
+    for data in [m,r]:
+        data.pop('cable_channel_revision');data['corrugated_wiring_revision']=copy.deepcopy(revision)
+        data['video_review']['pump_cable_paths_m']=pump_paths;data['pressure_revision']['cable_paths_m']=pressure_paths
+    m['parts']=list(parts.values());g.parts=parts;g.apply_options(m['default_options'])
+    for name,data in [('assembly-source.json',m),('opening.json',r)]:
+        (d/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
+    bpy.context.preferences.filepaths.save_version=0
+    bpy.ops.wm.save_as_mainfile(filepath=str(target),compress=True)
+    print('CORRUGATED_WIRING_RESTORED_IN_PLACE',len(conduits),sum(x['length_m'] for x in conduits),flush=True)
+
+
 def separate_safety_discharges(directory):
     """11 Sep owner correction: exchange the two offsets in the existing scene."""
     from revise_pressure_gooseneck import builder
@@ -516,6 +645,9 @@ def separate_safety_discharges(directory):
 
 
 if __name__=='__main__':
+    if '--restore-corrugated-in-place' in sys.argv:
+        cli=argparse.ArgumentParser();cli.add_argument('--restore-corrugated-in-place',type=Path,required=True)
+        args=cli.parse_args(sys.argv[sys.argv.index('--')+1:]);restore_corrugated_cables(args.restore_corrugated_in_place);sys.exit(0)
     if '--enclose-cables-in-place' in sys.argv:
         cli=argparse.ArgumentParser();cli.add_argument('--enclose-cables-in-place',type=Path,required=True)
         args=cli.parse_args(sys.argv[sys.argv.index('--')+1:]);enclose_cables(args.enclose_cables_in_place);sys.exit(0)

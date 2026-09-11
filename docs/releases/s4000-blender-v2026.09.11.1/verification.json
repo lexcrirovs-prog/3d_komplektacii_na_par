@@ -39,7 +39,7 @@
   "reopened_in_fresh_process": true,
   "automatic_script_execution": false,
   "required_addons": [],
-  "checked_file_sha256": "9bd6561179e2332f8ef18edfda7a52fada3c2566abb61498c69743aebb2b4ed1",
+  "checked_file_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
   "blender": "3.3.3",
   "author": "Codex / GPT-6 Astra",
   "date": "2026-09-11",
@@ -148,17 +148,16 @@
     ],
     "offsets_exchanged": true
   },
-  "cable_channels": {
-    "status": "PASSED_ENCLOSED_WIRING",
-    "channels": 19,
-    "short_terminal_leads": 11,
-    "long_enclosed_runs": 11,
-    "maximum_exposed_lead_mm": 127.99999256245769,
-    "equipment_mesh_pairs_checked": 60,
-    "equipment_intersections": 0,
+  "corrugated_wiring": {
+    "status": "PASSED_RESTORED_CORRUGATED_WIRING",
+    "removed_closed_channels": 19,
+    "conduit_runs": 11,
+    "actual_geometry_cross_sections_checked": 99,
+    "unrelated_parts_preserved": 96,
+    "original_cabinet_door_restored": true,
     "actuator_core_vertices_preserved": 912,
-    "door_channels_attached_to_moving_door": true,
-    "hinge_link_preserved": true,
-    "unrelated_parts_preserved": 96
+    "prior_secured_routes_restored": true,
+    "lower_open_trays_preserved": true,
+    "all_runs_reach_cabinet": true
   }
 }

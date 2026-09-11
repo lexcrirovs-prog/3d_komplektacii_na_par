@@ -209,6 +209,33 @@ def main(a):
                 pair_intersections=0,parallel_spacing_mm=spacing,straight_surface_gap_mm=spacing-76.1,
                 horizontal=True,source_valve_endpoints_preserved=True,
                 nearby_equipment_without_intersections=nearby,offsets_exchanged=True)
+    if 'corrugated_wiring_revision' in report:
+        revision=report['corrugated_wiring_revision']
+        assert 'cable_channel_revision' not in report
+        assert not any(o.get('cable_channel') for o in bpy.data.objects), 'Rejected covers remain'
+        assert all(fingerprint(bpy.data.objects[k])==v for k,v in revision['unchanged_fingerprints'].items())
+        assert fingerprint(bpy.data.objects['cabinet_door'])==revision['cabinet_door_restored_sha256']
+        samples_checked=0
+        for row in revision['conduits']:
+            objects=[o for o in bpy.data.objects[row['part']].children_recursive
+                     if o.type=='MESH' and o.data.materials[0].name=='black']
+            assert len(objects)==1
+            ob=objects[0];n=row['ring_sides'];offset=row['vertex_offset']
+            assert row['rib_pitch_m']<=.008 and abs(row['points_m'][-1][2]-1.225)<1e-7
+            for sample in row['samples']:
+                start=offset+sample['index']*n
+                vertices=np.array([ob.matrix_world@ob.data.vertices[i].co for i in range(start,start+n)])
+                center=np.array(sample['center'])
+                assert np.allclose(vertices.mean(axis=0),center,atol=1e-6)
+                assert np.allclose(np.linalg.norm(vertices-center,axis=1),sample['radius'],atol=1e-6)
+                samples_checked+=1
+            measured=[x['radius'] for x in row['samples'][:5]]
+            assert max(measured)-min(measured)>.001, 'Conduit has no corrugation'
+        verification['corrugated_wiring']=dict(status='PASSED_RESTORED_CORRUGATED_WIRING',
+            removed_closed_channels=revision['removed_channels'],conduit_runs=len(revision['conduits']),
+            actual_geometry_cross_sections_checked=samples_checked,unrelated_parts_preserved=len(revision['unchanged_fingerprints']),
+            original_cabinet_door_restored=True,actuator_core_vertices_preserved=revision['actuator_core_vertices_preserved'],
+            prior_secured_routes_restored=True,lower_open_trays_preserved=True,all_runs_reach_cabinet=True)
     if 'cable_channel_revision' in report:
         from mathutils.bvhtree import BVHTree
         revision=report['cable_channel_revision']

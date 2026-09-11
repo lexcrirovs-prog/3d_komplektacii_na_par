@@ -3,10 +3,14 @@
   "date": "2026-09-11",
   "author": "Codex / GPT-6 Astra",
   "archive": "S4000_AutoCAD_OPENING_v2026.09.11.1.zip",
-  "bytes": 505732489,
-  "sha256": "4da7575b4e813d01a210ab630dbd69509e555083af032ecf994bbda5f03e7d81",
+  "bytes": 509645922,
+  "sha256": "c53493476de04ff7e212c795b24653dedb293a89d84b486ec60d32db7fac603a",
   "files": 35,
-  "status": "PRE_VIDEO_ARCHIVE_UNCHANGED_PENDING_DWG",
-  "last_archive_verification": "PASSED_ZIP_CONTENT_HASHES_BEFORE_VIDEO",
-  "current_video_amendment_in_archive": false
+  "status": "PASSED_ZIP_CONTENT_HASHES",
+  "last_archive_verification": "PASSED_CURRENT_CRC_AND_ALL_35_CONTENT_HASHES",
+  "current_video_amendment_in_archive": true,
+  "safety_discharge_offsets_exchanged": true,
+  "existing_name_preserved": true,
+  "closed_dwg_sha256": "74257a714c6a34dd93f33a3c6055a135c97111d608c15d09a1997658c17e4e32",
+  "open_dwg_sha256": "2c7eaf6e45b956730cad3bb48bd9e78138ce62f470586f81e3c15da9f271d59a"
 }

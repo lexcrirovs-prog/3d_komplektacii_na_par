@@ -256,7 +256,7 @@ def review_in_place(directory, fv_dn):
     sample_points=[sample,[1.30,-1.39,1.34450216],[1.30,-1.58,1.34450216],[1.30,-1.58,.99],[1.403531116,-1.58,.99],[1.403531116,-1.429251886,.99],[1.403531116,-1.429251886,.95]]
     g.pipe(sample_points,.004,'steel',.025);g.cyl(sample,[sample[0]-.018,*sample[1:]],.008,'steel',6)
     # The old receiving-end uncertainty is retained; only the video-confirmed source end is changed.
-    for i,x in [(1,-.48),(2,-.82)]:
+    for i,x in [(1,-.82),(2,-.48)]:
         key='safety_vent_'+str(i);y=.66 if i==1 else .96
         points=[[-.169,y,2.389],[x,y,2.389],[x,4.70,2.389]]
         remake(key,'Предохранительный клапан №'+str(i)+': горизонтальный отвод за экономайзер')
@@ -305,7 +305,56 @@ def review_in_place(directory, fv_dn):
     print('VIDEO_REVIEW_SAVED_IN_PLACE',str(target),flush=True)
 
 
+def separate_safety_discharges(directory):
+    """11 Sep owner correction: exchange the two offsets in the existing scene."""
+    from revise_pressure_gooseneck import builder
+    d=Path(directory)
+    m=json.loads((d/'assembly-source.json').read_text(encoding='utf8'))
+    r=json.loads((d/'opening.json').read_text(encoding='utf8'))
+    target=d/('S4000_COMFORT_OPENING_v'+m['version']+'.blend')
+    assert m['version']=='2026.09.11.1' and target.is_file()
+    prior_sha=sha(target)
+    assert prior_sha==json.loads((d/'verification.json').read_text(encoding='utf8'))['checked_file_sha256']
+    bpy.ops.wm.open_mainfile(filepath=str(target),load_ui=False,use_scripts=False)
+    bpy.context.scene.frame_set(1);bpy.context.view_layer.update()
+    changed={'safety_vent_1','safety_vent_2'}
+    kept={p['id']:fingerprint(bpy.data.objects[p['id']]) for p in m['parts'] if p['id'] not in changed}
+    parts={p['id']:p for p in m['parts']};g=builder(None);paths={}
+    for i,x in [(1,-.82),(2,-.48)]:
+        key='safety_vent_'+str(i);y=m['ports']['safety_'+str(i)+'_out']['position_m'][1]
+        points=[[-.169,y,2.389],[x,y,2.389],[x,4.70,2.389]]
+        clear(key)
+        old=parts[key]
+        g.part(key,old['label'],old['source_kind'],old['when'],old['bom_rows'],old['note'])
+        g.pipe(points,.03805,'steel',.12)
+        g.flange((-.178,y,2.389),(-1,0,0),65,'steel')
+        next(e for e in m['flow_edges'] if e['part']==key)['polyline_m']=points
+        m['ports']['safety_'+str(i)+'_boundary']['position_m']=points[-1]
+        paths[key]=points
+    g.flush();bpy.context.view_layer.update()
+    for key in changed:
+        parts[key]['bounds_blender']=bounds(bpy.data.objects[key])
+        r['new_static_part_fingerprints'][key]=fingerprint(bpy.data.objects[key])
+    assert all(fingerprint(bpy.data.objects[k])==v for k,v in kept.items())
+    revision=dict(date='2026-09-11',author='Codex / GPT-6 Astra',in_place=True,
+        prior_sha256=prior_sha,changed_parts=sorted(changed),centerlines_m=paths,
+        parallel_spacing_mm=340,pipe_outer_diameter_mm=76.1,
+        note='Owner requested exchanging the lateral offsets to remove the crossing')
+    for data in [m,r]:
+        data['safety_discharge_revision']=copy.deepcopy(revision)
+        data['video_review']['safety_discharge_offsets_exchanged']=True
+    for name,data in [('assembly-source.json',m),('opening.json',r)]:
+        (d/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
+    g.parts=parts;g.apply_options(m['default_options'])
+    bpy.context.preferences.filepaths.save_version=0
+    bpy.ops.wm.save_as_mainfile(filepath=str(target),compress=True)
+    print('SAFETY_DISCHARGES_EXCHANGED_IN_PLACE',json.dumps(revision),flush=True)
+
+
 if __name__=='__main__':
+    if '--separate-safety-in-place' in sys.argv:
+        cli=argparse.ArgumentParser();cli.add_argument('--separate-safety-in-place',type=Path,required=True)
+        args=cli.parse_args(sys.argv[sys.argv.index('--')+1:]);separate_safety_discharges(args.separate_safety_in_place);sys.exit(0)
     if '--review-in-place' in sys.argv:
         cli=argparse.ArgumentParser();cli.add_argument('--review-in-place',type=Path,required=True);cli.add_argument('--fv-safety-dn',type=int,choices=[25,50],required=True)
         args=cli.parse_args(sys.argv[sys.argv.index('--')+1:]);review_in_place(args.review_in_place,args.fv_safety_dn);sys.exit(0)

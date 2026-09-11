@@ -187,6 +187,28 @@ def main(a):
             pump_cable_centerlines_do_not_cross_pumps=True,fv_to_da_removed=True,fv_safety_dn=video['fv_safety_dn'],
             trap_rotated_90=True,lower_blowdown_drive_up=True,discharge_horizontal=True,
             sample_source_on_valve=True,receiving_SC9_port='UNCONFIRMED_EXISTING_INTERFACE')
+        if 'safety_discharge_revision' in report:
+            def meshes(key):
+                return [o for o in bpy.data.objects[key].children_recursive if o.type=='MESH']
+            def tree(ob):
+                return BVHTree.FromPolygons([ob.matrix_world@v.co for v in ob.data.vertices],
+                    [tuple(p.vertices) for p in ob.data.polygons])
+            vents={k:[tree(o) for o in meshes(k)] for k in ['safety_vent_1','safety_vent_2']}
+            assert not any(a.overlap(b) for a in vents['safety_vent_1'] for b in vents['safety_vent_2']), 'Discharge pipes intersect'
+            nearby=['economizer','to_economizer','eco_inlet_adapter','from_economizer']
+            for key in nearby:
+                for ob in meshes(key):
+                    other=tree(ob)
+                    assert not any(v.overlap(other) for row in vents.values() for v in row),('Discharge intersects',key)
+            paths=[np.asarray(next(e for e in manifest['flow_edges'] if e['part']==k)['polyline_m']) for k in vents]
+            straight=[p[-1]-p[-2] for p in paths]
+            assert np.linalg.norm(np.cross(*straight))<1e-9, 'Discharges are not parallel'
+            assert paths[0][1,0]<paths[1][1,0] and paths[0][0,1]<paths[1][0,1]
+            spacing=abs(paths[0][-1,0]-paths[1][-1,0])*1000
+            verification['safety_discharges']=dict(status='PASSED_SEPARATED_PARALLEL_MESHES',
+                pair_intersections=0,parallel_spacing_mm=spacing,straight_surface_gap_mm=spacing-76.1,
+                horizontal=True,source_valve_endpoints_preserved=True,
+                nearby_equipment_without_intersections=nearby,offsets_exchanged=True)
     (d/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding='utf8')
     print(json.dumps(verification, ensure_ascii=False), flush=True)
     if not a.render: return

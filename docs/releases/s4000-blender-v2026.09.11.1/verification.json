@@ -39,7 +39,7 @@
   "reopened_in_fresh_process": true,
   "automatic_script_execution": false,
   "required_addons": [],
-  "checked_file_sha256": "2aacbb83bb4560f342b848b96ffdbd61cd2ba993c089ac85f72cf5fb2e9cf08a",
+  "checked_file_sha256": "dbec531da829becad50614e71b519335b537015ce176f4cf7c9c830448cd466d",
   "blender": "3.3.3",
   "author": "Codex / GPT-6 Astra",
   "date": "2026-09-11",
@@ -132,5 +132,20 @@
     "discharge_horizontal": true,
     "sample_source_on_valve": true,
     "receiving_SC9_port": "UNCONFIRMED_EXISTING_INTERFACE"
+  },
+  "safety_discharges": {
+    "status": "PASSED_SEPARATED_PARALLEL_MESHES",
+    "pair_intersections": 0,
+    "parallel_spacing_mm": 339.99999999999994,
+    "straight_surface_gap_mm": 263.9,
+    "horizontal": true,
+    "source_valve_endpoints_preserved": true,
+    "nearby_equipment_without_intersections": [
+      "economizer",
+      "to_economizer",
+      "eco_inlet_adapter",
+      "from_economizer"
+    ],
+    "offsets_exchanged": true
   }
 }

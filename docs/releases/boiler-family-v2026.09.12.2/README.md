@@ -53,7 +53,7 @@ explanation. The cabinet can be opened in all families.
 All family files use Meshopt compression and immutable content-hash URLs.
 Only the selected family downloads. The boiler is shown first, accessories
 follow; switching within a family reuses already loaded geometry. Decompressed
-asset totals: small 25,648,700 bytes; medium 34,172,972 bytes. They are not the
+asset totals: small 25,646,192 bytes; medium 34,170,380 bytes. They are not the
 wire-transfer size, since the server additionally enables gzip compression.
 Large retains the previously validated web geometry. Exact chunk partition
 checks compare node transforms, material slots, attributes and triangle hashes.
@@ -70,7 +70,31 @@ mobile widths, all eight ratings, cross-family transitions and URL restoration.
 The report includes the deployment manifest hash. Screenshots are also inspected.
 CI and physical-phone performance are not claimed by these local checks.
 
-Publication receipts and live browser acceptance are appended after publication.
+Publication status: **PASSED_PUBLIC_COPY** on 2026-09-12.
+Live: https://prgz.ru/komplektacii4/
+Previous version: https://prgz.ru/komplektacii4-v2026.09.12.1/
+
+Application source commit: `0ca52a312b3721ca1585f6e6f0d6f04abe600037`.
+Manifest SHA-256:
+`8e009ec8c7aa936bf6398150d7720262c582ea619d6a03af922c31f7446bb7f5`.
+Candidate archive SHA-256:
+`78cfe89f2b6163f8b208993ae8acda2c053eed97999552d02dda91a5e91aea4c`.
+
+The final staged and live copies passed hashes for all 52 public files over HTTPS,
+and all 54 files including private server configuration over SSH. Both staged and
+live browser reports passed all seven acceptance groups with no page errors.
+Screenshots of the live family views were inspected. Neighbor root files, routing
+configuration and the cascade page stayed unchanged. The preceding 38-file live
+publication was backed up and verified before the directory cutover.
+
+An earlier staged candidate was superseded before cutover by a corrected shallow
+flue offset; only the `-final` staged copy was published. Its preceding staging
+folder is retained. No production rollback or source-file replacement occurred.
+
+![S-1000 with DA-3](live-small-overview.png)
+![DA-3 exterior](live-small-deaerator.png)
+![Middle family](live-medium-overview.png)
+![S-4000 family](live-large-overview.png)
 
 ## Reproduction
 

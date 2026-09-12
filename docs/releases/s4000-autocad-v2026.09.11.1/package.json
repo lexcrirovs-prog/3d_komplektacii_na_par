@@ -1,0 +1,19 @@
+{
+  "version": "2026.09.11.1",
+  "date": "2026-09-11",
+  "author": "Codex / GPT-6 Astra",
+  "archive": "S4000_AutoCAD_OPENING_v2026.09.11.1.zip",
+  "bytes": 516197465,
+  "sha256": "2a4d1e9a149410ec6670c6983b4a15da54bc55676901256a0aa6e71b94313938",
+  "files": 35,
+  "status": "PASSED_ZIP_CONTENT_HASHES",
+  "last_archive_verification": "PASSED_CURRENT_CRC_AND_ALL_35_CONTENT_HASHES",
+  "current_video_amendment_in_archive": true,
+  "safety_discharge_offsets_exchanged": true,
+  "existing_name_preserved": true,
+  "closed_dwg_sha256": "849694a4ff153d6cf274e5f525b01886e398be9554f5fe87ba1686a6aab01fb1",
+  "open_dwg_sha256": "bff8ff68a16bb689c86b55067b2b5296bbf4030d39b5afa8b757374d5c7b82dc",
+  "blender_source_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
+  "corrugated_wiring_restored": true,
+  "removed_closed_channels": 19
+}

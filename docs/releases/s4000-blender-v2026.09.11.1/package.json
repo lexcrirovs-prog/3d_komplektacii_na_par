@@ -1,0 +1,17 @@
+{
+  "status": "PASSED_BLENDER_PACKAGE",
+  "version": "2026.09.11.1",
+  "date": "2026-09-11",
+  "author": "Codex / GPT-6 Astra",
+  "archive": "S4000_Blender_OPENING_v2026.09.11.1.zip",
+  "archive_bytes": 169403812,
+  "archive_sha256": "f427af4e3d6af31ae31cd43eade44013e94558f4349ed9bae72dcf69f36742f3",
+  "archive_files": 18,
+  "blend": "S4000_COMFORT_OPENING_v2026.09.11.1.blend",
+  "blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
+  "previews_reviewed": 6,
+  "crc_verified": true,
+  "all_file_hashes_verified": true,
+  "native_ui_click_test": "NOT_RUN_THIS_REVISION",
+  "in_place_amendment": true
+}

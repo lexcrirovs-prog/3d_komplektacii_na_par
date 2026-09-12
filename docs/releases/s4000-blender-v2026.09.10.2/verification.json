@@ -1,0 +1,46 @@
+{
+  "status": "PASSED_BLENDER_NATIVE_OPENING",
+  "version": "2026.09.10.2",
+  "frames_checked": 193,
+  "retained_static_parts": 67,
+  "total_checked_static_parts": 71,
+  "source_closed_mesh_placements": 10,
+  "max_rigid_transform_error": 4.76837158203125e-07,
+  "poses": [
+    {
+      "frame": 1,
+      "boiler": 0.0,
+      "cabinet": 0.0
+    },
+    {
+      "frame": 49,
+      "boiler": -104.99999950679661,
+      "cabinet": 0.0
+    },
+    {
+      "frame": 97,
+      "boiler": -104.99999950679661,
+      "cabinet": -109.99999850756943
+    },
+    {
+      "frame": 145,
+      "boiler": 0.0,
+      "cabinet": -109.99999850756943
+    },
+    {
+      "frame": 193,
+      "boiler": 0.0,
+      "cabinet": 0.0
+    }
+  ],
+  "actual_smoke_tubes": 96,
+  "source_step_solids_imported": 97,
+  "source_step_solids_excluded": 571,
+  "reopened_in_fresh_process": true,
+  "automatic_script_execution": false,
+  "required_addons": [],
+  "checked_file_sha256": "d6ec32a8ea6e4c10f4cd9aa371ed12aa6d6c59a766c337a5f245c729c4d9fab5",
+  "blender": "3.3.3",
+  "author": "Codex / GPT-6 Astra",
+  "date": "2026-09-10"
+}

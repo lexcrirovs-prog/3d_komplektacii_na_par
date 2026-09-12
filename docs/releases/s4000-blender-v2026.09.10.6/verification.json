@@ -1,0 +1,96 @@
+{
+  "status": "PASSED_BLENDER_NATIVE_OPENING",
+  "version": "2026.09.10.6",
+  "frames_checked": 193,
+  "retained_static_parts": 54,
+  "total_checked_static_parts": 98,
+  "source_closed_mesh_placements": 10,
+  "max_rigid_transform_error": 4.76837158203125e-07,
+  "poses": [
+    {
+      "frame": 1,
+      "boiler": 0.0,
+      "cabinet": 0.0
+    },
+    {
+      "frame": 49,
+      "boiler": -104.99999950679661,
+      "cabinet": 0.0
+    },
+    {
+      "frame": 97,
+      "boiler": -104.99999950679661,
+      "cabinet": -109.99999850756943
+    },
+    {
+      "frame": 145,
+      "boiler": 0.0,
+      "cabinet": -109.99999850756943
+    },
+    {
+      "frame": 193,
+      "boiler": 0.0,
+      "cabinet": 0.0
+    }
+  ],
+  "actual_smoke_tubes": 96,
+  "source_step_solids_imported": 97,
+  "source_step_solids_excluded": 571,
+  "reopened_in_fresh_process": true,
+  "automatic_script_execution": false,
+  "required_addons": [],
+  "checked_file_sha256": "492752e73892372ce0acae9ef85559af36a80771b56c021daad0290de41cc66e",
+  "blender": "3.3.3",
+  "author": "Codex / GPT-6 Astra",
+  "date": "2026-09-10",
+  "deaerator_rotation": {
+    "degrees": 180,
+    "axis": "Z",
+    "attached_objects_checked": 548,
+    "maximum_matrix_error": 8.742277657347586e-08,
+    "outlet_connected": true,
+    "source_normal_respected": true,
+    "fixed_pump_supply_boundary": true,
+    "level_gauge_rotated_with_tank": true
+  },
+  "pressure_group": {
+    "open_centerline": true,
+    "closed_loop": false,
+    "boiler_endpoints_preserved": true,
+    "unchanged_instruments": 5,
+    "instrument_positions_preserved": true,
+    "unchanged_other_parts": 72,
+    "cable_leads_rerouted": 3,
+    "references": [
+      {
+        "file": "photo_2026-09-10_18-47-53.jpg",
+        "sha256": "af8f0cd8c2e530411b8f637fb2bcdbc60382a6151d51b272bb377c22ea07acd0"
+      },
+      {
+        "file": "photo_2026-09-10_18-47-49.jpg",
+        "sha256": "b9f955babfa97d91e74ec7aedf52624fdb7e5dd36f6b291fdbe3fef6529e1e78"
+      },
+      {
+        "file": "photo_2026-09-10_18-50-01.jpg",
+        "sha256": "6842f24176173944af540674017aca4c34e173ace193babffeda7ad87c699a5d"
+      }
+    ]
+  },
+  "blowdown": {
+    "retained_parts": 66,
+    "changed_existing_parts": [
+      "bcv7432",
+      "bottom_piping",
+      "drain_isolation_1",
+      "drain_isolation_2",
+      "safety_1",
+      "safety_2",
+      "sample_piping",
+      "separator_fv8"
+    ],
+    "fixed_pipework_during_door_animation": true,
+    "missing_device_count": 6,
+    "da_steam_connected": false,
+    "fv_support_height_m": 1.2
+  }
+}

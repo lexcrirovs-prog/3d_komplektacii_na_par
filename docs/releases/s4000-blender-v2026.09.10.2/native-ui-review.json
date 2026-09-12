@@ -1,0 +1,20 @@
+{
+  "status": "PASSED_NATIVE_BLENDER_UI_REVIEW",
+  "date": "2026-09-10",
+  "author": "Codex / GPT-6 Astra",
+  "blender": "3.3.3",
+  "file": "S4000_COMFORT_OPENING_v2026.09.10.2.blend",
+  "checked_file_sha256": "d6ec32a8ea6e4c10f4cd9aa371ed12aa6d6c59a766c337a5f245c729c4d9fab5",
+  "method": "Observed native Blender window; standard timeline and keyboard controls",
+  "actions_observed": [
+    "file_opened",
+    "animation_started",
+    "animation_stopped",
+    "frame_97_entered",
+    "both_doors_open",
+    "overview_camera_selected"
+  ],
+  "previews_reviewed": 6,
+  "steady_fps_measurement": "NOT_RUN",
+  "note": "Native playback was observed during concurrent background rendering. No steady FPS claim."
+}

@@ -1,0 +1,293 @@
+{
+  "status": "REMOVED_VERIFIED",
+  "version": "2026.09.12.1",
+  "date": "2026-09-12",
+  "author": "Codex / GPT-6 Astra",
+  "kind": "drawing_cleanup_receipt_model_versions_unchanged",
+  "removed_files": 3922,
+  "removed_bytes": 7469707971,
+  "removed_GiB": 6.956707659177482,
+  "removed_directories": 67,
+  "removed_obsolete_junctions": 1,
+  "by_drive": {
+    "E:": {
+      "files": 3725,
+      "bytes": 5794307192,
+      "GiB": 5.396369092166424
+    },
+    "C:": {
+      "files": 197,
+      "bytes": 1675400779,
+      "GiB": 1.5603385670110583
+    }
+  },
+  "retained_files_rehashed": 1080,
+  "retained_versions": {
+    "S3000_AutoCAD_Blender": "2026.09.09.5",
+    "S4000_AutoCAD_Blender": "2026.09.11.1"
+  },
+  "removed_groups": [
+    {
+      "path": "artifacts/S3000-Spacer-v2026.09.09.4",
+      "files": 15,
+      "bytes": 66074
+    },
+    {
+      "path": "artifacts/S4000-AutoCAD-v2026.09.10.4",
+      "files": 28,
+      "bytes": 2511297
+    },
+    {
+      "path": "artifacts/S4000-AutoCAD-v2026.09.10.5",
+      "files": 30,
+      "bytes": 3062939
+    },
+    {
+      "path": "artifacts/S4000-AutoCAD-v2026.09.10.6",
+      "files": 34,
+      "bytes": 455889037
+    },
+    {
+      "path": "artifacts/S4000-Blender-v2026.09.10.2",
+      "files": 16,
+      "bytes": 16318294
+    },
+    {
+      "path": "artifacts/S4000-Blender-v2026.09.10.3",
+      "files": 18,
+      "bytes": 19393866
+    },
+    {
+      "path": "artifacts/S4000-Blender-v2026.09.10.5",
+      "files": 10,
+      "bytes": 5781882
+    },
+    {
+      "path": "artifacts/S4000-Blender-v2026.09.10.6",
+      "files": 12,
+      "bytes": 9236725
+    },
+    {
+      "path": "artifacts/S4000-Comfort-v2026.09.10.1",
+      "files": 25,
+      "bytes": 17107036
+    },
+    {
+      "path": "project/S3000-AutoCAD-v2026.09.09.1",
+      "files": 13,
+      "bytes": 8714603
+    },
+    {
+      "path": "project/S3000-Opening-v2026.09.09.3",
+      "files": 20,
+      "bytes": 134569476
+    },
+    {
+      "path": "project/S3000-Spacer-v2026.09.09.4",
+      "files": 20,
+      "bytes": 134611397
+    },
+    {
+      "path": "project/boiler-s3000-assembly-20260908",
+      "files": 17,
+      "bytes": 50423395
+    },
+    {
+      "path": "project/boiler-s3000-detail-20260908",
+      "files": 27,
+      "bytes": 172201241
+    },
+    {
+      "path": "project/boiler-s3000-routing-20260908",
+      "files": 35,
+      "bytes": 451057768
+    },
+    {
+      "path": "codex-data/Чертежи/На проверку/Предыдущие выпуски/S3000_ADL_8bar_v2026.09.08.4",
+      "files": 35,
+      "bytes": 451057768
+    },
+    {
+      "path": "artifacts/s4000-layout-build-20260911/candidate-01",
+      "files": 896,
+      "bytes": 254710007
+    },
+    {
+      "path": "artifacts/s4000-cad-opening-build-20260910/meshes",
+      "files": 832,
+      "bytes": 208387764
+    },
+    {
+      "path": "artifacts/s4000-pressure-build-20260910/meshes",
+      "files": 833,
+      "bytes": 220080835
+    },
+    {
+      "path": "artifacts/s4000-blowdown-build-20260910/meshes",
+      "files": 877,
+      "bytes": 233687027
+    },
+    {
+      "path": "codex-runtime/tools/boiler-s3000-build/spacer-20260909/cad-meshes",
+      "files": 56,
+      "bytes": 98635616
+    },
+    {
+      "path": "codex-runtime/tools/boiler-s3000-build/spacer-20260909/assets",
+      "files": 6,
+      "bytes": 144027851
+    },
+    {
+      "path": "codex-data/Чертежи/На проверку/Промежуточные сборки/opening-20260909/assets",
+      "files": 5,
+      "bytes": 143955915
+    },
+    {
+      "path": "codex-data/Чертежи/На проверку/Промежуточные сборки/opening-20260909/cad-meshes",
+      "files": 55,
+      "bytes": 98576698
+    },
+    {
+      "path": "artifacts/s4000-layout-build-20260911/native/reopened.dxf",
+      "files": 1,
+      "bytes": 3173324596
+    },
+    {
+      "path": "codex-runtime/tools/blender-bridge/runtime/outputs/s3000-adl-8bar-v2026-09-08-2.blend",
+      "files": 1,
+      "bytes": 36456752
+    },
+    {
+      "path": "codex-runtime/tools/blender-bridge/runtime/outputs/s3000-detail-v2026-09-08-3.blend",
+      "files": 1,
+      "bytes": 185987264
+    },
+    {
+      "path": "codex-runtime/tools/blender-bridge/runtime/outputs/s3000-routing-v2026-09-08-4.blend",
+      "files": 1,
+      "bytes": 258715416
+    },
+    {
+      "path": "codex-data/.codex/tools/blender-bridge/runtime/outputs/s3000-adl-8bar-v2026-09-08-2.blend",
+      "files": 1,
+      "bytes": 36456752
+    },
+    {
+      "path": "codex-data/.codex/tools/blender-bridge/runtime/outputs/s3000-detail-v2026-09-08-3.blend",
+      "files": 1,
+      "bytes": 185987264
+    },
+    {
+      "path": "codex-data/.codex/tools/blender-bridge/runtime/outputs/s3000-routing-v2026-09-08-4.blend",
+      "files": 1,
+      "bytes": 258715416
+    }
+  ],
+  "archives": [
+    {
+      "file": "S3000_AutoCAD_OPENING_v2026.09.09.5.zip",
+      "members": 15,
+      "status": "PASSED_CRC_AND_MEMBER_HASHES"
+    },
+    {
+      "file": "S4000_AutoCAD_OPENING_v2026.09.11.1.zip",
+      "members": 35,
+      "status": "PASSED_CRC_AND_MEMBER_HASHES"
+    },
+    {
+      "file": "S4000_Blender_OPENING_v2026.09.11.1.zip",
+      "members": 18,
+      "status": "PASSED_CRC_AND_MEMBER_HASHES"
+    }
+  ],
+  "blender_reopen": [
+    {
+      "file": "S3000_CABINET_v2026.09.09.5.blend",
+      "status": "PASSED_REOPEN_AND_DEPENDENCIES",
+      "objects": 121,
+      "external_dependencies_on_deleted_files": 0
+    },
+    {
+      "file": "S4000_COMFORT_OPENING_v2026.09.11.1.blend",
+      "status": "PASSED_REOPEN_AND_DEPENDENCIES",
+      "objects": 991,
+      "external_dependencies_on_deleted_files": 0
+    }
+  ],
+  "retained_drawing_hashes": [
+    {
+      "file": "artifacts/S4000_AutoCAD_OPENING_v2026.09.11.1.zip",
+      "bytes": 516197465,
+      "sha256": "2a4d1e9a149410ec6670c6983b4a15da54bc55676901256a0aa6e71b94313938"
+    },
+    {
+      "file": "artifacts/S4000_Blender_OPENING_v2026.09.11.1.zip",
+      "bytes": 169403812,
+      "sha256": "f427af4e3d6af31ae31cd43eade44013e94558f4349ed9bae72dcf69f36742f3"
+    },
+    {
+      "file": "artifacts/S3000-Cabinet-v2026.09.09.5/S3000_AutoCAD_OPENING_v2026.09.09.5.zip",
+      "bytes": 174977941,
+      "sha256": "b2906b9a4cb7b9960ee3860036578f6b3fa625456cd707a1a5d10c12cee08826"
+    },
+    {
+      "file": "artifacts/S3000-Cabinet-v2026.09.09.5/S3000_CABINET_v2026.09.09.5.blend",
+      "bytes": 257013868,
+      "sha256": "1943d13ed48a35b96ef1dd1091dd178725aec88b52840d783c60c3886c4c418c"
+    },
+    {
+      "file": "artifacts/S3000-Cabinet-v2026.09.09.5/AutoCAD/final/S3000_ADL_8bar_DIRECT_v2026.09.09.5.dwg",
+      "bytes": 162688220,
+      "sha256": "89765f589e2081c0aa64672d8d37d386b48a4368ce083fce8e96334628cdfd92"
+    },
+    {
+      "file": "artifacts/S3000-Cabinet-v2026.09.09.5/AutoCAD/final/S3000_ADL_8bar_DIRECT_v2026.09.09.5.dxf",
+      "bytes": 136615287,
+      "sha256": "293a717da7577a79371fad980fb31854dc0936a66cceff675246e59b2144df0d"
+    },
+    {
+      "file": "artifacts/S3000-Cabinet-v2026.09.09.5/AutoCAD/final/S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.5.dwg",
+      "bytes": 164319868,
+      "sha256": "2013b0ea95d82cb189c3c27afd205ae705b84325111f1276020042c88e739c7a"
+    },
+    {
+      "file": "artifacts/S3000-Cabinet-v2026.09.09.5/AutoCAD/final/S3000_ADL_8bar_WITH_ECONOMIZER_v2026.09.09.5.dxf",
+      "bytes": 137793716,
+      "sha256": "78eb733aef6ea21d1116de4e55fee6c47307de047be7b6db66d474a294e7416f"
+    },
+    {
+      "file": "artifacts/S4000-AutoCAD-v2026.09.11.1/AutoCAD/S4000_COMFORT_8-12bar_OPEN_v2026.09.11.1.dwg",
+      "bytes": 444467664,
+      "sha256": "bff8ff68a16bb689c86b55067b2b5296bbf4030d39b5afa8b757374d5c7b82dc"
+    },
+    {
+      "file": "artifacts/S4000-AutoCAD-v2026.09.11.1/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.11.1.dwg",
+      "bytes": 444340333,
+      "sha256": "849694a4ff153d6cf274e5f525b01886e398be9554f5fe87ba1686a6aab01fb1"
+    },
+    {
+      "file": "artifacts/S4000-AutoCAD-v2026.09.11.1/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.11.1.dxf",
+      "bytes": 348800160,
+      "sha256": "7ff03653a7a412e4d1d38361c3294b23e47173373eeaeb69961cc596a4ee7e85"
+    },
+    {
+      "file": "artifacts/S4000-Blender-v2026.09.11.1/S4000_COMFORT_OPENING_v2026.09.11.1.blend",
+      "bytes": 157675712,
+      "sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33"
+    }
+  ],
+  "all_removed_paths_absent": true,
+  "all_retained_hashes_unchanged": true,
+  "original_equipment_inputs_preserved": true,
+  "active_git_worktrees_and_web_work_preserved": true,
+  "geometry_modified": false,
+  "cleanup_plan_sha256": "c89e00ef538251be4738cf61d4109449a8f49615f28e6c621200a38d96219415",
+  "cleanup_receipt_sha256": "8ec304d98c81d166be0fca444500ddb88d9963f5af3ace9f7b3750bb3511b4e5",
+  "exact_path_list_sha256": "7663f31f0ce1e803bd7f84f2041f7b5640bc7a68f066aebff7c2a8e8e5cde1d6",
+  "prior_cleanup_separate": {
+    "date": "2026-09-11",
+    "files": 112,
+    "GiB": 47.71118735149503
+  },
+  "scope": "Superseded generated release copies, old Blender runtime outputs and regenerable previous assembly exports. Latest delivery archives, detailed CAD/Blender, component source caches and active website work remain intact."
+}

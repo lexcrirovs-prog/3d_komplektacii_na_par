@@ -1,0 +1,6211 @@
+{
+  "version": "2026.09.11.1",
+  "date": "2026-09-11",
+  "author": "Codex / GPT-6 Astra",
+  "status": "PASSED_AUTOCAD_SAVE_OPTIONS_REOPEN",
+  "in_place_amendment": true,
+  "source": {
+    "version": "2026.09.11.1",
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "source": "S4000_COMFORT_OPENING_v2026.09.11.1.blend",
+    "source_version": "2026.09.11.1",
+    "source_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
+    "source_unchanged": true,
+    "source_opening_verification": "PASSED_BLENDER_NATIVE_OPENING",
+    "exported_parts": 105,
+    "units": "mm",
+    "decimation": false,
+    "deaerator_rotation_degrees": 180,
+    "door_groups": [
+      {
+        "id": "boiler",
+        "control": "DOOR_BOILER",
+        "pivot_m": [
+          -0.8936025,
+          -1.895,
+          1.135
+        ],
+        "open_degrees": -105,
+        "parts": [
+          "boiler_door",
+          "boiler_door_labels",
+          "burner"
+        ]
+      },
+      {
+        "id": "cabinet",
+        "control": "DOOR_CABINET",
+        "pivot_m": [
+          -1.3,
+          -0.763,
+          1.575
+        ],
+        "open_degrees": -110,
+        "parts": [
+          "cabinet_door",
+          "lc220",
+          "lc440",
+          "bc970"
+        ]
+      }
+    ],
+    "source_tube_counts": {
+      "smoke": 96,
+      "furnace": 1,
+      "excluded_solids": 571
+    }
+  },
+  "video_review": {
+    "date": "2026-09-11",
+    "source_video": "2026-09-11 14-17-47.mkv",
+    "author": "Codex / GPT-6 Astra",
+    "in_place": true,
+    "prior_sha256": "82fb6779e7361143a7b850fd1326d42ed219453b8b47e680c5ec7c763722db9a",
+    "changed_parts": [
+      "bcv7432",
+      "cabinet_door",
+      "cables",
+      "condensate_trap",
+      "cp930",
+      "direct_inlet",
+      "eco_inlet_adapter",
+      "flash_return_marker",
+      "flash_steam_common",
+      "from_economizer",
+      "gpz_drive",
+      "instrument_valve",
+      "lcs600",
+      "lp200",
+      "lp400",
+      "mod_direct_drive",
+      "mod_eco",
+      "mod_eco_bypass",
+      "mod_eco_drive",
+      "pressure_header",
+      "safety_vent_1",
+      "safety_vent_2",
+      "sample_piping",
+      "to_economizer"
+    ],
+    "unchanged_fingerprints": {
+      "boiler": "491723aa971df99b85264e557bd241e42b0bdc279b317347dac49a8fa0cf7997",
+      "economizer": "a93260372d03ab725cc53bf7e86b0aadec7670438a91579783b9097e815c9f9e",
+      "deaerator": "fcd946b287ab793be090c4aec1323819171f7e52c2d0526a568b1b603b221cfd",
+      "boiler_cladding": "a55b1fdc60207a5c4c6fedc59fe820ee231325a7a44d9fe2ca396c63e3f29449",
+      "premium_logo": "04e49f951bd2d49915b6939bccb8251333038c63863e5b4f7edd0a0dafe0788b",
+      "flue_spacer": "8ca4e264884bc6e007d298e7ef5cb6502a07f31410d2bc2a429afca7c4d54a94",
+      "burner": "3353644318001ecf5c224e2fe7332f932e74586481c78510518d1df4a7ec6cc4",
+      "safety_1": "bae76aee027ceddd53cf78b4c98d2ba893bf76b394217f7a3220ca40f1701d38",
+      "safety_2": "e2334629e77bbb77af907fb67fc799122734a148acccc90e985529d731c710ee",
+      "sight_glasses_1": "32b25ee921edabe079250462578d710c675af450fbfd1d7d85ed6e2dad1cb573",
+      "sight_glasses_2": "4298e28a9164f18ac92ca20cdd18a577fa8ed69bec04ff10916dd7a9dc3f2c44",
+      "pressure_switch_1": "86ad7de84a18bb03abfa8486fc50082809693361feb16bae4953865b95af0a67",
+      "pressure_switch_2": "8de66eb008a16d0da6980de0fb7a57394ff111a2cd49e59a6b407b55874d1275",
+      "pressure_gauge": "9a221d95ff9f6bee7436d6ee281184fce0c58be53186c397477c42cf34d58846",
+      "pressure_transmitter": "9e3bbfa7946d8a2897406b81327879d10f1f104d601d89ea3d04bbc3c39633d0",
+      "tds_isolation": "f937935ceeb612fb8418c1ee037c45731ceab528fdd480b72164326d643f9350",
+      "pcf20": "c72e9ee5d79ef4bf1c77a258acd07d49b683e4a5fc37bfad4c83ec833d20cd4c",
+      "bcv925": "51b75a4dbc60295d73c19ddacbd893ea9e36203c3a87df352c9077e2269fdd25",
+      "sc9": "380e44f5b99003db6b81d73bcc21878c72d05e3c5361df8427bf6c01b8976a02",
+      "drain_isolation_1": "da1b23f1be00cf07542fe815e6a621fac42293985ed20d3037cf3d179077e828",
+      "drain_isolation_2": "3672a9bb6a2bc0c9b6c3b6bbbc79f823e9394b5f205136cdca756de504ac7aeb",
+      "bottom_piping": "7f503898032c15a2663cc476c02789fdec3eddbf59a376638928cc798deb8900",
+      "control_cabinet": "3892c79d94494279d5e118b16034f47a13988d527add06cf8bf0ef0decd871d3",
+      "cabinet_interior": "ba9c33dc00eb85372dd8ba67349bbd220d54070ac23bf7171cf25715a8f8c1e6",
+      "lc220": "989f04102708100a1f788caac65c93b33e5aa857de6d6f9fcf09cc676b2f1109",
+      "lc440": "3804db880d243532243e1d1ba3201cd044ef5fee039db1329183fc24511203a8",
+      "bc970": "07455e53d2d70523957eacf417a54d840b88689af88fd16c95f823b627b31938",
+      "pr200": "b36f932b3395e1547a7a885b5a2d9891454ea72c60f6d8fa6793e86ae9634288",
+      "pump_1": "35832bdf9c40f94cead6e0c3f47a3d3efca145293bef1b6bc4dbe201ac282f06",
+      "pump_in_valve_1": "b7d7f4c5a855b90f46ef6e109f3aa27b2db35404ebcdc64617ef83700b415f6d",
+      "pump_check_1": "c23fc3d53fadacccc63d42981cf115638a526306be15679afa948a78ac2a7374",
+      "pump_out_valve_1": "1b8e6de1e57114607593cc654f3b414065e5d5f33c6255269fa0e72534a815f5",
+      "pump_branch_1": "063e3e48b436022f143d3ae48d63863acc151368c35eb6e399a6b8c92218079c",
+      "pump_2": "56b3ceddbcd5cf5ebfb818f8c183c2bfbfc83d6730d2b216d2716c8c3544c95c",
+      "pump_in_valve_2": "400b0633310d01ead4d6f561c9196b58c7c6d10ec9c00ec96caabf8f466ad9f2",
+      "pump_check_2": "df853720b43c8a8008ee1034cca06be4099ea2838ff1420d1a0cd1ece2734db7",
+      "pump_out_valve_2": "933c9546d91d156beb7b14939a705fbd597c3442e53355232190563795216b4a",
+      "pump_branch_2": "6068e8cee2da90d0e4fd71e40f387228b755da51c2d1f640526615d8cb17e315",
+      "suction_common": "bd4dc4318262f091a30979e79b6e7a17e47715067b98069be5d54b9b4d90b775",
+      "deaerator_feed": "b9a4f1db49c905614e8470381a563ba01f0fe54193a41ebfc49f4e12396904da",
+      "pump_delivery": "b873dca1e83a415eaa307c54ed83c86da191be89fbecfa73488c647a15dfc5e9",
+      "feed_check": "70a33c2e7677846aef646b9be311928ce54b542c758a43a1d5c94a19c671a668",
+      "feed_valve": "919963eae8ebe092913f68f76c8ed99c41b8fa0905b0d1da62f51341f4571293",
+      "feed_inlet_adapter": "f33e56cd332a01ec34f8438c05ff23bec57528b90b8d0aa44c7f918266d37bd3",
+      "to_direct": "457ec3ed44ba05233f4c2051b8cb265b0e34880eb825964297a3149d035b53c6",
+      "mod_direct": "a949206e454726f9a2691bf841b34f84df213048b3acd059d8c86b4762d75bd8",
+      "mod_direct_bypass": "a78173e911c96147cfe7aed691b891a8a18680b1ec5df13464f6961786429a77",
+      "steam_manual": "95f5cf2a2f9e322219ef1dfecf47f94e2a5a582653d923deab888a50922a88ba",
+      "steam_rise": "bf1947ce67c196e3cd32ab27fcd8f84ea8b6dd0c6bcad87949e6aa06b5ded4dd",
+      "steam_delivery": "9dc61c6d7d34f8d77ae77b8af24dccc4ae6017d35a825fa7e40baa92dd22321b",
+      "gpz": "b3f36d1613cfc7341fafcb16a71dd3a5fb209f667b0161be10e44405a100a1f6",
+      "gpz_bypass": "0cc0eeeb6340c40824203afcb421f9d81dd807d72336053bd20c4638e5566403",
+      "deaerator_details": "81962589292131ce3118f79504eac8c1f87b25cd15374978a033e27abf9a9266",
+      "separator_bdv60_5": "ad8f4ad41f39a77f692126232fa1caca7354ac26805890fc1659cac84a92dfe7",
+      "separator_fv8": "376fba3c4d4d03e768d8674d86c48a87264d908d141b3b16ec87758d680dab25",
+      "bottom_before_gate": "d31399e979bddd6ba2c22f7337c04015b713bfb134057c0cf05af6020aba65fe",
+      "bottom_before_auto": "9765111a17eca8c337aeb5eae2f392ed772982b9cede712c2d1df2ad7f153ec3",
+      "bottom_after_auto": "cd8bdcb9febeb054226e6db76f5c3e7ab2ccd4d6027e2b6ddd26e8ba5ad04160",
+      "bottom_bypass_before": "d689a76ce2839c7a03024893b9f019efd191c12f651423ee47d31c76220dfc1b",
+      "bottom_bypass_after": "dfab67ad9e4fb47eeba2d49f08bec9cdd2a2900cb7ee74f1348efaf44e6e9aea",
+      "bottom_discharge": "ce449a0aa07ed30d588191fc808bdd533e6f6044324561cd6d34898bc3d109e4",
+      "bottom_to_bdv": "7513f62c732bed66880baed0e826b97568200d58d5d523c3c70468985eb76dbc",
+      "tds_common": "1f694a2a0eab49c820903f8b4a7bdaa7f42375da8232bb65924326ce940526d9",
+      "tds_to_fv": "d4ba449fd87b579d8432b9615ff8950ac1bae8ba4664d0a6b7234dc7215e5742",
+      "tds_without_fv": "840dccd5cedbce2505e950eefefc6457bb496f8f5ae5f0d36e19195a2bf42017",
+      "tds_without_vessels": "25c9394638010691d671b8521199b58a17fc72c9d70d1ebc481228f71b0e9bb9",
+      "fv_to_trap_gap": "c01b647652f158e8c6d206a875cd3faf474288cdf03beb36d7c0cf6d3dde06cc",
+      "trap_gap_to_bdv": "b285bbb4cfee48d80d0f56143b8726f47102ade29ceee391465c394acc4ee28e",
+      "bdv_vent": "93326e3daeef1a8f551afde644ce64bdc65f5de522c3e70ed4bfd46ab4854b2f",
+      "bdv_water_drain": "5f5837d6922585f49b09770ea685f0b2ab6ab1350159eb10999951b1f2e40268",
+      "bdv_cooling_stub": "f3424d36cdccb61feec452a9413b237977ed99a64c623335de6ccc438daf1729",
+      "bdv_bottom_drain_stub": "6e99e2b84b0ed5e035721dbcd3e75f4e7ce16605d07daff71c26ecaccbae3a0c",
+      "fv_bottom_drain_stub": "d52f90f421c6ca1a8f01317829e70139792921f5a1925b0b3c44b01dd101eb1c",
+      "local_open_drains": "c7718ace4d1d81b566af8719a7778fa178b99d0c051d47ef23b4fd6873567685",
+      "bdv_identification": "549d7eacad7982f7f3a56e21f98d9476a33cb6dd1824fb0e592f5084b125c673",
+      "bdv_cooling_marker": "3bb35cfa5b42ee102a2fead2d8770addf28932e5727340cab7032ab5ceb011fa",
+      "deaerator_support": "010bef12aad198aa8e81ae21b0e0d444a5169999c2827b421a39155da833ffd0",
+      "trap_support": "7386943319fe7f2400db1f4e2d2dc0a9fc726982c5d12e0cfe1351e4cf56ce23"
+    },
+    "trap_roll_degrees": 90,
+    "blowdown_actuator_roll_degrees": -90,
+    "cp930_translation_m": [
+      -0.01701459,
+      0,
+      0.02672804
+    ],
+    "probes": {
+      "lp200": {
+        "previous_tip_z_m": 1.2649964094161987,
+        "new_tip_z_m": 1.8,
+        "unchanged_above_z_m": 2.2
+      },
+      "lp400": {
+        "previous_tip_z_m": 1.2650039196014404,
+        "new_tip_z_m": 1.8,
+        "unchanged_above_z_m": 2.2
+      },
+      "lcs600": {
+        "previous_tip_z_m": 1.6104999780654907,
+        "new_tip_z_m": 1.8,
+        "unchanged_above_z_m": 2.2
+      }
+    },
+    "pump_cable_paths_m": [
+      [
+        [
+          2.205,
+          0.2,
+          1.22
+        ],
+        [
+          2.35,
+          0.2,
+          1.22
+        ],
+        [
+          2.35,
+          0.5,
+          1.22
+        ],
+        [
+          2.35,
+          0.5,
+          0.3
+        ],
+        [
+          1.045,
+          0.5,
+          0.3
+        ],
+        [
+          1.045,
+          -2.18,
+          0.3
+        ],
+        [
+          1.045,
+          -2.18,
+          0.12
+        ],
+        [
+          -1.045,
+          -2.18,
+          0.12
+        ],
+        [
+          -1.045,
+          -2.18,
+          0.3
+        ],
+        [
+          -1.045,
+          -1.22,
+          0.3
+        ],
+        [
+          -1.15,
+          -1.22,
+          0.3
+        ],
+        [
+          -1.15,
+          -1.22,
+          1.225
+        ]
+      ],
+      [
+        [
+          2.205,
+          0.95,
+          1.22
+        ],
+        [
+          2.35,
+          0.95,
+          1.22
+        ],
+        [
+          2.35,
+          1.25,
+          1.22
+        ],
+        [
+          2.35,
+          1.25,
+          0.3
+        ],
+        [
+          1.045,
+          1.25,
+          0.3
+        ],
+        [
+          1.045,
+          -2.18,
+          0.3
+        ],
+        [
+          1.045,
+          -2.18,
+          0.12
+        ],
+        [
+          -1.045,
+          -2.18,
+          0.12
+        ],
+        [
+          -1.045,
+          -2.18,
+          0.3
+        ],
+        [
+          -1.045,
+          -1.22,
+          0.3
+        ],
+        [
+          -1.141,
+          -1.22,
+          0.3
+        ],
+        [
+          -1.141,
+          -1.22,
+          1.225
+        ]
+      ]
+    ],
+    "sample_source_m": [
+      1.35203475,
+      -1.39,
+      1.34450216
+    ],
+    "sample_receiving_port_status": "PRIOR_SC9_INTERFACE_UNCONFIRMED",
+    "fv_safety_dn": 25,
+    "fv_to_deaerator_removed": true,
+    "modulation_location": "after economizer, horizontal, close to boiler",
+    "safety_discharge_horizontal": true,
+    "fv_safety_choice": "Owner confirmed small upper DN25 on 2026-09-11",
+    "safety_discharge_offsets_exchanged": true
+  },
+  "blender_verification": {
+    "status": "PASSED_BLENDER_NATIVE_OPENING",
+    "version": "2026.09.11.1",
+    "frames_checked": 193,
+    "retained_static_parts": 40,
+    "total_checked_static_parts": 98,
+    "source_closed_mesh_placements": 10,
+    "max_rigid_transform_error": 4.76837158203125e-07,
+    "poses": [
+      {
+        "frame": 1,
+        "boiler": 0.0,
+        "cabinet": 0.0
+      },
+      {
+        "frame": 49,
+        "boiler": -104.99999950679661,
+        "cabinet": 0.0
+      },
+      {
+        "frame": 97,
+        "boiler": -104.99999950679661,
+        "cabinet": -109.99999850756943
+      },
+      {
+        "frame": 145,
+        "boiler": 0.0,
+        "cabinet": -109.99999850756943
+      },
+      {
+        "frame": 193,
+        "boiler": 0.0,
+        "cabinet": 0.0
+      }
+    ],
+    "actual_smoke_tubes": 96,
+    "source_step_solids_imported": 97,
+    "source_step_solids_excluded": 571,
+    "reopened_in_fresh_process": true,
+    "automatic_script_execution": false,
+    "required_addons": [],
+    "checked_file_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
+    "blender": "3.3.3",
+    "author": "Codex / GPT-6 Astra",
+    "date": "2026-09-11",
+    "deaerator_rotation": {
+      "degrees": 180,
+      "axis": "Z",
+      "attached_objects_checked": 548,
+      "maximum_matrix_error": 1.5099580252808664e-07,
+      "outlet_connected": true,
+      "source_normal_respected": true,
+      "fixed_pump_supply_boundary": true,
+      "level_gauge_rotated_with_tank": true
+    },
+    "pressure_group": {
+      "open_centerline": true,
+      "closed_loop": false,
+      "boiler_endpoints_preserved": true,
+      "unchanged_instruments": 4,
+      "instrument_positions_preserved": false,
+      "unchanged_other_parts": 72,
+      "cable_leads_rerouted": 3,
+      "references": [
+        {
+          "file": "photo_2026-09-10_18-47-53.jpg",
+          "sha256": "af8f0cd8c2e530411b8f637fb2bcdbc60382a6151d51b272bb377c22ea07acd0"
+        },
+        {
+          "file": "photo_2026-09-10_18-47-49.jpg",
+          "sha256": "b9f955babfa97d91e74ec7aedf52624fdb7e5dd36f6b291fdbe3fef6529e1e78"
+        },
+        {
+          "file": "photo_2026-09-10_18-50-01.jpg",
+          "sha256": "6842f24176173944af540674017aca4c34e173ace193babffeda7ad87c699a5d"
+        }
+      ]
+    },
+    "blowdown": {
+      "retained_parts": 46,
+      "changed_existing_parts": [
+        "bcv7432",
+        "bottom_piping",
+        "drain_isolation_1",
+        "drain_isolation_2",
+        "safety_1",
+        "safety_2",
+        "sample_piping",
+        "separator_fv8"
+      ],
+      "fixed_pipework_during_door_animation": true,
+      "missing_device_count": 5,
+      "da_steam_connected": false,
+      "fv_support_height_m": 0.0
+    },
+    "floor_layout": {
+      "fv_bottom_m": 0.0,
+      "deaerator_bottom_m": 0.9999997019767761,
+      "support_z_m": [
+        0.0,
+        1.0359997749328613
+      ],
+      "translated_objects_checked": 553,
+      "maximum_matrix_error": 6.357302595461078e-08,
+      "other_parts_preserved": 68,
+      "trap_triangles": 83390,
+      "trap_faces_connected": true,
+      "flange_spacing_mm": 160,
+      "condensate_lift_m": 1.125,
+      "both_saddles_supported": true,
+      "support_centers_y_m": [
+        -1.2,
+        1.2
+      ],
+      "hydraulic_selection": "NOT_VERIFIED"
+    },
+    "video_review": {
+      "status": "PASSED_GEOMETRY_REVIEW",
+      "date": "2026-09-11",
+      "source_video": "2026-09-11 14-17-47.mkv",
+      "original_unaffected_parts_checked": 78,
+      "probe_to_furnace_clearance_m": {
+        "lp200": 0.4063684940338135,
+        "lp400": 0.4051244258880615,
+        "lcs600": 0.4063684940338135
+      },
+      "pump_cable_centerlines_do_not_cross_pumps": true,
+      "fv_to_da_removed": true,
+      "fv_safety_dn": 25,
+      "trap_rotated_90": true,
+      "lower_blowdown_drive_up": true,
+      "discharge_horizontal": true,
+      "sample_source_on_valve": true,
+      "receiving_SC9_port": "UNCONFIRMED_EXISTING_INTERFACE"
+    },
+    "safety_discharges": {
+      "status": "PASSED_SEPARATED_PARALLEL_MESHES",
+      "pair_intersections": 0,
+      "parallel_spacing_mm": 339.99999999999994,
+      "straight_surface_gap_mm": 263.9,
+      "horizontal": true,
+      "source_valve_endpoints_preserved": true,
+      "nearby_equipment_without_intersections": [
+        "economizer",
+        "to_economizer",
+        "eco_inlet_adapter",
+        "from_economizer"
+      ],
+      "offsets_exchanged": true
+    },
+    "corrugated_wiring": {
+      "status": "PASSED_RESTORED_CORRUGATED_WIRING",
+      "removed_closed_channels": 19,
+      "conduit_runs": 11,
+      "actual_geometry_cross_sections_checked": 99,
+      "unrelated_parts_preserved": 96,
+      "original_cabinet_door_restored": true,
+      "actuator_core_vertices_preserved": 912,
+      "prior_secured_routes_restored": true,
+      "lower_open_trays_preserved": true,
+      "all_runs_reach_cabinet": true
+    }
+  },
+  "dxf": {
+    "file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dxf",
+    "sha256": "7ff03653a7a412e4d1d38361c3294b23e47173373eeaeb69961cc596a4ee7e85",
+    "parts": 105,
+    "mesh_entities": 1035,
+    "triangles": 8213829,
+    "units": "mm",
+    "decimation": false,
+    "bytes": 348800160
+  },
+  "native": {
+    "status": "PASSED_BOTH_DWG_INDEPENDENT_REOPEN",
+    "closed": {
+      "status": "PASSED_NATIVE_INDEPENDENT_REOPEN",
+      "version": "2026.09.11.1",
+      "date": "2026-09-11",
+      "author": "Codex / GPT-6 Astra",
+      "file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dwg",
+      "blocks": 105,
+      "meshes": 1035,
+      "vertices": 5046729,
+      "faces": 8213829,
+      "whole_mesh_reversals": 0,
+      "maximum_coordinate_error_mm": 0,
+      "colours_preserved": true,
+      "topology_preserved": true,
+      "units": "mm",
+      "fv_safety_dn": 25,
+      "read_only_verification": true,
+      "sha256": "849694a4ff153d6cf274e5f525b01886e398be9554f5fe87ba1686a6aab01fb1",
+      "bytes": 444340333,
+      "fresh_document_reopen": true,
+      "source_dxf_sha256": "7ff03653a7a412e4d1d38361c3294b23e47173373eeaeb69961cc596a4ee7e85",
+      "corrugated_wiring_restored": true,
+      "closed_channels_removed": 19
+    },
+    "opened": {
+      "status": "PASSED_NATIVE_INDEPENDENT_REOPEN",
+      "version": "2026.09.11.1",
+      "date": "2026-09-11",
+      "author": "Codex / GPT-6 Astra",
+      "file": "S4000_COMFORT_8-12bar_OPEN_v2026.09.11.1.dwg",
+      "blocks": 105,
+      "meshes": 1035,
+      "vertices": 5046729,
+      "faces": 8213829,
+      "whole_mesh_reversals": 0,
+      "maximum_coordinate_error_mm": 0,
+      "colours_preserved": true,
+      "topology_preserved": true,
+      "units": "mm",
+      "fv_safety_dn": 25,
+      "read_only_verification": true,
+      "sha256": "bff8ff68a16bb689c86b55067b2b5296bbf4030d39b5afa8b757374d5c7b82dc",
+      "bytes": 444467664,
+      "fresh_document_reopen": true,
+      "source_dxf_sha256": "7ff03653a7a412e4d1d38361c3294b23e47173373eeaeb69961cc596a4ee7e85",
+      "corrugated_wiring_restored": true,
+      "closed_channels_removed": 19
+    },
+    "expected_fv_safety_dn": 25,
+    "independent_saved_dwg_reopen": true,
+    "native_update_command": "S4000APPLYVIDEO",
+    "native_verify_command": "S4000VERIFYVIDEO"
+  },
+  "fixture": {
+    "status": "PASSED_NATIVE_LAYER_OPTIONS",
+    "fixture": true,
+    "combinations": 64,
+    "restored": true,
+    "parts": 105,
+    "source_unchanged": true,
+    "audit_errors": 0,
+    "state_matches_every_configuration": true,
+    "single_payload": true,
+    "scope": "PRIOR_64_STATE_FIXTURE_CHECK_WITH_UNCHANGED_CONTROL_FILES",
+    "controls_sha256": {
+      "S4000-controls.lsp": "88feba782908d3538823d8804500eb08ce459ab04f1a41b7604677c71d0d1cec",
+      "S4000-doors.lsp": "2b33124a05cbb01adecf07c9c3ee6bac00a76afb82e77cb20d57c140dba69bf6",
+      "S4000-options.lsp": "cb06a8a0d7b4cc61bff8d3850190c1695b754d613393ed5d41b53047ddec2296"
+    }
+  },
+  "doors": {
+    "status": "PASSED_NATIVE_S4000_DOORS",
+    "version": "2026.09.11.1",
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "fixture": false,
+    "checked_file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dwg",
+    "checked_sha256": "849694a4ff153d6cf274e5f525b01886e398be9554f5fe87ba1686a6aab01fb1",
+    "states": 9,
+    "blocks_checked": 105,
+    "maximum_position_error_mm": 1e-12,
+    "source_unchanged": true,
+    "audit_errors": 0,
+    "option_commands_preserve_open_doors": true,
+    "desktop_dialog_click_test": "NOT_RUN",
+    "native_pdfs": [
+      "S4000-cabinet-open.pdf",
+      "S4000-boiler-open.pdf",
+      "S4000-both-open.pdf",
+      "S4000-deaerator-rotated.pdf",
+      "S4000-pressure-gooseneck.pdf",
+      "S4000-blowdown.pdf",
+      "S4000-routing.pdf",
+      "S4000-condensate-trap.pdf"
+    ],
+    "open_copy": {
+      "file": "S4000_COMFORT_8-12bar_OPEN_v2026.09.11.1.dwg",
+      "bytes": 444467664,
+      "sha256": "bff8ff68a16bb689c86b55067b2b5296bbf4030d39b5afa8b757374d5c7b82dc",
+      "fresh_reopen_passed": true,
+      "maximum_position_error_mm": 1.8189894035458565e-12,
+      "audit_errors": 0
+    },
+    "open_geometry_verification": {
+      "status": "PASSED_NATIVE_INDEPENDENT_REOPEN",
+      "version": "2026.09.11.1",
+      "date": "2026-09-11",
+      "author": "Codex / GPT-6 Astra",
+      "file": "S4000_COMFORT_8-12bar_OPEN_v2026.09.11.1.dwg",
+      "blocks": 105,
+      "meshes": 1035,
+      "vertices": 5046729,
+      "faces": 8213829,
+      "whole_mesh_reversals": 0,
+      "maximum_coordinate_error_mm": 0,
+      "colours_preserved": true,
+      "topology_preserved": true,
+      "units": "mm",
+      "fv_safety_dn": 25,
+      "read_only_verification": true,
+      "sha256": "bff8ff68a16bb689c86b55067b2b5296bbf4030d39b5afa8b757374d5c7b82dc",
+      "bytes": 444467664,
+      "fresh_document_reopen": true,
+      "source_dxf_sha256": "7ff03653a7a412e4d1d38361c3294b23e47173373eeaeb69961cc596a4ee7e85",
+      "corrugated_wiring_restored": true,
+      "closed_channels_removed": 19
+    }
+  },
+  "flow_check": {
+    "status": "PASSED_64_CONFIGURATION_GRAPHS",
+    "configurations": 64,
+    "maximum_endpoint_gap_m": 0,
+    "cad_rotations_rigid": true,
+    "boiler_feed": "native rear DN32",
+    "flue_spacer_mm": 500,
+    "checks": [
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 72,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 78,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 80,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 87,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 73,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 79,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 81,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 88,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 73,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 79,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 81,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 88,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 74,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 80,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 82,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 89,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 76,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 82,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 84,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 91,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 77,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 83,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 85,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 92,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 77,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 83,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 85,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 92,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 78,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 84,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 86,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": false,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 93,
+        "feed_path": [
+          "pump_delivery",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 76,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 82,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 84,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 91,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 77,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 83,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 85,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 92,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 77,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 83,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 85,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 92,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 78,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 84,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 86,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": false,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 93,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 80,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 86,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 88,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 95,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 81,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 87,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 89,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": false,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 96,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 81,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 87,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 89,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": false,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 96,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": false
+        },
+        "visible_parts": 82,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "external boundary",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": false,
+          "fv": true
+        },
+        "visible_parts": 88,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "external boundary",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": false
+        },
+        "visible_parts": 90,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "BDV",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 0
+        }
+      },
+      {
+        "options": {
+          "economizer": true,
+          "deaerator": true,
+          "modulation": true,
+          "gpz": true,
+          "bdv": true,
+          "fv": true
+        },
+        "visible_parts": 97,
+        "feed_path": [
+          "pump_delivery",
+          "eco_supply_join",
+          "economizer_in",
+          "economizer_out",
+          "direct_slot_in",
+          "direct_slot_out",
+          "boiler_feed_train"
+        ],
+        "blowdown": {
+          "continuous": "FV8",
+          "periodic": "BDV",
+          "flash_steam": "boundary",
+          "condensate_trap": "A31 DN25 manufacturer geometry",
+          "condensate_no_uphill_segment": false,
+          "pressure_driven_lift_m": 1.125
+        }
+      }
+    ],
+    "blowdown": {
+      "configurations_checked": 64,
+      "periodic_to_bdv": true,
+      "continuous_to_fv": true,
+      "alternate_routes_checked": true,
+      "missing_devices_not_bypassed": true,
+      "condensate_sections_fall": false,
+      "condensate_trap_installed": true,
+      "pressure_driven_lift_m": 1.125,
+      "da_steam_connected": false
+    }
+  },
+  "native_plots_reviewed": 10,
+  "native_plot_source": "FINAL_SAVED_DWG",
+  "native_plot_source_sha256": "849694a4ff153d6cf274e5f525b01886e398be9554f5fe87ba1686a6aab01fb1",
+  "desktop_dialog_click_test": "NOT_RUN",
+  "ci": "NOT_RUN",
+  "website_changed": false,
+  "previous_verified_release": {
+    "commit": "97db5dfcefa0f4577a9761a63c454a1f426b7c8b",
+    "native": {
+      "status": "PASSED_AUTOCAD_SAVE_OPTIONS_REOPEN",
+      "version": "2026.09.11.1",
+      "date": "2026-09-11",
+      "author": "Codex / GPT-6 Astra",
+      "file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dwg",
+      "bytes": 418617806,
+      "sha256": "99a453790c5ae5df3807ad5e1749bd12593da3be54e12ac3072d379bf481969b",
+      "units": "mm",
+      "format": "AutoCAD 2018 / AC1032",
+      "autocad": "2027 Core Console",
+      "blocks": 106,
+      "meshes": 1029,
+      "triangles": 7603777,
+      "coordinates_preserved_mm": 0.001,
+      "topology_preserved": true,
+      "whole_mesh_reversals": 10,
+      "colours_preserved": true,
+      "default_layers_preserved": true,
+      "state_persistent": true,
+      "audit_errors": 0,
+      "fixture": {
+        "status": "PASSED_NATIVE_LAYER_OPTIONS",
+        "fixture": true,
+        "combinations": 64,
+        "restored": true,
+        "parts": 106,
+        "source_unchanged": true,
+        "audit_errors": 0,
+        "state_matches_every_configuration": true,
+        "single_payload": true
+      },
+      "native_options": {
+        "status": "PASSED_NATIVE_LAYER_OPTIONS",
+        "fixture": false,
+        "combinations": 20,
+        "restored": true,
+        "parts": 106,
+        "source_unchanged": true,
+        "audit_errors": 0,
+        "state_matches_every_configuration": true,
+        "single_payload": true
+      }
+    },
+    "doors": {
+      "status": "PASSED_NATIVE_S4000_DOORS",
+      "version": "2026.09.11.1",
+      "date": "2026-09-11",
+      "author": "Codex / GPT-6 Astra",
+      "fixture": false,
+      "checked_file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dwg",
+      "checked_sha256": "99a453790c5ae5df3807ad5e1749bd12593da3be54e12ac3072d379bf481969b",
+      "states": 9,
+      "blocks_checked": 106,
+      "maximum_position_error_mm": 1e-12,
+      "source_unchanged": true,
+      "audit_errors": 0,
+      "option_commands_preserve_open_doors": true,
+      "desktop_dialog_click_test": "NOT_RUN",
+      "open_copy": {
+        "file": "S4000_COMFORT_8-12bar_OPEN_v2026.09.11.1.dwg",
+        "bytes": 418714694,
+        "sha256": "f8ce4adcffc4329f06256b5a7cfafbe7c57415bd3db9187b4982c098434a5d11",
+        "fresh_reopen_passed": true
+      },
+      "native_pdfs": [
+        "S4000-cabinet-open.pdf",
+        "S4000-boiler-open.pdf",
+        "S4000-both-open.pdf",
+        "S4000-deaerator-rotated.pdf",
+        "S4000-pressure-gooseneck.pdf",
+        "S4000-blowdown.pdf",
+        "S4000-routing.pdf",
+        "S4000-condensate-trap.pdf"
+      ]
+    },
+    "scope": "HISTORICAL_BEFORE_VIDEO_ONLY"
+  },
+  "unresolved": [
+    "SC9 receiving port remains unconfirmed; existing receiving-side gap retained.",
+    "Exact Comfort cabinet layout and PR200 installation.",
+    "FV valve model/type and setting remain provisional; owner confirmed DN25 location.",
+    "A31 capacity/orifice/pressure differential, upstream strainer/downstream check valve and DA support load calculation not verified."
+  ],
+  "safety_discharge_revision": {
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "in_place": true,
+    "prior_sha256": "2aacbb83bb4560f342b848b96ffdbd61cd2ba993c089ac85f72cf5fb2e9cf08a",
+    "changed_parts": [
+      "safety_vent_1",
+      "safety_vent_2"
+    ],
+    "centerlines_m": {
+      "safety_vent_1": [
+        [
+          -0.169,
+          0.66,
+          2.389
+        ],
+        [
+          -0.82,
+          0.66,
+          2.389
+        ],
+        [
+          -0.82,
+          4.7,
+          2.389
+        ]
+      ],
+      "safety_vent_2": [
+        [
+          -0.169,
+          0.96,
+          2.389
+        ],
+        [
+          -0.48,
+          0.96,
+          2.389
+        ],
+        [
+          -0.48,
+          4.7,
+          2.389
+        ]
+      ]
+    },
+    "parallel_spacing_mm": 340,
+    "pipe_outer_diameter_mm": 76.1,
+    "note": "Owner requested exchanging the lateral offsets to remove the crossing"
+  },
+  "native_dwg_options": {
+    "status": "PASSED_NATIVE_LAYER_OPTIONS",
+    "fixture": false,
+    "combinations": 20,
+    "restored": true,
+    "parts": 105,
+    "source_unchanged": true,
+    "audit_errors": 0,
+    "state_matches_every_configuration": true,
+    "single_payload": true,
+    "checked_sha256": "849694a4ff153d6cf274e5f525b01886e398be9554f5fe87ba1686a6aab01fb1",
+    "checked_file": "S4000_COMFORT_8-12bar_v2026.09.11.1.dwg"
+  },
+  "latest_amendment": "restore_secured_corrugated_wiring_remove_rejected_closed_channels_2026-09-11",
+  "corrugated_wiring_revision": {
+    "date": "2026-09-11",
+    "author": "Codex / GPT-6 Astra",
+    "in_place": true,
+    "prior_sha256": "9bd6561179e2332f8ef18edfda7a52fada3c2566abb61498c69743aebb2b4ed1",
+    "changed_parts": [
+      "cabinet_door",
+      "cables",
+      "gpz_drive",
+      "mod_direct_drive",
+      "mod_eco_drive"
+    ],
+    "unchanged_fingerprints": {
+      "boiler": "491723aa971df99b85264e557bd241e42b0bdc279b317347dac49a8fa0cf7997",
+      "economizer": "a93260372d03ab725cc53bf7e86b0aadec7670438a91579783b9097e815c9f9e",
+      "deaerator": "fcd946b287ab793be090c4aec1323819171f7e52c2d0526a568b1b603b221cfd",
+      "boiler_cladding": "a55b1fdc60207a5c4c6fedc59fe820ee231325a7a44d9fe2ca396c63e3f29449",
+      "premium_logo": "04e49f951bd2d49915b6939bccb8251333038c63863e5b4f7edd0a0dafe0788b",
+      "flue_spacer": "8ca4e264884bc6e007d298e7ef5cb6502a07f31410d2bc2a429afca7c4d54a94",
+      "burner": "3353644318001ecf5c224e2fe7332f932e74586481c78510518d1df4a7ec6cc4",
+      "safety_1": "bae76aee027ceddd53cf78b4c98d2ba893bf76b394217f7a3220ca40f1701d38",
+      "safety_2": "e2334629e77bbb77af907fb67fc799122734a148acccc90e985529d731c710ee",
+      "lp200": "a5b4f71fcc64195755c461064ee39980ce8bb61000e1214fb4c63cecc378cf47",
+      "lp400": "360dc15e96c40641acbc3fa02ef50f3bb0653523e87a38a42f629ae9e946002e",
+      "lcs600": "3b308d98936478da75f20bd49a592bbd33a2e764c6c8ba958d6b0fc12a4438c6",
+      "sight_glasses_1": "32b25ee921edabe079250462578d710c675af450fbfd1d7d85ed6e2dad1cb573",
+      "sight_glasses_2": "4298e28a9164f18ac92ca20cdd18a577fa8ed69bec04ff10916dd7a9dc3f2c44",
+      "pressure_header": "d7d1b5cf35b2536439f570cdca84e7c9af805ce3f1a953b1a82d9a1611d20224",
+      "pressure_switch_1": "86ad7de84a18bb03abfa8486fc50082809693361feb16bae4953865b95af0a67",
+      "pressure_switch_2": "8de66eb008a16d0da6980de0fb7a57394ff111a2cd49e59a6b407b55874d1275",
+      "pressure_gauge": "9a221d95ff9f6bee7436d6ee281184fce0c58be53186c397477c42cf34d58846",
+      "instrument_valve": "4cbe14ca34626c42af5ad71b3672257f5b549987d26b15b32c1a69130da54993",
+      "pressure_transmitter": "9e3bbfa7946d8a2897406b81327879d10f1f104d601d89ea3d04bbc3c39633d0",
+      "tds_isolation": "f937935ceeb612fb8418c1ee037c45731ceab528fdd480b72164326d643f9350",
+      "pcf20": "c72e9ee5d79ef4bf1c77a258acd07d49b683e4a5fc37bfad4c83ec833d20cd4c",
+      "bcv925": "51b75a4dbc60295d73c19ddacbd893ea9e36203c3a87df352c9077e2269fdd25",
+      "cp930": "b6cac507a5c7979c7128a1e6379e0e69c41d5aec1e60449aabdb586c45891508",
+      "sc9": "380e44f5b99003db6b81d73bcc21878c72d05e3c5361df8427bf6c01b8976a02",
+      "sample_piping": "4074dd201a1b03cea63083c034731d29e75ad8131f464dbf705245168d554859",
+      "bcv7432": "9c6cb96f066a8735301e4409e33e9e72c36874407c07b95d542295a2e31193e0",
+      "drain_isolation_1": "da1b23f1be00cf07542fe815e6a621fac42293985ed20d3037cf3d179077e828",
+      "drain_isolation_2": "3672a9bb6a2bc0c9b6c3b6bbbc79f823e9394b5f205136cdca756de504ac7aeb",
+      "bottom_piping": "7f503898032c15a2663cc476c02789fdec3eddbf59a376638928cc798deb8900",
+      "control_cabinet": "3892c79d94494279d5e118b16034f47a13988d527add06cf8bf0ef0decd871d3",
+      "cabinet_interior": "ba9c33dc00eb85372dd8ba67349bbd220d54070ac23bf7171cf25715a8f8c1e6",
+      "lc220": "989f04102708100a1f788caac65c93b33e5aa857de6d6f9fcf09cc676b2f1109",
+      "lc440": "3804db880d243532243e1d1ba3201cd044ef5fee039db1329183fc24511203a8",
+      "bc970": "07455e53d2d70523957eacf417a54d840b88689af88fd16c95f823b627b31938",
+      "pr200": "b36f932b3395e1547a7a885b5a2d9891454ea72c60f6d8fa6793e86ae9634288",
+      "pump_1": "35832bdf9c40f94cead6e0c3f47a3d3efca145293bef1b6bc4dbe201ac282f06",
+      "pump_in_valve_1": "b7d7f4c5a855b90f46ef6e109f3aa27b2db35404ebcdc64617ef83700b415f6d",
+      "pump_check_1": "c23fc3d53fadacccc63d42981cf115638a526306be15679afa948a78ac2a7374",
+      "pump_out_valve_1": "1b8e6de1e57114607593cc654f3b414065e5d5f33c6255269fa0e72534a815f5",
+      "pump_branch_1": "063e3e48b436022f143d3ae48d63863acc151368c35eb6e399a6b8c92218079c",
+      "pump_2": "56b3ceddbcd5cf5ebfb818f8c183c2bfbfc83d6730d2b216d2716c8c3544c95c",
+      "pump_in_valve_2": "400b0633310d01ead4d6f561c9196b58c7c6d10ec9c00ec96caabf8f466ad9f2",
+      "pump_check_2": "df853720b43c8a8008ee1034cca06be4099ea2838ff1420d1a0cd1ece2734db7",
+      "pump_out_valve_2": "933c9546d91d156beb7b14939a705fbd597c3442e53355232190563795216b4a",
+      "pump_branch_2": "6068e8cee2da90d0e4fd71e40f387228b755da51c2d1f640526615d8cb17e315",
+      "suction_common": "bd4dc4318262f091a30979e79b6e7a17e47715067b98069be5d54b9b4d90b775",
+      "deaerator_feed": "b9a4f1db49c905614e8470381a563ba01f0fe54193a41ebfc49f4e12396904da",
+      "pump_delivery": "b873dca1e83a415eaa307c54ed83c86da191be89fbecfa73488c647a15dfc5e9",
+      "feed_check": "70a33c2e7677846aef646b9be311928ce54b542c758a43a1d5c94a19c671a668",
+      "feed_valve": "919963eae8ebe092913f68f76c8ed99c41b8fa0905b0d1da62f51341f4571293",
+      "feed_inlet_adapter": "f33e56cd332a01ec34f8438c05ff23bec57528b90b8d0aa44c7f918266d37bd3",
+      "to_economizer": "8b5ccb4cf2392bd48e5e9f2e9b342288920e6a857f2976d1023c7aea3cef7dcd",
+      "eco_inlet_adapter": "7fd09917aa8cb5e58a65ebad69c29f6d1cb982b95e8d59c915526d2f7c7e9374",
+      "from_economizer": "fdb80a87df549d7e46a819d5965b8ccd43efbf8925a58e326ea123c87a1c5d23",
+      "to_direct": "457ec3ed44ba05233f4c2051b8cb265b0e34880eb825964297a3149d035b53c6",
+      "direct_inlet": "bb6cd3982498e9aef52c1521efb0295fdcfe0cec0469c409e086086edff2fdb1",
+      "mod_eco": "7a60b72fb7c8634b36a9758de27a02ec0e93a0e6f123662573af5639a046ddb2",
+      "mod_eco_bypass": "a78173e911c96147cfe7aed691b891a8a18680b1ec5df13464f6961786429a77",
+      "mod_direct": "a949206e454726f9a2691bf841b34f84df213048b3acd059d8c86b4762d75bd8",
+      "mod_direct_bypass": "a78173e911c96147cfe7aed691b891a8a18680b1ec5df13464f6961786429a77",
+      "steam_manual": "95f5cf2a2f9e322219ef1dfecf47f94e2a5a582653d923deab888a50922a88ba",
+      "steam_rise": "bf1947ce67c196e3cd32ab27fcd8f84ea8b6dd0c6bcad87949e6aa06b5ded4dd",
+      "steam_delivery": "9dc61c6d7d34f8d77ae77b8af24dccc4ae6017d35a825fa7e40baa92dd22321b",
+      "gpz": "b3f36d1613cfc7341fafcb16a71dd3a5fb209f667b0161be10e44405a100a1f6",
+      "gpz_bypass": "0cc0eeeb6340c40824203afcb421f9d81dd807d72336053bd20c4638e5566403",
+      "deaerator_details": "81962589292131ce3118f79504eac8c1f87b25cd15374978a033e27abf9a9266",
+      "separator_bdv60_5": "ad8f4ad41f39a77f692126232fa1caca7354ac26805890fc1659cac84a92dfe7",
+      "separator_fv8": "376fba3c4d4d03e768d8674d86c48a87264d908d141b3b16ec87758d680dab25",
+      "bottom_before_gate": "d31399e979bddd6ba2c22f7337c04015b713bfb134057c0cf05af6020aba65fe",
+      "bottom_before_auto": "9765111a17eca8c337aeb5eae2f392ed772982b9cede712c2d1df2ad7f153ec3",
+      "bottom_after_auto": "cd8bdcb9febeb054226e6db76f5c3e7ab2ccd4d6027e2b6ddd26e8ba5ad04160",
+      "bottom_bypass_before": "d689a76ce2839c7a03024893b9f019efd191c12f651423ee47d31c76220dfc1b",
+      "bottom_bypass_after": "dfab67ad9e4fb47eeba2d49f08bec9cdd2a2900cb7ee74f1348efaf44e6e9aea",
+      "bottom_discharge": "ce449a0aa07ed30d588191fc808bdd533e6f6044324561cd6d34898bc3d109e4",
+      "bottom_to_bdv": "7513f62c732bed66880baed0e826b97568200d58d5d523c3c70468985eb76dbc",
+      "tds_common": "1f694a2a0eab49c820903f8b4a7bdaa7f42375da8232bb65924326ce940526d9",
+      "tds_to_fv": "d4ba449fd87b579d8432b9615ff8950ac1bae8ba4664d0a6b7234dc7215e5742",
+      "tds_without_fv": "840dccd5cedbce2505e950eefefc6457bb496f8f5ae5f0d36e19195a2bf42017",
+      "tds_without_vessels": "25c9394638010691d671b8521199b58a17fc72c9d70d1ebc481228f71b0e9bb9",
+      "flash_steam_common": "3cfbff8b9c92ac2c9ee0886d720a094827f710732504df13504ad8d48d3814c5",
+      "fv_to_trap_gap": "c01b647652f158e8c6d206a875cd3faf474288cdf03beb36d7c0cf6d3dde06cc",
+      "trap_gap_to_bdv": "b285bbb4cfee48d80d0f56143b8726f47102ade29ceee391465c394acc4ee28e",
+      "bdv_vent": "93326e3daeef1a8f551afde644ce64bdc65f5de522c3e70ed4bfd46ab4854b2f",
+      "bdv_water_drain": "5f5837d6922585f49b09770ea685f0b2ab6ab1350159eb10999951b1f2e40268",
+      "bdv_cooling_stub": "f3424d36cdccb61feec452a9413b237977ed99a64c623335de6ccc438daf1729",
+      "bdv_bottom_drain_stub": "6e99e2b84b0ed5e035721dbcd3e75f4e7ce16605d07daff71c26ecaccbae3a0c",
+      "fv_bottom_drain_stub": "d52f90f421c6ca1a8f01317829e70139792921f5a1925b0b3c44b01dd101eb1c",
+      "safety_vent_1": "741430a5a88c7182b09db7d0b49e338767d848bc61e946246309271424835e06",
+      "safety_vent_2": "c95732d9750d70fb1688a3675be4f6985b392eed397407f7a52da0f3d3659038",
+      "local_open_drains": "c7718ace4d1d81b566af8719a7778fa178b99d0c051d47ef23b4fd6873567685",
+      "bdv_identification": "549d7eacad7982f7f3a56e21f98d9476a33cb6dd1824fb0e592f5084b125c673",
+      "bdv_cooling_marker": "3bb35cfa5b42ee102a2fead2d8770addf28932e5727340cab7032ab5ceb011fa",
+      "deaerator_support": "010bef12aad198aa8e81ae21b0e0d444a5169999c2827b421a39155da833ffd0",
+      "condensate_trap": "877190cd8ec8e19f3e81df019fd24b471adfc413b4b8388bd902b4336a0e49f6",
+      "trap_support": "7386943319fe7f2400db1f4e2d2dc0a9fc726982c5d12e0cfe1351e4cf56ce23"
+    },
+    "conduits": [
+      {
+        "part": "cables",
+        "vertex_offset": 0,
+        "ring_sides": 12,
+        "ring_count": 4825,
+        "radius_m": 0.006,
+        "length_m": 9.64227231703847,
+        "rib_pitch_m": 0.007995250677478001,
+        "points_m": [
+          [
+            1.468999981880188,
+            -1.5199999809265137,
+            2.994999885559082
+          ],
+          [
+            1.4579999446868896,
+            -1.5199999809265137,
+            2.878999948501587
+          ],
+          [
+            1.4579999446868896,
+            -1.0260000228881836,
+            2.878999948501587
+          ],
+          [
+            1.4199999570846558,
+            -1.0260000228881836,
+            2.8499999046325684
+          ],
+          [
+            1.3035310506820679,
+            -1.0260000228881836,
+            2.8499999046325684
+          ],
+          [
+            1.2983789443969727,
+            -1.0260000228881836,
+            2.8501265048980713
+          ],
+          [
+            1.2932392358779907,
+            -1.0260000228881836,
+            2.8505055904388428
+          ],
+          [
+            1.2881243228912354,
+            -1.0260000228881836,
+            2.8511364459991455
+          ],
+          [
+            1.2830464839935303,
+            -1.0260000228881836,
+            2.852017641067505
+          ],
+          [
+            1.2780181169509888,
+            -1.0260000228881836,
+            2.85314679145813
+          ],
+          [
+            1.273051142692566,
+            -1.0260000228881836,
+            2.8545212745666504
+          ],
+          [
+            1.2681576013565063,
+            -1.0260000228881836,
+            2.856137990951538
+          ],
+          [
+            1.2633492946624756,
+            -1.0260000228881836,
+            2.857992649078369
+          ],
+          [
+            1.2586376667022705,
+            -1.0260000228881836,
+            2.860081195831299
+          ],
+          [
+            1.254034399986267,
+            -1.0260000228881836,
+            2.862398386001587
+          ],
+          [
+            1.249550223350525,
+            -1.0260000228881836,
+            2.864938497543335
+          ],
+          [
+            1.2451961040496826,
+            -1.0260000228881836,
+            2.8676958084106445
+          ],
+          [
+            1.2409825325012207,
+            -1.0260000228881836,
+            2.8706631660461426
+          ],
+          [
+            1.2369197607040405,
+            -1.0260000228881836,
+            2.8738338947296143
+          ],
+          [
+            1.2330173254013062,
+            -1.0260000228881836,
+            2.877200126647949
+          ],
+          [
+            1.2292847633361816,
+            -1.0260000228881836,
+            2.880753755569458
+          ],
+          [
+            1.2257311344146729,
+            -1.0260000228881836,
+            2.884486198425293
+          ],
+          [
+            1.222364902496338,
+            -1.0260000228881836,
+            2.8883886337280273
+          ],
+          [
+            1.2191941738128662,
+            -1.0260000228881836,
+            2.892451524734497
+          ],
+          [
+            1.2162266969680786,
+            -1.0260000228881836,
+            2.896665096282959
+          ],
+          [
+            1.2134695053100586,
+            -1.0260000228881836,
+            2.9010190963745117
+          ],
+          [
+            1.210929274559021,
+            -1.0260000228881836,
+            2.905503273010254
+          ],
+          [
+            1.208612084388733,
+            -1.0260000228881836,
+            2.910106658935547
+          ],
+          [
+            1.2065236568450928,
+            -1.0260000228881836,
+            2.914818286895752
+          ],
+          [
+            1.2046688795089722,
+            -1.0260000228881836,
+            2.919626474380493
+          ],
+          [
+            1.203052282333374,
+            -1.0260000228881836,
+            2.9245200157165527
+          ],
+          [
+            1.201677680015564,
+            -1.0260000228881836,
+            2.9294869899749756
+          ],
+          [
+            1.200548529624939,
+            -1.0260000228881836,
+            2.9345154762268066
+          ],
+          [
+            1.1996674537658691,
+            -1.0260000228881836,
+            2.9395933151245117
+          ],
+          [
+            1.1990365982055664,
+            -1.0260000228881836,
+            2.9447081089019775
+          ],
+          [
+            1.198657512664795,
+            -1.0260000228881836,
+            2.949847936630249
+          ],
+          [
+            1.1985310316085815,
+            -1.0260000228881836,
+            2.9549999237060547
+          ],
+          [
+            1.198380470275879,
+            -1.0260000228881836,
+            2.9611334800720215
+          ],
+          [
+            1.1979291439056396,
+            -1.0260000228881836,
+            2.967252254486084
+          ],
+          [
+            1.1971780061721802,
+            -1.0260000228881836,
+            2.973341226577759
+          ],
+          [
+            1.1961292028427124,
+            -1.0260000228881836,
+            2.979386329650879
+          ],
+          [
+            1.1947848796844482,
+            -1.0260000228881836,
+            2.985372543334961
+          ],
+          [
+            1.1931484937667847,
+            -1.0260000228881836,
+            2.991285562515259
+          ],
+          [
+            1.1912239789962769,
+            -1.0260000228881836,
+            2.9971113204956055
+          ],
+          [
+            1.1890159845352173,
+            -1.0260000228881836,
+            3.002835512161255
+          ],
+          [
+            1.1865296363830566,
+            -1.0260000228881836,
+            3.008444309234619
+          ],
+          [
+            1.1837711334228516,
+            -1.0260000228881836,
+            3.0139245986938477
+          ],
+          [
+            1.1807470321655273,
+            -1.0260000228881836,
+            3.0192627906799316
+          ],
+          [
+            1.1774647235870361,
+            -1.0260000228881836,
+            3.0244462490081787
+          ],
+          [
+            1.1739319562911987,
+            -1.0260000228881836,
+            3.0294623374938965
+          ],
+          [
+            1.1701573133468628,
+            -1.0260000228881836,
+            3.03429913520813
+          ],
+          [
+            1.1661498546600342,
+            -1.0260000228881836,
+            3.038944959640503
+          ],
+          [
+            1.161919355392456,
+            -1.0260000228881836,
+            3.0433883666992188
+          ],
+          [
+            1.1574758291244507,
+            -1.0260000228881836,
+            3.047618865966797
+          ],
+          [
+            1.1528301239013672,
+            -1.0260000228881836,
+            3.051626205444336
+          ],
+          [
+            1.1479934453964233,
+            -1.0260000228881836,
+            3.055400848388672
+          ],
+          [
+            1.142977237701416,
+            -1.0260000228881836,
+            3.058933734893799
+          ],
+          [
+            1.1377938985824585,
+            -1.0260000228881836,
+            3.06221604347229
+          ],
+          [
+            1.132455587387085,
+            -1.0260000228881836,
+            3.0652401447296143
+          ],
+          [
+            1.126975417137146,
+            -1.0260000228881836,
+            3.0679986476898193
+          ],
+          [
+            1.1213663816452026,
+            -1.0260000228881836,
+            3.0704848766326904
+          ],
+          [
+            1.1156421899795532,
+            -1.0260000228881836,
+            3.072693109512329
+          ],
+          [
+            1.109816551208496,
+            -1.0260000228881836,
+            3.074617624282837
+          ],
+          [
+            1.1039035320281982,
+            -1.0260000228881836,
+            3.076253890991211
+          ],
+          [
+            1.0979173183441162,
+            -1.0260000228881836,
+            3.0775980949401855
+          ],
+          [
+            1.0918723344802856,
+            -1.0260000228881836,
+            3.0786471366882324
+          ],
+          [
+            1.0857831239700317,
+            -1.0260000228881836,
+            3.0793981552124023
+          ],
+          [
+            1.0796644687652588,
+            -1.0260000228881836,
+            3.0798494815826416
+          ],
+          [
+            1.0735310316085815,
+            -1.0260000228881836,
+            3.0799999237060547
+          ],
+          [
+            1.0673975944519043,
+            -1.0260000228881836,
+            3.0798494815826416
+          ],
+          [
+            1.0612788200378418,
+            -1.0260000228881836,
+            3.0793981552124023
+          ],
+          [
+            1.0551897287368774,
+            -1.0260000228881836,
+            3.0786471366882324
+          ],
+          [
+            1.0491447448730469,
+            -1.0260000228881836,
+            3.0775980949401855
+          ],
+          [
+            1.0431585311889648,
+            -1.0260000228881836,
+            3.076253890991211
+          ],
+          [
+            1.0372453927993774,
+            -1.0260000228881836,
+            3.074617624282837
+          ],
+          [
+            1.0314197540283203,
+            -1.0260000228881836,
+            3.072693109512329
+          ],
+          [
+            1.025695562362671,
+            -1.0260000228881836,
+            3.0704848766326904
+          ],
+          [
+            1.020086646080017,
+            -1.0260000228881836,
+            3.0679986476898193
+          ],
+          [
+            1.0146063566207886,
+            -1.0260000228881836,
+            3.0652401447296143
+          ],
+          [
+            1.0092681646347046,
+            -1.0260000228881836,
+            3.06221604347229
+          ],
+          [
+            1.0040847063064575,
+            -1.0260000228881836,
+            3.058933734893799
+          ],
+          [
+            0.999068558216095,
+            -1.0260000228881836,
+            3.055400848388672
+          ],
+          [
+            0.9942318201065063,
+            -1.0260000228881836,
+            3.051626205444336
+          ],
+          [
+            0.9895861148834229,
+            -1.0260000228881836,
+            3.047618865966797
+          ],
+          [
+            0.9851426482200623,
+            -1.0260000228881836,
+            3.0433883666992188
+          ],
+          [
+            0.9809120893478394,
+            -1.0260000228881836,
+            3.038944959640503
+          ],
+          [
+            0.9769046902656555,
+            -1.0260000228881836,
+            3.03429913520813
+          ],
+          [
+            0.9731300473213196,
+            -1.0260000228881836,
+            3.0294623374938965
+          ],
+          [
+            0.9695972800254822,
+            -1.0260000228881836,
+            3.0244462490081787
+          ],
+          [
+            0.9663149118423462,
+            -1.0260000228881836,
+            3.0192627906799316
+          ],
+          [
+            0.9632908701896667,
+            -1.0260000228881836,
+            3.0139245986938477
+          ],
+          [
+            0.9605323672294617,
+            -1.0260000228881836,
+            3.008444309234619
+          ],
+          [
+            0.9580460786819458,
+            -1.0260000228881836,
+            3.002835512161255
+          ],
+          [
+            0.9558379650115967,
+            -1.0260000228881836,
+            2.9971113204956055
+          ],
+          [
+            0.9539134502410889,
+            -1.0260000228881836,
+            2.991285562515259
+          ],
+          [
+            0.9522770643234253,
+            -1.0260000228881836,
+            2.985372543334961
+          ],
+          [
+            0.9509328603744507,
+            -1.0260000228881836,
+            2.979386329650879
+          ],
+          [
+            0.9498839378356934,
+            -1.0260000228881836,
+            2.973341226577759
+          ],
+          [
+            0.9491329193115234,
+            -1.0260000228881836,
+            2.967252254486084
+          ],
+          [
+            0.9486815929412842,
+            -1.0260000228881836,
+            2.9611334800720215
+          ],
+          [
+            0.9485309720039368,
+            -1.0260000228881836,
+            2.9549999237060547
+          ],
+          [
+            0.9485309720039368,
+            -1.0260000228881836,
+            2.0399999618530273
+          ],
+          [
+            0.9485309720039368,
+            -1.0260000228881836,
+            1.9249999523162842
+          ],
+          [
+            1.0299999713897705,
+            -1.0260000228881836,
+            1.9249999523162842
+          ],
+          [
+            1.0299999713897705,
+            -1.100000023841858,
+            1.9249999523162842
+          ],
+          [
+            1.0299999713897705,
+            -1.100000023841858,
+            0.30000001192092896
+          ],
+          [
+            1.0299999713897705,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            1.0299999713897705,
+            -2.180000066757202,
+            0.10499999672174454
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.10499999672174454
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1699999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1699999570846558,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              1.468999981880188,
+              -1.5199999809265137,
+              2.994999885559082
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              1.4688112848689436,
+              -1.5199999809265137,
+              2.9930099997520117
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              1.4686225878576993,
+              -1.5199999809265137,
+              2.9910201139449417
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              1.468433890846455,
+              -1.5199999809265137,
+              2.9890302281378713
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              1.4682451938352106,
+              -1.5199999809265137,
+              2.9870403423308014
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 2412,
+            "center": [
+              1.0299999713897705,
+              -1.8065482984296573,
+              0.30000001192092896
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 4822,
+            "center": [
+              -1.1699999570846558,
+              -1.2200000286102295,
+              1.2210023985031189
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 4823,
+            "center": [
+              -1.1699999570846558,
+              -1.2200000286102295,
+              1.2230012111724875
+            ],
+            "radius": 0.005460000000000134
+          },
+          {
+            "index": 4824,
+            "center": [
+              -1.1699999570846558,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "cables",
+        "vertex_offset": 57900,
+        "ring_sides": 12,
+        "ring_count": 4697,
+        "radius_m": 0.006,
+        "length_m": 9.391472311671938,
+        "rib_pitch_m": 0.007999550521015279,
+        "points_m": [
+          [
+            1.468999981880188,
+            -1.2799999713897705,
+            2.994999885559082
+          ],
+          [
+            1.4670000076293945,
+            -1.2799999713897705,
+            2.878999948501587
+          ],
+          [
+            1.4670000076293945,
+            -1.0399999618530273,
+            2.878999948501587
+          ],
+          [
+            1.4199999570846558,
+            -1.0399999618530273,
+            2.8519999980926514
+          ],
+          [
+            1.3035310506820679,
+            -1.0399999618530273,
+            2.8519999980926514
+          ],
+          [
+            1.2983789443969727,
+            -1.0399999618530273,
+            2.852126359939575
+          ],
+          [
+            1.2932392358779907,
+            -1.0399999618530273,
+            2.852505683898926
+          ],
+          [
+            1.2881243228912354,
+            -1.0399999618530273,
+            2.8531365394592285
+          ],
+          [
+            1.2830464839935303,
+            -1.0399999618530273,
+            2.854017496109009
+          ],
+          [
+            1.2780181169509888,
+            -1.0399999618530273,
+            2.855146646499634
+          ],
+          [
+            1.273051142692566,
+            -1.0399999618530273,
+            2.8565213680267334
+          ],
+          [
+            1.2681576013565063,
+            -1.0399999618530273,
+            2.858137845993042
+          ],
+          [
+            1.2633492946624756,
+            -1.0399999618530273,
+            2.859992742538452
+          ],
+          [
+            1.2586376667022705,
+            -1.0399999618530273,
+            2.8620810508728027
+          ],
+          [
+            1.254034399986267,
+            -1.0399999618530273,
+            2.864398241043091
+          ],
+          [
+            1.249550223350525,
+            -1.0399999618530273,
+            2.866938591003418
+          ],
+          [
+            1.2451961040496826,
+            -1.0399999618530273,
+            2.8696956634521484
+          ],
+          [
+            1.2409825325012207,
+            -1.0399999618530273,
+            2.8726632595062256
+          ],
+          [
+            1.2369197607040405,
+            -1.0399999618530273,
+            2.8758339881896973
+          ],
+          [
+            1.2330173254013062,
+            -1.0399999618530273,
+            2.8792002201080322
+          ],
+          [
+            1.2292847633361816,
+            -1.0399999618530273,
+            2.882753849029541
+          ],
+          [
+            1.2257311344146729,
+            -1.0399999618530273,
+            2.886486291885376
+          ],
+          [
+            1.222364902496338,
+            -1.0399999618530273,
+            2.8903887271881104
+          ],
+          [
+            1.2191941738128662,
+            -1.0399999618530273,
+            2.89445161819458
+          ],
+          [
+            1.2162266969680786,
+            -1.0399999618530273,
+            2.898665189743042
+          ],
+          [
+            1.2134695053100586,
+            -1.0399999618530273,
+            2.9030191898345947
+          ],
+          [
+            1.210929274559021,
+            -1.0399999618530273,
+            2.907503366470337
+          ],
+          [
+            1.208612084388733,
+            -1.0399999618530273,
+            2.91210675239563
+          ],
+          [
+            1.2065236568450928,
+            -1.0399999618530273,
+            2.916818141937256
+          ],
+          [
+            1.2046688795089722,
+            -1.0399999618530273,
+            2.921626567840576
+          ],
+          [
+            1.203052282333374,
+            -1.0399999618530273,
+            2.9265201091766357
+          ],
+          [
+            1.201677680015564,
+            -1.0399999618530273,
+            2.9314870834350586
+          ],
+          [
+            1.200548529624939,
+            -1.0399999618530273,
+            2.9365155696868896
+          ],
+          [
+            1.1996674537658691,
+            -1.0399999618530273,
+            2.9415934085845947
+          ],
+          [
+            1.1990365982055664,
+            -1.0399999618530273,
+            2.9467082023620605
+          ],
+          [
+            1.198657512664795,
+            -1.0399999618530273,
+            2.951847791671753
+          ],
+          [
+            1.1985310316085815,
+            -1.0399999618530273,
+            2.9570000171661377
+          ],
+          [
+            1.198380470275879,
+            -1.0399999618530273,
+            2.9631335735321045
+          ],
+          [
+            1.1979291439056396,
+            -1.0399999618530273,
+            2.969252109527588
+          ],
+          [
+            1.1971780061721802,
+            -1.0399999618530273,
+            2.975341320037842
+          ],
+          [
+            1.1961292028427124,
+            -1.0399999618530273,
+            2.981386184692383
+          ],
+          [
+            1.1947848796844482,
+            -1.0399999618530273,
+            2.987372636795044
+          ],
+          [
+            1.1931484937667847,
+            -1.0399999618530273,
+            2.993285655975342
+          ],
+          [
+            1.1912239789962769,
+            -1.0399999618530273,
+            2.9991111755371094
+          ],
+          [
+            1.1890159845352173,
+            -1.0399999618530273,
+            3.004835367202759
+          ],
+          [
+            1.1865296363830566,
+            -1.0399999618530273,
+            3.010444402694702
+          ],
+          [
+            1.1837711334228516,
+            -1.0399999618530273,
+            3.0159246921539307
+          ],
+          [
+            1.1807470321655273,
+            -1.0399999618530273,
+            3.0212628841400146
+          ],
+          [
+            1.1774647235870361,
+            -1.0399999618530273,
+            3.0264463424682617
+          ],
+          [
+            1.1739319562911987,
+            -1.0399999618530273,
+            3.0314624309539795
+          ],
+          [
+            1.1701573133468628,
+            -1.0399999618530273,
+            3.036299228668213
+          ],
+          [
+            1.1661498546600342,
+            -1.0399999618530273,
+            3.040944814682007
+          ],
+          [
+            1.161919355392456,
+            -1.0399999618530273,
+            3.0453884601593018
+          ],
+          [
+            1.1574758291244507,
+            -1.0399999618530273,
+            3.04961895942688
+          ],
+          [
+            1.1528301239013672,
+            -1.0399999618530273,
+            3.053626298904419
+          ],
+          [
+            1.1479934453964233,
+            -1.0399999618530273,
+            3.057400941848755
+          ],
+          [
+            1.142977237701416,
+            -1.0399999618530273,
+            3.0609335899353027
+          ],
+          [
+            1.1377938985824585,
+            -1.0399999618530273,
+            3.064216136932373
+          ],
+          [
+            1.132455587387085,
+            -1.0399999618530273,
+            3.0672402381896973
+          ],
+          [
+            1.126975417137146,
+            -1.0399999618530273,
+            3.0699987411499023
+          ],
+          [
+            1.1213663816452026,
+            -1.0399999618530273,
+            3.0724849700927734
+          ],
+          [
+            1.1156421899795532,
+            -1.0399999618530273,
+            3.074692964553833
+          ],
+          [
+            1.109816551208496,
+            -1.0399999618530273,
+            3.076617479324341
+          ],
+          [
+            1.1039035320281982,
+            -1.0399999618530273,
+            3.078253984451294
+          ],
+          [
+            1.0979173183441162,
+            -1.0399999618530273,
+            3.0795981884002686
+          ],
+          [
+            1.0918723344802856,
+            -1.0399999618530273,
+            3.0806469917297363
+          ],
+          [
+            1.0857831239700317,
+            -1.0399999618530273,
+            3.0813980102539062
+          ],
+          [
+            1.0796644687652588,
+            -1.0399999618530273,
+            3.0818493366241455
+          ],
+          [
+            1.0735310316085815,
+            -1.0399999618530273,
+            3.0820000171661377
+          ],
+          [
+            1.0673975944519043,
+            -1.0399999618530273,
+            3.0818493366241455
+          ],
+          [
+            1.0612788200378418,
+            -1.0399999618530273,
+            3.0813980102539062
+          ],
+          [
+            1.0551897287368774,
+            -1.0399999618530273,
+            3.0806469917297363
+          ],
+          [
+            1.0491447448730469,
+            -1.0399999618530273,
+            3.0795981884002686
+          ],
+          [
+            1.0431585311889648,
+            -1.0399999618530273,
+            3.078253984451294
+          ],
+          [
+            1.0372453927993774,
+            -1.0399999618530273,
+            3.076617479324341
+          ],
+          [
+            1.0314197540283203,
+            -1.0399999618530273,
+            3.074692964553833
+          ],
+          [
+            1.025695562362671,
+            -1.0399999618530273,
+            3.0724849700927734
+          ],
+          [
+            1.020086646080017,
+            -1.0399999618530273,
+            3.0699987411499023
+          ],
+          [
+            1.0146063566207886,
+            -1.0399999618530273,
+            3.0672402381896973
+          ],
+          [
+            1.0092681646347046,
+            -1.0399999618530273,
+            3.064216136932373
+          ],
+          [
+            1.0040847063064575,
+            -1.0399999618530273,
+            3.0609335899353027
+          ],
+          [
+            0.999068558216095,
+            -1.0399999618530273,
+            3.057400941848755
+          ],
+          [
+            0.9942318201065063,
+            -1.0399999618530273,
+            3.053626298904419
+          ],
+          [
+            0.9895861148834229,
+            -1.0399999618530273,
+            3.04961895942688
+          ],
+          [
+            0.9851426482200623,
+            -1.0399999618530273,
+            3.0453884601593018
+          ],
+          [
+            0.9809120893478394,
+            -1.0399999618530273,
+            3.040944814682007
+          ],
+          [
+            0.9769046902656555,
+            -1.0399999618530273,
+            3.036299228668213
+          ],
+          [
+            0.9731300473213196,
+            -1.0399999618530273,
+            3.0314624309539795
+          ],
+          [
+            0.9695972800254822,
+            -1.0399999618530273,
+            3.0264463424682617
+          ],
+          [
+            0.9663149118423462,
+            -1.0399999618530273,
+            3.0212628841400146
+          ],
+          [
+            0.9632908701896667,
+            -1.0399999618530273,
+            3.0159246921539307
+          ],
+          [
+            0.9605323672294617,
+            -1.0399999618530273,
+            3.010444402694702
+          ],
+          [
+            0.9580460786819458,
+            -1.0399999618530273,
+            3.004835367202759
+          ],
+          [
+            0.9558379650115967,
+            -1.0399999618530273,
+            2.9991111755371094
+          ],
+          [
+            0.9539134502410889,
+            -1.0399999618530273,
+            2.993285655975342
+          ],
+          [
+            0.9522770643234253,
+            -1.0399999618530273,
+            2.987372636795044
+          ],
+          [
+            0.9509328603744507,
+            -1.0399999618530273,
+            2.981386184692383
+          ],
+          [
+            0.9498839378356934,
+            -1.0399999618530273,
+            2.975341320037842
+          ],
+          [
+            0.9491329193115234,
+            -1.0399999618530273,
+            2.969252109527588
+          ],
+          [
+            0.9486815929412842,
+            -1.0399999618530273,
+            2.9631335735321045
+          ],
+          [
+            0.9485309720039368,
+            -1.0399999618530273,
+            2.9570000171661377
+          ],
+          [
+            0.9485309720039368,
+            -1.0399999618530273,
+            2.0420000553131104
+          ],
+          [
+            0.9485309720039368,
+            -1.0399999618530273,
+            1.9270000457763672
+          ],
+          [
+            1.0390000343322754,
+            -1.0399999618530273,
+            1.9270000457763672
+          ],
+          [
+            1.0390000343322754,
+            -1.100000023841858,
+            1.9270000457763672
+          ],
+          [
+            1.0390000343322754,
+            -1.100000023841858,
+            0.30000001192092896
+          ],
+          [
+            1.0390000343322754,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            1.0390000343322754,
+            -2.180000066757202,
+            0.10499999672174454
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.10499999672174454
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1610000133514404,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1610000133514404,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              1.468999981880188,
+              -1.2799999713897705,
+              2.994999885559082
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              1.4689655059457771,
+              -1.2799999713897705,
+              2.993000295115119
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              1.4689310300113663,
+              -1.2799999713897705,
+              2.9910007046711558
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              1.4688965540769554,
+              -1.2799999713897705,
+              2.9890011142271926
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              1.4688620781425443,
+              -1.2799999713897705,
+              2.9870015237832295
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 2348,
+            "center": [
+              1.0390000343322754,
+              -1.9319483964580293,
+              0.30000001192092896
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 4694,
+            "center": [
+              -1.1610000133514404,
+              -1.2200000286102295,
+              1.2210002485813494
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 4695,
+            "center": [
+              -1.1610000133514404,
+              -1.2200000286102295,
+              1.2230001362116028
+            ],
+            "radius": 0.005460000000000252
+          },
+          {
+            "index": 4696,
+            "center": [
+              -1.1610000133514404,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "cables",
+        "vertex_offset": 114264,
+        "ring_sides": 12,
+        "ring_count": 4605,
+        "radius_m": 0.006,
+        "length_m": 9.207788883615278,
+        "rib_pitch_m": 0.00799981658003065,
+        "points_m": [
+          [
+            1.440999984741211,
+            -1.0399999618530273,
+            3.0239999294281006
+          ],
+          [
+            1.4759999513626099,
+            -1.0399999618530273,
+            2.878999948501587
+          ],
+          [
+            1.4759999513626099,
+            -1.0540000200271606,
+            2.878999948501587
+          ],
+          [
+            1.4199999570846558,
+            -1.0540000200271606,
+            2.8540000915527344
+          ],
+          [
+            1.3035310506820679,
+            -1.0540000200271606,
+            2.8540000915527344
+          ],
+          [
+            1.2983789443969727,
+            -1.0540000200271606,
+            2.854126453399658
+          ],
+          [
+            1.2932392358779907,
+            -1.0540000200271606,
+            2.8545055389404297
+          ],
+          [
+            1.2881243228912354,
+            -1.0540000200271606,
+            2.8551363945007324
+          ],
+          [
+            1.2830464839935303,
+            -1.0540000200271606,
+            2.856017589569092
+          ],
+          [
+            1.2780181169509888,
+            -1.0540000200271606,
+            2.857146739959717
+          ],
+          [
+            1.273051142692566,
+            -1.0540000200271606,
+            2.8585212230682373
+          ],
+          [
+            1.2681576013565063,
+            -1.0540000200271606,
+            2.860137939453125
+          ],
+          [
+            1.2633492946624756,
+            -1.0540000200271606,
+            2.861992597579956
+          ],
+          [
+            1.2586376667022705,
+            -1.0540000200271606,
+            2.8640811443328857
+          ],
+          [
+            1.254034399986267,
+            -1.0540000200271606,
+            2.866398334503174
+          ],
+          [
+            1.249550223350525,
+            -1.0540000200271606,
+            2.868938446044922
+          ],
+          [
+            1.2451961040496826,
+            -1.0540000200271606,
+            2.8716957569122314
+          ],
+          [
+            1.2409825325012207,
+            -1.0540000200271606,
+            2.8746631145477295
+          ],
+          [
+            1.2369197607040405,
+            -1.0540000200271606,
+            2.877833843231201
+          ],
+          [
+            1.2330173254013062,
+            -1.0540000200271606,
+            2.881200075149536
+          ],
+          [
+            1.2292847633361816,
+            -1.0540000200271606,
+            2.884753704071045
+          ],
+          [
+            1.2257311344146729,
+            -1.0540000200271606,
+            2.888486385345459
+          ],
+          [
+            1.222364902496338,
+            -1.0540000200271606,
+            2.8923888206481934
+          ],
+          [
+            1.2191941738128662,
+            -1.0540000200271606,
+            2.896451473236084
+          ],
+          [
+            1.2162266969680786,
+            -1.0540000200271606,
+            2.900665044784546
+          ],
+          [
+            1.2134695053100586,
+            -1.0540000200271606,
+            2.9050192832946777
+          ],
+          [
+            1.210929274559021,
+            -1.0540000200271606,
+            2.90950345993042
+          ],
+          [
+            1.208612084388733,
+            -1.0540000200271606,
+            2.914106607437134
+          ],
+          [
+            1.2065236568450928,
+            -1.0540000200271606,
+            2.918818235397339
+          ],
+          [
+            1.2046688795089722,
+            -1.0540000200271606,
+            2.923626661300659
+          ],
+          [
+            1.203052282333374,
+            -1.0540000200271606,
+            2.9285202026367188
+          ],
+          [
+            1.201677680015564,
+            -1.0540000200271606,
+            2.9334871768951416
+          ],
+          [
+            1.200548529624939,
+            -1.0540000200271606,
+            2.9385154247283936
+          ],
+          [
+            1.1996674537658691,
+            -1.0540000200271606,
+            2.9435932636260986
+          ],
+          [
+            1.1990365982055664,
+            -1.0540000200271606,
+            2.9487082958221436
+          ],
+          [
+            1.198657512664795,
+            -1.0540000200271606,
+            2.953847885131836
+          ],
+          [
+            1.1985310316085815,
+            -1.0540000200271606,
+            2.9590001106262207
+          ],
+          [
+            1.198380470275879,
+            -1.0540000200271606,
+            2.9651334285736084
+          ],
+          [
+            1.1979291439056396,
+            -1.0540000200271606,
+            2.971252202987671
+          ],
+          [
+            1.1971780061721802,
+            -1.0540000200271606,
+            2.977341413497925
+          ],
+          [
+            1.1961292028427124,
+            -1.0540000200271606,
+            2.983386278152466
+          ],
+          [
+            1.1947848796844482,
+            -1.0540000200271606,
+            2.989372491836548
+          ],
+          [
+            1.1931484937667847,
+            -1.0540000200271606,
+            2.9952855110168457
+          ],
+          [
+            1.1912239789962769,
+            -1.0540000200271606,
+            3.0011112689971924
+          ],
+          [
+            1.1890159845352173,
+            -1.0540000200271606,
+            3.006835460662842
+          ],
+          [
+            1.1865296363830566,
+            -1.0540000200271606,
+            3.012444496154785
+          ],
+          [
+            1.1837711334228516,
+            -1.0540000200271606,
+            3.0179245471954346
+          ],
+          [
+            1.1807470321655273,
+            -1.0540000200271606,
+            3.0232627391815186
+          ],
+          [
+            1.1774647235870361,
+            -1.0540000200271606,
+            3.0284461975097656
+          ],
+          [
+            1.1739319562911987,
+            -1.0540000200271606,
+            3.0334625244140625
+          ],
+          [
+            1.1701573133468628,
+            -1.0540000200271606,
+            3.038299083709717
+          ],
+          [
+            1.1661498546600342,
+            -1.0540000200271606,
+            3.04294490814209
+          ],
+          [
+            1.161919355392456,
+            -1.0540000200271606,
+            3.0473883152008057
+          ],
+          [
+            1.1574758291244507,
+            -1.0540000200271606,
+            3.051618814468384
+          ],
+          [
+            1.1528301239013672,
+            -1.0540000200271606,
+            3.055626392364502
+          ],
+          [
+            1.1479934453964233,
+            -1.0540000200271606,
+            3.059401035308838
+          ],
+          [
+            1.142977237701416,
+            -1.0540000200271606,
+            3.0629336833953857
+          ],
+          [
+            1.1377938985824585,
+            -1.0540000200271606,
+            3.066215991973877
+          ],
+          [
+            1.132455587387085,
+            -1.0540000200271606,
+            3.069240093231201
+          ],
+          [
+            1.126975417137146,
+            -1.0540000200271606,
+            3.0719985961914062
+          ],
+          [
+            1.1213663816452026,
+            -1.0540000200271606,
+            3.0744848251342773
+          ],
+          [
+            1.1156421899795532,
+            -1.0540000200271606,
+            3.076693058013916
+          ],
+          [
+            1.109816551208496,
+            -1.0540000200271606,
+            3.078617572784424
+          ],
+          [
+            1.1039035320281982,
+            -1.0540000200271606,
+            3.080253839492798
+          ],
+          [
+            1.0979173183441162,
+            -1.0540000200271606,
+            3.0815980434417725
+          ],
+          [
+            1.0918723344802856,
+            -1.0540000200271606,
+            3.0826470851898193
+          ],
+          [
+            1.0857831239700317,
+            -1.0540000200271606,
+            3.0833981037139893
+          ],
+          [
+            1.0796644687652588,
+            -1.0540000200271606,
+            3.0838494300842285
+          ],
+          [
+            1.0735310316085815,
+            -1.0540000200271606,
+            3.0840001106262207
+          ],
+          [
+            1.0673975944519043,
+            -1.0540000200271606,
+            3.0838494300842285
+          ],
+          [
+            1.0612788200378418,
+            -1.0540000200271606,
+            3.0833981037139893
+          ],
+          [
+            1.0551897287368774,
+            -1.0540000200271606,
+            3.0826470851898193
+          ],
+          [
+            1.0491447448730469,
+            -1.0540000200271606,
+            3.0815980434417725
+          ],
+          [
+            1.0431585311889648,
+            -1.0540000200271606,
+            3.080253839492798
+          ],
+          [
+            1.0372453927993774,
+            -1.0540000200271606,
+            3.078617572784424
+          ],
+          [
+            1.0314197540283203,
+            -1.0540000200271606,
+            3.076693058013916
+          ],
+          [
+            1.025695562362671,
+            -1.0540000200271606,
+            3.0744848251342773
+          ],
+          [
+            1.020086646080017,
+            -1.0540000200271606,
+            3.0719985961914062
+          ],
+          [
+            1.0146063566207886,
+            -1.0540000200271606,
+            3.069240093231201
+          ],
+          [
+            1.0092681646347046,
+            -1.0540000200271606,
+            3.066215991973877
+          ],
+          [
+            1.0040847063064575,
+            -1.0540000200271606,
+            3.0629336833953857
+          ],
+          [
+            0.999068558216095,
+            -1.0540000200271606,
+            3.059401035308838
+          ],
+          [
+            0.9942318201065063,
+            -1.0540000200271606,
+            3.055626392364502
+          ],
+          [
+            0.9895861148834229,
+            -1.0540000200271606,
+            3.051618814468384
+          ],
+          [
+            0.9851426482200623,
+            -1.0540000200271606,
+            3.0473883152008057
+          ],
+          [
+            0.9809120893478394,
+            -1.0540000200271606,
+            3.04294490814209
+          ],
+          [
+            0.9769046902656555,
+            -1.0540000200271606,
+            3.038299083709717
+          ],
+          [
+            0.9731300473213196,
+            -1.0540000200271606,
+            3.0334625244140625
+          ],
+          [
+            0.9695972800254822,
+            -1.0540000200271606,
+            3.0284461975097656
+          ],
+          [
+            0.9663149118423462,
+            -1.0540000200271606,
+            3.0232627391815186
+          ],
+          [
+            0.9632908701896667,
+            -1.0540000200271606,
+            3.0179245471954346
+          ],
+          [
+            0.9605323672294617,
+            -1.0540000200271606,
+            3.012444496154785
+          ],
+          [
+            0.9580460786819458,
+            -1.0540000200271606,
+            3.006835460662842
+          ],
+          [
+            0.9558379650115967,
+            -1.0540000200271606,
+            3.0011112689971924
+          ],
+          [
+            0.9539134502410889,
+            -1.0540000200271606,
+            2.9952855110168457
+          ],
+          [
+            0.9522770643234253,
+            -1.0540000200271606,
+            2.989372491836548
+          ],
+          [
+            0.9509328603744507,
+            -1.0540000200271606,
+            2.983386278152466
+          ],
+          [
+            0.9498839378356934,
+            -1.0540000200271606,
+            2.977341413497925
+          ],
+          [
+            0.9491329193115234,
+            -1.0540000200271606,
+            2.971252202987671
+          ],
+          [
+            0.9486815929412842,
+            -1.0540000200271606,
+            2.9651334285736084
+          ],
+          [
+            0.9485309720039368,
+            -1.0540000200271606,
+            2.9590001106262207
+          ],
+          [
+            0.9485309720039368,
+            -1.0540000200271606,
+            2.0439999103546143
+          ],
+          [
+            0.9485309720039368,
+            -1.0540000200271606,
+            1.9290000200271606
+          ],
+          [
+            1.0479999780654907,
+            -1.0540000200271606,
+            1.9290000200271606
+          ],
+          [
+            1.0479999780654907,
+            -1.100000023841858,
+            1.9290000200271606
+          ],
+          [
+            1.0479999780654907,
+            -1.100000023841858,
+            0.30000001192092896
+          ],
+          [
+            1.0479999780654907,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            1.0479999780654907,
+            -2.180000066757202,
+            0.10499999672174454
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.10499999672174454
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1519999504089355,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1519999504089355,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              1.440999984741211,
+              -1.0399999618530273,
+              3.0239999294281006
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              1.4414692536410738,
+              -1.0399999618530273,
+              3.022055809246179
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              1.4419385225409367,
+              -1.0399999618530273,
+              3.020111689064257
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              1.4424077914407996,
+              -1.0399999618530273,
+              3.018167568882336
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              1.4428770603406624,
+              -1.0399999618530273,
+              3.0162234487004143
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 2302,
+            "center": [
+              1.0479999780654907,
+              -2.0237900221489555,
+              0.30000001192092896
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 4602,
+            "center": [
+              -1.1519999504089355,
+              -1.2200000286102295,
+              1.2210001155518437
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 4603,
+            "center": [
+              -1.1519999504089355,
+              -1.2200000286102295,
+              1.2230000696968517
+            ],
+            "radius": 0.005460000000000107
+          },
+          {
+            "index": 4604,
+            "center": [
+              -1.1519999504089355,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "cables",
+        "vertex_offset": 169524,
+        "ring_sides": 12,
+        "ring_count": 1965,
+        "radius_m": 0.006,
+        "length_m": 3.9249567522000843,
+        "rib_pitch_m": 0.007993801939307708,
+        "points_m": [
+          [
+            -0.03680608049035072,
+            -1.2112499475479126,
+            2.515000104904175
+          ],
+          [
+            0.0,
+            -1.2912499904632568,
+            2.2799999713897705
+          ],
+          [
+            6.29468431936195e-17,
+            -1.2912499904632568,
+            2.1630001068115234
+          ],
+          [
+            -0.10076162219047546,
+            -1.2912499904632568,
+            2.1580498218536377
+          ],
+          [
+            -0.20055285096168518,
+            -1.2912499904632568,
+            2.143247365951538
+          ],
+          [
+            -0.29841265082359314,
+            -1.2912499904632568,
+            2.11873459815979
+          ],
+          [
+            -0.39339858293533325,
+            -1.2912499904632568,
+            2.0847482681274414
+          ],
+          [
+            -0.4845958352088928,
+            -1.2912499904632568,
+            2.0416150093078613
+          ],
+          [
+            -0.5711262226104736,
+            -1.2912499904632568,
+            1.9897507429122925
+          ],
+          [
+            -0.6521562933921814,
+            -1.2912499904632568,
+            1.9296547174453735
+          ],
+          [
+            -0.7269057631492615,
+            -1.2912499904632568,
+            1.861905813217163
+          ],
+          [
+            -0.7946547269821167,
+            -1.2912499904632568,
+            1.787156343460083
+          ],
+          [
+            -0.8547507524490356,
+            -1.2912499904632568,
+            1.7061262130737305
+          ],
+          [
+            -0.9066150784492493,
+            -1.2912499904632568,
+            1.6195958852767944
+          ],
+          [
+            -0.949748158454895,
+            -1.2912499904632568,
+            1.5283985137939453
+          ],
+          [
+            -0.983734667301178,
+            -1.2912499904632568,
+            1.4334126710891724
+          ],
+          [
+            -1.0082472562789917,
+            -1.2912499904632568,
+            1.3355528116226196
+          ],
+          [
+            -1.0230499505996704,
+            -1.2912499904632568,
+            1.2357616424560547
+          ],
+          [
+            -1.027999997138977,
+            -1.2912499904632568,
+            1.1349999904632568
+          ],
+          [
+            -1.0449999570846558,
+            -1.2912499904632568,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1950000524520874,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1950000524520874,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              -0.03680608049035072,
+              -1.2112499475479126,
+              2.515000104904175
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              -0.036512982758567944,
+              -1.2118870114092042,
+              2.5131287290208832
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              -0.03621988502678516,
+              -1.212524075270496,
+              2.5112573531375917
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              -0.03592678729500238,
+              -1.2131611391317876,
+              2.5093859772543006
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              -0.03563368956321959,
+              -1.2137982029930794,
+              2.507514601371009
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 982,
+            "center": [
+              -1.0274616529788616,
+              -1.2912499904632568,
+              1.1444976663655526
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 1962,
+            "center": [
+              -1.1950000524520874,
+              -1.2200000286102295,
+              1.2210031228722045
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 1963,
+            "center": [
+              -1.1950000524520874,
+              -1.2200000286102295,
+              1.2230015733570312
+            ],
+            "radius": 0.005460000000000036
+          },
+          {
+            "index": 1964,
+            "center": [
+              -1.1950000524520874,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "cables",
+        "vertex_offset": 193104,
+        "ring_sides": 12,
+        "ring_count": 2173,
+        "radius_m": 0.006,
+        "length_m": 4.342080060376772,
+        "rib_pitch_m": 0.0079964641995889,
+        "points_m": [
+          [
+            0.0,
+            -0.6399999856948853,
+            2.515000104904175
+          ],
+          [
+            0.0,
+            -0.7200000286102295,
+            2.2799999713897705
+          ],
+          [
+            6.29468431936195e-17,
+            -0.7200000286102295,
+            2.1630001068115234
+          ],
+          [
+            -0.10076162219047546,
+            -0.7200000286102295,
+            2.1580498218536377
+          ],
+          [
+            -0.20055285096168518,
+            -0.7200000286102295,
+            2.143247365951538
+          ],
+          [
+            -0.29841265082359314,
+            -0.7200000286102295,
+            2.11873459815979
+          ],
+          [
+            -0.39339858293533325,
+            -0.7200000286102295,
+            2.0847482681274414
+          ],
+          [
+            -0.4845958352088928,
+            -0.7200000286102295,
+            2.0416150093078613
+          ],
+          [
+            -0.5711262226104736,
+            -0.7200000286102295,
+            1.9897507429122925
+          ],
+          [
+            -0.6521562933921814,
+            -0.7200000286102295,
+            1.9296547174453735
+          ],
+          [
+            -0.7269057631492615,
+            -0.7200000286102295,
+            1.861905813217163
+          ],
+          [
+            -0.7946547269821167,
+            -0.7200000286102295,
+            1.787156343460083
+          ],
+          [
+            -0.8547507524490356,
+            -0.7200000286102295,
+            1.7061262130737305
+          ],
+          [
+            -0.9066150784492493,
+            -0.7200000286102295,
+            1.6195958852767944
+          ],
+          [
+            -0.949748158454895,
+            -0.7200000286102295,
+            1.5283985137939453
+          ],
+          [
+            -0.983734667301178,
+            -0.7200000286102295,
+            1.4334126710891724
+          ],
+          [
+            -1.0082472562789917,
+            -0.7200000286102295,
+            1.3355528116226196
+          ],
+          [
+            -1.0230499505996704,
+            -0.7200000286102295,
+            1.2357616424560547
+          ],
+          [
+            -1.027999997138977,
+            -0.7200000286102295,
+            1.1349999904632568
+          ],
+          [
+            -1.0449999570846558,
+            -0.7200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1859999895095825,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1859999895095825,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              0.0,
+              -0.6399999856948853,
+              2.515000104904175
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              0.0,
+              -0.640644228232014,
+              2.513107641817531
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              0.0,
+              -0.6412884707691426,
+              2.5112151787308865
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              0.0,
+              -0.6419327133062714,
+              2.5093227156442426
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              0.0,
+              -0.6425769558434001,
+              2.507430252557598
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1086,
+            "center": [
+              -1.0321052003003863,
+              -0.7200000286102295,
+              0.9333623624913252
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 2170,
+            "center": [
+              -1.1859999895095825,
+              -1.2200000286102295,
+              1.2210017917420632
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 2171,
+            "center": [
+              -1.1859999895095825,
+              -1.2200000286102295,
+              1.2230009077919606
+            ],
+            "radius": 0.00546000000000015
+          },
+          {
+            "index": 2172,
+            "center": [
+              -1.1859999895095825,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "cables",
+        "vertex_offset": 219180,
+        "ring_sides": 12,
+        "ring_count": 1953,
+        "radius_m": 0.006,
+        "length_m": 3.8972772417262775,
+        "rib_pitch_m": 0.00798622385599647,
+        "points_m": [
+          [
+            0.13680608570575714,
+            -1.246250033378601,
+            2.4749999046325684
+          ],
+          [
+            0.0,
+            -1.2912499904632568,
+            2.2799999713897705
+          ],
+          [
+            6.29468431936195e-17,
+            -1.2912499904632568,
+            2.1630001068115234
+          ],
+          [
+            -0.10076162219047546,
+            -1.2912499904632568,
+            2.1580498218536377
+          ],
+          [
+            -0.20055285096168518,
+            -1.2912499904632568,
+            2.143247365951538
+          ],
+          [
+            -0.29841265082359314,
+            -1.2912499904632568,
+            2.11873459815979
+          ],
+          [
+            -0.39339858293533325,
+            -1.2912499904632568,
+            2.0847482681274414
+          ],
+          [
+            -0.4845958352088928,
+            -1.2912499904632568,
+            2.0416150093078613
+          ],
+          [
+            -0.5711262226104736,
+            -1.2912499904632568,
+            1.9897507429122925
+          ],
+          [
+            -0.6521562933921814,
+            -1.2912499904632568,
+            1.9296547174453735
+          ],
+          [
+            -0.7269057631492615,
+            -1.2912499904632568,
+            1.861905813217163
+          ],
+          [
+            -0.7946547269821167,
+            -1.2912499904632568,
+            1.787156343460083
+          ],
+          [
+            -0.8547507524490356,
+            -1.2912499904632568,
+            1.7061262130737305
+          ],
+          [
+            -0.9066150784492493,
+            -1.2912499904632568,
+            1.6195958852767944
+          ],
+          [
+            -0.949748158454895,
+            -1.2912499904632568,
+            1.5283985137939453
+          ],
+          [
+            -0.983734667301178,
+            -1.2912499904632568,
+            1.4334126710891724
+          ],
+          [
+            -1.0082472562789917,
+            -1.2912499904632568,
+            1.3355528116226196
+          ],
+          [
+            -1.0230499505996704,
+            -1.2912499904632568,
+            1.2357616424560547
+          ],
+          [
+            -1.027999997138977,
+            -1.2912499904632568,
+            1.1349999904632568
+          ],
+          [
+            -1.0449999570846558,
+            -1.2912499904632568,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1770000457763672,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1770000457763672,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              0.13680608570575714,
+              -1.246250033378601,
+              2.4749999046325684
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              0.13567934453542713,
+              -1.2466206545883263,
+              2.4733938753764946
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              0.1345526033650971,
+              -1.2469912757980517,
+              2.4717878461204204
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              0.13342586219476707,
+              -1.2473618970077769,
+              2.4701818168643466
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              0.13229912102443706,
+              -1.2477325182175023,
+              2.4685757876082723
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 976,
+            "center": [
+              -1.027290644183992,
+              -1.2912499904632568,
+              1.1486543628751307
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1950,
+            "center": [
+              -1.1770000457763672,
+              -1.2200000286102295,
+              1.2210069119138596
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 1951,
+            "center": [
+              -1.1770000457763672,
+              -1.2200000286102295,
+              1.223003467877859
+            ],
+            "radius": 0.005460000000000124
+          },
+          {
+            "index": 1952,
+            "center": [
+              -1.1770000457763672,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "cables",
+        "vertex_offset": 242616,
+        "ring_sides": 12,
+        "ring_count": 4813,
+        "radius_m": 0.007,
+        "length_m": 9.621554106508698,
+        "rib_pitch_m": 0.007997966838328095,
+        "points_m": [
+          [
+            2.2049999237060547,
+            0.20000000298023224,
+            1.2200000286102295
+          ],
+          [
+            2.3499999046325684,
+            0.20000000298023224,
+            1.2200000286102295
+          ],
+          [
+            2.3499999046325684,
+            0.5,
+            1.2200000286102295
+          ],
+          [
+            2.3499999046325684,
+            0.5,
+            0.30000001192092896
+          ],
+          [
+            1.0449999570846558,
+            0.5,
+            0.30000001192092896
+          ],
+          [
+            1.0449999570846558,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            1.0449999570846558,
+            -2.180000066757202,
+            0.11999999731779099
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.11999999731779099
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.149999976158142,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.149999976158142,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              2.2049999237060547,
+              0.20000000298023224,
+              1.2200000286102295
+            ],
+            "radius": 0.00574
+          },
+          {
+            "index": 1,
+            "center": [
+              2.2069994154156367,
+              0.20000000298023224,
+              1.2200000286102295
+            ],
+            "radius": 0.006370000000000001
+          },
+          {
+            "index": 2,
+            "center": [
+              2.2089989071252187,
+              0.20000000298023224,
+              1.2200000286102295
+            ],
+            "radius": 0.007
+          },
+          {
+            "index": 3,
+            "center": [
+              2.2109983988348008,
+              0.20000000298023224,
+              1.2200000286102295
+            ],
+            "radius": 0.006370000000000001
+          },
+          {
+            "index": 4,
+            "center": [
+              2.212997890544383,
+              0.20000000298023224,
+              1.2200000286102295
+            ],
+            "radius": 0.00574
+          },
+          {
+            "index": 2406,
+            "center": [
+              1.0449999570846558,
+              -1.7090659358589146,
+              0.30000001192092896
+            ],
+            "radius": 0.007
+          },
+          {
+            "index": 4810,
+            "center": [
+              -1.149999976158142,
+              -1.2200000286102295,
+              1.2210010404226939
+            ],
+            "radius": 0.007
+          },
+          {
+            "index": 4811,
+            "center": [
+              -1.149999976158142,
+              -1.2200000286102295,
+              1.223000532132275
+            ],
+            "radius": 0.006370000000000258
+          },
+          {
+            "index": 4812,
+            "center": [
+              -1.149999976158142,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.00574
+          }
+        ]
+      },
+      {
+        "part": "cables",
+        "vertex_offset": 300372,
+        "ring_sides": 12,
+        "ring_count": 5185,
+        "radius_m": 0.007,
+        "length_m": 10.365285701183991,
+        "rib_pitch_m": 0.007997905633629622,
+        "points_m": [
+          [
+            2.2049999237060547,
+            0.949999988079071,
+            1.2200000286102295
+          ],
+          [
+            2.3499999046325684,
+            0.949999988079071,
+            1.2200000286102295
+          ],
+          [
+            2.3499999046325684,
+            1.25,
+            1.2200000286102295
+          ],
+          [
+            2.3499999046325684,
+            1.25,
+            0.30000001192092896
+          ],
+          [
+            1.0449999570846558,
+            1.25,
+            0.30000001192092896
+          ],
+          [
+            1.0449999570846558,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            1.0449999570846558,
+            -2.180000066757202,
+            0.11999999731779099
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.11999999731779099
+          ],
+          [
+            -1.0449999570846558,
+            -2.180000066757202,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1410000324249268,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.1410000324249268,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              2.2049999237060547,
+              0.949999988079071,
+              1.2200000286102295
+            ],
+            "radius": 0.00574
+          },
+          {
+            "index": 1,
+            "center": [
+              2.206999400114462,
+              0.949999988079071,
+              1.2200000286102295
+            ],
+            "radius": 0.006370000000000001
+          },
+          {
+            "index": 2,
+            "center": [
+              2.2089988765228696,
+              0.949999988079071,
+              1.2200000286102295
+            ],
+            "radius": 0.007
+          },
+          {
+            "index": 3,
+            "center": [
+              2.210998352931277,
+              0.949999988079071,
+              1.2200000286102295
+            ],
+            "radius": 0.006370000000000001
+          },
+          {
+            "index": 4,
+            "center": [
+              2.212997829339684,
+              0.949999988079071,
+              1.2200000286102295
+            ],
+            "radius": 0.00574
+          },
+          {
+            "index": 2592,
+            "center": [
+              1.0449999570846558,
+              -1.3309316934607143,
+              0.30000001192092896
+            ],
+            "radius": 0.00574
+          },
+          {
+            "index": 5182,
+            "center": [
+              -1.1410000324249268,
+              -1.2200000286102295,
+              1.221001071025043
+            ],
+            "radius": 0.007
+          },
+          {
+            "index": 5183,
+            "center": [
+              -1.1410000324249268,
+              -1.2200000286102295,
+              1.2230005474334504
+            ],
+            "radius": 0.006369999999999946
+          },
+          {
+            "index": 5184,
+            "center": [
+              -1.1410000324249268,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.00574
+          }
+        ]
+      },
+      {
+        "part": "mod_eco_drive",
+        "vertex_offset": 40,
+        "ring_sides": 12,
+        "ring_count": 3653,
+        "radius_m": 0.006,
+        "length_m": 7.300319895951307,
+        "rib_pitch_m": 0.007995969217909427,
+        "points_m": [
+          [
+            0.6820000410079956,
+            1.2599999904632568,
+            3.1695001125335693
+          ],
+          [
+            0.7070000171661377,
+            1.2599999904632568,
+            3.1695001125335693
+          ],
+          [
+            0.7070000171661377,
+            1.2599999904632568,
+            2.859999895095825
+          ],
+          [
+            0.7070000171661377,
+            1.2599999904632568,
+            2.859999895095825
+          ],
+          [
+            0.0,
+            1.2599999904632568,
+            2.190000057220459
+          ],
+          [
+            6.29468431936195e-17,
+            1.2599999904632568,
+            2.1630001068115234
+          ],
+          [
+            -0.10076162219047546,
+            1.2599999904632568,
+            2.1580498218536377
+          ],
+          [
+            -0.20055285096168518,
+            1.2599999904632568,
+            2.143247365951538
+          ],
+          [
+            -0.29841265082359314,
+            1.2599999904632568,
+            2.11873459815979
+          ],
+          [
+            -0.39339858293533325,
+            1.2599999904632568,
+            2.0847482681274414
+          ],
+          [
+            -0.4845958352088928,
+            1.2599999904632568,
+            2.0416150093078613
+          ],
+          [
+            -0.5711262226104736,
+            1.2599999904632568,
+            1.9897507429122925
+          ],
+          [
+            -0.6521562933921814,
+            1.2599999904632568,
+            1.9296547174453735
+          ],
+          [
+            -0.7269057631492615,
+            1.2599999904632568,
+            1.861905813217163
+          ],
+          [
+            -0.7946547269821167,
+            1.2599999904632568,
+            1.787156343460083
+          ],
+          [
+            -0.8547507524490356,
+            1.2599999904632568,
+            1.7061262130737305
+          ],
+          [
+            -0.9066150784492493,
+            1.2599999904632568,
+            1.6195958852767944
+          ],
+          [
+            -0.949748158454895,
+            1.2599999904632568,
+            1.5283985137939453
+          ],
+          [
+            -0.983734667301178,
+            1.2599999904632568,
+            1.4334126710891724
+          ],
+          [
+            -1.0082472562789917,
+            1.2599999904632568,
+            1.3355528116226196
+          ],
+          [
+            -1.0230499505996704,
+            1.2599999904632568,
+            1.2357616424560547
+          ],
+          [
+            -1.027999997138977,
+            1.2599999904632568,
+            1.1349999904632568
+          ],
+          [
+            -1.0449999570846558,
+            1.2599999904632568,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.2050000429153442,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.2050000429153442,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              0.6820000410079956,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              0.6839990333124729,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              0.6859980256169503,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              0.6879970179214276,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              0.6899960102259051,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1826,
+            "center": [
+              -1.0424557077343168,
+              1.2599999904632568,
+              0.42496901482232663
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3650,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.2210020392329035
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3651,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.2230010315373807
+            ],
+            "radius": 0.005460000000000038
+          },
+          {
+            "index": 3652,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "mod_direct_drive",
+        "vertex_offset": 40,
+        "ring_sides": 12,
+        "ring_count": 3641,
+        "radius_m": 0.006,
+        "length_m": 7.279924127645621,
+        "rib_pitch_m": 0.007999916623786397,
+        "points_m": [
+          [
+            0.6820000410079956,
+            1.2599999904632568,
+            3.1695001125335693
+          ],
+          [
+            0.6940000653266907,
+            1.2599999904632568,
+            3.1695001125335693
+          ],
+          [
+            0.6940000653266907,
+            1.2599999904632568,
+            2.859999895095825
+          ],
+          [
+            0.6940000653266907,
+            1.2599999904632568,
+            2.859999895095825
+          ],
+          [
+            0.0,
+            1.2599999904632568,
+            2.190000057220459
+          ],
+          [
+            6.29468431936195e-17,
+            1.2599999904632568,
+            2.1630001068115234
+          ],
+          [
+            -0.10076162219047546,
+            1.2599999904632568,
+            2.1580498218536377
+          ],
+          [
+            -0.20055285096168518,
+            1.2599999904632568,
+            2.143247365951538
+          ],
+          [
+            -0.29841265082359314,
+            1.2599999904632568,
+            2.11873459815979
+          ],
+          [
+            -0.39339858293533325,
+            1.2599999904632568,
+            2.0847482681274414
+          ],
+          [
+            -0.4845958352088928,
+            1.2599999904632568,
+            2.0416150093078613
+          ],
+          [
+            -0.5711262226104736,
+            1.2599999904632568,
+            1.9897507429122925
+          ],
+          [
+            -0.6521562933921814,
+            1.2599999904632568,
+            1.9296547174453735
+          ],
+          [
+            -0.7269057631492615,
+            1.2599999904632568,
+            1.861905813217163
+          ],
+          [
+            -0.7946547269821167,
+            1.2599999904632568,
+            1.787156343460083
+          ],
+          [
+            -0.8547507524490356,
+            1.2599999904632568,
+            1.7061262130737305
+          ],
+          [
+            -0.9066150784492493,
+            1.2599999904632568,
+            1.6195958852767944
+          ],
+          [
+            -0.949748158454895,
+            1.2599999904632568,
+            1.5283985137939453
+          ],
+          [
+            -0.983734667301178,
+            1.2599999904632568,
+            1.4334126710891724
+          ],
+          [
+            -1.0082472562789917,
+            1.2599999904632568,
+            1.3355528116226196
+          ],
+          [
+            -1.0230499505996704,
+            1.2599999904632568,
+            1.2357616424560547
+          ],
+          [
+            -1.027999997138977,
+            1.2599999904632568,
+            1.1349999904632568
+          ],
+          [
+            -1.0449999570846558,
+            1.2599999904632568,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.2050000429153442,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.2050000429153442,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              0.6820000410079956,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              0.6840000201639422,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              0.6859999993198888,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              0.6879999784758354,
+              1.2599999904632568,
+              3.1695001125335693
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              0.6899981923048925,
+              1.2599999904632568,
+              3.169446998478519
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1820,
+            "center": [
+              -1.042663286636839,
+              1.2599999904632568,
+              0.41477324353251954
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 3638,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.2210000655299655
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3639,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.2230000446859117
+            ],
+            "radius": 0.005460000000000125
+          },
+          {
+            "index": 3640,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      },
+      {
+        "part": "gpz_drive",
+        "vertex_offset": 40,
+        "ring_sides": 12,
+        "ring_count": 3421,
+        "radius_m": 0.006,
+        "length_m": 6.838018624821199,
+        "rib_pitch_m": 0.007997682602130057,
+        "points_m": [
+          [
+            0.09200000017881393,
+            0.6000000238418579,
+            3.7017500400543213
+          ],
+          [
+            0.10400000214576721,
+            0.6000000238418579,
+            3.7017500400543213
+          ],
+          [
+            0.10400000214576721,
+            0.6000000238418579,
+            3.0999999046325684
+          ],
+          [
+            0.10400000214576721,
+            -0.1899999976158142,
+            3.0999999046325684
+          ],
+          [
+            0.0,
+            -0.1899999976158142,
+            2.190000057220459
+          ],
+          [
+            6.29468431936195e-17,
+            -0.1899999976158142,
+            2.1630001068115234
+          ],
+          [
+            -0.10076162219047546,
+            -0.1899999976158142,
+            2.1580498218536377
+          ],
+          [
+            -0.20055285096168518,
+            -0.1899999976158142,
+            2.143247365951538
+          ],
+          [
+            -0.29841265082359314,
+            -0.1899999976158142,
+            2.11873459815979
+          ],
+          [
+            -0.39339858293533325,
+            -0.1899999976158142,
+            2.0847482681274414
+          ],
+          [
+            -0.4845958352088928,
+            -0.1899999976158142,
+            2.0416150093078613
+          ],
+          [
+            -0.5711262226104736,
+            -0.1899999976158142,
+            1.9897507429122925
+          ],
+          [
+            -0.6521562933921814,
+            -0.1899999976158142,
+            1.9296547174453735
+          ],
+          [
+            -0.7269057631492615,
+            -0.1899999976158142,
+            1.861905813217163
+          ],
+          [
+            -0.7946547269821167,
+            -0.1899999976158142,
+            1.787156343460083
+          ],
+          [
+            -0.8547507524490356,
+            -0.1899999976158142,
+            1.7061262130737305
+          ],
+          [
+            -0.9066150784492493,
+            -0.1899999976158142,
+            1.6195958852767944
+          ],
+          [
+            -0.949748158454895,
+            -0.1899999976158142,
+            1.5283985137939453
+          ],
+          [
+            -0.983734667301178,
+            -0.1899999976158142,
+            1.4334126710891724
+          ],
+          [
+            -1.0082472562789917,
+            -0.1899999976158142,
+            1.3355528116226196
+          ],
+          [
+            -1.0230499505996704,
+            -0.1899999976158142,
+            1.2357616424560547
+          ],
+          [
+            -1.027999997138977,
+            -0.1899999976158142,
+            1.1349999904632568
+          ],
+          [
+            -1.0449999570846558,
+            -0.1899999976158142,
+            0.30000001192092896
+          ],
+          [
+            -1.0449999570846558,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.2050000429153442,
+            -1.2200000286102295,
+            0.30000001192092896
+          ],
+          [
+            -1.2050000429153442,
+            -1.2200000286102295,
+            1.225000023841858
+          ]
+        ],
+        "samples": [
+          {
+            "index": 0,
+            "center": [
+              0.09200000017881393,
+              0.6000000238418579,
+              3.7017500400543213
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1,
+            "center": [
+              0.09399942082934645,
+              0.6000000238418579,
+              3.7017500400543213
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 2,
+            "center": [
+              0.09599884147987896,
+              0.6000000238418579,
+              3.7017500400543213
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3,
+            "center": [
+              0.09799826213041148,
+              0.6000000238418579,
+              3.7017500400543213
+            ],
+            "radius": 0.0054600000000000004
+          },
+          {
+            "index": 4,
+            "center": [
+              0.09999592245402761,
+              0.6000000238418579,
+              3.701697075385357
+            ],
+            "radius": 0.004920000000000001
+          },
+          {
+            "index": 1710,
+            "center": [
+              -0.9037048774941814,
+              -0.1899999976158142,
+              1.6231600660741428
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3418,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.2210011825407925
+            ],
+            "radius": 0.006
+          },
+          {
+            "index": 3419,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.2230006031913243
+            ],
+            "radius": 0.0054600000000000985
+          },
+          {
+            "index": 3420,
+            "center": [
+              -1.2050000429153442,
+              -1.2200000286102295,
+              1.225000023841858
+            ],
+            "radius": 0.004920000000000001
+          }
+        ]
+      }
+    ],
+    "removed_channels": 19,
+    "cabinet_door_restored_sha256": "e020cfbbea60ea8fa368a86b09d76b906f91ea9677713e761d8d3c8dfbcfa0c9",
+    "actuator_core_vertices_preserved": 912,
+    "prior_secured_routes_restored": true,
+    "lower_open_trays_preserved": true
+  }
+}

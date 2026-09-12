@@ -1,6 +1,20 @@
 # S-4000 Comfort CAD build
 
-Release `2026.09.10.1`, 2026-09-10, Codex / GPT-6 Astra.
+Latest CAD and Blender revision: `2026.09.11.1`, 2026-09-11, Codex / GPT-6 Astra. The original assembly recipe below remains version `2026.09.10.1`; subsequent source revisions and their CAD handoff are documented below.
+
+## Floor layout and supplied A31 — 2026.09.11.1
+
+`floor_layout.py` derives only changed route groups from the immutable .6 schedule. `revise_floor_layout.py` consumes a verified .6 scene, puts FV at Z=0, translates DA and its details by +1 m, and regenerates the DA feed. A braced frame supports both actual saddle plates at Y=-1.2/+1.2 m. The source CAD has bolt tips below its bearing plates; measured 26/36 mm pads bridge that difference. Do not use the bolt positions as saddle centres.
+
+The owner-supplied A31 DN25 FF DWG is a flat ModelSpace SURFACE. `SurfaceMeshExport.cs` uses AutoCAD 2027 `SubDMesh.GetObjectMesh` with 0.1 drawing-unit surface deviation, normal setting 6 and triangular mesh type 2, without modifying the source. Compile against AutoCAD 2027 .NET assemblies; load the DLL in a private read-only copy. Restore any temporary trusted path immediately after NETLOAD. `S4SURFACEMESH` writes `flat-mesh.json` in a fresh directory. The importer accepts `trap-mesh.json.gz` containing the same `solids` array plus `source.json` with the ZIP-entry name and SHA-256. Keep these vendor files outside public Git.
+
+The supplied file incorrectly declares inches. Validate numeric flange spacing 160, outer diameter 115 and raised-face diameter 68 before applying 0.001 m/mm. The accepted geometry has 41,681 vertices and 83,390 triangles. Its original SHA-256 and a fresh-original mesh comparison are recorded in `manufacturer-source-verification.json`. CAD-to-world orientation is rigid: raw X upward, raw Z along negative world X.
+
+Run `revise_floor_layout.py --source <verified-.6> --output <fresh-.11.1> --trap <private-trap-folder>` inside Blender. Then run `verify_blender_opening.py` with six review views: `01-closed 02-both-open 07-deaerator-rotated 09-blowdown 10-routing 12-condensate-trap`. The usual graph, extraction, native CAD and door checks below apply with version `2026.09.11.1`. Review ten CAD views, including `S4000TRAPVIEW`.
+
+`verify_blowdown.py` now distinguishes a real A31 edge from the previous missing-device gap. There is a single 1.125 m pressure-driven rise after the trap; it is explicitly not gravity discharge. Hydraulic capacity, orifice and pressure differential remain unverified. The auxiliary strainer/check valve are not silently added. The test checks all option branches; the .6 missing-device behavior remains supported.
+
+Package with `package_cad_opening.py` and `package_floor_blender.py` only after visual review. Date metadata is inherited from the new source, not hardcoded to the previous day. The owner explicitly requested removal of obsolete drawing deliveries. Retain the latest S3000 .5 and S4000 .11.1, original construction/vendor inputs and Git history; remove only inventoried obsolete binaries after current package verification. Historical recipes below require rebuilding their intermediate scenes after that cleanup.
 
 The pipeline produces a detailed, editable AutoCAD assembly from the supplied S-4000, EQS2-4000, DA-15, V4-19 and LCS600 STEP files, two KM125/KM225 DWGs, separator PDFs and the S-4000 equipment worksheets. Reused burner/instrument geometry comes from the S-3000 cabinet release `2026.09.09.5`.
 
@@ -73,3 +87,112 @@ After the actual image review, run:
 ```
 
 The archive includes DWG, controls, BOM, missing-model register, source hashes, previews and proof. The detailed Blender scene and intermediary DXF remain outside this portable archive. ZIP CRC and every included file's SHA-256 are checked after packaging. Use `native_cad.py --plots-only` with a fresh private directory to adjust plot framing without changing the verified DWG.
+
+## Separate Blender opening release — 2026.09.10.2
+
+Version `2026.09.10.2`, 2026-09-10, Codex / GPT-6 Astra adds two independent native hinges to a **new copy** of the accepted S-4000 scene. The CAD release above is preserved. The animation uses ordinary rotation keyframes and constraints; there are no drivers, auto-run text modules or required add-ons.
+
+Use the full construction STEP `PR.4000.01.001(S)СБ Котел паровой (1,2 МПа).stp`, SHA-256 `5d649d598b9a101cb9b273da51c9fc9091253da4faf72fc3e10124253d32d28f`. This is a different input from the exterior BIM STEP. The extractor whitelists its 96 smoke tubes and one furnace tube, excluding 571 other solids. The hole mask and inner door lining are generated presentation geometry. Do not substitute or scale S-3000 tubes.
+
+Supply `$s4ConstructionStep`, the previous detailed `$s4SourceBlend`, its `$s4SourceManifest`, the unchanged `$s4SourceDwg`, and fresh private `$s4OpeningCache` / `$s4OpeningOutput` paths. The inspector used for the inventory is the shared `tools/s3000/inspect_step_internals.py` tool; its input must be the S-4000 construction STEP.
+
+```powershell
+& $s4Py tools/s3000/inspect_step_internals.py $s4ConstructionStep "$s4OpeningCache/s4000-internals.json"
+& $s4Py tools/s4000/extract_opening_tubes.py --source $s4ConstructionStep --inventory "$s4OpeningCache/s4000-internals.json" --output "$s4OpeningCache/visible-tubes.json.gz"
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/build_blender_opening.py -- --source $s4SourceBlend --manifest $s4SourceManifest --tubes "$s4OpeningCache/visible-tubes.json.gz" --output $s4OpeningOutput
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4OpeningOutput --render
+```
+
+The verifier checks every one of the 193 animation frames for fixed hinge positions, pure rotation and rigid attachment. It compares 67 retained source-part fingerprints, the placement of 10 source meshes, and 71 static part fingerprints in open states. Review all six final PNGs, then open the exact saved file in native Blender and verify play/pause and direct frame entry. These checks do not constitute a stable-FPS benchmark or full collision-clearance analysis.
+
+Copy the release README to `$s4OpeningOutput/README.md` and `docs/s4000-missing-models-20260910.md` to `$s4OpeningOutput/Недостающие модели.md`. Only after the image and native UI review, run:
+
+```powershell
+& $s4Py tools/s4000/package_blender_opening.py --delivery $s4OpeningOutput --source-scene $s4SourceBlend --source-step $s4ConstructionStep --source-dwg $s4SourceDwg --reviewed --native-ui-reviewed
+```
+
+The packager checks source hashes again and verifies ZIP CRC and every archived file's hash. The receipt `package.json` remains outside the archive to avoid a circular archive hash. Publish only code, review images and summary proofs; the `.blend`, source CAD, mesh caches and prices stay in the private delivery.
+
+## Deaerator rotation revision — 2026.09.10.3
+
+Version `2026.09.10.3`, 2026-09-10, Codex / GPT-6 Astra rotates DA-15 and all its attached details exactly 180 degrees about the vertical line through `(-3.65, 0, 0.84414)` metres. The original local geometry is preserved. The source outlet moves from `(-2.84, 1.525, 0.84414)` to `(-4.46, -1.525, 0.84414)` and faces negative X. Only the DA-to-supply-boundary pipe is rebuilt; all downstream equipment and door controls remain unchanged.
+
+Use the verified `2026.09.10.2` directory as `$s4OpeningPrevious` and a fresh `$s4RotatedOutput`. The revision refuses to overwrite an existing released scene.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/rotate_blender_deaerator.py -- --source $s4OpeningPrevious --output $s4RotatedOutput
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4RotatedOutput --render
+& $s4Py tools/s4000/verify_options.py "$s4RotatedOutput/assembly-source.json" --output "$s4RotatedOutput/configuration-checks.json"
+```
+
+Review all seven images. Copy this revision's release README and the missing-model register to the delivery, as above. The following packaging command records that native UI actions were checked in the previous revision, while the current file is checked through fresh-process loading, all animation frames and rendered review. Pass `--native-ui-reviewed` only after actually repeating those native UI actions on the current revision.
+
+```powershell
+& $s4Py tools/s4000/package_blender_opening.py --delivery $s4RotatedOutput --source-scene $s4SourceBlend --source-step $s4ConstructionStep --source-dwg $s4SourceDwg --previous-scene "$s4OpeningPrevious/S4000_COMFORT_OPENING_v2026.09.10.2.blend" --prior-native-report "$s4OpeningPrevious/native-ui-review.json" --reviewed
+```
+
+The fresh-process verifier checks every deaerator object's matrix against its prior matrix multiplied by the 180-degree turn, verifies the changed outlet normal and both pipe endpoints, then checks unchanged door animation and static equipment. The separate graph verifier rechecks all 64 option combinations against the updated manifest.
+
+## AutoCAD handoff with opening doors — 2026.09.10.4
+
+This release exports all 74 existing parts and the four added boiler opening parts from the immutable `2026.09.10.3` Blender scene at closed frame 1. It exports 78 named native blocks, 978 MESH entities and 6,598,419 triangles. No decimation is applied. The four additional roots are the boiler door, door labels, selected real tubes and presentation tubeplate mask.
+
+`$s4CadOpeningOutput` and `$s4CadOpeningCache` must be fresh local directories outside the repository. `$s4RotatedOutput` is the verified Blender `.3` delivery and `$s4Output` is the original `.1` CAD delivery. Paths handed to AutoLISP scripts must be ASCII; original source paths are read by Python/Blender.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/prepare_opening_cad.py -- --source $s4RotatedOutput --output $s4CadOpeningOutput --cache "$s4CadOpeningCache/meshes"
+& $s4Py tools/s4000/create_cad.py --cache "$s4CadOpeningCache/meshes" --manifest "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningOutput/AutoCAD"
+& $s4Py tools/s4000/verify_options.py "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningOutput/configuration-checks.json"
+& $s4Py tools/s4000/check_cad_doors.py "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.10.4.dxf" --manifest "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningCache/door-fixture" --fixture
+& $s4Py tools/s4000/native_cad.py "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.10.4.dxf" --manifest "$s4CadOpeningOutput/assembly.json" --private "$s4CadOpeningCache/native" --plots
+& $s4Py tools/s4000/check_cad_doors.py "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_v2026.09.10.4.dwg" --manifest "$s4CadOpeningOutput/assembly.json" --output "$s4CadOpeningCache/doors-full" --plots --open-copy "$s4CadOpeningOutput/AutoCAD/S4000_COMFORT_8-12bar_OPEN_v2026.09.10.4.dwg"
+& $s4OfficePy tools/s4000/render_cad_opening.py --native "$s4CadOpeningCache/native/full-options" --doors "$s4CadOpeningCache/doors-full" --output "$s4CadOpeningOutput/previews"
+```
+
+Native `sd4:` functions avoid the existing `s4:` equipment namespace. The seven explicitly declared moving blocks use independent closed/open target angles about the Blender hinge coordinates, with one metre-to-millimetre conversion. Nine tests compare every block, exercise idempotent calls, preserve open poses while changing equipment, and reopen the separately saved open DWG. The immutable closed DWG also passes the full vertex/topology roundtrip proof and all native equipment-state checks.
+
+Review all six actual AutoCAD PNGs before running the packager. The native PDFs are retained as private QA intermediates; the portable delivery contains the reviewed images. The packager checks the `.3` Blender and `.1` DWG hashes again, includes both new DWGs and the inherited catalog without prices, and checks every ZIP member's CRC and SHA-256.
+
+```powershell
+& $s4Py tools/s4000/package_cad_opening.py --delivery $s4CadOpeningOutput --repo . --blender-source $s4RotatedOutput --previous-cad $s4Output --native-plots "$s4CadOpeningCache/native/full-options" --door-plots "$s4CadOpeningCache/doors-full" --fixture "$s4CadOpeningCache/door-fixture" --native-plots-reviewed
+```
+
+The optional local launcher targets the user's installed `E:\AutoCAD 2027\acad.exe`. Its startup script defines the reviewed commands in the opened drawing only. Portable manual use is `APPLOAD` of `S4000-controls.lsp`, followed by `S4000PANEL` or `S4000OPTIONS`; keep both DCL files alongside the DWG. No startup suite, registry, trusted-path or `SECURELOAD` settings are changed. Native command tests and desktop dialog button clicks remain distinct verification facts.
+
+## Pressure gooseneck correction — 2026.09.10.5
+
+Version `2026.09.10.5`, 2026-09-10, Codex / GPT-6 Astra replaces only the incorrect closed oval in `pressure_header` and the three associated pressure-instrument cable leads. The user explicitly selected the open bend form from the DA-15 reference while retaining the boiler instruments. Absolute DA installation dimensions, DN32 and DA instruments are not substituted for the installed boiler takeoff and instruments.
+
+Use the immutable Blender `.3` delivery as `$s4PressureSource`, fresh `$s4PressureBlender` and `$s4PressureCad` delivery directories, and private `$s4PressureCache`. Supply the owner's three local reference image paths as `$s4PressureReferences`; do not commit those images. The revision verifies the old scene hash, identifies the exact three-lead vertex/face prefix, replaces that prefix, and verifies the untouched cable tail plus all 72 other existing parts and five instrument objects.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/revise_pressure_gooseneck.py -- --source $s4PressureSource --output $s4PressureBlender --references $s4PressureReferences
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4PressureBlender --render --views 01-closed 08-pressure-gooseneck
+& $s4Py tools/s4000/verify_options.py "$s4PressureBlender/assembly-source.json" --output "$s4PressureBlender/configuration-checks.json"
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/prepare_opening_cad.py -- --source $s4PressureBlender --output $s4PressureCad --cache "$s4PressureCache/meshes" --version 2026.09.10.5
+& $s4Py tools/s4000/create_cad.py --cache "$s4PressureCache/meshes" --manifest "$s4PressureCad/assembly.json" --output "$s4PressureCad/AutoCAD"
+```
+
+Then run the same native/door/configuration verification commands above with `.5` paths and fresh private verification directories. The pressure revision automatically adds the saved view `S4000_PRESSURE` and command `S4000PRESSUREVIEW`. The full door plot run also creates `S4000-pressure-gooseneck.pdf`. Render and inspect all **seven** current AutoCAD views before packaging; the packager requires the pressure proof and the extra native view for this revision. The previous CAD and Blender releases remain separate and unchanged.
+
+## Blowdown piping revision — 2026.09.10.6
+
+The owner's other plant thermal PDF/DWG supplies functional stream relationships, not dimensions or an expanded Comfort Plus BOM. Its K5/K6 boiler callouts conflict with the K6/K7 vessel schedule. The function/name-based interpretation and missing equipment are recorded in `docs/s4000-piping-audit-20260910.md`. The actual DWG is mostly paper-space entities on `Лист1`, with repeated alternatives; do not infer an empty scheme from the two model-space text entities.
+
+`blowdown_layout.py` defines physical ports and independently selectable piping groups. Existing source meshes provide BCV7432/BCV925 faces; each separator's own PDF provides its ports. `revise_blowdown_layout.py` opens immutable `.5`, preserves 66 untouched source-part fingerprints, adjusts only eight existing parts, and adds 27 groups. It retains all door controllers and the previous pressure/instrument revision. No source CAD, reference drawing, web file or application setting is modified.
+
+Use fresh private paths `$s4BlowdownBlender`, `$s4BlowdownCad`, `$s4BlowdownCache`, and the four reference PDF/DWG paths in `$s4BlowdownReferences`. `--connect-da` is intentionally omitted for this release: the DN50 recipient remains unconfirmed. Add that argument only after the owner confirms the port's function, then create another fresh revision and repeat downstream checks. It archives only the old DN50 blind cover; tank, flange and bolts are retained.
+
+```powershell
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/revise_blowdown_layout.py -- --source $s4PressureBlender --output $s4BlowdownBlender --references $s4BlowdownReferences
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/verify_blender_opening.py -- --directory $s4BlowdownBlender --render --views 09-blowdown 10-routing 11-lower-blowdown
+& $s4Py tools/s4000/verify_options.py "$s4BlowdownBlender/assembly-source.json" --output "$s4BlowdownBlender/configuration-checks.json"
+& $s4Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tools/s4000/prepare_opening_cad.py -- --source $s4BlowdownBlender --output $s4BlowdownCad --cache "$s4BlowdownCache/meshes" --version 2026.09.10.6
+& $s4Py tools/s4000/create_cad.py --cache "$s4BlowdownCache/meshes" --manifest "$s4BlowdownCad/assembly.json" --output "$s4BlowdownCad/AutoCAD"
+```
+
+Run the native, door, graph, render and packaging commands above with `.6` paths and fresh output directories. This derivative has 105 parts including the four opening-only parts. Two new named views/commands are `S4000_BLOWDOWN` / `S4000BLOWDOWNVIEW` and `S4000_ROUTING` / `S4000ROUTINGVIEW`; inspect all **nine** native CAD review images. Each saved view's visual style is set on a separate short command-stream line to avoid Core Console truncation.
+
+`verify_blowdown.py` checks all 64 configurations: continuous blowdown destination, periodic route through the main/bypass branches, independent vents, preserved feed routing, non-increasing liquid elevations, and the explicit 320 mm missing-trap gap. It must never interpret that gap, the SC9 interface or the unconfirmed DA inlet as a connected device. This is a visual assembly with pending interfaces, not hydraulic sizing or a full interference audit.
+
+The release packager records prior `.5` Blender/closed DWG/open DWG hashes in `source-preservation.json`, carries the piping audit and missing-device notes into the archive, and verifies its contents. Keep the supplied thermal PDF/DWG, vessel PDFs, private logs, full `.blend` / `.dwg` / `.dxf` and mesh cache outside public Git.

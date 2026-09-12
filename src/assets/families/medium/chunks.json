@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 113,
-  "bytes": 34172972,
+  "bytes": 34170380,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -98,8 +98,8 @@
         "bottom_piping",
         "trap_support"
       ],
-      "bytes": 4346980,
-      "sha256": "ce82f34fd91909c2cd264420f093ac410730f2cdacb82487cc53654f452f6e38"
+      "bytes": 4344388,
+      "sha256": "79e20337cfa418d5cfe0a6f6dda24d2b6ccc1ed9ec8889f278d96c72a64c5740"
     },
     {
       "file": "s4000-5.glb",

@@ -39,7 +39,9 @@ for family in ['small','medium']:
     route('direct_inlet','Подача питательной воды в котёл',[[.48,1.26,2.78],[.25,1.26,2.78],[.25,float(end[1]),2.78],[float(end[0]),float(end[1]),2.78],end.tolist()])
     rear=.815 if small else 1.697
     axis=.93 if small else 1.06
-    route('flue_spacer','Соединение дымового канала',[[0,rear,axis],[0,2.17,axis],[0,2.17,1.135],[0,2.478,1.135]],.257,'dark',['economizer'])
+    # A shallow offset avoids two short 90-degree bends whose radius would be
+    # smaller than the duct itself. End segments follow both source port axes.
+    route('flue_spacer','Соединение дымового канала',[[0,rear,axis],[0,rear+.16,axis],[0,2.30,1.135],[0,2.478,1.135]],.257,'dark',['economizer'])
     route('bottom_piping','Отвод периодической продувки',[[0,rear,.125],[0,2.2,.125]],.021,'dark')
     # The local valve moves with the boiler. The downstream header and vessel
     # approach roots remain fixed in all BDV/FV states.

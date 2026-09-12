@@ -37,4 +37,3 @@ large: {id:'large', model:'S-4000', range:'4000–5000', parts:largeData.parts, 
 small: {id:'small', model:'S-1000', range:'500–1500', parts:smallData.parts, opening:smallOpening, urls:[small0,small1,small2,small3,small4,small5,small6,small7], tubeCount:null},
 medium: {id:'medium', model:'S-3000', range:'2000–3000', parts:mediumData.parts, opening:mediumOpening, urls:[medium0,medium1,medium2,medium3,medium4,medium5,medium6,medium7], tubeCount:80},
 }
-

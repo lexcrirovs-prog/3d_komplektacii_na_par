@@ -5,10 +5,10 @@ spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 p.VERSION='2026.09.12.2'
 p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-final'
 p.BACKUP=p.ROOT+'/komplektacii4-v2026.09.12.1'
 p.BASELINE_HASH='8d34064c8e3a1c9a287582143a9ed6d792a54b68631992b73f3a059342475604'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-final/'
 def validate(prepared):
     r=json.loads((p.REPO/'artifacts/family-stage/report.json').read_text(encoding='utf8'))
     assert r['status']=='PASSED_FAMILY_BROWSER' and r['base']==p.STAGE_URL

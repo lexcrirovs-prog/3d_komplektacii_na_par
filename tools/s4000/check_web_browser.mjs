@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 import {resolve} from 'node:path';
 import {mkdir,writeFile} from 'node:fs/promises';
@@ -8,6 +9,8 @@ const [base,out]=process.argv.slice(2);await mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const errors=[],checks=[];
 try {
+ const response=await fetch(base+'DEPLOY_MANIFEST.json');assert(response.ok);
+ const manifestSha256=createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex');
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
  page.on('pageerror',e=>errors.push(e.message));
  const requests=[];page.on('request',r=>{if(r.url().includes('.glb'))requests.push(r.url());});
@@ -70,6 +73,6 @@ try {
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
  checks.push('Mobile viewport has no horizontal overflow');
  assert.deepEqual(errors,[]);
- await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_BROWSER_INTERACTION',base,checks,errors},null,2));
+ await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_BROWSER_INTERACTION',base,manifestSha256,checks,errors},null,2));
  console.log(JSON.stringify({status:'PASSED_BROWSER_INTERACTION',checks}));
 } finally {await browser.close();}

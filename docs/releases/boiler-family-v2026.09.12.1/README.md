@@ -75,5 +75,35 @@ vessels, modulation/economizer routes and public descriptions. Browser checks
 cover actual object visibility, pipe transforms, URL reload, trim switching,
 door angles, stationary tube bundle and mobile overflow. Browser screenshots
 are visually reviewed separately; an automated pass alone is not visual approval.
-Publication status will be recorded only after the staged and live copies pass
-the manifest/hash checks and browser interaction checks.
+Publication: **PASSED_PUBLIC_COPY**, verified on 2026-09-12.
+Live: https://prgz.ru/komplektacii4/
+Rollback copy: https://prgz.ru/komplektacii4-v2026.09.09.5/
+
+The staged and live copies passed HTTPS content hashes for 36 public files;
+38 files including private server configuration were checked over SSH. Browser
+interaction passed on both URLs, tied to the same manifest SHA-256:
+`d392bcc73e803d4b385bcdab79fcf9ed7552f5c520ccefe98cc8a7c9ed2628f0`.
+The site root, root routing and cascade page hashes remained unchanged.
+Published application source commit: `5bb43676571e984591c4a9c8160508594ea8ab40`.
+The later release commit stores this exact built copy, acceptance records and
+publication-tool updates; it does not change the deployed application payload.
+
+The shared publisher now has a separate browser-acceptance hook. S-3000 keeps
+its original four browser records; S-4000 validates its current seven interaction
+checks and manifest binding instead of looking for obsolete S-3000 test paths.
+No fabricated acceptance records were used.
+
+Desktop performance: Chrome 152, Intel UHD 770, 1280x720, simulated 10 Mbps and
+100 ms latency, one cold and one warm run. First boiler: 4.94 s cold / 0.53 s warm;
+complete assembly: 23.15 s cold / 0.95 s warm. Full-assembly rendered rotation:
+66.8 / 65.8 fps. Cold transfer: 23.76 MB. Idle draw frames: zero. These are desktop
+measurements, not physical-phone performance. The profiler explicitly waits for
+the full scene before sampling rotation; the earlier core-only sample is not used.
+
+TypeScript and nine local tests passed. Browser checks reported no page errors.
+The live screenshots below were also inspected visually. No GitHub CI run is
+claimed; these are local and deployed-browser acceptance records.
+
+![Published S-4000](live-overview.png)
+![Published cabinet](live-cabinet-open.png)
+![DA-3 draft exterior, not yet integrated](da3-exterior-draft.png)

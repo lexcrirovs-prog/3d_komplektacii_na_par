@@ -71,6 +71,11 @@ for (let run = 0; run < Number(runs); run++) {
     console.log('DOM ready');
     await page.waitForFunction(() => window.__s3000Profile?.firstSceneMs != null, null, { timeout: 180000 });
     console.log('Scene ready');
+    let fullAssemblyReadyMs=null;
+    if(new URL(url).searchParams.has('inspect3d')) {
+      await page.waitForFunction(()=>window.__s3000?.scene,null,{timeout:180000});
+      fullAssemblyReadyMs=await page.evaluate(()=>performance.now());
+    }
     await page.waitForTimeout(1500);
     const idleStart = await page.evaluate(() => performance.now());
     await page.waitForTimeout(1500);
@@ -100,7 +105,7 @@ for (let run = 0; run < Number(runs); run++) {
     await page.getByRole('button', { name: 'Общий вид', exact: true }).click();
     await page.waitForTimeout(1800);
     await page.screenshot({ path: resolve(output, `${profile}-${run}-${cache}.png`), fullPage: true });
-    const record = { url, run, cache, profile, viewport: page.viewportSize(), deviceScaleFactor: mobile ? 2 : 1, physicalPhone: false, networkMbps: mobile ? 4 : 10, latencyMs: mobile ? 150 : 100, browser: browser.version(), measuredAt: new Date().toISOString(), ...data, errors: [...errors] };
+    const record = { url, run, cache, profile, viewport: page.viewportSize(), deviceScaleFactor: mobile ? 2 : 1, physicalPhone: false, networkMbps: mobile ? 4 : 10, latencyMs: mobile ? 150 : 100, browser: browser.version(), measuredAt: new Date().toISOString(), fullAssemblyReadyMs, ...data, errors: [...errors] };
     results.push(record);
     await writeFile(resolve(output, `${profile}.json`), JSON.stringify(results, null, 2)+'\n');
     console.log(JSON.stringify({ ...record, resources: undefined }));

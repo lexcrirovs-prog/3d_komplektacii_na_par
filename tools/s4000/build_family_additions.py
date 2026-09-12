@@ -8,10 +8,9 @@ from pathlib import Path
 import numpy as np
 sys.path.insert(0,str(Path(__file__).parent))
 from geometry import Geometry
-from build_assembly import actuator
 
 ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.12.1')
-OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.12.2')
+OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.1')
 OUT.mkdir(exist_ok=True)
 for family in ['small','medium']:
     bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
@@ -39,9 +38,24 @@ for family in ['small','medium']:
     route('direct_inlet','Подача питательной воды в котёл',[[.48,1.26,2.78],[.25,1.26,2.78],[.25,float(end[1]),2.78],[float(end[0]),float(end[1]),2.78],end.tolist()])
     rear=.815 if small else 1.697
     axis=.93 if small else 1.06
-    # A shallow offset avoids two short 90-degree bends whose radius would be
-    # smaller than the duct itself. End segments follow both source port axes.
-    route('flue_spacer','Соединение дымового канала',[[0,rear,axis],[0,rear+.16,axis],[0,2.30,1.135],[0,2.478,1.135]],.257,'dark',['economizer'])
+    # Match the original 500 mm face-to-face gap. Translate the complete
+    # economizer on the floor; its water adapters follow the same rigid move.
+    eco_dy=rear+.5-2.478
+    move('economizer eco_inlet_adapter',[0,eco_dy,0])
+    # An oblique cylindrical transition has parallel circular end faces, unlike
+    # a swept pipe whose bend would tilt the flanges or self-intersect here.
+    g.part('flue_spacer','Соединение дымового канала','visual_route')
+    vs=[];fs=[];N=64
+    for y,z in [(rear,axis),(rear+.5,1.135)]:
+        for r in [.257,.253]:
+            vs.extend((r*math.cos(a),y,z+r*math.sin(a)) for a in np.linspace(0,2*math.pi,N,endpoint=False))
+    for i in range(N):
+        j=(i+1)%N
+        fs.extend([(i,j,2*N+j,2*N+i),(N+j,N+i,3*N+i,3*N+j),(i,N+i,N+j,j),(2*N+i,2*N+j,3*N+j,3*N+i)])
+    g.mesh('500 mm offset flue',vs,fs,'dark',True)
+    g.parts['flue_spacer'].update(requires=['economizer'],excludes=[],category='Оборудование',note='')
+    route('to_economizer','Подача воды в экономайзер',[[2.45,1.45,1.8],[2.45,4.45+eco_dy,1.8],[2.45,4.45+eco_dy,.775],[-.625,4.45+eco_dy,.775],[-.625,3.86+eco_dy,.775]],requires=['economizer'])
+    route('from_economizer','Подача воды от экономайзера',[[-.625,3.70+eco_dy,1.495],[-.625,3.95+eco_dy,1.495],[-.625,3.95+eco_dy,2.78],[.95,3.95+eco_dy,2.78],[.95,1.26,2.78],[.72,1.26,2.78]],requires=['economizer'])
     route('bottom_piping','Отвод периодической продувки',[[0,rear,.125],[0,2.2,.125]],.021,'dark')
     # The local valve moves with the boiler. The downstream header and vessel
     # approach roots remain fixed in all BDV/FV states.
@@ -50,37 +64,8 @@ for family in ['small','medium']:
     for n,x in [(1,-.82),(2,-.48)]:
         d=moves['safety_'+str(n)];p=np.array([-.169,.66 if n==1 else .96,2.389])+d
         route('safety_vent_'+str(n),'Отвод предохранительного клапана №'+str(n),[p.tolist(),[x,float(p[1]),float(p[2])],[x,4.7,float(p[2])]],.03805,'steel')
-    # A separate wiring derivative follows the changed mounting positions.
-    g.part('cables','Проводка в защитной гофре','visual_route')
-    cabinet_end=np.array([-1.205,-1.22,1.225])+cabinet
-    heads={'lp200':[-.035,-1.21,2.5265],'lp400':[0,-.64,2.512],
-           'lcs600':[.14,-1.21,2.595],'pressure_switch_1':[1.46,-1.52,2.995],
-           'pressure_switch_2':[1.46,-1.28,2.995],'pressure_transmitter':[1.441,-1.04,3.024]}
-    for i,(key,head) in enumerate(heads.items()):
-        p=np.array(head)+moves[key];z=.22+i*.009
-        radius=.827 if small else .966
-        lane=float(p[1])-.025-i*.009
-        if i<3:
-            arc=[[radius*math.cos(t),lane,axis+radius*math.sin(t)] for t in np.linspace(math.pi/2,math.pi,25)]
-            pts=[p.tolist(),[float(p[0]),lane,float(p[2])],[float(p[0]),lane,axis+radius],*arc,[-radius,lane,z]]
-        else:
-            # Follow the instrument upright, then pass below the front door.
-            front=-1.82 if small else -1.9
-            pts=[p.tolist(),[float(p[0]),lane,float(p[2])],[float(p[0]),lane,z],[float(p[0]),front,z],[-radius,front,z],[-radius,lane,z]]
-        pts += [[-radius,float(cabinet_end[1]),z],[float(cabinet_end[0]),float(cabinet_end[1]),z],cabinet_end.tolist()]
-        g.pipe(pts,.006,'black',.025,12)
-    for y in [.2,.95]:
-        g.pipe([[2.225,y,1.22],[2.28,y,1.22],[2.28,y,.18],[2.28,-1.94,.18],[-1.03,-1.94,.18],[-1.03,float(cabinet_end[1]),.18],cabinet_end.tolist()],.007,'black',.035,12)
-    g.parts['cables'].update(requires=[],excludes=[],category='Оборудование',note='')
-    for drive,base,req,exc in [('gpz_drive',[0,.6,3.24],['gpz'],[]),('mod_eco_drive',[.6,1.26,2.98],['modulation','economizer'],[]),('mod_direct_drive',[.6,1.26,2.98],['modulation'],['economizer'])]:
-        # Reuse the original actuator recipe with its original dimensions. Its
-        # separate new cable starts at the returned physical cable gland.
-        base=np.array(base)+(steam if drive=='gpz_drive' else np.zeros(3))
-        h=np.array(actuator(g,drive,base,big=drive=='gpz_drive'))
-        g.parts[drive].update(requires=req,excludes=exc,category='Оборудование',note='')
-        key=drive+'_cable'
-        route(key,'Кабель электропривода',[h.tolist(),[float(h[0])+.03,float(h[1]),float(h[2])],[float(h[0])+.03,float(h[1]),2.8],[1.1,float(h[1]),2.8],[1.1,float(h[1]),.23],[1.1,-1.94,.23],[-1.03,-1.94,.23],[-1.03,float(cabinet_end[1]),.23],cabinet_end.tolist()],.006,'black',req)
-        g.parts[key]['excludes']=exc
+    # Wiring and actuator cable replacements are generated for all families by
+    # build_wiring_revision.py after these mounting translations are finalized.
     if small:
         move('burner',[0,.424,-.205])
         removed+=['deaerator','deaerator_details','deaerator_support','deaerator_feed']

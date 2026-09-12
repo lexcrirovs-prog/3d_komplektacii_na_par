@@ -28,12 +28,11 @@ import medium4 from '../../assets/families/medium/s4000-4.glb?url'
 import medium5 from '../../assets/families/medium/s4000-5.glb?url'
 import medium6 from '../../assets/families/medium/s4000-6.glb?url'
 import medium7 from '../../assets/families/medium/s4000-7.glb?url'
-import trim from '../../assets/s4000/web/trim.glb?url'
 import type {VisibilityPart} from './assemblyVisibility'
 export type FamilyPart=VisibilityPart & {id:string;label:string;category:string;note:string;center:number[]}
 export type FamilyAsset={id:string;model:string;range:string;parts:FamilyPart[];opening:{groups:{id:string;pivot:number[];angle_degrees:number;parts:string[]}[]};urls:string[];tubeCount:number|null}
 export const familyAssets:Record<string,FamilyAsset>={
-large: {id:'large', model:'S-4000', range:'4000–5000', parts:largeData.parts, opening:largeOpening, urls:[large0,large1,large2,large3,large4,large5,large6,large7,trim], tubeCount:96},
+large: {id:'large', model:'S-4000', range:'4000–5000', parts:largeData.parts, opening:largeOpening, urls:[large0,large1,large2,large3,large4,large5,large6,large7], tubeCount:96},
 small: {id:'small', model:'S-1000', range:'500–1500', parts:smallData.parts, opening:smallOpening, urls:[small0,small1,small2,small3,small4,small5,small6,small7], tubeCount:null},
 medium: {id:'medium', model:'S-3000', range:'2000–3000', parts:mediumData.parts, opening:mediumOpening, urls:[medium0,medium1,medium2,medium3,medium4,medium5,medium6,medium7], tubeCount:80},
 }

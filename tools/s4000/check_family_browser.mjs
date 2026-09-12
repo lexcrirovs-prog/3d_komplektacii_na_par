@@ -23,7 +23,6 @@ try {
   await shot('overview');
   const chunks=JSON.parse(await readFile(family==='large'?'src/assets/s4000/web/chunks.json':`src/assets/families/${family}/chunks.json`,'utf8'));
   const hashes=new Set(chunks.files.map(f=>f.sha256));
-  if(family==='large')hashes.add(createHash('sha256').update(await readFile('src/assets/s4000/web/trim.glb')).digest('hex'));
   const expected=manifest.files.filter(f=>hashes.has(f.sha256)).map(f=>base+f.path);
   assert.equal(new Set(requests).size,expected.length);assert.deepEqual([...new Set(requests)].sort(),expected.sort());
   const get=ids=>page.evaluate(ids=>Object.fromEntries(ids.map(id=>{const n=window.__s3000.scene.getObjectByName(id);return [id,n?{visible:n.visible,matrix:n.matrixWorld.toArray()}:null]})),ids);

@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-13",
+  "executor": "Codex / GPT-6",
+  "family": "large",
+  "status": "VISUAL_LAYOUT_FOR_TESTING",
+  "cadScalePreserved": true,
+  "sourceS4000Sha256": "45f3dd5c96e2f358046d83ef5a4601015754455dcdd5709e3b3a98eca020bfab",
+  "approach": [
+    {
+      "id": "bottom_to_bdv",
+      "bounds": {
+        "min": [
+          2.878792172618158,
+          0.10406100749969482,
+          -3.1000075224015835
+        ],
+        "max": [
+          3.162499447710314,
+          1.497499942779541,
+          -2.317492496671903
+        ]
+      },
+      "requires": []
+    },
+    {
+      "id": "tds_to_fv",
+      "bounds": {
+        "min": [
+          1.546666145324707,
+          0.8225006737665607,
+          -3.7474943246484025
+        ],
+        "max": [
+          3.3870000224841883,
+          1.0174994192166853,
+          -2.9500059042334335
+        ]
+      },
+      "requires": []
+    }
+  ],
+  "actuatorSource": "Original actuator recipe, same dimensions, separate replacement cable",
+  "sourceBodies": [
+    "S-4000 v2026.09.11.1"
+  ],
+  "mountingTranslations": {}
+}

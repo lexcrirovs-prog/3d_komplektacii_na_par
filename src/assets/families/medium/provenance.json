@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-12",
+  "date": "2026-09-13",
   "executor": "Codex / GPT-6",
   "family": "medium",
   "status": "VISUAL_LAYOUT_FOR_TESTING",
@@ -263,6 +263,16 @@
       0,
       0.045,
       -0.162
+    ],
+    "economizer": [
+      0,
+      -0.28100000000000014,
+      0
+    ],
+    "eco_inlet_adapter": [
+      0,
+      -0.28100000000000014,
+      0
     ]
   }
 }

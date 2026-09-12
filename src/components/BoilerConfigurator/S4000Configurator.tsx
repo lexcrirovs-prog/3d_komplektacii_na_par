@@ -358,7 +358,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         {active.note && <p className="s3-part-note">{active.note}</p>}
         <button className="s3-focus" onClick={() => focus(active.id)}>Приблизить деталь ↗</button>
       </section>}
-      <div className="s3-caption">Визуальная сборка <span>•</span> 12.09.2026 <span>•</span> v{webVersion.version}</div>
+      <div className="s3-caption">Визуальная сборка <span>•</span> 13.09.2026 <span>•</span> v{webVersion.version}</div>
     </main>
 
     <aside className="s3-sidebar" aria-label="Комплектация котла">

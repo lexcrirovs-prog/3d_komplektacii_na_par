@@ -13,18 +13,19 @@ const {MeshoptDecoder}=await from('meshoptimizer');await MeshoptDecoder.ready;
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder});
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const reports=[];
-for(const family of ['small','medium']) {
- const core=await io.read(`src/assets/families/${family}/s4000-0.glb`);
+for(const family of ['small','medium','large']) {
+ const folder=family==='large'?'src/assets/s4000/web':`src/assets/families/${family}`;
+ const core=await io.read(`${folder}/s4000-0.glb`);
  const body=core.getRoot().listScenes()[0].listChildren().find(n=>n.getName()==='boiler');assert(body);
- const source=await io.read(family==='small'?'E:/CodexArtifacts/Boiler-Family-v2026.09.12.2/small/additions.glb':'src/assets/s3000/web/s3000-boiler.glb');
+ const source=await io.read(family==='small'?'E:/CodexArtifacts/Boiler-Family-v2026.09.13.1/small/additions.glb':family==='medium'?'src/assets/s3000/web/s3000-boiler.glb':'E:/CodexArtifacts/S4000-Web-v2026.09.12.1/optimized/s4000-web.glb');
  const original=source.getRoot().listScenes()[0].listChildren().find(n=>n.getName()==='boiler');
  const expected=getBounds(original),actual=getBounds(body);
  const error=Math.max(...['min','max'].flatMap(k=>expected[k].map((v,i)=>Math.abs(v-actual[k][i]))));
  assert(error<.002,`${family} body dimension changed by ${error} m`);
- const parts=JSON.parse(await readFile(`src/assets/families/${family}/assembly.json`,'utf8')).parts;
- const opening=JSON.parse(await readFile(`src/assets/families/${family}/opening.json`,'utf8'));
- assert.equal(parts.some(p=>p.id==='boiler_tubes'),family==='medium');
- assert.equal(opening.groups.some(g=>g.id==='boiler'),family==='medium');
+ const parts=JSON.parse(await readFile(`${folder}/assembly.json`,'utf8')).parts;
+ const opening=JSON.parse(await readFile(`${folder}/opening.json`,'utf8'));
+ assert.equal(parts.some(p=>p.id==='boiler_tubes'),family!=='small');
+ assert.equal(opening.groups.some(g=>g.id==='boiler'),family!=='small');
  for(const id of ['bottom_to_bdv','tds_to_fv'])assert.deepEqual(parts.find(p=>p.id===id).requires,[]);
  reports.push({family,bodyBoundsErrorM:error,bounds:actual,parts:parts.length});
 }

@@ -1,12 +1,12 @@
 {
   "release": {
-    "version": "2026.09.09.5",
-    "date": "2026-09-09",
-    "executor": "Codex / GPT-6 Astra",
-    "detailed_assembly_version": "2026.09.09.5",
-    "baseline_source_commit": "c0bc72b36325e68ca32095de0096757ad1fdf0c3"
+    "version": "2026.09.12.1",
+    "date": "2026-09-12",
+    "executor": "Codex / GPT-6",
+    "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
+    "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb"
   },
-  "source_commit": "3edc7255f2331b368a6b35ae74009fd54b3da1d6",
+  "source_commit": "5bb43676571e984591c4a9c8160508594ea8ab40",
   "files": [
     {
       "path": ".htaccess",
@@ -54,9 +54,9 @@
       "sha256": "afdd8e9c5d6571d19f462d4da29dd452de4313a8ef57a7413fbb4f7109540904"
     },
     {
-      "path": "assets/index-CpGbdp6m.js",
-      "bytes": 1282849,
-      "sha256": "3e49c3d1039bfdc9f5f7217ac7d63048074f6f8c08e12a67da4e5110a7753ad2"
+      "path": "assets/index-aOTaYuOh.js",
+      "bytes": 1177684,
+      "sha256": "863a4af394ad1b74f7d8ae7b2145edb83ef688fdd3b55215d28ef8a89359e849"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -84,14 +84,74 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/style-_ULG7SaW.css",
-      "bytes": 24797,
-      "sha256": "14adfbf57d611a4e6a61526d85903db2e984cd90dd289e3e23d3d44765db552f"
+      "path": "assets/S3000Configurator-BNMXa1LJ.js",
+      "bytes": 58719,
+      "sha256": "93cf628dd24c609988e3ddcf0883f0034b60b85c7a867ddfd7be063fd7aa5618"
+    },
+    {
+      "path": "assets/S3000Configurator-khwoaTwc.js",
+      "bytes": 48039,
+      "sha256": "6f6169bf699a0772382c3812d3ec2baadcdbfa9bae774f79851ee266d8c00f87"
+    },
+    {
+      "path": "assets/s4000-0-v_UvzcrT.glb",
+      "bytes": 3021988,
+      "sha256": "b2958ccd44369d15590041cd0c182eabe1d4a114567ac7883b7bd07c585b908e"
+    },
+    {
+      "path": "assets/s4000-1-BxsWUfl2.glb",
+      "bytes": 3629524,
+      "sha256": "604d26264731ee49fa82f1dd714fecfc22251bc5b32b714ae8ddd401ed592402"
+    },
+    {
+      "path": "assets/s4000-2-e89UbFyb.glb",
+      "bytes": 4242096,
+      "sha256": "4538e895764ba27aafcce6c8177c5480f825f465517eff3bf73b692a1e2dd1c9"
+    },
+    {
+      "path": "assets/s4000-3-HT6X7moZ.glb",
+      "bytes": 3943308,
+      "sha256": "a5ddd94ab3893ba8e3f6f010cc1cd907f867f6d61de2f05b09679c4a62705019"
+    },
+    {
+      "path": "assets/s4000-4-f-t2JsFP.glb",
+      "bytes": 4104276,
+      "sha256": "a280f58944b28c3039aac94705a478fdcb9b7bd56c6dba6093c7ea7f2feed8fc"
+    },
+    {
+      "path": "assets/s4000-5-iG1JaLfZ.glb",
+      "bytes": 4757024,
+      "sha256": "e5f374ae04a72d92f940a187b2b74bf2b171bf17cb1880ea2c51ffde6e2984b2"
+    },
+    {
+      "path": "assets/s4000-6-UhXN5fvg.glb",
+      "bytes": 4549200,
+      "sha256": "dba5ab264dad10e02f91b2bae36910449b42cc662438976aca31ca89a00f9a7a"
+    },
+    {
+      "path": "assets/s4000-7-DY9GKZDD.glb",
+      "bytes": 4486740,
+      "sha256": "5956adc5867b68417750b8c4da1edbc9970bb30d837cc7f1ec4cf449ff8de050"
+    },
+    {
+      "path": "assets/S4000Configurator-E1n-z51-.js",
+      "bytes": 177363,
+      "sha256": "d7454c30fbc41141e711515fa16c82c033c02901d42e97294ba9f18ed9c3e65f"
+    },
+    {
+      "path": "assets/style-DmdReTJq.css",
+      "bytes": 25346,
+      "sha256": "c92503ab78fa91099b54940a4e96c5a3c6ebc8e227af1fffd6dc3ceb8f5e5ba8"
+    },
+    {
+      "path": "assets/trim-8TNtBtzY.glb",
+      "bytes": 354456,
+      "sha256": "3581f08b3d374693be7273c60f21e0ae7305ee8f8e4352c0f033ba93e3497ffe"
     },
     {
       "path": "index.html",
-      "bytes": 2056,
-      "sha256": "3f513eec0c415e269b702804aba2480b60840a64bd226370d8719ee771dbdb35"
+      "bytes": 2061,
+      "sha256": "8d34064c8e3a1c9a287582143a9ed6d792a54b68631992b73f3a059342475604"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -130,8 +190,8 @@
     },
     {
       "path": "version.json",
-      "bytes": 318,
-      "sha256": "fce8d223f731344c98e1f743c9841ed327b67b3d5867e69bf89e08df910fb91d"
+      "bytes": 355,
+      "sha256": "a7ea13c89c632523781c70f366752bb1aaa81680536fce0db10aeb56ebca0c24"
     }
   ]
 }

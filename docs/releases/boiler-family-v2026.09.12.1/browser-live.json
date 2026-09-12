@@ -1,0 +1,15 @@
+{
+  "status": "PASSED_BROWSER_INTERACTION",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "d392bcc73e803d4b385bcdab79fcf9ed7552f5c520ccefe98cc8a7c9ed2628f0",
+  "checks": [
+    "Only the selected assembly downloads",
+    "All four vessel combinations preserve approach pipes and their exact transforms",
+    "Four modulation/economizer combinations show the expected valve or straight pipe",
+    "Selections survive reload, mandatory GPZ stays enabled",
+    "Trim selection changes actual 3D sensors, controllers and pressure instruments; Standard disables modulation",
+    "Both doors open to source angles; boiler body and tubes remain fixed",
+    "Mobile viewport has no horizontal overflow"
+  ],
+  "errors": []
+}

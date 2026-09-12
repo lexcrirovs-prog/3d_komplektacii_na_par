@@ -1,0 +1,168 @@
+{
+  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
+  "parts": 105,
+  "bytes": 32734156,
+  "files": [
+    {
+      "file": "s4000-0.glb",
+      "parts": [
+        "boiler_cladding",
+        "boiler",
+        "burner",
+        "boiler_door",
+        "premium_logo",
+        "boiler_tubes",
+        "boiler_tubeplate",
+        "boiler_door_labels"
+      ],
+      "bytes": 3021988,
+      "sha256": "b2958ccd44369d15590041cd0c182eabe1d4a114567ac7883b7bd07c585b908e"
+    },
+    {
+      "file": "s4000-1.glb",
+      "parts": [
+        "deaerator",
+        "bdv_water_drain",
+        "gpz_drive",
+        "lc220",
+        "cp930",
+        "lp200",
+        "to_economizer",
+        "to_direct",
+        "pressure_transmitter",
+        "pump_delivery",
+        "bottom_discharge"
+      ],
+      "bytes": 3629524,
+      "sha256": "604d26264731ee49fa82f1dd714fecfc22251bc5b32b714ae8ddd401ed592402"
+    },
+    {
+      "file": "s4000-2.glb",
+      "parts": [
+        "deaerator_details",
+        "flue_spacer",
+        "pump_branch_1",
+        "deaerator_feed",
+        "fv_bottom_drain_stub",
+        "cabinet_interior",
+        "pump_2",
+        "sight_glasses_2",
+        "pressure_switch_2",
+        "from_economizer",
+        "deaerator_support",
+        "gpz_bypass",
+        "bdv_bottom_drain_stub",
+        "tds_without_vessels",
+        "trap_support"
+      ],
+      "bytes": 4242096,
+      "sha256": "4538e895764ba27aafcce6c8177c5480f825f465517eff3bf73b692a1e2dd1c9"
+    },
+    {
+      "file": "s4000-3.glb",
+      "parts": [
+        "cables",
+        "gpz",
+        "mod_eco",
+        "flash_steam_common",
+        "bdv_vent",
+        "bdv_cooling_stub",
+        "bc970",
+        "sight_glasses_1",
+        "instrument_valve",
+        "steam_rise",
+        "sc9",
+        "bottom_bypass_before",
+        "bottom_before_auto",
+        "steam_delivery"
+      ],
+      "bytes": 3943308,
+      "sha256": "a5ddd94ab3893ba8e3f6f010cc1cd907f867f6d61de2f05b09679c4a62705019"
+    },
+    {
+      "file": "s4000-4.glb",
+      "parts": [
+        "separator_bdv60_5",
+        "lcs600",
+        "mod_direct",
+        "trap_gap_to_bdv",
+        "safety_vent_2",
+        "tds_without_fv",
+        "mod_direct_drive",
+        "lc440",
+        "drain_isolation_2",
+        "pressure_switch_1",
+        "direct_inlet",
+        "bottom_piping",
+        "mod_direct_bypass"
+      ],
+      "bytes": 4104276,
+      "sha256": "a280f58944b28c3039aac94705a478fdcb9b7bd56c6dba6093c7ea7f2feed8fc"
+    },
+    {
+      "file": "s4000-5.glb",
+      "parts": [
+        "separator_fv8",
+        "pump_out_valve_2",
+        "feed_valve",
+        "pump_branch_2",
+        "fv_to_trap_gap",
+        "feed_check",
+        "mod_eco_drive",
+        "pump_1",
+        "pressure_gauge",
+        "lp400",
+        "local_open_drains",
+        "suction_common",
+        "feed_inlet_adapter",
+        "mod_eco_bypass"
+      ],
+      "bytes": 4757024,
+      "sha256": "e5f374ae04a72d92f940a187b2b74bf2b171bf17cb1880ea2c51ffde6e2984b2"
+    },
+    {
+      "file": "s4000-6.glb",
+      "parts": [
+        "steam_manual",
+        "pump_in_valve_2",
+        "pump_out_valve_1",
+        "safety_2",
+        "pump_check_2",
+        "safety_vent_1",
+        "bcv925",
+        "condensate_trap",
+        "economizer",
+        "drain_isolation_1",
+        "sample_piping",
+        "bdv_cooling_marker",
+        "bdv_identification",
+        "bottom_after_auto",
+        "pr200"
+      ],
+      "bytes": 4549200,
+      "sha256": "dba5ab264dad10e02f91b2bae36910449b42cc662438976aca31ca89a00f9a7a"
+    },
+    {
+      "file": "s4000-7.glb",
+      "parts": [
+        "pressure_header",
+        "eco_inlet_adapter",
+        "pump_in_valve_1",
+        "safety_1",
+        "tds_to_fv",
+        "pump_check_1",
+        "bottom_to_bdv",
+        "bcv7432",
+        "cabinet_door",
+        "tds_isolation",
+        "pcf20",
+        "tds_common",
+        "bottom_bypass_after",
+        "bottom_before_gate",
+        "control_cabinet"
+      ],
+      "bytes": 4486740,
+      "sha256": "5956adc5867b68417750b8c4da1edbc9970bb30d837cc7f1ec4cf449ff8de050"
+    }
+  ]
+}

@@ -78,7 +78,7 @@ print(json.dumps({{'files':files,'neighbors':neighbors}}))
     with tarfile.open(OUT/'candidate.tar.gz','w:gz') as tar:
         for p in sorted((REPO/'dist').rglob('*')):
             if p.is_file(): tar.add(p,arcname=p.relative_to(REPO/'dist').as_posix(),recursive=False)
-    save('prepared.json',{'version':VERSION,'candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/komplektacii4-v2026.09.09.4/'})
+    save('prepared.json',{'version':VERSION,'candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/'+BACKUP.rsplit('/',1)[-1]+'/'})
     print('PREPARED_AND_PREVIOUS_PUBLICATION_BACKED_UP')
 
 def stage():
@@ -104,12 +104,7 @@ print(json.dumps({{'status':'STAGED_HASHES_VERIFIED','files':len(manifest['files
 ''')
     save('staged.json',result);print(json.dumps(result))
 
-def cutover():
-    before=json.loads((OUT/'before.json').read_text(encoding='utf-8'))
-    prepared=json.loads((OUT/'prepared.json').read_text(encoding='utf-8'))
-    http=json.loads((OUT/'http-stage.json').read_text(encoding='utf-8'))
-    assert http['status']=='PASSED_HTTPS_HASHES' and http['url']==STAGE_URL
-    assert http['manifestSha256']==prepared['manifestSha256']
+def validate_browser_acceptance(prepared):
     # A separate browser acceptance record must exist for the staged URL.
     checks=json.loads((REPO/'artifacts/qa/cabinet-stage-baseline/checks.json').read_text(encoding='utf-8'))
     assert checks['status']=='PASSED_BROWSER' and checks['url']==STAGE_URL and checks['mode']=='candidate'
@@ -123,6 +118,14 @@ def cutover():
     cabinet=json.loads((REPO/'artifacts/qa/cabinet-stage-alignment/cabinet-browser.json').read_text(encoding='utf8'))
     assert cabinet['status']=='PASSED_CABINET_BROWSER' and cabinet['url']==STAGE_URL
     assert cabinet['manifestSha256']==prepared['manifestSha256']
+
+def cutover():
+    before=json.loads((OUT/'before.json').read_text(encoding='utf-8'))
+    prepared=json.loads((OUT/'prepared.json').read_text(encoding='utf-8'))
+    http=json.loads((OUT/'http-stage.json').read_text(encoding='utf-8'))
+    assert http['status']=='PASSED_HTTPS_HASHES' and http['url']==STAGE_URL
+    assert http['manifestSha256']==prepared['manifestSha256']
+    validate_browser_acceptance(prepared)
     result=remote(f'''import json,pathlib,hashlib,os
 root=pathlib.Path({ROOT!r});live=pathlib.Path({LIVE!r});stage=pathlib.Path({STAGE!r});backup=pathlib.Path({BACKUP!r})
 assert root.resolve()==root and all(p.parent==root and not p.is_symlink() for p in [live,stage,backup])

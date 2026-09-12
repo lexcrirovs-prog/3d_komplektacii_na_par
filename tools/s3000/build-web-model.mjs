@@ -30,7 +30,11 @@ const snapshot = d => ({
   partBounds: d.getRoot().listScenes()[0].listChildren().map(n=>({ name:n.getName(), ...getBounds(n) })),
 });
 const before = snapshot(doc);
-await doc.transform(weld(), simplify({ simplifier: MeshoptSimplifier, ratio: 0.15, error: Number(tolerance), lockBorder: true }), dedup());
+const lockBorder = process.env.BOILER_UNLOCK_BORDERS !== '1';
+await doc.transform(weld(), simplify({ simplifier: MeshoptSimplifier, ratio: 0.15, error: Number(tolerance), lockBorder }));
+// S-4000 deliberately keeps identical meshes in alternative feed routes.
+// Preserve their identities for independent options and per-mesh validation.
+if (process.env.BOILER_PRESERVE_MESHES !== '1') await doc.transform(dedup());
 const simplified = snapshot(doc);
 // All logical objects, parent relationships, transforms, material slots and images survive.
 assert.deepEqual(simplified.nodes, before.nodes);
@@ -50,8 +54,8 @@ const partBoundsErrors = before.partBounds.map(b => {
 });
 assert(partBoundsErrors.every(p=>p.maxErrorM < .002), 'A component bounding box changed by 2 mm or more');
 assert.equal(sha(await readFile(source)), originalHash);
-const report = { version: '2026.09.09.5', date: '2026-09-09', executor: 'Codex / GPT-6 Astra', status: 'PASSED_DERIVATIVE_STRUCTURE', sourceSha256: originalHash, outputSha256: sha(await readFile(target)), beforeBytes: (await stat(source)).size, afterBytes: (await stat(target)).size,
-  simplifier: { ratio: .15, relativeError: Number(tolerance), lockBorder: true, note: 'Algorithm error setting, not an independently measured surface-distance tolerance' },
+const report = { version: process.env.BOILER_WEB_VERSION || '2026.09.09.5', date: process.env.BOILER_WEB_DATE || '2026-09-09', executor: process.env.BOILER_WEB_EXECUTOR || 'Codex / GPT-6 Astra', status: 'PASSED_DERIVATIVE_STRUCTURE', sourceSha256: originalHash, outputSha256: sha(await readFile(target)), beforeBytes: (await stat(source)).size, afterBytes: (await stat(target)).size,
+  simplifier: { ratio: .15, relativeError: Number(tolerance), lockBorder, note: 'Algorithm error setting, not an independently measured surface-distance tolerance' },
   beforeTriangles: before.meshes.reduce((n,m)=>n+m.triangles,0), afterTriangles: after.meshes.reduce((n,m)=>n+m.triangles,0), nodes: after.nodes.length, boundsMaxErrorM: boundsMaxError,
   partBoundsErrors, meshes: before.meshes.map(m => ({ name: m.name, before: m.triangles, after: after.meshes.find(a=>a.name===m.name).triangles, primitives: m.materials.length })), textures: after.textures };
 await writeFile(resolve(dirname(target), 'web-model-report.json'), JSON.stringify(report, null, 2)+'\n');

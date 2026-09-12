@@ -1,0 +1,105 @@
+{
+  "version": "2026.09.12.1",
+  "date": "2026-09-12",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_DERIVATIVE_STRUCTURE",
+  "sourceSha256": "8256264cdbd5ad1f7a802e48e11dc72bd2e07b1e069d6bb94fc98d7073642a10",
+  "outputSha256": "3581f08b3d374693be7273c60f21e0ae7305ee8f8e4352c0f033ba93e3497ffe",
+  "beforeBytes": 6615244,
+  "afterBytes": 354456,
+  "simplifier": {
+    "ratio": 0.15,
+    "relativeError": 0.0003,
+    "lockBorder": true,
+    "note": "Algorithm error setting, not an independently measured surface-distance tolerance"
+  },
+  "beforeTriangles": 260280,
+  "afterTriangles": 52856,
+  "nodes": 16,
+  "boundsMaxErrorM": 0.0000012580942116979799,
+  "partBoundsErrors": [
+    {
+      "name": "low_level_1",
+      "maxErrorM": 0.000030252625137699996
+    },
+    {
+      "name": "low_level_2",
+      "maxErrorM": 0.0000018724870917419256
+    },
+    {
+      "name": "high_level",
+      "maxErrorM": 0.000003280473787947713
+    },
+    {
+      "name": "level_controller_1",
+      "maxErrorM": 0.0000010824317726587651
+    },
+    {
+      "name": "level_controller_2",
+      "maxErrorM": 0.0000010824317726587651
+    },
+    {
+      "name": "level_controller_3",
+      "maxErrorM": 0.0000010824317727697874
+    },
+    {
+      "name": "plus_bc970",
+      "maxErrorM": 0.0000010524630077446417
+    },
+    {
+      "name": "pressure_switch_3",
+      "maxErrorM": 0.0000013797455691300087
+    }
+  ],
+  "meshes": [
+    {
+      "name": "low_level_1 CAD",
+      "before": 21548,
+      "after": 6168,
+      "primitives": 1
+    },
+    {
+      "name": "low_level_2 CAD",
+      "before": 21548,
+      "after": 6092,
+      "primitives": 1
+    },
+    {
+      "name": "high_level CAD",
+      "before": 9582,
+      "after": 2284,
+      "primitives": 1
+    },
+    {
+      "name": "level_controller_1 CAD",
+      "before": 42190,
+      "after": 7424,
+      "primitives": 1
+    },
+    {
+      "name": "level_controller_2 CAD",
+      "before": 42190,
+      "after": 7508,
+      "primitives": 1
+    },
+    {
+      "name": "level_controller_3 CAD",
+      "before": 42190,
+      "after": 7536,
+      "primitives": 1
+    },
+    {
+      "name": "bc970 / bc970_0.npz.001",
+      "before": 76580,
+      "after": 12270,
+      "primitives": 3
+    },
+    {
+      "name": "pressure_switch_2 / pressure_switches_2_0.npz.001",
+      "before": 4452,
+      "after": 3574,
+      "primitives": 7
+    }
+  ],
+  "textures": []
+}

@@ -19,3 +19,5 @@
 @media(prefers-reduced-motion:reduce){.s3-toggle,.s3-toggle:after{transition:none}}
 @media(max-width:700px){.app:has(.s3-app){height:100dvh;overflow-y:auto;touch-action:pan-y}}
 @media(max-width:700px){.s3-view-title p{display:none}}
+.s3-option{position:relative}.s3-option:has(input:disabled){cursor:default}.s3-option:has(input:disabled) .s3-toggle{background:#607581}
+.s3-config-selects{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.s3-config-selects label{font-size:10px;color:#657583;display:grid;gap:5px}.s3-config-selects label:first-child{grid-column:1/-1}.s3-config-selects select{width:100%;border:1px solid #d6dfe5;border-radius:6px;background:#fff;color:#263c4e;padding:8px;font-size:12px}.s3-equipment-list button:disabled{opacity:1;cursor:default}

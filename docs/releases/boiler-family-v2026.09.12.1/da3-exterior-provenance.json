@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-12",
+  "executor": "Codex / GPT-6",
+  "status": "VISUAL_REVIEW",
+  "cad": "PR.3.01.044СБ",
+  "photo_sha256": [
+    "ca78f0424a3f73fd9f669191dd03f9d46e4cfa7ece470ad77c7075b2339e0823",
+    "39915ea2f7b92d95d1ccacc39c52d93d8cf093b57c0745edd3a48a186ce5ec74"
+  ],
+  "cladding": "Photo-derived exterior only; dimensions need confirmation for engineering issue"
+}

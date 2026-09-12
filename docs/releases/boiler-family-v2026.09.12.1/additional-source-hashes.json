@@ -1,0 +1,25 @@
+[
+  {
+    "id": "lc300",
+    "source_url": "https://atech-ltd.com/wp-content/uploads/3d-draw/Level%20Alarm-Seviye%20Alarm/LC%20300%20Self%20monitoring.zip",
+    "sha256": "79979018851283e9e6b35701bd0166fce5d3448d5f16f33303ac7dade977670d"
+  },
+  {
+    "id": "lpl300",
+    "source_url": "https://atech-ltd.com/wp-content/uploads/3d-draw/Level%20Alarm-Seviye%20Alarm/LPL%20300-500%20mm.zip",
+    "sha256": "2a8ab879313c13e8f5bff33c3125587904c0a1acd1809a10b3ad6f4364bbce5f"
+  },
+  {
+    "id": "lph300",
+    "source_url": "https://atech-ltd.com/wp-content/uploads/3d-draw/Level%20Alarm-Seviye%20Alarm/LPH%20300-500%20mm.zip",
+    "sha256": "1582255174bf09a43e0bde5ae2a325d64b0c5f1f1791d29024267a98ff6a7feb"
+  },
+  {
+    "id": "da3",
+    "sha256": "a2eda33b9c3279ed0f09df5d18c3f558ed5330c4aa93b0c815360f05f3821314"
+  },
+  {
+    "id": "s1000",
+    "sha256": "a77ae5c3d631e4d047a50139f00dc645f0ad0c712299103c505aea24e4d48edf"
+  }
+]

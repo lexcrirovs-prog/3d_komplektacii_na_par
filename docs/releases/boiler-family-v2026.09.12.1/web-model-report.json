@@ -1,0 +1,5665 @@
+{
+  "version": "2026.09.12.1",
+  "date": "2026-09-12",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_DERIVATIVE_STRUCTURE",
+  "sourceSha256": "48acab1c7a2f6e3e59b8d69fed537d21229f427e98e483234d1aa95463fcea42",
+  "outputSha256": "45f3dd5c96e2f358046d83ef5a4601015754455dcdd5709e3b3a98eca020bfab",
+  "beforeBytes": 278497188,
+  "afterBytes": 30148468,
+  "simplifier": {
+    "ratio": 0.15,
+    "relativeError": 0.001,
+    "lockBorder": true,
+    "note": "Algorithm error setting, not an independently measured surface-distance tolerance"
+  },
+  "beforeTriangles": 8213829,
+  "afterTriangles": 3741280,
+  "nodes": 975,
+  "boundsMaxErrorM": 0.0003594356718714664,
+  "partBoundsErrors": [
+    {
+      "name": "tds_to_fv",
+      "maxErrorM": 0.00016617774963378906
+    },
+    {
+      "name": "fv_to_trap_gap",
+      "maxErrorM": 0.0003972053527832031
+    },
+    {
+      "name": "trap_gap_to_bdv",
+      "maxErrorM": 0.001749740454712878
+    },
+    {
+      "name": "fv_bottom_drain_stub",
+      "maxErrorM": 8.850599422238759e-7
+    },
+    {
+      "name": "deaerator_feed",
+      "maxErrorM": 0.00046944618225097656
+    },
+    {
+      "name": "deaerator_support",
+      "maxErrorM": 0.000014065379178473947
+    },
+    {
+      "name": "condensate_trap",
+      "maxErrorM": 0.000006673960423086989
+    },
+    {
+      "name": "trap_support",
+      "maxErrorM": 0.00000433920158632306
+    },
+    {
+      "name": "pressure_header",
+      "maxErrorM": 0.00019909400724493764
+    },
+    {
+      "name": "to_economizer",
+      "maxErrorM": 0.00025856494903564453
+    },
+    {
+      "name": "eco_inlet_adapter",
+      "maxErrorM": 0.0000054575695008773906
+    },
+    {
+      "name": "from_economizer",
+      "maxErrorM": 0.0009184364622467633
+    },
+    {
+      "name": "direct_inlet",
+      "maxErrorM": 0.00025977715579283966
+    },
+    {
+      "name": "mod_eco_bypass",
+      "maxErrorM": 8.482142779264734e-7
+    },
+    {
+      "name": "sample_piping",
+      "maxErrorM": 0.0000036052524339247327
+    },
+    {
+      "name": "flash_steam_common",
+      "maxErrorM": 0.00039886416894718835
+    },
+    {
+      "name": "safety_vent_1",
+      "maxErrorM": 0.0017293095588684082
+    },
+    {
+      "name": "safety_vent_2",
+      "maxErrorM": 0.0017562200764289493
+    },
+    {
+      "name": "cables",
+      "maxErrorM": 0.00009434226135551782
+    },
+    {
+      "name": "mod_eco_drive",
+      "maxErrorM": 0.000015774084923148024
+    },
+    {
+      "name": "mod_direct_drive",
+      "maxErrorM": 0.00001958280435243598
+    },
+    {
+      "name": "gpz_drive",
+      "maxErrorM": 0.000019802117502631944
+    },
+    {
+      "name": "boiler",
+      "maxErrorM": 0.00004859142105262393
+    },
+    {
+      "name": "boiler_cladding",
+      "maxErrorM": 0.00002087445994281012
+    },
+    {
+      "name": "premium_logo",
+      "maxErrorM": 0.00001375402417447269
+    },
+    {
+      "name": "safety_1",
+      "maxErrorM": 0.0004365886857025103
+    },
+    {
+      "name": "safety_2",
+      "maxErrorM": 0.0004365886857025103
+    },
+    {
+      "name": "lp200",
+      "maxErrorM": 0.000003690350993235114
+    },
+    {
+      "name": "lp400",
+      "maxErrorM": 0.0000051216892237304634
+    },
+    {
+      "name": "lcs600",
+      "maxErrorM": 0.000003976769847452433
+    },
+    {
+      "name": "sight_glasses_1",
+      "maxErrorM": 0.0005344152450561523
+    },
+    {
+      "name": "sight_glasses_2",
+      "maxErrorM": 0.0005344152450561523
+    },
+    {
+      "name": "pressure_switch_1",
+      "maxErrorM": 0.0000013797455691300087
+    },
+    {
+      "name": "pressure_switch_2",
+      "maxErrorM": 0.0000013797455691300087
+    },
+    {
+      "name": "pressure_gauge",
+      "maxErrorM": 0.0000016331685401826945
+    },
+    {
+      "name": "instrument_valve",
+      "maxErrorM": 8.409749338578187e-7
+    },
+    {
+      "name": "pressure_transmitter",
+      "maxErrorM": 4.577772054759066e-7
+    },
+    {
+      "name": "tds_isolation",
+      "maxErrorM": 0.0000012710267116577967
+    },
+    {
+      "name": "pcf20",
+      "maxErrorM": 0.0000233292346814018
+    },
+    {
+      "name": "bcv925",
+      "maxErrorM": 0.0000029916230981363867
+    },
+    {
+      "name": "cp930",
+      "maxErrorM": 0.0000019861696680667507
+    },
+    {
+      "name": "sc9",
+      "maxErrorM": 0.000002038252107317007
+    },
+    {
+      "name": "bcv7432",
+      "maxErrorM": 0.000001957390558526839
+    },
+    {
+      "name": "drain_isolation_1",
+      "maxErrorM": 0.0000020680121369520688
+    },
+    {
+      "name": "drain_isolation_2",
+      "maxErrorM": 0.0000020582709240463126
+    },
+    {
+      "name": "pr200",
+      "maxErrorM": 4.790600311999071e-7
+    },
+    {
+      "name": "suction_common",
+      "maxErrorM": 0.0003690901656780987
+    },
+    {
+      "name": "feed_check",
+      "maxErrorM": 6.526714968480007e-7
+    },
+    {
+      "name": "feed_valve",
+      "maxErrorM": 0.0000014345275278770941
+    },
+    {
+      "name": "feed_inlet_adapter",
+      "maxErrorM": 2.6936417119038936e-7
+    },
+    {
+      "name": "to_direct",
+      "maxErrorM": 0.00024988978194384615
+    },
+    {
+      "name": "mod_eco",
+      "maxErrorM": 2.9525098943494754e-7
+    },
+    {
+      "name": "mod_direct",
+      "maxErrorM": 3.6354795041049215e-7
+    },
+    {
+      "name": "mod_direct_bypass",
+      "maxErrorM": 8.482142779264734e-7
+    },
+    {
+      "name": "steam_manual",
+      "maxErrorM": 0.000001996373373169824
+    },
+    {
+      "name": "steam_rise",
+      "maxErrorM": 0.000004302726893508357
+    },
+    {
+      "name": "steam_delivery",
+      "maxErrorM": 0.0007016707973344222
+    },
+    {
+      "name": "gpz",
+      "maxErrorM": 0.0000018234783836224011
+    },
+    {
+      "name": "gpz_bypass",
+      "maxErrorM": 0.0000011763704357292681
+    },
+    {
+      "name": "boiler_tubes",
+      "maxErrorM": 0.0001534641036422535
+    },
+    {
+      "name": "boiler_tubeplate",
+      "maxErrorM": 0.000008654491372439566
+    },
+    {
+      "name": "burner",
+      "maxErrorM": 0.0009457724830630454
+    },
+    {
+      "name": "boiler_door",
+      "maxErrorM": 0.00025433986432243927
+    },
+    {
+      "name": "boiler_door_labels",
+      "maxErrorM": 9.87019675324774e-7
+    },
+    {
+      "name": "control_cabinet",
+      "maxErrorM": 0.000004784313691663655
+    },
+    {
+      "name": "cabinet_door",
+      "maxErrorM": 0.00040137767791748047
+    },
+    {
+      "name": "cabinet_interior",
+      "maxErrorM": 8.038623247053067e-7
+    },
+    {
+      "name": "lc220",
+      "maxErrorM": 0.000001018383201323303
+    },
+    {
+      "name": "lc440",
+      "maxErrorM": 0.0000010226606853569464
+    },
+    {
+      "name": "bc970",
+      "maxErrorM": 0.0000010524630077446417
+    },
+    {
+      "name": "deaerator",
+      "maxErrorM": 0.000017462308643523272
+    },
+    {
+      "name": "deaerator_details",
+      "maxErrorM": 0.0000037089464073325473
+    },
+    {
+      "name": "economizer",
+      "maxErrorM": 0.0000088627897509852
+    },
+    {
+      "name": "flue_spacer",
+      "maxErrorM": 0.0000023227025276462143
+    },
+    {
+      "name": "pump_1",
+      "maxErrorM": 0.0000011223875490684598
+    },
+    {
+      "name": "pump_in_valve_1",
+      "maxErrorM": 0.000001218837403393902
+    },
+    {
+      "name": "pump_check_1",
+      "maxErrorM": 1.9476513912763949e-7
+    },
+    {
+      "name": "pump_out_valve_1",
+      "maxErrorM": 0.0000015364690220120991
+    },
+    {
+      "name": "pump_branch_1",
+      "maxErrorM": 0.000003354718106182708
+    },
+    {
+      "name": "pump_2",
+      "maxErrorM": 0.000001077684065542428
+    },
+    {
+      "name": "pump_in_valve_2",
+      "maxErrorM": 0.0000017104024587766276
+    },
+    {
+      "name": "pump_check_2",
+      "maxErrorM": 2.181762472908133e-7
+    },
+    {
+      "name": "pump_out_valve_2",
+      "maxErrorM": 0.0000015364690220120991
+    },
+    {
+      "name": "pump_branch_2",
+      "maxErrorM": 0.000003367963026981724
+    },
+    {
+      "name": "pump_delivery",
+      "maxErrorM": 0.0003434261572872188
+    },
+    {
+      "name": "separator_bdv60_5",
+      "maxErrorM": 0.0005581059712573833
+    },
+    {
+      "name": "separator_fv8",
+      "maxErrorM": 0.000008360166721566031
+    },
+    {
+      "name": "bottom_piping",
+      "maxErrorM": 8.204164861219665e-7
+    },
+    {
+      "name": "bottom_before_gate",
+      "maxErrorM": 5.785671883078158e-7
+    },
+    {
+      "name": "bottom_before_auto",
+      "maxErrorM": 0.0000012345839657118551
+    },
+    {
+      "name": "bottom_after_auto",
+      "maxErrorM": 7.930034792297258e-7
+    },
+    {
+      "name": "bottom_bypass_before",
+      "maxErrorM": 0.0002581301763817656
+    },
+    {
+      "name": "bottom_bypass_after",
+      "maxErrorM": 0.00026371159100779806
+    },
+    {
+      "name": "bottom_discharge",
+      "maxErrorM": 0.00026888082733733665
+    },
+    {
+      "name": "bottom_to_bdv",
+      "maxErrorM": 0.00026100873947143555
+    },
+    {
+      "name": "tds_common",
+      "maxErrorM": 0.00018074526797573487
+    },
+    {
+      "name": "tds_without_fv",
+      "maxErrorM": 0.0007682343472579234
+    },
+    {
+      "name": "tds_without_vessels",
+      "maxErrorM": 0.0001710934856826718
+    },
+    {
+      "name": "bdv_vent",
+      "maxErrorM": 0.0006906978341918446
+    },
+    {
+      "name": "bdv_water_drain",
+      "maxErrorM": 0.0007017552852630615
+    },
+    {
+      "name": "bdv_cooling_stub",
+      "maxErrorM": 0.00027709945963116933
+    },
+    {
+      "name": "bdv_bottom_drain_stub",
+      "maxErrorM": 2.4045704627440045e-7
+    },
+    {
+      "name": "local_open_drains",
+      "maxErrorM": 0.000419401744954806
+    },
+    {
+      "name": "bdv_identification",
+      "maxErrorM": 9.717715849788533e-7
+    },
+    {
+      "name": "bdv_cooling_marker",
+      "maxErrorM": 0.0000015851921399967495
+    }
+  ],
+  "meshes": [
+    {
+      "name": "tds_to_fv / dark",
+      "before": 3584,
+      "after": 536,
+      "primitives": 1
+    },
+    {
+      "name": "tds_to_fv / steel",
+      "before": 47552,
+      "after": 45570,
+      "primitives": 1
+    },
+    {
+      "name": "fv_to_trap_gap / steel",
+      "before": 51264,
+      "after": 43992,
+      "primitives": 1
+    },
+    {
+      "name": "trap_gap_to_bdv / steel",
+      "before": 56032,
+      "after": 44688,
+      "primitives": 1
+    },
+    {
+      "name": "fv_bottom_drain_stub / dark",
+      "before": 832,
+      "after": 484,
+      "primitives": 1
+    },
+    {
+      "name": "fv_bottom_drain_stub / steel",
+      "before": 23760,
+      "after": 22629,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator_feed / green",
+      "before": 11744,
+      "after": 1760,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator_feed / steel",
+      "before": 43104,
+      "after": 41872,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator_support / dark",
+      "before": 912,
+      "after": 552,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator_support / steel",
+      "before": 344,
+      "after": 344,
+      "primitives": 1
+    },
+    {
+      "name": "A31 manufacturer surface 0",
+      "before": 83390,
+      "after": 12507,
+      "primitives": 1
+    },
+    {
+      "name": "trap_support / dark",
+      "before": 48,
+      "after": 48,
+      "primitives": 1
+    },
+    {
+      "name": "trap_support / steel",
+      "before": 24,
+      "after": 24,
+      "primitives": 1
+    },
+    {
+      "name": "pressure_header / dark",
+      "before": 194268,
+      "after": 74035,
+      "primitives": 1
+    },
+    {
+      "name": "pressure_header / steel",
+      "before": 22480,
+      "after": 21992,
+      "primitives": 1
+    },
+    {
+      "name": "to_economizer / green",
+      "before": 6560,
+      "after": 984,
+      "primitives": 1
+    },
+    {
+      "name": "eco_inlet_adapter / green",
+      "before": 2368,
+      "after": 724,
+      "primitives": 1
+    },
+    {
+      "name": "eco_inlet_adapter / steel",
+      "before": 94752,
+      "after": 87278,
+      "primitives": 1
+    },
+    {
+      "name": "from_economizer / green",
+      "before": 8640,
+      "after": 1296,
+      "primitives": 1
+    },
+    {
+      "name": "direct_inlet / green",
+      "before": 2400,
+      "after": 890,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco_bypass / green",
+      "before": 320,
+      "after": 284,
+      "primitives": 1
+    },
+    {
+      "name": "sample_piping / steel",
+      "before": 10764,
+      "after": 1614,
+      "primitives": 1
+    },
+    {
+      "name": "flash_steam_common / blue",
+      "before": 1864,
+      "after": 800,
+      "primitives": 1
+    },
+    {
+      "name": "flash_steam_common / steel",
+      "before": 45696,
+      "after": 43652,
+      "primitives": 1
+    },
+    {
+      "name": "safety_vent_1 / steel",
+      "before": 46368,
+      "after": 41492,
+      "primitives": 1
+    },
+    {
+      "name": "safety_vent_2 / steel",
+      "before": 46208,
+      "after": 41426,
+      "primitives": 1
+    },
+    {
+      "name": "cables / black",
+      "before": 725152,
+      "after": 108772,
+      "primitives": 1
+    },
+    {
+      "name": "cables / dark",
+      "before": 720,
+      "after": 720,
+      "primitives": 1
+    },
+    {
+      "name": "cables / steel",
+      "before": 120244,
+      "after": 113512,
+      "primitives": 1
+    },
+    {
+      "name": "cables / zinc",
+      "before": 156,
+      "after": 156,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco_drive / black",
+      "before": 87740,
+      "after": 13160,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco_drive / dark",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco_drive / steel",
+      "before": 456,
+      "after": 280,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco_drive / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "mod_direct_drive / black",
+      "before": 87452,
+      "after": 13116,
+      "primitives": 1
+    },
+    {
+      "name": "mod_direct_drive / dark",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "mod_direct_drive / steel",
+      "before": 456,
+      "after": 280,
+      "primitives": 1
+    },
+    {
+      "name": "mod_direct_drive / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "gpz_drive / black",
+      "before": 82172,
+      "after": 12324,
+      "primitives": 1
+    },
+    {
+      "name": "gpz_drive / dark",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "gpz_drive / steel",
+      "before": 456,
+      "after": 226,
+      "primitives": 1
+    },
+    {
+      "name": "gpz_drive / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 1",
+      "before": 21550,
+      "after": 3232,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 10",
+      "before": 30720,
+      "after": 15098,
+      "primitives": 2
+    },
+    {
+      "name": "boiler CAD solid 11",
+      "before": 30304,
+      "after": 9182,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 12",
+      "before": 4780,
+      "after": 1146,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 13",
+      "before": 3012,
+      "after": 832,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 14",
+      "before": 3012,
+      "after": 854,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 15",
+      "before": 3006,
+      "after": 836,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 16",
+      "before": 3006,
+      "after": 840,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 17",
+      "before": 1268,
+      "after": 534,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 2",
+      "before": 3006,
+      "after": 840,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 3",
+      "before": 37766,
+      "after": 17062,
+      "primitives": 2
+    },
+    {
+      "name": "boiler CAD solid 4",
+      "before": 18428,
+      "after": 6670,
+      "primitives": 2
+    },
+    {
+      "name": "boiler CAD solid 5",
+      "before": 2968,
+      "after": 840,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 6",
+      "before": 2968,
+      "after": 850,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 7",
+      "before": 3006,
+      "after": 840,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 8",
+      "before": 3006,
+      "after": 858,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 9",
+      "before": 3006,
+      "after": 840,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 0.001",
+      "before": 116783,
+      "after": 22562,
+      "primitives": 3
+    },
+    {
+      "name": "boiler_cladding / dark",
+      "before": 9840,
+      "after": 9840,
+      "primitives": 1
+    },
+    {
+      "name": "boiler_cladding / steel",
+      "before": 214560,
+      "after": 202961,
+      "primitives": 1
+    },
+    {
+      "name": "premium_logo / ink0",
+      "before": 12536,
+      "after": 12536,
+      "primitives": 1
+    },
+    {
+      "name": "premium_logo / ink1",
+      "before": 1788,
+      "after": 1788,
+      "primitives": 1
+    },
+    {
+      "name": "premium_logo / ink2",
+      "before": 1464,
+      "after": 1464,
+      "primitives": 1
+    },
+    {
+      "name": "safety_1 / blue",
+      "before": 1796,
+      "after": 914,
+      "primitives": 1
+    },
+    {
+      "name": "safety_1 / steel",
+      "before": 62960,
+      "after": 59790,
+      "primitives": 1
+    },
+    {
+      "name": "safety_2 / blue",
+      "before": 1796,
+      "after": 912,
+      "primitives": 1
+    },
+    {
+      "name": "safety_2 / steel",
+      "before": 62032,
+      "after": 58990,
+      "primitives": 1
+    },
+    {
+      "name": "lp200 / lp200_0.npz",
+      "before": 9068,
+      "after": 2464,
+      "primitives": 3
+    },
+    {
+      "name": "lp400 / lp400_0.npz",
+      "before": 14758,
+      "after": 3366,
+      "primitives": 3
+    },
+    {
+      "name": "lcs600 CAD solid 0",
+      "before": 538688,
+      "after": 80793,
+      "primitives": 2
+    },
+    {
+      "name": "sight_glasses_1 / sight_glasses_1_0.npz",
+      "before": 10660,
+      "after": 7094,
+      "primitives": 6
+    },
+    {
+      "name": "sight_glasses_2 / sight_glasses_2_0.npz",
+      "before": 10660,
+      "after": 7068,
+      "primitives": 6
+    },
+    {
+      "name": "pressure_switch_1 / pressure_switches_1_0.npz",
+      "before": 4452,
+      "after": 3070,
+      "primitives": 7
+    },
+    {
+      "name": "pressure_switch_2 / pressure_switches_2_0.npz",
+      "before": 4452,
+      "after": 3074,
+      "primitives": 7
+    },
+    {
+      "name": "pressure_gauge / pressure_gauge_0.npz",
+      "before": 11320,
+      "after": 5276,
+      "primitives": 6
+    },
+    {
+      "name": "instrument_valve / instrument_valve_0.npz",
+      "before": 5580,
+      "after": 4912,
+      "primitives": 3
+    },
+    {
+      "name": "pressure_transmitter / black",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "pressure_transmitter / gold",
+      "before": 92,
+      "after": 92,
+      "primitives": 1
+    },
+    {
+      "name": "pressure_transmitter / steel",
+      "before": 188,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "tds_isolation / tds_isolation_0.npz",
+      "before": 5580,
+      "after": 4934,
+      "primitives": 3
+    },
+    {
+      "name": "pcf20 / pcf20_0.npz",
+      "before": 7360,
+      "after": 1750,
+      "primitives": 1
+    },
+    {
+      "name": "bcv925 / bcv925_0.npz",
+      "before": 227042,
+      "after": 34054,
+      "primitives": 3
+    },
+    {
+      "name": "cp930 / cp930_0.npz",
+      "before": 30428,
+      "after": 5212,
+      "primitives": 2
+    },
+    {
+      "name": "sc9 / sc9_0.npz",
+      "before": 8144,
+      "after": 1220,
+      "primitives": 1
+    },
+    {
+      "name": "bcv7432 / bcv7432_0.npz",
+      "before": 119450,
+      "after": 19344,
+      "primitives": 3
+    },
+    {
+      "name": "drain_isolation_1 / drain_isolation_1_0.npz",
+      "before": 5580,
+      "after": 4934,
+      "primitives": 3
+    },
+    {
+      "name": "drain_isolation_2 / drain_isolation_2_0.npz",
+      "before": 5580,
+      "after": 4942,
+      "primitives": 3
+    },
+    {
+      "name": "pr200 / black",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "pr200 / green",
+      "before": 120,
+      "after": 120,
+      "primitives": 1
+    },
+    {
+      "name": "pr200 / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "suction_common / green",
+      "before": 6560,
+      "after": 984,
+      "primitives": 1
+    },
+    {
+      "name": "feed_check / blue",
+      "before": 1024,
+      "after": 736,
+      "primitives": 1
+    },
+    {
+      "name": "feed_check / steel",
+      "before": 39776,
+      "after": 38426,
+      "primitives": 1
+    },
+    {
+      "name": "feed_valve / black",
+      "before": 17644,
+      "after": 17358,
+      "primitives": 1
+    },
+    {
+      "name": "feed_valve / blue",
+      "before": 1976,
+      "after": 1172,
+      "primitives": 1
+    },
+    {
+      "name": "feed_valve / steel",
+      "before": 59436,
+      "after": 56384,
+      "primitives": 1
+    },
+    {
+      "name": "feed_inlet_adapter / green",
+      "before": 640,
+      "after": 640,
+      "primitives": 1
+    },
+    {
+      "name": "to_direct / green",
+      "before": 4480,
+      "after": 672,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco / blue",
+      "before": 1024,
+      "after": 668,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco / steel",
+      "before": 40352,
+      "after": 38540,
+      "primitives": 1
+    },
+    {
+      "name": "mod_eco CAD solid 0",
+      "before": 47388,
+      "after": 7193,
+      "primitives": 2
+    },
+    {
+      "name": "mod_direct / blue",
+      "before": 1024,
+      "after": 668,
+      "primitives": 1
+    },
+    {
+      "name": "mod_direct / steel",
+      "before": 43872,
+      "after": 41624,
+      "primitives": 1
+    },
+    {
+      "name": "mod_direct CAD solid 0",
+      "before": 47388,
+      "after": 7183,
+      "primitives": 2
+    },
+    {
+      "name": "mod_direct_bypass / green",
+      "before": 320,
+      "after": 284,
+      "primitives": 1
+    },
+    {
+      "name": "steam_manual / black",
+      "before": 14540,
+      "after": 14204,
+      "primitives": 1
+    },
+    {
+      "name": "steam_manual / blue",
+      "before": 1976,
+      "after": 1106,
+      "primitives": 1
+    },
+    {
+      "name": "steam_manual / steel",
+      "before": 94508,
+      "after": 87736,
+      "primitives": 1
+    },
+    {
+      "name": "steam_rise / steel",
+      "before": 2400,
+      "after": 1474,
+      "primitives": 1
+    },
+    {
+      "name": "steam_delivery / steel",
+      "before": 320,
+      "after": 158,
+      "primitives": 1
+    },
+    {
+      "name": "gpz / blue",
+      "before": 1024,
+      "after": 616,
+      "primitives": 1
+    },
+    {
+      "name": "gpz / steel",
+      "before": 74848,
+      "after": 69600,
+      "primitives": 1
+    },
+    {
+      "name": "gpz CAD solid 0",
+      "before": 49454,
+      "after": 8246,
+      "primitives": 2
+    },
+    {
+      "name": "gpz_bypass / steel",
+      "before": 320,
+      "after": 320,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 furnace 0",
+      "before": 8676,
+      "after": 1300,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 143",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 144",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 145",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 146",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 147",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 148",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 149",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 150",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 151",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 152",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 153",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 154",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 155",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 156",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 157",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 158",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 159",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 160",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 161",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 162",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 163",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 164",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 165",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 166",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 167",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 168",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 169",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 170",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 171",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 172",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 173",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 174",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 175",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 176",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 177",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 178",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 179",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 180",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 181",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 182",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 183",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 184",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 185",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 186",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 187",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 188",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 189",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 190",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 191",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 192",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 193",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 194",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 195",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 196",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 197",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 198",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 199",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 200",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 201",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 202",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 203",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 204",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 205",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 206",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 207",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 208",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 209",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 210",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 211",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 212",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 213",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 214",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 215",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 216",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 217",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 218",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 219",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 220",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 221",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 222",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 223",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 224",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 225",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 226",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 227",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 228",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 229",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 230",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 231",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 232",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 233",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 234",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 235",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 236",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 237",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 smoke_tube 238",
+      "before": 632,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "S4000 tube opening mask",
+      "before": 32036,
+      "after": 4804,
+      "primitives": 1
+    },
+    {
+      "name": "burner / burner_0.npz",
+      "before": 50290,
+      "after": 25428,
+      "primitives": 9
+    },
+    {
+      "name": "boiler_door / lining",
+      "before": 256,
+      "after": 256,
+      "primitives": 1
+    },
+    {
+      "name": "boiler CAD solid 0.002",
+      "before": 104905,
+      "after": 15731,
+      "primitives": 1
+    },
+    {
+      "name": "PREMIUM",
+      "before": 532,
+      "after": 500,
+      "primitives": 1
+    },
+    {
+      "name": "S-4000  8-12 bar",
+      "before": 1512,
+      "after": 1380,
+      "primitives": 1
+    },
+    {
+      "name": "control_cabinet / control_cabinet_0.npz",
+      "before": 292,
+      "after": 196,
+      "primitives": 2
+    },
+    {
+      "name": "cabinet_door / cabinet_door_0.npz",
+      "before": 1428,
+      "after": 660,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door / cabinet_door_1.npz",
+      "before": 36,
+      "after": 36,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door / cabinet_door_2.npz",
+      "before": 2872,
+      "after": 1038,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door / cabinet_door_3.npz",
+      "before": 808,
+      "after": 308,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door / cabinet_door_4.npz",
+      "before": 576,
+      "after": 274,
+      "primitives": 1
+    },
+    {
+      "name": "cabinet_door / cabinet_door_5.npz",
+      "before": 21643,
+      "after": 8369,
+      "primitives": 9
+    },
+    {
+      "name": "cabinet_interior / cabinet_interior_0.npz",
+      "before": 14012,
+      "after": 13916,
+      "primitives": 9
+    },
+    {
+      "name": "lc220 / lc220_0.npz",
+      "before": 60854,
+      "after": 9550,
+      "primitives": 3
+    },
+    {
+      "name": "lc440 / lc440_0.npz",
+      "before": 72410,
+      "after": 11284,
+      "primitives": 3
+    },
+    {
+      "name": "bc970 / bc970_0.npz",
+      "before": 76580,
+      "after": 11962,
+      "primitives": 3
+    },
+    {
+      "name": "deaerator CAD solid 0",
+      "before": 9480,
+      "after": 1422,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 1",
+      "before": 1708,
+      "after": 256,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 10",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 100",
+      "before": 1284,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 101",
+      "before": 840,
+      "after": 200,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 102",
+      "before": 3016,
+      "after": 842,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 103",
+      "before": 408,
+      "after": 94,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 104",
+      "before": 3272,
+      "after": 562,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 105",
+      "before": 840,
+      "after": 266,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 106",
+      "before": 3016,
+      "after": 834,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 107",
+      "before": 840,
+      "after": 280,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 108",
+      "before": 3016,
+      "after": 850,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 109",
+      "before": 840,
+      "after": 324,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 11",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 110",
+      "before": 3002,
+      "after": 834,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 111",
+      "before": 840,
+      "after": 244,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 112",
+      "before": 4732,
+      "after": 1082,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 113",
+      "before": 734,
+      "after": 396,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 114",
+      "before": 436,
+      "after": 188,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 115",
+      "before": 2068,
+      "after": 760,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 116",
+      "before": 11760,
+      "after": 3812,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 117",
+      "before": 3016,
+      "after": 840,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 118",
+      "before": 640,
+      "after": 200,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 119",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 12",
+      "before": 1172,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 120",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 121",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 122",
+      "before": 716,
+      "after": 226,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 123",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 124",
+      "before": 35940,
+      "after": 5390,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 125",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 126",
+      "before": 28124,
+      "after": 4218,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 127",
+      "before": 1636,
+      "after": 248,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 128",
+      "before": 840,
+      "after": 578,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 129",
+      "before": 840,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 13",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 130",
+      "before": 416,
+      "after": 250,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 131",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 132",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 133",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 134",
+      "before": 140,
+      "after": 104,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 135",
+      "before": 140,
+      "after": 104,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 136",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 137",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 138",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 139",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 14",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 140",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 141",
+      "before": 54908,
+      "after": 8236,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 142",
+      "before": 1116,
+      "after": 166,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 143",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 144",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 145",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 146",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 147",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 148",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 149",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 15",
+      "before": 840,
+      "after": 178,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 150",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 151",
+      "before": 12430,
+      "after": 1864,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 152",
+      "before": 528,
+      "after": 166,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 153",
+      "before": 212,
+      "after": 104,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 154",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 155",
+      "before": 212,
+      "after": 102,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 156",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 157",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 158",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 159",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 16",
+      "before": 4780,
+      "after": 1156,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 160",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 161",
+      "before": 2998,
+      "after": 792,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 162",
+      "before": 840,
+      "after": 346,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 163",
+      "before": 840,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 164",
+      "before": 3118,
+      "after": 800,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 165",
+      "before": 840,
+      "after": 324,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 166",
+      "before": 3118,
+      "after": 818,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 167",
+      "before": 840,
+      "after": 330,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 168",
+      "before": 1240,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 169",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 17",
+      "before": 123242,
+      "after": 18486,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 170",
+      "before": 1204,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 171",
+      "before": 1240,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 172",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 173",
+      "before": 1204,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 174",
+      "before": 1240,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 175",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 176",
+      "before": 1204,
+      "after": 498,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 177",
+      "before": 1240,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 178",
+      "before": 840,
+      "after": 356,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 179",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 18",
+      "before": 123242,
+      "after": 18486,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 180",
+      "before": 1240,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 181",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 182",
+      "before": 1204,
+      "after": 526,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 183",
+      "before": 1240,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 184",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 185",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 186",
+      "before": 1240,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 187",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 188",
+      "before": 1204,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 189",
+      "before": 1240,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 19",
+      "before": 1396,
+      "after": 536,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 190",
+      "before": 840,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 191",
+      "before": 1204,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 192",
+      "before": 1204,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 193",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 194",
+      "before": 1240,
+      "after": 384,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 195",
+      "before": 1204,
+      "after": 528,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 196",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 197",
+      "before": 1240,
+      "after": 392,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 198",
+      "before": 1204,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 199",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 2",
+      "before": 1172,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 20",
+      "before": 12430,
+      "after": 1864,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 200",
+      "before": 1240,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 201",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 202",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 203",
+      "before": 1240,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 204",
+      "before": 1204,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 205",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 206",
+      "before": 1240,
+      "after": 388,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 207",
+      "before": 1204,
+      "after": 502,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 208",
+      "before": 840,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 209",
+      "before": 1240,
+      "after": 390,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 21",
+      "before": 1212,
+      "after": 560,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 210",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 211",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 212",
+      "before": 1240,
+      "after": 388,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 213",
+      "before": 1204,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 214",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 215",
+      "before": 1240,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 216",
+      "before": 3118,
+      "after": 794,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 217",
+      "before": 840,
+      "after": 338,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 218",
+      "before": 1240,
+      "after": 396,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 219",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 22",
+      "before": 8768,
+      "after": 1476,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 220",
+      "before": 1204,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 221",
+      "before": 1240,
+      "after": 392,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 222",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 223",
+      "before": 1204,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 224",
+      "before": 1240,
+      "after": 398,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 225",
+      "before": 840,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 226",
+      "before": 1204,
+      "after": 526,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 227",
+      "before": 1240,
+      "after": 396,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 228",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 229",
+      "before": 1204,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 23",
+      "before": 840,
+      "after": 392,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 230",
+      "before": 3118,
+      "after": 788,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 231",
+      "before": 840,
+      "after": 332,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 232",
+      "before": 1240,
+      "after": 388,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 233",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 234",
+      "before": 1204,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 235",
+      "before": 1240,
+      "after": 394,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 236",
+      "before": 840,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 237",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 238",
+      "before": 1240,
+      "after": 390,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 239",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 24",
+      "before": 4732,
+      "after": 1170,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 240",
+      "before": 1204,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 241",
+      "before": 1240,
+      "after": 384,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 242",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 243",
+      "before": 1204,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 244",
+      "before": 1240,
+      "after": 392,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 245",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 246",
+      "before": 1204,
+      "after": 526,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 247",
+      "before": 1240,
+      "after": 396,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 248",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 249",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 25",
+      "before": 840,
+      "after": 270,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 250",
+      "before": 1240,
+      "after": 404,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 251",
+      "before": 840,
+      "after": 356,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 252",
+      "before": 1204,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 253",
+      "before": 1240,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 254",
+      "before": 840,
+      "after": 354,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 255",
+      "before": 1204,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 256",
+      "before": 55324,
+      "after": 8298,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 257",
+      "before": 59220,
+      "after": 8882,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 258",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 259",
+      "before": 1168,
+      "after": 526,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 26",
+      "before": 3016,
+      "after": 858,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 260",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 261",
+      "before": 1222,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 262",
+      "before": 1168,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 263",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 264",
+      "before": 1222,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 265",
+      "before": 1168,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 266",
+      "before": 840,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 267",
+      "before": 1222,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 268",
+      "before": 1168,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 269",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 27",
+      "before": 840,
+      "after": 268,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 270",
+      "before": 1222,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 271",
+      "before": 1168,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 272",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 273",
+      "before": 1222,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 274",
+      "before": 1168,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 275",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 276",
+      "before": 1222,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 277",
+      "before": 1168,
+      "after": 506,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 278",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 279",
+      "before": 1222,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 28",
+      "before": 3016,
+      "after": 842,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 280",
+      "before": 1168,
+      "after": 504,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 281",
+      "before": 840,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 282",
+      "before": 1222,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 283",
+      "before": 1168,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 284",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 285",
+      "before": 1222,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 286",
+      "before": 1168,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 287",
+      "before": 840,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 288",
+      "before": 1222,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 289",
+      "before": 1168,
+      "after": 498,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 29",
+      "before": 840,
+      "after": 384,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 290",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 291",
+      "before": 1222,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 292",
+      "before": 1168,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 293",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 294",
+      "before": 1222,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 295",
+      "before": 1168,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 296",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 297",
+      "before": 1222,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 298",
+      "before": 1168,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 299",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 3",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 30",
+      "before": 4780,
+      "after": 1166,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 300",
+      "before": 1222,
+      "after": 388,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 301",
+      "before": 1168,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 302",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 303",
+      "before": 1222,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 304",
+      "before": 1168,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 305",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 306",
+      "before": 1222,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 307",
+      "before": 1168,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 308",
+      "before": 840,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 309",
+      "before": 1222,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 31",
+      "before": 840,
+      "after": 340,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 310",
+      "before": 1168,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 311",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 312",
+      "before": 1222,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 313",
+      "before": 1168,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 314",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 315",
+      "before": 1222,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 316",
+      "before": 1168,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 317",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 318",
+      "before": 1222,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 319",
+      "before": 1164,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 32",
+      "before": 2956,
+      "after": 862,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 320",
+      "before": 1220,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 321",
+      "before": 840,
+      "after": 350,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 322",
+      "before": 1164,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 323",
+      "before": 1220,
+      "after": 356,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 324",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 325",
+      "before": 1164,
+      "after": 506,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 326",
+      "before": 1220,
+      "after": 354,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 327",
+      "before": 840,
+      "after": 348,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 328",
+      "before": 1164,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 329",
+      "before": 1220,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 33",
+      "before": 840,
+      "after": 206,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 330",
+      "before": 840,
+      "after": 348,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 331",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 332",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 333",
+      "before": 1240,
+      "after": 384,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 334",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 335",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 336",
+      "before": 1240,
+      "after": 382,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 337",
+      "before": 1204,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 338",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 339",
+      "before": 1240,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 34",
+      "before": 2968,
+      "after": 858,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 340",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 341",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 342",
+      "before": 1240,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 343",
+      "before": 1204,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 344",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 345",
+      "before": 1240,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 346",
+      "before": 1204,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 347",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 348",
+      "before": 1240,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 349",
+      "before": 1204,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 35",
+      "before": 840,
+      "after": 152,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 350",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 351",
+      "before": 1240,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 352",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 353",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 354",
+      "before": 1240,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 36",
+      "before": 3006,
+      "after": 824,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 363",
+      "before": 1222,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 364",
+      "before": 1168,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 365",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 366",
+      "before": 1222,
+      "after": 358,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 367",
+      "before": 1168,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 368",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 369",
+      "before": 1222,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 37",
+      "before": 840,
+      "after": 186,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 370",
+      "before": 1168,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 371",
+      "before": 840,
+      "after": 358,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 372",
+      "before": 1222,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 373",
+      "before": 1168,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 374",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 375",
+      "before": 1222,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 376",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 377",
+      "before": 1168,
+      "after": 508,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 378",
+      "before": 1222,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 379",
+      "before": 840,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 38",
+      "before": 3006,
+      "after": 826,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 380",
+      "before": 1168,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 381",
+      "before": 1222,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 382",
+      "before": 840,
+      "after": 358,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 383",
+      "before": 1168,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 384",
+      "before": 1222,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 385",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 386",
+      "before": 1168,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 387",
+      "before": 1222,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 388",
+      "before": 840,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 389",
+      "before": 1168,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 39",
+      "before": 43832,
+      "after": 6574,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 390",
+      "before": 1222,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 391",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 392",
+      "before": 1168,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 393",
+      "before": 1222,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 394",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 395",
+      "before": 1168,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 396",
+      "before": 1222,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 397",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 398",
+      "before": 1168,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 399",
+      "before": 3404,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 4",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 40",
+      "before": 416,
+      "after": 226,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 400",
+      "before": 1222,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 401",
+      "before": 1168,
+      "after": 528,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 402",
+      "before": 1222,
+      "after": 382,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 403",
+      "before": 1168,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 404",
+      "before": 1222,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 405",
+      "before": 1168,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 406",
+      "before": 1222,
+      "after": 382,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 407",
+      "before": 1168,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 408",
+      "before": 8748,
+      "after": 1420,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 409",
+      "before": 1424,
+      "after": 410,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 41",
+      "before": 11760,
+      "after": 3964,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 410",
+      "before": 1252,
+      "after": 398,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 411",
+      "before": 12288,
+      "after": 1842,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 412",
+      "before": 12288,
+      "after": 1842,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 413",
+      "before": 1164,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 414",
+      "before": 1220,
+      "after": 348,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 415",
+      "before": 840,
+      "after": 354,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 416",
+      "before": 1164,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 417",
+      "before": 1220,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 418",
+      "before": 840,
+      "after": 350,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 419",
+      "before": 1164,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 42",
+      "before": 244,
+      "after": 108,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 420",
+      "before": 1220,
+      "after": 350,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 421",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 422",
+      "before": 1164,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 423",
+      "before": 1220,
+      "after": 354,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 424",
+      "before": 840,
+      "after": 350,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 425",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 426",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 427",
+      "before": 1240,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 428",
+      "before": 1204,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 429",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 43",
+      "before": 244,
+      "after": 108,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 430",
+      "before": 1240,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 431",
+      "before": 1204,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 432",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 433",
+      "before": 1240,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 434",
+      "before": 1204,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 435",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 436",
+      "before": 1240,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 437",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 438",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 439",
+      "before": 1240,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 44",
+      "before": 500,
+      "after": 96,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 440",
+      "before": 1204,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 441",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 442",
+      "before": 1240,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 443",
+      "before": 1204,
+      "after": 526,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 444",
+      "before": 840,
+      "after": 358,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 445",
+      "before": 1240,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 446",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 447",
+      "before": 840,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 448",
+      "before": 1240,
+      "after": 382,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 449",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 45",
+      "before": 448,
+      "after": 140,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 450",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 451",
+      "before": 1240,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 452",
+      "before": 1204,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 453",
+      "before": 840,
+      "after": 356,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 454",
+      "before": 1240,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 455",
+      "before": 1204,
+      "after": 508,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 456",
+      "before": 840,
+      "after": 358,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 457",
+      "before": 1240,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 458",
+      "before": 1204,
+      "after": 528,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 459",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 46",
+      "before": 448,
+      "after": 132,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 460",
+      "before": 1240,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 461",
+      "before": 1204,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 462",
+      "before": 840,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 463",
+      "before": 1240,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 464",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 465",
+      "before": 840,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 466",
+      "before": 1240,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 467",
+      "before": 1204,
+      "after": 530,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 468",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 469",
+      "before": 1240,
+      "after": 354,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 47",
+      "before": 1052,
+      "after": 256,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 470",
+      "before": 1204,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 471",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 472",
+      "before": 1240,
+      "after": 382,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 473",
+      "before": 1180,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 474",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 475",
+      "before": 1228,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 476",
+      "before": 1180,
+      "after": 528,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 477",
+      "before": 840,
+      "after": 384,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 478",
+      "before": 1228,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 479",
+      "before": 1180,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 48",
+      "before": 11760,
+      "after": 3864,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 480",
+      "before": 840,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 481",
+      "before": 1228,
+      "after": 354,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 482",
+      "before": 1180,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 483",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 484",
+      "before": 1228,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 485",
+      "before": 1180,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 486",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 487",
+      "before": 1228,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 488",
+      "before": 1180,
+      "after": 504,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 489",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 49",
+      "before": 1052,
+      "after": 344,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 490",
+      "before": 1228,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 491",
+      "before": 1180,
+      "after": 508,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 492",
+      "before": 840,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 493",
+      "before": 1228,
+      "after": 352,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 494",
+      "before": 1180,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 495",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 496",
+      "before": 1228,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 497",
+      "before": 1180,
+      "after": 500,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 498",
+      "before": 840,
+      "after": 384,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 499",
+      "before": 1228,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 5",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 50",
+      "before": 2382,
+      "after": 428,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 500",
+      "before": 1180,
+      "after": 508,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 501",
+      "before": 840,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 502",
+      "before": 1228,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 503",
+      "before": 1180,
+      "after": 510,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 504",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 505",
+      "before": 1228,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 506",
+      "before": 1180,
+      "after": 512,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 507",
+      "before": 840,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 508",
+      "before": 1228,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 509",
+      "before": 1180,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 51",
+      "before": 2956,
+      "after": 878,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 510",
+      "before": 840,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 511",
+      "before": 1228,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 512",
+      "before": 1180,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 513",
+      "before": 840,
+      "after": 382,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 514",
+      "before": 1228,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 515",
+      "before": 1180,
+      "after": 506,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 516",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 517",
+      "before": 1228,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 518",
+      "before": 1180,
+      "after": 528,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 519",
+      "before": 840,
+      "after": 384,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 52",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 520",
+      "before": 1228,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 521",
+      "before": 1180,
+      "after": 514,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 522",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 523",
+      "before": 1228,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 524",
+      "before": 1180,
+      "after": 518,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 525",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 526",
+      "before": 1228,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 527",
+      "before": 1180,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 528",
+      "before": 840,
+      "after": 370,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 529",
+      "before": 1228,
+      "after": 352,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 53",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 530",
+      "before": 1180,
+      "after": 524,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 531",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 532",
+      "before": 1228,
+      "after": 364,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 533",
+      "before": 1180,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 534",
+      "before": 840,
+      "after": 372,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 535",
+      "before": 1228,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 536",
+      "before": 1180,
+      "after": 522,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 537",
+      "before": 840,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 538",
+      "before": 1228,
+      "after": 360,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 539",
+      "before": 1180,
+      "after": 508,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 54",
+      "before": 92,
+      "after": 44,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 540",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 541",
+      "before": 1228,
+      "after": 368,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 542",
+      "before": 1180,
+      "after": 520,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 543",
+      "before": 840,
+      "after": 380,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 544",
+      "before": 1228,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 545",
+      "before": 436,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 546",
+      "before": 436,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 547",
+      "before": 436,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 548",
+      "before": 436,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 549",
+      "before": 436,
+      "after": 178,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 55",
+      "before": 303026,
+      "after": 45452,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 550",
+      "before": 436,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 551",
+      "before": 436,
+      "after": 182,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 552",
+      "before": 436,
+      "after": 180,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 56",
+      "before": 350056,
+      "after": 52508,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 57",
+      "before": 840,
+      "after": 126,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 58",
+      "before": 3006,
+      "after": 824,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 59",
+      "before": 840,
+      "after": 126,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 6",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 60",
+      "before": 3006,
+      "after": 842,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 61",
+      "before": 840,
+      "after": 126,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 62",
+      "before": 3006,
+      "after": 844,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 63",
+      "before": 840,
+      "after": 126,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 64",
+      "before": 3006,
+      "after": 842,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 65",
+      "before": 672,
+      "after": 218,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 66",
+      "before": 92,
+      "after": 44,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 67",
+      "before": 672,
+      "after": 222,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 68",
+      "before": 92,
+      "after": 44,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 69",
+      "before": 672,
+      "after": 220,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 7",
+      "before": 776,
+      "after": 224,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 70",
+      "before": 92,
+      "after": 44,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 71",
+      "before": 672,
+      "after": 222,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 72",
+      "before": 644,
+      "after": 276,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 73",
+      "before": 644,
+      "after": 276,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 74",
+      "before": 644,
+      "after": 278,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 75",
+      "before": 644,
+      "after": 278,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 76",
+      "before": 840,
+      "after": 336,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 77",
+      "before": 840,
+      "after": 342,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 79",
+      "before": 840,
+      "after": 328,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 8",
+      "before": 776,
+      "after": 224,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 80",
+      "before": 840,
+      "after": 336,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 81",
+      "before": 840,
+      "after": 322,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 82",
+      "before": 840,
+      "after": 348,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 83",
+      "before": 840,
+      "after": 328,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 84",
+      "before": 840,
+      "after": 386,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 85",
+      "before": 840,
+      "after": 352,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 86",
+      "before": 2952,
+      "after": 792,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 87",
+      "before": 3070,
+      "after": 808,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 88",
+      "before": 3214,
+      "after": 754,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 89",
+      "before": 4776,
+      "after": 1074,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 9",
+      "before": 3452,
+      "after": 516,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 90",
+      "before": 3118,
+      "after": 796,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 91",
+      "before": 3214,
+      "after": 756,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 92",
+      "before": 4728,
+      "after": 1110,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 94",
+      "before": 3118,
+      "after": 806,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 95",
+      "before": 4776,
+      "after": 1074,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 96",
+      "before": 49560,
+      "after": 7434,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 97",
+      "before": 840,
+      "after": 490,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 98",
+      "before": 4732,
+      "after": 1158,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator CAD solid 99",
+      "before": 1284,
+      "after": 358,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator_details / black",
+      "before": 576,
+      "after": 576,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator_details / steel",
+      "before": 286048,
+      "after": 267445,
+      "primitives": 1
+    },
+    {
+      "name": "deaerator_details / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "economizer CAD solid 0",
+      "before": 20730,
+      "after": 3108,
+      "primitives": 1
+    },
+    {
+      "name": "economizer CAD solid 1",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "economizer CAD solid 2",
+      "before": 7072,
+      "after": 1060,
+      "primitives": 1
+    },
+    {
+      "name": "economizer CAD solid 3",
+      "before": 25208,
+      "after": 3780,
+      "primitives": 1
+    },
+    {
+      "name": "flue_spacer / dark",
+      "before": 65152,
+      "after": 62024,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 0",
+      "before": 9036,
+      "after": 2036,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 1",
+      "before": 3354,
+      "after": 1118,
+      "primitives": 2
+    },
+    {
+      "name": "pump_1 CAD solid 10",
+      "before": 1812,
+      "after": 678,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 11",
+      "before": 1048,
+      "after": 318,
+      "primitives": 2
+    },
+    {
+      "name": "pump_1 CAD solid 12",
+      "before": 1048,
+      "after": 320,
+      "primitives": 2
+    },
+    {
+      "name": "pump_1 CAD solid 13",
+      "before": 1048,
+      "after": 320,
+      "primitives": 2
+    },
+    {
+      "name": "pump_1 CAD solid 14",
+      "before": 1048,
+      "after": 322,
+      "primitives": 2
+    },
+    {
+      "name": "pump_1 CAD solid 15",
+      "before": 15116,
+      "after": 2508,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 2",
+      "before": 840,
+      "after": 542,
+      "primitives": 2
+    },
+    {
+      "name": "pump_1 CAD solid 3",
+      "before": 840,
+      "after": 362,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 4",
+      "before": 840,
+      "after": 378,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 5",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 6",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 7",
+      "before": 1812,
+      "after": 666,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 8",
+      "before": 1812,
+      "after": 652,
+      "primitives": 1
+    },
+    {
+      "name": "pump_1 CAD solid 9",
+      "before": 1812,
+      "after": 672,
+      "primitives": 1
+    },
+    {
+      "name": "pump_in_valve_1 / black",
+      "before": 17548,
+      "after": 16994,
+      "primitives": 1
+    },
+    {
+      "name": "pump_in_valve_1 / blue",
+      "before": 1976,
+      "after": 1186,
+      "primitives": 1
+    },
+    {
+      "name": "pump_in_valve_1 / steel",
+      "before": 68492,
+      "after": 65976,
+      "primitives": 1
+    },
+    {
+      "name": "pump_check_1 / blue",
+      "before": 1024,
+      "after": 728,
+      "primitives": 1
+    },
+    {
+      "name": "pump_check_1 / steel",
+      "before": 45056,
+      "after": 43036,
+      "primitives": 1
+    },
+    {
+      "name": "pump_out_valve_1 / black",
+      "before": 17036,
+      "after": 16660,
+      "primitives": 1
+    },
+    {
+      "name": "pump_out_valve_1 / blue",
+      "before": 1976,
+      "after": 1186,
+      "primitives": 1
+    },
+    {
+      "name": "pump_out_valve_1 / steel",
+      "before": 68044,
+      "after": 65278,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_1 / blue",
+      "before": 1024,
+      "after": 416,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_1 / dark",
+      "before": 36,
+      "after": 36,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_1 / green",
+      "before": 4000,
+      "after": 936,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_1 / steel",
+      "before": 46944,
+      "after": 44628,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 0",
+      "before": 9036,
+      "after": 2034,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 1",
+      "before": 3354,
+      "after": 1152,
+      "primitives": 2
+    },
+    {
+      "name": "pump_2 CAD solid 10",
+      "before": 1812,
+      "after": 656,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 11",
+      "before": 1048,
+      "after": 324,
+      "primitives": 2
+    },
+    {
+      "name": "pump_2 CAD solid 12",
+      "before": 1048,
+      "after": 322,
+      "primitives": 2
+    },
+    {
+      "name": "pump_2 CAD solid 13",
+      "before": 1048,
+      "after": 318,
+      "primitives": 2
+    },
+    {
+      "name": "pump_2 CAD solid 14",
+      "before": 1048,
+      "after": 322,
+      "primitives": 2
+    },
+    {
+      "name": "pump_2 CAD solid 15",
+      "before": 15116,
+      "after": 2484,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 2",
+      "before": 840,
+      "after": 546,
+      "primitives": 2
+    },
+    {
+      "name": "pump_2 CAD solid 3",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 4",
+      "before": 840,
+      "after": 374,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 5",
+      "before": 840,
+      "after": 376,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 6",
+      "before": 840,
+      "after": 366,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 7",
+      "before": 1812,
+      "after": 642,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 8",
+      "before": 1812,
+      "after": 674,
+      "primitives": 1
+    },
+    {
+      "name": "pump_2 CAD solid 9",
+      "before": 1812,
+      "after": 680,
+      "primitives": 1
+    },
+    {
+      "name": "pump_in_valve_2 / black",
+      "before": 17964,
+      "after": 17562,
+      "primitives": 1
+    },
+    {
+      "name": "pump_in_valve_2 / blue",
+      "before": 1976,
+      "after": 1188,
+      "primitives": 1
+    },
+    {
+      "name": "pump_in_valve_2 / steel",
+      "before": 69132,
+      "after": 66806,
+      "primitives": 1
+    },
+    {
+      "name": "pump_check_2 / blue",
+      "before": 1024,
+      "after": 722,
+      "primitives": 1
+    },
+    {
+      "name": "pump_check_2 / steel",
+      "before": 45760,
+      "after": 44140,
+      "primitives": 1
+    },
+    {
+      "name": "pump_out_valve_2 / black",
+      "before": 17772,
+      "after": 17478,
+      "primitives": 1
+    },
+    {
+      "name": "pump_out_valve_2 / blue",
+      "before": 1976,
+      "after": 1192,
+      "primitives": 1
+    },
+    {
+      "name": "pump_out_valve_2 / steel",
+      "before": 69388,
+      "after": 66712,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_2 / blue",
+      "before": 1024,
+      "after": 436,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_2 / dark",
+      "before": 36,
+      "after": 36,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_2 / green",
+      "before": 4000,
+      "after": 934,
+      "primitives": 1
+    },
+    {
+      "name": "pump_branch_2 / steel",
+      "before": 47328,
+      "after": 44860,
+      "primitives": 1
+    },
+    {
+      "name": "pump_delivery / green",
+      "before": 320,
+      "after": 90,
+      "primitives": 1
+    },
+    {
+      "name": "separator_bdv60_5 / dark",
+      "before": 8576,
+      "after": 2554,
+      "primitives": 1
+    },
+    {
+      "name": "separator_bdv60_5 / steel",
+      "before": 218944,
+      "after": 205541,
+      "primitives": 1
+    },
+    {
+      "name": "FV8",
+      "before": 320,
+      "after": 320,
+      "primitives": 1
+    },
+    {
+      "name": "separator_fv8 / dark",
+      "before": 8416,
+      "after": 2188,
+      "primitives": 1
+    },
+    {
+      "name": "separator_fv8 / steel",
+      "before": 162032,
+      "after": 152217,
+      "primitives": 1
+    },
+    {
+      "name": "separator_fv8 / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_piping / dark",
+      "before": 320,
+      "after": 320,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_before_gate / dark",
+      "before": 320,
+      "after": 320,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_before_auto / dark",
+      "before": 320,
+      "after": 320,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_after_auto / dark",
+      "before": 320,
+      "after": 320,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_bypass_before / dark",
+      "before": 2400,
+      "after": 704,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_bypass_after / dark",
+      "before": 2400,
+      "after": 722,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_discharge / dark",
+      "before": 320,
+      "after": 72,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_to_bdv / dark",
+      "before": 5504,
+      "after": 824,
+      "primitives": 1
+    },
+    {
+      "name": "bottom_to_bdv / steel",
+      "before": 23408,
+      "after": 22624,
+      "primitives": 1
+    },
+    {
+      "name": "tds_common / dark",
+      "before": 8640,
+      "after": 1296,
+      "primitives": 1
+    },
+    {
+      "name": "tds_without_fv / dark",
+      "before": 7584,
+      "after": 1136,
+      "primitives": 1
+    },
+    {
+      "name": "tds_without_fv / steel",
+      "before": 22352,
+      "after": 21648,
+      "primitives": 1
+    },
+    {
+      "name": "tds_without_vessels / dark",
+      "before": 320,
+      "after": 78,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_vent / dark",
+      "before": 832,
+      "after": 288,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_vent / steel",
+      "before": 42080,
+      "after": 39966,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_water_drain / dark",
+      "before": 4992,
+      "after": 1290,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_water_drain / steel",
+      "before": 37024,
+      "after": 34982,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_cooling_stub / green",
+      "before": 2912,
+      "after": 466,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_cooling_stub / steel",
+      "before": 21232,
+      "after": 20436,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_bottom_drain_stub / dark",
+      "before": 320,
+      "after": 320,
+      "primitives": 1
+    },
+    {
+      "name": "local_open_drains / steel",
+      "before": 9056,
+      "after": 1358,
+      "primitives": 1
+    },
+    {
+      "name": "BDV 60/5",
+      "before": 704,
+      "after": 684,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_identification / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "bdv_cooling_marker / white",
+      "before": 12,
+      "after": 12,
+      "primitives": 1
+    },
+    {
+      "name": "COOLING IN",
+      "before": 652,
+      "after": 624,
+      "primitives": 1
+    },
+    {
+      "name": "COOLING IN.001",
+      "before": 652,
+      "after": 624,
+      "primitives": 1
+    }
+  ],
+  "textures": []
+}

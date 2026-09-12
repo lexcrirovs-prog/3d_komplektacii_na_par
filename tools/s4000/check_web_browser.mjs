@@ -1,0 +1,75 @@
+import {createRequire} from 'node:module';
+import {resolve} from 'node:path';
+import {mkdir,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const require=createRequire(resolve(process.env.S3000_BROWSER_RUNTIME,'package.json'));
+const {chromium}=require('playwright');
+const [base,out]=process.argv.slice(2);await mkdir(out,{recursive:true});
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const errors=[],checks=[];
+try {
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});
+ page.on('pageerror',e=>errors.push(e.message));
+ const requests=[];page.on('request',r=>{if(r.url().includes('.glb'))requests.push(r.url());});
+ await page.goto(base+'?inspect3d=1',{waitUntil:'domcontentloaded'});
+ await page.waitForFunction(()=>window.__s3000?.scene,null,{timeout:120000});
+ await page.waitForTimeout(2000);
+ const shot=async name=>{await page.waitForTimeout(1200);await page.screenshot({path:resolve(out,name+'.png')});};
+ await shot('overview');
+ assert(requests.filter(r=>/s4000-/.test(r)).length===8);
+ assert(!requests.some(r=>/s3000-/.test(r)));checks.push('Only the selected assembly downloads');
+ const get=ids=>page.evaluate(ids=>Object.fromEntries(ids.map(id=>{const n=window.__s3000.scene.getObjectByName(id);return [id,{visible:n.visible,matrix:n.matrixWorld.toArray()}];})),ids);
+ const before=await get(['bottom_to_bdv','tds_to_fv','boiler','boiler_tubes']);
+ const bdv=page.getByRole('checkbox',{name:/BDV — бак продувки/});
+ const fv=page.getByRole('checkbox',{name:/FV — сепаратор/});
+ for(const b of [false,true])for(const f of [false,true]){
+  await bdv.setChecked(b);await fv.setChecked(f);await page.waitForTimeout(200);
+  const actual=await get(['separator_bdv60_5','separator_fv8','bottom_to_bdv','tds_to_fv','tds_without_fv']);
+  assert.equal(actual.separator_bdv60_5.visible,b);assert.equal(actual.separator_fv8.visible,f);
+  for(const id of ['bottom_to_bdv','tds_to_fv'])assert.deepEqual(actual[id],before[id]);
+  assert(!actual.tds_without_fv.visible);
+ }
+ await bdv.uncheck();await fv.uncheck();await shot('vessels-off');
+ checks.push('All four vessel combinations preserve approach pipes and their exact transforms');
+ const eco=page.getByRole('checkbox',{name:/^Экономайзер/});
+ const mod=page.getByRole('checkbox',{name:/^Модуляция/});
+ for(const e of [false,true])for(const m of [false,true]){
+  await eco.setChecked(e);await mod.setChecked(m);await page.waitForTimeout(200);
+  const names=['mod_eco','mod_direct','mod_eco_bypass','mod_direct_bypass'];
+  const actual=await get(names);assert.deepEqual(names.filter(n=>actual[n].visible),[`mod_${e?'eco':'direct'}${m?'':'_bypass'}`]);
+ }
+ checks.push('Four modulation/economizer combinations show the expected valve or straight pipe');
+ const gpz=page.getByRole('checkbox',{name:/^ГПЗ/});assert(await gpz.isDisabled());assert(await gpz.isChecked());
+ await page.reload();await page.waitForFunction(()=>window.__s3000?.scene,null,{timeout:120000});
+ assert(await gpz.isChecked());assert(!(await bdv.isChecked()));checks.push('Selections survive reload, mandatory GPZ stays enabled');
+ const trim=page.getByLabel('Комплектация',{exact:true});
+ await trim.selectOption('standard');await page.waitForTimeout(300);
+ assert(await mod.isDisabled());assert(!(await mod.isChecked()));
+ let state=await get(['lcs600','pr200','pressure_transmitter','pressure_switch_3','lp200']);
+ assert(!state.lcs600.visible&&!state.pr200.visible&&!state.pressure_transmitter.visible&&state.pressure_switch_3.visible&&state.lp200.visible);
+ await trim.selectOption('comfort_plus');await page.waitForTimeout(300);
+ assert(!(await mod.isDisabled()));
+ state=await get(['low_level_1','low_level_2','high_level','level_controller_1','level_controller_2','level_controller_3','lp200','lp400']);
+ for(const id of ['low_level_1','low_level_2','high_level','level_controller_1','level_controller_2','level_controller_3'])assert(state[id].visible,id);
+ assert(!state.lp200.visible&&!state.lp400.visible);
+ await page.getByRole('button',{name:'Открыть шкаф',exact:true}).click();await shot('comfort-plus-cabinet');
+ await page.getByRole('button',{name:'Закрыть шкаф',exact:true}).click();
+ await trim.selectOption('comfort');await mod.check();
+ checks.push('Trim selection changes actual 3D sensors, controllers and pressure instruments; Standard disables modulation');
+ await page.getByRole('button',{name:'Открыть шкаф',exact:true}).click();
+ await page.waitForFunction(()=>Math.abs(window.__s3000.scene.getObjectByName('opening_cabinet').rotation.y+110*Math.PI/180)<.0001);
+ await shot('cabinet-open');
+ await page.getByRole('button',{name:'Открыть дверь котла',exact:true}).click();
+ await page.waitForFunction(()=>Math.abs(window.__s3000.scene.getObjectByName('opening_boiler').rotation.y+105*Math.PI/180)<.0001);
+ await shot('boiler-open');
+ const after=await get(['boiler','boiler_tubes']);for(const id of Object.keys(after))assert.deepEqual(after[id].matrix,before[id].matrix);
+ checks.push('Both doors open to source angles; boiler body and tubes remain fixed');
+ await page.getByRole('button',{name:'Закрыть дверь котла',exact:true}).click();
+ await page.getByRole('button',{name:'Закрыть шкаф',exact:true}).click();
+ await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Общий вид',exact:true}).click();await shot('mobile');
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
+ checks.push('Mobile viewport has no horizontal overflow');
+ assert.deepEqual(errors,[]);
+ await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_BROWSER_INTERACTION',base,checks,errors},null,2));
+ console.log(JSON.stringify({status:'PASSED_BROWSER_INTERACTION',checks}));
+} finally {await browser.close();}

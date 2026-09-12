@@ -78,7 +78,7 @@ print(json.dumps({{'files':files,'neighbors':neighbors}}))
     with tarfile.open(OUT/'candidate.tar.gz','w:gz') as tar:
         for p in sorted((REPO/'dist').rglob('*')):
             if p.is_file(): tar.add(p,arcname=p.relative_to(REPO/'dist').as_posix(),recursive=False)
-    save('prepared.json',{'version':VERSION,'candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/komplektacii4-v2026.09.09.4/'})
+    save('prepared.json',{'version':VERSION,'candidateSha256':sha((OUT/'candidate.tar.gz').read_bytes()),'manifestSha256':sha((REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()),'backupSha256':sha((OUT/'previous-publication.tar.gz').read_bytes()),'backupFiles':len(actual),'backupUrl':'https://prgz.ru/'+BACKUP.rsplit('/',1)[-1]+'/'})
     print('PREPARED_AND_PREVIOUS_PUBLICATION_BACKED_UP')
 
 def stage():

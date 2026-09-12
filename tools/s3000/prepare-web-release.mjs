@@ -2,7 +2,7 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-const version = JSON.parse(await readFile('src/assets/s3000/web-version.json','utf8'));
+const version = JSON.parse(await readFile('src/assets/s4000/web/version.json','utf8'));
 const commit = execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 await writeFile('dist/version.json',JSON.stringify({...version,source_commit:commit,url:'https://prgz.ru/komplektacii4/'},null,2)+'\n');
 await mkdir('dist/assets',{recursive:true});

@@ -1,0 +1,7262 @@
+{
+  "standard": {
+    "S-500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-1000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-1500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-2000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-2500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-3000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-3500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-4000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ],
+    "S-5000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 5
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 6
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "relay_control",
+        "label": "Шкаф с релейной автоматикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      }
+    ]
+  },
+  "comfort": {
+    "S-500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-1000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-1500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-2000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-2500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-3000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-3500": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-4000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ],
+    "S-5000": [
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 6
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 7
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 8
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 9
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 13
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 16
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "lp200",
+        "label": "Двухконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lc220",
+        "label": "Контроллер сигнализации уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "lp400",
+        "label": "Четырёхконтактный датчик уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 22
+      },
+      {
+        "id": "lc440",
+        "label": "Контроллер управления уровнем",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 28
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 32
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 35
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 40
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 43
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 46
+      }
+    ]
+  },
+  "comfort_plus": {
+    "S-500": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-1000": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-1500": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-2000": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-2500": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-3000": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-3500": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-4000": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ],
+    "S-5000": [
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "gpz",
+        "source_row": 4
+      },
+      {
+        "id": "gpz",
+        "label": "ГПЗ с электроприводом",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "gpz",
+        "source_row": 5
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 8,
+        "option": "modulation",
+        "source_row": 6
+      },
+      {
+        "id": "modulation",
+        "label": "Клапан модуляции питательной воды",
+        "quantity": 1,
+        "pressure": 12,
+        "option": "modulation",
+        "source_row": 7
+      },
+      {
+        "id": "feed_valve",
+        "label": "Запорный вентиль питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 8
+      },
+      {
+        "id": "tds_isolation",
+        "label": "Вентиль непрерывной продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 9
+      },
+      {
+        "id": "drain_isolation",
+        "label": "Вентили периодической продувки",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 10
+      },
+      {
+        "id": "air_valve",
+        "label": "Вентиль удаления воздуха",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 11
+      },
+      {
+        "id": "feed_check",
+        "label": "Обратный клапан питательной воды",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 12
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 14
+      },
+      {
+        "id": "safety",
+        "label": "Предохранительные клапаны",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 15
+      },
+      {
+        "id": "sight_glasses",
+        "label": "Визуальные указатели уровня",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 17
+      },
+      {
+        "id": "low_level",
+        "label": "Датчики низкого уровня с самодиагностикой",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 18
+      },
+      {
+        "id": "level_controllers",
+        "label": "Контроллеры уровня с самодиагностикой",
+        "quantity": 3,
+        "pressure": null,
+        "option": null,
+        "source_row": 19
+      },
+      {
+        "id": "lcs600",
+        "label": "Датчик непрерывного измерения уровня",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 20
+      },
+      {
+        "id": "high_level",
+        "label": "Датчик высокого уровня с самодиагностикой",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 21
+      },
+      {
+        "id": "bc970",
+        "label": "Контроллер непрерывной и периодической продувки",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 23
+      },
+      {
+        "id": "cp930",
+        "label": "Датчик электропроводности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 24
+      },
+      {
+        "id": "bcv925",
+        "label": "Клапан непрерывной продувки с электроприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 25
+      },
+      {
+        "id": "pcf20",
+        "label": "Узел подключения датчика проводимости",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 26
+      },
+      {
+        "id": "bcv7432",
+        "label": "Клапан периодической продувки с пневмоприводом",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 27
+      },
+      {
+        "id": "pressure_switches",
+        "label": "Реле давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 29
+      },
+      {
+        "id": "pressure_transmitter",
+        "label": "Датчик давления",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 30
+      },
+      {
+        "id": "pressure_gauge",
+        "label": "Манометр с трёхходовым краном",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 31
+      },
+      {
+        "id": "sc9",
+        "label": "Охладитель проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 33
+      },
+      {
+        "id": "sample_piping",
+        "label": "Монтажный комплект охладителя проб",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 34
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 8,
+        "option": null,
+        "source_row": 36
+      },
+      {
+        "id": "pump",
+        "label": "Питательные насосы",
+        "quantity": 2,
+        "pressure": 12,
+        "option": null,
+        "source_row": 37
+      },
+      {
+        "id": "pump_valves",
+        "label": "Запорная арматура насосов",
+        "quantity": 4,
+        "pressure": null,
+        "option": null,
+        "source_row": 38
+      },
+      {
+        "id": "pump_checks",
+        "label": "Обратные клапаны насосов",
+        "quantity": 2,
+        "pressure": null,
+        "option": null,
+        "source_row": 39
+      },
+      {
+        "id": "pressure_header",
+        "label": "Группа безопасности",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 41
+      },
+      {
+        "id": "electrode_flanges",
+        "label": "Монтажный комплект электродов",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 42
+      },
+      {
+        "id": "pr200",
+        "label": "Шкаф с программируемым контроллером",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 44
+      },
+      {
+        "id": "steam_manual",
+        "label": "Паровой запорный вентиль",
+        "quantity": 1,
+        "pressure": null,
+        "option": null,
+        "source_row": 4
+      }
+    ]
+  }
+}

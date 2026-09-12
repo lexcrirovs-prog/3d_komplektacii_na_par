@@ -66,4 +66,42 @@ clearance analysis. Focused screenshots are inspected as a separate check.
 Deployment uses a staged candidate, manifest hashes, stage browser acceptance,
 an unchanged-live check and neighbor-route checks before cutover. The previous
 publication is retained as `/komplektacii4-v2026.09.12.2/`.
-The publication and browser receipts below are added only after live verification.
+## Published copy verified
+
+Status: **PASSED_PUBLIC_COPY**, 2026-09-13.
+URL: https://prgz.ru/komplektacii4/
+
+Application source commit: `4a1bfcb276b6b322f22e4355668a16fa7824717e`.
+Manifest SHA-256:
+`2724ee8094fdf0e372fbeadc7d1780fdb2c7e3cd66a7bfa796fe2c23737a9405`.
+Candidate archive SHA-256:
+`ca58cbcdf2f49ea045c98412c7ac7a87d50d537457cf0c944743da6e898de03a`.
+
+All **51 public files** passed HTTPS content-hash checks at stage and live.
+All **53 files**, including private server configuration, passed SSH checks.
+Both full family browser scenarios passed with zero page errors, as did the
+focused geometry/wiring checks. All three measured spacers are 500 mm within
+2 mm browser quantization tolerance; no intersections were found by the scoped
+level-route/boiler checks. Sensor visibility matches cable visibility in all
+three trims. Glands enter the fixed bottom panel rather than the moving door.
+Neighbor site entry files remained unchanged at cutover.
+
+The canonical S-4000 Blender file was reread and its SHA-256 is unchanged:
+`6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33`.
+The S-1000 and DA-3 source hashes and all three body comparisons are in
+[geometry.json](geometry.json). Fifteen tests passed in [tests.log](tests.log);
+TypeScript and Vite completed successfully. GitHub workflows are not configured;
+physical-phone and electrical-installation acceptance are not claimed.
+
+Evidence: [stage browser](browser-stage.json), [live browser](browser-live.json),
+[stage routing](routing-stage.json), [live routing](routing-live.json),
+[HTTPS checks](http-live.json), [cutover](cutover.json),
+[archive and manifest hashes](prepared.json).
+
+Focused screenshots from the live website:
+
+| Family | Economizer connection | Harness | Cabinet entry |
+|---|---|---|---|
+| 500–1500 | [View](small-spacer.png) | [View](small-harness.png) | [View](small-glands.png) |
+| 2000–3000 | [View](medium-spacer.png) | [View](medium-harness.png) | [View](medium-glands.png) |
+| 4000–5000 | [View](large-spacer.png) | [View](large-harness.png) | [View](large-glands.png) |

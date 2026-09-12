@@ -1,0 +1,32 @@
+{
+  "status": "PASSED_FAMILY_BROWSER",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "2724ee8094fdf0e372fbeadc7d1780fdb2c7e3cd66a7bfa796fe2c23737a9405",
+  "checks": [
+    "Three distinct family bodies; only requested family assets download",
+    "BDV/FV independent and approach pipe transforms fixed in all families",
+    "GPZ optional below 4000, mandatory from 4000; manual steam valve retained",
+    "All three trims change actual sensors/controllers; Standard disables modulation",
+    "Source cabinet doors and available boiler interiors; no invented S1000 tube bundle",
+    "Mobile layout fits all three families",
+    "Eight ratings, cross-family transitions, retained trim/pressure/options and URL restoration"
+  ],
+  "families": [
+    {
+      "family": "small",
+      "power": 1000,
+      "requestedModelFiles": 8
+    },
+    {
+      "family": "medium",
+      "power": 2500,
+      "requestedModelFiles": 8
+    },
+    {
+      "family": "large",
+      "power": 4000,
+      "requestedModelFiles": 8
+    }
+  ],
+  "errors": []
+}

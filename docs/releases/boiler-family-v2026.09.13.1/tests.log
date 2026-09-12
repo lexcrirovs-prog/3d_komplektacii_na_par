@@ -1,0 +1,23 @@
+✔ Economizer includes both connected water branches and excludes direct branch (0.715ms)
+✔ Removing economizer replaces both branches with direct pipe (0.6772ms)
+✔ Hiding accessories preserves the boiler body, opening door and internal tubes (0.5425ms)
+✔ Deaerator and burner selection do not alter feed route (0.1658ms)
+✔ Electric GPZ is mandatory from 4000 inclusive, optional below; standard never has modulation (0.6445ms)
+✔ Each capacity, trim and pressure resolves exactly one safety-valve and pump row (1.2498ms)
+✔ s4000/web: Every BDV/FV combination retains approach pipes and never reroutes to the other vessel (0.9218ms)
+✔ s4000/web: Every economizer/modulation combination has exactly one matching regulating section (0.6476ms)
+✔ s4000/web: Public descriptions contain no original supplier names or equipment model codes (0.2272ms)
+✔ families/small: Every BDV/FV combination retains approach pipes and never reroutes to the other vessel (0.2173ms)
+✔ families/small: Every economizer/modulation combination has exactly one matching regulating section (0.1944ms)
+✔ families/small: Public descriptions contain no original supplier names or equipment model codes (0.0774ms)
+✔ families/medium: Every BDV/FV combination retains approach pipes and never reroutes to the other vessel (0.186ms)
+✔ families/medium: Every economizer/modulation combination has exactly one matching regulating section (0.1704ms)
+✔ families/medium: Public descriptions contain no original supplier names or equipment model codes (0.0731ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 137.1409

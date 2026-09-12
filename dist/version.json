@@ -1,6 +1,6 @@
 {
-  "version": "2026.09.12.2",
-  "date": "2026-09-12",
+  "version": "2026.09.13.1",
+  "date": "2026-09-13",
   "executor": "Codex / GPT-6",
   "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
   "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb",
@@ -10,6 +10,6 @@
     "S-4000 / 4000–5000"
   ],
   "status": "VISUAL_TEST_RELEASE",
-  "source_commit": "0ca52a312b3721ca1585f6e6f0d6f04abe600037",
+  "source_commit": "4a1bfcb276b6b322f22e4355668a16fa7824717e",
   "url": "https://prgz.ru/komplektacii4/"
 }

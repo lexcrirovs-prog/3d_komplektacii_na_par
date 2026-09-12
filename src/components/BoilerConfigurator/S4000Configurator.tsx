@@ -2,30 +2,15 @@ import { Component, Suspense, useCallback, useEffect, useMemo, useRef, useState,
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, useProgress } from '@react-three/drei'
 import { Color, Group, Mesh, MeshStandardMaterial, PerspectiveCamera, Vector3, type Object3D } from 'three'
-import assemblyData from '../../assets/s4000/web/assembly.json'
 import webVersion from '../../assets/s4000/web/version.json'
-import openingData from '../../assets/s4000/web/opening.json'
-import chunk0 from '../../assets/s4000/web/s4000-0.glb?url'
-import chunk1 from '../../assets/s4000/web/s4000-1.glb?url'
-import chunk2 from '../../assets/s4000/web/s4000-2.glb?url'
-import chunk3 from '../../assets/s4000/web/s4000-3.glb?url'
-import chunk4 from '../../assets/s4000/web/s4000-4.glb?url'
-import chunk5 from '../../assets/s4000/web/s4000-5.glb?url'
-import chunk6 from '../../assets/s4000/web/s4000-6.glb?url'
-import chunk7 from '../../assets/s4000/web/s4000-7.glb?url'
-import trimUrl from '../../assets/s4000/web/trim.glb?url'
 import catalogData from '../../assets/s4000/web/catalog.json'
-import {normalizeConfig,trims,type FamilyConfig,type Trim} from './familyRules'
+import {normalizeConfig,trims,powers,familyFor,type FamilyConfig,type Trim} from './familyRules'
+import {familyAssets,type FamilyAsset,type FamilyPart} from './familyAssets'
 import premiumLogo from '../../assets/s3000/premium-logo.png'
-import { isPartVisible, type VisibilityPart } from './assemblyVisibility'
+import { isPartVisible } from './assemblyVisibility'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
-const assemblyUrls = [chunk0,chunk1,chunk2,chunk3,chunk4,chunk5,chunk6,chunk7,trimUrl]
-const accessoryUrls=assemblyUrls.slice(1)
-type Part = VisibilityPart & { id: string; label: string; category: string; note: string; center: number[] }
-const parts = assemblyData.parts as Part[]
-const byId = new Map(parts.map(p => [p.id, p]))
 const options = [
   { id: 'burner', title: 'Горелка', subtitle: 'Газовая горелка котла' },
   { id: 'economizer', title: 'Экономайзер', subtitle: 'Подогрев питательной воды теплом дымовых газов' },
@@ -44,7 +29,7 @@ const searchText = (value: string) => value.toLowerCase().replace(/[\s_–—-]+
 function initialOptions() {
   const params = new URLSearchParams(window.location.search)
   const value = params.get('addons')
-  return new Set([...(value === null ? options.map(o=>o.id) : value.split(',').filter(id => options.some(o => o.id === id))), 'gpz'])
+  return new Set([...(value === null ? options.map(o=>o.id) : value.split(',').filter(id => options.some(o => o.id === id)))])
 }
 
 function Loading() {
@@ -62,7 +47,7 @@ class ModelBoundary extends Component<{ children: ReactNode }, { error: boolean 
   }
 }
 
-function rootPart(object: Object3D | null): string | undefined {
+function rootPart(object: Object3D | null, byId: Map<string,FamilyPart>): string | undefined {
   let id: string | undefined
   while (object) {
     if (!object.visible) return undefined
@@ -74,8 +59,8 @@ function rootPart(object: Object3D | null): string | undefined {
 
 const ignoreRaycast: Mesh['raycast'] = () => {}
 
-function BoilerPreview({onReady,enabled}:{onReady:()=>void;enabled:Set<string>}) {
-  const model=useGLTF(chunk0)
+function BoilerPreview({onReady,enabled,asset}:{onReady:()=>void;enabled:Set<string>;asset:FamilyAsset}) {
+  const model=useGLTF(asset.urls[0])
   const scene=useMemo(()=>model.scene.clone(true),[model])
   const {invalidate}=useThree()
   useEffect(()=>{onReady()},[onReady])
@@ -83,12 +68,13 @@ function BoilerPreview({onReady,enabled}:{onReady:()=>void;enabled:Set<string>})
   return <primitive object={scene} dispose={null} />
 }
 
-function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen,onReady }: {
+function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen,onReady,asset }: {
   enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
-  cabinetOpen: boolean; boilerOpen: boolean; onReady:()=>void
+  cabinetOpen: boolean; boilerOpen: boolean; onReady:()=>void; asset:FamilyAsset
 }) {
-  const core=useGLTF(chunk0)
-  const accessoryModels=useGLTF(accessoryUrls)
+  const parts=asset.parts, byId=new Map(parts.map(p=>[p.id,p])), openingData=asset.opening
+  const core=useGLTF(asset.urls[0])
+  const accessoryModels=useGLTF(asset.urls.slice(1))
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
   const { gl, invalidate, camera } = useThree()
   useEffect(()=>{onReady()},[onReady])
@@ -177,12 +163,12 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     // Opt-in inspection used by reproducible browser acceptance; no telemetry or requests.
     if (!new URLSearchParams(window.location.search).has('inspect3d')) return
     const host = window as typeof window & { __s3000?: unknown }
-    host.__s3000 = { scene, gl, camera }
+    host.__s3000 = { scene, gl, camera, family:asset.id }
     return () => { delete host.__s3000 }
   }, [scene, gl, camera])
   return <primitive object={scene} dispose={null}
-    onClick={(e: any) => { const id = rootPart(e.object); if (id) { e.stopPropagation(); select(id) } }}
-    onPointerOver={(e: any) => { if (rootPart(e.object)) { e.stopPropagation(); document.body.style.cursor = 'pointer' } }}
+    onClick={(e: any) => { const id = rootPart(e.object,byId); if (id) { e.stopPropagation(); select(id) } }}
+    onPointerOver={(e: any) => { if (rootPart(e.object,byId)) { e.stopPropagation(); document.body.style.cursor = 'pointer' } }}
     onPointerOut={() => { document.body.style.cursor = '' }}
   />
 }
@@ -219,16 +205,21 @@ function CameraMotion({ request, moving }: { request: ViewRequest; moving: React
 }
 
 export function S4000Configurator() {
-  const [sceneReady,setSceneReady]=useState(false)
-  const [coreReady,setCoreReady]=useState(false)
-  const markCoreReady=useCallback(()=>setCoreReady(true),[])
-  const markSceneReady=useCallback(()=>setSceneReady(true),[])
   const [config,setConfig]=useState<FamilyConfig>(()=>{
     const p=new URLSearchParams(window.location.search)
     const trim=trims.find(t=>t.id===p.get('trim'))?.id || 'comfort'
     const requestedPower=Number(p.get('power')||4000)
-    return normalizeConfig({power:[4000,5000].includes(requestedPower)?requestedPower:4000,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions()})
+    return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions()})
   })
+  return <FamilyViewer key={familyFor(config.power)} config={config} setConfig={setConfig} />
+}
+function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:FamilyConfig)=>void}) {
+  const asset=familyAssets[familyFor(config.power)]
+  const parts=asset.parts, byId=new Map(parts.map(p=>[p.id,p]))
+  const [sceneReady,setSceneReady]=useState(false)
+  const [coreReady,setCoreReady]=useState(false)
+  const markCoreReady=useCallback(()=>setCoreReady(true),[])
+  const markSceneReady=useCallback(()=>setSceneReady(true),[])
   const enabled=useMemo(()=>new Set([...config.addons,config.trim, ...(config.trim==='comfort_plus'?['comfort']:[]), ...((catalog[config.trim]['S-'+config.power].find(r=>r.id==='pressure_switches')?.quantity||0)>=2?['second_pressure_switch']:[])]),[config])
   const trimLabel=trims.find(t=>t.id===config.trim)!.label
   useEffect(()=>{
@@ -325,7 +316,7 @@ export function S4000Configurator() {
   return <div className="s3-app">
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
-      {!active && !cabinetOpen && !boilerOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power} КГ ПАРА В ЧАС</span><h1>S-{config.power} в сборе.</h1><p>Модель S-4000 представляет группу 4000–5000 кг/ч.<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
+      {!active && !cabinetOpen && !boilerOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power} КГ ПАРА В ЧАС</span><h1>S-{config.power} в сборе.</h1><p>Модель {asset.model} представляет группу {asset.range} кг/ч.<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .05, far: 100 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
         onPointerMissed={() => setSelected(null)}>
@@ -333,14 +324,14 @@ export function S4000Configurator() {
         <directionalLight position={[-4,8,5]} intensity={2.5} castShadow shadow-mapSize={[1024,1024]} shadow-normalBias={.025} />
         <directionalLight position={[6,4,-4]} intensity={1.8} />
         <hemisphereLight args={['#f5f7fa','#6b7585',1.3]} />
-        {!sceneReady && <Suspense fallback={null}><BoilerPreview onReady={markCoreReady} enabled={enabled} /></Suspense>}
+        {!sceneReady && <Suspense fallback={null}><BoilerPreview asset={asset} onReady={markCoreReady} enabled={enabled} /></Suspense>}
         {coreReady && <Suspense fallback={null}>
           <Environment resolution={128} frames={1}>
             <Lightformer intensity={3} position={[-4,5,2]} scale={[6,7,1]} rotation={[0,Math.PI/2,0]} />
             <Lightformer intensity={2.5} position={[3,6,-4]} scale={[7,4,1]} rotation={[Math.PI/3,0,0]} />
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
-          <Assembly enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging}
+          <Assembly asset={asset} enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging}
             cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} onReady={markSceneReady} />
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[0,-.007,0]} opacity={.38} scale={25} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
@@ -373,7 +364,7 @@ export function S4000Configurator() {
     <aside className="s3-sidebar" aria-label="Комплектация котла">
       <div className="s3-sidebar-heading"><div className="s3-eyebrow">ПОД ВАШУ ЗАДАЧУ</div><h2>PREMIUM S-{config.power}</h2><p>Паровой котёл с навесным оборудованием</p>
         <div className="s3-config-selects">
-          <label>Паропроизводительность<select aria-label="Паропроизводительность" value={config.power} onChange={e=>{setConfig(normalizeConfig({...config,power:Number(e.target.value)}));setSelected(null)}}><option value={4000}>4000 кг/ч</option><option value={5000}>5000 кг/ч</option></select></label>
+          <label>Паропроизводительность<select aria-label="Паропроизводительность" value={config.power} onChange={e=>{setConfig(normalizeConfig({...config,power:Number(e.target.value)}));setSelected(null)}}>{powers.map(power=><option key={power} value={power}>{power} кг/ч</option>)}</select></label>
           <label>Комплектация<select aria-label="Комплектация" value={config.trim} onChange={e=>{setConfig(normalizeConfig({...config,trim:e.target.value as Trim}));setSelected(null)}}>{trims.map(t=><option key={t.id} value={t.id}>{t.label}</option>)}</select></label>
           <label>Рабочее давление<select aria-label="Рабочее давление" value={config.pressure} onChange={e=>{setConfig({...config,pressure:Number(e.target.value) as 8|12});setSelected(null)}}><option value={8}>8 бар</option><option value={12}>12 бар</option></select></label>
         </div>
@@ -390,14 +381,14 @@ export function S4000Configurator() {
             <button disabled={!sceneReady} aria-pressed={cabinetOpen} onClick={openCabinet}>
               <span>{cabinetOpen ? 'Закрыть шкаф' : 'Открыть шкаф'}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
             </button>
-            <button disabled={!sceneReady} aria-pressed={boilerOpen} onClick={openBoiler}>
+            <button disabled={!sceneReady || asset.tubeCount===null} aria-pressed={boilerOpen} onClick={openBoiler}>
               <span>{boilerOpen ? 'Закрыть дверь котла' : 'Открыть дверь котла'}</span><span aria-hidden="true">{boilerOpen ? '↶' : '↗'}</span>
             </button>
-            <p>{boilerOpen ? 'Внутри — 96 дымогарных труб и жаровая труба.' : 'Рассмотрите внутреннее оборудование шкафа и трубки котла.'}</p>
+            <p>{asset.tubeCount===null?'Шкаф можно открыть. В исходной модели S-1000 внутренние трубы не представлены.':boilerOpen ? `Внутри — ${asset.tubeCount} дымогарных труб и жаровая труба.` : 'Рассмотрите внутреннее оборудование шкафа и трубки котла.'}</p>
           </section>
           <section className="s3-option-section"><div className="s3-section-label">ДОПОЛНИТЕЛЬНЫЕ МОДУЛИ</div>{options.map(option => <label className={`s3-option ${enabled.has(option.id) ? 'enabled' : ''}`} key={option.id}>
             <input type="checkbox" disabled={option.id === 'gpz'&&config.power>=4000||option.id==='modulation'&&config.trim==='standard'} checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
-            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='modulation'&&config.trim==='standard'?'Доступна в комплектациях «Комфорт» и «Комфорт+»':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
+            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='modulation'&&config.trim==='standard'?'Доступна в комплектациях «Комфорт» и «Комфорт+»':option.id==='gpz'&&config.power<4000?'Дополнительная опция дистанционного управления':option.id==='deaerator'&&asset.id==='small'?'Вертикальный ДА-3. Удаление растворённых газов из питательной воды':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
           </label>)}</section>
           <section className="s3-flow" aria-live="polite" data-feed-route={enabled.has('economizer') ? 'economizer' : 'direct'}>
             <div className="s3-section-label">ПУТЬ ПИТАТЕЛЬНОЙ ВОДЫ</div>
@@ -420,4 +411,5 @@ export function S4000Configurator() {
   </div>
 }
 
-useGLTF.preload(chunk0)
+// Preload only the family requested by the URL, never all three assemblies.
+useGLTF.preload(familyAssets[familyFor(normalizeConfig({power:Number(new URLSearchParams(window.location.search).get('power')||4000),trim:'comfort',pressure:12,addons:new Set()}).power)].urls[0])

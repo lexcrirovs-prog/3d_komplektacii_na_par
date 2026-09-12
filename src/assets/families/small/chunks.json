@@ -1,0 +1,171 @@
+{
+  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
+  "parts": 108,
+  "bytes": 25648700,
+  "files": [
+    {
+      "file": "s4000-0.glb",
+      "parts": [
+        "boiler",
+        "burner"
+      ],
+      "bytes": 453656,
+      "sha256": "e93cc1227c9a704b526b14e2bb6b34f74dd7bd1b69cefddaab5a90cbce1fd77f"
+    },
+    {
+      "file": "s4000-1.glb",
+      "parts": [
+        "deaerator"
+      ],
+      "bytes": 3152892,
+      "sha256": "c28f17975e1bb6954e79b810ef0ab09d23387867b876a2a535509b462210b8b9"
+    },
+    {
+      "file": "s4000-2.glb",
+      "parts": [
+        "separator_bdv60_5",
+        "mod_direct",
+        "trap_gap_to_bdv",
+        "bdv_water_drain",
+        "bcv7432",
+        "gpz_drive_cable",
+        "cabinet_door",
+        "sight_glasses_2",
+        "drain_isolation_2",
+        "deaerator_feed",
+        "pressure_switch_2",
+        "sample_piping",
+        "bdv_cooling_marker",
+        "gpz_drive",
+        "bottom_before_auto",
+        "mod_direct_bypass",
+        "bottom_discharge"
+      ],
+      "bytes": 3624672,
+      "sha256": "066a904ad9bd586eaeb3fe7a349f8f223f474388f18afaf58c239eee15ec2956"
+    },
+    {
+      "file": "s4000-3.glb",
+      "parts": [
+        "separator_fv8",
+        "gpz",
+        "mod_eco",
+        "flash_steam_common",
+        "bcv925",
+        "mod_eco_drive_cable",
+        "lc220",
+        "sight_glasses_1",
+        "cp930",
+        "instrument_valve",
+        "high_level",
+        "safety_vent_2",
+        "bottom_bypass_after",
+        "bottom_bypass_before",
+        "mod_direct_drive",
+        "steam_delivery",
+        "tds_without_vessels"
+      ],
+      "bytes": 3603296,
+      "sha256": "bacfd8af151bdb895ece6a3755f43cc7927996f0d7609c56c08ed3df3d64415d"
+    },
+    {
+      "file": "s4000-4.glb",
+      "parts": [
+        "steam_manual",
+        "lcs600",
+        "safety_2",
+        "tds_to_fv",
+        "pump_check_1",
+        "bdv_cooling_stub",
+        "plus_bc970",
+        "pump_1",
+        "level_controller_3",
+        "low_level_1",
+        "tds_common",
+        "lp400",
+        "pcf20",
+        "suction_common",
+        "to_direct",
+        "gpz_bypass",
+        "pressure_transmitter",
+        "pr200"
+      ],
+      "bytes": 3563216,
+      "sha256": "7439e2267ec7bcbc038869f0ca433d171bfdc5e558067bdce12b7f5355120ae7"
+    },
+    {
+      "file": "s4000-5.glb",
+      "parts": [
+        "pressure_header",
+        "pump_out_valve_1",
+        "safety_1",
+        "pump_branch_2",
+        "fv_to_trap_gap",
+        "bottom_to_bdv",
+        "cabinet_interior",
+        "lc440",
+        "level_controller_1",
+        "pressure_gauge",
+        "tds_isolation",
+        "pressure_switch_1",
+        "local_open_drains",
+        "to_economizer",
+        "bdv_identification",
+        "bottom_before_gate",
+        "mod_eco_bypass",
+        "pump_delivery"
+      ],
+      "bytes": 3752536,
+      "sha256": "2145dd80226718367f11491a1f8358ff5dae00650f52e2e9e72b079223efa39f"
+    },
+    {
+      "file": "s4000-6.glb",
+      "parts": [
+        "eco_inlet_adapter",
+        "pump_in_valve_1",
+        "cables",
+        "pump_check_2",
+        "bdv_vent",
+        "tds_without_fv",
+        "bc970",
+        "mod_direct_drive_cable",
+        "level_controller_2",
+        "low_level_2",
+        "flue_spacer",
+        "pressure_switch_3",
+        "steam_rise",
+        "from_economizer",
+        "feed_inlet_adapter",
+        "bdv_bottom_drain_stub",
+        "control_cabinet",
+        "trap_support"
+      ],
+      "bytes": 3450624,
+      "sha256": "3369cc5733fa0c25c04adad7f0ef74203d21346fab901e79e446be358feb041e"
+    },
+    {
+      "file": "s4000-7.glb",
+      "parts": [
+        "pump_in_valve_2",
+        "pump_out_valve_2",
+        "feed_valve",
+        "pump_branch_1",
+        "feed_check",
+        "fv_bottom_drain_stub",
+        "condensate_trap",
+        "pump_2",
+        "economizer",
+        "direct_inlet",
+        "drain_isolation_1",
+        "lp200",
+        "safety_vent_1",
+        "sc9",
+        "mod_eco_drive",
+        "bottom_after_auto",
+        "bottom_piping"
+      ],
+      "bytes": 4047808,
+      "sha256": "e0d49b7c3469800553d22952747321eace9ca4013a24f31b367fdda7bf4f7d60"
+    }
+  ]
+}

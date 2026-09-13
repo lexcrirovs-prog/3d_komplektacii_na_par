@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 126,
-  "bytes": 42272344,
+  "bytes": 42290020,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -21,20 +21,20 @@
         "mod_eco_drive_cable",
         "trap_gap_to_bdv",
         "bdv_vent",
-        "fv_bottom_drain_stub",
-        "lc220",
-        "level_controller_2",
-        "low_level_1",
-        "lp400",
-        "direct_inlet",
-        "pcf20",
-        "suction_common",
-        "feed_inlet_adapter",
-        "bottom_before_auto",
-        "control_cabinet"
+        "bottom_to_bdv",
+        "cabinet_door",
+        "to_direct",
+        "low_level_2",
+        "pressure_switch_2",
+        "lp200",
+        "sample_piping",
+        "sc9",
+        "gpz_drive",
+        "bottom_after_auto",
+        "pr200"
       ],
-      "bytes": 5487496,
-      "sha256": "eed330ad71540dd8e00b2b7946814a80d4f5dc5a6fc473f988c041a7567f7010"
+      "bytes": 5526332,
+      "sha256": "002c2f065bd545c82a9fe4747cf8b8261c61fc9246ddd2392d0532e8a2f3c8ab"
     },
     {
       "file": "s4000-2.glb",
@@ -50,16 +50,16 @@
         "plus_bc970",
         "level_controller_3",
         "from_economizer",
-        "pressure_switch_3",
-        "lp200",
-        "sample_piping",
-        "sc9",
-        "gpz_drive",
-        "bdv_bottom_drain_stub",
-        "pr200"
+        "tds_common",
+        "safety_vent_1",
+        "safety_2_mount_adapter",
+        "bottom_bypass_after",
+        "mod_direct_drive",
+        "mod_direct_bypass",
+        "trap_support"
       ],
-      "bytes": 5454228,
-      "sha256": "fbbc0e307e8c5d8c9c340b16dedb2a0f4d993288bf2acdd3d02aee00faba30e5"
+      "bytes": 5428612,
+      "sha256": "bccbc0be28544dfa02a9b717af4c8023bcca0729c714948d16ab1de252a144b8"
     },
     {
       "file": "s4000-3.glb",
@@ -73,18 +73,18 @@
         "cables",
         "bdv_cooling_stub",
         "pump_2",
-        "sight_glasses_2",
-        "tds_isolation",
-        "instrument_valve",
-        "high_level",
-        "steam_rise",
-        "bdv_identification",
-        "bottom_before_gate",
-        "mod_eco_bypass",
+        "sight_glasses_1",
+        "cp930",
+        "pressure_switch_3",
+        "pressure_switch_1",
+        "safety_1_mount_adapter",
+        "deaerator_support",
+        "bottom_discharge",
+        "bdv_bottom_drain_stub",
         "tds_without_vessels"
       ],
-      "bytes": 5530232,
-      "sha256": "7bbab6ff90ac4f0f1f896d4b79d0a8fcc4c21c531295dcbf5c25d7e5d4a333e7"
+      "bytes": 5520792,
+      "sha256": "6f2995c3f2cddf6af9052365849751d28323f6bdc496bf703c572cf3e84110d2"
     },
     {
       "file": "s4000-4.glb",
@@ -96,20 +96,19 @@
         "mod_direct",
         "pump_check_2",
         "wiring_pump_1",
-        "bottom_to_bdv",
-        "lc440",
-        "to_economizer",
-        "cp930",
-        "eco_inlet_adapter",
-        "bottom_piping",
-        "steam_mount_adapter",
-        "bdv_cooling_marker",
-        "mod_eco_drive",
-        "pressure_transmitter",
-        "pump_delivery"
+        "tds_without_fv",
+        "lc220",
+        "level_controller_1",
+        "pressure_gauge",
+        "drain_isolation_1",
+        "safety_vent_2",
+        "local_open_drains",
+        "bottom_bypass_before",
+        "gpz_bypass",
+        "flue_spacer"
       ],
-      "bytes": 5934404,
-      "sha256": "d0b6cafb6f71b12d45219d98dcc113dbf440305e8a2e4469b9f3c598f597951d"
+      "bytes": 5969996,
+      "sha256": "e0413cd4b6d59abe683ba2b52fd7a5cc6a1252ad91386fb22b0b7d9b54379926"
     },
     {
       "file": "s4000-5.glb",
@@ -123,18 +122,18 @@
         "bcv925",
         "condensate_trap",
         "bc970",
-        "level_controller_1",
-        "low_level_2",
-        "pressure_switch_2",
-        "pressure_switch_1",
-        "safety_1_mount_adapter",
-        "deaerator_support",
-        "bottom_discharge",
-        "flue_spacer",
-        "trap_support"
+        "level_controller_2",
+        "low_level_1",
+        "lp400",
+        "direct_inlet",
+        "steam_mount_adapter",
+        "bdv_cooling_marker",
+        "mod_eco_drive",
+        "pressure_transmitter",
+        "steam_delivery"
       ],
-      "bytes": 5997152,
-      "sha256": "b5aeafb881c184e0cc8b8aaf83e03a5202ad22dc132f48cb9c2c4df0f28ac94c"
+      "bytes": 5999704,
+      "sha256": "d4a744911c718337414dc6f49ba72a4bdfe53cdf8a5c668c7316f019513e24aa"
     },
     {
       "file": "s4000-6.glb",
@@ -146,20 +145,20 @@
         "mod_eco",
         "fv_to_trap_gap",
         "bdv_water_drain",
-        "tds_without_fv",
-        "cabinet_door",
-        "sight_glasses_1",
-        "drain_isolation_2",
-        "drain_isolation_1",
-        "safety_vent_2",
-        "local_open_drains",
-        "bottom_bypass_before",
-        "gpz_bypass",
-        "bottom_after_auto",
-        "steam_delivery"
+        "fv_bottom_drain_stub",
+        "lc440",
+        "to_economizer",
+        "tds_isolation",
+        "eco_inlet_adapter",
+        "bottom_piping",
+        "pcf20",
+        "suction_common",
+        "feed_inlet_adapter",
+        "bottom_before_auto",
+        "control_cabinet"
       ],
-      "bytes": 6101608,
-      "sha256": "8dbb917a112096813ad43d853899bda259015ff7ecb4348a3c2a8c18bd61f028"
+      "bytes": 6030520,
+      "sha256": "d3da1d001cb1634f0913c64c7b836e82c708895bb71af8e19821d31f0e0bc2f4"
     },
     {
       "file": "s4000-7.glb",
@@ -173,17 +172,18 @@
         "feed_check",
         "bcv7432",
         "pump_1",
-        "to_direct",
-        "pressure_gauge",
-        "tds_common",
-        "safety_vent_1",
-        "safety_2_mount_adapter",
-        "bottom_bypass_after",
-        "mod_direct_drive",
-        "mod_direct_bypass"
+        "sight_glasses_2",
+        "drain_isolation_2",
+        "instrument_valve",
+        "high_level",
+        "steam_rise",
+        "bdv_identification",
+        "bottom_before_gate",
+        "mod_eco_bypass",
+        "pump_delivery"
       ],
-      "bytes": 6095728,
-      "sha256": "39f40d06eb3e2337688d55c165aa3c146f62962621bbf0777e8c87dda412187c"
+      "bytes": 6142568,
+      "sha256": "d3baa50b4fa689d7bc0d40589a510f2a58d23435781d488f32ecff178ecf6e8b"
     }
   ]
 }

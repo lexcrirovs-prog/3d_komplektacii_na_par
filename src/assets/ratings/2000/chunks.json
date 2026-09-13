@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 126,
-  "bytes": 42307960,
+  "bytes": 42311408,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -27,14 +27,14 @@
         "tds_isolation",
         "lp400",
         "bottom_piping",
-        "sample_piping",
-        "suction_common",
-        "feed_inlet_adapter",
-        "pressure_transmitter",
-        "pump_delivery"
+        "pcf20",
+        "deaerator_support",
+        "gpz_drive",
+        "bdv_bottom_drain_stub",
+        "pr200"
       ],
-      "bytes": 5475708,
-      "sha256": "8d09f9cf79ceb792883d5a3cab6026b1e7b5bc23c809dd777c8e2c194e8c5776"
+      "bytes": 5488512,
+      "sha256": "a523b6d38053b438a784a16e1b943d9ce0b43ef45884bdb11bf9302bd098ffaa"
     },
     {
       "file": "s4000-2.glb",
@@ -56,10 +56,10 @@
         "bottom_bypass_after",
         "mod_eco_drive",
         "flue_spacer",
-        "tds_without_vessels"
+        "pump_delivery"
       ],
-      "bytes": 5623164,
-      "sha256": "25b6f89c412ae6ce1156bd54e9f5adaa2958cec4da0d164f9d23e3f47cf7235a"
+      "bytes": 5623236,
+      "sha256": "1bed45e5c8a9943bd5ec887d06079ef52f5a393de753e065ea443863f0f9775e"
     },
     {
       "file": "s4000-3.glb",
@@ -73,18 +73,18 @@
         "cables",
         "bdv_cooling_stub",
         "pump_1",
-        "to_direct",
-        "pressure_gauge",
-        "tds_common",
-        "high_level",
-        "steam_rise",
-        "bdv_identification",
-        "bottom_discharge",
-        "mod_eco_bypass",
-        "trap_support"
+        "sight_glasses_2",
+        "drain_isolation_2",
+        "pressure_switch_3",
+        "direct_inlet",
+        "sample_piping",
+        "suction_common",
+        "feed_inlet_adapter",
+        "pressure_transmitter",
+        "tds_without_vessels"
       ],
-      "bytes": 5502292,
-      "sha256": "8270ff08b4a07e208524bc2fb3a81243a2a0d1b1903322fe9d8696fb121fd927"
+      "bytes": 5529880,
+      "sha256": "d1e419a259b2a952c127d720f51bed88630cea68971a3d5dd39efbde551d6f75"
     },
     {
       "file": "s4000-4.glb",
@@ -98,18 +98,18 @@
         "wiring_pump_1",
         "tds_without_fv",
         "cabinet_door",
-        "sight_glasses_2",
-        "drain_isolation_2",
-        "pressure_switch_3",
-        "direct_inlet",
+        "to_direct",
+        "pressure_gauge",
+        "eco_inlet_adapter",
+        "lp200",
         "steam_mount_adapter",
         "bdv_cooling_marker",
         "gpz_bypass",
         "bottom_before_auto",
         "control_cabinet"
       ],
-      "bytes": 6005812,
-      "sha256": "e423c44a1eb2c8d08ebd5128d3e7cf35456e9d7a4dbf5567a0dda084f5472c1c"
+      "bytes": 5988252,
+      "sha256": "bd21c2be979736dea51240bfc0ca8dab32c8b4ceebae5fb6e5189cd9b78142bf"
     },
     {
       "file": "s4000-5.glb",
@@ -129,12 +129,12 @@
         "safety_vent_2",
         "local_open_drains",
         "bottom_bypass_before",
-        "bottom_before_gate",
-        "bottom_after_auto",
-        "steam_delivery"
+        "bottom_discharge",
+        "mod_eco_bypass",
+        "trap_support"
       ],
-      "bytes": 5822044,
-      "sha256": "16c4ef008f9435160076ae4d0415e33defb209bdc0047caf58abbd47fc35d0a6"
+      "bytes": 5824116,
+      "sha256": "4ebeb0f4ebecb6c37f512b1d1581e3bbac3ec59b719a0249ed3560b910f42d28"
     },
     {
       "file": "s4000-6.glb",
@@ -150,16 +150,16 @@
         "pump_2",
         "sight_glasses_1",
         "cp930",
-        "eco_inlet_adapter",
-        "lp200",
-        "pcf20",
-        "deaerator_support",
-        "gpz_drive",
-        "bdv_bottom_drain_stub",
-        "pr200"
+        "tds_common",
+        "high_level",
+        "steam_rise",
+        "bdv_identification",
+        "bottom_before_gate",
+        "bottom_after_auto",
+        "steam_delivery"
       ],
-      "bytes": 6073292,
-      "sha256": "26109a47bf58d244d8e22bb8c2ec1fe8af69cfc76d9840f48be66ebe4b77f1bb"
+      "bytes": 6051748,
+      "sha256": "88820c1398488a395203119d8d3fc2b8ad81c4e7cbe98b575c0e95ffeb1a73bb"
     },
     {
       "file": "s4000-7.glb",
@@ -182,8 +182,8 @@
         "mod_direct_drive",
         "mod_direct_bypass"
       ],
-      "bytes": 6126264,
-      "sha256": "a91ecf2c33a08252f40fc5bac5ac6501651d9b85ab12ef4fa6c0ec2fbc5f4341"
+      "bytes": 6126280,
+      "sha256": "def402c665e1be760ccaebcf0710783d0709210fe08fbf0a9e2dd0d133922db2"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 127,
-  "bytes": 42059388,
+  "bytes": 42057216,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -30,11 +30,11 @@
         "safety_1_mount_adapter",
         "deaerator_support",
         "gpz_drive",
-        "pressure_transmitter",
-        "steam_delivery"
+        "flue_spacer",
+        "trap_support"
       ],
-      "bytes": 5538756,
-      "sha256": "d4d71134f8da07eb80dc1940f1adf70a960f309a958e99563776ae9e5c957afc"
+      "bytes": 5536796,
+      "sha256": "4547bda912f266d30b4f1b1e5f7a508c52369d5c661ac9c291213dc682fe1782"
     },
     {
       "file": "s4000-2.glb",
@@ -56,10 +56,10 @@
         "suction_common",
         "mod_eco_drive",
         "mod_eco_bypass",
-        "pump_delivery"
+        "pr200"
       ],
-      "bytes": 5394088,
-      "sha256": "053a8813af9b7acb4d27ac1162a32aacafe4f0e793331bd2eba81ee14e357928"
+      "bytes": 5396596,
+      "sha256": "7c523a319c439ef26e3266bbf677fc1eed92580dfec2bc0fbb49f0351829fe49"
     },
     {
       "file": "s4000-3.glb",
@@ -104,12 +104,12 @@
         "safety_vent_2",
         "safety_2_mount_adapter",
         "bottom_bypass_before",
-        "mod_direct_drive",
-        "mod_direct_bypass",
-        "economizer_leveling"
+        "bottom_discharge",
+        "pressure_transmitter",
+        "steam_delivery"
       ],
-      "bytes": 5810080,
-      "sha256": "ab9be97188a4ed17ad7bb27e6bcc9759db38eb24788fdbf843bf478bcaec10f3"
+      "bytes": 5806860,
+      "sha256": "2e8b74bf917d07cdcf0a95d35a8de2b9aacdb8400ab18d724793e61580207aaf"
     },
     {
       "file": "s4000-5.glb",
@@ -130,11 +130,11 @@
         "steam_mount_adapter",
         "sc9",
         "bottom_before_gate",
-        "flue_spacer",
-        "trap_support"
+        "bdv_bottom_drain_stub",
+        "tds_without_vessels"
       ],
-      "bytes": 6042516,
-      "sha256": "95d90f4f5a8f25628580b637eee881a9e024e3f36e720d21bad8f1e5a7038acb"
+      "bytes": 6040648,
+      "sha256": "b99339a7061917e1fa1209b84740ea3107dc33c0b2a589ecec8a45cdca2d16d1"
     },
     {
       "file": "s4000-6.glb",
@@ -154,12 +154,12 @@
         "pcf20",
         "steam_rise",
         "feed_inlet_adapter",
-        "bottom_discharge",
-        "bdv_bottom_drain_stub",
-        "tds_without_vessels"
+        "bottom_piping",
+        "bottom_after_auto",
+        "pump_delivery"
       ],
-      "bytes": 6048084,
-      "sha256": "4562be75baad43648057012b3f88f037a8b74536236e3379a11c5f3021436360"
+      "bytes": 6048044,
+      "sha256": "e17e7f84714c8e6b5a752ff9810dbb3edf75ce5b1bacc30cb1e220f652918588"
     },
     {
       "file": "s4000-7.glb",
@@ -179,12 +179,12 @@
         "pressure_switch_1",
         "bdv_cooling_marker",
         "bottom_bypass_after",
-        "bottom_piping",
-        "bottom_after_auto",
-        "pr200"
+        "mod_direct_drive",
+        "mod_direct_bypass",
+        "economizer_leveling"
       ],
-      "bytes": 6032388,
-      "sha256": "21c3b4bde018f26e1faf83ad9bf9e660ab0c5963e6c6b82d291d3192fc668bb4"
+      "bytes": 6034796,
+      "sha256": "978e875aafc03d1aaf5de30125f06f0d908f82748871b1a2889fecdd620aba9d"
     }
   ]
 }

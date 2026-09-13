@@ -15,7 +15,7 @@ const {MeshoptEncoder,MeshoptDecoder}=await from('meshoptimizer');
 await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
-const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.4';
+const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.5';
 const registration=await json(`${root}/registration.json`);
 const publicBase=await json('src/assets/s4000/web/assembly.json');
 const baseOpening=await json('src/assets/s4000/web/opening.json');
@@ -52,6 +52,12 @@ for(const model of registration.models) {
  }
  if(power<=1500)await insert('E:/CodexArtifacts/Boiler-Family-v2026.09.13.1/small/additions.glb',new Set(['deaerator','deaerator_feed']));
  await insert(`${root}/${power}/additions.glb`);await insert(`${root}/${power}/wiring.glb`);
+ // Lift only the FV nameplate and lettering above its side flange.
+ const fv=scene.listChildren().find(n=>n.getName()==='separator_fv8');let lifted=0;
+ fv.traverse(n=>{if(['FV8','separator_fv8 / white'].includes(n.getName())) {
+  const parent=n.getParentNode();assert.deepEqual(parent.getRotation(),[0,0,0,1]);assert.deepEqual(parent.getScale(),[1,1,1]);
+  n.setTranslation(n.getTranslation().map((v,i)=>v+(i===1?.22:0)));lifted++;
+ }});assert.equal(lifted,2);
  const names=scene.listChildren().map(n=>n.getName());assert.equal(names.length,new Set(names).size);
  const rows=new Map(publicBase.parts.map(p=>[p.id,{...p}]));
  for(const p of layout.parts)rows.set(p.id,{...(rows.get(p.id)||{}),...p});

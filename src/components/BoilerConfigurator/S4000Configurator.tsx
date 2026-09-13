@@ -214,7 +214,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const [query, setQuery] = useState('')
   const [initialView] = useState(() => overviewView(enabled.has('deaerator')))
   const [view, setView] = useState<ViewRequest>(() => ({ id: 0, ...initialView, standard: 'home' }))
-  const cubeRef = useRef<HTMLDivElement>(null)
+  const cubeRef = useRef<SVGGElement>(null)
   const [inputRecovery, setInputRecovery] = useState(0)
   const dragging = useRef(false)
   const active = selected ? byId.get(selected) : undefined

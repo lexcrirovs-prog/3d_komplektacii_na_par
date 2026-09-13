@@ -1,15 +1,16 @@
 import {useEffect, useMemo, type RefObject} from 'react'
 import {useFrame, useThree} from '@react-three/fiber'
-import {Box3, Matrix4, Mesh, PerspectiveCamera, Vector3} from 'three'
-import {viewDirections, type StandardView} from './ViewCube'
+import {Box3, Mesh, PerspectiveCamera, Quaternion, Vector3} from 'three'
+import {cubePatches, viewDirections, type StandardView} from './ViewCube'
 
 export type ViewRequest = {id: number; position: [number, number, number]; target: [number, number, number]; standard?: StandardView}
 
 // Each explicit request gets fresh OrbitControls in the parent. This also
 // clears a lost pointer gesture and damping before applying the requested pose.
-export function FamilyCamera({request, ready, cubeRef}: {request: ViewRequest; ready: boolean; cubeRef: RefObject<HTMLDivElement>}) {
+export function FamilyCamera({request, ready, cubeRef}: {request: ViewRequest; ready: boolean; cubeRef: RefObject<SVGGElement>}) {
   const {camera, controls, scene, size, invalidate} = useThree()
-  const cubeMatrix = useMemo(() => new Matrix4(), [])
+  const cubeRotation = useMemo(() => new Quaternion(), [])
+  const cubePose = useMemo(() => ({rotation:new Quaternion(), initialized:false}), [])
   useEffect(() => {
     const orbit = controls as any
     if (!orbit || !(camera instanceof PerspectiveCamera)) return
@@ -55,11 +56,23 @@ export function FamilyCamera({request, ready, cubeRef}: {request: ViewRequest; r
   }, [request, controls, ready, camera, scene, size.width, size.height, invalidate])
   useFrame(() => {
     if (!cubeRef.current) return
-    cubeMatrix.makeRotationFromQuaternion(camera.quaternion.clone().invert())
-    // CSS has a downward Y axis. Conjugate by the Y reflection to retain
-    // the same six model axes in the DOM cube as in the WebGL scene.
-    const values = cubeMatrix.elements.map((v, i) => v * ((i % 4 === 1) !== (Math.floor(i / 4) === 1) ? -1 : 1))
-    cubeRef.current.style.transform = `matrix3d(${values.join(',')})`
+    if(cubePose.initialized&&cubePose.rotation.equals(camera.quaternion))return
+    cubePose.rotation.copy(camera.quaternion);cubePose.initialized=true
+    cubeRotation.copy(camera.quaternion).invert()
+    for(const patch of cubePatches) {
+      const group=cubeRef.current.querySelector<SVGGElement>(`[data-cube-patch="${patch.id}"]`)
+      if(!group)continue
+      const points=patch.points.map(p=>new Vector3(...p).applyQuaternion(cubeRotation))
+      const center=points.reduce((s,p)=>s.add(p),new Vector3()).multiplyScalar(1/points.length)
+      const normal=new Vector3(...patch.normal).normalize().applyQuaternion(cubeRotation)
+      const visible=normal.dot(new Vector3(0,0,5).sub(center))>.001
+      group.style.display=visible?'':'none'
+      const polygon=group.querySelector('polygon')!
+      polygon.setAttribute('tabindex',visible&&patch.view?'0':'-1')
+      polygon.setAttribute('points',points.map(p=>`${p.x*180/(5-p.z)},${-p.y*180/(5-p.z)}`).join(' '))
+      const label=group.querySelector('text')
+      if(label){label.setAttribute('x',String(center.x*180/(5-center.z)));label.setAttribute('y',String(-center.y*180/(5-center.z)))}
+    }
   })
   return null
 }

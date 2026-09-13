@@ -11,7 +11,7 @@ from mathutils import Vector
 sys.path.insert(0,str(Path(__file__).parent))
 from geometry import Geometry
 from build_assembly import logo
-ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.4')
+ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.5')
 SOURCE=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.2')
 MODELS=json.loads((ROOT/'registration.json').read_text('utf8'))['models']
 BASE=next(m for m in MODELS if m['power']==4000)
@@ -85,11 +85,17 @@ for m in MODELS:
   ('feed_check feed_valve feed_inlet_adapter','feed',.10 if power<2000 else 0),
   ('safety_1','safety_1',.12 if power<4000 else 0),
   ('safety_2','safety_2',.12 if power<4000 else 0),
-  ('lp200 low_level_1 lcs600','level_dual',0),('lp400 high_level low_level_2','level_single',0),
+  ('lp200 low_level_1 lcs600','level_dual',0),('lp400 high_level','level_single',0),
   ('pressure_header pressure_switch_1 pressure_switch_2 pressure_switch_3 pressure_gauge instrument_valve pressure_transmitter','pressure',0),
   ('tds_isolation pcf20 bcv925 cp930 sc9 sample_piping local_open_drains','tds',0)]:
   move(ids,pos(key)-base(key)+[0,0,lift])
   if lift:adapter(key+'_mount_adapter',key,lift,{'steam':.05,'feed':.016,'safety_1':.02,'safety_2':.02}[key],'steel' if key=='steam' else 'green' if key=='feed' else 'blue')
+ # The extra low-level probe formerly sat 130 mm off a DN50 flange axis.
+ # Put its electrode through the larger existing instrument flange, beside
+ # the first low-level and continuous probes. Source electrode axis measured
+ # from triangle intersections; no scale or factory flange changes.
+ source_probe_axis=np.array([.13,-.666753,base('level_single')[2]])
+ move('low_level_2',pos('level_dual')+[-.02,.05,0]-source_probe_axis)
  # Each level column has independent actual upper/lower source centres.
  for i in [1,2]:
   upper=pos(f'level_upper_{i}');lower=pos(f'level_lower_{i}')

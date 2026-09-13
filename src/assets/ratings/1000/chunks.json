@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 120,
-  "bytes": 37904712,
+  "bytes": 37907132,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -26,11 +26,12 @@
         "bottom_piping",
         "high_level",
         "suction_common",
-        "mod_direct_drive",
-        "mod_direct_bypass"
+        "gpz_drive",
+        "pressure_transmitter",
+        "tds_without_vessels"
       ],
-      "bytes": 4350032,
-      "sha256": "cbab69623dae8a978670026da3cef258601fea14e23e336f3988ab238e7ec8dc"
+      "bytes": 4354916,
+      "sha256": "b2a8820b51e3e0e98c2478399a18d510e16bfefbc3e487624b24672d57d6ee12"
     },
     {
       "file": "s4000-2.glb",
@@ -48,13 +49,12 @@
         "tds_common",
         "pressure_switch_1",
         "feed_mount_adapter",
-        "sc9",
-        "gpz_drive",
-        "pressure_transmitter",
-        "pump_delivery"
+        "bdv_cooling_marker",
+        "mod_direct_drive",
+        "mod_direct_bypass"
       ],
-      "bytes": 5682960,
-      "sha256": "e2fed51a06c60d894e7c136a0b2e4730e7fb712449628c1e71d574fc223c5f92"
+      "bytes": 5678920,
+      "sha256": "b462f0d14d93e302fbe776070982d79ca0562fddc67ad00ffdf7c828169f3e3a"
     },
     {
       "file": "s4000-3.glb",
@@ -72,13 +72,13 @@
         "instrument_valve",
         "lp200",
         "pcf20",
-        "bdv_cooling_marker",
+        "sc9",
         "mod_eco_drive",
         "mod_eco_bypass",
         "trap_support"
       ],
-      "bytes": 5669396,
-      "sha256": "173b37b63a258b774feaf6b8842bf200769fa025c912e8564078a005bd49dfba"
+      "bytes": 5670896,
+      "sha256": "87acae25ce72cce3dc4b345445061983372b48e615594823ae3ff3dd67825091"
     },
     {
       "file": "s4000-4.glb",
@@ -125,10 +125,10 @@
         "local_open_drains",
         "bottom_discharge",
         "bdv_bottom_drain_stub",
-        "tds_without_vessels"
+        "pump_delivery"
       ],
-      "bytes": 4886064,
-      "sha256": "995de88a5bbcf0773e56c1101f0983a1889dd1632b3e3f252739447adb6e20cf"
+      "bytes": 4886140,
+      "sha256": "4060f45b505bdf01b038f1e39d91b3196b9fa1e98ca7f5badb35be29fe17da11"
     },
     {
       "file": "s4000-6.glb",
@@ -152,7 +152,7 @@
         "control_cabinet"
       ],
       "bytes": 5959668,
-      "sha256": "2dba469df59141982c60771a864ab424307a3c5f19243719973abad57f92f9bd"
+      "sha256": "d2dde288a6ac8684041515cbea1cd33c26804a21e036b79c27b2112914d93fdb"
     },
     {
       "file": "s4000-7.glb",

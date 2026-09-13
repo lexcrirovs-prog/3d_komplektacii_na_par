@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 125,
-  "bytes": 41715232,
+  "bytes": 41715608,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -29,12 +29,12 @@
         "pressure_switch_1",
         "sample_piping",
         "suction_common",
-        "mod_direct_drive",
-        "control_cabinet",
-        "tds_without_vessels"
+        "gpz_drive",
+        "mod_eco_bypass",
+        "boiler_leveling"
       ],
-      "bytes": 5477080,
-      "sha256": "b6767a095758499a54c192786577fa8a339d0474a4e548629be6923a19a59535"
+      "bytes": 5475476,
+      "sha256": "70fe2c162aede51d547af23f061cd867add25cf7a85c613c567b272842cb7899"
     },
     {
       "file": "s4000-2.glb",
@@ -52,12 +52,13 @@
         "tds_isolation",
         "lp400",
         "safety_vent_2",
-        "sc9",
-        "mod_eco_drive",
-        "mod_direct_bypass"
+        "bdv_cooling_marker",
+        "mod_direct_drive",
+        "control_cabinet",
+        "trap_support"
       ],
-      "bytes": 5578276,
-      "sha256": "d47e5ec1c19a862243589560228ab9e8e2f11f0b67d7a4738a7e5738daed06c9"
+      "bytes": 5582680,
+      "sha256": "6f33bf3eff322872d29fbf24f520df80645fbf191fdf8c98ead4551d89177add"
     },
     {
       "file": "s4000-3.glb",
@@ -76,13 +77,13 @@
         "instrument_valve",
         "safety_vent_1",
         "local_open_drains",
-        "bdv_identification",
-        "bottom_before_auto",
-        "flue_spacer",
-        "pump_delivery"
+        "bottom_bypass_before",
+        "gpz_bypass",
+        "bottom_after_auto",
+        "steam_delivery"
       ],
-      "bytes": 5927700,
-      "sha256": "ed9825282e3931f70df8068d27fe15b2f1d66e713a1af1f5cd006d3fad1d9bda"
+      "bytes": 5921204,
+      "sha256": "5c3d1629b31932a2e4657bf4963e04f75f67942d258776c8d32f2f3cd6091202"
     },
     {
       "file": "s4000-4.glb",
@@ -91,8 +92,8 @@
         "wiring_pressure_transmitter",
         "wiring_pressure_switch_3",
         "pump_out_valve_1",
-        "mod_eco_drive_cable",
-        "pump_check_2",
+        "mod_direct_drive_cable",
+        "trap_gap_to_bdv",
         "bdv_vent",
         "bdv_cooling_stub",
         "pump_2",
@@ -101,13 +102,13 @@
         "pressure_switch_3",
         "bottom_piping",
         "pcf20",
-        "bdv_cooling_marker",
-        "bottom_before_gate",
-        "bdv_bottom_drain_stub",
-        "pr200"
+        "sc9",
+        "bottom_before_auto",
+        "flue_spacer",
+        "tds_without_vessels"
       ],
-      "bytes": 5613668,
-      "sha256": "1e943155d99408f7d44693c123e2f9bceb9408e50ce4f5f8bd5d069d1b58e7cd"
+      "bytes": 5548976,
+      "sha256": "0100cbe3c3181c844ee67c2ca0c9f4f5e56d40c27b148538746b952e5fb10a8d"
     },
     {
       "file": "s4000-5.glb",
@@ -127,12 +128,11 @@
         "lp200",
         "steam_rise",
         "deaerator_support",
-        "gpz_bypass",
-        "bottom_after_auto",
-        "steam_delivery"
+        "mod_eco_drive",
+        "mod_direct_bypass"
       ],
-      "bytes": 5744288,
-      "sha256": "c293db46a288d4301677ea49daad8768241678d43ea46d15c86feff028551024"
+      "bytes": 5748540,
+      "sha256": "896935a2c2c5a24b29b185147a53f7266b43d2384b68e92013264cd18ca91c13"
     },
     {
       "file": "s4000-6.glb",
@@ -141,8 +141,8 @@
         "wiring_low_level_1",
         "pump_out_valve_2",
         "gpz_drive_cable",
-        "mod_direct_drive_cable",
-        "trap_gap_to_bdv",
+        "mod_eco_drive_cable",
+        "pump_check_2",
         "wiring_pump_1",
         "cabinet_interior",
         "condensate_trap",
@@ -151,13 +151,13 @@
         "drain_isolation_1",
         "pressure_switch_2",
         "high_level",
-        "bottom_bypass_before",
-        "gpz_drive",
-        "mod_eco_bypass",
-        "boiler_leveling"
+        "bdv_identification",
+        "bottom_before_gate",
+        "bdv_bottom_drain_stub",
+        "pr200"
       ],
-      "bytes": 5610708,
-      "sha256": "77d19c6177acfd3e3a2434ba56fffbbe2f52092bac908abb59a0c3c385a1a5bd"
+      "bytes": 5676612,
+      "sha256": "0b620dd633c8ce601c0a36ef57ebe76f5172f82433fd458deac56a8c2b7b5a9a"
     },
     {
       "file": "s4000-7.glb",
@@ -179,10 +179,10 @@
         "bottom_bypass_after",
         "feed_inlet_adapter",
         "pressure_transmitter",
-        "trap_support"
+        "pump_delivery"
       ],
-      "bytes": 6020468,
-      "sha256": "3e00a5eccdf832593dbc70db82ca2de02f9910c3f28e1b0e482249fa3c823a86"
+      "bytes": 6019076,
+      "sha256": "94af80a731ba0d939f408e87acdd7bc2389284c8a34f01b491c5a6465a880762"
     }
   ]
 }

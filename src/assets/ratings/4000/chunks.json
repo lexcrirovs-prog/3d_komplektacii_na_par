@@ -1,7 +1,7 @@
 {
   "status": "PASSED_EXACT_CHUNK_GEOMETRY",
   "parts": 128,
-  "bytes": 43129348,
+  "bytes": 43126136,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -36,10 +36,10 @@
         "gpz_drive",
         "bottom_piping",
         "steam_delivery",
-        "pump_delivery"
+        "tds_without_vessels"
       ],
-      "bytes": 5655224,
-      "sha256": "a53fa31c4b007daf156fcfef66146a4db0aa2da55ed61022935a609ccd5daafa"
+      "bytes": 5655148,
+      "sha256": "77d8186d98b73d3cc4f1ad1d45bbeafafc738279c23e68857606b35ee5834e34"
     },
     {
       "file": "s4000-2.glb",
@@ -105,13 +105,14 @@
         "low_level_2",
         "pressure_switch_2",
         "lp200",
-        "local_open_drains",
-        "bottom_bypass_before",
-        "bottom_before_auto",
-        "mod_eco_bypass"
+        "steam_rise",
+        "mod_eco_drive",
+        "bottom_discharge",
+        "pr200",
+        "pump_delivery"
       ],
-      "bytes": 5389484,
-      "sha256": "e18aee592a82254170df4e41b173100998f1bbe7d3550af678e19ac566163fa0"
+      "bytes": 5394084,
+      "sha256": "2b95af33b1bf3ff5fce17b24c0ee209030401289c2943eae537c29ab4d485085"
     },
     {
       "file": "s4000-5.glb",
@@ -135,7 +136,7 @@
         "flue_spacer"
       ],
       "bytes": 6015240,
-      "sha256": "af25feb5ab1f74fd57d8aaf92e1d2a822c3099788c2dcc24cc4318532174d740"
+      "sha256": "72b1171d973d30679b8eff8948654cb4c7229d1081cd8e0cc4be03f366018cb3"
     },
     {
       "file": "s4000-6.glb",
@@ -157,10 +158,10 @@
         "bdv_identification",
         "bdv_bottom_drain_stub",
         "control_cabinet",
-        "tds_without_vessels"
+        "trap_support"
       ],
-      "bytes": 5992984,
-      "sha256": "10e1794be89ebc135321650f53ab30f78c07ecb53bbc09fec1b8df1fe9bb25e1"
+      "bytes": 5994296,
+      "sha256": "3c139733cc7375b61bc7b43580058da03bbd8c28c2e0c7cf5ab6cb9bb99a9c57"
     },
     {
       "file": "s4000-7.glb",
@@ -178,14 +179,13 @@
         "cp930",
         "eco_inlet_adapter",
         "direct_inlet",
-        "steam_rise",
-        "mod_eco_drive",
-        "bottom_discharge",
-        "pr200",
-        "trap_support"
+        "local_open_drains",
+        "bottom_bypass_before",
+        "bottom_before_auto",
+        "mod_eco_bypass"
       ],
-      "bytes": 5900804,
-      "sha256": "d55bb9eb19b6b619fdbc02dda1e2c40333211dac9103db5453d558cd734f9a72"
+      "bytes": 5891756,
+      "sha256": "6789fdd3e5a1e83c25e95f6e8a56c8e1267f5b12a07e6cbb260cbcb394fc9487"
     }
   ]
 }

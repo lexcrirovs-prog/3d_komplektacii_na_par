@@ -11,7 +11,7 @@ const {NodeIO}=await from('@gltf-transform/core'),{ALL_EXTENSIONS}=await from('@
 const {getBounds}=await from('@gltf-transform/functions');
 const {MeshoptDecoder}=await from('meshoptimizer');await MeshoptDecoder.ready;
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder});
-const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.4',results=[];
+const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.5',results=[];
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
 const close=(a,b,t=.0015)=>assert(Math.abs(a-b)<t,`${a} != ${b}`);
 const vertices=n=>{const vs=[];n.traverse(c=>{const m=c.getWorldMatrix();for(const p of c.getMesh()?.listPrimitives()||[]){const a=p.getAttribute('POSITION');for(let i=0;i<a.getCount();i++){const v=a.getElement(i,[]);vs.push([m[0]*v[0]+m[4]*v[1]+m[8]*v[2]+m[12],m[1]*v[0]+m[5]*v[1]+m[9]*v[2]+m[13],m[2]*v[0]+m[6]*v[1]+m[10]*v[2]+m[14]])}}});return vs};
@@ -44,4 +44,4 @@ for(const power of [500,1000,1500,2000,2500,3000,3500,4000,5000]) {
  results.push({power,elbowsAfterValve:1,rotationDegrees:90,flow:[0,-1,0],maxPreservedGeometryErrorM:maxError,center,inlet,outlet});
  console.log('SINGLE_ELBOW_PASSED',power,maxError);
 }
-await mkdir('artifacts/modulation-geometry',{recursive:true});await writeFile('artifacts/modulation-geometry/report.json',JSON.stringify({status:'PASSED_SINGLE_ELBOW',version:'2026.09.13.4',results},null,2));
+await mkdir('artifacts/modulation-geometry',{recursive:true});await writeFile('artifacts/modulation-geometry/report.json',JSON.stringify({status:'PASSED_SINGLE_ELBOW',version:'2026.09.13.5',results},null,2));

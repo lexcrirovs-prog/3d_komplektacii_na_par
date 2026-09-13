@@ -58,9 +58,26 @@ try {
    await page.locator('.s3-view-menu summary').click();await page.locator('.s3-view-menu').getByRole('button',{name:label,exact:true}).click();await page.waitForTimeout(70);
    close((await pose()).direction,directions[key]);
    const fit=await inFrame();assert(fit.maxX<1&&fit.maxY<1,`${power}/${key}: clipped preset`);
+   const corner=page.locator('.s3-cube [data-view*="-"]:visible').first();assert(await corner.count(),`${power}/${key}: no corner escape`);
+   if(power===500&&key==='right')await page.screenshot({path:resolve(out,'500-right-corners.png')});
+   const id=await corner.getAttribute('data-view');
+   const point=await corner.evaluate(n=>{const ps=Array.from(n.points),p=n.ownerSVGElement.createSVGPoint();p.x=ps.reduce((v,p)=>v+p.x,0)/ps.length;p.y=ps.reduce((v,p)=>v+p.y,0)/ps.length;const s=p.matrixTransform(n.getScreenCTM());return {x:s.x,y:s.y}});
+   await page.mouse.click(point.x,point.y);await page.waitForTimeout(100);
+   const expected=[id.endsWith('left')?-1:1,id.startsWith('top')?1:-1,id.includes('front')?1:-1].map(v=>v/Math.sqrt(3));close((await pose()).direction,expected);
+  }
+  for(const vertical of ['top','bottom'])for(const depth of ['front','back'])for(const side of ['left','right']) {
+   const label=[vertical==='top'?'Сверху':'Снизу',depth==='front'?'спереди':'сзади',side==='left'?'слева':'справа'].join(' · ');
+   await page.locator('.s3-view-menu summary').click();await page.locator('.s3-view-menu').getByRole('button',{name:label,exact:true}).click();await page.waitForTimeout(80);
+   close((await pose()).direction,[side==='left'?-1:1,vertical==='top'?1:-1,depth==='front'?1:-1].map(v=>v/Math.sqrt(3)));
+   const fit=await inFrame();assert(fit.maxX<1&&fit.maxY<1,`${power}/${label}: clipped corner`);
+   await page.locator('.s3-view-menu summary').click();await page.locator('.s3-view-menu').getByRole('button',{name:labels[side],exact:true}).click();await page.waitForTimeout(70);
+   const corner=page.locator(`.s3-cube [data-view="${vertical}-${depth}-${side}"]`);assert(await corner.isVisible());
+   const point=await corner.evaluate(n=>{const ps=Array.from(n.points),p=n.ownerSVGElement.createSVGPoint();p.x=ps.reduce((v,p)=>v+p.x,0)/ps.length;p.y=ps.reduce((v,p)=>v+p.y,0)/ps.length;const s=p.matrixTransform(n.getScreenCTM());return {x:s.x,y:s.y}});
+   await page.mouse.click(point.x,point.y);await page.waitForTimeout(70);
+   close((await pose()).direction,[side==='left'?-1:1,vertical==='top'?1:-1,depth==='front'?1:-1].map(v=>v/Math.sqrt(3)));
   }
   await home();
-  const layout=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.4/${power}/layout.json`,'utf8'));
+  const layout=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.5/${power}/layout.json`,'utf8'));
   const water=layout.routes.find(r=>r.id==='direct_inlet');
   const clearance=await page.evaluate(route=>{
    const {scene}=window.__s3000,rc=scene.__r3f.root.getState().raycaster,ray=rc.ray.clone(),near=rc.near,far=rc.far,hits=[];
@@ -76,7 +93,7 @@ try {
    rc.ray.copy(ray);rc.near=near;rc.far=far;return hits;
   },water);
   assert.deepEqual(clearance,[],`${power}: feed pipe vs steam/GPZ`);
-  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.4/${power}/wiring.json`,'utf8'));
+  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.5/${power}/wiring.json`,'utf8'));
   assert.equal(wiring.level_support,'existing_service_deck');assert.equal(wiring.trays[0].free_tail_m,.17);
   const capture=async(name,position,target)=>{
    const data=await page.evaluate(({position,target})=>{const {scene,gl,camera}=window.__s3000;let root=scene;while(root.parent)root=root.parent;camera.position.set(...position);camera.lookAt(...target);camera.updateMatrixWorld();gl.render(root,camera);return gl.domElement.toDataURL('image/png')},{position,target});
@@ -92,10 +109,12 @@ try {
    await page.setViewportSize({width:390,height:844});await home();
    const fit=await inFrame();assert(fit.maxX<1&&fit.maxY<1,'mobile model fits');
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   await page.locator('.s3-view-menu summary').click();await page.locator('.s3-view-menu').getByRole('button',{name:'Сверху · спереди · справа',exact:true}).click();await page.waitForTimeout(100);
+   close((await pose()).direction,[1,1,1].map(v=>v/Math.sqrt(3)));
    await page.screenshot({path:resolve(out,'500-mobile.png')});
    await page.setViewportSize({width:1680,height:1050});await home();
   }
-  results.push({power,camera:'SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED',feedSteamIntersections:clearance,levelSupport:wiring.level_support,trayFreeTailM:.17});
+  results.push({power,camera:'FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED',cornerViews:8,axisViewEscapes:6,feedSteamIntersections:clearance,levelSupport:wiring.level_support,trayFreeTailM:.17});
   console.log('NAVIGATION_REVISION_PASSED',power);
  }
  assert.deepEqual(errors,[]);await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_NAVIGATION_REVISION',base,manifestSha256,results,errors},null,2));

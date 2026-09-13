@@ -4,7 +4,7 @@ import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, usePr
 import { Color, Group, Mesh, MeshStandardMaterial, PerspectiveCamera, Vector3, type Object3D } from 'three'
 import webVersion from '../../assets/s4000/web/version.json'
 import catalogData from '../../assets/s4000/web/catalog.json'
-import {normalizeConfig,trims,powers,familyFor,type FamilyConfig,type Trim} from './familyRules'
+import {normalizeConfig,trims,powers,type FamilyConfig,type Trim} from './familyRules'
 import {familyAssets,type FamilyAsset,type FamilyPart} from './familyAssets'
 import premiumLogo from '../../assets/s3000/premium-logo.png'
 import { isPartVisible } from './assemblyVisibility'
@@ -211,10 +211,10 @@ export function S4000Configurator() {
     const requestedPower=Number(p.get('power')||4000)
     return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions()})
   })
-  return <FamilyViewer key={familyFor(config.power)} config={config} setConfig={setConfig} />
+  return <FamilyViewer key={config.power} config={config} setConfig={setConfig} />
 }
 function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:FamilyConfig)=>void}) {
-  const asset=familyAssets[familyFor(config.power)]
+  const asset=familyAssets[config.power]
   const parts=asset.parts, byId=new Map(parts.map(p=>[p.id,p]))
   const [sceneReady,setSceneReady]=useState(false)
   const [coreReady,setCoreReady]=useState(false)
@@ -316,7 +316,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   return <div className="s3-app">
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
-      {!active && !cabinetOpen && !boilerOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power} КГ ПАРА В ЧАС</span><h1>S-{config.power} в сборе.</h1><p>Модель {asset.model} представляет группу {asset.range} кг/ч.<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
+      {!active && !cabinetOpen && !boilerOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power} КГ ПАРА В ЧАС</span><h1>S-{config.power} в сборе.</h1><p>Корпус и патрубки — по заводской модели {asset.model}.<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .05, far: 100 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
         onPointerMissed={() => setSelected(null)}>
@@ -384,11 +384,11 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <button disabled={!sceneReady || asset.tubeCount===null} aria-pressed={boilerOpen} onClick={openBoiler}>
               <span>{boilerOpen ? 'Закрыть дверь котла' : 'Открыть дверь котла'}</span><span aria-hidden="true">{boilerOpen ? '↶' : '↗'}</span>
             </button>
-            <p>{asset.tubeCount===null?'Шкаф можно открыть. В исходной модели S-1000 внутренние трубы не представлены.':boilerOpen ? `Внутри — ${asset.tubeCount} дымогарных труб и жаровая труба.` : 'Рассмотрите внутреннее оборудование шкафа и трубки котла.'}</p>
+            <p>{asset.tubeCount===null?`Шкаф можно открыть. Для S-${config.power} показана заводская модель общего вида.`:boilerOpen ? `Внутри — ${asset.tubeCount} дымогарных труб и жаровая труба.` : 'Рассмотрите внутреннее оборудование шкафа и трубки котла.'}</p>
           </section>
           <section className="s3-option-section"><div className="s3-section-label">ДОПОЛНИТЕЛЬНЫЕ МОДУЛИ</div>{options.map(option => <label className={`s3-option ${enabled.has(option.id) ? 'enabled' : ''}`} key={option.id}>
-            <input type="checkbox" disabled={option.id === 'gpz'&&config.power>=4000||option.id==='modulation'&&config.trim==='standard'} checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
-            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='modulation'&&config.trim==='standard'?'Доступна в комплектациях «Комфорт» и «Комфорт+»':option.id==='gpz'&&config.power<4000?'Дополнительная опция дистанционного управления':option.id==='deaerator'&&asset.id==='small'?'Вертикальный ДА-3. Удаление растворённых газов из питательной воды':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
+            <input type="checkbox" disabled={option.id === 'gpz'&&config.power>=4000||option.id==='modulation'&&config.trim==='standard'||option.id==='economizer'&&config.power<1500} checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
+            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='economizer'&&config.power<1500?'Применяется на котлах от 1500 кг/ч':option.id==='modulation'&&config.trim==='standard'?'Доступна в комплектациях «Комфорт» и «Комфорт+»':option.id==='gpz'&&config.power<4000?'Дополнительная опция дистанционного управления':option.id==='deaerator'&&config.power<=1500?'Вертикальный ДА-3. Удаление растворённых газов из питательной воды':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
           </label>)}</section>
           <section className="s3-flow" aria-live="polite" data-feed-route={enabled.has('economizer') ? 'economizer' : 'direct'}>
             <div className="s3-section-label">ПУТЬ ПИТАТЕЛЬНОЙ ВОДЫ</div>
@@ -397,6 +397,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
           </section>
           <section className="s3-detail-callout"><div><strong>Дистанционное управление ГПЗ</strong><p>Пункт 49 ФНП требует дистанционного управления при производительности более 4000 кг/ч. Тип привода определяется проектом. В комплектации PREMIUM электропривод предусмотрен уже с 4000 кг/ч.</p></div></section>
           <p className="s3-assembly-note">Сборка показывает внешний вид оборудования. Расположение обвязки и её присоединения требуют сверки с монтажной схемой.</p>
+          <section className="s3-detail-callout"><div><strong>Заводские чертежи</strong><p><a href={asset.boilerDrawing} download>Модель котла S-{config.power} · STEP</a></p>{asset.economizerDrawing&&<p><a href={asset.economizerDrawing} target="_blank" rel="noreferrer">Габаритный чертёж экономайзера · PDF</a></p>}</div></section>
         </> : <>
           <label className="s3-search"><span className="s3-sr-only">Найти оборудование</span><input type="search" placeholder="Найти прибор или арматуру" value={query} onChange={e => setQuery(e.target.value)} /></label>
           <p className="s3-list-note">PREMIUM S-{config.power} · {trimLabel} · {config.pressure} бар<br />Состав выбранной комплектации. Нажмите на позицию для просмотра.</p>
@@ -412,4 +413,4 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
 }
 
 // Preload only the family requested by the URL, never all three assemblies.
-useGLTF.preload(familyAssets[familyFor(normalizeConfig({power:Number(new URLSearchParams(window.location.search).get('power')||4000),trim:'comfort',pressure:12,addons:new Set()}).power)].urls[0])
+useGLTF.preload(familyAssets[normalizeConfig({power:Number(new URLSearchParams(window.location.search).get('power')||4000),trim:'comfort',pressure:12,addons:new Set()}).power].urls[0])

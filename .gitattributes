@@ -5,3 +5,7 @@ dist/index.html -whitespace
 dist/assets/*.js -whitespace
 *.glb binary
 docs/previews/*.png binary
+# Preserve original source CAD/document byte hashes on Windows.
+*.stp binary
+*.step binary
+*.pdf binary

@@ -1,13 +1,23 @@
 {
-  "version": "2026.09.13.1",
+  "version": "2026.09.13.2",
   "date": "2026-09-13",
   "executor": "Codex / GPT-6",
   "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
   "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb",
   "families": [
-    "S-1000 / 500–1500",
-    "S-3000 / 2000–3000",
-    "S-4000 / 4000–5000"
+    "S-500",
+    "S-1000",
+    "S-1500",
+    "S-2000",
+    "S-2500",
+    "S-3000",
+    "S-3500",
+    "S-4000",
+    "S-5000"
   ],
-  "status": "VISUAL_TEST_RELEASE"
+  "status": "VISUAL_TEST_RELEASE",
+  "cad_sources": [
+    "https://disk.yandex.ru/d/MNa06TBAkPK3KQ",
+    "https://disk.yandex.ru/d/rO5IXUvIfiUGjg"
+  ]
 }

@@ -1,0 +1,183 @@
+{
+  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
+  "parts": 120,
+  "bytes": 37509636,
+  "files": [
+    {
+      "file": "s4000-0.glb",
+      "parts": [
+        "boiler",
+        "burner",
+        "premium_logo"
+      ],
+      "bytes": 1649732,
+      "sha256": "bbaa8115482cd5651462b4f2e83a4a4231aa1c2cf69ddb80fb9965aa86db9ca0"
+    },
+    {
+      "file": "s4000-1.glb",
+      "parts": [
+        "deaerator",
+        "fv_to_trap_gap",
+        "bcv925",
+        "bcv7432",
+        "level_controller_2",
+        "pressure_gauge",
+        "tds_isolation",
+        "pressure_switch_1",
+        "safety_1_mount_adapter",
+        "sc9",
+        "bottom_bypass_after",
+        "bdv_bottom_drain_stub",
+        "steam_delivery",
+        "tds_without_vessels"
+      ],
+      "bytes": 4139176,
+      "sha256": "542adf18c001726066b2c7a81d6b112f96ffd55413e480dce59cd843405952ae"
+    },
+    {
+      "file": "s4000-2.glb",
+      "parts": [
+        "separator_bdv60_5",
+        "wiring_pressure_switch_3",
+        "pump_out_valve_2",
+        "safety_1",
+        "mod_eco",
+        "pump_branch_1",
+        "wiring_pump_1",
+        "bc970",
+        "lc440",
+        "low_level_2",
+        "instrument_valve",
+        "safety_vent_1",
+        "pcf20",
+        "safety_2_mount_adapter",
+        "gpz_drive",
+        "mod_direct_drive",
+        "pump_delivery"
+      ],
+      "bytes": 5632000,
+      "sha256": "31cb593750d0c98c66a64140fd62e85bc5f8daf10f2ac1dada1945ac0e64b6d6"
+    },
+    {
+      "file": "s4000-3.glb",
+      "parts": [
+        "wiring_low_level_2",
+        "wiring_pressure_switch_2",
+        "pump_in_valve_2",
+        "feed_valve",
+        "mod_direct_drive_cable",
+        "flash_steam_common",
+        "bdv_water_drain",
+        "condensate_trap",
+        "pump_1",
+        "low_level_1",
+        "drain_isolation_1",
+        "lp200",
+        "high_level",
+        "suction_common",
+        "to_direct",
+        "bottom_before_gate",
+        "mod_eco_bypass"
+      ],
+      "bytes": 5517252,
+      "sha256": "ddb6c22ddaa2d8cc083a6b64640acf7dc1753dc2a8b09764b4809eebfb66a0e4"
+    },
+    {
+      "file": "s4000-4.glb",
+      "parts": [
+        "wiring_lcs600",
+        "steam_manual",
+        "wiring_pressure_switch_1",
+        "gpz",
+        "mod_direct",
+        "pump_check_2",
+        "bdv_vent",
+        "cabinet_interior",
+        "lc220",
+        "sight_glasses_1",
+        "drain_isolation_2",
+        "pressure_switch_2",
+        "feed_mount_adapter",
+        "bdv_cooling_marker",
+        "bottom_bypass_before",
+        "bottom_before_auto",
+        "mod_direct_bypass"
+      ],
+      "bytes": 5492472,
+      "sha256": "5e46fd6baa4286993bea60818f1b60841877bbd5da9ca41c95fe28f075cc0521"
+    },
+    {
+      "file": "s4000-5.glb",
+      "parts": [
+        "wiring_high_level",
+        "wiring_pressure_transmitter",
+        "pressure_header",
+        "lcs600",
+        "gpz_drive_cable",
+        "trap_gap_to_bdv",
+        "feed_check",
+        "plus_bc970",
+        "cabinet_door",
+        "sight_glasses_2",
+        "deaerator_feed",
+        "lp400",
+        "sample_piping",
+        "local_open_drains",
+        "bdv_identification",
+        "bottom_after_auto",
+        "control_cabinet",
+        "trap_support"
+      ],
+      "bytes": 4900960,
+      "sha256": "db0bbcb68b1d79a237cc2f5253730ee20cd5cd88ee9545be19fd6c86ac931900"
+    },
+    {
+      "file": "s4000-6.glb",
+      "parts": [
+        "wiring_lp400",
+        "separator_fv8",
+        "pump_in_valve_1",
+        "safety_2",
+        "pump_branch_2",
+        "pump_check_1",
+        "bottom_to_bdv",
+        "bdv_cooling_stub",
+        "pump_2",
+        "direct_inlet",
+        "tds_common",
+        "bottom_piping",
+        "safety_vent_2",
+        "cables",
+        "feed_inlet_adapter",
+        "gpz_bypass",
+        "pressure_transmitter"
+      ],
+      "bytes": 5968724,
+      "sha256": "28934614101142e04d721ba540e2cf3804251c2c74358562df42ef4df28b7368"
+    },
+    {
+      "file": "s4000-7.glb",
+      "parts": [
+        "wiring_lp200",
+        "wiring_low_level_1",
+        "pump_out_valve_1",
+        "mod_eco_drive_cable",
+        "tds_to_fv",
+        "wiring_pump_2",
+        "fv_bottom_drain_stub",
+        "tds_without_fv",
+        "level_controller_3",
+        "level_controller_1",
+        "cp930",
+        "pressure_switch_3",
+        "steam_mount_adapter",
+        "steam_rise",
+        "mod_eco_drive",
+        "bottom_discharge",
+        "pr200"
+      ],
+      "bytes": 4209320,
+      "sha256": "9015773f2aebe5fbc49822e755d92838f47c6f40c18a2a34f10451f0c35b4639"
+    }
+  ]
+}

@@ -1,0 +1,595 @@
+{
+  "power": 2000,
+  "boiler_sha256": "9cd03dc71ed313573558e536bc32969fcfc5a90b78db1aeedceb7de73e628c01",
+  "translation": [
+    0,
+    0.20799999999999996,
+    1
+  ],
+  "axis": 1,
+  "boiler_floor_lift_m": 0,
+  "shell": 0.861,
+  "ports": {
+    "feed": {
+      "raw_mm": [
+        0,
+        975,
+        -10
+      ],
+      "axis_raw": [
+        0,
+        -1,
+        0
+      ],
+      "radii_mm": [
+        19.5,
+        39
+      ],
+      "flange_outer_radius_mm": 67.5,
+      "solid": 7,
+      "position_m": [
+        0,
+        0.218,
+        1.975
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "safety_2": {
+      "raw_mm": [
+        0,
+        975,
+        150
+      ],
+      "axis_raw": [
+        0,
+        -1,
+        0
+      ],
+      "radii_mm": [
+        19.5,
+        39
+      ],
+      "flange_outer_radius_mm": 67.5,
+      "solid": 17,
+      "position_m": [
+        0,
+        0.058,
+        1.975
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "safety_1": {
+      "raw_mm": [
+        0,
+        975,
+        310
+      ],
+      "axis_raw": [
+        0,
+        -1,
+        0
+      ],
+      "radii_mm": [
+        19.5,
+        39
+      ],
+      "flange_outer_radius_mm": 67.5,
+      "solid": 16,
+      "position_m": [
+        0,
+        -0.102,
+        1.975
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "inspection": {
+      "raw_mm": [
+        0,
+        975,
+        620
+      ],
+      "axis_raw": [
+        0,
+        1,
+        0
+      ],
+      "radii_mm": [
+        57,
+        66,
+        67.5,
+        92,
+        95.5
+      ],
+      "flange_outer_radius_mm": 122.5,
+      "solid": 12,
+      "position_m": [
+        0,
+        -0.412,
+        1.975
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "steam": {
+      "raw_mm": [
+        0,
+        975,
+        960
+      ],
+      "axis_raw": [
+        0,
+        -1,
+        0
+      ],
+      "radii_mm": [
+        45.5,
+        66.5
+      ],
+      "flange_outer_radius_mm": 97.5,
+      "solid": 6,
+      "position_m": [
+        0,
+        -0.752,
+        1.975
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "level_single": {
+      "raw_mm": [
+        0,
+        975,
+        1240
+      ],
+      "axis_raw": [
+        0,
+        -1,
+        0
+      ],
+      "radii_mm": [
+        28.5,
+        29.5,
+        51,
+        53
+      ],
+      "flange_outer_radius_mm": 80,
+      "solid": 5,
+      "position_m": [
+        0,
+        -1.032,
+        1.975
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "level_dual": {
+      "raw_mm": [
+        0,
+        975,
+        1560
+      ],
+      "axis_raw": [
+        0,
+        1,
+        0
+      ],
+      "radii_mm": [
+        66,
+        67.5,
+        92,
+        95.5
+      ],
+      "flange_outer_radius_mm": 122.5,
+      "solid": 4,
+      "position_m": [
+        0,
+        -1.352,
+        1.975
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "tds": {
+      "raw_mm": [
+        1081.135,
+        295,
+        1630
+      ],
+      "axis_raw": [
+        -1,
+        0,
+        0
+      ],
+      "radii_mm": [
+        13,
+        29
+      ],
+      "flange_outer_radius_mm": 52.5,
+      "solid": 9,
+      "position_m": [
+        1.081135,
+        -1.422,
+        1.295
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ]
+    },
+    "level_upper_1": {
+      "raw_mm": [
+        1081.135,
+        545.5,
+        1230
+      ],
+      "axis_raw": [
+        -1,
+        0,
+        0
+      ],
+      "radii_mm": [
+        13,
+        29
+      ],
+      "flange_outer_radius_mm": 52.5,
+      "solid": 3,
+      "position_m": [
+        1.081135,
+        -1.022,
+        1.5455
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ]
+    },
+    "level_lower_1": {
+      "raw_mm": [
+        1081.135,
+        145.5,
+        1230
+      ],
+      "axis_raw": [
+        -1,
+        0,
+        0
+      ],
+      "radii_mm": [
+        13,
+        29
+      ],
+      "flange_outer_radius_mm": 52.5,
+      "solid": 14,
+      "position_m": [
+        1.081135,
+        -1.022,
+        1.1455
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ]
+    },
+    "level_upper_2": {
+      "raw_mm": [
+        1081.135,
+        545.5,
+        1030
+      ],
+      "axis_raw": [
+        -1,
+        0,
+        0
+      ],
+      "radii_mm": [
+        13,
+        29
+      ],
+      "flange_outer_radius_mm": 52.5,
+      "solid": 10,
+      "position_m": [
+        1.081135,
+        -0.822,
+        1.5455
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ]
+    },
+    "level_lower_2": {
+      "raw_mm": [
+        1081.135,
+        145.5,
+        1030
+      ],
+      "axis_raw": [
+        -1,
+        0,
+        0
+      ],
+      "radii_mm": [
+        13,
+        29
+      ],
+      "flange_outer_radius_mm": 52.5,
+      "solid": 15,
+      "position_m": [
+        1.081135,
+        -0.822,
+        1.1455
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ]
+    },
+    "pressure": {
+      "raw_mm": [
+        846.1347,
+        700.5,
+        1230
+      ],
+      "axis_raw": [
+        0,
+        -1,
+        0
+      ],
+      "radii_mm": [
+        13,
+        29
+      ],
+      "flange_outer_radius_mm": 52.5,
+      "solid": 11,
+      "position_m": [
+        0.8461347,
+        -1.022,
+        1.7005
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ]
+    },
+    "flue": {
+      "raw_mm": [
+        0,
+        0,
+        -583
+      ],
+      "axis_raw": [
+        0,
+        0,
+        -1
+      ],
+      "radii_mm": [
+        200,
+        203
+      ],
+      "flange_outer_radius_mm": 203,
+      "solid": 2,
+      "position_m": [
+        0,
+        0.791,
+        1
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ]
+    },
+    "drain": {
+      "raw_mm": [
+        0,
+        -885,
+        -580
+      ],
+      "axis_raw": [
+        0,
+        0,
+        1
+      ],
+      "radii_mm": [
+        19.5,
+        39
+      ],
+      "flange_outer_radius_mm": 67.5,
+      "solid": 8,
+      "position_m": [
+        0,
+        0.788,
+        0.115
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ]
+    },
+    "burner": {
+      "raw_mm": [
+        0,
+        -260,
+        2245
+      ],
+      "axis_raw": [
+        0,
+        0,
+        -1
+      ],
+      "radii_mm": [
+        190
+      ],
+      "flange_outer_radius_mm": 190,
+      "solid": 0,
+      "position_m": [
+        0,
+        -2.037,
+        0.74
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ]
+    }
+  },
+  "economizer": {
+    "model": 2000,
+    "sha256": "bdf9f9d6dbc013d9da3b75fd9a8bc1e798af4ecf981dc17d8f81ebc4b3140b1d",
+    "translation": [
+      -0.448,
+      1.798,
+      1
+    ],
+    "ports": {
+      "flue_in": {
+        "raw_mm": [
+          507,
+          0,
+          -448
+        ],
+        "axis_raw": [
+          1,
+          0,
+          0
+        ],
+        "radii_mm": [
+          200,
+          203
+        ],
+        "flange_outer_radius_mm": 203,
+        "solid": 0,
+        "position_m": [
+          0,
+          1.291,
+          1
+        ],
+        "normal": [
+          0,
+          -1,
+          0
+        ]
+      },
+      "flue_out": {
+        "raw_mm": [
+          -507,
+          0,
+          -448
+        ],
+        "axis_raw": [
+          -1,
+          0,
+          0
+        ],
+        "radii_mm": [
+          200,
+          203
+        ],
+        "flange_outer_radius_mm": 203,
+        "solid": 0,
+        "position_m": [
+          0,
+          2.305,
+          1
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ]
+      },
+      "water_in": {
+        "raw_mm": [
+          -507,
+          -264,
+          177
+        ],
+        "axis_raw": [
+          1,
+          0,
+          0
+        ],
+        "radii_mm": [
+          61
+        ],
+        "flange_outer_radius_mm": 90,
+        "solid": 2,
+        "position_m": [
+          -0.625,
+          2.305,
+          0.736
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "dn": 65
+      },
+      "water_out": {
+        "raw_mm": [
+          -507,
+          264,
+          177
+        ],
+        "axis_raw": [
+          1,
+          0,
+          0
+        ],
+        "radii_mm": [
+          61
+        ],
+        "flange_outer_radius_mm": 90,
+        "solid": 2,
+        "position_m": [
+          -0.625,
+          2.305,
+          1.264
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "dn": 65
+      }
+    },
+    "spacer_length_mm": 500,
+    "axis_offset_mm": 0,
+    "source_axis_offset_mm": 0,
+    "floor_lift_m": 0
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "status": "PASSED_NAVIGATION_REVISION",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.09.13.6-final/",
+  "manifestSha256": "50bcb0b7f9a62f8ca3d4cfdcba411271b3c4e4dc72a87048ab940910acf03934",
+  "results": [
+    {
+      "power": 500,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 1000,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 1500,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 2000,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 2500,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 3000,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 3500,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 4000,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 5000,
+      "camera": "FOURTEEN_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "cornerViews": 8,
+      "axisViewEscapes": 6,
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    }
+  ],
+  "errors": []
+}

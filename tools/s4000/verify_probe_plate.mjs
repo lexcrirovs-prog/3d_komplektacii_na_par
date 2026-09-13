@@ -4,7 +4,7 @@ import {createRequire} from 'node:module';import{resolve}from'node:path';import{
 const req=createRequire(resolve(process.env.S3000_GLTF_RUNTIME,'package.json')),imp=async n=>import(pathToFileURL(req.resolve(n)).href);
 const{NodeIO}=await imp('@gltf-transform/core'),{ALL_EXTENSIONS}=await imp('@gltf-transform/extensions'),{MeshoptDecoder}=await imp('meshoptimizer');await MeshoptDecoder.ready;
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder});
-const results=[],root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.5';
+const results=[],root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.6';
 const primitives=n=>{const rows=[];n.traverse(n=>{const m=n.getWorldMatrix();for(const p of n.getMesh()?.listPrimitives()||[]){const a=p.getAttribute('POSITION');rows.push({name:n.getName(),indices:p.getIndices(),v:Array.from({length:a.getCount()},(_,i)=>{const[x,y,z]=a.getElement(i,[]);return[m[0]*x+m[4]*y+m[8]*z+m[12],m[1]*x+m[5]*y+m[9]*z+m[13],m[2]*x+m[6]*y+m[10]*z+m[14]]})})}});return rows};
 const bounds=vs=>({min:[0,1,2].map(i=>vs.reduce((a,p)=>Math.min(a,p[i]),Infinity)),max:[0,1,2].map(i=>vs.reduce((a,p)=>Math.max(a,p[i]),-Infinity))});
 for(const power of [500,1000,1500,2000,2500,3000,3500,4000,5000]){
@@ -23,4 +23,4 @@ for(const power of [500,1000,1500,2000,2500,3000,3500,4000,5000]){
  const gap=plate.min[1]-sideFlange.max[1];assert(gap>.08,`${power}: FV plate overlaps flange`);assert(letters.min[1]>plate.min[1]&&letters.max[1]<plate.max[1]);
  results.push({power,probes,fvPlate:plate,fvLettering:letters,flangeTopM:sideFlange.max[1],plateClearanceM:gap});console.log('PROBE_PLATE_PASSED',power,gap);
 }
-await mkdir('artifacts/probe-plate-geometry',{recursive:true});await writeFile('artifacts/probe-plate-geometry/report.json',JSON.stringify({status:'PASSED_PROBE_PLATE',version:'2026.09.13.5',results},null,2));
+await mkdir('artifacts/probe-plate-geometry',{recursive:true});await writeFile('artifacts/probe-plate-geometry/report.json',JSON.stringify({status:'PASSED_PROBE_PLATE',version:'2026.09.13.6',results},null,2));

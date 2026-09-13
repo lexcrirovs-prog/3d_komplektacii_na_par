@@ -1,16 +1,16 @@
-"""Single-elbow feed routing release 2026.09.13.5, Codex / GPT-6."""
+"""Rear pressure instrument cable entries release 2026.09.13.6, Codex / GPT-6."""
 import importlib.util,json,sys
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.09.13.5'
+p.VERSION='2026.09.13.6'
 p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-final'
-p.BACKUP=p.ROOT+'/komplektacii4-v2026.09.13.4'
-p.BASELINE_HASH='4b43d8a597ba166879a862c84528616de945cd9eae9e5823dcb0f3c89c7917dc'
+p.BACKUP=p.ROOT+'/komplektacii4-v2026.09.13.5'
+p.BASELINE_HASH='06af792101a33fe4ddf473979463887403561afcea1aecf40b2471ed78835f8f'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-final/'
 def validate(prepared):
- r=json.loads((p.REPO/'artifacts/rating-stage-v5/report.json').read_text('utf8'))
+ r=json.loads((p.REPO/'artifacts/rating-stage-v6/report.json').read_text('utf8'))
  assert r['status']=='PASSED_RATING_BROWSER' and r['base']==p.STAGE_URL
  assert r['manifestSha256']==prepared['manifestSha256'] and r['errors']==[]
  assert {f['power'] for f in r['results']}=={500,1000,1500,2000,2500,3000,3500,4000,5000}
@@ -18,7 +18,7 @@ def validate(prepared):
  assert len(r['transitions'])==7 and all(t['retainedSelection'] and t['economizerOff'] for t in r['transitions'])
  geometry=json.loads((p.REPO/'artifacts/rating-geometry/report.json').read_text('utf8'))
  assert geometry['status']=='PASSED_RATING_GEOMETRY' and len(geometry['results'])==9
- navigation=json.loads((p.REPO/'artifacts/navigation-stage-v5/report.json').read_text('utf8'))
+ navigation=json.loads((p.REPO/'artifacts/navigation-stage-v6/report.json').read_text('utf8'))
  assert navigation['status']=='PASSED_NAVIGATION_REVISION' and navigation['base']==p.STAGE_URL
  assert navigation['manifestSha256']==prepared['manifestSha256'] and navigation['errors']==[]
  assert {r['power'] for r in navigation['results']}=={500,1000,1500,2000,2500,3000,3500,4000,5000}
@@ -28,5 +28,7 @@ def validate(prepared):
  assert modulation['status']=='PASSED_SINGLE_ELBOW' and len(modulation['results'])==9
  probes=json.loads((p.REPO/'artifacts/probe-plate-geometry/report.json').read_text('utf8'))
  assert probes['status']=='PASSED_PROBE_PLATE' and len(probes['results'])==9
+ rear=json.loads((p.REPO/'artifacts/rear-entry-geometry/report.json').read_text('utf8'))
+ assert rear['status']=='PASSED_REAR_ENTRIES' and len(rear['results'])==9
 p.validate_browser_acceptance=validate
 {'prepare':p.prepare,'stage':p.stage,'verify-stage':lambda:p.verify_http(p.STAGE_URL),'cutover':p.cutover,'verify-live':lambda:p.verify_http(p.URL),'rollback':p.rollback}[sys.argv[1]]()

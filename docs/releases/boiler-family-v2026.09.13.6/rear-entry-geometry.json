@@ -1,0 +1,483 @@
+{
+  "status": "PASSED_REAR_ENTRIES",
+  "version": "2026.09.13.6",
+  "results": [
+    {
+      "power": 500,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.0364076999999998,
+            -1.6520000000000001,
+            2.5235000000000003
+          ],
+          "rearPlaneX": 1.0364079076626331,
+          "cableMaxX": 1.0364158224076498,
+          "frontExtentX": 1.1159072577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.0364076999999998,
+            -1.4120000000000001,
+            2.5235000000000003
+          ],
+          "rearPlaneX": 1.0364079076626331,
+          "cableMaxX": 1.036407709121704,
+          "frontExtentX": 1.1159072577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.0271577,
+            -1.1720000000000002,
+            2.5134999999999996
+          ],
+          "rearPlaneX": 1.0271579820492298,
+          "cableMaxX": 1.0271620523264917,
+          "frontExtentX": 1.1066573321200814,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.0499076999999999,
+            -1.1720000000000002,
+            2.5525
+          ],
+          "rearPlaneX": 1.0499078266331465,
+          "cableMaxX": 1.049921090642639,
+          "frontExtentX": 1.0839074875361647,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 1000,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.190969,
+            -1.6520000000000001,
+            2.6855
+          ],
+          "rearPlaneX": 1.1909692076626333,
+          "cableMaxX": 1.1909773459905133,
+          "frontExtentX": 1.2704685577334849,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.190969,
+            -1.4120000000000001,
+            2.6855
+          ],
+          "rearPlaneX": 1.1909692076626333,
+          "cableMaxX": 1.190983660020932,
+          "frontExtentX": 1.2704685577334849,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.181719,
+            -1.1720000000000002,
+            2.6754999999999995
+          ],
+          "rearPlaneX": 1.18171928204923,
+          "cableMaxX": 1.1817189455032349,
+          "frontExtentX": 1.2612186321200816,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.204469,
+            -1.1720000000000002,
+            2.7145
+          ],
+          "rearPlaneX": 1.2044691266331466,
+          "cableMaxX": 1.2044691175734459,
+          "frontExtentX": 1.2384687875361649,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 1500,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.1917048,
+            -1.6520000000000001,
+            2.6855
+          ],
+          "rearPlaneX": 1.1917050076626332,
+          "cableMaxX": 1.1917215823676075,
+          "frontExtentX": 1.2712043577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.1917048,
+            -1.4120000000000001,
+            2.6855
+          ],
+          "rearPlaneX": 1.1917050076626332,
+          "cableMaxX": 1.1917047500610352,
+          "frontExtentX": 1.2712043577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.1824548,
+            -1.1720000000000002,
+            2.6754999999999995
+          ],
+          "rearPlaneX": 1.1824550820492299,
+          "cableMaxX": 1.1824702909511595,
+          "frontExtentX": 1.2619544321200815,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.2052048,
+            -1.1720000000000002,
+            2.7145
+          ],
+          "rearPlaneX": 1.2052049266331466,
+          "cableMaxX": 1.205207627003225,
+          "frontExtentX": 1.2392045875361648,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 2000,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.2871036999999999,
+            -1.552,
+            2.7705
+          ],
+          "rearPlaneX": 1.2871039076626332,
+          "cableMaxX": 1.2871125291120138,
+          "frontExtentX": 1.3666032577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.2871036999999999,
+            -1.312,
+            2.7705
+          ],
+          "rearPlaneX": 1.2871039076626332,
+          "cableMaxX": 1.2871215327208534,
+          "frontExtentX": 1.3666032577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.2778537,
+            -1.072,
+            2.7604999999999995
+          ],
+          "rearPlaneX": 1.2778539820492298,
+          "cableMaxX": 1.2778574739183697,
+          "frontExtentX": 1.3573533321200815,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.3006037,
+            -1.072,
+            2.7995
+          ],
+          "rearPlaneX": 1.3006038266331466,
+          "cableMaxX": 1.3006037473678589,
+          "frontExtentX": 1.3346034875361648,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 2500,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.2871036999999999,
+            -1.552,
+            2.7705
+          ],
+          "rearPlaneX": 1.2871039076626332,
+          "cableMaxX": 1.2871125291120138,
+          "frontExtentX": 1.3666032577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.2871036999999999,
+            -1.312,
+            2.7705
+          ],
+          "rearPlaneX": 1.2871039076626332,
+          "cableMaxX": 1.2871215327208534,
+          "frontExtentX": 1.3666032577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.2778537,
+            -1.072,
+            2.7604999999999995
+          ],
+          "rearPlaneX": 1.2778539820492298,
+          "cableMaxX": 1.2778574739183697,
+          "frontExtentX": 1.3573533321200815,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.3006037,
+            -1.072,
+            2.7995
+          ],
+          "rearPlaneX": 1.3006038266331466,
+          "cableMaxX": 1.3006037473678589,
+          "frontExtentX": 1.3346034875361648,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 3000,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.3379522,
+            -1.552,
+            2.8655
+          ],
+          "rearPlaneX": 1.3379524076626332,
+          "cableMaxX": 1.3379522562026978,
+          "frontExtentX": 1.4174517577334849,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.3379522,
+            -1.312,
+            2.8655
+          ],
+          "rearPlaneX": 1.3379524076626332,
+          "cableMaxX": 1.3379721518664043,
+          "frontExtentX": 1.4174517577334849,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.3287022,
+            -1.072,
+            2.8555
+          ],
+          "rearPlaneX": 1.32870248204923,
+          "cableMaxX": 1.3287092296031846,
+          "frontExtentX": 1.4082018321200815,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.3514522,
+            -1.072,
+            2.8945
+          ],
+          "rearPlaneX": 1.3514523266331466,
+          "cableMaxX": 1.3514522314071655,
+          "frontExtentX": 1.3854519875361648,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 3500,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.3379522,
+            -1.552,
+            2.8655
+          ],
+          "rearPlaneX": 1.3379524076626332,
+          "cableMaxX": 1.3379522562026978,
+          "frontExtentX": 1.4174517577334849,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.3379522,
+            -1.312,
+            2.8655
+          ],
+          "rearPlaneX": 1.3379524076626332,
+          "cableMaxX": 1.3379721518664043,
+          "frontExtentX": 1.4174517577334849,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.3287022,
+            -1.072,
+            2.8555
+          ],
+          "rearPlaneX": 1.32870248204923,
+          "cableMaxX": 1.3287092296031846,
+          "frontExtentX": 1.4082018321200815,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.3514522,
+            -1.072,
+            2.8945
+          ],
+          "rearPlaneX": 1.3514523266331466,
+          "cableMaxX": 1.3514522314071655,
+          "frontExtentX": 1.3854519875361648,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 4000,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.3895,
+            -1.52,
+            2.995
+          ],
+          "rearPlaneX": 1.3895002076626333,
+          "cableMaxX": 1.3895000219345093,
+          "frontExtentX": 1.468999557733485,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.3895,
+            -1.28,
+            2.995
+          ],
+          "rearPlaneX": 1.3895002076626333,
+          "cableMaxX": 1.3895202771670054,
+          "frontExtentX": 1.468999557733485,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.38025,
+            -1.04,
+            2.985
+          ],
+          "rearPlaneX": 1.38025028204923,
+          "cableMaxX": 1.3802499771118164,
+          "frontExtentX": 1.4597496321200816,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.403,
+            -1.04,
+            3.024
+          ],
+          "rearPlaneX": 1.4030001266331467,
+          "cableMaxX": 1.402999997138977,
+          "frontExtentX": 1.4369997875361649,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    },
+    {
+      "power": 5000,
+      "entries": [
+        {
+          "id": "pressure_switch_1",
+          "entry": [
+            1.4413074,
+            -1.5,
+            3.1500000000000004
+          ],
+          "rearPlaneX": 1.4413076076626332,
+          "cableMaxX": 1.4413074254989624,
+          "frontExtentX": 1.5208069577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_2",
+          "entry": [
+            1.4413074,
+            -1.26,
+            3.1500000000000004
+          ],
+          "rearPlaneX": 1.4413076076626332,
+          "cableMaxX": 1.4413074254989624,
+          "frontExtentX": 1.5208069577334848,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_switch_3",
+          "entry": [
+            1.4320574,
+            -1.02,
+            3.1399999999999997
+          ],
+          "rearPlaneX": 1.43205768204923,
+          "cableMaxX": 1.4320665234561427,
+          "frontExtentX": 1.5115570321200815,
+          "instrumentBoundsUnchanged": true
+        },
+        {
+          "id": "pressure_transmitter",
+          "entry": [
+            1.4548074,
+            -1.02,
+            3.1790000000000003
+          ],
+          "rearPlaneX": 1.4548075266331466,
+          "cableMaxX": 1.4548074007034302,
+          "frontExtentX": 1.4888071875361648,
+          "instrumentBoundsUnchanged": true
+        }
+      ]
+    }
+  ]
+}

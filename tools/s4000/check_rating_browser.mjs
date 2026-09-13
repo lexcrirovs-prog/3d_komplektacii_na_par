@@ -28,7 +28,7 @@ try {
    return Object.fromEntries(['boiler','flue_spacer','economizer','control_cabinet'].map(id=>[id,bounds(id)]));
   });
   if(power>=1500)assert(Math.abs(measure.flue_spacer.max[2]-measure.flue_spacer.min[2]-.5)<.001);
-  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.5/${power}/wiring.json`,'utf8'));
+  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.6/${power}/wiring.json`,'utf8'));
   const collisions=await page.evaluate(routes=>{
    const {scene}=window.__s3000,rc=scene.__r3f.root.getState().raycaster,ray=rc.ray.clone(),near=rc.near,far=rc.far,hits=[];
    const meshes=[];for(const id of ['boiler','boiler_cladding'])scene.getObjectByName(id)?.traverse(n=>{if(n.isMesh)meshes.push(n)});
@@ -68,6 +68,12 @@ try {
   const capture=async(name,position,target)=>{const image=await page.evaluate(({position,target})=>{const {scene,gl,camera}=window.__s3000;let root=scene;while(root.parent)root=root.parent;camera.position.set(...position);camera.lookAt(...target);camera.updateMatrixWorld();gl.render(root,camera);return gl.domElement.toDataURL('image/png')},{position,target});await writeFile(resolve(out,`${power}-${name}.png`),Buffer.from(image.split(',')[1],'base64'))};
   if(power>=1500){const z=(measure.flue_spacer.min[2]+measure.flue_spacer.max[2])/2;await capture('spacer',[-2,2.4,z-1.5],[0,(measure.flue_spacer.min[1]+measure.flue_spacer.max[1])/2,z]);}
   const dc=wiring.cabinetDelta;await capture('harness',[-2.8+dc[0],3+dc[2],1.8],[-.4+dc[0],1.85+dc[2],.6]);
+  if([500,1500,4000,5000].includes(power)) {
+   const layout=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.6/${power}/layout.json`,'utf8')),d=layout.moves.pressure_header;
+   await page.getByLabel('Комплектация',{exact:true}).selectOption('standard');await page.waitForTimeout(80);
+   await capture('pressure-front',[2.5+d[0],3.32+d[2],2.45-d[1]],[1.42+d[0],2.99+d[2],1.28-d[1]]);
+   await capture('pressure-back',[.45+d[0],3.32+d[2],2.45-d[1]],[1.32+d[0],2.99+d[2],1.28-d[1]]);
+  }
   await page.setViewportSize({width:390,height:844});await page.waitForTimeout(300);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
   results.push({power,modelFiles:new Set(requests).size,bytes:chunks.bytes,bodyIntersections:collisions,glands:'INSIDE_FIXED_BOTTOM_PANEL',options:'PASSED',sourceLinks:links.length,measure});
   await page.close();console.log('RATING_BROWSER_PASSED',power);

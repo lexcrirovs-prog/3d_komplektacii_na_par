@@ -1,0 +1,1606 @@
+{
+  "status": "PASSED_RATING_GEOMETRY",
+  "date": "2026-09-13",
+  "results": [
+    {
+      "power": 500,
+      "bodyDimensionErrorM": 0.00005610373756824438,
+      "registeredBoilerPorts": 16,
+      "flue": null,
+      "originalBoilerSha256": "3bc78c8d51be750bd2fbb3c06ca778763076a264338587022ff4e55c860c24d8",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.962,
+            1.613
+          ],
+          "end": [
+            0,
+            -0.962,
+            1.763
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 59.00000000000001,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "feed_mount_adapter",
+          "source_port": "feed",
+          "start": [
+            0,
+            -0.437,
+            1.613
+          ],
+          "end": [
+            0,
+            -0.437,
+            1.713
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "safety_1_mount_adapter",
+          "source_port": "safety_1",
+          "start": [
+            -0.08,
+            -0.312,
+            1.613
+          ],
+          "end": [
+            -0.08,
+            -0.312,
+            1.733
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "safety_2_mount_adapter",
+          "source_port": "safety_2",
+          "start": [
+            0.08,
+            -0.312,
+            1.613
+          ],
+          "end": [
+            0.08,
+            -0.312,
+            1.733
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            0.830439,
+            -1.122,
+            1.2985
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            0.830439,
+            -1.122,
+            0.9885
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            0.830439,
+            -0.922,
+            1.2985
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            0.830439,
+            -0.922,
+            0.9885
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "power": 1000,
+      "bodyDimensionErrorM": 0.00006666363913027107,
+      "registeredBoilerPorts": 16,
+      "flue": null,
+      "originalBoilerSha256": "8d4cdcf82dd491cebe08b53cc1a9a0d25388e5ea6d79cd55640079af6348e1cb",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.852,
+            1.845
+          ],
+          "end": [
+            0,
+            -0.852,
+            1.9949999999999999
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 59.00000000000001,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "feed_mount_adapter",
+          "source_port": "feed",
+          "start": [
+            0,
+            -0.292,
+            1.845
+          ],
+          "end": [
+            0,
+            -0.292,
+            1.945
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "safety_1_mount_adapter",
+          "source_port": "safety_1",
+          "start": [
+            -0.08,
+            -0.152,
+            1.845
+          ],
+          "end": [
+            -0.08,
+            -0.152,
+            1.9649999999999999
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "safety_2_mount_adapter",
+          "source_port": "safety_2",
+          "start": [
+            0.08,
+            -0.152,
+            1.845
+          ],
+          "end": [
+            0.08,
+            -0.152,
+            1.9649999999999999
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            0.985,
+            -1.122,
+            1.4605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            0.985,
+            -1.122,
+            1.0605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            0.985,
+            -0.922,
+            1.4605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            0.985,
+            -0.922,
+            1.0605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "power": 1500,
+      "bodyDimensionErrorM": 0.00006667883831457111,
+      "registeredBoilerPorts": 16,
+      "flue": {
+        "boreMm": 350,
+        "outerDiameterMm": 356,
+        "lengthMm": 500,
+        "coaxial": true,
+        "waterFlangeSpacingMm": 336
+      },
+      "originalBoilerSha256": "6db8c5fd75d15323c80e1fd4abe4640cdf23cde9f2bd557d61cee5dce1472ea3",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.832,
+            1.845
+          ],
+          "end": [
+            0,
+            -0.832,
+            1.9949999999999999
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 78,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "feed_mount_adapter",
+          "source_port": "feed",
+          "start": [
+            0,
+            0.058,
+            1.845
+          ],
+          "end": [
+            0,
+            0.058,
+            1.945
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "safety_1_mount_adapter",
+          "source_port": "safety_1",
+          "start": [
+            0,
+            -0.262,
+            1.845
+          ],
+          "end": [
+            0,
+            -0.262,
+            1.9649999999999999
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "safety_2_mount_adapter",
+          "source_port": "safety_2",
+          "start": [
+            0,
+            -0.102,
+            1.845
+          ],
+          "end": [
+            0,
+            -0.102,
+            1.9649999999999999
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 33,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            0.985736,
+            -1.122,
+            1.4605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            0.985736,
+            -1.122,
+            1.0605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            0.985736,
+            -0.922,
+            1.4605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            0.985736,
+            -0.922,
+            1.0605
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "flue_spacer",
+          "source_port": "flue",
+          "economizer_port": "flue_in",
+          "start": [
+            0,
+            0.571,
+            0.93
+          ],
+          "end": [
+            0,
+            1.071,
+            0.93
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 350,
+          "target_bore_mm": 350
+        },
+        {
+          "id": "eco_water_in",
+          "economizer_port": "water_in",
+          "start": [
+            -0.625,
+            2.085,
+            0.762
+          ],
+          "end": [
+            -0.625,
+            2.289,
+            0.762
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "eco_water_out",
+          "economizer_port": "water_out",
+          "start": [
+            -0.625,
+            2.085,
+            1.098
+          ],
+          "end": [
+            -0.625,
+            2.289,
+            1.098
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        }
+      ]
+    },
+    {
+      "power": 2000,
+      "bodyDimensionErrorM": 0.000057111604376047787,
+      "registeredBoilerPorts": 16,
+      "flue": {
+        "boreMm": 400,
+        "outerDiameterMm": 406,
+        "lengthMm": 500,
+        "coaxial": true,
+        "waterFlangeSpacingMm": 528
+      },
+      "originalBoilerSha256": "9cd03dc71ed313573558e536bc32969fcfc5a90b78db1aeedceb7de73e628c01",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.752,
+            1.975
+          ],
+          "end": [
+            0,
+            -0.752,
+            2.125
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 91,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "safety_1_mount_adapter",
+          "source_port": "safety_1",
+          "start": [
+            0,
+            -0.102,
+            1.975
+          ],
+          "end": [
+            0,
+            -0.102,
+            2.095
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "safety_2_mount_adapter",
+          "source_port": "safety_2",
+          "start": [
+            0,
+            0.058,
+            1.975
+          ],
+          "end": [
+            0,
+            0.058,
+            2.095
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            1.081135,
+            -1.022,
+            1.5455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            1.081135,
+            -1.022,
+            1.1455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            1.081135,
+            -0.822,
+            1.5455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            1.081135,
+            -0.822,
+            1.1455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "flue_spacer",
+          "source_port": "flue",
+          "economizer_port": "flue_in",
+          "start": [
+            0,
+            0.791,
+            1
+          ],
+          "end": [
+            0,
+            1.291,
+            1
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 400,
+          "target_bore_mm": 400
+        },
+        {
+          "id": "eco_water_in",
+          "economizer_port": "water_in",
+          "start": [
+            -0.625,
+            2.305,
+            0.736
+          ],
+          "end": [
+            -0.625,
+            2.5090000000000003,
+            0.736
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "eco_water_out",
+          "economizer_port": "water_out",
+          "start": [
+            -0.625,
+            2.305,
+            1.264
+          ],
+          "end": [
+            -0.625,
+            2.5090000000000003,
+            1.264
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        }
+      ]
+    },
+    {
+      "power": 2500,
+      "bodyDimensionErrorM": 0.000057141406698546504,
+      "registeredBoilerPorts": 16,
+      "flue": {
+        "boreMm": 400,
+        "outerDiameterMm": 406,
+        "lengthMm": 500,
+        "coaxial": true,
+        "waterFlangeSpacingMm": 528
+      },
+      "originalBoilerSha256": "69982d95bdc80c9305fb3f9b161d38155e63b125eff32d31a71f10eff6cf5a17",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.662,
+            1.975
+          ],
+          "end": [
+            0,
+            -0.662,
+            2.125
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 110,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "safety_1_mount_adapter",
+          "source_port": "safety_1",
+          "start": [
+            0,
+            0.058,
+            1.975
+          ],
+          "end": [
+            0,
+            0.058,
+            2.095
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "safety_2_mount_adapter",
+          "source_port": "safety_2",
+          "start": [
+            0,
+            0.238,
+            1.975
+          ],
+          "end": [
+            0,
+            0.238,
+            2.095
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            1.081135,
+            -1.022,
+            1.5455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            1.081135,
+            -1.022,
+            1.1455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            1.081135,
+            -0.822,
+            1.5455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            1.081135,
+            -0.822,
+            1.1455
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "flue_spacer",
+          "source_port": "flue",
+          "economizer_port": "flue_in",
+          "start": [
+            0,
+            1.041,
+            1
+          ],
+          "end": [
+            0,
+            1.541,
+            1
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 400,
+          "target_bore_mm": 400
+        },
+        {
+          "id": "eco_water_in",
+          "economizer_port": "water_in",
+          "start": [
+            -0.625,
+            2.555,
+            0.736
+          ],
+          "end": [
+            -0.625,
+            2.7590000000000003,
+            0.736
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "eco_water_out",
+          "economizer_port": "water_out",
+          "start": [
+            -0.625,
+            2.555,
+            1.264
+          ],
+          "end": [
+            -0.625,
+            2.7590000000000003,
+            1.264
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        }
+      ]
+    },
+    {
+      "power": 3000,
+      "bodyDimensionErrorM": 0.00005071355995944771,
+      "registeredBoilerPorts": 16,
+      "flue": {
+        "boreMm": 450,
+        "outerDiameterMm": 456,
+        "lengthMm": 500,
+        "coaxial": true,
+        "waterFlangeSpacingMm": 720
+      },
+      "originalBoilerSha256": "363637cc2cea7acf562f2f6fd89596b87460dfe7b945c94926e8d537d67da886",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.472,
+            2.085
+          ],
+          "end": [
+            0,
+            -0.472,
+            2.235
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 110,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "safety_1_mount_adapter",
+          "source_port": "safety_1",
+          "start": [
+            0,
+            0.228,
+            2.085
+          ],
+          "end": [
+            0,
+            0.228,
+            2.205
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "safety_2_mount_adapter",
+          "source_port": "safety_2",
+          "start": [
+            0,
+            0.448,
+            2.085
+          ],
+          "end": [
+            0,
+            0.448,
+            2.205
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            1.131983,
+            -1.022,
+            1.6405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            1.131983,
+            -1.022,
+            1.2405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            1.131983,
+            -0.822,
+            1.6405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            1.131983,
+            -0.822,
+            1.2405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "flue_spacer",
+          "source_port": "flue",
+          "economizer_port": "flue_in",
+          "start": [
+            0,
+            1.351,
+            1.06
+          ],
+          "end": [
+            0,
+            1.851,
+            1.06
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 450,
+          "target_bore_mm": 450
+        },
+        {
+          "id": "eco_water_in",
+          "economizer_port": "water_in",
+          "start": [
+            -0.625,
+            2.865,
+            0.7
+          ],
+          "end": [
+            -0.625,
+            3.0690000000000004,
+            0.7
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "eco_water_out",
+          "economizer_port": "water_out",
+          "start": [
+            -0.625,
+            2.865,
+            1.42
+          ],
+          "end": [
+            -0.625,
+            3.0690000000000004,
+            1.42
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        }
+      ]
+    },
+    {
+      "power": 3500,
+      "bodyDimensionErrorM": 0.00005072548088858042,
+      "registeredBoilerPorts": 16,
+      "flue": {
+        "boreMm": 450,
+        "outerDiameterMm": 456,
+        "lengthMm": 500,
+        "coaxial": true,
+        "waterFlangeSpacingMm": 720
+      },
+      "originalBoilerSha256": "23127fdf61f37ed860d3477d317e45f5339710df4e521b6f74964cc67852a2c8",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.402,
+            2.085
+          ],
+          "end": [
+            0,
+            -0.402,
+            2.235
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 110,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "safety_1_mount_adapter",
+          "source_port": "safety_1",
+          "start": [
+            0,
+            0.348,
+            2.085
+          ],
+          "end": [
+            0,
+            0.348,
+            2.205
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "safety_2_mount_adapter",
+          "source_port": "safety_2",
+          "start": [
+            0,
+            0.578,
+            2.085
+          ],
+          "end": [
+            0,
+            0.578,
+            2.205
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 39,
+          "target_bore_mm": 40
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            1.131983,
+            -1.022,
+            1.6405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            1.131983,
+            -1.022,
+            1.2405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            1.131983,
+            -0.822,
+            1.6405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            1.131983,
+            -0.822,
+            1.2405
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "flue_spacer",
+          "source_port": "flue",
+          "economizer_port": "flue_in",
+          "start": [
+            0,
+            1.551,
+            1.06
+          ],
+          "end": [
+            0,
+            2.051,
+            1.06
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 450,
+          "target_bore_mm": 450
+        },
+        {
+          "id": "eco_water_in",
+          "economizer_port": "water_in",
+          "start": [
+            -0.625,
+            3.065,
+            0.7
+          ],
+          "end": [
+            -0.625,
+            3.269,
+            0.7
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "eco_water_out",
+          "economizer_port": "water_out",
+          "start": [
+            -0.625,
+            3.065,
+            1.42
+          ],
+          "end": [
+            -0.625,
+            3.269,
+            1.42
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        }
+      ]
+    },
+    {
+      "power": 4000,
+      "bodyDimensionErrorM": 0.0002552459025304543,
+      "registeredBoilerPorts": 16,
+      "flue": {
+        "boreMm": 500,
+        "outerDiameterMm": 506,
+        "lengthMm": 500,
+        "coaxial": true,
+        "waterFlangeSpacingMm": 720
+      },
+      "originalBoilerSha256": "bf5f6fb41e07b4c26c24b00520038cf898e6e1498d9df9143875f41c03aa3ad8",
+      "connections": [
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            1.183531,
+            -0.99,
+            1.77
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            1.183531,
+            -0.99,
+            1.37
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            1.183531,
+            -0.79,
+            1.77
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            1.183531,
+            -0.79,
+            1.37
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "flue_spacer",
+          "source_port": "flue",
+          "economizer_port": "flue_in",
+          "start": [
+            0,
+            1.978,
+            1.135
+          ],
+          "end": [
+            0,
+            2.478,
+            1.135
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 500,
+          "target_bore_mm": 500
+        },
+        {
+          "id": "eco_water_in",
+          "economizer_port": "water_in",
+          "start": [
+            -0.625,
+            3.492,
+            0.7750003
+          ],
+          "end": [
+            -0.625,
+            3.696,
+            0.7750003
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "eco_water_out",
+          "economizer_port": "water_out",
+          "start": [
+            -0.625,
+            3.492,
+            1.4950008
+          ],
+          "end": [
+            -0.625,
+            3.696,
+            1.4950008
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        }
+      ]
+    },
+    {
+      "power": 5000,
+      "bodyDimensionErrorM": 0.00004827933662143735,
+      "registeredBoilerPorts": 16,
+      "flue": {
+        "boreMm": 500,
+        "outerDiameterMm": 506,
+        "lengthMm": 500,
+        "coaxial": true,
+        "waterFlangeSpacingMm": 912
+      },
+      "originalBoilerSha256": "6595afa20fb05c2c65ec7dd721cb8f677f534e2ba2635652920d335e1e7389ce",
+      "connections": [
+        {
+          "id": "steam_mount_adapter",
+          "source_port": "steam",
+          "start": [
+            0,
+            -0.12,
+            2.393
+          ],
+          "end": [
+            0,
+            -0.12,
+            2.5429999999999997
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "source_bore_mm": 135,
+          "target_bore_mm": 100
+        },
+        {
+          "id": "glass_1_upper",
+          "source_port": "level_upper_1",
+          "start": [
+            1.235338,
+            -0.97,
+            1.925
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_1_lower",
+          "source_port": "level_lower_1",
+          "start": [
+            1.235338,
+            -0.97,
+            1.525
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_upper",
+          "source_port": "level_upper_2",
+          "start": [
+            1.235338,
+            -0.77,
+            1.925
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_2_lower",
+          "source_port": "level_lower_2",
+          "start": [
+            1.235338,
+            -0.77,
+            1.525
+          ],
+          "normal": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "flue_spacer",
+          "source_port": "flue",
+          "economizer_port": "flue_in",
+          "start": [
+            0,
+            2.348,
+            1.218
+          ],
+          "end": [
+            0,
+            2.848,
+            1.218
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 500,
+          "target_bore_mm": 500
+        },
+        {
+          "id": "eco_water_in",
+          "economizer_port": "water_in",
+          "start": [
+            -0.625,
+            3.862,
+            0.762
+          ],
+          "end": [
+            -0.625,
+            4.066,
+            0.762
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        },
+        {
+          "id": "eco_water_out",
+          "economizer_port": "water_out",
+          "start": [
+            -0.625,
+            3.862,
+            1.674
+          ],
+          "end": [
+            -0.625,
+            4.066,
+            1.674
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "source_bore_mm": 65,
+          "target_bore_mm": 32
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,7 @@ from geometry import Geometry
 from pressure_gooseneck import centerline
 from build_assembly import actuator
 
-OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.5')
+OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.6')
 HEADS={'lp200':[-.035,-1.21,2.5265],'lp400':[0,-.64,2.512],
        'lcs600':[.14,-1.21,2.595],'low_level_1':[-.035,-1.21,2.5265],
        'low_level_2':[.13,-.64,2.5265],'high_level':[0,-.64,2.5265]}
@@ -90,13 +90,23 @@ for family in ['500','1000','1500','2000','2500','3000','3500','4000','5000']:
     for j,key in enumerate(['pressure_switch_1','pressure_switch_2','pressure_transmitter','pressure_switch_3']):
         lane_index=j if j<3 else 2
         y=[-1.52,-1.28,-1.04,-1.04][j]
-        p=np.array([1.469 if j!=2 else 1.441,y,2.995 if j!=2 else 3.024])+side
+        # Rear housing planes measured from the emitted instrument geometry.
+        # The third switch has its own 9.25 mm lateral / 10 mm height shift.
+        rear_x=[1.3895,1.3895,1.403,1.38025][j]
+        head_z=[2.995,2.995,3.024,2.985][j]
+        p=np.array([rear_x,y,head_z])+side
         lane=-1.16-lane_index*.019+side[1]
-        arch=[[a+side[0],lane,c+side[2]] for a,b,c in reversed(centerline())]
+        # Join the rear side of the arch before its manifold endpoint.
+        # The omitted endpoint sits on the horizontal instrument manifold.
+        arch=[[a+side[0],lane,c+side[2]] for a,b,c in reversed(centerline()[:-1])]
         x=max(1.03+side[0],shell+.06);z=.32+lane_index*.019
         entry=np.array([-1.16,-.98+lane_index*.045,1.225])+cab
-        pts=[p.tolist(),[float(p[0]),float(p[1]),2.995+side[2]],[float(p[0]),lane,2.995+side[2]],*arch,[x,lane,1.925+side[2]],[x,lane,z],[x,front,z],[-radius,front,z],[-radius,float(entry[1]),z],[float(entry[0]),float(entry[1]),z],entry.tolist()]
+        rear_lane_x=1.32+side[0]
+        pts=[p.tolist(),[rear_lane_x,float(p[1]),float(p[2])],[rear_lane_x,lane,float(p[2])],*arch,[x,lane,1.925+side[2]],[x,lane,z],[x,front,z],[-radius,front,z],[-radius,float(entry[1]),z],[float(entry[0]),float(entry[1]),z],entry.tolist()]
         wire('wiring_'+key,'Защищённая линия приборов давления',pts,key)
+        g.cyl(p,p-[.020,0,0],.010,'dark',16)
+        g.cyl(p-[.012,0,0],p-[.020,0,0],.012,'steel',6)
+        records[-1].update(entry_side='rear',instrument_entry=p.tolist())
     g.owner='cables'
     # An open ladder tray follows the actual pressure bundle through its lower
     # offset and bends. It ends before the final free lead into each gland.

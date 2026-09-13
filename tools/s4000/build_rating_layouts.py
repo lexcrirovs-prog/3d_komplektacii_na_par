@@ -11,7 +11,7 @@ from mathutils import Vector
 sys.path.insert(0,str(Path(__file__).parent))
 from geometry import Geometry
 from build_assembly import logo
-ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.5')
+ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.6')
 SOURCE=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.2')
 MODELS=json.loads((ROOT/'registration.json').read_text('utf8'))['models']
 BASE=next(m for m in MODELS if m['power']==4000)

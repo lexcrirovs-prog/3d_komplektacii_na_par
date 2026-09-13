@@ -42,6 +42,10 @@ try {
   const before=await pose();await drag();const after=await pose();assert(Math.hypot(...after.direction.map((v,i)=>v-before.direction[i]))>.03,`${power}: rotation responds`);
   await page.mouse.wheel(0,-700);await page.waitForTimeout(350);assert((await pose()).distance<after.distance);
   close((await home()).position,original.position);
+  await page.mouse.move(box.x+box.width*.65,box.y+box.height*.55);await page.mouse.down({button:'right'});
+  await page.mouse.move(box.x+box.width*.55,box.y+box.height*.55,{steps:6});await page.mouse.up({button:'right'});await page.waitForTimeout(250);
+  assert(Math.hypot(...(await pose()).target.map((v,i)=>v-original.target[i]))>.05,`${power}: pan responds`);
+  close((await home()).target,original.target);
   // Drop focus while the button is down; the next Home must reconstruct
   // controls and restore rotation/zoom, without reloading the page.
   await page.mouse.move(box.x+box.width*.65,box.y+box.height*.55);await page.mouse.down();await page.mouse.move(box.x+box.width*.5,box.y+box.height*.45,{steps:5});
@@ -66,7 +70,8 @@ try {
    for(let i=1;i<route.points.length;i++)for(const offset of offsets) {
     const a=xyz(route.points[i-1]).add(xyz(offset)),b=xyz(route.points[i]).add(xyz(offset));
     rc.near=.001;rc.far=a.distanceTo(b)-.001;if(rc.far<=rc.near)continue;rc.ray.set(a,b.sub(a).normalize());
-    const found=[];for(const m of meshes)m.raycast(rc,found);if(found.length)hits.push({segment:i,offset,point:found[0].point.toArray()});
+    // Check both option geometries, including the currently hidden bypass.
+    const found=[];for(const m of meshes)Object.getPrototypeOf(m).raycast.call(m,rc,found);if(found.length)hits.push({segment:i,offset,point:found[0].point.toArray()});
    }
    rc.ray.copy(ray);rc.near=near;rc.far=far;return hits;
   },water);
@@ -90,7 +95,7 @@ try {
    await page.screenshot({path:resolve(out,'500-mobile.png')});
    await page.setViewportSize({width:1680,height:1050});await home();
   }
-  results.push({power,camera:'SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED',feedSteamIntersections:clearance,levelSupport:wiring.level_support,trayFreeTailM:.17});
+  results.push({power,camera:'SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED',feedSteamIntersections:clearance,levelSupport:wiring.level_support,trayFreeTailM:.17});
   console.log('NAVIGATION_REVISION_PASSED',power);
  }
  assert.deepEqual(errors,[]);await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_NAVIGATION_REVISION',base,manifestSha256,results,errors},null,2));

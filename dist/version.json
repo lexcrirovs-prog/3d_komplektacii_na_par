@@ -1,5 +1,5 @@
 {
-  "version": "2026.09.13.2",
+  "version": "2026.09.13.3",
   "date": "2026-09-13",
   "executor": "Codex / GPT-6",
   "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
@@ -20,6 +20,6 @@
     "https://disk.yandex.ru/d/MNa06TBAkPK3KQ",
     "https://disk.yandex.ru/d/rO5IXUvIfiUGjg"
   ],
-  "source_commit": "d00c35d5c6e7dc045b4bb5f4f47f575a0ba199a1",
+  "source_commit": "01e2626087675ebf3464c3829bce947f65d5b021",
   "url": "https://prgz.ru/komplektacii4/"
 }

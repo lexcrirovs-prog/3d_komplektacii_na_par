@@ -11,7 +11,7 @@ from mathutils import Vector
 sys.path.insert(0,str(Path(__file__).parent))
 from geometry import Geometry
 from build_assembly import logo
-ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.3')
+ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.4')
 SOURCE=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.2')
 MODELS=json.loads((ROOT/'registration.json').read_text('utf8'))['models']
 BASE=next(m for m in MODELS if m['power']==4000)
@@ -110,10 +110,19 @@ for m in MODELS:
  cab=[-(m['shell']-BASE['shell']),0,m['axis']-BASE['axis']]
  move('control_cabinet cabinet_door cabinet_interior lc220 lc440 bc970 pr200 level_controller_1 level_controller_2 level_controller_3 plus_bc970',cab)
  feed=pos('feed')+[0,0,.266+( .10 if power<2000 else 0)]
- # Turn down on the side of the steam train, then enter the feed valve below
- # it. The former full-height riser intersected the GPZ/bypass on small units.
- feed_elbow_z=feed[2]+.12
- route('direct_inlet',[[.48,1.26,2.78],[.38,1.26,2.78],[.38,feed[1],2.78],[.38,feed[1],feed_elbow_z],[0,feed[1],feed_elbow_z],feed])
+ # One elbow after the longitudinal regulation slot. The valve is turned
+ # 90 degrees in plan, its stem remains vertical. Keep its actuator beyond
+ # the steam delivery end, and the feed run below the steam pipe.
+ feed_z=feed[2]+.15
+ steam_end=2.10+moves['steam_delivery'][1]
+ valve=np.array([0,steam_end+.40,feed_z])
+ valve_in=valve+[0,.12,0];valve_out=valve-[0,.12,0]
+ for key in ['mod_eco','mod_direct','mod_eco_bypass','mod_direct_bypass']:
+  rotations[key]=dict(pivot=[.6,1.26,2.78],target=valve.tolist(),angle=90)
+ modulation=dict(center=valve.tolist(),inlet=valve_in.tolist(),outlet=valve_out.tolist(),angle_degrees=90,flow=[0,-1,0],elbows_after_valve=1)
+ route('direct_inlet',[valve_out,[0,feed[1],feed_z],feed])
+ supply_y=valve_in[1]+.35
+ route('to_direct',[[2.45,1.45,1.8],[2.45,supply_y,1.8],[2.45,supply_y,feed_z],[0,supply_y,feed_z],valve_in])
  for i,x in [(1,-.82),(2,-.48)]:
   d=np.array(moves[f'safety_{i}']);p=np.array([-.169,.66 if i==1 else .96,2.389])+d
   if power<=1000 and i==2:
@@ -156,7 +165,7 @@ for m in MODELS:
    g.reducer(p+[0,.024,0],p+[0,.204,0],.038,.021,'green')
    connections.append(dict(id='eco_'+key,economizer_port=key,start=p.tolist(),end=(p+[0,.204,0]).tolist(),normal=[0,1,0],source_bore_mm=65,target_bore_mm=32))
   route('to_economizer',[[2.45,1.45,1.8],[2.45,wi[1]+.8,1.8],[2.45,wi[1]+.8,wi[2]],[wi[0],wi[1]+.8,wi[2]],wi+[0,.204,0]],requires=['economizer'])
-  route('from_economizer',[wo+[0,.204,0],wo+[0,.55,0],[wo[0],wo[1]+.55,2.78],[.95,wo[1]+.55,2.78],[.95,1.26,2.78],[.72,1.26,2.78]],requires=['economizer'])
+  route('from_economizer',[wo+[0,.204,0],wo+[0,.55,0],[wo[0],wo[1]+.55,feed_z],[0,wo[1]+.55,feed_z],valve_in],requires=['economizer'])
  else:removed+=['economizer','flue_spacer','eco_inlet_adapter','to_economizer','from_economizer']
  # Use the accepted DA3 photo/CAD derivative for all three small ratings.
  if power<=1500:removed+=['deaerator','deaerator_details','deaerator_support','deaerator_feed']
@@ -165,5 +174,5 @@ for m in MODELS:
   pts=[o.matrix_world@Vector(v) for o in bpy.data.objects[key].children_recursive if o.type=='MESH' for v in o.bound_box]
   c=[(min(p[i] for p in pts)+max(p[i] for p in pts))/2 for i in range(3)];row['center']=[c[0],c[2],-c[1]]
  bpy.ops.export_scene.gltf(filepath=str(folder/'additions.glb'),export_format='GLB',export_animations=False,export_extras=False)
- (folder/'layout.json').write_text(json.dumps(dict(power=power,moves=moves,rotations=rotations,removed=removed,parts=list(g.parts.values()),connections=connections,routes=routes,registration=m),ensure_ascii=False,indent=2),encoding='utf8')
+ (folder/'layout.json').write_text(json.dumps(dict(power=power,moves=moves,rotations=rotations,modulation=modulation,removed=removed,parts=list(g.parts.values()),connections=connections,routes=routes,registration=m),ensure_ascii=False,indent=2),encoding='utf8')
  print('RATING_LAYOUT',power,len(g.parts),flush=True)

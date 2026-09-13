@@ -12,7 +12,7 @@ from geometry import Geometry
 from pressure_gooseneck import centerline
 from build_assembly import actuator
 
-OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.3')
+OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.4')
 HEADS={'lp200':[-.035,-1.21,2.5265],'lp400':[0,-.64,2.512],
        'lcs600':[.14,-1.21,2.595],'low_level_1':[-.035,-1.21,2.5265],
        'low_level_2':[.13,-.64,2.5265],'high_level':[0,-.64,2.5265]}
@@ -133,10 +133,19 @@ for family in ['500','1000','1500','2000','2500','3000','3500','4000','5000']:
     # actuator root, rebuilding that actuator from its unchanged source recipe.
     for drive,base,req,exc,i in [('gpz_drive',[0,.6,3.24],['gpz'],[],0),('mod_eco_drive',[.6,1.26,2.98],['modulation','economizer'],[],1),('mod_direct_drive',[.6,1.26,2.98],['modulation'],['economizer'],1)]:
         base=np.array(base)+moves.get(drive,[0,0,0])
+        if drive.startswith('mod_'):base=np.array(layout['modulation']['center'])+[0,0,.20]
         h=np.array(actuator(g,drive,base,big=drive=='gpz_drive'))
+        if drive.startswith('mod_'):
+            rotation=np.array([[0,-1,0],[1,0,0],[0,0,1]],float)
+            for (owner,mat),(vs,fs) in list(g.batches.items()):
+                if owner==drive:g.batches[(owner,mat)]=(((np.array(vs)-base)@rotation.T+base).tolist(),fs)
+            h=rotation@(h-base)+base
         g.parts[drive].update(requires=req,excludes=exc,category='Оборудование',note='')
         e=np.array([-1.205,-1.23+i*.075,1.225])+cab
-        wire(drive+'_cable','Кабель электропривода',[h.tolist(),[float(h[0])+.03,float(h[1]),float(h[2])],[float(h[0])+.03,float(h[1]),2.8],[max(1.13,shell+.1),float(h[1]),2.8],[max(1.13,shell+.1),float(h[1]),.23],[max(1.13,shell+.1),front,.23],[-radius,front,.23],[-radius,float(e[1]),.23],[float(e[0]),float(e[1]),.23],e.tolist()],req=req,exc=exc)
+        if drive.startswith('mod_'):
+            lead=[h.tolist(),[.15,float(h[1]),float(h[2])],[max(1.13,shell+.1),float(h[1]),float(h[2])]]
+        else:lead=[h.tolist(),[float(h[0])+.03,float(h[1]),float(h[2])],[float(h[0])+.03,float(h[1]),2.8],[max(1.13,shell+.1),float(h[1]),2.8]]
+        wire(drive+'_cable','Кабель электропривода',[*lead,[max(1.13,shell+.1),float(h[1]),.23],[max(1.13,shell+.1),front,.23],[-radius,front,.23],[-radius,float(e[1]),.23],[float(e[0]),float(e[1]),.23],e.tolist()],req=req,exc=exc)
     g.flush();bpy.context.view_layer.update()
     for key,row in g.parts.items():
         pts=[o.matrix_world@Vector(v) for o in bpy.data.objects[key].children_recursive if o.type=='MESH' for v in o.bound_box]

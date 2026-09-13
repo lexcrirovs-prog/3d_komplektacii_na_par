@@ -1,0 +1,240 @@
+{
+  "status": "PASSED_SINGLE_ELBOW",
+  "version": "2026.09.13.4",
+  "results": [
+    {
+      "power": 500,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 0.0000027700288944831897,
+      "center": [
+        0,
+        1.7280000000000002,
+        2.129
+      ],
+      "inlet": [
+        0,
+        1.8480000000000003,
+        2.129
+      ],
+      "outlet": [
+        0,
+        1.608,
+        2.129
+      ]
+    },
+    {
+      "power": 1000,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 0.000002755723779612751,
+      "center": [
+        0,
+        1.838,
+        2.3609999999999998
+      ],
+      "inlet": [
+        0,
+        1.9580000000000002,
+        2.3609999999999998
+      ],
+      "outlet": [
+        0,
+        1.718,
+        2.3609999999999998
+      ]
+    },
+    {
+      "power": 1500,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 0.0000027747972659586395,
+      "center": [
+        0,
+        1.858,
+        2.3609999999999998
+      ],
+      "inlet": [
+        0,
+        1.9780000000000002,
+        2.3609999999999998
+      ],
+      "outlet": [
+        0,
+        1.738,
+        2.3609999999999998
+      ]
+    },
+    {
+      "power": 2000,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 0.0000027318819217914125,
+      "center": [
+        0,
+        1.9380000000000002,
+        2.391
+      ],
+      "inlet": [
+        0,
+        2.0580000000000003,
+        2.391
+      ],
+      "outlet": [
+        0,
+        1.818,
+        2.391
+      ]
+    },
+    {
+      "power": 2500,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 5.698681539989536e-7,
+      "center": [
+        0,
+        2.028,
+        2.391
+      ],
+      "inlet": [
+        0,
+        2.148,
+        2.391
+      ],
+      "outlet": [
+        0,
+        1.908,
+        2.391
+      ]
+    },
+    {
+      "power": 3000,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 5.698681539989536e-7,
+      "center": [
+        0,
+        2.218,
+        2.501
+      ],
+      "inlet": [
+        0,
+        2.338,
+        2.501
+      ],
+      "outlet": [
+        0,
+        2.098,
+        2.501
+      ]
+    },
+    {
+      "power": 3500,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 5.698681539989536e-7,
+      "center": [
+        0,
+        2.2880000000000003,
+        2.501
+      ],
+      "inlet": [
+        0,
+        2.4080000000000004,
+        2.501
+      ],
+      "outlet": [
+        0,
+        2.168,
+        2.501
+      ]
+    },
+    {
+      "power": 4000,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 0.0000027552469425984327,
+      "center": [
+        0,
+        2.5,
+        2.651
+      ],
+      "inlet": [
+        0,
+        2.62,
+        2.651
+      ],
+      "outlet": [
+        0,
+        2.38,
+        2.651
+      ]
+    },
+    {
+      "power": 5000,
+      "elbowsAfterValve": 1,
+      "rotationDegrees": 90,
+      "flow": [
+        0,
+        -1,
+        0
+      ],
+      "maxPreservedGeometryErrorM": 5.698681539989536e-7,
+      "center": [
+        0,
+        2.57,
+        2.8089999999999997
+      ],
+      "inlet": [
+        0,
+        2.69,
+        2.8089999999999997
+      ],
+      "outlet": [
+        0,
+        2.4499999999999997,
+        2.8089999999999997
+      ]
+    }
+  ]
+}

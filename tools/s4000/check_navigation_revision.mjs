@@ -60,7 +60,7 @@ try {
    const fit=await inFrame();assert(fit.maxX<1&&fit.maxY<1,`${power}/${key}: clipped preset`);
   }
   await home();
-  const layout=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.3/${power}/layout.json`,'utf8'));
+  const layout=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.4/${power}/layout.json`,'utf8'));
   const water=layout.routes.find(r=>r.id==='direct_inlet');
   const clearance=await page.evaluate(route=>{
    const {scene}=window.__s3000,rc=scene.__r3f.root.getState().raycaster,ray=rc.ray.clone(),near=rc.near,far=rc.far,hits=[];
@@ -76,7 +76,7 @@ try {
    rc.ray.copy(ray);rc.near=near;rc.far=far;return hits;
   },water);
   assert.deepEqual(clearance,[],`${power}: feed pipe vs steam/GPZ`);
-  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.3/${power}/wiring.json`,'utf8'));
+  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.4/${power}/wiring.json`,'utf8'));
   assert.equal(wiring.level_support,'existing_service_deck');assert.equal(wiring.trays[0].free_tail_m,.17);
   const capture=async(name,position,target)=>{
    const data=await page.evaluate(({position,target})=>{const {scene,gl,camera}=window.__s3000;let root=scene;while(root.parent)root=root.parent;camera.position.set(...position);camera.lookAt(...target);camera.updateMatrixWorld();gl.render(root,camera);return gl.domElement.toDataURL('image/png')},{position,target});

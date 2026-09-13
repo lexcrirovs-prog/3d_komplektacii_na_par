@@ -15,7 +15,7 @@ const {MeshoptEncoder,MeshoptDecoder}=await from('meshoptimizer');
 await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
-const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.3';
+const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.4';
 const registration=await json(`${root}/registration.json`);
 const publicBase=await json('src/assets/s4000/web/assembly.json');
 const baseOpening=await json('src/assets/s4000/web/opening.json');
@@ -43,9 +43,12 @@ for(const model of registration.models) {
   const d=glbDelta(layout.moves[n.getName()]);n.setTranslation(n.getTranslation().map((v,i)=>v+d[i]));
  }
  for(const n of scene.listChildren())if(layout.rotations[n.getName()]) {
-  const r=layout.rotations[n.getName()],p=glbDelta(r.pivot),t=glbDelta(r.target),delta=glbDelta(layout.moves[n.getName()]);
-  assert.deepEqual(n.getRotation(),[0,0,0,1]);
-  n.setTranslation(n.getTranslation().map((v,i)=>t[i]+(i===1?1:-1)*(v-delta[i]-p[i])));n.setRotation([0,1,0,0]);
+  const r=layout.rotations[n.getName()],p=glbDelta(r.pivot),t=glbDelta(r.target),delta=glbDelta(layout.moves[n.getName()]||[0,0,0]);
+  const q=n.getRotation();
+  const a=r.angle*Math.PI/180,c=Math.cos(a),s=Math.sin(a),v=n.getTranslation().map((v,i)=>v-delta[i]-p[i]);
+  n.setTranslation([t[0]+c*v[0]+s*v[2],t[1]+v[1],t[2]-s*v[0]+c*v[2]]);
+  const sy=Math.sin(a/2),cw=Math.cos(a/2);
+  n.setRotation([cw*q[0]+sy*q[2],cw*q[1]+sy*q[3],cw*q[2]-sy*q[0],cw*q[3]-sy*q[1]]);
  }
  if(power<=1500)await insert('E:/CodexArtifacts/Boiler-Family-v2026.09.13.1/small/additions.glb',new Set(['deaerator','deaerator_feed']));
  await insert(`${root}/${power}/additions.glb`);await insert(`${root}/${power}/wiring.glb`);

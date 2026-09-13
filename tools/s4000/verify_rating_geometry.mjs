@@ -31,7 +31,7 @@ for(const m of models) {
  const raw=cad.bounds,t=m.translation;
  const expected={min:[raw[0]/1000+t[0],raw[1]/1000+t[2],raw[2]/1000-t[1]],max:[raw[3]/1000+t[0],raw[4]/1000+t[2],raw[5]/1000-t[1]]};
  const error=Math.max(...['min','max'].flatMap(k=>actual[k].map((v,i)=>Math.abs(v-expected[k][i]))));assert(error<.002,`S${m.power}: body ${error}`);
- const layout=await json(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.3/${m.power}/layout.json`);
+ const layout=await json(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.4/${m.power}/layout.json`);
  for(const [id,port] of Object.entries(m.ports)) {
   const hits=cad.circles.filter(c=>Math.hypot(...c.center.map((v,i)=>v-port.raw_mm[i]))<.02);
   assert(hits.length,`${m.power}/${id}: source circular interface missing`);

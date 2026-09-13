@@ -15,6 +15,7 @@ def validate(prepared):
  assert r['manifestSha256']==prepared['manifestSha256'] and r['errors']==[]
  assert {f['power'] for f in r['results']}=={500,1000,1500,2000,2500,3000,3500,4000,5000}
  assert all(f['bodyIntersections']==[] and f['glands']=='INSIDE_FIXED_BOTTOM_PANEL' for f in r['results'])
+ assert len(r['transitions'])==7 and all(t['retainedSelection'] and t['economizerOff'] for t in r['transitions'])
  geometry=json.loads((p.REPO/'artifacts/rating-geometry/report.json').read_text('utf8'))
  assert geometry['status']=='PASSED_RATING_GEOMETRY' and len(geometry['results'])==9
 p.validate_browser_acceptance=validate

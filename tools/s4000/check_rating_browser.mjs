@@ -72,5 +72,23 @@ try {
   results.push({power,modelFiles:new Set(requests).size,bytes:chunks.bytes,bodyIntersections:collisions,glands:'INSIDE_FIXED_BOTTOM_PANEL',options:'PASSED',sourceLinks:links.length,measure});
   await page.close();console.log('RATING_BROWSER_PASSED',power);
  }
- assert.deepEqual(errors,[]);await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_RATING_BROWSER',base,manifestSha256,results,errors},null,2));
+ const transitions=[];
+ if(!selected.length) {
+  const page=await browser.newPage({viewport:{width:1280,height:900}});page.on('pageerror',e=>errors.push({transition:true,error:e.message}));
+  await page.goto(base+'?inspect3d=1&power=1500&trim=comfort_plus&pressure=8&addons=bdv,modulation,economizer',{waitUntil:'domcontentloaded'});
+  await page.waitForFunction(()=>window.__s3000?.family==='1500',null,{timeout:180000});
+  for(const power of [1000,1500,3500,5000,500,4000,1000]) {
+   await page.getByLabel('Паропроизводительность',{exact:true}).selectOption(String(power));
+   await page.waitForFunction(p=>window.__s3000?.family===String(p),power,{timeout:180000});
+   assert.equal(await page.getByLabel('Комплектация',{exact:true}).inputValue(),'comfort_plus');assert.equal(await page.getByLabel('Рабочее давление',{exact:true}).inputValue(),'8');
+   const eco=page.getByRole('checkbox',{name:/^Экономайзер/});assert.equal(await eco.isDisabled(),power<1500);assert(!(await eco.isChecked()));
+   assert(await page.getByRole('checkbox',{name:/BDV — бак продувки/}).isChecked());assert(!(await page.getByRole('checkbox',{name:/FV — сепаратор/}).isChecked()));assert(await page.getByRole('checkbox',{name:/^Модуляция/}).isChecked());
+   const gpz=page.getByRole('checkbox',{name:/^ГПЗ/});assert.equal(await gpz.isDisabled(),power>=4000);if(power>=4000)assert(await gpz.isChecked());
+   transitions.push({power,retainedSelection:true,economizerOff:true});
+  }
+  await page.getByRole('checkbox',{name:/^ГПЗ/}).uncheck();await page.reload();await page.waitForFunction(()=>window.__s3000?.family==='1000',null,{timeout:180000});
+  assert(!(await page.getByRole('checkbox',{name:/^ГПЗ/}).isChecked()));assert(!(await page.getByRole('checkbox',{name:/^Экономайзер/}).isChecked()));assert.equal(await page.getByLabel('Комплектация',{exact:true}).inputValue(),'comfort_plus');
+  await page.close();console.log('RATING_TRANSITIONS_PASSED');
+ }
+ assert.deepEqual(errors,[]);await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_RATING_BROWSER',base,manifestSha256,results,transitions,errors},null,2));
 }finally{await browser.close()}

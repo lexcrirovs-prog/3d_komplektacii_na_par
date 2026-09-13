@@ -1,0 +1,136 @@
+{
+  "date": "2026-09-13",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_SOURCE_HASHES",
+  "downloadedFiles": 330,
+  "downloadedBytes": 68400592,
+  "canonicalS4000BlendSha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
+  "sources": [
+    {
+      "kind": "boiler",
+      "power": 500,
+      "file": "PR.500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "3bc78c8d51be750bd2fbb3c06ca778763076a264338587022ff4e55c860c24d8"
+    },
+    {
+      "kind": "boiler",
+      "power": 1000,
+      "file": "PR.1000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "8d4cdcf82dd491cebe08b53cc1a9a0d25388e5ea6d79cd55640079af6348e1cb"
+    },
+    {
+      "kind": "boiler",
+      "power": 1500,
+      "file": "PR.1500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "6db8c5fd75d15323c80e1fd4abe4640cdf23cde9f2bd557d61cee5dce1472ea3"
+    },
+    {
+      "kind": "economizer",
+      "power": 1500,
+      "file": "PREMIUM EQS2-1500 (BIM).stp",
+      "sha256": "ea0334f5ce29eb421a3f8a1c006d00270ef8b5d0600d83b3d3e2be1ed4ae3fa3"
+    },
+    {
+      "kind": "boiler",
+      "power": 2000,
+      "file": "PR.2000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "9cd03dc71ed313573558e536bc32969fcfc5a90b78db1aeedceb7de73e628c01"
+    },
+    {
+      "kind": "economizer",
+      "power": 2000,
+      "file": "PREMIUM EQS2-2000-2500 (BIM).stp",
+      "sha256": "bdf9f9d6dbc013d9da3b75fd9a8bc1e798af4ecf981dc17d8f81ebc4b3140b1d"
+    },
+    {
+      "kind": "boiler",
+      "power": 2500,
+      "file": "PR.2500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "69982d95bdc80c9305fb3f9b161d38155e63b125eff32d31a71f10eff6cf5a17"
+    },
+    {
+      "kind": "boiler",
+      "power": 3000,
+      "file": "PR.3000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "363637cc2cea7acf562f2f6fd89596b87460dfe7b945c94926e8d537d67da886"
+    },
+    {
+      "kind": "economizer",
+      "power": 3000,
+      "file": "PREMIUM EQS2-3000-3500 (BIM).stp",
+      "sha256": "5254de9c832458183277e2a14492477b147d391a8e0808250c60e79b27ec502d"
+    },
+    {
+      "kind": "boiler",
+      "power": 3500,
+      "file": "PR.3500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "23127fdf61f37ed860d3477d317e45f5339710df4e521b6f74964cc67852a2c8"
+    },
+    {
+      "kind": "boiler",
+      "power": 4000,
+      "file": "PR.4000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "bf5f6fb41e07b4c26c24b00520038cf898e6e1498d9df9143875f41c03aa3ad8"
+    },
+    {
+      "kind": "economizer",
+      "power": 4000,
+      "file": "PREMIUM EQS2-4000 (BIM).stp",
+      "sha256": "0a7e2626dc81be6dc17793b5169ca1434d78d9b195be792f3df71b3e9f91e1bd"
+    },
+    {
+      "kind": "boiler",
+      "power": 5000,
+      "file": "PR.5000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "6595afa20fb05c2c65ec7dd721cb8f677f534e2ba2635652920d335e1e7389ce"
+    },
+    {
+      "kind": "economizer",
+      "power": 5000,
+      "file": "PREMIUM EQS2-5000 (BIM).stp",
+      "sha256": "e79e00b6916b63d0998fd31dac6135b9ecd7887b71ef6d4f1e9bb494ff4e5d65"
+    },
+    {
+      "kind": "drawing",
+      "power": 1500,
+      "file": "EQS2-1500.pdf",
+      "sha256": "b62a433513ab6cb8efbc7f203915154dd498b2e365a4154423238f0550aa421a"
+    },
+    {
+      "kind": "drawing",
+      "power": 2000,
+      "file": "EQS2-2000.pdf",
+      "sha256": "4c54a708d09e78cc5ece37d6807e37e98ed2f05107b362990d136090e84e9c39"
+    },
+    {
+      "kind": "drawing",
+      "power": 2500,
+      "file": "EQS2-2500.pdf",
+      "sha256": "300ed6df17e4004b020ab442fe903793ec2af3f9fb0df51fdb2061dedf63baf4"
+    },
+    {
+      "kind": "drawing",
+      "power": 3000,
+      "file": "EQS2-3000.pdf",
+      "sha256": "354417770b2856204ec2202fdc3f82856de19c9fa11ae3723ddc5b261da1d61f"
+    },
+    {
+      "kind": "drawing",
+      "power": 3500,
+      "file": "EQS2-3500.pdf",
+      "sha256": "4fe2793b802550030923886b3696b5fbdc3d1f200dbbd98ad1d22aa07295ac75"
+    },
+    {
+      "kind": "drawing",
+      "power": 4000,
+      "file": "EQS2-4000.pdf",
+      "sha256": "72a149cf06b87abc76769323fcaaa3366feede6cd7a24d51f3b8e47258115579"
+    },
+    {
+      "kind": "drawing",
+      "power": 5000,
+      "file": "EQS2-5000.pdf",
+      "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
+    }
+  ]
+}

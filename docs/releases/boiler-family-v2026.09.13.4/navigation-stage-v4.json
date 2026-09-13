@@ -1,0 +1,71 @@
+{
+  "status": "PASSED_NAVIGATION_REVISION",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.09.13.4-final/",
+  "manifestSha256": "2dc7e10049cf7bb357824ed3a9dc92d044fba2070320c53de15e8be2e497385d",
+  "results": [
+    {
+      "power": 500,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 1000,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 1500,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 2000,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 2500,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 3000,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 3500,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 4000,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 5000,
+      "camera": "SIX_VIEWS_ORBIT_PAN_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    }
+  ],
+  "errors": []
+}

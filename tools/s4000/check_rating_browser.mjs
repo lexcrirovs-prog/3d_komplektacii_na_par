@@ -28,7 +28,7 @@ try {
    return Object.fromEntries(['boiler','flue_spacer','economizer','control_cabinet'].map(id=>[id,bounds(id)]));
   });
   if(power>=1500)assert(Math.abs(measure.flue_spacer.max[2]-measure.flue_spacer.min[2]-.5)<.001);
-  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.2/${power}/wiring.json`,'utf8'));
+  const wiring=JSON.parse(await readFile(`E:/CodexArtifacts/Boiler-Family-v2026.09.13.3/${power}/wiring.json`,'utf8'));
   const collisions=await page.evaluate(routes=>{
    const {scene}=window.__s3000,rc=scene.__r3f.root.getState().raycaster,ray=rc.ray.clone(),near=rc.near,far=rc.far,hits=[];
    const meshes=[];for(const id of ['boiler','boiler_cladding'])scene.getObjectByName(id)?.traverse(n=>{if(n.isMesh)meshes.push(n)});

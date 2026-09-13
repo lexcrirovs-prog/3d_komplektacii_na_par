@@ -15,7 +15,7 @@ const {MeshoptEncoder,MeshoptDecoder}=await from('meshoptimizer');
 await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
-const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.2';
+const root='E:/CodexArtifacts/Boiler-Family-v2026.09.13.3';
 const registration=await json(`${root}/registration.json`);
 const publicBase=await json('src/assets/s4000/web/assembly.json');
 const baseOpening=await json('src/assets/s4000/web/opening.json');

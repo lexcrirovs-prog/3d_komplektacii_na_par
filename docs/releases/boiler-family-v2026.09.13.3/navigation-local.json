@@ -1,0 +1,71 @@
+{
+  "status": "PASSED_NAVIGATION_REVISION",
+  "base": "http://127.0.0.1:4185/",
+  "manifestSha256": "61bcdac7743044fe0e6aa309bb2af5908beaee9a1c079752aca47596fc6c5b53",
+  "results": [
+    {
+      "power": 500,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 1000,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 1500,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 2000,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 2500,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 3000,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 3500,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 4000,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    },
+    {
+      "power": 5000,
+      "camera": "SIX_VIEWS_ORBIT_ZOOM_HOME_BLUR_PASSED",
+      "feedSteamIntersections": [],
+      "levelSupport": "existing_service_deck",
+      "trayFreeTailM": 0.17
+    }
+  ],
+  "errors": []
+}

@@ -1,7 +1,9 @@
 import { Component, Suspense, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, useProgress } from '@react-three/drei'
-import { Color, Group, Mesh, MeshStandardMaterial, PerspectiveCamera, Vector3, type Object3D } from 'three'
+import { Color, Group, Mesh, MeshStandardMaterial, type Object3D } from 'three'
+import {FamilyCamera, type ViewRequest} from './FamilyCamera'
+import {ViewCube, type StandardView} from './ViewCube'
 import webVersion from '../../assets/s4000/web/version.json'
 import catalogData from '../../assets/s4000/web/catalog.json'
 import {normalizeConfig,trims,powers,type FamilyConfig,type Trim} from './familyRules'
@@ -80,6 +82,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
   useEffect(()=>{onReady()},[onReady])
   const scene = useMemo(() => {
     const copy = new Group()
+    copy.name = 'rating-assembly'
     for (const gltf of gltfs) copy.add(gltf.scene.clone(true))
     copy.traverse(object => {
       if (object instanceof Mesh) {
@@ -173,35 +176,10 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
   />
 }
 
-type ViewRequest = { id: number; position: Point; target: Point }
 function overviewView(withDeaerator: boolean): Omit<ViewRequest, 'id'> {
   return withDeaerator
     ? { position: [12,10,17], target: [-1.8,2,0] }
     : { position: [6.5,4.5,8.2], target: [.2,1.35,.05] }
-}
-function CameraMotion({ request, moving }: { request: ViewRequest; moving: React.MutableRefObject<boolean> }) {
-  const { camera, controls, size, invalidate } = useThree()
-  useEffect(() => {
-    if (camera instanceof PerspectiveCamera) {
-      camera.fov = size.width < size.height ? 45 : 39
-      camera.updateProjectionMatrix()
-    }
-  }, [camera, size.width, size.height])
-  const desired = useMemo(() => new Vector3(...request.position), [request])
-  const target = useMemo(() => new Vector3(...request.target), [request])
-  useEffect(() => { moving.current = true; invalidate() }, [request, moving, invalidate])
-  useFrame((_, dt) => {
-    const orbit = controls as any
-    if (!moving.current || !orbit) return
-    // In demand mode dt includes time spent idle; do not jump on the first frame.
-    const alpha = 1 - Math.exp(-Math.min(dt, 1 / 30) * 6)
-    camera.position.lerp(desired, alpha)
-    orbit.target.lerp(target, alpha)
-    orbit.update()
-    if (camera.position.distanceTo(desired) < .005 && orbit.target.distanceTo(target) < .005) moving.current = false
-    else invalidate()
-  })
-  return null
 }
 
 export function S4000Configurator() {
@@ -235,8 +213,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const [tab, setTab] = useState<'assembly' | 'equipment'>('assembly')
   const [query, setQuery] = useState('')
   const [initialView] = useState(() => overviewView(enabled.has('deaerator')))
-  const [view, setView] = useState<ViewRequest>(() => ({ id: 0, ...initialView }))
-  const moving = useRef(false)
+  const [view, setView] = useState<ViewRequest>(() => ({ id: 0, ...initialView, standard: 'home' }))
+  const cubeRef = useRef<HTMLDivElement>(null)
+  const [inputRecovery, setInputRecovery] = useState(0)
   const dragging = useRef(false)
   const active = selected ? byId.get(selected) : undefined
   const bomParts=catalog[config.trim]['S-'+config.power].filter(r=>(r.pressure===null||r.pressure===config.pressure)&&(!r.option||enabled.has(r.option))).map(r=>({...r,nodes:(partMapping[r.id]||[r.id==='bc970'&&config.trim==='comfort_plus'?'plus_bc970':r.id]).filter(id=>byId.has(id)&&isPartVisible(byId.get(id)!,enabled,true,optionalIds))}))
@@ -244,13 +223,45 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const visibleRows = bomParts.filter(row => searchText(row.label).includes(searchText(query)))
 
   function requestView(position: Point, target: Point) {
+    dragging.current = false
     setView(old => ({ id: old.id + 1, position, target }))
+  }
+  function standardView(standard: StandardView) {
+    setSelected(null)
+    dragging.current = false
+    setView(old => ({...old, id: old.id + 1, standard}))
+  }
+  function cabinetView() {
+    const p = byId.get('control_cabinet')!.center
+    const target: Point = [p[0], p[1], p[2]]
+    requestView([p[0]-1.34,p[1]+.45,p[2]+1.18], target)
   }
   function overview(withDeaerator = enabled.has('deaerator')) {
     setSelected(null)
     const next = overviewView(withDeaerator)
-    requestView(next.position, next.target)
+    dragging.current = false
+    setView(old => ({id: old.id + 1, ...next, standard: 'home'}))
   }
+  useEffect(() => {
+    const recover = () => {
+      if (!dragging.current) return
+      dragging.current = false
+      setInputRecovery(value => value + 1)
+    }
+    const home = (event: KeyboardEvent) => {
+      if (event.key !== 'Home' || (event.target instanceof HTMLElement &&
+        (event.target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName)))) return
+      event.preventDefault(); standardView('home')
+    }
+    window.addEventListener('blur', recover)
+    window.addEventListener('pointercancel', recover)
+    window.addEventListener('keydown', home)
+    return () => {
+      window.removeEventListener('blur', recover)
+      window.removeEventListener('pointercancel', recover)
+      window.removeEventListener('keydown', home)
+    }
+  }, [])
   function toggle(id: string) {
     if (id === 'gpz' && config.power>=4000 || id==='modulation' && config.trim==='standard') return
     const next = new Set(config.addons)
@@ -273,10 +284,10 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     }
     const c: Point = [p.center[0], p.center[1], p.center[2]]
     // Probe shafts are immersed; focus on their exposed heads above the shell.
-    if (id === 'lp200' || id === 'lp400') c[1] = 2.24
+    if (id === 'lp200' || id === 'lp400') c[1] += .12
     const cabinetSide = ['control_cabinet', 'cabinet_door', 'cabinet_interior', 'lc220', 'lc440', 'bc970'].includes(id)
     if (cabinetSide && cabinetOpen) {
-      requestView([-2.5,2.0,2.2], [-1.16,1.55,1.02])
+      cabinetView()
       return
     }
     if (['boiler_door','boiler_tubes','boiler_tubeplate'].includes(id)) {
@@ -303,7 +314,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     setCabinetOpen(value => !value)
     setShowAccessories(true)
     setSelected(null)
-    requestView([-2.5,2.0,2.2], [-1.16,1.55,1.02])
+    cabinetView()
     showModelOnMobile()
   }
   function openBoiler() {
@@ -317,7 +328,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
       {!active && !cabinetOpen && !boilerOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power} КГ ПАРА В ЧАС</span><h1>S-{config.power} в сборе.</h1><p>Корпус и патрубки — по заводской модели {asset.model}.<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
-      <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .05, far: 100 }} dpr={[1,1.6]}
+      <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .03, far: 250 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
         onPointerMissed={() => setSelected(null)}>
         <ambientLight intensity={.7} />
@@ -335,14 +346,14 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} onReady={markSceneReady} />
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[0,-.007,0]} opacity={.38} scale={25} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
-        <OrbitControls makeDefault target={initialView.target} minDistance={1.2} maxDistance={24} maxPolarAngle={Math.PI*.49}
-          enableDamping dampingFactor={.08} onStart={() => { moving.current = false; dragging.current = true }} onEnd={() => { dragging.current = false }} />
-        <CameraMotion request={view} moving={moving} />
+        <OrbitControls key={`${view.id}:${inputRecovery}`} makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
+          enableDamping dampingFactor={.08} onStart={() => { dragging.current = true }} onEnd={() => { dragging.current = false }} />
+        <FamilyCamera request={view} ready={sceneReady} cubeRef={cubeRef} />
       </Canvas></ModelBoundary>
       <Loading />
+      <ViewCube cubeRef={cubeRef} onView={standardView} />
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
-        <button onClick={() => overview()} title="Показать всю сборку">Общий вид</button>
-        <button onClick={() => { setSelected(null); requestView([-2.5,2.0,2.2],[-1.16,1.55,1.02]) }}>Шкаф</button>
+        <button onClick={() => { setSelected(null); cabinetView() }}>Шкаф</button>
         <button onClick={() => focus('pressure_header')}>Приборы</button>
         <button onClick={() => { setSelected(null); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
         <button onClick={() => focus('cables')}>Кабели</button>

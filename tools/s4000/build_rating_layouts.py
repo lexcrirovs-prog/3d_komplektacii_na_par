@@ -11,7 +11,8 @@ from mathutils import Vector
 sys.path.insert(0,str(Path(__file__).parent))
 from geometry import Geometry
 from build_assembly import logo
-ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.2')
+ROOT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.3')
+SOURCE=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.2')
 MODELS=json.loads((ROOT/'registration.json').read_text('utf8'))['models']
 BASE=next(m for m in MODELS if m['power']==4000)
 BASE_ROWS=json.loads(Path('src/assets/s4000/web/assembly.json').read_text('utf8'))['parts']
@@ -49,7 +50,7 @@ for m in MODELS:
  if power!=4000:
   removed+=['boiler','boiler_cladding','premium_logo','boiler_door','boiler_door_labels','boiler_tubes','boiler_tubeplate']
   part('boiler',f'PREMIUM S-{power}')
-  data=json.load(gzip.open(ROOT/'meshes'/f's{power}.json.gz','rt',encoding='utf8'))
+  data=json.load(gzip.open(SOURCE/'meshes'/f's{power}.json.gz','rt',encoding='utf8'))
   floor=[]
   for s in data['solids']:
    raw=np.array(s['vertices']);vs=raw@STEP.T*.001+m['translation'];fs=np.array(s['triangles'])
@@ -109,7 +110,10 @@ for m in MODELS:
  cab=[-(m['shell']-BASE['shell']),0,m['axis']-BASE['axis']]
  move('control_cabinet cabinet_door cabinet_interior lc220 lc440 bc970 pr200 level_controller_1 level_controller_2 level_controller_3 plus_bc970',cab)
  feed=pos('feed')+[0,0,.266+( .10 if power<2000 else 0)]
- route('direct_inlet',[[.48,1.26,2.78],[.25,1.26,2.78],[.25,feed[1],2.78],[0,feed[1],2.78],feed])
+ # Turn down on the side of the steam train, then enter the feed valve below
+ # it. The former full-height riser intersected the GPZ/bypass on small units.
+ feed_elbow_z=feed[2]+.12
+ route('direct_inlet',[[.48,1.26,2.78],[.38,1.26,2.78],[.38,feed[1],2.78],[.38,feed[1],feed_elbow_z],[0,feed[1],feed_elbow_z],feed])
  for i,x in [(1,-.82),(2,-.48)]:
   d=np.array(moves[f'safety_{i}']);p=np.array([-.169,.66 if i==1 else .96,2.389])+d
   if power<=1000 and i==2:
@@ -126,7 +130,7 @@ for m in MODELS:
  route('bottom_discharge',[[0,3.1+dy,.125],[1.2,3.1+dy,.125],[1.2,3.1,.125],[2.9,3.1,.125]],.0212,'dark')
  if power>=1500:
   e=m['economizer'];part('economizer',f'PREMIUM EQS2-{e["model"]}',['economizer'])
-  data=json.load(gzip.open(ROOT/'meshes'/f'eqs{e["model"]}.json.gz','rt',encoding='utf8'))
+  data=json.load(gzip.open(SOURCE/'meshes'/f'eqs{e["model"]}.json.gz','rt',encoding='utf8'))
   for s in data['solids']:
    vs=np.array(s['vertices'])@ECO.T*.001+e['translation'];g.mesh(f'EQS2-{e["model"]} CAD {s["id"]}',vs.tolist(),s['triangles'],'dark',True)
   if e['floor_lift_m']:

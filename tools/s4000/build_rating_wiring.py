@@ -12,7 +12,7 @@ from geometry import Geometry
 from pressure_gooseneck import centerline
 from build_assembly import actuator
 
-OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.2')
+OUT=Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.3')
 HEADS={'lp200':[-.035,-1.21,2.5265],'lp400':[0,-.64,2.512],
        'lcs600':[.14,-1.21,2.595],'low_level_1':[-.035,-1.21,2.5265],
        'low_level_2':[.13,-.64,2.5265],'high_level':[0,-.64,2.5265]}
@@ -34,9 +34,12 @@ for family in ['500','1000','1500','2000','2500','3000','3500','4000','5000']:
     side=np.array(moves.get('pressure_header',[0,0,0]))
     axis=layout['registration']['axis']
     shell=layout['registration']['shell']
-    radius=shell+.085
+    # Half-widths of the supplied service decks, measured from CAD faces.
+    deck_half={500:.30,1000:.35,1500:.35,2000:.40,2500:.40,3000:.40,3500:.40,4000:.45,5000:.50}[int(family)]
+    arc_x=-(deck_half+.12)
+    radius=shell+.025
     trunk_y=-.52+cab[1];bottom=1.215+cab[2]
-    g=Geometry();records=[]
+    g=Geometry();records=[];trays=[]
     def wire(key,label,points,source=None,req=None,exc=None):
         g.part(key,label,'web_wiring_revision');ps=smooth(points)
         g.pipe(ps,.007,'black',0,12,wall=.002)
@@ -63,24 +66,23 @@ for family in ['500','1000','1500','2000','2500','3000','3500','4000','5000']:
     lanes={'lp200':0,'lp400':1,'lcs600':3,'low_level_1':0,'high_level':1,'low_level_2':2}
     for key,head in HEADS.items():
         i=lanes[key];p=np.array(head)+moves.get(key,[0,0,0]);lane=trunk_y+i*.019
-        a0=math.acos(-.57/radius)
+        a0=math.acos(arc_x/radius)
         arc=[[radius*math.cos(t),lane,axis+radius*math.sin(t)] for t in np.linspace(a0,math.pi,27)]
         entry=np.array([-1.16,-1.19+i*.045,1.225])+cab
-        collect_z=axis+radius+.035+i*.019
-        pts=[p.tolist(),[float(p[0]),float(p[1])-.04,float(p[2])],[-.42,float(p[1])-.04,float(p[2])],[-.42,float(p[1])-.04,collect_z],[-.42,lane,collect_z],[-.57,lane,collect_z],*arc,[-radius,lane,bottom-.15],[float(entry[0]),lane,bottom-.15],[float(entry[0]),float(entry[1]),bottom-.15],entry.tolist()]
+        # Sleeves sit on the existing service deck, with simple saddle clips.
+        # No additional raised beam or tall legs along the boiler shell.
+        collect_z=axis+shell+.047;deck_x=-(deck_half-.09)-i*.019
+        pts=[p.tolist(),[float(p[0]),float(p[1])-.04,float(p[2])],[deck_x,float(p[1])-.04,float(p[2])],[deck_x,float(p[1])-.04,collect_z],[deck_x,lane,collect_z],[-(deck_half+.045),lane,collect_z],[arc_x,lane,collect_z-.02],*arc,[-radius,lane,bottom-.15],[float(entry[0]),lane,bottom-.15],[float(entry[0]),float(entry[1]),bottom-.15],entry.tolist()]
         wire('wiring_'+key,'Защищённая линия датчика уровня',pts,key)
-    # Carry the harness on an open curved strap, with stand-offs to the
-    # cladding support rather than attachment to a hot process pipe.
+        for y in np.arange(float(p[1])+.07,lane,.24):
+            g.box((deck_x,float(y),collect_z-.010),(.034,.012,.006),'steel')
+    # Short saddles fasten the descending bundle to the cladding supports.
     g.part('cables','Крепления жгутов и открытые кабельные лотки','web_wiring_revision')
     gather_start=min(HEADS[k][1]+moves.get(k,[0,0,0])[1] for k in HEADS)-.04
-    g.box((-.42,(gather_start+trunk_y)/2,axis+radius+.01),(.10,trunk_y-gather_start,.012),'zinc')
-    for y in np.linspace(gather_start,trunk_y,5):
-        z0=axis+math.sqrt(shell**2-.42**2)
-        g.cyl((-.42,y,z0),(-.42,y,axis+radius),.004,'steel',12)
-    for t in np.linspace(math.acos(-.57/radius),math.pi,9):
+    for t in np.linspace(math.acos(arc_x/radius),math.pi,9):
         normal=np.array([math.cos(t),0,math.sin(t)])
         p=np.array([radius*math.cos(t),trunk_y+.028,axis+radius*math.sin(t)])
-        g.cyl(p-normal*.085,p-normal*.014,.004,'steel',12)
+        g.cyl(p-normal*.025,p-normal*.014,.004,'steel',12)
         g.box(p,(.016,.10,.008),'steel')
     # A separate pressure bundle follows the existing arch at a >=100 mm
     # clear offset from its pipe. The lower run uses an open supported tray.
@@ -96,14 +98,32 @@ for family in ['500','1000','1500','2000','2500','3000','3500','4000','5000']:
         pts=[p.tolist(),[float(p[0]),float(p[1]),2.995+side[2]],[float(p[0]),lane,2.995+side[2]],*arch,[x,lane,1.925+side[2]],[x,lane,z],[x,front,z],[-radius,front,z],[-radius,float(entry[1]),z],[float(entry[0]),float(entry[1]),z],entry.tolist()]
         wire('wiring_'+key,'Защищённая линия приборов давления',pts,key)
     g.owner='cables'
-    # Dedicated support for the pressure harness, offset from the impulse pipe.
-    x=max(1.03+side[0],shell+.06);y=-1.18+side[1]
-    g.box((x+.025,y,1.45+side[2]/2),(.025,.08,2.30+side[2]),'zinc')
-    for z in np.arange(.5,2.75+side[2],.28):g.box((x,y,float(z)),(.075,.10,.012),'steel')
-    for x in [-radius,max(1.03+side[0],shell+.06)]:
-        g.box((x,(front+.95)/2,.275),(.12,.95-front,.018),'zinc')
-        for dx in [-.056,.056]:g.box((x+dx,(front+.95)/2,.305),(.008,.95-front,.06),'zinc')
-    g.box((0,front,.275),(2*radius,.10,.018),'zinc')
+    # An open ladder tray follows the actual pressure bundle through its lower
+    # offset and bends. It ends before the final free lead into each gland.
+    # Rails and rungs share the same centreline, instead of a straight post
+    # continuing beyond the point where the cable has already turned away.
+    center=next(r for r in records if r['id']=='wiring_pressure_switch_2')['points']
+    start=next(i for i,p in enumerate(center) if abs(p[2]-(1.925+side[2]))<1e-6)
+    path=[np.array(p,float) for p in center[start:]]
+    path[-1]=path[-1]-[0,0,.17]
+    ps=smooth(path,.055);left=[];right=[];distance=0;next_rung=0
+    for index,p in enumerate(ps):
+        tangent=ps[min(index+1,len(ps)-1)]-ps[max(0,index-1)];tangent/=np.linalg.norm(tangent)
+        # Vertical XZ runs use Y across the tray; horizontal runs use the
+        # horizontal normal. Keep rail sides continuous around every corner.
+        width=np.cross(tangent,[0,0,1])
+        if np.linalg.norm(width)<.01:width=np.array([0,1,0],float)
+        else:width/=np.linalg.norm(width)
+        if index and np.dot(width,last_width)<0:width=-width
+        last_width=width
+        support=p+np.cross(width,tangent)*.014
+        a=support-width*.048;b=support+width*.048
+        left.append(a);right.append(b)
+        if index:distance+=np.linalg.norm(p-ps[index-1])
+        if distance>=next_rung:
+            g.cyl(a,b,.004,'zinc',8);next_rung=distance+.14
+    g.pipe(left,.006,'zinc',0,8);g.pipe(right,.006,'zinc',0,8)
+    trays.append(dict(id='pressure_harness_tray',points=[p.tolist() for p in path],free_tail_m=.17,style='open_ladder'))
     g.parts['cables'].update(requires=[],excludes=[],category='Оборудование',note='')
     # Pump power has its own low route and distinct cabinet glands.
     for i,y in enumerate([.2,.95]):
@@ -122,5 +142,5 @@ for family in ['500','1000','1500','2000','2500','3000','3500','4000','5000']:
         pts=[o.matrix_world@Vector(v) for o in bpy.data.objects[key].children_recursive if o.type=='MESH' for v in o.bound_box]
         c=[(min(p[i] for p in pts)+max(p[i] for p in pts))/2 for i in range(3)];row['center']=[c[0],c[2],-c[1]]
     bpy.ops.export_scene.gltf(filepath=str(folder/'wiring.glb'),export_format='GLB',export_animations=False,export_extras=False)
-    (folder/'wiring.json').write_text(json.dumps(dict(parts=list(g.parts.values()),routes=records,cabinetDelta=cab.tolist(),bundleLaneY=trunk_y),ensure_ascii=False,indent=2),encoding='utf8')
+    (folder/'wiring.json').write_text(json.dumps(dict(parts=list(g.parts.values()),routes=records,trays=trays,level_support='existing_service_deck',cabinetDelta=cab.tolist(),bundleLaneY=trunk_y),ensure_ascii=False,indent=2),encoding='utf8')
     print('WIRING',family,len(records),flush=True)

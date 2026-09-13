@@ -1,0 +1,22 @@
+{
+  "version": "2026.09.13.5",
+  "date": "2026-09-13",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_PUBLIC_COPY",
+  "url": "https://prgz.ru/komplektacii4/",
+  "applicationCommit": "e52140a5dd13a71940c178b7ec4224be67f7aba5",
+  "manifestSha256": "5c8e1e290985fbc00609f87c5092d521d801ee2a552c3a8817d9a9dd8cdaa402",
+  "candidateSha256": "478169892e8e9cad8eceb6901fc4e37cd59ada6529d00b39f24653cf674ec866",
+  "backupUrl": "https://prgz.ru/komplektacii4-v2026.09.13.4/",
+  "files": 117,
+  "publicFiles": 115,
+  "stageRatings": 9,
+  "liveRatings": [
+    500,
+    1500,
+    4000,
+    5000
+  ],
+  "ci": "NOT_CONFIGURED",
+  "publicationCommit": "95f1895f055dec69452bfa4b2b4a4b99f9f62a62"
+}

@@ -1,7 +1,7 @@
 {
   "release": {
-    "version": "2026.09.13.6",
-    "date": "2026-09-13",
+    "version": "2026.09.28.1",
+    "date": "2026-09-28",
     "executor": "Codex / GPT-6",
     "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
     "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb",
@@ -22,7 +22,7 @@
       "https://disk.yandex.ru/d/rO5IXUvIfiUGjg"
     ]
   },
-  "source_commit": "543ee4b32511250b1a097d7f86c5c36361137ca5",
+  "source_commit": "49fa02fa07577c13fc47891eac13d91a7c2329f2",
   "files": [
     {
       "path": ".htaccess",
@@ -48,6 +48,16 @@
       "path": "assets/boiler-DinVE5OY.glb",
       "bytes": 1627716,
       "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03"
+    },
+    {
+      "path": "assets/cascade-BTu_IZZy.glb",
+      "bytes": 405812,
+      "sha256": "9aec917ca76d7a839dafbc7af737588920934920bbab3fbe1f5b2cb10fade6d1"
+    },
+    {
+      "path": "assets/comfort_plus-BQu2inU9.glb",
+      "bytes": 864240,
+      "sha256": "7f50069fdd5e142abfcaaf9d263fe5ed89f76b6f7efd11bfd7c97df4dfdbd31e"
     },
     {
       "path": "assets/cp_930--TKERaHD.glb",
@@ -105,9 +115,14 @@
       "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
     },
     {
-      "path": "assets/index-C5xcn5GW.js",
+      "path": "assets/index-Dcqow9vs.js",
       "bytes": 1177702,
-      "sha256": "5deb5416b1402d17820dfb3bd8c2905bad46d13be3c1463a0d4fef884a011d7c"
+      "sha256": "cf0041162b2c7087cd549bae47ab4f92842bca23fdc6c0f2ce05e915cea5c6ca"
+    },
+    {
+      "path": "assets/piping-BRHi6fI6.glb",
+      "bytes": 1409392,
+      "sha256": "ab930ff07c3a64935fa5f3853f20314a66504602fc182316b29584ea6b9a722d"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -180,14 +195,14 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/S3000Configurator-B0pig-n6.js",
-      "bytes": 58721,
-      "sha256": "19b9783b98a557d17dd0e9a38b9e56ecad25cc6d26cfeedcd2b49e50fb8c12d1"
+      "path": "assets/S3000Configurator-BKBvXmtx.js",
+      "bytes": 48039,
+      "sha256": "91b3a195e0fa105a29e9bfc4c060fa745552071f2bd4e7067644b5a4a64379ce"
     },
     {
-      "path": "assets/S3000Configurator-uPvhAiFp.js",
-      "bytes": 48039,
-      "sha256": "88c1304e3c5354cb36945d4f40953a85aaa8a6f2286aa5ab8ff3afa5f33522f8"
+      "path": "assets/S3000Configurator-Dq10bG7f.js",
+      "bytes": 58721,
+      "sha256": "c1d34f366d080bf8ec535211073852bc40f4f4724685464c9fe2415d21fe3c6e"
     },
     {
       "path": "assets/s4000-0-BcC6-WeA.glb",
@@ -550,9 +565,9 @@
       "sha256": "f848dea986b882d74659906d2f0a54db9dd09766fecf0e7511fb3ddd769fc0e4"
     },
     {
-      "path": "assets/S4000Configurator-BLEtGRrJ.js",
-      "bytes": 424671,
-      "sha256": "af46f80c86e5e8c87b5a79702493a3a4ee30090baf4558c04f411889a74dfee9"
+      "path": "assets/S4000Configurator-Dk8e3JRD.js",
+      "bytes": 433942,
+      "sha256": "2813fc839cfa7d87577fc16d406c60ee24025c4b1fe0bbd2aa9baa70579398bc"
     },
     {
       "path": "assets/style-2U9jDLWb.css",
@@ -562,7 +577,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "0b755d3e5416df94d66e0f104b8442469ef349d425d2ba0544165858e7a88dd2"
+      "sha256": "d32d07809f701049ac3312371b22f27e9f19b6852fc593cfb6573a1ab3a436fc"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -602,7 +617,7 @@
     {
       "path": "version.json",
       "bytes": 652,
-      "sha256": "9e0b2f766404ee1078f61fbed8b23706149e887350481783ce1975db5232bf0e"
+      "sha256": "cb0562f9cd30ea69d4a7034ec0e2917b2b19cdb9d3eb8560e6eed8bec8ce5a3a"
     }
   ]
 }

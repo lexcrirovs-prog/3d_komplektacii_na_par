@@ -39,6 +39,11 @@ try {
  assert(await visible('cascade_header'));assert(await visible('cascade_cabinet'));assert(new URL(page.url()).searchParams.get('cascade')==='2');
  await page.getByRole('button',{name:'Общий вид',exact:true}).click();await page.waitForTimeout(900);await page.screenshot({path:resolve(out,'cascade-overview.png')});
  Object.assign(state,await page.evaluate(()=>({draws:window.__s3000.gl.info.render.calls,triangles:window.__s3000.gl.info.render.triangles})));
+ // Click the exposed upper half of the second boiler door in the rendered view.
+ const point=await page.evaluate(()=>{const app=window.__s3000;const p=app.scene.getObjectByName('boiler_unit_2').position.clone().set(6.3,1.65,1.90).project(app.camera);const r=app.gl.domElement.getBoundingClientRect();return {x:r.left+(p.x+1)*r.width/2,y:r.top+(1-p.y)*r.height/2}});
+ await page.mouse.click(point.x,point.y);await page.getByText(/^Котёл 2 ·/).first().waitFor();
+ await page.waitForTimeout(900);assert(await page.evaluate(()=>window.__s3000.camera.position.x>3.15));
+ checks.push('Picking the second boiler keeps the component identity and camera on unit 2');
  await page.getByRole('tab',{name:'Оборудование',exact:true}).click();
  assert(await page.getByText('Общий каскадный шкаф автоматики',{exact:true}).count()>=1);
  await page.getByRole('tab',{name:'Сборка',exact:true}).click();

@@ -1,0 +1,21 @@
+{
+  "status": "PASSED_BLENDER_REOPEN",
+  "version": "2026.09.28.1",
+  "file": "E:\\CodexArtifacts\\Cascade-v2026.09.28.1\\S4000_CASCADE_COMFORT_PLUS.blend",
+  "sha256": "5d23dace436eea974015d44140da56fcd0b4cba77cdc0f194ffac005ac4b257e",
+  "hinges": 5,
+  "frames": [
+    1,
+    49,
+    97
+  ],
+  "native_animation": true,
+  "linked_second_boiler": true,
+  "shared_equipment": [
+    "DA",
+    "FV",
+    "BDV"
+  ],
+  "objects": 1470,
+  "images_packed": true
+}

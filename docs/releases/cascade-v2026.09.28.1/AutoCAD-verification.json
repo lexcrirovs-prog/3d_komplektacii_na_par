@@ -1,0 +1,16 @@
+{
+  "status": "PASSED_NATIVE_AUTOCAD",
+  "version": "2026.09.28.1",
+  "autocad": "2027 Core Console",
+  "dwg_format": "AC1032 / AutoCAD 2018",
+  "units": "mm",
+  "audit_save": 0,
+  "audit_reopen": 0,
+  "geometry_roundtrip": "all definitions and instances match at 0.001 mm",
+  "door_cycles": 5,
+  "instances": 199,
+  "definitions": 116,
+  "mesh_entities": 1068,
+  "dwg_bytes": 466443664,
+  "dwg_sha256": "f49f9dd71b0f680965811bf9b082432362c000bc1d471eda21ced307886c9e84"
+}

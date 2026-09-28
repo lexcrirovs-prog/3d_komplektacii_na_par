@@ -1,0 +1,29 @@
+{
+  "status": "PASSED_CASCADE_BROWSER",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "0f5704cafb3fe7a474a61b0b50657f29ba57e1304b9622287f053364bfe4b802",
+  "checks": [
+    "Standard preserved; Comfort+ replaces complete cabinet; door opens 105 degrees",
+    "Picking the second boiler keeps the component identity and camera on unit 2",
+    "Two independent cabinet assemblies and boiler doors; single shared cascade cabinet, DA, FV and BDV; geometry reused",
+    "Economizer, DA, FV and BDV toggles retain common header",
+    "Mobile viewport fits; returning to single Standard removes cascade and restores original cabinet"
+  ],
+  "state": {
+    "counts": {
+      "boiler": 2,
+      "plus_cabinet": 2,
+      "deaerator": 1,
+      "separator_fv8": 1,
+      "separator_bdv60_5": 1,
+      "suction_common": 0,
+      "steam_delivery": 2
+    },
+    "units": 2,
+    "spacing": 6.3,
+    "geometryShared": true,
+    "draws": 1374,
+    "triangles": 7786357
+  },
+  "errors": []
+}

@@ -1,0 +1,118 @@
+{
+  "status": "PASSED_CASCADE_RELEASE",
+  "version": "2026.09.28.1",
+  "date": "2026-09-28",
+  "executor": "Codex / GPT-6",
+  "url": "https://prgz.ru/komplektacii4/?power=4000&trim=comfort_plus&cascade=2",
+  "source_commit": "49fa02fa07577c13fc47891eac13d91a7c2329f2",
+  "publication_commit": "b9ee815b7a8876b2cd6b3500549b49517ae6075a",
+  "manifest_sha256": "0f5704cafb3fe7a474a61b0b50657f29ba57e1304b9622287f053364bfe4b802",
+  "public_files_verified": 118,
+  "staged_files": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 120,
+    "transferredFiles": 10,
+    "reusedFiles": 110,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.09.28.1",
+    "transferBytes": 1664308
+  },
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.09.28.1",
+    "neighborsUnchanged": true,
+    "files": 120
+  },
+  "browser": {
+    "status": "PASSED_CASCADE_BROWSER",
+    "base": "https://prgz.ru/komplektacii4/",
+    "manifestSha256": "0f5704cafb3fe7a474a61b0b50657f29ba57e1304b9622287f053364bfe4b802",
+    "checks": [
+      "Standard preserved; Comfort+ replaces complete cabinet; door opens 105 degrees",
+      "Picking the second boiler keeps the component identity and camera on unit 2",
+      "Two independent cabinet assemblies and boiler doors; single shared cascade cabinet, DA, FV and BDV; geometry reused",
+      "Economizer, DA, FV and BDV toggles retain common header",
+      "Mobile viewport fits; returning to single Standard removes cascade and restores original cabinet"
+    ],
+    "state": {
+      "counts": {
+        "boiler": 2,
+        "plus_cabinet": 2,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 2
+      },
+      "units": 2,
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 1374,
+      "triangles": 7786357
+    },
+    "errors": []
+  },
+  "blender": {
+    "status": "PASSED_BLENDER_REOPEN",
+    "version": "2026.09.28.1",
+    "file": "E:\\CodexArtifacts\\Cascade-v2026.09.28.1\\S4000_CASCADE_COMFORT_PLUS.blend",
+    "sha256": "5d23dace436eea974015d44140da56fcd0b4cba77cdc0f194ffac005ac4b257e",
+    "hinges": 5,
+    "frames": [
+      1,
+      49,
+      97
+    ],
+    "native_animation": true,
+    "linked_second_boiler": true,
+    "shared_equipment": [
+      "DA",
+      "FV",
+      "BDV"
+    ],
+    "objects": 1470,
+    "images_packed": true
+  },
+  "autocad": {
+    "status": "PASSED_NATIVE_AUTOCAD",
+    "version": "2026.09.28.1",
+    "autocad": "2027 Core Console",
+    "dwg_format": "AC1032 / AutoCAD 2018",
+    "units": "mm",
+    "audit_save": 0,
+    "audit_reopen": 0,
+    "geometry_roundtrip": "all definitions and instances match at 0.001 mm",
+    "door_cycles": 5,
+    "instances": 199,
+    "definitions": 116,
+    "mesh_entities": 1068,
+    "dwg_bytes": 466443664,
+    "dwg_sha256": "f49f9dd71b0f680965811bf9b082432362c000bc1d471eda21ced307886c9e84"
+  },
+  "rules_tests_passed": 21,
+  "added_web_asset_bytes": 2679444,
+  "header_dn": 200,
+  "header_status": "VISUAL_DIAMETER_NOT_CALCULATED",
+  "model_assumptions": [
+    "2 x S-4000",
+    "shared DA/FV/BDV",
+    "6300 mm boiler spacing"
+  ],
+  "cleanup": {
+    "status": "BLOCKED_AUTO_REVIEW",
+    "reason": "blocked by policy",
+    "targets": [
+      {
+        "Path": "E:\\CodexArtifacts\\Cascade-v2026.09.28.1\\build\\CASCADE.dxf",
+        "Bytes": 373145136
+      },
+      {
+        "Path": "E:\\CodexArtifacts\\Cascade-v2026.09.28.1\\build\\cad-roundtrip.dxf",
+        "Bytes": 3589647900
+      },
+      {
+        "Path": "E:\\CodexArtifacts\\Cascade-v2026.09.28.1\\build\\cad-cache",
+        "Bytes": 78987936.0
+      }
+    ]
+  }
+}

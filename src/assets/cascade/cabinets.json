@@ -1,0 +1,46 @@
+{
+  "version": "2026.09.28.1",
+  "date": "2026-09-28",
+  "executor": "Codex / GPT-6",
+  "groups": [
+    {
+      "id": "comfort_plus",
+      "pivot": [
+        0.239,
+        0.011,
+        0.325
+      ],
+      "angle_degrees": 105,
+      "parts": [
+        "comfort_plus_door"
+      ],
+      "size_mm": [
+        500.0,
+        650.0,
+        220.0
+      ]
+    },
+    {
+      "id": "cascade",
+      "pivot": [
+        0.189,
+        0.011,
+        0.2
+      ],
+      "angle_degrees": 105,
+      "parts": [
+        "cascade_door"
+      ],
+      "size_mm": [
+        400.0,
+        400.0,
+        150.0
+      ]
+    }
+  ],
+  "grey_step_url": "https://cdn-01.iek.ru/media/original/f2884dcf05ba7344ad4fe61a337b971b49735704b09050844a5aae0f8ede0837.step",
+  "grey_step_sha256": "f2884dcf05ba7344ad4fe61a337b971b49735704b09050844a5aae0f8ede0837",
+  "red_enclosure": "IEK IND-YKM40-03-54; 650 H x 500 W x 220 D mm, supplied nameplate",
+  "grey_enclosure": "IEK YKM40-441-54; 400 H x 400 W x 150 D mm",
+  "equipment": "Photo reconstruction; component internals and electrical circuits not asserted"
+}

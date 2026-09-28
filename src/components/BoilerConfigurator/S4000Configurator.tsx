@@ -10,6 +10,10 @@ import {normalizeConfig,trims,powers,type FamilyConfig,type Trim} from './family
 import {familyAssets,type FamilyAsset,type FamilyPart} from './familyAssets'
 import premiumLogo from '../../assets/s3000/premium-logo.png'
 import { isPartVisible } from './assemblyVisibility'
+import photoCabinetUrl from '../../assets/cascade/comfort_plus.glb?url'
+import cascadeCabinetUrl from '../../assets/cascade/cascade.glb?url'
+import cascadePipingUrl from '../../assets/cascade/piping.glb?url'
+import {addPhotoCabinet,partInUnit,configurationParts,cascadeLayout} from './cascadeScene'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
@@ -51,12 +55,14 @@ class ModelBoundary extends Component<{ children: ReactNode }, { error: boolean 
 
 function rootPart(object: Object3D | null, byId: Map<string,FamilyPart>): string | undefined {
   let id: string | undefined
+  let second=false
   while (object) {
     if (!object.visible) return undefined
+    if(object.name==='boiler_unit_2')second=true
     if (!id && byId.has(object.name)) id = object.name
     object = object.parent
   }
-  return id
+  return id&&second&&byId.has('unit2:'+id)?'unit2:'+id:id
 }
 
 const ignoreRaycast: Mesh['raycast'] = () => {}
@@ -70,50 +76,60 @@ function BoilerPreview({onReady,enabled,asset}:{onReady:()=>void;enabled:Set<str
   return <primitive object={scene} dispose={null} />
 }
 
-function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen,onReady,asset }: {
+function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen,onReady,asset,cascade,cascadeOpen }: {
   enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
-  cabinetOpen: boolean; boilerOpen: boolean; onReady:()=>void; asset:FamilyAsset
+  cabinetOpen: boolean; boilerOpen: boolean; onReady:()=>void; asset:FamilyAsset;cascade:boolean;cascadeOpen:boolean
 }) {
-  const parts=asset.parts, byId=new Map(parts.map(p=>[p.id,p])), openingData=asset.opening
+  const parts=asset.parts, openingData=asset.opening
+  const photo=enabled.has('comfort_plus')
+  const byId=new Map(configurationParts(parts,cascade,photo).map(p=>[p.id,p]))
   const core=useGLTF(asset.urls[0])
   const accessoryModels=useGLTF(asset.urls.slice(1))
+  const additionUrls=useMemo(()=>photo?[photoCabinetUrl,...(cascade?[cascadeCabinetUrl,cascadePipingUrl]:[])]:[],[photo,cascade])
+  const additions=useGLTF(additionUrls)
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
   const { gl, invalidate, camera } = useThree()
   useEffect(()=>{onReady()},[onReady])
   const scene = useMemo(() => {
     const copy = new Group()
     copy.name = 'rating-assembly'
-    for (const gltf of gltfs) copy.add(gltf.scene.clone(true))
-    copy.traverse(object => {
-      if (object instanceof Mesh) {
-        object.castShadow = true
-        object.receiveShadow = true
-        object.material = Array.isArray(object.material) ? object.material.map(m => m.clone()) : object.material.clone()
-      }
-    })
+    const unit=new Group();unit.name='boiler_unit_1';copy.add(unit)
+    for (const gltf of gltfs) unit.add(gltf.scene.clone(true))
     copy.updateMatrixWorld(true)
     for (const motion of openingData.groups) {
       const hinge = new Group()
       hinge.name = `opening_${motion.id}`
       hinge.position.set(motion.pivot[0], motion.pivot[2], -motion.pivot[1])
-      copy.add(hinge)
+      unit.add(hinge)
       hinge.updateMatrixWorld(true)
       for (const id of motion.parts) {
-        const part = copy.getObjectByName(id)
+        const part = unit.getObjectByName(id)
         if (!part) throw new Error(`Missing moving assembly part: ${id}`)
         hinge.attach(part)
       }
     }
+    if(photo)addPhotoCabinet(unit,additions[0].scene,'comfort_plus')
+    const units=[unit]
+    if(cascade) {
+      const second=unit.clone(true);second.name='boiler_unit_2';second.position.x=cascadeLayout.spacing_m;copy.add(second);units.push(second)
+      addPhotoCabinet(copy,additions[1].scene,'cascade')
+      const piping=additions[2].scene.clone(true);piping.name='cascade_piping';copy.add(piping)
+    }
+    copy.userData.units=units
+    copy.traverse(object=>{if(object instanceof Mesh){object.castShadow=true;object.receiveShadow=true;object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone()}})
     return copy
-  }, [gltfs])
-  useEffect(() => { invalidate() }, [cabinetOpen, boilerOpen, invalidate])
+  }, [gltfs,photo,cascade,additions])
+  useEffect(() => { invalidate() }, [cabinetOpen, boilerOpen, cascadeOpen, invalidate])
   useFrame((_, delta) => {
     let movingDoor = false
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    for (const motion of openingData.groups) {
-      const hinge = scene.getObjectByName(`opening_${motion.id}`)!
-      const opened = motion.id === 'cabinet' ? cabinetOpen : boilerOpen
-      const target = opened ? motion.angle_degrees * Math.PI / 180 : 0
+    const motions:{hinge:Object3D;target:number}[]=[]
+    for(const unit of scene.userData.units as Group[]) {
+      for (const motion of openingData.groups) motions.push({hinge:unit.getObjectByName(`opening_${motion.id}`)!,target:(motion.id==='cabinet'?cabinetOpen:boilerOpen)?motion.angle_degrees*Math.PI/180:0})
+      if(photo)motions.push({hinge:unit.getObjectByName('photo_hinge_comfort_plus')!,target:cabinetOpen?105*Math.PI/180:0})
+    }
+    if(cascade)motions.push({hinge:scene.getObjectByName('photo_hinge_cascade')!,target:cascadeOpen?105*Math.PI/180:0})
+    for (const {hinge,target} of motions) {
       const error = target - hinge.rotation.y
       if (Math.abs(error) < .00005) continue
       // Clamp time after an idle demand loop, and converge from the actual pose
@@ -137,10 +153,11 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     document.body.style.cursor = ''
   }, [scene])
   useEffect(() => {
-    for (const part of parts) {
-      const obj = scene.getObjectByName(part.id)
+    for(const [index,unit] of (scene.userData.units as Group[]).entries()) {
+     for (const part of parts) {
+      const obj = unit.getObjectByName(part.id)
       if (!obj) throw new Error(`Missing assembly node: ${part.id}`)
-      obj.visible = isPartVisible(part, enabled, showAccessories, optionalIds)
+      obj.visible = isPartVisible(part, enabled, showAccessories, optionalIds)&&partInUnit(part,index,cascade,photo)
       obj.traverse(child => {
         if (!(child instanceof Mesh)) return
         // Three.js raycasting does not skip an invisible ancestor automatically.
@@ -149,11 +166,16 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
         } : ignoreRaycast
         const materials = Array.isArray(child.material) ? child.material : [child.material]
         for (const m of materials) if (m instanceof MeshStandardMaterial) {
-          m.emissive = new Color(part.id === selected ? '#204775' : '#000000')
-          m.emissiveIntensity = part.id === selected ? .32 : 0
+          const highlighted=(index===1?'unit2:'+part.id:part.id)===selected
+          m.emissive = new Color(highlighted ? '#204775' : '#000000')
+          m.emissiveIntensity = highlighted ? .32 : 0
         }
       })
+     }
+     const cabinet=unit.getObjectByName('plus_cabinet');if(cabinet)cabinet.visible=showAccessories&&photo
     }
+    const cascadeCabinet=scene.getObjectByName('cascade_cabinet');if(cascadeCabinet)cascadeCabinet.visible=showAccessories
+    const piping=scene.getObjectByName('cascade_piping');if(piping)piping.visible=showAccessories
     invalidate()
   }, [scene, enabled, selected, showAccessories, dragging, invalidate])
   useEffect(() => {
@@ -187,13 +209,14 @@ export function S4000Configurator() {
     const p=new URLSearchParams(window.location.search)
     const trim=trims.find(t=>t.id===p.get('trim'))?.id || 'comfort'
     const requestedPower=Number(p.get('power')||4000)
-    return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions()})
+    return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions(),cascade:p.get('cascade')==='2'})
   })
-  return <FamilyViewer key={config.power} config={config} setConfig={setConfig} />
+  return <FamilyViewer key={`${config.power}:${config.cascade}`} config={config} setConfig={setConfig} />
 }
 function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:FamilyConfig)=>void}) {
   const asset=familyAssets[config.power]
-  const parts=asset.parts, byId=new Map(parts.map(p=>[p.id,p]))
+  const cascade=!!config.cascade
+  const parts=configurationParts(asset.parts,cascade,config.trim==='comfort_plus'), byId=new Map(parts.map(p=>[p.id,p]))
   const [sceneReady,setSceneReady]=useState(false)
   const [coreReady,setCoreReady]=useState(false)
   const markCoreReady=useCallback(()=>setCoreReady(true),[])
@@ -204,12 +227,14 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     const url=new URL(window.location.href)
     url.searchParams.set('power',String(config.power));url.searchParams.set('trim',config.trim);url.searchParams.set('pressure',String(config.pressure))
     url.searchParams.set('addons',options.filter(o=>config.addons.has(o.id)).map(o=>o.id).join(','))
+    if(cascade)url.searchParams.set('cascade','2');else url.searchParams.delete('cascade')
     window.history.replaceState(null,'',url)
   },[config])
   const [selected, setSelected] = useState<string | null>(null)
   const [showAccessories, setShowAccessories] = useState(true)
   const [cabinetOpen, setCabinetOpen] = useState(false)
   const [boilerOpen, setBoilerOpen] = useState(false)
+  const [cascadeOpen,setCascadeOpen]=useState(false)
   const [tab, setTab] = useState<'assembly' | 'equipment'>('assembly')
   const [query, setQuery] = useState('')
   const [initialView] = useState(() => overviewView(enabled.has('deaerator')))
@@ -218,8 +243,13 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const [inputRecovery, setInputRecovery] = useState(0)
   const dragging = useRef(false)
   const active = selected ? byId.get(selected) : undefined
-  const bomParts=catalog[config.trim]['S-'+config.power].filter(r=>(r.pressure===null||r.pressure===config.pressure)&&(!r.option||enabled.has(r.option))).map(r=>({...r,nodes:(partMapping[r.id]||[r.id==='bc970'&&config.trim==='comfort_plus'?'plus_bc970':r.id]).filter(id=>byId.has(id)&&isPartVisible(byId.get(id)!,enabled,true,optionalIds))}))
-  const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected)) : undefined
+  const bomParts=catalog[config.trim]['S-'+config.power].filter(r=>(r.pressure===null||r.pressure===config.pressure)&&(!r.option||enabled.has(r.option))).map(r=>{
+    const cabinetRow=config.trim==='comfort_plus'&&['level_controllers','bc970','pr200'].includes(r.id)
+    const nodes=cabinetRow?['plus_cabinet']:(partMapping[r.id]||[r.id]).filter(id=>byId.has(id)&&isPartVisible(byId.get(id)!,enabled,true,optionalIds))
+    return {...r,quantity:r.quantity*(cascade?2:1),nodes}
+  })
+  if(cascade)bomParts.push({id:'cascade_cabinet',label:'Общий каскадный шкаф автоматики',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
+  const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected.replace(/^unit2:/,''))) : undefined
   const visibleRows = bomParts.filter(row => searchText(row.label).includes(searchText(query)))
 
   function requestView(position: Point, target: Point) {
@@ -231,10 +261,14 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     dragging.current = false
     setView(old => ({...old, id: old.id + 1, standard}))
   }
-  function cabinetView() {
+  function cabinetView(dx=0) {
     const p = byId.get('control_cabinet')!.center
-    const target: Point = [p[0], p[1], p[2]]
-    requestView([p[0]-1.34,p[1]+.45,p[2]+1.18], target)
+    const target: Point = [p[0]+dx, p[1], p[2]]
+    requestView([p[0]+dx-1.34,p[1]+.45,p[2]+1.18], target)
+  }
+  function cascadeView() {
+    const p=byId.get('cascade_cabinet')!.center
+    requestView([p[0]-.8,p[1]+.4,p[2]+1.4],[p[0]+.08,p[1],p[2]])
   }
   function overview(withDeaerator = enabled.has('deaerator')) {
     setSelected(null)
@@ -273,10 +307,13 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     window.history.replaceState(null, '', url)
     if (id === 'deaerator') overview(next.has(id))
   }
-  function focus(id: string) {
-    const p = byId.get(id)
+  function focus(selection: string) {
+    const p = byId.get(selection)
     if (!p) return
-    setSelected(id)
+    setSelected(selection)
+    const id=selection.replace(/^unit2:/,''),dx=selection.startsWith('unit2:')?cascadeLayout.spacing_m:0
+    if(id==='cascade_cabinet'){cascadeView();return}
+    if(id==='plus_cabinet'){cabinetView(dx);return}
     if (!options.some(o => o.id === id) && id !== 'boiler') setShowAccessories(true)
     if (id.startsWith('feed_') && ['feed_direct', 'feed_to_economizer', 'feed_from_economizer', 'feed_piping'].includes(id)) {
       requestView([6.3,4.6,-6.5], [.3,1.45,-1.4])
@@ -287,11 +324,11 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     if (id === 'lp200' || id === 'lp400') c[1] += .12
     const cabinetSide = ['control_cabinet', 'cabinet_door', 'cabinet_interior', 'lc220', 'lc440', 'bc970'].includes(id)
     if (cabinetSide && cabinetOpen) {
-      cabinetView()
+      cabinetView(dx)
       return
     }
     if (['boiler_door','boiler_tubes','boiler_tubeplate'].includes(id)) {
-      requestView([2.8,2.7,6.1], [-.2,1.12,1.4])
+      requestView([2.8+dx,2.7,6.1], [-.2+dx,1.12,1.4])
       return
     }
     const rearLow = ['bcv7432', 'drain_isolation_1', 'drain_isolation_2', 'bottom_piping'].includes(id)
@@ -327,7 +364,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   return <div className="s3-app">
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
-      {!active && !cabinetOpen && !boilerOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power} КГ ПАРА В ЧАС</span><h1>S-{config.power} в сборе.</h1><p>Корпус и патрубки — по заводской модели {asset.model}.<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
+      {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*(cascade?2:1)} КГ ПАРА В ЧАС</span><h1>{cascade?'Каскад 2 × S-4000.':`S-${config.power} в сборе.`}</h1><p>{cascade?'Свой шкаф у каждого котла. Общий шкаф каскада и паровой коллектор.':`Корпус и патрубки — по заводской модели ${asset.model}.`}<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .03, far: 250 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
         onPointerMissed={() => setSelected(null)}>
@@ -343,7 +380,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
           <Assembly asset={asset} enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging}
-            cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} onReady={markSceneReady} />
+            cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} onReady={markSceneReady} cascade={cascade} cascadeOpen={cascadeOpen} />
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[0,-.007,0]} opacity={.38} scale={25} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
         <OrbitControls key={`${view.id}:${inputRecovery}`} makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
@@ -354,6 +391,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       <ViewCube cubeRef={cubeRef} onView={standardView} />
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
         <button onClick={() => { setSelected(null); cabinetView() }}>Шкаф</button>
+        {cascade&&<button onClick={()=>{setSelected(null);cascadeView()}}>Шкаф каскада</button>}
+        {cascade&&<button onClick={()=>requestView([9.1,2.7,6.1],[6.1,1.12,1.4])}>Котёл 2</button>}
         <button onClick={() => focus('pressure_header')}>Приборы</button>
         <button onClick={() => { setSelected(null); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
         <button onClick={() => focus('cables')}>Кабели</button>
@@ -369,12 +408,13 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         {active.note && <p className="s3-part-note">{active.note}</p>}
         <button className="s3-focus" onClick={() => focus(active.id)}>Приблизить деталь ↗</button>
       </section>}
-      <div className="s3-caption">Визуальная сборка <span>•</span> 13.09.2026 <span>•</span> v{webVersion.version}</div>
+      <div className="s3-caption">Визуальная сборка <span>•</span> 28.09.2026 <span>•</span> v{webVersion.version}</div>
     </main>
 
     <aside className="s3-sidebar" aria-label="Комплектация котла">
       <div className="s3-sidebar-heading"><div className="s3-eyebrow">ПОД ВАШУ ЗАДАЧУ</div><h2>PREMIUM S-{config.power}</h2><p>Паровой котёл с навесным оборудованием</p>
         <div className="s3-config-selects">
+          <label>Установка<select aria-label="Установка" value={cascade?'cascade':'single'} onChange={e=>{setConfig(normalizeConfig(e.target.value==='cascade'?{...config,power:4000,trim:'comfort_plus',cascade:true}:{...config,cascade:false}));setSelected(null)}}><option value="single">Один котёл</option><option value="cascade">Каскад 2 × S-4000 · Комфорт+</option></select></label>
           <label>Паропроизводительность<select aria-label="Паропроизводительность" value={config.power} onChange={e=>{setConfig(normalizeConfig({...config,power:Number(e.target.value)}));setSelected(null)}}>{powers.map(power=><option key={power} value={power}>{power} кг/ч</option>)}</select></label>
           <label>Комплектация<select aria-label="Комплектация" value={config.trim} onChange={e=>{setConfig(normalizeConfig({...config,trim:e.target.value as Trim}));setSelected(null)}}>{trims.map(t=><option key={t.id} value={t.id}>{t.label}</option>)}</select></label>
           <label>Рабочее давление<select aria-label="Рабочее давление" value={config.pressure} onChange={e=>{setConfig({...config,pressure:Number(e.target.value) as 8|12});setSelected(null)}}><option value={8}>8 бар</option><option value={12}>12 бар</option></select></label>
@@ -390,8 +430,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
           <section className="s3-opening" aria-label="Открывание дверей">
             <div className="s3-section-label">ЗАГЛЯНУТЬ ВНУТРЬ</div>
             <button disabled={!sceneReady} aria-pressed={cabinetOpen} onClick={openCabinet}>
-              <span>{cabinetOpen ? 'Закрыть шкаф' : 'Открыть шкаф'}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
+              <span>{cabinetOpen ? (cascade?'Закрыть шкафы котлов':'Закрыть шкаф') : (cascade?'Открыть шкафы котлов':'Открыть шкаф')}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
             </button>
+            {cascade&&<button disabled={!sceneReady} aria-pressed={cascadeOpen} onClick={()=>{setCascadeOpen(v=>!v);setShowAccessories(true);setSelected(null);cascadeView();showModelOnMobile()}}><span>{cascadeOpen?'Закрыть каскадный шкаф':'Открыть каскадный шкаф'}</span><span aria-hidden="true">↗</span></button>}
             <button disabled={!sceneReady || asset.tubeCount===null} aria-pressed={boilerOpen} onClick={openBoiler}>
               <span>{boilerOpen ? 'Закрыть дверь котла' : 'Открыть дверь котла'}</span><span aria-hidden="true">{boilerOpen ? '↶' : '↗'}</span>
             </button>

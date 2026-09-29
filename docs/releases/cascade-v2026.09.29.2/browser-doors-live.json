@@ -1,0 +1,14 @@
+{
+  "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "36a518467776ad0d7cd471518e9b805e5e761088c99b239d859fdadd333d234b",
+  "checks": [
+    "Real canvas clicks open/close only the selected Comfort cabinet; unit 5 remains open while unit 1 closes",
+    "Real canvas clicks open and close the third S-4000 door without moving any other boiler door",
+    "The common grey cabinet toggles by clicking its 3D door",
+    "Orbit drag ending on a door does not open it",
+    "Distribution manifold, drop and real A31 trap stay present independently of the FV/DA options",
+    "Standard cabinet opens and closes from its 3D door"
+  ],
+  "errors": []
+}

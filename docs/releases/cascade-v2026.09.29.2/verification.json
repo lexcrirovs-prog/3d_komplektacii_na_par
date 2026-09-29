@@ -1,0 +1,97 @@
+{
+  "version": "2026.09.29.2",
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "source_commit": "150926467e1aa95d5bf8f44d0ceaaf5ded6556fb",
+  "publication_commit": "7d3fdf0b720e19da44ba2b6e2c4c492fcdce4f00",
+  "manifestSha256": "36a518467776ad0d7cd471518e9b805e5e761088c99b239d859fdadd333d234b",
+  "unit_tests": {
+    "passed": 32,
+    "failed": 0,
+    "report": "unit-tests.log"
+  },
+  "browser": {
+    "local": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-local.json",
+        "checks": 7
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-local.json",
+        "checks": 6
+      }
+    },
+    "stage": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-stage.json",
+        "checks": 7
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-stage.json",
+        "checks": 6
+      }
+    },
+    "live": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-live.json",
+        "checks": 7
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-live.json",
+        "checks": 6
+      }
+    }
+  },
+  "https": {
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 118,
+      "report": "http-stage.json"
+    },
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 118,
+      "report": "http-live.json"
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.09.29.2",
+      "candidateSha256": "fc81778c46da401ea5b455640104ff0c663563ba80aeb8d51923d1aaff73d8b3",
+      "manifestSha256": "36a518467776ad0d7cd471518e9b805e5e761088c99b239d859fdadd333d234b",
+      "backupSha256": "bd7a20adf2a57290c8abb74e4f94a72daad2c03217eeee712cb821c397b00720",
+      "backupFiles": 120,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.09.29.2/"
+    },
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 120,
+      "transferredFiles": 10,
+      "reusedFiles": 110,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.09.29.2",
+      "transferBytes": 1299151
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.09.29.2",
+      "neighborsUnchanged": true,
+      "files": 120
+    }
+  },
+  "native_cad_changed": false,
+  "scope_limits": [
+    "Boiler door and tube interior are supported by the current S-4000 model; cabinet doors work across the family.",
+    "Three consumer outlets are provisional pending owner confirmation.",
+    "The available A31 DN25 visual model does not establish hydraulic selection of the project DN15 trap.",
+    "Condensate return ends at a marked external flange; no unconfirmed DA nozzle was connected.",
+    "Physical mobile hardware and hydraulic sizing were not tested."
+  ]
+}

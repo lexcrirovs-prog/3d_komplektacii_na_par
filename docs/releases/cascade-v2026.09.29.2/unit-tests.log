@@ -1,0 +1,40 @@
+✔ 1–5 units persist across all nine ratings, all trims and both pressures (1.1224ms)
+✔ Every steam branch starts on the registered outlet and terminates on the common header (2.1037ms)
+✔ Green common feed and pump branches clear every BDV and FV envelope (22.9231ms)
+✔ Modulation moves upstream of the economizer with its actuator and cable; all outlet joins stay closed (0.9604ms)
+✔ Independent FV/BDV/DA and economizer options yield one continuous route per selected circuit (101.8282ms)
+✔ Cascade retains one shared equipment set and unique identities for each unit (72.0907ms)
+✔ FV upper return is separate from the retained DN25 safety valve (0.261ms)
+✔ Shared cabinet and its open door stay in an aisle, including odd boiler counts (0.1164ms)
+✔ A picked nested door belongs to its own unit; hidden ancestors never activate it (1.0294ms)
+✔ Opening and reversing an individual door preserves the other boiler states (0.1516ms)
+✔ Distribution supply starts on the collector; bottom drainage terminates at both real trap ports (0.4722ms)
+✔ Economizer is unavailable below 1500, including restored URL selections (0.649ms)
+✔ Electric GPZ is mandatory from 4000 inclusive, optional below; standard never has modulation (0.1807ms)
+✔ Each capacity, trim and pressure resolves exactly one safety-valve and pump row (0.5247ms)
+✔ S-500: allowed options, independent vessels, correct body and sensor wiring (3.228ms)
+✔ S-1000: allowed options, independent vessels, correct body and sensor wiring (1.3249ms)
+✔ S-1500: allowed options, independent vessels, correct body and sensor wiring (0.9529ms)
+✔ S-2000: allowed options, independent vessels, correct body and sensor wiring (1.1164ms)
+✔ S-2500: allowed options, independent vessels, correct body and sensor wiring (0.7596ms)
+✔ S-3000: allowed options, independent vessels, correct body and sensor wiring (0.5889ms)
+✔ S-3500: allowed options, independent vessels, correct body and sensor wiring (0.5782ms)
+✔ S-4000: allowed options, independent vessels, correct body and sensor wiring (0.8155ms)
+✔ S-5000: allowed options, independent vessels, correct body and sensor wiring (0.6844ms)
+✔ s4000/web: Every BDV/FV combination retains approach pipes and never reroutes to the other vessel (0.8406ms)
+✔ s4000/web: Every economizer/modulation combination has exactly one matching regulating section (0.7368ms)
+✔ s4000/web: Public descriptions contain no original supplier names or equipment model codes (0.2099ms)
+✔ families/small: Every BDV/FV combination retains approach pipes and never reroutes to the other vessel (0.2146ms)
+✔ families/small: Every economizer/modulation combination has exactly one matching regulating section (0.2049ms)
+✔ families/small: Public descriptions contain no original supplier names or equipment model codes (0.0674ms)
+✔ families/medium: Every BDV/FV combination retains approach pipes and never reroutes to the other vessel (0.2369ms)
+✔ families/medium: Every economizer/modulation combination has exactly one matching regulating section (0.2011ms)
+✔ families/medium: Public descriptions contain no original supplier names or equipment model codes (0.0788ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 340.0886

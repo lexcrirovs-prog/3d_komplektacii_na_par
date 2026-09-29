@@ -46,7 +46,7 @@ export function cascadeRoutes(power:number,count:number):Route[] {
     add('cascade_signal_'+(i+1),`Связь каскадного шкафа с котлом ${i+1} в гофре`,[[gx-.10+i*.045,gy+.08,gz],[gx-.10+i*.045,gy+.08,level],[cabX,gy+.08,level],[cabX,-1,level],[cabX,-1,cabZ]],.011,'black')
   }
   const [gx,gy]=greyOrigin(count),px=last+.3
-  add('cascade_pressure_connection','Отбор давления общего коллектора',[[px,headerY,headerZ],[px,headerY,headerZ+.24]],.008,'steel')
+  add('cascade_pressure_connection','Отбор давления общего коллектора',[[px,headerY,headerZ],[px,headerY,headerZ+.25]],.008,'steel')
   add('cascade_pressure_signal','Датчик коллектора → шкаф каскада в гофре',[[px+.04,headerY,headerZ+.3],[px+.15,headerY,headerZ+.3],[px+.15,headerY,.055],[px+.15,7,.055],[gx+.3,7,.055],[gx+.3,gy+.14,.055],[gx+.3,gy+.14,1.16],[gx+.14,gy+.14,1.16]],.008,'black')
   return rows
 }

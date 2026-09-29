@@ -1,4 +1,4 @@
-import {BoxGeometry,BufferGeometry,CurvePath,CylinderGeometry,Group,LineCurve3,Mesh,MeshStandardMaterial,QuadraticBezierCurve3,Quaternion,TorusGeometry,TubeGeometry,Vector3,type Object3D} from 'three'
+import {BoxGeometry,BufferGeometry,CurvePath,CylinderGeometry,Group,LineCurve3,Mesh,MeshStandardMaterial,QuadraticBezierCurve3,Quaternion,RingGeometry,TorusGeometry,TubeGeometry,Vector3,type Object3D} from 'three'
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import {cascadeRoutes,greyOrigin,unitSpacing,viewPoint,type Point3,type Route} from './cascadeRoutes'
 
@@ -67,7 +67,9 @@ export function cascadePiping(power:number,count:number) {
   const pressure=new Group();pressure.name='cascade_pressure_sensor'
   pressure.add(mesh(box([last+.3,5.6,4.86],[.08,.055,.12]),'white'),mesh(box([last+.3,5.571,4.86],[.048,.004,.033]),'black'))
   root.add(pressure)
-  const flange=new CylinderGeometry(.17,.17,.026,24);flange.rotateZ(Math.PI/2);flange.translate(last+.8,4.55,-5.6)
-  root.getObjectByName('cascade_header')!.add(mesh(flange,'steel'))
+  const flange=new CylinderGeometry(.17,.17,.026,24,1,true);flange.rotateZ(Math.PI/2);flange.translate(last+.8,4.55,-5.6)
+  const faces=[-1,1].map(side=>new RingGeometry(.101,.17,24).rotateY(side*Math.PI/2).translate(last+.8+side*.013,4.55,-5.6))
+  root.getObjectByName('cascade_header')!.add(mesh(mergeGeometries([flange,...faces])!,'steel'))
+  flange.dispose();faces.forEach(g=>g.dispose())
   return root
 }

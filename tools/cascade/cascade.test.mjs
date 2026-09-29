@@ -32,6 +32,7 @@ test('Every steam branch starts on the registered outlet and terminates on the c
   }
   assert.equal(rows.find(r=>r.id==='cascade_tds_header').points[0][1],6);
   assert.equal(rows.find(r=>r.id==='cascade_bottom_header').points[0][1],6.3);
+  near(rows.find(r=>r.id==='cascade_pressure_connection').points.at(-1),[(count-1)*unitSpacing+.3,5.6,4.8]);
  }
 });
 test('Green common feed and pump branches clear every BDV and FV envelope',()=>{

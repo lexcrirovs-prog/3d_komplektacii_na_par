@@ -1,0 +1,124 @@
+
+> boiler-configurator-3d@2026.9.29-4 build
+> tsc -b && vite build && node tools/s3000/prepare-web-release.mjs
+
+vite v6.4.1 building for production...
+transforming...
+✓ 788 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                2.07 kB │ gzip:   1.01 kB
+dist/assets/premium-logo--EbfrTdO.png         48.64 kB
+dist/assets/EQS2-1500-DhP-AerT.pdf            69.43 kB
+dist/assets/EQS2-5000-BRGGlEFi.pdf            69.67 kB
+dist/assets/EQS2-2000-taEI325H.pdf            69.83 kB
+dist/assets/EQS2-2500-CiJCYp1y.pdf            69.83 kB
+dist/assets/EQS2-3000-CDpAOXt9.pdf            70.54 kB
+dist/assets/EQS2-3500-_GGB4B8L.pdf            70.59 kB
+dist/assets/EQS2-4000-DW94eAp3.pdf            71.76 kB
+dist/assets/elbow_pc_f20-DO38bAlJ.glb        157.82 kB
+dist/assets/cascade-frrWXbVv.glb             405.81 kB
+dist/assets/cp_930--TKERaHD.glb              596.54 kB
+dist/assets/comfort-DlkNnhIn.glb             826.44 kB
+dist/assets/comfort_plus-OdLaWltn.glb        835.09 kB
+dist/assets/s3000-deaerator-BeCqQUxq.glb     882.61 kB
+dist/assets/s4000-1-CBO17kce.glb           1,234.62 kB
+dist/assets/dn32h50-DWIQZzpu.glb           1,258.96 kB
+dist/assets/s3000-cables-BoAppqsS.glb      1,279.76 kB
+dist/assets/s4000-1-DX9LCmdH.glb           1,293.30 kB
+dist/assets/deaerator-BbqYfy15.glb         1,297.43 kB
+dist/assets/s4000-1-D4bJmy9w.glb           1,376.28 kB
+dist/assets/da15_8-C5_lLif2.glb            1,495.42 kB
+dist/assets/boiler-DinVE5OY.glb            1,627.72 kB
+dist/assets/s4000-0-NyGUS-es.glb           1,641.89 kB
+dist/assets/s4000-0-X3yJEh6Q.glb           1,649.73 kB
+dist/assets/s4000-0-D3wgAVJE.glb           1,671.50 kB
+dist/assets/s4000-0-BML1nd3S.glb           1,679.38 kB
+dist/assets/s4000-0-By-ODK0t.glb           1,689.38 kB
+dist/assets/s4000-0-BcC6-WeA.glb           1,697.50 kB
+dist/assets/s4000-0-DSmM7idv.glb           1,697.87 kB
+dist/assets/s4000-0-COH1yU-6.glb           1,743.04 kB
+dist/assets/da25_25-Bqp01iJW.glb           1,754.22 kB
+dist/assets/da25_15-CRSPoPY3.glb           1,831.30 kB
+dist/assets/s4000-1-DEFxyF7d.glb           2,135.60 kB
+dist/assets/s4000-1-_rdPk8WH.glb           2,167.96 kB
+dist/assets/s4000-1-CdL7FAXL.glb           2,169.65 kB
+dist/assets/s4000-1-BZfayhu-.glb           2,216.18 kB
+dist/assets/s4000-1-DaPRklUs.glb           2,219.54 kB
+dist/assets/bcv_7250-CkMcE7H9.glb          2,227.10 kB
+dist/assets/s4000-1-iuM6Ua45.glb           2,378.90 kB
+dist/assets/bcv_925-k9_oO04u.glb           2,878.43 kB
+dist/assets/s4000-0-Bs5VtkhG.glb           3,021.14 kB
+dist/assets/da3-C2FCnwUs.glb               3,152.89 kB
+dist/assets/s4000-2-DCg6t82K.glb           3,255.61 kB
+dist/assets/s4000-2-BsKvkr7s.glb           3,287.82 kB
+dist/assets/s4000-2-BFbFZjpB.glb           3,292.15 kB
+dist/assets/s4000-2-CTYu70HQ.glb           3,319.03 kB
+dist/assets/s4000-2-Bsj25mo0.glb           3,372.28 kB
+dist/assets/s4000-2-BDSvdLfu.glb           3,482.99 kB
+dist/assets/s3000-boiler-D6a3-OHI.glb      4,032.61 kB
+dist/assets/s4000-7-DJ3jz5c8.glb           4,120.74 kB
+dist/assets/s4000-7-C9vRpxqb.glb           4,201.59 kB
+dist/assets/s4000-7-Bxl2IpRJ.glb           4,204.70 kB
+dist/assets/S-1500-CmT2Hkm4.stp            4,844.89 kB
+dist/assets/S-500-D9iByvI1.stp             4,894.02 kB
+dist/assets/S-1000-NDrjvpoG.stp            4,927.23 kB
+dist/assets/s4000-4-RWxZrWac.glb           4,984.65 kB
+dist/assets/s4000-4-sgENyTdl.glb           4,998.16 kB
+dist/assets/S-3000-CrNibU-8.stp            5,014.26 kB
+dist/assets/S-2000-B8CyM9vT.stp            5,034.61 kB
+dist/assets/S-2500-DLt3bVSe.stp            5,060.45 kB
+dist/assets/S-3500-BKe8ox-C.stp            5,095.72 kB
+dist/assets/s4000-4-IJOkorvG.glb           5,105.40 kB
+dist/assets/S-5000-DAjj9E51.stp            5,230.85 kB
+dist/assets/S-4000-OR3tRUKK.stp            5,235.76 kB
+dist/assets/s4000-5-M6vH9Z4t.glb           5,278.74 kB
+dist/assets/s4000-5-oa6z5sbG.glb           5,278.94 kB
+dist/assets/s4000-3-DQWjWM_5.glb           5,346.52 kB
+dist/assets/s3000-equipment-uXmb6TQJ.glb   5,356.43 kB
+dist/assets/s4000-5-DNiEXd5b.glb           5,371.72 kB
+dist/assets/s4000-4-DmCxvy5O.glb           5,551.09 kB
+dist/assets/s4000-4-Df8zwtIz.glb           5,571.40 kB
+dist/assets/s4000-3-BEWGdGn2.glb           5,592.13 kB
+dist/assets/s4000-3-ZFzsliGO.glb           5,666.14 kB
+dist/assets/s4000-3-DFnEbhA2.glb           5,679.44 kB
+dist/assets/s4000-4-aoveP2th.glb           5,705.00 kB
+dist/assets/s4000-4-BG9H_Jwk.glb           5,706.94 kB
+dist/assets/s4000-4-BeNmrZDH.glb           5,714.77 kB
+dist/assets/s4000-6-CteBhPN5.glb           5,718.48 kB
+dist/assets/s4000-3-D0x-LQEy.glb           5,740.49 kB
+dist/assets/s4000-4-C8410B0x.glb           5,751.23 kB
+dist/assets/s4000-6-UaOiCjMo.glb           5,841.22 kB
+dist/assets/s4000-2-DMvMFGUv.glb           5,855.82 kB
+dist/assets/s4000-6-VMNW29jZ.glb           5,885.58 kB
+dist/assets/s4000-6-Cg3ONzj1.glb           5,960.68 kB
+dist/assets/s4000-7-BdZkd6_i.glb           5,968.88 kB
+dist/assets/s4000-5-BXHpz0by.glb           5,975.30 kB
+dist/assets/s4000-6-CLcW-TLc.glb           5,978.59 kB
+dist/assets/s4000-6-DmJS9my3.glb           5,996.61 kB
+dist/assets/s4000-3-Ddu5RDh8.glb           5,997.15 kB
+dist/assets/s4000-6-CELNRoUQ.glb           6,013.91 kB
+dist/assets/s4000-7-zHtWOuDL.glb           6,029.93 kB
+dist/assets/s4000-5-yhMXnps6.glb           6,034.82 kB
+dist/assets/s4000-7-CcgsY5PB.glb           6,041.14 kB
+dist/assets/s4000-3-e-iq56kH.glb           6,044.14 kB
+dist/assets/s4000-5-eBBobK_O.glb           6,044.35 kB
+dist/assets/s4000-2-IEgipOqI.glb           6,048.75 kB
+dist/assets/s4000-6-CnQ8kFjD.glb           6,049.77 kB
+dist/assets/s4000-5-BCAPHnvv.glb           6,089.26 kB
+dist/assets/s4000-2-CkjgsnC1.glb           6,090.86 kB
+dist/assets/s4000-6-Bncl97Go.glb           6,110.19 kB
+dist/assets/s4000-5-DUn_9oVI.glb           6,112.75 kB
+dist/assets/s4000-5-BOb6ouEx.glb           6,118.14 kB
+dist/assets/s4000-3-CUldhY5G.glb           6,131.65 kB
+dist/assets/s4000-7-BdyHu6yU.glb           6,140.84 kB
+dist/assets/s4000-3-DiyXczdl.glb           6,158.36 kB
+dist/assets/s4000-7-zBcHNKGE.glb           6,177.59 kB
+dist/assets/s4000-7-C0xseCJ4.glb           6,201.49 kB
+dist/assets/style-DonQ1rHH.css                27.46 kB │ gzip:   6.27 kB
+dist/assets/S3000Configurator-DqWeQueJ.js     48.04 kB │ gzip:  14.99 kB
+dist/assets/S3000Configurator-DOAM_OEX.js     58.73 kB │ gzip:  20.76 kB
+dist/assets/S4000Configurator-C-JEoAay.js    484.98 kB │ gzip:  51.37 kB
+dist/assets/index-9grv3w7K.js              1,177.82 kB │ gzip: 333.08 kB
+✓ built in 3.55s
+{"version":"2026.09.29.4","files":124,"bytes":417698559}

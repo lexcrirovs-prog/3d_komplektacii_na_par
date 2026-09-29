@@ -1,0 +1,123 @@
+{
+  "version": "2026.09.29.4",
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "source_commit": "908bf87c0e71ea5e7980578fa7777f003d66804c",
+  "publication_commit": "2191efcf7039723787b39cf461961d733a528b06",
+  "manifestSha256": "b33b5ff4709fa890f456f28857b9a0e568ab8c7ca0f90e14a599d7b4134b9700",
+  "unit_tests": {
+    "passed": 42,
+    "failed": 0,
+    "selection_matrix": 45,
+    "report": "unit-tests.log"
+  },
+  "browser": {
+    "local": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-local.json",
+        "checks": 7,
+        "mode": "full",
+        "ratings": 9
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-local.json",
+        "checks": 6
+      },
+      "deaerator": {
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER",
+        "report": "browser-deaerator-local.json",
+        "checks": 4,
+        "selections": 10
+      }
+    },
+    "stage": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-stage.json",
+        "checks": 7,
+        "mode": "full",
+        "ratings": 9
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-stage.json",
+        "checks": 6
+      },
+      "deaerator": {
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER",
+        "report": "browser-deaerator-stage.json",
+        "checks": 4,
+        "selections": 10
+      }
+    },
+    "live": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-live.json",
+        "checks": 7,
+        "mode": "smoke",
+        "ratings": 3
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-live.json",
+        "checks": 6
+      },
+      "deaerator": {
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER",
+        "report": "browser-deaerator-live.json",
+        "checks": 4,
+        "selections": 10
+      }
+    }
+  },
+  "https": {
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 122,
+      "report": "http-stage.json"
+    },
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 122,
+      "report": "http-live.json"
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.09.29.4",
+      "candidateSha256": "a0c07775cdb913120773ae9d61bc75ddfb1322575669394d23ece6ba0e5f37d8",
+      "manifestSha256": "b33b5ff4709fa890f456f28857b9a0e568ab8c7ca0f90e14a599d7b4134b9700",
+      "backupSha256": "d2d3e6863a3cb8bd030391eb51227b384bb1a80d76d02b0aa79abb6bff8ab900",
+      "backupFiles": 120,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.09.29.4/"
+    },
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 124,
+      "transferredFiles": 32,
+      "reusedFiles": 92,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.09.29.4",
+      "transferBytes": 54369317
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.09.29.4",
+      "neighborsUnchanged": true,
+      "files": 124
+    }
+  },
+  "native_cad_changed": false,
+  "scope_limits": [
+    "Owner-confirmed visual selection applies to total capacity; the 4-5 t/h interval intentionally uses DA25/25 and >5-10 uses DA25/15.",
+    "Factory STEP geometry and port dimensions are preserved; valves and new floor stands use simplified geometry.",
+    "DA25/25 FV steam return connects to the heating-steam tee because its factory table has no dedicated FV nozzle.",
+    "Hydraulic sizing and PLC code are outside this release.",
+    "AutoCAD and Blender master assemblies retain their previously delivered versions.",
+    "Only a browser mobile viewport was checked, not a physical mobile device."
+  ]
+}

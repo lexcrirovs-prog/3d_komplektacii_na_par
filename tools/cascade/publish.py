@@ -18,6 +18,34 @@ def validate(prepared):
     assert report['state']['counts']['plus_cabinet']==5 and report['state']['counts']['deaerator']==1
     assert report['mode']=='full' and len(report['ratings'])==9
 p.validate_browser_acceptance=validate
+def refresh_prepared():
+    """Reuse a verified backup only after a complete live/neighbor drift check.
+
+    Neither the live site nor an existing stage is changed. A new unused
+    staging path is required. Cutover retains its own independent drift check.
+    """
+    prepared=json.loads((p.OUT/'prepared.json').read_text('utf8'))
+    before=json.loads((p.OUT/'before.json').read_text('utf8'))
+    assert prepared['version']==p.VERSION
+    assert p.sha((p.OUT/'previous-publication.tar.gz').read_bytes())==prepared['backupSha256']
+    result=p.remote(f'''import json,pathlib,hashlib
+root=pathlib.Path({p.ROOT!r});live=pathlib.Path({p.LIVE!r})
+assert root.resolve()==root and live.is_dir() and not live.is_symlink()
+assert not pathlib.Path({p.STAGE!r}).exists() and not pathlib.Path({p.BACKUP!r}).exists()
+actual={{x.relative_to(live).as_posix():hashlib.sha256(x.read_bytes()).hexdigest() for x in live.rglob('*') if x.is_file()}}
+assert actual=={before['files']!r},'LIVE_CHANGED_SINCE_BACKUP'
+for name,digest in {before['neighbors']!r}.items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest
+print(json.dumps({{'status':'UNCHANGED_LIVE_AND_VERIFIED_BACKUP','stage':{p.STAGE!r}}}))
+''')
+    manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
+    for row in manifest['files']:assert p.sha((p.REPO/'dist'/row['path']).read_bytes())==row['sha256']
+    with tarfile.open(p.OUT/'candidate.tar.gz','w:gz',compresslevel=1) as tar:
+        for source in sorted((p.REPO/'dist').rglob('*')):
+            if source.is_file():tar.add(source,arcname=source.relative_to(p.REPO/'dist').as_posix(),recursive=False)
+    prepared.update(candidateSha256=p.sha((p.OUT/'candidate.tar.gz').read_bytes()),manifestSha256=p.sha((p.REPO/'dist/DEPLOY_MANIFEST.json').read_bytes()))
+    p.save('prepared.json',prepared);p.save('backup-revalidation.json',result)
+    print('CANDIDATE_REFRESHED_WITH_REVALIDATED_BACKUP')
+
 def stage_delta():
     prepared=json.loads((p.OUT/'prepared.json').read_text('utf8'));before=json.loads((p.OUT/'before.json').read_text('utf8'))
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
@@ -51,4 +79,4 @@ with tarfile.open(archive,'r:gz') as tar:
 print(json.dumps({{'status':'STAGED_HASHES_VERIFIED','files':len(files),'transferredFiles':len(changed),'reusedFiles':len(files)-len(changed),'stage':str(stage)}}))
 ''')
     result['transferBytes']=delta.stat().st_size;p.save('staged.json',result);print(json.dumps(result))
-{'prepare':p.prepare,'stage':stage_delta,'verify-stage':lambda:p.verify_http(p.STAGE_URL),'cutover':p.cutover,'verify-live':lambda:p.verify_http(p.URL),'rollback':p.rollback}[sys.argv[1]]()
+{'prepare':p.prepare,'refresh-prepared':refresh_prepared,'stage':stage_delta,'verify-stage':lambda:p.verify_http(p.STAGE_URL),'cutover':p.cutover,'verify-live':lambda:p.verify_http(p.URL),'rollback':p.rollback}[sys.argv[1]]()

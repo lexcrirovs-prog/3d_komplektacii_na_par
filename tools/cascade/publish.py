@@ -5,10 +5,10 @@ import importlib.util,json,sys,tarfile,subprocess
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.09.29.2';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.09.29.3';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='df10e30767f33ddb61233d02ef595164ed68e0469f2d57f6bf21a1589231c3e3'
+p.BASELINE_HASH='92b55f7c096613e57bdb7bbbcc529511ec7202aa40235730cb023c49c2715f01'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
     report=json.loads((p.REPO/'artifacts/cascade-stage/report.json').read_text(encoding='utf8'))
@@ -21,6 +21,10 @@ def validate(prepared):
     assert doors['status']=='PASSED_DOORS_DISTRIBUTION_BROWSER' and doors['base']==p.STAGE_URL
     assert doors['manifestSha256']==prepared['manifestSha256'] and not doors['errors']
     assert len(doors['checks'])>=6
+    manifold=json.loads((p.REPO/'artifacts/manifold-stage/report.json').read_text(encoding='utf8'))
+    assert manifold['status']=='PASSED_MANIFOLD_DEAERATOR_BROWSER' and manifold['base']==p.STAGE_URL
+    assert manifold['manifestSha256']==prepared['manifestSha256'] and not manifold['errors']
+    assert len(manifold['checks'])>=3 and manifold['geometry']['diameter']==.426
 p.validate_browser_acceptance=validate
 def refresh_prepared():
     """Reuse a verified backup only after a complete live/neighbor drift check.

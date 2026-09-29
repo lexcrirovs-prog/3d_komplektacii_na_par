@@ -2,9 +2,10 @@ import type {FamilyPart} from './familyAssets.ts'
 import type {Trim} from './familyRules.ts'
 import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,greyOrigin,routeCenter,sharedParts,unitSpacing,viewPoint} from './cascadeRoutes.ts'
 import {distributionLayout} from './steamDistribution.ts'
+import {deaeratorRoutes} from './deaeratorRoutes.ts'
 
 export const legacyCabinetParts=new Set(['control_cabinet','cabinet_door','cabinet_interior','lc220','lc440','bc970','pr200','level_controller_1','level_controller_2','level_controller_3','plus_bc970'])
-export function correctedUnitParts(parts:FamilyPart[],power:number):FamilyPart[] {
+export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):FamilyPart[] {
   const result=parts.map(p=>({...p}))
   const set=(id:string,change:Partial<FamilyPart>)=>{const row=result.find(p=>p.id===id);if(row)Object.assign(row,change)}
   set('direct_inlet',{excludes:['economizer']})
@@ -25,6 +26,11 @@ export function correctedUnitParts(parts:FamilyPart[],power:number):FamilyPart[]
     if(previous>=0)result[previous]=data;else result.push(data)
   }
   for(const row of flashRoutes(power))result.push({...row,note:row.note||'',category:'Продувка и возврат пара',center:routeCenter(row)})
+  for(const row of deaeratorRoutes(power,count)) {
+    const data={...row,category:'Обвязка деаэратора',center:routeCenter(row),note:'Топология: 02-2026-ТХ, лист 3. Присоединения — по заводскому чертежу выбранного деаэратора.'}
+    const i=result.findIndex(p=>p.id===row.id);if(i>=0)result[i]=data;else result.push(data)
+  }
+  result.push({id:'da_fittings',label:'Арматура деаэратора',category:'Обвязка деаэратора',requires:['deaerator'],center:viewPoint([-5.5,-2.6,1.6]),note:'Запорные вентили, фильтр и регулирующий клапан ХОВ, обратные клапаны, регулирование греющего пара, рециркуляция насосов, отдельные перелив и слив. Упрощённая геометрия арматуры по тепловой схеме.'})
   return result
 }
 export function partInUnit(part:FamilyPart,unit:number,count:number,photoCabinet:boolean) {
@@ -47,12 +53,12 @@ export function extraParts(power:number,count:number,trim:Trim,center:number[]):
     result.push({id:'cascade_distribution_fittings',label:'Арматура и опоры паровой гребёнки',category:'Распределение пара',note:'Ввод, выходы к потребителям, манометр. Компоновка по видео 29.09.2026 и 02-2026-ТХ, лист 8.',center:viewPoint([d.x,4.5,1.85])})
     result.push({id:'cascade_distribution_trap',label:'Конденсатоотводчик паровой гребёнки',category:'Возврат конденсата',note:'Фильтр, запорные вентили, конденсатоотводчик, обратный клапан и закрытый байпас. Показана имеющаяся геометрия A31 DN25; подбор типоразмера выполняется по расходу и перепаду.',center:viewPoint(d.trap)})
     const outlet=result.find(p=>p.id==='cascade_distribution_drain_out')!
-    outlet.note='Граница подключения к внешнему возврату конденсата в деаэратор по тепловой схеме. Линия не объединена с продувкой котлов.'
+    outlet.note='Два кармана Ø89 → переходы Ø48,3 (DN40), вентили, фильтр, конденсатоотводчик, обратный клапан. Возврат к деаэратору при его выборе; иначе внешняя граница. Байпас показан закрытым.'
   }
   return result
 }
 export function configurationParts(parts:FamilyPart[],power:number,count:number,trim:Trim):FamilyPart[] {
-  const first=[...correctedUnitParts(parts,power),...extraParts(power,count,trim,parts.find(p=>p.id==='control_cabinet')!.center)]
+  const first=[...correctedUnitParts(parts,power,count),...extraParts(power,count,trim,parts.find(p=>p.id==='control_cabinet')!.center)]
   const result=[...first]
   for(let unit=1;unit<count;unit++)result.push(...first.filter(p=>!p.id.startsWith('cascade_')&&partInUnit(p,unit,count,trim!=='standard')).map(p=>({...p,id:`unit${unit+1}:`+p.id,label:`Котёл ${unit+1} · `+p.label,center:[p.center[0]+unitSpacing*unit,p.center[1],p.center[2]]})))
   return result

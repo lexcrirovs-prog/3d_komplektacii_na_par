@@ -1,0 +1,73 @@
+{
+  "version": "2026.09.29.3",
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "projectUrl": "https://disk.yandex.ru/d/dl5RirewgbCltw",
+  "projectIndex": "../cascade-v2026.09.29.1/source-index.json",
+  "sources": [
+    {
+      "file": "2026-09-29_16-33-42.png",
+      "bytes": 5133821,
+      "sha256": "4c820d48929a024f505a9c23dbbd920dfc44d02fdbbf04ea18d1c6161c47b277",
+      "use": "Two lower condensate pockets and exposed drain assembly; diameters from user brief"
+    },
+    {
+      "file": "PR.15.01.033СБ Деаэратор ДА-15_4.idw.pdf",
+      "bytes": 554779,
+      "sha256": "ee480821ef1e70221099850719b87156ada23e3f742a07d47633a455591b4bf8",
+      "use": "Factory DA15 nozzle table: D feed, E overflow, L flash, N hot condensate, M recirculation"
+    },
+    {
+      "file": "PR.15.01.121СБ Колонка деаэрационая КДА-15.idw.pdf",
+      "bytes": 153844,
+      "sha256": "7ab6dc43613d7b53b50333db3fb54cec2ed2f083316a7cb23cae6ed851e6ccbf",
+      "use": "DA15 column water, condensate and vent nozzle assignments"
+    },
+    {
+      "file": "PR.3.01.044СБ Деаэратор ДА-3.pdf",
+      "bytes": 224489,
+      "sha256": "2969d058fb8040a028b76994a35a112a5ea3b5449b64f3964f7906b2fe42c948",
+      "use": "DA3 own nozzle assignments, including G steam and T condensate"
+    },
+    {
+      "file": "Лист 3.pdf",
+      "bytes": 119574,
+      "sha256": "3a713a95de5f7070d2197b04bbf1ed546472c2ae9ecb91c4f144a804c7ed4001",
+      "use": "02-2026-TX sheet 3: deaerator circuit or fittings specification"
+    },
+    {
+      "file": "Лист 6.pdf",
+      "bytes": 21868,
+      "sha256": "d317adb7d777735ea5985861aff9998577acfa20c0e97f7e1b5519035bc80070",
+      "use": "02-2026-TX sheet 6: deaerator circuit or fittings specification"
+    },
+    {
+      "file": "Лист 7.pdf",
+      "bytes": 22870,
+      "sha256": "3120696323d4b735337bd0290493fa12724eceaec8aaf3788286191a3d5c6b28",
+      "use": "02-2026-TX sheet 7: deaerator circuit or fittings specification"
+    },
+    {
+      "file": "Лист 8.pdf",
+      "bytes": 20078,
+      "sha256": "25055352cd6bc1d8044138a5f3d2836de4dcf8f1454eda8bcec66a7d8a9f8c35",
+      "use": "02-2026-TX sheet 8: deaerator circuit or fittings specification"
+    }
+  ],
+  "standard": {
+    "designation": "GOST R 71918-2024",
+    "effectiveDate": "2025-03-01",
+    "status": "ACTIVE_VERIFIED_2026_09_29",
+    "registry": "https://protect.gost.ru/gost/details/c31a94b2-d2ae-4ee0-bf3a-559dff0c9bb4",
+    "text": "https://files.stroyinf.ru/Data/843/84353.pdf",
+    "correction": "IUS 11-2025",
+    "applied": [
+      "table 1: water green, steam red",
+      "5.4: identification sections",
+      "5.9: 4D / 2D width",
+      "8.4: arrows follow flow",
+      "9.6: RAL references"
+    ],
+    "scope": "Identification colors and direction markings, not full industrial warning-sign certification"
+  }
+}

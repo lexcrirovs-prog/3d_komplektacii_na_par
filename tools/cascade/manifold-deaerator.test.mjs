@@ -1,0 +1,62 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {deaeratorPorts} from '../../src/components/BoilerConfigurator/deaeratorPorts.ts';
+import {deaeratorRoutes,condensateBoundary} from '../../src/components/BoilerConfigurator/deaeratorRoutes.ts';
+import {distributionLayout,distributionRoutes} from '../../src/components/BoilerConfigurator/steamDistribution.ts';
+import {identificationSections,routeMedium} from '../../src/components/BoilerConfigurator/pipeIdentification.ts';
+import {cascadeRoutes,flashRoutes} from '../../src/components/BoilerConfigurator/cascadeRoutes.ts';
+const powers=[500,1000,1500,2000,2500,3000,3500,4000,5000];
+
+test('DA15 feed uses bottom D DN100; overflow E and FV L DN32 remain distinct',()=>{
+ const p=deaeratorPorts(4000),rows=deaeratorRoutes(4000,5),find=id=>rows.find(r=>r.id===id);
+ assert.deepEqual(p.feed,[-3.65,1.525,1.08614]);assert.equal(p.feedDN,100);
+ assert.deepEqual(find('deaerator_feed').points[0],p.feed);
+ assert.deepEqual(find('da_overflow').points[0],p.overflow);
+ assert.deepEqual(p.flash,[-3.65,-1.325,2.65214]);
+ assert.notDeepEqual(p.feed,p.overflow);assert.notDeepEqual(p.flash,[-3.65,.975,2.65214]);
+});
+test('All family DA routes terminate on factory connections; only shared DA needs them',()=>{
+ for(const power of powers)for(const count of [1,2,3,4,5]) {
+  const p=deaeratorPorts(power),rows=deaeratorRoutes(power,count),find=id=>rows.find(r=>r.id===id);
+  for(const [id,port] of [['da_makeup','water'],['da_condensate','hotCondensate'],['da_heating_main','steam'],['da_heating_barb','barb'],['da_recirculation_header','recirculation']])assert.deepEqual(find(id).points.at(-1),p[port]);
+  if(power>1500)assert.deepEqual(find('da_process_condensate').points.at(-1),p.condensate);
+  assert.equal(rows.filter(r=>r.id.startsWith('da_recirculation_pump_')).length,count);
+  for(const r of rows)assert.deepEqual(r.requires,['deaerator']);
+  assert.deepEqual(find('deaerator_feed').points.at(-1),[-2.1,2.35,.45]);
+  assert.deepEqual(find('da_condensate').points[0],condensateBoundary);
+ }
+});
+test('DA3 flash joins one shared steam riser; DA15 has separate hot and cold condensate entries',()=>{
+ const da3=deaeratorRoutes(500),flash=flashRoutes(500)[0],main=da3.find(r=>r.id==='da_heating_main');
+ const tee=flash.points.at(-1);
+ assert(main.points.some(p=>p.every((v,i)=>v===tee[i])));
+ assert(!flash.points.some(p=>p.every((v,i)=>v===main.points.at(-1)[i])));
+ const p=deaeratorPorts(4000);
+ assert.notDeepEqual(p.condensate,p.hotCondensate);
+ assert.deepEqual(p.recirculation,[-3.65,-.175,2.65214]);
+});
+test('426 mm manifold has two 89 mm pockets with exposed reducers before the trap circuit',()=>{
+ for(const count of [2,3,4,5]) {
+  const d=distributionLayout(count),rows=distributionRoutes(count),find=id=>rows.find(r=>r.id===id);
+  assert.equal(find('cascade_distribution').radius*2,.426);
+  for(const i of [1,2]) {
+   const pocket=find('cascade_distribution_pocket_'+i),leg=find('cascade_distribution_leg_'+i);
+   assert.equal(pocket.radius*2,.089);assert.equal(leg.radius*2,.0483);
+   assert.equal(pocket.points.at(-1)[2],1.05);assert.equal(leg.points[0][2],.91);
+   assert(leg.points.at(-1)[0]>d.x+.3);
+  }
+  assert.deepEqual(find('cascade_distribution_return').points[0],find('cascade_distribution_drain_out').points.at(-1));
+  assert.deepEqual(find('cascade_distribution_return').points.at(-1),condensateBoundary);
+  assert.deepEqual(find('cascade_distribution_return').requires,['deaerator']);assert.deepEqual(find('cascade_distribution_return_external').excludes,['deaerator']);
+ }
+});
+test('ГОСТ identification segments have required width; arrows follow each declared flow',()=>{
+ for(const r of [...cascadeRoutes(4000,5),...deaeratorRoutes(4000,5)])for(const s of identificationSections(r)) {
+  assert(s.width+1e-10>=r.radius*2*(r.radius*2>.3?2:4));
+  assert(Math.abs(Math.hypot(...s.direction)-1)<1e-8);
+  assert(s.b.every((v,i)=>Math.abs(v-s.a[i]-s.direction[i]*s.width)<1e-8));
+ }
+ assert.equal(routeMedium('cascade_header'),'steam');assert.equal(routeMedium('cascade_distribution_return'),'condensate');
+ assert.equal(routeMedium('cascade_tds_header'),'water');assert.equal(routeMedium('cascade_signal_1'),undefined);
+ const rows=cascadeRoutes(4000,5);for(const id of ['cascade_tds_header','cascade_bottom_header'])assert(rows.find(r=>r.id===id).points[0][0]>rows.find(r=>r.id===id).points.at(-1)[0]);
+});

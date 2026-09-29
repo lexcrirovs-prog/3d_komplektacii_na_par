@@ -1,14 +1,14 @@
-import {BufferGeometry,CanvasTexture,CylinderGeometry,Group,Mesh,MeshStandardMaterial,Quaternion,RingGeometry,SphereGeometry,TorusGeometry,Vector3,type Object3D} from 'three'
+import {BoxGeometry,BufferGeometry,CanvasTexture,CylinderGeometry,Group,Mesh,MeshStandardMaterial,Quaternion,RingGeometry,SphereGeometry,TorusGeometry,Vector3,type Object3D} from 'three'
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import {viewPoint,type Point3} from './cascadeRoutes'
 import {distributionLayout} from './steamDistribution'
 
 const colors:Record<string,string>={steel:'#76828a',blue:'#235b9a',dark:'#303940',silver:'#a4acb3',white:'#ececec'}
-function item(g:BufferGeometry,color='steel') {
+export function item(g:BufferGeometry,color='steel') {
   const m=new Mesh(g,new MeshStandardMaterial({color:colors[color]||color,metalness:.4,roughness:.46}))
   m.userData.generatedGeometry=true;return m
 }
-function cylinder(a:Point3,b:Point3,r:number,color='steel',r2=r) {
+export function cylinder(a:Point3,b:Point3,r:number,color='steel',r2=r) {
   const start=new Vector3(...viewPoint(a)),end=new Vector3(...viewPoint(b)),d=end.clone().sub(start)
   const g=new CylinderGeometry(r2,r,d.length(),20)
   g.applyQuaternion(new Quaternion().setFromUnitVectors(new Vector3(0,1,0),d.normalize()))
@@ -18,7 +18,7 @@ function torus(center:Point3,normal:Point3,r:number,t:number,color='dark') {
   const g=new TorusGeometry(r,t,6,24),n=new Vector3(...viewPoint(normal)).normalize()
   g.applyQuaternion(new Quaternion().setFromUnitVectors(new Vector3(0,0,1),n));g.translate(...viewPoint(center));return item(g,color)
 }
-function flange(root:Group,p:Point3,normal:Point3,r:number,bore:number) {
+export function flange(root:Group,p:Point3,normal:Point3,r:number,bore:number) {
   const axis=new Vector3(...viewPoint(normal)).normalize(),center=new Vector3(...viewPoint(p))
   const q=new Quaternion().setFromUnitVectors(new Vector3(0,0,1),axis)
   for(const side of [-1,1]) {
@@ -43,7 +43,7 @@ function valve(root:Group,p:Point3,vertical:boolean,s=1) {
   root.add(cylinder(p,stem,.014*s,'silver'),torus(stem,vertical?[1,0,0]:[0,0,1],.093*s,.010*s))
   for(const sign of [-1,1])root.add(cylinder(stem,vertical?[stem[0],y+sign*.09*s,z]:[x+sign*.09*s,y,stem[2]],.008*s,'dark'))
 }
-function pressureGauge(root:Group,p:Point3) {
+export function pressureGauge(root:Group,p:Point3) {
   const [x,y,z]=p
   root.add(cylinder([x,y,z-.16],p,.007,'silver'))
   // Dial faces the operator, not into the insulated pipe.
@@ -56,7 +56,7 @@ function pressureGauge(root:Group,p:Point3) {
   const dial=item(g,'white');(dial.material as MeshStandardMaterial).map=t;dial.userData.generatedTexture=true;root.add(dial)
 }
 
-function mergeStaticFittings(root:Group) {
+export function mergeStaticFittings(root:Group) {
   const batches=new Map<string,Mesh[]>()
   for(const child of root.children)if(child instanceof Mesh&&!child.userData.generatedTexture) {
     const material=child.material as MeshStandardMaterial,key=material.color.getHexString()+':'+material.side
@@ -72,32 +72,53 @@ function mergeStaticFittings(root:Group) {
   }
 }
 
+export function axisValve(root:Group,p:Point3,axis:Point3,scale=.6,actuator=false) {
+  const assembly=new Group();valve(assembly,[0,0,0],false,scale)
+  if(actuator)assembly.add(item(new BoxGeometry(.13,.14,.10).translate(0,.23*scale+.07,0),'dark'))
+  const q=new Quaternion().setFromUnitVectors(new Vector3(1,0,0),new Vector3(...viewPoint(axis)).normalize())
+  for(const child of [...assembly.children])if(child instanceof Mesh) {
+    child.geometry.applyQuaternion(q);child.geometry.translate(...viewPoint(p));root.add(child)
+  }
+}
+
+export function strainer(root:Group,p:Point3,s=.6) {
+  const [x,y,z]=p
+  root.add(cylinder([x-.10*s,y,z],[x+.10*s,y,z],.052*s,'blue'),cylinder(p,[x+.14*s,y,z-.17*s],.042*s,'blue'),cylinder([x+.12*s,y,z-.15*s],[x+.17*s,y,z-.20*s],.05*s,'silver'))
+}
+
 /** Valve arrangement from TX sheet 8 and video 00:56–01:05. Manufacturer
  * A31 geometry is reused as the available visual trap, not claimed as DN15. */
 export function distributionHardware(count:number,sourceTrap:Object3D) {
   const root=new Group();root.name='cascade_distribution_fittings'
-  const {x,z,y0,y1,outlets,drainY:y,drainZ:h,trap}=distributionLayout(count)
-  root.add(cylinder([x,y0-.012,z],[x,y0+.012,z],.159))
-  flange(root,[x,y1,z],[0,1,0],.205,.1095)
+  const {x,z,y0,y1,outlets,radius,drainY:y,drainZ:h,trap,takeoffs}=distributionLayout(count)
+  root.add(cylinder([x,y0-.012,z],[x,y0+.012,z],radius))
+  flange(root,[x,y1,z],[0,1,0],.255,.1095)
   valve(root,[x,6.55,2.9],true,2)
   outlets.forEach(yy=>{valve(root,[x,yy,2.37],true);flange(root,[x+1.5,yy,2.8],[1,0,0],.102,.048)})
   pressureGauge(root,[x,5.68,z+.31])
-  for(const yy of [3.08,5.88]) {
-    root.add(cylinder([x,yy,.07],[x,yy,z-.18],.045),cylinder([x,yy,.02],[x,yy,.07],.17,'silver'))
-    root.add(torus([x,yy,z],[0,1,0],.169,.009,'silver'))
+  for(const yy of [3.65,5.20]) {
+    for(const xx of [x-.28,x+.28]){
+      root.add(item(new BoxGeometry(.06,z-radius-.03,.06).translate(...viewPoint([xx,yy,(z-radius-.03)/2])),'dark'))
+      root.add(item(new BoxGeometry(.22,.025,.22).translate(...viewPoint([xx,yy,.0125])),'silver'))
+    }
+    root.add(item(new BoxGeometry(.66,.08,.09).translate(...viewPoint([x,yy,z-radius-.05])),'dark'))
+    root.add(torus([x,yy,z],[0,1,0],radius+.008,.008,'silver'))
   }
+  // Two visible drain pockets. The 89 -> 48.3 reducers precede the stop valves.
+  for(const yy of takeoffs)root.add(cylinder([x,yy,1.05],[x,yy,.91],.0445,'steel',.02415))
+  root.add(cylinder([x+.59,y,h],[x+.69,y,h],.02415,'steel',.01685))
   // Trap in/out are X +/-80 mm in the supplied A31 model. Rotate the whole
   // factory model about its port center so flow goes left -> right here.
   const trapRoot=new Group();trapRoot.name='cascade_distribution_trap'
   trapRoot.position.set(...viewPoint(trap));trapRoot.rotation.y=Math.PI
   const actual=sourceTrap.clone(true);actual.name='distribution_trap_model';actual.position.sub(new Vector3(3.02,.48,-4.35));actual.visible=true;trapRoot.add(actual);root.add(trapRoot)
-  for(const xx of [x+.22,x+1.25])valve(root,[xx,y,h],false,.34)
-  valve(root,[x+.72,y+.42,h],false,.34)
+  for(const xx of [x+.78,x+1.65])valve(root,[xx,y,h],false,.34)
+  valve(root,[x+1.1,y-.4,h],false,.34)
   // Y-strainer, removable plug, wafer check valve, and a low drain stub.
-  root.add(cylinder([x+.36,y,h],[x+.51,y,h],.030,'blue'),cylinder([x+.39,y,h],[x+.50,y,h-.115],.026,'blue'),cylinder([x+.49,y,h-.11],[x+.52,y,h-.14],.031,'silver'))
-  root.add(cylinder([x+1.0,y,h],[x+1.055,y,h],.034,'blue'))
-  flange(root,[x+.98,y,h],[1,0,0],.055,.014);flange(root,[x+1.075,y,h],[1,0,0],.055,.014)
-  flange(root,[x+2.05,6.55,h],[1,0,0],.055,.014)
+  strainer(root,[x+.92,y,h],.52)
+  root.add(cylinder([x+1.40,y,h],[x+1.455,y,h],.034,'blue'))
+  flange(root,[x+1.38,y,h],[1,0,0],.055,.014);flange(root,[x+1.475,y,h],[1,0,0],.055,.014)
+  flange(root,[x+1.92,6.9,h],[0,1,0],.055,.014)
   mergeStaticFittings(root)
   return root
 }

@@ -23,8 +23,8 @@ test('Distribution supply starts on the collector; bottom drainage terminates at
  for(const count of [2,3,4,5]) {
   const d=distributionLayout(count),rows=distributionRoutes(count),find=id=>rows.find(r=>r.id===id);
   near(find('cascade_distribution_supply').points[0],[d.last+.8,5.6,4.55]);
-  near(find('cascade_distribution_supply').points.at(-1),find('cascade_distribution').points.at(-1));
-  near(find('cascade_distribution_drain_in').points[0],[d.x,d.drainY,d.z]);
+  near(find('cascade_distribution_supply').points.at(-1),find('cascade_distribution').points[0]);
+  near(find('cascade_distribution_pocket_1').points[0],[d.x,d.takeoffs[0],d.z]);
   near(find('cascade_distribution_drain_in').points.at(-1),[d.trap[0]-.08,d.trap[1],d.trap[2]]);
   near(find('cascade_distribution_drain_out').points[0],[d.trap[0]+.08,d.trap[1],d.trap[2]]);
   assert(d.x>d.last+3.8);assert(d.z<4.55);

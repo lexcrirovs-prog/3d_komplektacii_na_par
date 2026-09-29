@@ -88,7 +88,7 @@ test('Cascade retains one shared equipment set and unique identities for each un
 test('FV upper return is separate from the retained DN25 safety valve',()=>{
  for(const power of powers) {
   const rows=flashRoutes(power);near(rows[0].points[0],[3.65,3.65,1.53]);
-  near(rows[0].points.at(-1),power<=1500?[-3.832,.3,.880313]:[-3.65,.975,2.65214]);
+  near(rows[0].points.at(-1),power<=1500?[-4.35,.3,3.2]:[-3.65,-1.325,2.65214]);
   assert(!rows.some(r=>r.id==='flash_steam_common'));
  }
 });

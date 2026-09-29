@@ -1,5 +1,6 @@
 import {cascadeConnections} from './cascadeConnections.ts'
 import {distributionRoutes} from './steamDistribution.ts'
+import {deaeratorPorts} from './deaeratorPorts.ts'
 
 export type Point3 = [number,number,number]
 export type Route = {id:string;label:string;points:Point3[];radius:number;color?:string;requires?:string[];excludes?:string[];note?:string}
@@ -29,8 +30,8 @@ export function cascadeRoutes(power:number,count:number):Route[] {
   add('cascade_header','Общий паровой коллектор',[[-.65,headerY,headerZ],[last+.8,headerY,headerZ]],.1095,'steel')
   add('cascade_feed_header','Общий подвод от деаэратора к насосам',[[-2.1,2.35,.45],[-1.9,2.35,.45],[-1.9,feedY,.45],[last+1.65,feedY,.45]],.054,'green')
   // Separate collection systems: never join periodic blowdown to the FV line.
-  add('cascade_tds_header','Коллектор непрерывной продувки → FV',[[1.56,tdsY,.92],[last+1.56,tdsY,.92]],.034,'dark')
-  add('cascade_bottom_header','Коллектор периодической продувки → BDV',[[2.9,bottomY,.125],[last+2.9,bottomY,.125]],.037,'dark')
+  add('cascade_tds_header','Коллектор непрерывной продувки → FV',[[last+1.56,tdsY,.92],[1.56,tdsY,.92]],.034,'dark')
+  add('cascade_bottom_header','Коллектор периодической продувки → BDV',[[last+2.9,bottomY,.125],[2.9,bottomY,.125]],.037,'dark')
   // First boiler uses its existing source-bound connections to the two vessels.
   add('cascade_bottom_return','Подвод коллектора продувки к BDV',[[2.9,bottomY,.125],[2.9,3.1,.125]],.037,'dark')
   add('cascade_tds_return','Подвод коллектора непрерывной продувки',[[1.56,tdsY,.92],[1.56,2.95,.92]],.034,'dark')
@@ -71,13 +72,13 @@ export function correctedFeedRoutes(power:number):Route[] {
 
 /** FV O DN50 is separate from its safety valve on the small DN25 flange.
  * DA3: factory drawing PR.3.01.044, inlet Г DN65, STEP solids 26/27.
- * DA15: existing registered upper DN50, with the accepted +1 m support lift.
+ * DA15: factory Л DN32, distinct from Н (hot condensate), with +1 m support lift.
  */
 export function flashRoutes(power:number):Route[] {
   const start:Point3=[3.65,3.65,1.53],boundary:Point3=[-2.2,5.1,4.05]
   const tail:Point3[]=power<=1500
-    ?[[-4.15,5.1,4.05],[-4.15,.3,4.05],[-4.15,.3,.880313],[-3.832,.3,.880313]]
-    :[[-3.65,5.1,4.05],[-3.65,.975,4.05],[-3.65,.975,2.65214]]
+    ?[[-4.35,5.1,4.05],[-4.35,.3,4.05],[-4.35,.3,3.2]] // join the one shared steam riser, never duplicate it
+    :[[-4.65,5.1,4.05],[-4.65,-1.325,4.05],[-3.65,-1.325,4.05],deaeratorPorts(power).flash]
   const common:Point3[]=[start,[3.65,3.65,4.05],[3.65,5.1,4.05],boundary]
   return [
     {id:'fv_return_to_da',label:'Вторичный пар FV → деаэратор',points:[...common,...tail],radius:.0285,color:'steel',requires:['fv','deaerator'],note:'02-2026-ТХ, лист 3: пар из верхнего DN50 FV возвращается в деаэратор. Предохранительный клапан остаётся на малом DN25.'},

@@ -2,8 +2,9 @@ import {BoxGeometry,BufferGeometry,CurvePath,CylinderGeometry,Group,LineCurve3,M
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import {cascadeRoutes,greyOrigin,unitSpacing,viewPoint,type Point3,type Route} from './cascadeRoutes'
 import {distributionHardware} from './distributionGeometry'
+import {pipeMarkers} from './pipeMarkers'
 
-const palette:Record<string,string>={steel:'#73848c',green:'#456e52',dark:'#46525a',black:'#252c30',zinc:'#adb5b8',white:'#d5ddde'}
+const palette:Record<string,string>={steel:'#647680',green:'#237954',dark:'#46525a',black:'#252c30',zinc:'#687780',white:'#d5ddde'}
 function mesh(geometry:BufferGeometry,color:string) {
   const object=new Mesh(geometry,new MeshStandardMaterial({color:palette[color]||color,roughness:color==='black'?.75:.45,metalness:color==='black'?0:.35}))
   object.userData.generatedGeometry=true
@@ -13,7 +14,7 @@ function box(center:Point3,size:Point3) {
   return new BoxGeometry(size[0],size[2],size[1]).translate(...viewPoint(center))
 }
 function pipePath(points:Point3[],radius:number) {
-  const vertices=points.map(p=>new Vector3(...viewPoint(p))),path=new CurvePath<Vector3>()
+  const vertices=points.filter((p,i)=>i===0||p.some((v,k)=>Math.abs(v-points[i-1][k])>1e-8)).map(p=>new Vector3(...viewPoint(p))),path=new CurvePath<Vector3>()
   let last=vertices[0]
   for(let i=1;i<vertices.length-1;i++) {
     const p=vertices[i],before=p.clone().sub(vertices[i-1]),after=vertices[i+1].clone().sub(p)
@@ -36,7 +37,7 @@ export function routeObject(row:Route) {
     }
   }
   const geometry=mergeGeometries(geometries)!;geometries.forEach(g=>g.dispose())
-  group.add(mesh(geometry,row.color||'steel'));return group
+  group.add(mesh(geometry,row.color||'steel'),pipeMarkers(row));return group
 }
 export function cableSupport(top:Point3) {
   const root=new Group(),[x,y,z]=top

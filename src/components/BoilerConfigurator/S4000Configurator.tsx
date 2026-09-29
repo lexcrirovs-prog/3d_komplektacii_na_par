@@ -85,7 +85,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
   cabinetDoors: ReadonlySet<number>; boilerDoors: ReadonlySet<number>; onReady:()=>void; asset:FamilyAsset;count:number;cascadeOpen:boolean;onDoor:(door:DoorTarget)=>void
 }) {
   const power=Number(asset.id),cascade=count>1,openingData=asset.opening
-  const parts=useMemo(()=>correctedUnitParts(asset.parts,power),[asset])
+  const parts=useMemo(()=>correctedUnitParts(asset.parts,power,count),[asset,count])
   const trim:Trim=enabled.has('comfort_plus')?'comfort_plus':enabled.has('comfort')?'comfort':'standard'
   const photo=trim!=='standard'
   const byId=useMemo(()=>new Map(configurationParts(asset.parts,power,count,trim).map(p=>[p.id,p])),[asset,count,trim])
@@ -101,7 +101,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     copy.name = 'rating-assembly'
     const unit=new Group();unit.name='boiler_unit_1';copy.add(unit)
     for (const gltf of gltfs) unit.add(gltf.scene.clone(true))
-    applyFeedCorrection(unit,power)
+    applyFeedCorrection(unit,power,count)
     copy.updateMatrixWorld(true)
     for (const motion of openingData.groups) {
       const hinge = new Group()
@@ -195,6 +195,10 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     }
     const cascadeCabinet=scene.getObjectByName('cascade_cabinet');if(cascadeCabinet)cascadeCabinet.visible=showAccessories
     const piping=scene.getObjectByName('cascade_piping');if(piping)piping.visible=showAccessories
+    if(piping)for(const part of byId.values())if(part.id.startsWith('cascade_')) {
+      const obj=piping.getObjectByName(part.id)
+      if(obj)obj.visible=isPartVisible(part,enabled,showAccessories,optionalIds)
+    }
     invalidate()
   }, [scene, enabled, selected, showAccessories, dragging, invalidate])
   useEffect(() => {
@@ -347,6 +351,10 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       requestView([x+7.5,5.3,.5],[x+.55,2.2,-4.8])
       return
     }
+    if(id==='deaerator') {
+      requestView(config.power<=1500?[-9.7,5.2,7.2]:[-11.5,7.4,9],config.power<=1500?[-4.0,1.65,-.1]:[-4.5,2.5,-.4])
+      return
+    }
     if (!options.some(o => o.id === id) && id !== 'boiler') setShowAccessories(true)
     if (id.startsWith('feed_') && ['feed_direct', 'feed_to_economizer', 'feed_from_economizer', 'feed_piping'].includes(id)) {
       requestView([6.3,4.6,-6.5], [.3,1.45,-1.4])
@@ -406,7 +414,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
       {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*count} КГ ПАРА В ЧАС</span><h1>{cascade?`Каскад ${count} × S-${config.power}.`:`S-${config.power} в сборе.`}</h1><p>{cascade?'Свой шкаф у каждого котла. Общий шкаф каскада и паровой коллектор.':`Корпус и патрубки — по заводской модели ${asset.model}.`}<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .03, far: 250 }} dpr={[1,1.6]}
-        gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
+        gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#f2f3ef')}
         onPointerMissed={() => setSelected(null)}>
         <ambientLight intensity={.7} />
         <directionalLight position={[-4,8,5]} intensity={2.5} castShadow shadow-mapSize={[1024,1024]} shadow-normalBias={.025} />
@@ -428,6 +436,11 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         <FamilyCamera request={view} ready={sceneReady} cubeRef={cubeRef} />
       </Canvas></ModelBoundary>
       <Loading />
+      <div className="s3-media-legend" aria-label="Маркировка трубопроводов по ГОСТ Р 71918-2024">
+        <span><i style={{background:'#c52d26'}} />Пар</span>
+        <span><i style={{background:'#008b59'}} />Вода · конденсат</span>
+        <small>Стрелки — направление потока</small>
+      </div>
       <ViewCube cubeRef={cubeRef} onView={standardView} />
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
         <button onClick={() => { setSelected(null); cabinetView() }}>Шкаф</button>

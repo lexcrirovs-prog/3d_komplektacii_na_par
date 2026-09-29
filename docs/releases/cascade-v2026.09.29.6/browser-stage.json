@@ -1,0 +1,70 @@
+{
+  "status": "PASSED_VIEWCUBE_BROWSER",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.09.29.6/",
+  "manifestSha256": "2348aa6e6531d9ed5a02643241f79f13458616a6a76095a542bdc4073c6e1db3",
+  "scenarios": [
+    {
+      "power": 500,
+      "count": 1,
+      "width": 128,
+      "height": 128,
+      "patches": 26,
+      "targets": 26,
+      "edges": 12,
+      "faces": 6,
+      "edgeViews": 12,
+      "corners": 8,
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "orbit": true,
+      "home": true,
+      "allPresetsFit": true
+    },
+    {
+      "power": 3000,
+      "count": 1,
+      "width": 128,
+      "height": 128,
+      "patches": 26,
+      "targets": 26,
+      "edges": 12,
+      "faces": 6,
+      "edgeViews": 12,
+      "corners": 8,
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "orbit": true,
+      "home": true,
+      "allPresetsFit": true
+    },
+    {
+      "power": 4000,
+      "count": 5,
+      "width": 128,
+      "height": 128,
+      "patches": 26,
+      "targets": 26,
+      "edges": 12,
+      "faces": 6,
+      "edgeViews": 12,
+      "corners": 8,
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "orbit": true,
+      "home": true,
+      "allPresetsFit": true
+    }
+  ],
+  "mobile": {
+    "width": 390,
+    "cubeWidth": 108,
+    "edgeClick": true
+  },
+  "errors": []
+}

@@ -1,0 +1,189 @@
+{
+  "version": "2026.09.29.6",
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "source_commit": "499e67e24f2132bd894a82e4dc23b5de02dcd783",
+  "publication_commit": "4cc45874748741c1e2ddcdae7e13b7a0470e90b2",
+  "manifestSha256": "2348aa6e6531d9ed5a02643241f79f13458616a6a76095a542bdc4073c6e1db3",
+  "build": "PASSED_TYPESCRIPT_VITE",
+  "browser": {
+    "live": {
+      "mobile": {
+        "width": 390,
+        "cubeWidth": 108,
+        "edgeClick": true
+      },
+      "scenarios": [
+        {
+          "power": 500,
+          "count": 1,
+          "width": 128,
+          "height": 128,
+          "patches": 26,
+          "targets": 26,
+          "edges": 12,
+          "faces": 6,
+          "edgeViews": 12,
+          "corners": 8,
+          "keyboard": [
+            "Enter",
+            "Space"
+          ],
+          "orbit": true,
+          "home": true,
+          "allPresetsFit": true
+        },
+        {
+          "power": 3000,
+          "count": 1,
+          "width": 128,
+          "height": 128,
+          "patches": 26,
+          "targets": 26,
+          "edges": 12,
+          "faces": 6,
+          "edgeViews": 12,
+          "corners": 8,
+          "keyboard": [
+            "Enter",
+            "Space"
+          ],
+          "orbit": true,
+          "home": true,
+          "allPresetsFit": true
+        },
+        {
+          "power": 4000,
+          "count": 5,
+          "width": 128,
+          "height": 128,
+          "patches": 26,
+          "targets": 26,
+          "edges": 12,
+          "faces": 6,
+          "edgeViews": 12,
+          "corners": 8,
+          "keyboard": [
+            "Enter",
+            "Space"
+          ],
+          "orbit": true,
+          "home": true,
+          "allPresetsFit": true
+        }
+      ],
+      "status": "PASSED_VIEWCUBE_BROWSER",
+      "report": "browser-live.json"
+    },
+    "stage": {
+      "mobile": {
+        "width": 390,
+        "cubeWidth": 108,
+        "edgeClick": true
+      },
+      "scenarios": [
+        {
+          "power": 500,
+          "count": 1,
+          "width": 128,
+          "height": 128,
+          "patches": 26,
+          "targets": 26,
+          "edges": 12,
+          "faces": 6,
+          "edgeViews": 12,
+          "corners": 8,
+          "keyboard": [
+            "Enter",
+            "Space"
+          ],
+          "orbit": true,
+          "home": true,
+          "allPresetsFit": true
+        },
+        {
+          "power": 3000,
+          "count": 1,
+          "width": 128,
+          "height": 128,
+          "patches": 26,
+          "targets": 26,
+          "edges": 12,
+          "faces": 6,
+          "edgeViews": 12,
+          "corners": 8,
+          "keyboard": [
+            "Enter",
+            "Space"
+          ],
+          "orbit": true,
+          "home": true,
+          "allPresetsFit": true
+        },
+        {
+          "power": 4000,
+          "count": 5,
+          "width": 128,
+          "height": 128,
+          "patches": 26,
+          "targets": 26,
+          "edges": 12,
+          "faces": 6,
+          "edgeViews": 12,
+          "corners": 8,
+          "keyboard": [
+            "Enter",
+            "Space"
+          ],
+          "orbit": true,
+          "home": true,
+          "allPresetsFit": true
+        }
+      ],
+      "status": "PASSED_VIEWCUBE_BROWSER",
+      "report": "browser-stage.json"
+    }
+  },
+  "https": {
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "report": "http-live.json",
+      "files": 124
+    },
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "report": "http-stage.json",
+      "files": 124
+    }
+  },
+  "publication": {
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 126,
+      "transferredFiles": 8,
+      "reusedFiles": 118,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.09.29.6",
+      "transferBytes": 433978
+    },
+    "prepared": {
+      "version": "2026.09.29.6",
+      "candidateSha256": "4e7f29863c97ff7dff6db7c0984bc6b2540e345a357abaa4eb0591e0964cb5dd",
+      "manifestSha256": "2348aa6e6531d9ed5a02643241f79f13458616a6a76095a542bdc4073c6e1db3",
+      "backupSha256": "f2ed44206c2beb7ef7583cee79153554c043ec6afa0ec1dbdf41960a081ef919",
+      "backupFiles": 126,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.09.29.6/"
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.09.29.6",
+      "neighborsUnchanged": true,
+      "files": 126
+    }
+  },
+  "unchanged_glb_models": 99,
+  "chamfer_width_before": 0.35,
+  "chamfer_width_after": 0.175,
+  "native_cad_changed": false
+}

@@ -5,28 +5,26 @@ import importlib.util,json,sys,tarfile,subprocess
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.09.29.5';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.09.29.6';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='d2de3f9b81e8ab45292e3c030e01909e38100b0ef511cd5ce6a966eadd54ae12'
+p.BASELINE_HASH='d7cedc89d5825e7f82e1f2ebb179f0d3ec6f04d9238a5c384997fee79767e941'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
-    report=json.loads((p.REPO/'artifacts/cascade-stage/report.json').read_text(encoding='utf8'))
-    assert report['status']=='PASSED_CASCADE_BROWSER' and report['base']==p.STAGE_URL
+    # This release changes the shared cube only; use real clicks on all 26 views.
+    report=json.loads((p.REPO/'artifacts/viewcube-stage-v6/report.json').read_text(encoding='utf8'))
+    assert report['status']=='PASSED_VIEWCUBE_BROWSER' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']
-    assert report['state']['geometryShared'] and report['state']['units']==5
-    assert report['state']['counts']['plus_cabinet']==5 and report['state']['counts']['deaerator']==1
-    assert report['mode']=='full' and len(report['ratings'])==9
-    doors=json.loads((p.REPO/'artifacts/doors-distribution-stage/report.json').read_text(encoding='utf8'))
-    assert doors['status']=='PASSED_DOORS_DISTRIBUTION_BROWSER' and doors['base']==p.STAGE_URL
-    assert doors['manifestSha256']==prepared['manifestSha256'] and not doors['errors']
-    assert len(doors['checks'])>=6
-    manifold=json.loads((p.REPO/'artifacts/manifold-stage/report.json').read_text(encoding='utf8'))
-    assert manifold['status']=='PASSED_MANIFOLD_DEAERATOR_BROWSER' and manifold['base']==p.STAGE_URL
-    assert manifold['manifestSha256']==prepared['manifestSha256'] and not manifold['errors']
-    assert len(manifold['checks'])>=3 and manifold['geometry']['diameter']==.426
-    assert len(manifold['selections'])>=13
-    assert {s['kind'] for s in manifold['selections']}=={'da3','da15_4','da15_8','da25_15','da25_25'}
+    assert {(s['power'],s['count']) for s in report['scenarios']}=={(500,1),(3000,1),(4000,5)}
+    for s in report['scenarios']:
+        assert (s['faces'],s['edgeViews'],s['corners'],s['targets'])==(6,12,8,26)
+        assert s['allPresetsFit'] and s['orbit'] and s['home'] and len(s['keyboard'])==2
+    assert report['mobile']['edgeClick'] and report['mobile']['width']==390
+    before=json.loads((p.OUT/'before.json').read_text('utf8'))
+    manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
+    previous={name:digest for name,digest in before['files'].items() if name.endswith('.glb')}
+    current={row['path']:row['sha256'] for row in manifest['files'] if row['path'].endswith('.glb')}
+    assert previous==current and previous,'UNEXPECTED_MODEL_CHANGE'
 p.validate_browser_acceptance=validate
 def refresh_prepared():
     """Reuse a verified backup only after a complete live/neighbor drift check.

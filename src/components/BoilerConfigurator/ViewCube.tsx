@@ -2,7 +2,8 @@ import {type RefObject} from 'react'
 import './ViewCube.css'
 
 type CornerView = `${'top' | 'bottom'}-${'front' | 'back'}-${'left' | 'right'}`
-export type StandardView = 'home' | 'front' | 'back' | 'left' | 'right' | 'top' | 'bottom' | CornerView
+type EdgeView = `${'top' | 'bottom'}-${'front' | 'back' | 'left' | 'right'}` | `${'front' | 'back'}-${'left' | 'right'}`
+export type StandardView = 'home' | 'front' | 'back' | 'left' | 'right' | 'top' | 'bottom' | CornerView | EdgeView
 export const viewDirections: Record<StandardView, [number, number, number]> = {
   home: [1, .65, 1.2], front: [0, 0, 1], back: [0, 0, -1],
   left: [-1, 0, 0], right: [1, 0, 0], top: [0, 1, .00001], bottom: [0, -1, .00001],
@@ -10,18 +11,26 @@ export const viewDirections: Record<StandardView, [number, number, number]> = {
   'top-back-left': [-1,1,-1], 'top-back-right': [1,1,-1],
   'bottom-front-left': [-1,-1,1], 'bottom-front-right': [1,-1,1],
   'bottom-back-left': [-1,-1,-1], 'bottom-back-right': [1,-1,-1],
+  'top-front': [0,1,1], 'top-back': [0,1,-1],
+  'top-left': [-1,1,0], 'top-right': [1,1,0],
+  'bottom-front': [0,-1,1], 'bottom-back': [0,-1,-1],
+  'bottom-left': [-1,-1,0], 'bottom-right': [1,-1,0],
+  'front-left': [-1,0,1], 'front-right': [1,0,1],
+  'back-left': [-1,0,-1], 'back-right': [1,0,-1],
 }
 const faces = [
   ['front', 'Спереди'], ['back', 'Сзади'], ['left', 'Слева'],
   ['right', 'Справа'], ['top', 'Сверху'], ['bottom', 'Снизу'],
 ] as const
 
-const corners = Object.keys(viewDirections).filter(id => id.includes('-')) as CornerView[]
-const cornerLabel = (id: CornerView) => id.split('-').map(w => ({top:'Сверху',bottom:'Снизу',front:'спереди',back:'сзади',left:'слева',right:'справа'}[w])).join(' · ')
+const corners = Object.keys(viewDirections).filter(id => id.split('-').length===3) as CornerView[]
+const edges = Object.keys(viewDirections).filter(id => id.split('-').length===2) as EdgeView[]
+const viewLabel = (id: CornerView | EdgeView) => id.split('-').map(w => ({top:'Сверху',bottom:'Снизу',front:'спереди',back:'сзади',left:'слева',right:'справа'}[w])).join(' · ').replace(/^./,c=>c.toUpperCase())
 type V3 = [number, number, number]
 export type CubePatch = {id: string; normal: V3; points: V3[]; label?: string; view?: StandardView}
 // Actual chamfer geometry keeps corner targets visible in exact axis views.
-const bevel = .65
+// 29.09.2026 · Codex / GPT-6: halve the chamfer width (.35 -> .175).
+const bevel = .825
 export const cubePatches: CubePatch[] = faces.map(([id,label]) => {
   const normal = viewDirections[id].map(v => Math.abs(v)<.001?0:v) as V3
   const axis = normal.findIndex(v => v!==0), other=[0,1,2].filter(i=>i!==axis)
@@ -31,7 +40,7 @@ export const cubePatches: CubePatch[] = faces.map(([id,label]) => {
 })
 for (const id of corners) {
   const n=viewDirections[id]
-  cubePatches.push({id,normal:n,label:cornerLabel(id),view:id,
+  cubePatches.push({id,normal:n,label:viewLabel(id),view:id,
     points:[0,1,2].map(a=>n.map((v,i)=>v*(i===a?1:bevel)) as V3)})
 }
 for(let free=0;free<3;free++)for(const a of [-1,1])for(const b of [-1,1]) {
@@ -39,15 +48,16 @@ for(let free=0;free<3;free++)for(const a of [-1,1])for(const b of [-1,1]) {
   const points=[[-1,0],[1,0],[1,1],[-1,1]].map(([sign,side])=>{
     const p=normal.map(v=>v*bevel) as V3;p[free]=sign*bevel;p[fixed[side]]=normal[fixed[side]];return p
   })
-  cubePatches.push({id:`edge-${free}-${a}-${b}`,normal,points})
+  const view=edges.find(id=>viewDirections[id].every((v,i)=>v===normal[i]))!
+  cubePatches.push({id:`edge-${free}-${a}-${b}`,normal,points,view,label:viewLabel(view)})
 }
 
 export function ViewCube({cubeRef, onView}: {cubeRef: RefObject<SVGGElement>; onView: (view: StandardView) => void}) {
   return <nav className="s3-navigation" aria-label="Ориентация и возврат камеры">
-    <svg className="s3-cube-space" viewBox="-60 -60 120 120" aria-label="Куб видов: грани и углы">
+    <svg className="s3-cube-space" viewBox="-60 -60 120 120" aria-label="Куб видов: грани, рёбра и углы">
       <g className="s3-cube" ref={cubeRef}>
         {cubePatches.map(p=><g key={p.id} data-cube-patch={p.id}>
-          <polygon className={`s3-cube-patch ${p.view?'s3-cube-target':'s3-cube-edge'} ${p.id.includes('-')?'':'s3-cube-face'}`}
+          <polygon className={`s3-cube-patch s3-cube-target ${p.id.startsWith('edge-')?'s3-cube-edge':p.id.includes('-')?'':'s3-cube-face'}`}
             data-view={p.view} role={p.view?'button':undefined} tabIndex={-1}
             aria-label={p.view?`Вид ${p.label!.toLowerCase()}`:undefined}
             onClick={()=>p.view&&onView(p.view)} onKeyDown={e=>{
@@ -61,7 +71,7 @@ export function ViewCube({cubeRef, onView}: {cubeRef: RefObject<SVGGElement>; on
       <span aria-hidden="true">⌂</span> Общий вид
     </button>
     <details className="s3-view-menu"><summary>Выбрать вид</summary><div>
-      {[...faces,...corners.map(id=>[id,cornerLabel(id)] as const)].map(([id, label]) => <button key={id} onClick={e => {
+      {[...faces,...edges.map(id=>[id,viewLabel(id)] as const),...corners.map(id=>[id,viewLabel(id)] as const)].map(([id, label]) => <button key={id} onClick={e => {
         onView(id); e.currentTarget.closest('details')?.removeAttribute('open')
       }}>{label}</button>)}
     </div></details>

@@ -1,6 +1,6 @@
 {
   "release": {
-    "version": "2026.09.29.1",
+    "version": "2026.09.29.2",
     "date": "2026-09-29",
     "executor": "Codex / GPT-6",
     "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
@@ -24,7 +24,7 @@
       "https://disk.yandex.ru/d/rO5IXUvIfiUGjg"
     ]
   },
-  "source_commit": "c078a580e481cefbf31031dce36185ced94340d9",
+  "source_commit": "150926467e1aa95d5bf8f44d0ceaaf5ded6556fb",
   "files": [
     {
       "path": ".htaccess",
@@ -52,19 +52,19 @@
       "sha256": "33f7a17059ed9304264c4c74f7a818a8d5f5ceb3fd7f5fb1bfe95962226cfc03"
     },
     {
-      "path": "assets/cascade-Dj2RG5y-.glb",
+      "path": "assets/cascade-frrWXbVv.glb",
       "bytes": 405812,
-      "sha256": "6f96c70216ff4ce1a6251aac395f5defab6242025b49cbf0b78ab35559b0f7d7"
+      "sha256": "9afefee2fb221681c98364aeaf8493400d492eac36310b0db00d84288d9556e5"
     },
     {
-      "path": "assets/comfort_plus-WPoHb6Xy.glb",
-      "bytes": 864260,
-      "sha256": "2bc60f1226a460490170ed5548e192f7c48cbd33f4aecc95bd585c549dd088ea"
+      "path": "assets/comfort_plus-OdLaWltn.glb",
+      "bytes": 835092,
+      "sha256": "4caae857e2b317f5db3d3b0412fd6e722c698439b5d59b1ea7bc114c55295436"
     },
     {
-      "path": "assets/comfort-BqBZ7_rr.glb",
-      "bytes": 854784,
-      "sha256": "4e008cb7d38b8eaba5535953d948175aa58776b924149d3b7b1c2397d3420b00"
+      "path": "assets/comfort-DlkNnhIn.glb",
+      "bytes": 826440,
+      "sha256": "b4261d2096b83e6781e084b4d72604eee0050bc243ebac9117ada851dcfa0f1a"
     },
     {
       "path": "assets/cp_930--TKERaHD.glb",
@@ -122,9 +122,9 @@
       "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
     },
     {
-      "path": "assets/index-DeMi3gjS.js",
-      "bytes": 1177792,
-      "sha256": "849f9e70754550eddcaa8f4404bc15906106f98142d99efcfef8ff180aea7cf3"
+      "path": "assets/index-CssF7bo8.js",
+      "bytes": 1177810,
+      "sha256": "c286056ed521c682eeb63149d5e4d5714b47923946ac5cd52c225b69d8e29b10"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -197,14 +197,14 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/S3000Configurator-B3OCNbFC.js",
-      "bytes": 48039,
-      "sha256": "08fd225cfb64f67ef295e3a71383dab039eb7f2d878e3605602102754e1c94c1"
+      "path": "assets/S3000Configurator-B-U4_Hua.js",
+      "bytes": 58733,
+      "sha256": "f04aa5d9ab0f80aad24d56bd99b17b4c6b93e1ed5ede8aa1c97dff8296364047"
     },
     {
-      "path": "assets/S3000Configurator-Dc7djqIZ.js",
-      "bytes": 58731,
-      "sha256": "b983926c6e08bfcc3bb0adbdf22635af423d76d9d1c25709813554c4cc814d5a"
+      "path": "assets/S3000Configurator-By3grAjP.js",
+      "bytes": 48039,
+      "sha256": "d09306e14143058b0322704e1e9f9648f80b83773c14751a8f837c2a15a9ff43"
     },
     {
       "path": "assets/s4000-0-BcC6-WeA.glb",
@@ -567,9 +567,9 @@
       "sha256": "f848dea986b882d74659906d2f0a54db9dd09766fecf0e7511fb3ddd769fc0e4"
     },
     {
-      "path": "assets/S4000Configurator-CpCtzikR.js",
-      "bytes": 451319,
-      "sha256": "2a38bcf1954e4d38fbc108ae5f0f3a39d4914180bdb008e2e6254c30c4adab33"
+      "path": "assets/S4000Configurator-BMd83Zjf.js",
+      "bytes": 459898,
+      "sha256": "3ca6c3e67b11bed33927907fb6581850324cb1d96ddd3ae4f4a1432975c0f129"
     },
     {
       "path": "assets/style-2U9jDLWb.css",
@@ -579,7 +579,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "df10e30767f33ddb61233d02ef595164ed68e0469f2d57f6bf21a1589231c3e3"
+      "sha256": "92b55f7c096613e57bdb7bbbcc529511ec7202aa40235730cb023c49c2715f01"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -619,7 +619,7 @@
     {
       "path": "version.json",
       "bytes": 745,
-      "sha256": "9a276dcb99bc908aa0bf7251d1b0c36e79794175144bb7f4ad41377b6178d0a9"
+      "sha256": "ef3eff9a199d69887b8eb063d1d81db76d755c8f37a554b2c0336c22acfd7e53"
     }
   ]
 }

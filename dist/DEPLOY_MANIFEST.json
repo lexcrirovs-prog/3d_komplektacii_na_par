@@ -24,7 +24,7 @@
       "https://disk.yandex.ru/d/rO5IXUvIfiUGjg"
     ]
   },
-  "source_commit": "a47bb3fc2149c2a14ec1ba548128b33b7bb4c720",
+  "source_commit": "c078a580e481cefbf31031dce36185ced94340d9",
   "files": [
     {
       "path": ".htaccess",
@@ -122,9 +122,9 @@
       "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
     },
     {
-      "path": "assets/index-DZXCHep6.js",
-      "bytes": 1177783,
-      "sha256": "9774f3912ac6163905c9376b89467d7d3d63ebf69ecb3ecde904e39e5ce81d7d"
+      "path": "assets/index-DeMi3gjS.js",
+      "bytes": 1177792,
+      "sha256": "849f9e70754550eddcaa8f4404bc15906106f98142d99efcfef8ff180aea7cf3"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -197,14 +197,14 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/S3000Configurator-B9fuMh_K.js",
-      "bytes": 58730,
-      "sha256": "5f9efcc2619237f9f679b42f101eedf724a979bc387f195f16f7405cb6e9260a"
+      "path": "assets/S3000Configurator-B3OCNbFC.js",
+      "bytes": 48039,
+      "sha256": "08fd225cfb64f67ef295e3a71383dab039eb7f2d878e3605602102754e1c94c1"
     },
     {
-      "path": "assets/S3000Configurator-CyRCjVWH.js",
-      "bytes": 48039,
-      "sha256": "6598718ce458ee98e5ab4ae909297345338f058f2b07b737e84a966640b4c9c2"
+      "path": "assets/S3000Configurator-Dc7djqIZ.js",
+      "bytes": 58731,
+      "sha256": "b983926c6e08bfcc3bb0adbdf22635af423d76d9d1c25709813554c4cc814d5a"
     },
     {
       "path": "assets/s4000-0-BcC6-WeA.glb",
@@ -567,9 +567,9 @@
       "sha256": "f848dea986b882d74659906d2f0a54db9dd09766fecf0e7511fb3ddd769fc0e4"
     },
     {
-      "path": "assets/S4000Configurator-B-hJCfxR.js",
-      "bytes": 451143,
-      "sha256": "ef9970f4b2166bfada6b847f7bbcb413481f49b45331ba73b7220da86dc0327c"
+      "path": "assets/S4000Configurator-CpCtzikR.js",
+      "bytes": 451319,
+      "sha256": "2a38bcf1954e4d38fbc108ae5f0f3a39d4914180bdb008e2e6254c30c4adab33"
     },
     {
       "path": "assets/style-2U9jDLWb.css",
@@ -579,7 +579,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "197956e59ef01189ccaaaafa55068f77b4f28a12e707f011a6f4db33fd21175d"
+      "sha256": "df10e30767f33ddb61233d02ef595164ed68e0469f2d57f6bf21a1589231c3e3"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -619,7 +619,7 @@
     {
       "path": "version.json",
       "bytes": 745,
-      "sha256": "a774bb907ebf72c14db4390cfb8f25a20de23c2bbc596d42503e926bfb1a4e1b"
+      "sha256": "9a276dcb99bc908aa0bf7251d1b0c36e79794175144bb7f4ad41377b6178d0a9"
     }
   ]
 }

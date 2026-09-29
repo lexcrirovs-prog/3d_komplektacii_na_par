@@ -1,0 +1,114 @@
+{
+  "version": "2026.09.29.3",
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "source_commit": "f79a0e5283e0c3196d2378e97d89e43718e21bab",
+  "publication_commit": "7e97133d73aec6829353d1ea0479e82f6b8ecf2d",
+  "manifestSha256": "ac8b6b0e70d4b6eef9248c194b91bd30fb8bac96371d98db8a11b11a717e51a0",
+  "unit_tests": {
+    "passed": 37,
+    "failed": 0,
+    "report": "unit-tests.log"
+  },
+  "browser": {
+    "local": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-local.json",
+        "checks": 7
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-local.json",
+        "checks": 6
+      },
+      "manifold": {
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER",
+        "report": "browser-manifold-local.json",
+        "checks": 3
+      }
+    },
+    "stage": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-stage.json",
+        "checks": 7
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-stage.json",
+        "checks": 6
+      },
+      "manifold": {
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER",
+        "report": "browser-manifold-stage.json",
+        "checks": 3
+      }
+    },
+    "live": {
+      "matrix": {
+        "status": "PASSED_CASCADE_BROWSER",
+        "report": "browser-matrix-live.json",
+        "checks": 7
+      },
+      "doors": {
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER",
+        "report": "browser-doors-live.json",
+        "checks": 6
+      },
+      "manifold": {
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER",
+        "report": "browser-manifold-live.json",
+        "checks": 3
+      }
+    }
+  },
+  "https": {
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 118,
+      "report": "http-stage.json"
+    },
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 118,
+      "report": "http-live.json"
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.09.29.3",
+      "candidateSha256": "cad086a0cf8a43cbbd88b0dfeac6ce4e90d3e546ad34ed6732d7a3af90aa0821",
+      "manifestSha256": "ac8b6b0e70d4b6eef9248c194b91bd30fb8bac96371d98db8a11b11a717e51a0",
+      "backupSha256": "f927aa347d867143df0fcf85d4b033ccb338ab2d757c2dc54bf7f1cd20284730",
+      "backupFiles": 120,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.09.29.3/"
+    },
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 120,
+      "transferredFiles": 8,
+      "reusedFiles": 112,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.09.29.3",
+      "transferBytes": 427828
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.09.29.3",
+      "neighborsUnchanged": true,
+      "files": 120
+    }
+  },
+  "native_cad_changed": false,
+  "scope_limits": [
+    "Three consumer outlets retained from the preceding owner video interpretation.",
+    "426/89/48.3 mm visual geometry follows the owner brief; hydraulic sizing is not included.",
+    "Factory A31 DN25 appearance retained; DA overflow fitting uses simplified geometry.",
+    "DA3 pump recirculation adapts to its existing condensate return tee.",
+    "Identification colors and arrows follow GOST R 71918-2024; a complete warning-sign set is not issued.",
+    "External water treatment, vent cooler, heat exchangers and the full project instrument set are outside this release.",
+    "Browser mobile viewport checked; no physical mobile device measurement."
+  ]
+}

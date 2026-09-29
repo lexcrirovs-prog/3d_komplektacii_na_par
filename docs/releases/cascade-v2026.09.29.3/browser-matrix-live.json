@@ -1,0 +1,198 @@
+{
+  "status": "PASSED_CASCADE_BROWSER",
+  "base": "https://prgz.ru/komplektacii4/",
+  "mode": "full",
+  "manifestSha256": "ac8b6b0e70d4b6eef9248c194b91bd30fb8bac96371d98db8a11b11a717e51a0",
+  "checks": [
+    "Five S-4000 Comfort+ units, shared geometry, single DA/FV/BDV/cascade cabinet, pressure sensor on header",
+    "Picking the fifth burner retains its equipment card and unit identity",
+    "Counts 1,2,3,4,5 change geometry and persist in URL",
+    "Comfort uses the photo cabinet with 0.8 HMI scale; five boiler/cabinet doors and common cabinet open",
+    "DA/economizer/FV/BDV independently switch their piping; modulation cable follows economizer option",
+    "All checked powers preserve five units; moved valve/actuator bounds verified with economizer; Standard retains its own cabinet and supports cascade",
+    "Mobile width fits; single boiler removes cascade equipment"
+  ],
+  "state": {
+    "power": 4000,
+    "units": 5,
+    "counts": {
+      "boiler": 5,
+      "plus_cabinet": 5,
+      "deaerator": 1,
+      "separator_fv8": 1,
+      "separator_bdv60_5": 1,
+      "suction_common": 0,
+      "steam_delivery": 5,
+      "fv_return_to_da": 1
+    },
+    "spacing": 6.3,
+    "geometryShared": true,
+    "draws": 2933,
+    "triangles": 17205165
+  },
+  "ratings": [
+    {
+      "power": 500,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2017,
+      "triangles": 15918096
+    },
+    {
+      "power": 1000,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2007,
+      "triangles": 15613326
+    },
+    {
+      "power": 1500,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2107,
+      "triangles": 15540691
+    },
+    {
+      "power": 2000,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2413,
+      "triangles": 15893572
+    },
+    {
+      "power": 2500,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2413,
+      "triangles": 15910227
+    },
+    {
+      "power": 3000,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2413,
+      "triangles": 15856018
+    },
+    {
+      "power": 3500,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2413,
+      "triangles": 15862188
+    },
+    {
+      "power": 4000,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2933,
+      "triangles": 16202055
+    },
+    {
+      "power": 5000,
+      "units": 5,
+      "counts": {
+        "boiler": 5,
+        "plus_cabinet": 5,
+        "deaerator": 1,
+        "separator_fv8": 1,
+        "separator_bdv60_5": 1,
+        "suction_common": 0,
+        "steam_delivery": 5,
+        "fv_return_to_da": 1
+      },
+      "spacing": 6.3,
+      "geometryShared": true,
+      "draws": 2408,
+      "triangles": 15850721
+    }
+  ],
+  "errors": []
+}

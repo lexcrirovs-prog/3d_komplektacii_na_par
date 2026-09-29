@@ -1,0 +1,23 @@
+{
+  "status": "PASSED_COMPRESSED_HMI_DIMENSIONS",
+  "rows": [
+    {
+      "kind": "comfort",
+      "screen_m": [
+        0.13966399431228638,
+        0.08643166834511984,
+        0
+      ]
+    },
+    {
+      "kind": "comfort_plus",
+      "screen_m": [
+        0.17457999289035797,
+        0.1080395854313998,
+        0
+      ]
+    }
+  ],
+  "width_ratio": 0.8,
+  "height_ratio": 0.8
+}

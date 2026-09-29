@@ -1,4 +1,4 @@
-// Derivative only: detailed Blender stays untouched. Codex / GPT-6, 2026-09-28.
+// Derivative only: detailed Blender stays untouched. Codex / GPT-6, 2026-09-29.
 import {createRequire} from 'node:module';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
@@ -12,7 +12,7 @@ const {MeshoptEncoder,MeshoptDecoder}=await from('meshoptimizer');
 await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
 const rows=[];
-for(const name of ['comfort_plus','cascade','piping']) {
+for(const name of ['comfort','comfort_plus','cascade']) {
  const file=`src/assets/cascade/${name}.glb`,before=(await readFile(file)).length;
  const doc=await io.read(file);
  await doc.transform(weld(),dedup(),prune({keepLeaves:true,keepAttributes:true,keepSolidTextures:true}),meshopt({encoder:MeshoptEncoder,level:'high',quantizePosition:16,quantizeNormal:10}));

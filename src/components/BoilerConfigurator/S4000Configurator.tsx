@@ -6,14 +6,17 @@ import {FamilyCamera, type ViewRequest} from './FamilyCamera'
 import {ViewCube, type StandardView} from './ViewCube'
 import webVersion from '../../assets/s4000/web/version.json'
 import catalogData from '../../assets/s4000/web/catalog.json'
-import {normalizeConfig,trims,powers,type FamilyConfig,type Trim} from './familyRules'
+import {normalizeConfig,boilerCount,trims,powers,type FamilyConfig,type Trim} from './familyRules'
 import {familyAssets,type FamilyAsset,type FamilyPart} from './familyAssets'
 import premiumLogo from '../../assets/s3000/premium-logo.png'
 import { isPartVisible } from './assemblyVisibility'
 import photoCabinetUrl from '../../assets/cascade/comfort_plus.glb?url'
+import comfortCabinetUrl from '../../assets/cascade/comfort.glb?url'
 import cascadeCabinetUrl from '../../assets/cascade/cascade.glb?url'
-import cascadePipingUrl from '../../assets/cascade/piping.glb?url'
-import {addPhotoCabinet,partInUnit,configurationParts,cascadeLayout} from './cascadeScene'
+import {addPhotoCabinet,applyFeedCorrection} from './cascadeScene'
+import {correctedUnitParts,partInUnit,configurationParts} from './cascadeConfiguration'
+import {unitSpacing} from './cascadeRoutes'
+import {cascadePiping} from './cascadeGeometry'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
@@ -55,14 +58,14 @@ class ModelBoundary extends Component<{ children: ReactNode }, { error: boolean 
 
 function rootPart(object: Object3D | null, byId: Map<string,FamilyPart>): string | undefined {
   let id: string | undefined
-  let second=false
+  let unit=1
   while (object) {
     if (!object.visible) return undefined
-    if(object.name==='boiler_unit_2')second=true
+    const match=object.name.match(/^boiler_unit_(\d+)$/);if(match)unit=Number(match[1])
     if (!id && byId.has(object.name)) id = object.name
     object = object.parent
   }
-  return id&&second&&byId.has('unit2:'+id)?'unit2:'+id:id
+  return id&&unit>1&&byId.has(`unit${unit}:`+id)?`unit${unit}:`+id:id
 }
 
 const ignoreRaycast: Mesh['raycast'] = () => {}
@@ -76,16 +79,18 @@ function BoilerPreview({onReady,enabled,asset}:{onReady:()=>void;enabled:Set<str
   return <primitive object={scene} dispose={null} />
 }
 
-function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen,onReady,asset,cascade,cascadeOpen }: {
+function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen,onReady,asset,count,cascadeOpen }: {
   enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
-  cabinetOpen: boolean; boilerOpen: boolean; onReady:()=>void; asset:FamilyAsset;cascade:boolean;cascadeOpen:boolean
+  cabinetOpen: boolean; boilerOpen: boolean; onReady:()=>void; asset:FamilyAsset;count:number;cascadeOpen:boolean
 }) {
-  const parts=asset.parts, openingData=asset.opening
-  const photo=enabled.has('comfort_plus')
-  const byId=new Map(configurationParts(parts,cascade,photo).map(p=>[p.id,p]))
+  const power=Number(asset.id),cascade=count>1,openingData=asset.opening
+  const parts=useMemo(()=>correctedUnitParts(asset.parts,power),[asset])
+  const trim:Trim=enabled.has('comfort_plus')?'comfort_plus':enabled.has('comfort')?'comfort':'standard'
+  const photo=trim!=='standard'
+  const byId=useMemo(()=>new Map(configurationParts(asset.parts,power,count,trim).map(p=>[p.id,p])),[asset,count,trim])
   const core=useGLTF(asset.urls[0])
   const accessoryModels=useGLTF(asset.urls.slice(1))
-  const additionUrls=useMemo(()=>photo?[photoCabinetUrl,...(cascade?[cascadeCabinetUrl,cascadePipingUrl]:[])]:[],[photo,cascade])
+  const additionUrls=useMemo(()=>[...(photo?[trim==='comfort'?comfortCabinetUrl:photoCabinetUrl]:[]),...(cascade?[cascadeCabinetUrl]:[])],[trim,cascade])
   const additions=useGLTF(additionUrls)
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
   const { gl, invalidate, camera } = useThree()
@@ -95,6 +100,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     copy.name = 'rating-assembly'
     const unit=new Group();unit.name='boiler_unit_1';copy.add(unit)
     for (const gltf of gltfs) unit.add(gltf.scene.clone(true))
+    applyFeedCorrection(unit,power)
     copy.updateMatrixWorld(true)
     for (const motion of openingData.groups) {
       const hinge = new Group()
@@ -108,17 +114,24 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
         hinge.attach(part)
       }
     }
-    if(photo)addPhotoCabinet(unit,additions[0].scene,'comfort_plus')
+    if(photo)addPhotoCabinet(unit,additions[0].scene,trim as 'comfort'|'comfort_plus')
     const units=[unit]
     if(cascade) {
-      const second=unit.clone(true);second.name='boiler_unit_2';second.position.x=cascadeLayout.spacing_m;copy.add(second);units.push(second)
-      addPhotoCabinet(copy,additions[1].scene,'cascade')
-      const piping=additions[2].scene.clone(true);piping.name='cascade_piping';copy.add(piping)
+      for(let index=1;index<count;index++) {
+        const next=unit.clone(true);next.name=`boiler_unit_${index+1}`;next.position.x=unitSpacing*index;copy.add(next);units.push(next)
+      }
+      addPhotoCabinet(copy,additions[photo?1:0].scene,'cascade',count)
+      copy.add(cascadePiping(power,count))
     }
     copy.userData.units=units
-    copy.traverse(object=>{if(object instanceof Mesh){object.castShadow=true;object.receiveShadow=true;object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone()}})
+    const generatedMaterials=new Set<MeshStandardMaterial>()
+    copy.traverse(object=>{if(object instanceof Mesh){
+      if(object.userData.generatedGeometry)for(const m of (Array.isArray(object.material)?object.material:[object.material]))generatedMaterials.add(m)
+      object.castShadow=true;object.receiveShadow=true;object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone()
+    }})
+    generatedMaterials.forEach(m=>m.dispose())
     return copy
-  }, [gltfs,photo,cascade,additions])
+  }, [gltfs,trim,count,additions])
   useEffect(() => { invalidate() }, [cabinetOpen, boilerOpen, cascadeOpen, invalidate])
   useFrame((_, delta) => {
     let movingDoor = false
@@ -126,7 +139,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     const motions:{hinge:Object3D;target:number}[]=[]
     for(const unit of scene.userData.units as Group[]) {
       for (const motion of openingData.groups) motions.push({hinge:unit.getObjectByName(`opening_${motion.id}`)!,target:(motion.id==='cabinet'?cabinetOpen:boilerOpen)?motion.angle_degrees*Math.PI/180:0})
-      if(photo)motions.push({hinge:unit.getObjectByName('photo_hinge_comfort_plus')!,target:cabinetOpen?105*Math.PI/180:0})
+      if(photo)motions.push({hinge:unit.getObjectByName('photo_hinge_boiler')!,target:cabinetOpen?105*Math.PI/180:0})
     }
     if(cascade)motions.push({hinge:scene.getObjectByName('photo_hinge_cascade')!,target:cascadeOpen?105*Math.PI/180:0})
     for (const {hinge,target} of motions) {
@@ -144,12 +157,15 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     }
   })
   useEffect(() => () => {
+    const generated=new Set<Mesh['geometry']>()
     scene.traverse(object => {
       if (object instanceof Mesh) {
+        if(object.userData.generatedGeometry)generated.add(object.geometry)
         const materials = Array.isArray(object.material) ? object.material : [object.material]
         materials.forEach(m => m.dispose())
       }
     })
+    generated.forEach(g=>g.dispose())
     document.body.style.cursor = ''
   }, [scene])
   useEffect(() => {
@@ -157,7 +173,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
      for (const part of parts) {
       const obj = unit.getObjectByName(part.id)
       if (!obj) throw new Error(`Missing assembly node: ${part.id}`)
-      obj.visible = isPartVisible(part, enabled, showAccessories, optionalIds)&&partInUnit(part,index,cascade,photo)
+      obj.visible = isPartVisible(part, enabled, showAccessories, optionalIds)&&partInUnit(part,index,count,photo)
       obj.traverse(child => {
         if (!(child instanceof Mesh)) return
         // Three.js raycasting does not skip an invisible ancestor automatically.
@@ -166,7 +182,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
         } : ignoreRaycast
         const materials = Array.isArray(child.material) ? child.material : [child.material]
         for (const m of materials) if (m instanceof MeshStandardMaterial) {
-          const highlighted=(index===1?'unit2:'+part.id:part.id)===selected
+          const highlighted=(index>0?`unit${index+1}:`+part.id:part.id)===selected
           m.emissive = new Color(highlighted ? '#204775' : '#000000')
           m.emissiveIntensity = highlighted ? .32 : 0
         }
@@ -209,14 +225,14 @@ export function S4000Configurator() {
     const p=new URLSearchParams(window.location.search)
     const trim=trims.find(t=>t.id===p.get('trim'))?.id || 'comfort'
     const requestedPower=Number(p.get('power')||4000)
-    return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions(),cascade:p.get('cascade')==='2'})
+    return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions(),cascade:boilerCount(p.get('cascade'))})
   })
   return <FamilyViewer key={`${config.power}:${config.cascade}`} config={config} setConfig={setConfig} />
 }
 function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:FamilyConfig)=>void}) {
   const asset=familyAssets[config.power]
-  const cascade=!!config.cascade
-  const parts=configurationParts(asset.parts,cascade,config.trim==='comfort_plus'), byId=new Map(parts.map(p=>[p.id,p]))
+  const count=boilerCount(config.cascade),cascade=count>1
+  const parts=configurationParts(asset.parts,config.power,count,config.trim), byId=new Map(parts.map(p=>[p.id,p]))
   const [sceneReady,setSceneReady]=useState(false)
   const [coreReady,setCoreReady]=useState(false)
   const markCoreReady=useCallback(()=>setCoreReady(true),[])
@@ -227,7 +243,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     const url=new URL(window.location.href)
     url.searchParams.set('power',String(config.power));url.searchParams.set('trim',config.trim);url.searchParams.set('pressure',String(config.pressure))
     url.searchParams.set('addons',options.filter(o=>config.addons.has(o.id)).map(o=>o.id).join(','))
-    if(cascade)url.searchParams.set('cascade','2');else url.searchParams.delete('cascade')
+    if(cascade)url.searchParams.set('cascade',String(count));else url.searchParams.delete('cascade')
     window.history.replaceState(null,'',url)
   },[config])
   const [selected, setSelected] = useState<string | null>(null)
@@ -244,12 +260,13 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const dragging = useRef(false)
   const active = selected ? byId.get(selected) : undefined
   const bomParts=catalog[config.trim]['S-'+config.power].filter(r=>(r.pressure===null||r.pressure===config.pressure)&&(!r.option||enabled.has(r.option))).map(r=>{
-    const cabinetRow=config.trim==='comfort_plus'&&['level_controllers','bc970','pr200'].includes(r.id)
+    const cabinetRow=config.trim!=='standard'&&['level_controllers','bc970','pr200','lc220','lc440'].includes(r.id)
     const nodes=cabinetRow?['plus_cabinet']:(partMapping[r.id]||[r.id]).filter(id=>byId.has(id)&&isPartVisible(byId.get(id)!,enabled,true,optionalIds))
-    return {...r,quantity:r.quantity*(cascade?2:1),nodes}
+    return {...r,quantity:r.quantity*count,nodes}
   })
   if(cascade)bomParts.push({id:'cascade_cabinet',label:'Общий каскадный шкаф автоматики',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
-  const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected.replace(/^unit2:/,''))) : undefined
+  if(cascade)bomParts.push({id:'cascade_pressure_sensor',label:'Датчик давления общего коллектора',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_pressure_sensor']})
+  const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected.replace(/^unit\d+:/,''))) : undefined
   const visibleRows = bomParts.filter(row => searchText(row.label).includes(searchText(query)))
 
   function requestView(position: Point, target: Point) {
@@ -311,7 +328,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     const p = byId.get(selection)
     if (!p) return
     setSelected(selection)
-    const id=selection.replace(/^unit2:/,''),dx=selection.startsWith('unit2:')?cascadeLayout.spacing_m:0
+    const id=selection.replace(/^unit\d+:/,''),dx=(Number(selection.match(/^unit(\d+):/)?.[1]||1)-1)*unitSpacing
     if(id==='cascade_cabinet'){cascadeView();return}
     if(id==='plus_cabinet'){cabinetView(dx);return}
     if (!options.some(o => o.id === id) && id !== 'boiler') setShowAccessories(true)
@@ -364,7 +381,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   return <div className="s3-app">
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
-      {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*(cascade?2:1)} КГ ПАРА В ЧАС</span><h1>{cascade?'Каскад 2 × S-4000.':`S-${config.power} в сборе.`}</h1><p>{cascade?'Свой шкаф у каждого котла. Общий шкаф каскада и паровой коллектор.':`Корпус и патрубки — по заводской модели ${asset.model}.`}<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
+      {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*count} КГ ПАРА В ЧАС</span><h1>{cascade?`Каскад ${count} × S-${config.power}.`:`S-${config.power} в сборе.`}</h1><p>{cascade?'Свой шкаф у каждого котла. Общий шкаф каскада и паровой коллектор.':`Корпус и патрубки — по заводской модели ${asset.model}.`}<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .03, far: 250 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#e5e9ec')}
         onPointerMissed={() => setSelected(null)}>
@@ -380,8 +397,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
           <Assembly asset={asset} enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging}
-            cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} onReady={markSceneReady} cascade={cascade} cascadeOpen={cascadeOpen} />
-          {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[0,-.007,0]} opacity={.38} scale={25} blur={2.4} far={5} resolution={512} frames={1} />}
+            cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} onReady={markSceneReady} count={count} cascadeOpen={cascadeOpen} />
+          {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[(count-1)*unitSpacing/2,-.007,0]} opacity={.38} scale={25+(count-1)*unitSpacing} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
         <OrbitControls key={`${view.id}:${inputRecovery}`} makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
           enableDamping dampingFactor={.08} onStart={() => { dragging.current = true }} onEnd={() => { dragging.current = false }} />
@@ -392,7 +409,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
         <button onClick={() => { setSelected(null); cabinetView() }}>Шкаф</button>
         {cascade&&<button onClick={()=>{setSelected(null);cascadeView()}}>Шкаф каскада</button>}
-        {cascade&&<button onClick={()=>requestView([9.1,2.7,6.1],[6.1,1.12,1.4])}>Котёл 2</button>}
+        {cascade&&Array.from({length:count},(_,i)=><button key={i} onClick={()=>{const x=i*unitSpacing;setSelected(null);requestView([x+2.8,2.7,6.1],[x-.2,1.12,1.4])}}>Котёл {i+1}</button>)}
         <button onClick={() => focus('pressure_header')}>Приборы</button>
         <button onClick={() => { setSelected(null); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
         <button onClick={() => focus('cables')}>Кабели</button>
@@ -408,13 +425,13 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         {active.note && <p className="s3-part-note">{active.note}</p>}
         <button className="s3-focus" onClick={() => focus(active.id)}>Приблизить деталь ↗</button>
       </section>}
-      <div className="s3-caption">Визуальная сборка <span>•</span> 28.09.2026 <span>•</span> v{webVersion.version}</div>
+      <div className="s3-caption">Визуальная сборка <span>•</span> 29.09.2026 <span>•</span> v{webVersion.version}</div>
     </main>
 
     <aside className="s3-sidebar" aria-label="Комплектация котла">
       <div className="s3-sidebar-heading"><div className="s3-eyebrow">ПОД ВАШУ ЗАДАЧУ</div><h2>PREMIUM S-{config.power}</h2><p>Паровой котёл с навесным оборудованием</p>
         <div className="s3-config-selects">
-          <label>Установка<select aria-label="Установка" value={cascade?'cascade':'single'} onChange={e=>{setConfig(normalizeConfig(e.target.value==='cascade'?{...config,power:4000,trim:'comfort_plus',cascade:true}:{...config,cascade:false}));setSelected(null)}}><option value="single">Один котёл</option><option value="cascade">Каскад 2 × S-4000 · Комфорт+</option></select></label>
+          <label>Количество котлов<select aria-label="Количество котлов" value={count} onChange={e=>{setConfig(normalizeConfig({...config,cascade:Number(e.target.value)}));setSelected(null)}}>{[1,2,3,4,5].map(n=><option value={n} key={n}>{n===1?'Один котёл':`Каскад · ${n} ${n===5?'котлов':'котла'}`}</option>)}</select></label>
           <label>Паропроизводительность<select aria-label="Паропроизводительность" value={config.power} onChange={e=>{setConfig(normalizeConfig({...config,power:Number(e.target.value)}));setSelected(null)}}>{powers.map(power=><option key={power} value={power}>{power} кг/ч</option>)}</select></label>
           <label>Комплектация<select aria-label="Комплектация" value={config.trim} onChange={e=>{setConfig(normalizeConfig({...config,trim:e.target.value as Trim}));setSelected(null)}}>{trims.map(t=><option key={t.id} value={t.id}>{t.label}</option>)}</select></label>
           <label>Рабочее давление<select aria-label="Рабочее давление" value={config.pressure} onChange={e=>{setConfig({...config,pressure:Number(e.target.value) as 8|12});setSelected(null)}}><option value={8}>8 бар</option><option value={12}>12 бар</option></select></label>
@@ -444,8 +461,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
           </label>)}</section>
           <section className="s3-flow" aria-live="polite" data-feed-route={enabled.has('economizer') ? 'economizer' : 'direct'}>
             <div className="s3-section-label">ПУТЬ ПИТАТЕЛЬНОЙ ВОДЫ</div>
-            <p>Насосы → {enabled.has('economizer') ? 'экономайзер → ' : ''}{enabled.has('modulation') ? 'модуляция → ' : ''}котёл</p>
-            <small>При отключении BDV и FV подходящие трубы сохраняют направление к месту установки аппаратов.</small>
+            <p>{enabled.has('deaerator')?'Деаэратор → ':''}насосы → {enabled.has('modulation') ? 'модуляция → ' : ''}{enabled.has('economizer') ? 'экономайзер → ' : ''}котёл</p>
+            <small>{cascade?'Общий подвод воды за экономайзерами. У каждого котла своя насосная группа. ':''}Непрерывная продувка — {enabled.has('fv')?'в FV':'в BDV или внешнюю систему'}, периодическая — в BDV. Сбросы предохранительных клапанов идут отдельно.</small>
           </section>
           <section className="s3-detail-callout"><div><strong>Дистанционное управление ГПЗ</strong><p>Пункт 49 ФНП требует дистанционного управления при производительности более 4000 кг/ч. Тип привода определяется проектом. В комплектации PREMIUM электропривод предусмотрен уже с 4000 кг/ч.</p></div></section>
           <p className="s3-assembly-note">Сборка показывает внешний вид оборудования. Расположение обвязки и её присоединения требуют сверки с монтажной схемой.</p>

@@ -1,8 +1,26 @@
 {
-  "version": "2026.09.28.1",
-  "date": "2026-09-28",
+  "version": "2026.09.29.1",
+  "date": "2026-09-29",
   "executor": "Codex / GPT-6",
   "groups": [
+    {
+      "id": "comfort",
+      "pivot": [
+        0.239,
+        0.011,
+        0.325
+      ],
+      "angle_degrees": 105,
+      "parts": [
+        "comfort_door"
+      ],
+      "size_mm": [
+        500.0,
+        650.0,
+        220.0
+      ],
+      "display_scale": 0.8
+    },
     {
       "id": "comfort_plus",
       "pivot": [
@@ -18,7 +36,8 @@
         500.0,
         650.0,
         220.0
-      ]
+      ],
+      "display_scale": 1
     },
     {
       "id": "cascade",
@@ -35,7 +54,8 @@
         400.0,
         400.0,
         150.0
-      ]
+      ],
+      "display_scale": 1
     }
   ],
   "grey_step_url": "https://cdn-01.iek.ru/media/original/f2884dcf05ba7344ad4fe61a337b971b49735704b09050844a5aae0f8ede0837.step",

@@ -1,0 +1,12 @@
+{
+  "version": "2026.09.29.1",
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "status": "LOCAL_VERIFIED_NOT_YET_PUBLISHED",
+  "unit_tests": {
+    "passed": 28,
+    "failed": 0
+  },
+  "browser_local": "browser-local.json",
+  "native_cad_changed": false
+}

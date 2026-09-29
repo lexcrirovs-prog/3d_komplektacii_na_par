@@ -17,7 +17,7 @@ from display_geometry import DisplayGeometry
 
 OUT = Path(r'E:\CodexArtifacts\Cascade-v2026.09.28.1')
 DOWNLOADS = Path.home()/'Downloads'
-VERSION = '2026.09.28.1'
+VERSION = '2026.09.29.1'
 
 def label(g, text, x, y, z, size=.006, mat='black', centered=True):
     o = g.text(text, (x,y,z), size, mat=mat)
@@ -151,9 +151,9 @@ def enclosure(g,key,w,h,d,color,manufacturer=False):
     starts={k:len(v[0]) for k,v in g.batches.items()}
     # Internal assembly: keep front controller backs clear of the DIN equipment.
     for x in [-w/2+.035,w/2-.035]:duct(g,x,h/2,.028,h-.09)
-    rows=[h-.030,h-.180,h-.350,h-.474] if key=='comfort_plus' else [h-.029,h-.198]
+    rows=[h-.030,h-.180,h-.350,h-.474] if key!='cascade' else [h-.029,h-.198]
     for z in rows:duct(g,0,z,w-.085,.026)
-    if key=='comfort_plus':
+    if key!='cascade':
         for x in np.arange(-.177,.190,.018):breaker(g,float(x),h-.100)
         # Motor protection devices interrupt the breaker row exactly as in the photo.
         for x in [-.110,-.064]:
@@ -178,7 +178,7 @@ def enclosure(g,key,w,h,d,color,manufacturer=False):
         for x in np.arange(-.145,.123,.007):terminal(g,float(x),.134,'terminal' if x<-.088 else 'duct')
         for x in [.142,.154]:g.box((x,.091,.112),(.010,.034,.057),'ivory')
     # DIN rails are visible between devices and ducts.
-    for z in ([.550,.380,.235,.103] if key=='comfort_plus' else [.282,.134]):
+    for z in ([.550,.380,.235,.103] if key!='cascade' else [.282,.134]):
         g.box((0,.121,z),(w-.075,.003,.033),'zinc')
     if d>.15:
         for k,(verts,_) in g.batches.items():
@@ -197,15 +197,16 @@ def door(g,key,w,h,color):
     g.part(key+'_door','Дверь с приборами '+key,'photo_reconstruction')
     g.box((0,0,h/2),(w-.003,.002,h-.003),color)
     rect_frame(g,w-.027,h-.027,.009,h/2,.007,'black')
-    for z in ([h*.15,h*.83] if key=='comfort_plus' else [h*.50]):
+    for z in ([h*.15,h*.83] if key!='cascade' else [h*.50]):
         g.cyl((-w*.405,.010,z),(-w*.405,-.008,z),.012,'steel',32)
         g.cyl((-w*.405,-.008,z),(-w*.405,-.009,z),.009,'dark',24)
         g.box((-w*.405,-.0092,z),(.002,.001,.009),'steel')
         g.box((-w*.405,.014,z+.008),(.015,.004,.040),'gold')
     hv(g,w*.39,h*.93,.049 if w>.45 else .045)
-    if key=='comfort_plus':
+    if key!='cascade':
         alarm(g,-.055,h*.916,'power');alarm(g,.045,h*.916)
-        screen(g,.203,.146,h*.66,'IMG_20260928_193357.jpg')
+        screen_scale=.8 if key=='comfort' else 1.
+        screen(g,.203*screen_scale,.146*screen_scale,h*.66,'IMG_20260928_193357.jpg')
         for i,x in enumerate([-.141,-.047,.047,.141]):
             # Four straight, separate ATECH door-mounted instruments, incl. rear terminals.
             z=h*.365
@@ -264,20 +265,20 @@ def main():
         ('earth',(.20,.45,.01),.02,.50),('lcd',(.07,.105,.09),.05,.32),
         ('grey',(.60,.63,.61),.18,.36)]:g.materials[key]=material(key,rgb,metal,rough)
     groups=[]
-    for key,w,h,d,color in [('comfort_plus',.500,.650,.220,'red'),('cascade',.400,.400,.150,'grey')]:
+    for key,w,h,d,color in [('comfort',.500,.650,.220,'red'),('comfort_plus',.500,.650,.220,'red'),('cascade',.400,.400,.150,'grey')]:
         enclosure(g,key,w,h,d,color,key=='cascade');door(g,key,w,h,color)
-        groups.append(dict(id=key,pivot=[w/2-.011,.011,h/2],angle_degrees=105,parts=[key+'_door'],size_mm=[w*1000,h*1000,d*1000]))
+        groups.append(dict(id=key,pivot=[w/2-.011,.011,h/2],angle_degrees=105,parts=[key+'_door'],size_mm=[w*1000,h*1000,d*1000],display_scale=.8 if key=='comfort' else 1))
     g.flush()
     for key in list(g.parts):merge_meshes_per_material(bpy.data.objects[key])
     bpy.context.view_layer.update()
-    for key in ['comfort_plus','cascade']:
+    for key in ['comfort','comfort_plus','cascade']:
         bpy.ops.object.select_all(action='DESELECT')
         for id in [key+'_body',key+'_door']:
             for o in [bpy.data.objects[id],*bpy.data.objects[id].children_recursive]:o.select_set(True)
         target=REPO/'src/assets/cascade';target.mkdir(parents=True,exist_ok=True)
         bpy.ops.export_scene.gltf(filepath=str(target/(key+'.glb')),export_format='GLB',use_selection=True,export_animations=False,export_extras=True)
     OUT.joinpath('build').mkdir(exist_ok=True)
-    meta=dict(version=VERSION,date='2026-09-28',executor='Codex / GPT-6',groups=groups,
+    meta=dict(version=VERSION,date='2026-09-29',executor='Codex / GPT-6',groups=groups,
         grey_step_url='https://cdn-01.iek.ru/media/original/f2884dcf05ba7344ad4fe61a337b971b49735704b09050844a5aae0f8ede0837.step',
         grey_step_sha256=hashlib.sha256((OUT/'sources/IEK_YKM40-441-54.step').read_bytes()).hexdigest(),
         red_enclosure='IEK IND-YKM40-03-54; 650 H x 500 W x 220 D mm, supplied nameplate',

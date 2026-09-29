@@ -1,17 +1,17 @@
 [
   {
+    "name": "comfort",
+    "before": 4482932,
+    "bytes": 854784
+  },
+  {
     "name": "comfort_plus",
-    "before": 4537600,
-    "bytes": 864240
+    "before": 4537620,
+    "bytes": 864260
   },
   {
     "name": "cascade",
     "before": 1837500,
     "bytes": 405812
-  },
-  {
-    "name": "piping",
-    "before": 6896664,
-    "bytes": 1409392
   }
 ]

@@ -1,6 +1,7 @@
 import {BoxGeometry,BufferGeometry,CurvePath,CylinderGeometry,Group,LineCurve3,Mesh,MeshStandardMaterial,QuadraticBezierCurve3,Quaternion,RingGeometry,TorusGeometry,TubeGeometry,Vector3,type Object3D} from 'three'
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import {cascadeRoutes,greyOrigin,unitSpacing,viewPoint,type Point3,type Route} from './cascadeRoutes'
+import {distributionHardware} from './distributionGeometry'
 
 const palette:Record<string,string>={steel:'#73848c',green:'#456e52',dark:'#46525a',black:'#252c30',zinc:'#adb5b8',white:'#d5ddde'}
 function mesh(geometry:BufferGeometry,color:string) {
@@ -53,7 +54,7 @@ export function correctDa3Level(da:Object3D) {
   da.add(routeObject({id:'da3_level_column',label:'Указатель уровня ДА-3 на штуцерах K',points:[[cx,cy,.69],[cx,cy,2.03]],radius:.027,color:'#596771'}))
   da.add(routeObject({id:'da3_level_glass',label:'Стекло указателя уровня',points:[[cx-.026,cy,.78],[cx-.026,cy,1.94]],radius:.009,color:'#b8aa74'}))
 }
-export function cascadePiping(power:number,count:number) {
+export function cascadePiping(power:number,count:number,sourceTrap:Object3D) {
   const root=new Group();root.name='cascade_piping'
   for(const row of cascadeRoutes(power,count))root.add(routeObject(row))
   const last=(count-1)*unitSpacing,geometries:BufferGeometry[]=[]
@@ -71,5 +72,6 @@ export function cascadePiping(power:number,count:number) {
   const faces=[-1,1].map(side=>new RingGeometry(.101,.17,24).rotateY(side*Math.PI/2).translate(last+.8+side*.013,4.55,-5.6))
   root.getObjectByName('cascade_header')!.add(mesh(mergeGeometries([flange,...faces])!,'steel'))
   flange.dispose();faces.forEach(g=>g.dispose())
+  root.add(distributionHardware(count,sourceTrap))
   return root
 }

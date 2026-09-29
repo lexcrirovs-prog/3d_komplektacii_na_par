@@ -38,14 +38,16 @@ try {
  assert(await visible('cascade_pressure_sensor'));assert(await visible('cascade_header'));
  await page.screenshot({path:resolve(out,'cascade-five-overview.png')});
  checks.push('Five S-4000 Comfort+ units, shared geometry, single DA/FV/BDV/cascade cabinet, pressure sensor on header');
- const hit=await page.evaluate(()=>{const s=window.__s3000,p=s.scene.position.clone().set(25.2,1.65,1.90).project(s.camera),r=s.gl.domElement.getBoundingClientRect();return {x:r.left+(p.x+1)*r.width/2,y:r.top+(1-p.y)*r.height/2}});
+ const hit=await page.evaluate(()=>{const s=window.__s3000,p=s.scene.position.clone().set(25.146,.704,2.284);s.camera.position.set(25.146,.8,4.6);s.controls.target.copy(p);s.controls.update();s.invalidate();s.camera.updateMatrixWorld();p.project(s.camera);const r=s.gl.domElement.getBoundingClientRect();return {x:r.left+(p.x+1)*r.width/2,y:r.top+(1-p.y)*r.height/2}});
+ await page.waitForTimeout(300);
  await page.mouse.click(hit.x,hit.y);await page.getByText(/^Котёл 5 ·/).first().waitFor();
- checks.push('Picking the fifth boiler retains its unit identity');
+ checks.push('Picking the fifth burner retains its equipment card and unit identity');
  for(const n of [1,2,3,4,5]) {
   await page.getByLabel('Количество котлов',{exact:true}).selectOption(String(n));await wait(4000,n,'comfort_plus');
   assert.equal(await page.getByLabel('Количество котлов',{exact:true}).inputValue(),String(n));
   assert.equal(new URL(page.url()).searchParams.get('cascade'),n===1?null:String(n));
   assert.equal(await visible('cascade_header'),n>1);
+  assert.equal(await visible('cascade_distribution'),n>1);
  }
  checks.push('Counts 1,2,3,4,5 change geometry and persist in URL');
  await page.getByRole('button',{name:'Открыть шкафы котлов',exact:true}).click();

@@ -1,0 +1,24 @@
+{
+  "version": "2026.09.29.2",
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "sources": [
+    {
+      "file": "VID_20260929_144444.mp4",
+      "sha256": "8c674bc2bb0f3cf58bb0db806f825170dbde36a28ca18414ec4f54928bf3b26e",
+      "bytes": 28627286,
+      "durationSeconds": 85.75,
+      "resolution": [720, 1280],
+      "inspection": "86 frames sampled at 1 second; contact sheets across full duration; full frames at 00:56, 01:00 and 01:04. Outlet count partly occluded."
+    },
+    {
+      "file": "2026-09-29_14-40-04.png",
+      "sha256": "b506765309bc2f73c62f1b38aeb7042e998b9da00b2a6e5bcc1d01177fa45ae7",
+      "inspection": "BC970 front-panel overlap on Comfort cabinet"
+    }
+  ],
+  "projectSources": "../cascade-v2026.09.29.1/source-index.json",
+  "projectSheets": ["02-2026-ТХ, лист 3", "02-2026-ТХ, лист 8"],
+  "outletCount": {"value": 3, "status": "PROVISIONAL_OWNER_QUESTION_PENDING"},
+  "trap": {"visualModel": "A31 DN25", "projectBlockDN": 15, "sizedForThisAssembly": false}
+}

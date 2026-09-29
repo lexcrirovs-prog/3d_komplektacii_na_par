@@ -5,11 +5,11 @@ import importlib.util,json,sys,tarfile,subprocess
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.09.29.1';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r2'
+p.VERSION='2026.09.29.2';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='d32d07809f701049ac3312371b22f27e9f19b6852fc593cfb6573a1ab3a436fc'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r2/'
+p.BASELINE_HASH='df10e30767f33ddb61233d02ef595164ed68e0469f2d57f6bf21a1589231c3e3'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
     report=json.loads((p.REPO/'artifacts/cascade-stage/report.json').read_text(encoding='utf8'))
     assert report['status']=='PASSED_CASCADE_BROWSER' and report['base']==p.STAGE_URL
@@ -17,6 +17,10 @@ def validate(prepared):
     assert report['state']['geometryShared'] and report['state']['units']==5
     assert report['state']['counts']['plus_cabinet']==5 and report['state']['counts']['deaerator']==1
     assert report['mode']=='full' and len(report['ratings'])==9
+    doors=json.loads((p.REPO/'artifacts/doors-distribution-stage/report.json').read_text(encoding='utf8'))
+    assert doors['status']=='PASSED_DOORS_DISTRIBUTION_BROWSER' and doors['base']==p.STAGE_URL
+    assert doors['manifestSha256']==prepared['manifestSha256'] and not doors['errors']
+    assert len(doors['checks'])>=6
 p.validate_browser_acceptance=validate
 def refresh_prepared():
     """Reuse a verified backup only after a complete live/neighbor drift check.

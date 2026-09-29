@@ -1,4 +1,5 @@
 import {cascadeConnections} from './cascadeConnections.ts'
+import {distributionRoutes} from './steamDistribution.ts'
 
 export type Point3 = [number,number,number]
 export type Route = {id:string;label:string;points:Point3[];radius:number;color?:string;requires?:string[];excludes?:string[];note?:string}
@@ -48,7 +49,7 @@ export function cascadeRoutes(power:number,count:number):Route[] {
   const [gx,gy]=greyOrigin(count),px=last+.3
   add('cascade_pressure_connection','Отбор давления общего коллектора',[[px,headerY,headerZ],[px,headerY,headerZ+.25]],.008,'steel')
   add('cascade_pressure_signal','Датчик коллектора → шкаф каскада в гофре',[[px+.04,headerY,headerZ+.3],[px+.15,headerY,headerZ+.3],[px+.15,headerY,.055],[px+.15,7,.055],[gx+.3,7,.055],[gx+.3,gy+.14,.055],[gx+.3,gy+.14,1.16],[gx+.14,gy+.14,1.16]],.008,'black')
-  return rows
+  return [...rows,...distributionRoutes(count)]
 }
 
 export function ecoModulationCenter(power:number):Point3|undefined {

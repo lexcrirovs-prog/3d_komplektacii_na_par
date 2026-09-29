@@ -11,6 +11,7 @@ export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comf
   root.updateMatrixWorld(true)
   hinge.attach(root.getObjectByName(kind+'_door')!)
   root.userData.cabinetKind=kind;root.userData.displayScale=motion.display_scale
+  root.userData.doorKind=kind==='cascade'?'cascade':'cabinet'
   if(kind!=='cascade') {
     const bounds=new Box3().setFromObject(parent.getObjectByName('control_cabinet')!)
     root.position.set(bounds.min.x,bounds.min.y,(bounds.min.z+bounds.max.z)/2)

@@ -17,7 +17,7 @@ from display_geometry import DisplayGeometry
 
 OUT = Path(r'E:\CodexArtifacts\Cascade-v2026.09.28.1')
 DOWNLOADS = Path.home()/'Downloads'
-VERSION = '2026.09.29.1'
+VERSION = '2026.09.29.2'
 
 def label(g, text, x, y, z, size=.006, mat='black', centered=True):
     o = g.text(text, (x,y,z), size, mat=mat)
@@ -215,8 +215,14 @@ def door(g,key,w,h,color):
             g.box((x,-.020,z),(.062,.003,.125),'face')
             label(g,'ATECH',x,-.022,z+.047,.006)
             label(g,'BC 970' if i==0 else 'LC 300',x,-.022,z+.036,.005)
-            g.box((x-.010,-.023,z-.003),(.030,.004,.047),'darkred' if i==0 else 'duct')
-            if i==0:g.box((x,-.023,z+.020),(.031,.004,.012),'black')
+            if i==0:
+                # Separate keypad and LCD in height and depth. The former
+                # coplanar overlap flickered into triangular red/black patches.
+                g.box((x-.006,-.024,z-.020),(.032,.004,.056),'darkred')
+                g.box((x,-.026,z+.020),(.034,.004,.014),'black')
+                label(g,'0.0',x,-.0285,z+.017,.0045,'white')
+            else:
+                g.box((x-.010,-.023,z-.003),(.030,.004,.047),'duct')
             for j in range(3):
                 g.cyl((x+.014,-.024,z+.012-j*.014),(x+.014,-.026,z+.012-j*.014),.0023,'white',12)
             for xx,m in [(x-.013,'white'),(x+.012,'red')]:g.cyl((xx,-.024,z-.044),(xx,-.028,z-.044),.0035,m,16)

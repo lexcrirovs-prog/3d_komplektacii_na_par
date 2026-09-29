@@ -1,6 +1,7 @@
 import type {FamilyPart} from './familyAssets.ts'
 import type {Trim} from './familyRules.ts'
 import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,greyOrigin,routeCenter,sharedParts,unitSpacing,viewPoint} from './cascadeRoutes.ts'
+import {distributionLayout} from './steamDistribution.ts'
 
 export const legacyCabinetParts=new Set(['control_cabinet','cabinet_door','cabinet_interior','lc220','lc440','bc970','pr200','level_controller_1','level_controller_2','level_controller_3','plus_bc970'])
 export function correctedUnitParts(parts:FamilyPart[],power:number):FamilyPart[] {
@@ -42,6 +43,11 @@ export function extraParts(power:number,count:number,trim:Trim,center:number[]):
     for(const p of cascadeRoutes(power,count))result.push({id:p.id,label:p.label,center:routeCenter(p),requires:p.requires,excludes:p.excludes,category:'Каскадная обвязка',note:p.id==='cascade_header'?'Размер коллектора показан для компоновки. Подбор диаметра на суммарный расход выполняется проектом.':''})
     result.push({id:'cascade_pressure_sensor',label:'Датчик давления общего парового коллектора',category:'Автоматика',note:'ШУ КПК 01, листы 2 и 8: измерение давления общего коллектора, сигнал в каскадный шкаф.',center:viewPoint([(count-1)*unitSpacing+.3,5.6,4.86])})
     result.push({id:'cascade_supports',label:'Опоры общего коллектора и шкафа',category:'Каскадная обвязка',note:'',center:[g[0],2.2,-5.6]})
+    const d=distributionLayout(count)
+    result.push({id:'cascade_distribution_fittings',label:'Арматура и опоры паровой гребёнки',category:'Распределение пара',note:'Ввод, выходы к потребителям, манометр. Компоновка по видео 29.09.2026 и 02-2026-ТХ, лист 8.',center:viewPoint([d.x,4.5,1.85])})
+    result.push({id:'cascade_distribution_trap',label:'Конденсатоотводчик паровой гребёнки',category:'Возврат конденсата',note:'Фильтр, запорные вентили, конденсатоотводчик, обратный клапан и закрытый байпас. Показана имеющаяся геометрия A31 DN25; подбор типоразмера выполняется по расходу и перепаду.',center:viewPoint(d.trap)})
+    const outlet=result.find(p=>p.id==='cascade_distribution_drain_out')!
+    outlet.note='Граница подключения к внешнему возврату конденсата в деаэратор по тепловой схеме. Линия не объединена с продувкой котлов.'
   }
   return result
 }

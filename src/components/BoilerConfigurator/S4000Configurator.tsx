@@ -17,6 +17,7 @@ import {addPhotoCabinet,applyFeedCorrection} from './cascadeScene'
 import {correctedUnitParts,partInUnit,configurationParts} from './cascadeConfiguration'
 import {unitSpacing} from './cascadeRoutes'
 import {cascadePiping} from './cascadeGeometry'
+import {pickedDoor,toggleDoor,type DoorTarget} from './doorInteraction'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
@@ -79,9 +80,9 @@ function BoilerPreview({onReady,enabled,asset}:{onReady:()=>void;enabled:Set<str
   return <primitive object={scene} dispose={null} />
 }
 
-function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetOpen, boilerOpen,onReady,asset,count,cascadeOpen }: {
+function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetDoors, boilerDoors,onReady,asset,count,cascadeOpen,onDoor }: {
   enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
-  cabinetOpen: boolean; boilerOpen: boolean; onReady:()=>void; asset:FamilyAsset;count:number;cascadeOpen:boolean
+  cabinetDoors: ReadonlySet<number>; boilerDoors: ReadonlySet<number>; onReady:()=>void; asset:FamilyAsset;count:number;cascadeOpen:boolean;onDoor:(door:DoorTarget)=>void
 }) {
   const power=Number(asset.id),cascade=count>1,openingData=asset.opening
   const parts=useMemo(()=>correctedUnitParts(asset.parts,power),[asset])
@@ -93,7 +94,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
   const additionUrls=useMemo(()=>[...(photo?[trim==='comfort'?comfortCabinetUrl:photoCabinetUrl]:[]),...(cascade?[cascadeCabinetUrl]:[])],[trim,cascade])
   const additions=useGLTF(additionUrls)
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
-  const { gl, invalidate, camera } = useThree()
+  const { gl, invalidate, camera, controls } = useThree()
   useEffect(()=>{onReady()},[onReady])
   const scene = useMemo(() => {
     const copy = new Group()
@@ -105,6 +106,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     for (const motion of openingData.groups) {
       const hinge = new Group()
       hinge.name = `opening_${motion.id}`
+      hinge.userData.doorKind=motion.id
       hinge.position.set(motion.pivot[0], motion.pivot[2], -motion.pivot[1])
       unit.add(hinge)
       hinge.updateMatrixWorld(true)
@@ -114,6 +116,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
         hinge.attach(part)
       }
     }
+    unit.getObjectByName('control_cabinet')!.userData.doorKind='cabinet'
     if(photo)addPhotoCabinet(unit,additions[0].scene,trim as 'comfort'|'comfort_plus')
     const units=[unit]
     if(cascade) {
@@ -121,7 +124,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
         const next=unit.clone(true);next.name=`boiler_unit_${index+1}`;next.position.x=unitSpacing*index;copy.add(next);units.push(next)
       }
       addPhotoCabinet(copy,additions[photo?1:0].scene,'cascade',count)
-      copy.add(cascadePiping(power,count))
+      copy.add(cascadePiping(power,count,unit.getObjectByName('condensate_trap')!))
     }
     copy.userData.units=units
     const generatedMaterials=new Set<MeshStandardMaterial>()
@@ -132,14 +135,14 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     generatedMaterials.forEach(m=>m.dispose())
     return copy
   }, [gltfs,trim,count,additions])
-  useEffect(() => { invalidate() }, [cabinetOpen, boilerOpen, cascadeOpen, invalidate])
+  useEffect(() => { invalidate() }, [cabinetDoors, boilerDoors, cascadeOpen, invalidate])
   useFrame((_, delta) => {
     let movingDoor = false
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const motions:{hinge:Object3D;target:number}[]=[]
-    for(const unit of scene.userData.units as Group[]) {
-      for (const motion of openingData.groups) motions.push({hinge:unit.getObjectByName(`opening_${motion.id}`)!,target:(motion.id==='cabinet'?cabinetOpen:boilerOpen)?motion.angle_degrees*Math.PI/180:0})
-      if(photo)motions.push({hinge:unit.getObjectByName('photo_hinge_boiler')!,target:cabinetOpen?105*Math.PI/180:0})
+    for(const [index,unit] of (scene.userData.units as Group[]).entries()) {
+      for (const motion of openingData.groups) motions.push({hinge:unit.getObjectByName(`opening_${motion.id}`)!,target:(motion.id==='cabinet'?cabinetDoors:boilerDoors).has(index+1)?motion.angle_degrees*Math.PI/180:0})
+      if(photo)motions.push({hinge:unit.getObjectByName('photo_hinge_boiler')!,target:cabinetDoors.has(index+1)?105*Math.PI/180:0})
     }
     if(cascade)motions.push({hinge:scene.getObjectByName('photo_hinge_cascade')!,target:cascadeOpen?105*Math.PI/180:0})
     for (const {hinge,target} of motions) {
@@ -162,7 +165,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
       if (object instanceof Mesh) {
         if(object.userData.generatedGeometry)generated.add(object.geometry)
         const materials = Array.isArray(object.material) ? object.material : [object.material]
-        materials.forEach(m => m.dispose())
+        materials.forEach(m => {if(object.userData.generatedTexture&&(m as MeshStandardMaterial).map)(m as MeshStandardMaterial).map!.dispose();m.dispose()})
       }
     })
     generated.forEach(g=>g.dispose())
@@ -204,11 +207,17 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     // Opt-in inspection used by reproducible browser acceptance; no telemetry or requests.
     if (!new URLSearchParams(window.location.search).has('inspect3d')) return
     const host = window as typeof window & { __s3000?: unknown }
-    host.__s3000 = { scene, gl, camera, family:asset.id }
+    host.__s3000 = { scene, gl, camera, controls, invalidate, family:asset.id }
     return () => { delete host.__s3000 }
-  }, [scene, gl, camera])
+  }, [scene, gl, camera, controls, invalidate])
   return <primitive object={scene} dispose={null}
-    onClick={(e: any) => { const id = rootPart(e.object,byId); if (id) { e.stopPropagation(); select(id) } }}
+    onClick={(e: any) => {
+      // A camera drag must not become a door click when the pointer is released.
+      if(e.delta>5||dragging.current)return
+      const door=pickedDoor(e.object)
+      if(door){e.stopPropagation();onDoor(door);return}
+      const id = rootPart(e.object,byId); if (id) { e.stopPropagation(); select(id) }
+    }}
     onPointerOver={(e: any) => { if (rootPart(e.object,byId)) { e.stopPropagation(); document.body.style.cursor = 'pointer' } }}
     onPointerOut={() => { document.body.style.cursor = '' }}
   />
@@ -248,8 +257,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   },[config])
   const [selected, setSelected] = useState<string | null>(null)
   const [showAccessories, setShowAccessories] = useState(true)
-  const [cabinetOpen, setCabinetOpen] = useState(false)
-  const [boilerOpen, setBoilerOpen] = useState(false)
+  const [cabinetDoors,setCabinetDoors]=useState<Set<number>>(()=>new Set())
+  const [boilerDoors,setBoilerDoors]=useState<Set<number>>(()=>new Set())
+  const cabinetOpen=cabinetDoors.size>0,boilerOpen=boilerDoors.size>0
   const [cascadeOpen,setCascadeOpen]=useState(false)
   const [tab, setTab] = useState<'assembly' | 'equipment'>('assembly')
   const [query, setQuery] = useState('')
@@ -266,6 +276,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   })
   if(cascade)bomParts.push({id:'cascade_cabinet',label:'Общий каскадный шкаф автоматики',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
   if(cascade)bomParts.push({id:'cascade_pressure_sensor',label:'Датчик давления общего коллектора',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_pressure_sensor']})
+  if(cascade)bomParts.push({id:'cascade_distribution',label:'Паровая распределительная гребёнка',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution']},{id:'cascade_distribution_trap',label:'Конденсатоотводчик паровой гребёнки',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution_trap']})
   const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected.replace(/^unit\d+:/,''))) : undefined
   const visibleRows = bomParts.filter(row => searchText(row.label).includes(searchText(query)))
 
@@ -331,6 +342,11 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     const id=selection.replace(/^unit\d+:/,''),dx=(Number(selection.match(/^unit(\d+):/)?.[1]||1)-1)*unitSpacing
     if(id==='cascade_cabinet'){cascadeView();return}
     if(id==='plus_cabinet'){cabinetView(dx);return}
+    if(id==='cascade_distribution') {
+      const x=(count-1)*unitSpacing+4.4
+      requestView([x+7.5,5.3,.5],[x+.55,2.2,-4.8])
+      return
+    }
     if (!options.some(o => o.id === id) && id !== 'boiler') setShowAccessories(true)
     if (id.startsWith('feed_') && ['feed_direct', 'feed_to_economizer', 'feed_from_economizer', 'feed_piping'].includes(id)) {
       requestView([6.3,4.6,-6.5], [.3,1.45,-1.4])
@@ -365,17 +381,24 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     }
   }
   function openCabinet() {
-    setCabinetOpen(value => !value)
+    setCabinetDoors(current=>current.size?new Set():new Set(Array.from({length:count},(_,i)=>i+1)))
     setShowAccessories(true)
     setSelected(null)
     cabinetView()
     showModelOnMobile()
   }
   function openBoiler() {
-    setBoilerOpen(value => !value)
+    setBoilerDoors(current=>current.size?new Set():new Set(Array.from({length:count},(_,i)=>i+1)))
     setSelected(null)
     requestView([2.8,2.7,6.1], [-.2,1.12,1.4])
     showModelOnMobile()
+  }
+
+  function clickDoor({kind,unit}:DoorTarget) {
+    setSelected(null)
+    if(kind==='cascade')setCascadeOpen(value=>!value)
+    else if(kind==='cabinet')setCabinetDoors(current=>toggleDoor(current,unit))
+    else if(asset.opening.groups.some(g=>g.id==='boiler'))setBoilerDoors(current=>toggleDoor(current,unit))
   }
 
   return <div className="s3-app">
@@ -397,7 +420,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
           <Assembly asset={asset} enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging}
-            cabinetOpen={cabinetOpen} boilerOpen={boilerOpen} onReady={markSceneReady} count={count} cascadeOpen={cascadeOpen} />
+            cabinetDoors={cabinetDoors} boilerDoors={boilerDoors} onReady={markSceneReady} count={count} cascadeOpen={cascadeOpen} onDoor={clickDoor} />
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[(count-1)*unitSpacing/2,-.007,0]} opacity={.38} scale={25+(count-1)*unitSpacing} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
         <OrbitControls key={`${view.id}:${inputRecovery}`} makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
@@ -409,6 +432,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
         <button onClick={() => { setSelected(null); cabinetView() }}>Шкаф</button>
         {cascade&&<button onClick={()=>{setSelected(null);cascadeView()}}>Шкаф каскада</button>}
+        {cascade&&<button onClick={()=>focus('cascade_distribution')}>Гребёнка</button>}
         {cascade&&Array.from({length:count},(_,i)=><button key={i} onClick={()=>{const x=i*unitSpacing;setSelected(null);requestView([x+2.8,2.7,6.1],[x-.2,1.12,1.4])}}>Котёл {i+1}</button>)}
         <button onClick={() => focus('pressure_header')}>Приборы</button>
         <button onClick={() => { setSelected(null); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
@@ -446,6 +470,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
           <section className="s3-base-summary"><div className="s3-section-label">ОСНОВНАЯ КОМПЛЕКТАЦИЯ</div><h3>Обвязка «{trimLabel}»</h3><p>{config.trim==='standard'?'Релейная автоматика, два контактных датчика уровня и три реле давления.':config.trim==='comfort'?'Программируемый контроллер, контактные датчики и непрерывное измерение уровня, два реле и датчик давления.':'Два датчика низкого и один датчик высокого уровня с самодиагностикой, три контроллера защиты, непрерывное измерение уровня и программируемый контроллер.'} Автоматическая продувка и два питательных насоса.</p><label className="s3-check"><input type="checkbox" checked={showAccessories} onChange={e => { setShowAccessories(e.target.checked); setSelected(null) }} /><span>Показать навесное оборудование</span></label><button className="s3-text-button" onClick={() => setTab('equipment')}>Посмотреть состав →</button></section>
           <section className="s3-opening" aria-label="Открывание дверей">
             <div className="s3-section-label">ЗАГЛЯНУТЬ ВНУТРЬ</div>
+            <p>Нажмите на дверь прямо в 3D, чтобы открыть или закрыть её. В каскаде каждая дверь открывается отдельно.</p>
             <button disabled={!sceneReady} aria-pressed={cabinetOpen} onClick={openCabinet}>
               <span>{cabinetOpen ? (cascade?'Закрыть шкафы котлов':'Закрыть шкаф') : (cascade?'Открыть шкафы котлов':'Открыть шкаф')}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
             </button>

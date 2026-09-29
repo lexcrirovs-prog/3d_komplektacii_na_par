@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {powers,trims,normalizeConfig,boilerCount} from '../../src/components/BoilerConfigurator/familyRules.ts';
-import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,unitSpacing} from '../../src/components/BoilerConfigurator/cascadeRoutes.ts';
+import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,greyOrigin,unitSpacing} from '../../src/components/BoilerConfigurator/cascadeRoutes.ts';
 import {correctedUnitParts,configurationParts,partInUnit} from '../../src/components/BoilerConfigurator/cascadeConfiguration.ts';
 import {isPartVisible} from '../../src/components/BoilerConfigurator/assemblyVisibility.ts';
 const options=new Set(['burner','economizer','deaerator','modulation','gpz','bdv','fv']);
@@ -89,5 +89,12 @@ test('FV upper return is separate from the retained DN25 safety valve',()=>{
   const rows=flashRoutes(power);near(rows[0].points[0],[3.65,3.65,1.53]);
   near(rows[0].points.at(-1),power<=1500?[-3.832,.3,.880313]:[-3.65,.975,2.65214]);
   assert(!rows.some(r=>r.id==='flash_steam_common'));
+ }
+});
+test('Shared cabinet and its open door stay in an aisle, including odd boiler counts',()=>{
+ for(const count of [2,3,4,5]) {
+  const [x]=greyOrigin(count);
+  assert(x>0&&x<(count-1)*unitSpacing);
+  for(let unit=0;unit<count;unit++)assert(Math.abs(x-unit*unitSpacing)>2.5);
  }
 });

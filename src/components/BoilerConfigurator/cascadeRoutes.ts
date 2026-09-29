@@ -8,7 +8,9 @@ export const sharedParts=new Set(['deaerator','deaerator_details','deaerator_fee
   'fv_safety','fv_safety_discharge','fv_identification','bdv_vent','bdv_water_drain','bdv_cooling_stub',
   'bdv_bottom_drain_stub','bdv_identification','bdv_cooling_marker','bottom_to_bdv','tds_to_fv','tds_without_fv','tds_without_vessels'])
 export const connections=(power:number)=>cascadeConnections[String(power) as keyof typeof cascadeConnections]
-export const greyOrigin=(count:number):Point3=>[(count-1)*unitSpacing/2,-3.05,1.15]
+// Use an aisle for odd as well as even counts; the geometric midpoint of an
+// odd row is the middle boiler's burner and must not host the cascade cabinet.
+export const greyOrigin=(count:number):Point3=>[(Math.floor((count-1)/2)+.5)*unitSpacing,-3.05,1.15]
 export const viewPoint=([x,y,z]:readonly number[]):Point3=>[x,z,-y]
 export function routeCenter(route:Route):Point3 {
   return viewPoint([0,1,2].map(i=>(Math.min(...route.points.map(p=>p[i]))+Math.max(...route.points.map(p=>p[i])))/2))

@@ -1,8 +1,9 @@
 import {createRequire} from 'node:module';
 import {resolve} from 'node:path';
-import {mkdir,writeFile} from 'node:fs/promises';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
+import {correctedUnitParts} from '../../src/components/BoilerConfigurator/cascadeConfiguration.ts';
 const require=createRequire(resolve(process.env.S3000_BROWSER_RUNTIME,'package.json'));
 const {chromium}=require('playwright');
 const [base,out,mode='full']=process.argv.slice(2);await mkdir(out,{recursive:true});
@@ -79,6 +80,25 @@ try {
  // Each rating uses its own factory model; unit count remains five after switching.
  for(const power of (mode==='full'?[500,1000,1500,2000,2500,3000,3500,4000,5000]:[500,4000,5000])) {
   await page.getByLabel('Паропроизводительность',{exact:true}).selectOption(String(power));await wait(power,5,'comfort');
+  if(power>=1500) {
+   // Switching through S-500 correctly clears its unavailable economizer.
+   // Explicitly restore it to inspect the revised feed geometry on every rating.
+   await page.getByRole('checkbox',{name:/^Экономайзер/}).check();
+   await page.waitForFunction(()=>window.__s3000.scene.getObjectByName('economizer')?.visible);
+   const parts=correctedUnitParts(JSON.parse(await readFile(`src/assets/ratings/${power}/assembly.json`,'utf8')).parts,power);
+   const ids=['mod_eco','mod_eco_drive'];
+   const actual=await page.evaluate(ids=>ids.map(id=>{
+    const g=window.__s3000.scene.userData.units[0].getObjectByName(id),lo=[Infinity,Infinity,Infinity],hi=[-Infinity,-Infinity,-Infinity];
+    g.updateWorldMatrix(true,true);
+    g.traverse(o=>{if(!o.isMesh)return;if(!o.geometry.boundingBox)o.geometry.computeBoundingBox();const b=o.geometry.boundingBox;
+     for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z]) {
+      const p=o.position.clone().set(x,y,z).applyMatrix4(o.matrixWorld).toArray();for(let i=0;i<3;i++){lo[i]=Math.min(lo[i],p[i]);hi[i]=Math.max(hi[i],p[i])}
+     }
+    });return lo.map((v,i)=>(v+hi[i])/2);
+   }),ids);
+   for(let i=0;i<ids.length;i++)assert(actual[i].every((v,k)=>Math.abs(v-parts.find(p=>p.id===ids[i]).center[k])<.002),`Moved geometry bounds mismatch ${power}/${ids[i]}: ${actual[i]}`);
+   assert(await visible('mod_eco_drive_cable'));assert(!await visible('direct_inlet'));
+  }
   assert.equal(await page.getByLabel('Количество котлов',{exact:true}).inputValue(),'5');
   const row=await snapshot();assert.equal(row.counts.boiler,5);assert.equal(row.counts.plus_cabinet,5);assert(row.geometryShared);ratings.push(row);
   if(power===500)assert(await page.evaluate(()=>{const d=window.__s3000.scene.getObjectByName('deaerator');return !!d.getObjectByName('da3_level_column')&&!d.getObjectByName('DA3_CAD_74')&&!d.getObjectByName('deaerator__dark')}));
@@ -86,7 +106,7 @@ try {
  }
  await page.getByLabel('Комплектация',{exact:true}).selectOption('standard');await wait(5000,5,'standard');
  assert(await visible('control_cabinet'));assert(!await visible('plus_cabinet'));assert(await visible('cascade_cabinet'));
- checks.push('All checked powers preserve five units; Standard retains its own cabinet and supports cascade');
+ checks.push('All checked powers preserve five units; moved valve/actuator bounds verified with economizer; Standard retains its own cabinet and supports cascade');
  await page.getByRole('button',{name:'Общий вид',exact:true}).click();
  await page.setViewportSize({width:390,height:844});await page.waitForTimeout(300);await page.screenshot({path:resolve(out,'cascade-mobile.png')});
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));

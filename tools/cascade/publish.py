@@ -6,10 +6,10 @@ from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 p.VERSION='2026.09.29.1';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r2'
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
 p.BASELINE_HASH='d32d07809f701049ac3312371b22f27e9f19b6852fc593cfb6573a1ab3a436fc'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r2/'
 def validate(prepared):
     report=json.loads((p.REPO/'artifacts/cascade-stage/report.json').read_text(encoding='utf8'))
     assert report['status']=='PASSED_CASCADE_BROWSER' and report['base']==p.STAGE_URL

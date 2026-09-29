@@ -1,7 +1,7 @@
 {
-  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
-  "parts": 128,
-  "bytes": 43230072,
+  "status": "PASSED_RETAINED_GEOMETRY_WITH_EXTERNAL_DEAERATOR",
+  "parts": 125,
+  "bytes": 38018588,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -21,7 +21,6 @@
     {
       "file": "s4000-1.glb",
       "parts": [
-        "deaerator",
         "lcs600",
         "pump_branch_2",
         "pump_check_1",
@@ -37,13 +36,12 @@
         "bottom_before_auto",
         "mod_direct_bypass"
       ],
-      "bytes": 5307436,
-      "sha256": "d995e2912dcec475a6a03eb0c84952f33e9a03c6d3a15d1fb0339f7fc084a542"
+      "bytes": 2216176,
+      "sha256": "b259fe8f7972aa62ab888ccf9a0893045a3623c23f510c55ea95b760b3997755"
     },
     {
       "file": "s4000-2.glb",
       "parts": [
-        "deaerator_details",
         "wiring_pressure_transmitter",
         "pump_in_valve_1",
         "gpz_drive_cable",
@@ -61,8 +59,8 @@
         "bottom_after_auto",
         "control_cabinet"
       ],
-      "bytes": 5365168,
-      "sha256": "5437290bc5844bc9193337eb4a5af94ab87c40de347d4585b47b040937f49876"
+      "bytes": 3255612,
+      "sha256": "c22976aa5f1dcd610e5211a97be81d2d6e2109d938f62486a70d2288a31a3c36"
     },
     {
       "file": "s4000-3.glb",
@@ -179,13 +177,12 @@
         "pressure_gauge",
         "tds_common",
         "high_level",
-        "deaerator_support",
         "mod_eco_drive",
         "gpz_bypass",
         "pressure_transmitter"
       ],
-      "bytes": 5979544,
-      "sha256": "cd8e33e145d9e53754df4275f40e86f00e9d87cad8ec8c8ebde04b044ea19df5"
+      "bytes": 5968876,
+      "sha256": "becd885eecfabf386042aed3c4681bdb87dfbb0f39d20ae5ef74b0297f25c3ab"
     }
   ]
 }

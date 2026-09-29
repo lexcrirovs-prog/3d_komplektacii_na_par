@@ -5,6 +5,7 @@ import {routeObject,correctDa3Level,cableSupport} from './cascadeGeometry'
 import {deaeratorRoutes} from './deaeratorRoutes'
 import {deaeratorHardware,openDeaeratorPorts} from './deaeratorGeometry'
 import {pipeMarkers} from './pipeMarkers'
+import {selectDeaerator} from './deaeratorSelection'
 
 export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comfort_plus'|'cascade',count=1) {
   const root=model.clone(true);root.name=kind==='cascade'?'cascade_cabinet':'plus_cabinet'
@@ -26,7 +27,7 @@ export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comf
   return root
 }
 export function applyFeedCorrection(unit:Group,power:number,count=1) {
-  for(const row of [...correctedFeedRoutes(power),...flashRoutes(power),...deaeratorRoutes(power,count)]) {
+  for(const row of [...correctedFeedRoutes(power),...flashRoutes(power,count),...deaeratorRoutes(power,count)]) {
     unit.getObjectByName(row.id)?.removeFromParent()
     unit.add(routeObject(row))
   }
@@ -37,8 +38,8 @@ export function applyFeedCorrection(unit:Group,power:number,count=1) {
     const sleeve=unit.getObjectByName('mod_eco_drive_cable')!
     sleeve.add(cableSupport(sleeve.userData.route.points[1]))
   }
-  if(power<=1500)correctDa3Level(unit.getObjectByName('deaerator')!)
-  openDeaeratorPorts(unit.getObjectByName('deaerator')!,power)
+  if(selectDeaerator(power,count)==='da3')correctDa3Level(unit.getObjectByName('deaerator')!)
+  openDeaeratorPorts(unit.getObjectByName('deaerator')!,power,count)
   unit.add(deaeratorHardware(power,count))
   const c=connections(power),steam=c.steam_end
   for(const row of [

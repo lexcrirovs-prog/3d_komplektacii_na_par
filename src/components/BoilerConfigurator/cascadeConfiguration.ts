@@ -3,10 +3,16 @@ import type {Trim} from './familyRules.ts'
 import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,greyOrigin,routeCenter,sharedParts,unitSpacing,viewPoint} from './cascadeRoutes.ts'
 import {distributionLayout} from './steamDistribution.ts'
 import {deaeratorRoutes} from './deaeratorRoutes.ts'
+import {deaeratorLabels,selectDeaerator} from './deaeratorSelection.ts'
+import {nativeDeaerator} from './deaeratorPorts.ts'
 
 export const legacyCabinetParts=new Set(['control_cabinet','cabinet_door','cabinet_interior','lc220','lc440','bc970','pr200','level_controller_1','level_controller_2','level_controller_3','plus_bc970'])
 export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):FamilyPart[] {
-  const result=parts.map(p=>({...p}))
+  const result=parts.filter(p=>!['deaerator','deaerator_details','deaerator_support'].includes(p.id)).map(p=>({...p}))
+  const native=nativeDeaerator(power,count),kind=selectDeaerator(power,count)
+  result.push({id:'deaerator',label:`Деаэратор ${deaeratorLabels[kind]}`,category:'Деаэрация',requires:['deaerator'],
+    center:native?viewPoint(native.center):parts.find(p=>p.id==='deaerator')!.center,
+    note:`Общий деаэратор. Автоматический выбор по суммарной паропроизводительности ${power*count/1000} т/ч. ${native?'Геометрия и патрубки из заводской STEP-модели. Опорная плоскость поднята на 1 м.':'Вертикальная заводская модель ДА-3.'}`})
   const set=(id:string,change:Partial<FamilyPart>)=>{const row=result.find(p=>p.id===id);if(row)Object.assign(row,change)}
   set('direct_inlet',{excludes:['economizer']})
   set('bottom_to_bdv',{requires:['bdv']})
@@ -25,7 +31,7 @@ export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):Fami
     const previous=result.findIndex(p=>p.id===row.id)
     if(previous>=0)result[previous]=data;else result.push(data)
   }
-  for(const row of flashRoutes(power))result.push({...row,note:row.note||'',category:'Продувка и возврат пара',center:routeCenter(row)})
+  for(const row of flashRoutes(power,count))result.push({...row,note:row.note||'',category:'Продувка и возврат пара',center:routeCenter(row)})
   for(const row of deaeratorRoutes(power,count)) {
     const data={...row,category:'Обвязка деаэратора',center:routeCenter(row),note:'Топология: 02-2026-ТХ, лист 3. Присоединения — по заводскому чертежу выбранного деаэратора.'}
     const i=result.findIndex(p=>p.id===row.id);if(i>=0)result[i]=data;else result.push(data)

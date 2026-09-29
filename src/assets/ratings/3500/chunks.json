@@ -1,7 +1,7 @@
 {
-  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
-  "parts": 127,
-  "bytes": 42123112,
+  "status": "PASSED_RETAINED_GEOMETRY_WITH_EXTERNAL_DEAERATOR",
+  "parts": 124,
+  "bytes": 36910612,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -16,7 +16,6 @@
     {
       "file": "s4000-1.glb",
       "parts": [
-        "deaerator",
         "lcs600",
         "mod_eco",
         "flash_steam_common",
@@ -33,13 +32,12 @@
         "mod_eco_bypass",
         "trap_support"
       ],
-      "bytes": 5227276,
-      "sha256": "504718da5e6ccbe60edef7ebbad0b40affdee7b7d47eba8bbd200cd6581cedc1"
+      "bytes": 2135600,
+      "sha256": "474ecc01ed7cf064f6a633a667112d606167a546165e09d8df5867f1aec54a99"
     },
     {
       "file": "s4000-2.glb",
       "parts": [
-        "deaerator_details",
         "wiring_pressure_switch_3",
         "pump_in_valve_1",
         "gpz_drive_cable",
@@ -58,8 +56,8 @@
         "bottom_after_auto",
         "steam_delivery"
       ],
-      "bytes": 5397980,
-      "sha256": "8f79fbd4b2045952e1e4ea258631108008f01d402aa8d1b63c7a650a87f5784d"
+      "bytes": 3287820,
+      "sha256": "b58bf6e77b7b35c922805a5fde058a97cd79e342d929b69495a1c813f10eaf11"
     },
     {
       "file": "s4000-3.glb",
@@ -128,13 +126,12 @@
         "lp400",
         "lp200",
         "steam_mount_adapter",
-        "deaerator_support",
         "bottom_before_gate",
         "bdv_bottom_drain_stub",
         "pump_delivery"
       ],
-      "bytes": 6099920,
-      "sha256": "20c9ac00a9ad527830c5cfcbd9b0da5afd71d33476969192825e7a2a86406c7a"
+      "bytes": 6089256,
+      "sha256": "86c07fa825e7cc07c0de743655892c5aac33f3bfdf034097b405fc8cd60dda45"
     },
     {
       "file": "s4000-6.glb",

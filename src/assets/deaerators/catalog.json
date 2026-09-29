@@ -1,0 +1,871 @@
+{
+  "da15_8": {
+    "label": "ДА-15/8",
+    "source": "PR.15.01.161СБ Деаэратор ДА-15-8.stp",
+    "matrix": [
+      [
+        0.0,
+        0.0,
+        0.001
+      ],
+      [
+        0.001,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.001,
+        0.0
+      ]
+    ],
+    "offset": [
+      -4.2,
+      -1.92,
+      2.1162400000000003
+    ],
+    "center": [
+      -4.2,
+      0.0,
+      2.11624
+    ],
+    "bounds": [
+      [
+        -5.336,
+        -2.62,
+        0.974
+      ],
+      [
+        -3.190023,
+        2.62,
+        5.392155
+      ]
+    ],
+    "ports": {
+      "feed": {
+        "point": [
+          -4.2,
+          1.77,
+          1.05524
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 100,
+        "flangeRadius": 0.1075,
+        "sourceSolid": 31,
+        "letter": "Д",
+        "sourcePointMM": [
+          3690.0,
+          -1061.0,
+          0.0
+        ]
+      },
+      "drain": {
+        "point": [
+          -4.2,
+          -1.72,
+          1.05524
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 29,
+        "letter": "Г",
+        "sourcePointMM": [
+          200.0,
+          -1061.0,
+          -0.0
+        ]
+      },
+      "overflow": {
+        "point": [
+          -5.31,
+          -1.72,
+          2.11624
+        ],
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "dn": 80,
+        "flangeRadius": 0.0975,
+        "sourceSolid": 23,
+        "letter": "Е",
+        "sourcePointMM": [
+          200.0,
+          -0.0,
+          -1110.0
+        ]
+      },
+      "steam": {
+        "point": [
+          -4.2,
+          1.72,
+          3.22424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 150,
+        "flangeRadius": 0.14,
+        "sourceSolid": 9,
+        "letter": "В",
+        "sourcePointMM": [
+          3640.0,
+          1108.0,
+          0.0
+        ]
+      },
+      "barb": {
+        "point": [
+          -4.2,
+          1.055,
+          3.22424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 125,
+        "flangeRadius": 0.1225,
+        "sourceSolid": 11,
+        "letter": "Ц",
+        "sourcePointMM": [
+          2975.0,
+          1108.0,
+          0.0
+        ]
+      },
+      "flash": {
+        "point": [
+          -3.821042,
+          -1.67,
+          3.157419
+        ],
+        "normal": [
+          0.3420201,
+          0.0,
+          0.9396926
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 47,
+        "letter": "С",
+        "sourcePointMM": [
+          250.0,
+          1041.17943,
+          378.95832
+        ]
+      },
+      "hotCondensate": {
+        "point": [
+          -4.578958,
+          -1.67,
+          3.157419
+        ],
+        "normal": [
+          -0.3420201,
+          0.0,
+          0.9396926
+        ],
+        "dn": 65,
+        "flangeRadius": 0.09,
+        "sourceSolid": 49,
+        "letter": "У",
+        "sourcePointMM": [
+          250.0,
+          1041.17943,
+          -378.95832
+        ]
+      },
+      "recirculation": {
+        "point": [
+          -3.814201,
+          -0.08,
+          3.176213
+        ],
+        "normal": [
+          0.3420201,
+          0.0,
+          0.9396926
+        ],
+        "dn": 32,
+        "flangeRadius": 0.0675,
+        "sourceSolid": 51,
+        "letter": "Т",
+        "sourcePointMM": [
+          1840.0,
+          1059.97328,
+          385.79872
+        ]
+      },
+      "water": {
+        "point": [
+          -4.2,
+          -0.56,
+          5.31224
+        ],
+        "normal": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 401,
+        "letter": "У колонки",
+        "sourcePointMM": [
+          1360.0,
+          3196.0,
+          -0.0
+        ]
+      },
+      "condensate": {
+        "point": [
+          -4.2,
+          -1.247,
+          4.65724
+        ],
+        "normal": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 392,
+        "letter": "Р колонки",
+        "sourcePointMM": [
+          673.0,
+          2541.0,
+          0.0
+        ]
+      },
+      "vent": {
+        "point": [
+          -4.2,
+          -0.92,
+          5.31524
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 388,
+        "letter": "И колонки",
+        "sourcePointMM": [
+          1000.0,
+          3199.0,
+          -0.0
+        ]
+      }
+    },
+    "saddleYs": [
+      -1.32,
+      1.32
+    ],
+    "supportWidth": 1.62,
+    "supportElevation": 1,
+    "factoryFloorMM": -1116.24,
+    "openedCaps": [
+      117,
+      143,
+      169,
+      183,
+      291,
+      316,
+      331,
+      356,
+      407,
+      421,
+      458
+    ],
+    "flashMode": "factoryNozzle"
+  },
+  "da25_15": {
+    "label": "ДА-25/15",
+    "source": "PR.25.01.269СБ Деаэратор ДА-25_15.stp",
+    "matrix": [
+      [
+        0.0,
+        0.0,
+        0.001
+      ],
+      [
+        0.001,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.001,
+        0.0
+      ]
+    ],
+    "offset": [
+      -4.2,
+      4.50904240827667,
+      0.624029
+    ],
+    "center": [
+      -4.2,
+      0.0,
+      2.223557
+    ],
+    "bounds": [
+      [
+        -5.436,
+        -3.225,
+        1.0
+      ],
+      [
+        -3.09019,
+        3.225,
+        5.405057
+      ]
+    ],
+    "ports": {
+      "feed": {
+        "point": [
+          -4.2,
+          2.28,
+          1.055557
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 150,
+        "flangeRadius": 0.14,
+        "sourceSolid": 16,
+        "letter": "Д",
+        "sourcePointMM": [
+          -2229.04241,
+          431.52798,
+          0.0
+        ]
+      },
+      "drain": {
+        "point": [
+          -4.2,
+          -2.33,
+          1.055557
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 14,
+        "letter": "Г",
+        "sourcePointMM": [
+          -6839.04241,
+          431.52798,
+          0.0
+        ]
+      },
+      "overflow": {
+        "point": [
+          -5.408,
+          -2.33,
+          2.223557
+        ],
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 36,
+        "letter": "Е",
+        "sourcePointMM": [
+          -6839.04241,
+          1599.52798,
+          -1208.0
+        ]
+      },
+      "steam": {
+        "point": [
+          -4.2,
+          2.28,
+          3.431557
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 200,
+        "flangeRadius": 0.1675,
+        "sourceSolid": 8,
+        "letter": "В",
+        "sourcePointMM": [
+          -2229.04241,
+          2807.52798,
+          0.0
+        ]
+      },
+      "barb": {
+        "point": [
+          -4.2,
+          1.46,
+          3.431557
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 150,
+        "flangeRadius": 0.14,
+        "sourceSolid": 6,
+        "letter": "П",
+        "sourcePointMM": [
+          -3049.04241,
+          2807.52798,
+          0.0
+        ]
+      },
+      "flash": {
+        "point": [
+          -4.2,
+          0.07,
+          3.431557
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 80,
+        "flangeRadius": 0.0975,
+        "sourceSolid": 20,
+        "letter": "К",
+        "sourcePointMM": [
+          -4439.04241,
+          2807.52798,
+          0.0
+        ]
+      },
+      "hotCondensate": {
+        "point": [
+          -3.689477,
+          2.28,
+          3.318377
+        ],
+        "normal": [
+          0.4226183,
+          0.0,
+          0.9063078
+        ],
+        "dn": 65,
+        "flangeRadius": 0.09,
+        "sourceSolid": 22,
+        "letter": "М",
+        "sourcePointMM": [
+          -2229.04241,
+          2694.34779,
+          510.52286
+        ]
+      },
+      "recirculation": {
+        "point": [
+          -4.2,
+          -0.33,
+          3.431557
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 80,
+        "flangeRadius": 0.0975,
+        "sourceSolid": 10,
+        "letter": "Л",
+        "sourcePointMM": [
+          -4839.04241,
+          2807.52798,
+          0.0
+        ]
+      },
+      "water": {
+        "point": [
+          -3.896,
+          -1.806543,
+          4.846557
+        ],
+        "normal": [
+          0.5,
+          -0.8660254,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 359,
+        "letter": "В колонки",
+        "sourcePointMM": [
+          -6315.58586,
+          4222.52798,
+          304.0
+        ]
+      },
+      "condensate": {
+        "point": [
+          -4.094422,
+          -1.878763,
+          4.846557
+        ],
+        "normal": [
+          0.1736482,
+          -0.9848078,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 357,
+        "letter": "Б колонки",
+        "sourcePointMM": [
+          -6387.80553,
+          4222.52798,
+          105.57809
+        ]
+      },
+      "vent": {
+        "point": [
+          -4.2,
+          -1.57,
+          5.331557
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 348,
+        "letter": "Д колонки",
+        "sourcePointMM": [
+          -6079.04241,
+          4707.52798,
+          0.0
+        ]
+      }
+    },
+    "saddleYs": [
+      -1.73,
+      1.73
+    ],
+    "supportWidth": 1.79,
+    "supportElevation": 1,
+    "factoryFloorMM": 375.971,
+    "openedCaps": [
+      95,
+      97,
+      101,
+      103,
+      105,
+      107,
+      267,
+      281,
+      395,
+      481,
+      495
+    ],
+    "flashMode": "factoryNozzle"
+  },
+  "da25_25": {
+    "label": "ДА-25/25",
+    "source": "PR.25.01.268СБ Деаэратор ДА-25-25-1.stp",
+    "matrix": [
+      [
+        0.0,
+        0.0,
+        0.001
+      ],
+      [
+        0.001,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.001,
+        0.0
+      ]
+    ],
+    "offset": [
+      -4.2,
+      -3.33,
+      2.429424
+    ],
+    "center": [
+      -4.2,
+      0.0,
+      2.429424
+    ],
+    "bounds": [
+      [
+        -5.6435,
+        -4.23,
+        0.986
+      ],
+      [
+        -2.840116,
+        4.23,
+        6.075328
+      ]
+    ],
+    "ports": {
+      "feed": {
+        "point": [
+          -4.2,
+          3.13,
+          1.046424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 200,
+        "flangeRadius": 0.1675,
+        "sourceSolid": 15,
+        "letter": "Д",
+        "sourcePointMM": [
+          6460.0,
+          -1383.0,
+          0.0
+        ]
+      },
+      "drain": {
+        "point": [
+          -4.2,
+          -3.13,
+          1.046424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 13,
+        "letter": "Г",
+        "sourcePointMM": [
+          200.0,
+          -1383.0,
+          0.0
+        ]
+      },
+      "overflow": {
+        "point": [
+          -5.616,
+          -3.13,
+          2.429424
+        ],
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "dn": 150,
+        "flangeRadius": 0.14,
+        "sourceSolid": 16,
+        "letter": "Е",
+        "sourcePointMM": [
+          200.0,
+          0.0,
+          -1416.0
+        ]
+      },
+      "steam": {
+        "point": [
+          -4.2,
+          3.13,
+          3.837424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 250,
+        "flangeRadius": 0.2025,
+        "sourceSolid": 2,
+        "letter": "В",
+        "sourcePointMM": [
+          6460.0,
+          1408.0,
+          0.0
+        ]
+      },
+      "barb": {
+        "point": [
+          -4.2,
+          2.08,
+          3.837424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 200,
+        "flangeRadius": 0.1675,
+        "sourceSolid": 61,
+        "letter": "М",
+        "sourcePointMM": [
+          5410.0,
+          1408.0,
+          0.0
+        ]
+      },
+      "hotCondensate": {
+        "point": [
+          -4.2,
+          2.58,
+          3.837424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 80,
+        "flangeRadius": 0.0975,
+        "sourceSolid": 76,
+        "letter": "К",
+        "sourcePointMM": [
+          5910.0,
+          1408.0,
+          -0.0
+        ]
+      },
+      "recirculation": {
+        "point": [
+          -4.2,
+          -2.6,
+          3.837424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 4,
+        "letter": "И",
+        "sourcePointMM": [
+          730.0,
+          1408.0,
+          0.0
+        ]
+      },
+      "water": {
+        "point": [
+          -4.2,
+          -0.925,
+          5.985424
+        ],
+        "normal": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "dn": 65,
+        "flangeRadius": 0.09,
+        "sourceSolid": 207,
+        "letter": "Е колонки",
+        "sourcePointMM": [
+          2405.0,
+          3556.0,
+          -0.0
+        ]
+      },
+      "condensate": {
+        "point": [
+          -4.2,
+          -1.738,
+          5.260424
+        ],
+        "normal": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 91,
+        "letter": "Д колонки",
+        "sourcePointMM": [
+          1592.0,
+          2831.0,
+          0.0
+        ]
+      },
+      "vent": {
+        "point": [
+          -4.2,
+          -1.42,
+          5.745424
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 86,
+        "letter": "И колонки",
+        "sourcePointMM": [
+          1910.0,
+          3316.0,
+          0.0
+        ]
+      }
+    },
+    "saddleYs": [
+      -2.28,
+      2.28
+    ],
+    "supportWidth": 2.14,
+    "supportElevation": 1,
+    "factoryFloorMM": -1429.424,
+    "openedCaps": [
+      136,
+      138,
+      237,
+      254,
+      256,
+      275,
+      276,
+      277,
+      279,
+      561
+    ],
+    "flashMode": "steamTee"
+  }
+}

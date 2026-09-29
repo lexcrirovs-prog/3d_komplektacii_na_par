@@ -1,13 +1,15 @@
 import {connections,unitSpacing,type Route,type Point3} from './cascadeRoutes.ts'
-import {deaeratorPorts} from './deaeratorPorts.ts'
+import {deaeratorPorts,nativeDeaerator} from './deaeratorPorts.ts'
+import {nativeDeaeratorRoutes} from './nativeDeaeratorRoutes.ts'
 
 export const condensateBoundary:Point3=[-6.5,-3,3.2]
 /** TX sheet 3 circuit topology, fitted to each vessel's own factory nozzles.
  * The project water-treatment plant and vent cooler are outside this assembly. */
 export function deaeratorRoutes(power:number,count=1):Route[] {
-  const p=deaeratorPorts(power),small=power<=1500
+  const p=deaeratorPorts(power,count),native=nativeDeaerator(power,count),small=!native
   const row=(id:string,label:string,points:Point3[],radius:number,color='steel'):Route=>({id,label,points,radius,color,requires:['deaerator']})
   const steamSource:Point3=count>1?[-.65,5.6,4.55]:[...connections(power).steam_end]
+  if(native)return nativeDeaeratorRoutes(native,count,steamSource)
   const feed:Point3[]=small?[p.feed,[-3.1,-.60,.4],[-2.20,-.60,.4],[-2.20,2.35,.4],[-2.1,2.35,.45]]:
     [p.feed,[-3.65,1.525,.72],[-3.65,2.8,.72],[-2.1,2.8,.72],[-2.1,2.35,.45]]
   const water:Point3[]=small?[[-6.5,-2.6,1.6],[-4.9,-2.6,1.6],[-4.9,.115,1.6],[-4.9,.115,2.510313],p.water]:

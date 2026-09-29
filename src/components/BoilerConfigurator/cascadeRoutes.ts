@@ -1,6 +1,7 @@
 import {cascadeConnections} from './cascadeConnections.ts'
 import {distributionRoutes} from './steamDistribution.ts'
-import {deaeratorPorts} from './deaeratorPorts.ts'
+import {deaeratorPorts,nativeDeaerator} from './deaeratorPorts.ts'
+import {approach,deaeratorLayout} from './nativeDeaeratorRoutes.ts'
 
 export type Point3 = [number,number,number]
 export type Route = {id:string;label:string;points:Point3[];radius:number;color?:string;requires?:string[];excludes?:string[];note?:string}
@@ -72,13 +73,19 @@ export function correctedFeedRoutes(power:number):Route[] {
 
 /** FV O DN50 is separate from its safety valve on the small DN25 flange.
  * DA3: factory drawing PR.3.01.044, inlet Г DN65, STEP solids 26/27.
- * DA15: factory Л DN32, distinct from Н (hot condensate), with +1 m support lift.
+ * New vessels use their registered flash nozzle, or the steam tee on 25/25.
  */
-export function flashRoutes(power:number):Route[] {
+export function flashRoutes(power:number,count=1):Route[] {
   const start:Point3=[3.65,3.65,1.53],boundary:Point3=[-2.2,5.1,4.05]
-  const tail:Point3[]=power<=1500
+  const native=nativeDeaerator(power,count),p=deaeratorPorts(power,count)
+  let tail:Point3[]=!native
     ?[[-4.35,5.1,4.05],[-4.35,.3,4.05],[-4.35,.3,3.2]] // join the one shared steam riser, never duplicate it
-    :[[-4.65,5.1,4.05],[-4.65,-1.325,4.05],[-3.65,-1.325,4.05],deaeratorPorts(power).flash]
+    :[]
+  if(native) {
+    const z=deaeratorLayout(native).flashZ
+    const end=native.ports.flash?approach(native.ports.flash):p.flash
+    tail=[[-2.55,5.1,4.05],[-2.55,5.1,z],[-2.55,end[1],z],[end[0],end[1],z],end,...(native.ports.flash?[p.flash]:[])]
+  }
   const common:Point3[]=[start,[3.65,3.65,4.05],[3.65,5.1,4.05],boundary]
   return [
     {id:'fv_return_to_da',label:'Вторичный пар FV → деаэратор',points:[...common,...tail],radius:.0285,color:'steel',requires:['fv','deaerator'],note:'02-2026-ТХ, лист 3: пар из верхнего DN50 FV возвращается в деаэратор. Предохранительный клапан остаётся на малом DN25.'},

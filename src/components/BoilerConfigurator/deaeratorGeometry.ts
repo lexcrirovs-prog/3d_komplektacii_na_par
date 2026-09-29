@@ -1,12 +1,15 @@
 import {Group,SphereGeometry,type Object3D} from 'three'
 import {axisValve,cylinder,flange,item,mergeStaticFittings,strainer} from './distributionGeometry'
-import {deaeratorPorts} from './deaeratorPorts'
+import {deaeratorPorts,nativeDeaerator} from './deaeratorPorts'
 import {viewPoint,unitSpacing} from './cascadeRoutes'
+import {nativeDeaeratorHardware} from './nativeDeaeratorGeometry'
 
 /** Visible functional fittings; simplified bodies, not supplier CAD substitutes. */
 export function deaeratorHardware(power:number,count=1) {
+  const native=nativeDeaerator(power,count)
+  if(native)return nativeDeaeratorHardware(native,count)
   const root=new Group();root.name='da_fittings'
-  const small=power<=1500,p=deaeratorPorts(power)
+  const small=true,p=deaeratorPorts(power,count)
   // Stop / strainer / modulating valve / check / stop on prepared water.
   for(const x of [-6.25,-5.05])axisValve(root,[x,-2.6,1.6],[1,0,0],.48)
   strainer(root,[-6.02,-2.6,1.6],.65)
@@ -42,14 +45,15 @@ export function deaeratorHardware(power:number,count=1) {
   mergeStaticFittings(root);return root
 }
 
-export function openDeaeratorPorts(da:Object3D,power:number) {
+export function openDeaeratorPorts(da:Object3D,power:number,count=1) {
   // Only remove shipping blinds on used nozzles; keep the factory pressure shell.
-  const ids=new Set(deaeratorPorts(power).openedCaps)
+  const ids=new Set(deaeratorPorts(power,count).openedCaps)
   const remove:Object3D[]=[]
   da.traverse(o=>{
     const match=o.name.match(/(?:CAD.solid.|DA3_CAD_)(\d+)$/)
     if(match&&ids.has(Number(match[1])))remove.push(o)
   })
   remove.forEach(o=>o.removeFromParent())
-  da.userData.connectedNozzles=deaeratorPorts(power)
+  da.userData.connectedNozzles=deaeratorPorts(power,count)
+  da.userData.supportElevation=nativeDeaerator(power,count)?.supportElevation||0
 }

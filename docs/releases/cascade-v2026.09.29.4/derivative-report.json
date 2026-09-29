@@ -1,0 +1,275 @@
+{
+  "assets": [
+    {
+      "kind": "da15_8",
+      "bytes": 1495416,
+      "sha256": "d586b544787855ca53ffb7a3fce37a10909cb2f239d84e309d2146f3df43209a",
+      "bounds": {
+        "min": [
+          -5.335975323826603,
+          -0.000010755183106114785,
+          -2.848501485793719
+        ],
+        "max": [
+          -3.1900480640823323,
+          5.39217207903799,
+          2.6200015544891357
+        ]
+      },
+      "meshes": 5
+    },
+    {
+      "kind": "da25_15",
+      "bytes": 1831300,
+      "sha256": "5eeef16c225b7d0f71092ff13659480515750b02357fb242e0ae42dc9a2a6735",
+      "bounds": {
+        "min": [
+          -5.43599269481204,
+          -0.00002052419647746717,
+          -3.4535055639804417
+        ],
+        "max": [
+          -3.090197347683688,
+          5.405049918344904,
+          3.225001096725464
+        ]
+      },
+      "meshes": 5
+    },
+    {
+      "kind": "da25_25",
+      "bytes": 1754224,
+      "sha256": "663a68fc6e75577e4ab9212944a8fbd65d8e9e9a8adbd1cb5c689cfd74247b38",
+      "bounds": {
+        "min": [
+          -5.6434541801241105,
+          -0.000011533439645106114,
+          -4.458484351600418
+        ],
+        "max": [
+          -2.839030160543614,
+          6.075352188518887,
+          4.230001926422119
+        ]
+      },
+      "meshes": 5
+    },
+    {
+      "kind": "da3",
+      "bytes": 3152892,
+      "sha256": "c28f17975e1bb6954e79b810ef0ab09d23387867b876a2a535509b462210b8b9"
+    }
+  ],
+  "modifications": [
+    {
+      "power": 500,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 4528500,
+      "bytes": 1376280,
+      "retainedBoundsVerified": 13
+    },
+    {
+      "power": 1000,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 4386760,
+      "bytes": 1234620,
+      "retainedBoundsVerified": 11
+    },
+    {
+      "power": 1500,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 4445664,
+      "bytes": 1293304,
+      "retainedBoundsVerified": 12
+    },
+    {
+      "power": 2000,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 5259604,
+      "bytes": 2167956,
+      "retainedBoundsVerified": 15
+    },
+    {
+      "power": 2000,
+      "file": "s4000-2.glb",
+      "removed": [
+        "deaerator_details"
+      ],
+      "before": 5482448,
+      "bytes": 3372284,
+      "retainedBoundsVerified": 17
+    },
+    {
+      "power": 2000,
+      "file": "s4000-5.glb",
+      "removed": [
+        "deaerator_support"
+      ],
+      "before": 5985960,
+      "bytes": 5975304,
+      "retainedBoundsVerified": 16
+    },
+    {
+      "power": 2500,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 5261316,
+      "bytes": 2169648,
+      "retainedBoundsVerified": 15
+    },
+    {
+      "power": 2500,
+      "file": "s4000-2.glb",
+      "removed": [
+        "deaerator_details"
+      ],
+      "before": 5429196,
+      "bytes": 3319032,
+      "retainedBoundsVerified": 16
+    },
+    {
+      "power": 2500,
+      "file": "s4000-4.glb",
+      "removed": [
+        "deaerator_support"
+      ],
+      "before": 5715668,
+      "bytes": 5705004,
+      "retainedBoundsVerified": 17
+    },
+    {
+      "power": 3000,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 5311340,
+      "bytes": 2219544,
+      "retainedBoundsVerified": 15
+    },
+    {
+      "power": 3000,
+      "file": "s4000-2.glb",
+      "removed": [
+        "deaerator_details"
+      ],
+      "before": 5401704,
+      "bytes": 3292148,
+      "retainedBoundsVerified": 17
+    },
+    {
+      "power": 3000,
+      "file": "s4000-5.glb",
+      "removed": [
+        "deaerator_support"
+      ],
+      "before": 6128796,
+      "bytes": 6118140,
+      "retainedBoundsVerified": 17
+    },
+    {
+      "power": 3500,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 5227276,
+      "bytes": 2135600,
+      "retainedBoundsVerified": 15
+    },
+    {
+      "power": 3500,
+      "file": "s4000-2.glb",
+      "removed": [
+        "deaerator_details"
+      ],
+      "before": 5397980,
+      "bytes": 3287820,
+      "retainedBoundsVerified": 17
+    },
+    {
+      "power": 3500,
+      "file": "s4000-5.glb",
+      "removed": [
+        "deaerator_support"
+      ],
+      "before": 6099920,
+      "bytes": 6089256,
+      "retainedBoundsVerified": 17
+    },
+    {
+      "power": 4000,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 5307436,
+      "bytes": 2216176,
+      "retainedBoundsVerified": 14
+    },
+    {
+      "power": 4000,
+      "file": "s4000-2.glb",
+      "removed": [
+        "deaerator_details"
+      ],
+      "before": 5365168,
+      "bytes": 3255612,
+      "retainedBoundsVerified": 16
+    },
+    {
+      "power": 4000,
+      "file": "s4000-7.glb",
+      "removed": [
+        "deaerator_support"
+      ],
+      "before": 5979544,
+      "bytes": 5968876,
+      "retainedBoundsVerified": 16
+    },
+    {
+      "power": 5000,
+      "file": "s4000-1.glb",
+      "removed": [
+        "deaerator"
+      ],
+      "before": 5471056,
+      "bytes": 2378896,
+      "retainedBoundsVerified": 15
+    },
+    {
+      "power": 5000,
+      "file": "s4000-2.glb",
+      "removed": [
+        "deaerator_details"
+      ],
+      "before": 5592548,
+      "bytes": 3482992,
+      "retainedBoundsVerified": 16
+    },
+    {
+      "power": 5000,
+      "file": "s4000-3.glb",
+      "removed": [
+        "deaerator_support"
+      ],
+      "before": 5357180,
+      "bytes": 5346520,
+      "retainedBoundsVerified": 17
+    }
+  ]
+}

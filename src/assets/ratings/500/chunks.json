@@ -1,7 +1,7 @@
 {
-  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
-  "parts": 120,
-  "bytes": 38557132,
+  "status": "PASSED_RETAINED_GEOMETRY_WITH_EXTERNAL_DEAERATOR",
+  "parts": 119,
+  "bytes": 35404912,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -16,7 +16,6 @@
     {
       "file": "s4000-1.glb",
       "parts": [
-        "deaerator",
         "flash_steam_common",
         "feed_check",
         "bdv_cooling_stub",
@@ -31,8 +30,8 @@
         "bdv_bottom_drain_stub",
         "tds_without_vessels"
       ],
-      "bytes": 4528500,
-      "sha256": "a0cb2236e4f87d491695088737804b5c840429019ec87c40311d00d6665ab7f6"
+      "bytes": 1376280,
+      "sha256": "e0ac5c8534c896bc38618c271d36772c74dd4e6f266a1c6f86209680cc97ce8c"
     },
     {
       "file": "s4000-2.glb",

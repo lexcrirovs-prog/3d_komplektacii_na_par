@@ -1,7 +1,7 @@
 {
-  "status": "PASSED_EXACT_CHUNK_GEOMETRY",
-  "parts": 125,
-  "bytes": 41809192,
+  "status": "PASSED_RETAINED_GEOMETRY_WITH_EXTERNAL_DEAERATOR",
+  "parts": 122,
+  "bytes": 36596816,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -16,7 +16,6 @@
     {
       "file": "s4000-1.glb",
       "parts": [
-        "deaerator",
         "gpz",
         "mod_eco",
         "fv_to_trap_gap",
@@ -33,13 +32,12 @@
         "bdv_bottom_drain_stub",
         "pr200"
       ],
-      "bytes": 5471056,
-      "sha256": "edea46a4aeabe5ec3233727b3d33c1192fb07096626200ec3f5232a197026100"
+      "bytes": 2378896,
+      "sha256": "108b731fdabf58bb673294d971e01b46289b0e74c42a57d2e88a9e99e8d00d7e"
     },
     {
       "file": "s4000-2.glb",
       "parts": [
-        "deaerator_details",
         "wiring_pressure_transmitter",
         "pump_in_valve_1",
         "safety_2",
@@ -57,8 +55,8 @@
         "mod_eco_bypass",
         "tds_without_vessels"
       ],
-      "bytes": 5592548,
-      "sha256": "7629176fffa6feb11413b0e3a3c41c35ab68713fdc3115576e0cbf6754f776b2"
+      "bytes": 3482992,
+      "sha256": "cb3c808b3871941fb0409e04977d12d4009f503ed20b12bb8fc316681387ec73"
     },
     {
       "file": "s4000-3.glb",
@@ -77,13 +75,12 @@
         "eco_inlet_adapter",
         "pressure_switch_1",
         "steam_mount_adapter",
-        "deaerator_support",
         "mod_direct_drive",
         "control_cabinet",
         "trap_support"
       ],
-      "bytes": 5357180,
-      "sha256": "e4899a63518989a7ef6dcd1e4dc67f4849226843010963e2728e7d1ec0c0882f"
+      "bytes": 5346520,
+      "sha256": "552377ff9f176a5503fb57be3bb55f45c837639585c822a19a21f130c11c79ca"
     },
     {
       "file": "s4000-4.glb",

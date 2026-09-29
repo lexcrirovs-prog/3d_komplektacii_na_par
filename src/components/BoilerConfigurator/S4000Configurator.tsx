@@ -18,6 +18,9 @@ import {correctedUnitParts,partInUnit,configurationParts} from './cascadeConfigu
 import {unitSpacing} from './cascadeRoutes'
 import {cascadePiping} from './cascadeGeometry'
 import {pickedDoor,toggleDoor,type DoorTarget} from './doorInteraction'
+import {deaeratorAssets} from './deaeratorAssets'
+import {deaeratorLabels,selectDeaerator} from './deaeratorSelection'
+import {nativeDeaerator} from './deaeratorPorts'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
@@ -93,6 +96,9 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
   const accessoryModels=useGLTF(asset.urls.slice(1))
   const additionUrls=useMemo(()=>[...(photo?[trim==='comfort'?comfortCabinetUrl:photoCabinetUrl]:[]),...(cascade?[cascadeCabinetUrl]:[])],[trim,cascade])
   const additions=useGLTF(additionUrls)
+  const daKind=selectDeaerator(power,count),daEnabled=enabled.has('deaerator')
+  const daUrls=useMemo(()=>daEnabled?[deaeratorAssets[daKind]]:[],[daKind,daEnabled])
+  const daModels=useGLTF(daUrls)
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
   const { gl, invalidate, camera, controls } = useThree()
   useEffect(()=>{onReady()},[onReady])
@@ -101,6 +107,11 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     copy.name = 'rating-assembly'
     const unit=new Group();unit.name='boiler_unit_1';copy.add(unit)
     for (const gltf of gltfs) unit.add(gltf.scene.clone(true))
+    const da=daModels[0]?.scene.clone(true)||new Group()
+    // DA3's file has its own root; use one named parent for every vessel type.
+    da.traverse(o=>{if(o.name==='deaerator')o.name='deaerator_model'})
+    da.name='deaerator';da.userData.deaeratorKind=daKind;unit.add(da)
+    copy.userData.deaeratorKind=daKind;copy.userData.totalCapacity=power*count
     applyFeedCorrection(unit,power,count)
     copy.updateMatrixWorld(true)
     for (const motion of openingData.groups) {
@@ -134,7 +145,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     }})
     generatedMaterials.forEach(m=>m.dispose())
     return copy
-  }, [gltfs,trim,count,additions])
+  }, [gltfs,trim,count,additions,daModels,daKind])
   useEffect(() => { invalidate() }, [cabinetDoors, boilerDoors, cascadeOpen, invalidate])
   useFrame((_, delta) => {
     let movingDoor = false
@@ -245,6 +256,7 @@ export function S4000Configurator() {
 function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:FamilyConfig)=>void}) {
   const asset=familyAssets[config.power]
   const count=boilerCount(config.cascade),cascade=count>1
+  const daLabel=deaeratorLabels[selectDeaerator(config.power,count)]
   const parts=configurationParts(asset.parts,config.power,count,config.trim), byId=new Map(parts.map(p=>[p.id,p]))
   const [sceneReady,setSceneReady]=useState(false)
   const [coreReady,setCoreReady]=useState(false)
@@ -279,6 +291,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     return {...r,quantity:r.quantity*count,nodes}
   })
   if(cascade)bomParts.push({id:'cascade_cabinet',label:'Общий каскадный шкаф автоматики',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
+  if(enabled.has('deaerator'))bomParts.push({id:'deaerator',label:`Деаэратор ${daLabel}`,quantity:1,pressure:null,option:'deaerator',source_row:0,nodes:['deaerator']})
   if(cascade)bomParts.push({id:'cascade_pressure_sensor',label:'Датчик давления общего коллектора',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_pressure_sensor']})
   if(cascade)bomParts.push({id:'cascade_distribution',label:'Паровая распределительная гребёнка',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution']},{id:'cascade_distribution_trap',label:'Конденсатоотводчик паровой гребёнки',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution_trap']})
   const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected.replace(/^unit\d+:/,''))) : undefined
@@ -352,7 +365,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       return
     }
     if(id==='deaerator') {
-      requestView(config.power<=1500?[-9.7,5.2,7.2]:[-11.5,7.4,9],config.power<=1500?[-4.0,1.65,-.1]:[-4.5,2.5,-.4])
+      const n=nativeDeaerator(config.power,count)
+      const span=n?n.bounds[1][1]-n.bounds[0][1]:3
+      requestView(n?[-4.2-span*1.6,span*.8+3,span*1.4]:[-9.7,5.2,7.2],n?[-4.2,n.bounds[1][2]/2,0]:[-4.0,1.65,-.1])
       return
     }
     if (!options.some(o => o.id === id) && id !== 'boiler') setShowAccessories(true)
@@ -495,7 +510,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
           </section>
           <section className="s3-option-section"><div className="s3-section-label">ДОПОЛНИТЕЛЬНЫЕ МОДУЛИ</div>{options.map(option => <label className={`s3-option ${enabled.has(option.id) ? 'enabled' : ''}`} key={option.id}>
             <input type="checkbox" disabled={option.id === 'gpz'&&config.power>=4000||option.id==='modulation'&&config.trim==='standard'||option.id==='economizer'&&config.power<1500} checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
-            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='economizer'&&config.power<1500?'Применяется на котлах от 1500 кг/ч':option.id==='modulation'&&config.trim==='standard'?'Доступна в комплектациях «Комфорт» и «Комфорт+»':option.id==='gpz'&&config.power<4000?'Дополнительная опция дистанционного управления':option.id==='deaerator'&&config.power<=1500?'Вертикальный ДА-3. Удаление растворённых газов из питательной воды':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
+            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='economizer'&&config.power<1500?'Применяется на котлах от 1500 кг/ч':option.id==='modulation'&&config.trim==='standard'?'Доступна в комплектациях «Комфорт» и «Комфорт+»':option.id==='gpz'&&config.power<4000?'Дополнительная опция дистанционного управления':option.id==='deaerator'?daLabel+' · автоматически для '+(config.power*count/1000)+' т/ч':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
           </label>)}</section>
           <section className="s3-flow" aria-live="polite" data-feed-route={enabled.has('economizer') ? 'economizer' : 'direct'}>
             <div className="s3-section-label">ПУТЬ ПИТАТЕЛЬНОЙ ВОДЫ</div>

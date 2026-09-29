@@ -2,11 +2,86 @@
   "version": "2026.09.29.1",
   "date": "2026-09-29",
   "executor": "Codex / GPT-6",
-  "status": "LOCAL_VERIFIED_NOT_YET_PUBLISHED",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "source_commit": "c078a580e481cefbf31031dce36185ced94340d9",
+  "publication_commit": "46244972ed532d5bebd32ac601fd320315e1bcdc",
+  "manifestSha256": "e245906abfc02cce18defaf57927fb14f8bcd3bfcf584e9c8b66d7d429c88049",
   "unit_tests": {
-    "passed": 28,
-    "failed": 0
+    "passed": 29,
+    "failed": 0,
+    "command": "node --test tools/cascade/cascade.test.mjs tools/s4000/family-rules.test.mjs tools/s4000/web-options.test.mjs tools/s4000/rating-options.test.mjs"
   },
-  "browser_local": "browser-local.json",
-  "native_cad_changed": false
+  "hmi_dimensions": {
+    "status": "PASSED_COMPRESSED_HMI_DIMENSIONS",
+    "width_ratio": 0.8,
+    "height_ratio": 0.8,
+    "report": "cabinet-dimensions.json"
+  },
+  "browser": {
+    "local": {
+      "status": "PASSED_CASCADE_BROWSER",
+      "report": "browser-local.json",
+      "ratings": 9,
+      "max_boilers": 5,
+      "errors": []
+    },
+    "stage": {
+      "status": "PASSED_CASCADE_BROWSER",
+      "report": "browser-stage.json",
+      "ratings": 9,
+      "max_boilers": 5,
+      "errors": []
+    },
+    "live": {
+      "status": "PASSED_CASCADE_BROWSER",
+      "report": "browser-live.json",
+      "ratings": 9,
+      "max_boilers": 5,
+      "errors": []
+    }
+  },
+  "https": {
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 118,
+      "report": "http-stage.json"
+    },
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 118,
+      "report": "http-live.json"
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.09.29.1",
+      "candidateSha256": "8c3e1a9745e77f85d9780e1037b20e377c6cb42a48b60e272545830991d257d2",
+      "manifestSha256": "e245906abfc02cce18defaf57927fb14f8bcd3bfcf584e9c8b66d7d429c88049",
+      "backupSha256": "5c2d6f2889ec03883dea2151b1d276b19a40e24e7a3a529aad8e105301b2584e",
+      "backupFiles": 120,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.09.29.1/"
+    },
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 120,
+      "transferredFiles": 10,
+      "reusedFiles": 110,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.09.29.1-r2",
+      "transferBytes": 1308042
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.09.29.1",
+      "neighborsUnchanged": true,
+      "files": 120
+    }
+  },
+  "native_cad_changed": false,
+  "native_cad_version": "2026.09.28.1",
+  "scope_limits": [
+    "Hydraulic sizing for combined cascade flow was not performed.",
+    "PLC code was not modified or validated.",
+    "Browser checks used desktop Chrome and a 390 px viewport, not a physical mobile device."
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "status": "PASSED_CASCADE_BROWSER",
-  "base": "http://127.0.0.1:5182/",
+  "base": "https://prgz.ru/komplektacii4/",
   "mode": "full",
   "manifestSha256": "e245906abfc02cce18defaf57927fb14f8bcd3bfcf584e9c8b66d7d429c88049",
   "checks": [
@@ -27,8 +27,8 @@
     },
     "spacing": 6.3,
     "geometryShared": true,
-    "draws": 2599,
-    "triangles": 17109920
+    "draws": 2598,
+    "triangles": 17109908
   },
   "ratings": [
     {

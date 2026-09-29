@@ -1,6 +1,6 @@
 import type {FamilyPart} from './familyAssets.ts'
 import type {Trim} from './familyRules.ts'
-import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,greyOrigin,routeCenter,sharedParts,unitSpacing,viewPoint} from './cascadeRoutes.ts'
+import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,greyOrigin,routeCenter,sharedParts,unitSpacing,viewPoint,bdvCoolingRoute} from './cascadeRoutes.ts'
 import {distributionLayout} from './steamDistribution.ts'
 import {deaeratorRoutes} from './deaeratorRoutes.ts'
 import {deaeratorLabels,selectDeaerator} from './deaeratorSelection.ts'
@@ -12,9 +12,11 @@ export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):Fami
   const native=nativeDeaerator(power,count),kind=selectDeaerator(power,count)
   result.push({id:'deaerator',label:`Деаэратор ${deaeratorLabels[kind]}`,category:'Деаэрация',requires:['deaerator'],
     center:native?viewPoint(native.center):parts.find(p=>p.id==='deaerator')!.center,
-    note:`Общий деаэратор. Автоматический выбор по суммарной паропроизводительности ${power*count/1000} т/ч. ${native?'Геометрия и патрубки из заводской STEP-модели. Опорная плоскость поднята на 1 м.':'Вертикальная заводская модель ДА-3.'}`})
+    note:`Автоматический выбор по ${count===1?'единичной мощности котла':'суммарной мощности каскада'} ${power*count/1000} т/ч. ${native?'Геометрия и патрубки из заводской STEP-модели. Опорная плоскость поднята на 1 м.':'Вертикальная заводская модель ДА-3.'}`})
   const set=(id:string,change:Partial<FamilyPart>)=>{const row=result.find(p=>p.id===id);if(row)Object.assign(row,change)}
   set('direct_inlet',{excludes:['economizer']})
+  set('bdv_cooling_stub',{label:'Охлаждающая вода → BDV',center:routeCenter(bdvCoolingRoute()),note:'Прямой подвод по оси заводского штуцера F.'})
+  set('bdv_cooling_marker',{label:'Подключение охлаждающей воды BDV',note:'Охлаждающая вода',center:routeCenter(bdvCoolingRoute())})
   set('bottom_to_bdv',{requires:['bdv']})
   set('tds_to_fv',{requires:['fv']})
   set('tds_without_fv',{requires:['bdv'],excludes:['fv']})
@@ -33,7 +35,7 @@ export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):Fami
   }
   for(const row of flashRoutes(power,count))result.push({...row,note:row.note||'',category:'Продувка и возврат пара',center:routeCenter(row)})
   for(const row of deaeratorRoutes(power,count)) {
-    const data={...row,category:'Обвязка деаэратора',center:routeCenter(row),note:'Топология: 02-2026-ТХ, лист 3. Присоединения — по заводскому чертежу выбранного деаэратора.'}
+    const data={...row,category:'Обвязка деаэратора',center:routeCenter(row),note:(kind==='da3'?'Тепловая схема и группа безопасности ДА-3, объект «АКМАЙ».':'Топология: 02-2026-ТХ, лист 3.')+' Присоединения — по заводскому чертежу выбранного деаэратора.'}
     const i=result.findIndex(p=>p.id===row.id);if(i>=0)result[i]=data;else result.push(data)
   }
   result.push({id:'da_fittings',label:'Арматура деаэратора',category:'Обвязка деаэратора',requires:['deaerator'],center:viewPoint([-5.5,-2.6,1.6]),note:'Запорные вентили, фильтр и регулирующий клапан ХОВ, обратные клапаны, регулирование греющего пара, рециркуляция насосов, отдельные перелив и слив. Упрощённая геометрия арматуры по тепловой схеме.'})

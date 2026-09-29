@@ -1,6 +1,12 @@
 // Factory nozzle coordinates after the retained rigid placement, metres, Z up.
-// PR.15.01.161, PR.25.01.269, PR.25.01.268; DA3: PR.3.01.044.
+// PR.15.01.033, PR.15.01.161, PR.25.01.269, PR.25.01.268; DA3: PR.3.01.044.
 export type PortPoint=[number,number,number]
+// DA3 nozzle O, DN20: measured face of factory solid 40, not a new penetration.
+export const da3PressurePort:PortPoint=[-3.61194531,.81194531,1.760313]
+export function da3InstrumentPoint(out:number,along=0,dz=0):PortPoint {
+  const n=Math.SQRT1_2,p=da3PressurePort
+  return [p[0]-out*n+along*n,p[1]+out*n+along*n,p[2]+dz]
+}
 import catalog from '../../assets/deaerators/catalog.json' with {type:'json'}
 import {selectDeaerator} from './deaeratorSelection.ts'
 export type FactoryPort={point:PortPoint;normal:PortPoint;dn:number;flangeRadius:number;sourceSolid:number;letter:string;sourcePointMM:number[]}
@@ -23,7 +29,7 @@ export function deaeratorPorts(power:number,count=1) {
     steam:[-3.832,.3,.880313] as PortPoint,
     flash:[-3.832,.3,.880313] as PortPoint,
     barb:[-3.1,-.325,2.435313] as PortPoint,
-    openedCaps:[64,67,68,72],
+    openedCaps:[63,64,67,68,72],
   }
   const p=native.ports
   return {feed:p.feed.point,feedDN:p.feed.dn,overflow:p.overflow.point,drain:p.drain.point,

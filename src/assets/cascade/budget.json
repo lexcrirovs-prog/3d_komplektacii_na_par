@@ -2,16 +2,19 @@
   {
     "name": "comfort",
     "before": 4255052,
-    "bytes": 826440
+    "bytes": 718188,
+    "sha256": "2f7b0beb476e1928f0ef4060b560588f555388018cae8026b045c57b263a118a"
   },
   {
     "name": "comfort_plus",
     "before": 4306860,
-    "bytes": 835092
+    "bytes": 723940,
+    "sha256": "1cec2b24abd9179dcd9863e8c41813b6709fde563ce8d9a415a7395a6d6192d0"
   },
   {
     "name": "cascade",
     "before": 1837500,
-    "bytes": 405812
+    "bytes": 324212,
+    "sha256": "cbf915ca550c01966d5c877f00abb51e1b7a5600bda703be75edd5e87cb39fcb"
   }
 ]

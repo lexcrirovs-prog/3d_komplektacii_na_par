@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "errorFraction": 0.001,
+  "lockBorder": true,
+  "rows": [
+    {
+      "path": "src/assets/cascade/adl_is16.glb",
+      "before": {
+        "triangles": 11282,
+        "meshes": 1,
+        "nodes": 1,
+        "textures": 0,
+        "bytes": 203196,
+        "sha256": "c7a790c06e95c1f760144265701834ef8cbeede347e43403e27fe9c9bd965f36"
+      },
+      "after": {
+        "triangles": 5374,
+        "meshes": 1,
+        "nodes": 1,
+        "textures": 0,
+        "bytes": 59816,
+        "sha256": "f5345a2d55da1fd35fdea1675da89b5dc3891ca652cf49dc527e65439e989b38"
+      },
+      "maxBoundsError": 0.00008246302604675293,
+      "topLevelParts": 1,
+      "applied": true
+    }
+  ]
+}

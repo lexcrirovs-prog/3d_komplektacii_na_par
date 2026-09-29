@@ -81,9 +81,17 @@ export function axisValve(root:Group,p:Point3,axis:Point3,scale=.6,actuator=fals
   }
 }
 
-export function strainer(root:Group,p:Point3,s=.6) {
+export function strainer(root:Group,p:Point3,s=.6,steam=false) {
   const [x,y,z]=p
-  root.add(cylinder([x-.10*s,y,z],[x+.10*s,y,z],.052*s,'blue'),cylinder(p,[x+.14*s,y,z-.17*s],.042*s,'blue'),cylinder([x+.12*s,y,z-.15*s],[x+.17*s,y,z-.20*s],.05*s,'silver'))
+  const point=(dx:number,drop:number):Point3=>steam?[x+dx*s,y-drop*s,z]:[x+dx*s,y,z-drop*s]
+  root.add(cylinder([x-.10*s,y,z],[x+.10*s,y,z],.052*s,'blue'),cylinder(p,point(.14,.17),.042*s,'blue'),cylinder(point(.12,.15),point(.17,.20),.05*s,'silver'))
+}
+
+export function steamStrainer(root:Group,p:Point3,source:Object3D) {
+  const model=source.clone(true);model.name='adl_steam_strainer'
+  model.position.set(...viewPoint(p));model.visible=true
+  model.userData.strainer={manufacturer:'АДЛ',model:'IS16 DN100',pipeAxis:[1,0,0],coverDirection:[0,-1,0],center:p}
+  root.add(model)
 }
 
 /** Valve arrangement from TX sheet 8 and video 00:56–01:05. Manufacturer
@@ -93,10 +101,10 @@ export function distributionHardware(count:number,sourceTrap:Object3D) {
   const {x,z,y0,y1,outlets,radius,drainY:y,drainZ:h,trap,takeoffs}=distributionLayout(count)
   root.add(cylinder([x,y0-.012,z],[x,y0+.012,z],radius))
   flange(root,[x,y1,z],[0,1,0],.255,.1095)
-  valve(root,[x,6.55,2.9],true,2)
+  valve(root,[x,5.6,2.9],true,2)
   outlets.forEach(yy=>{valve(root,[x,yy,2.37],true);flange(root,[x+1.5,yy,2.8],[1,0,0],.102,.048)})
-  pressureGauge(root,[x,5.68,z+.31])
-  for(const yy of [3.65,5.20]) {
+  pressureGauge(root,[x,y1-.32,z+.31])
+  for(const yy of [y0+.65,y1-.8]) {
     for(const xx of [x-.28,x+.28]){
       root.add(item(new BoxGeometry(.06,z-radius-.03,.06).translate(...viewPoint([xx,yy,(z-radius-.03)/2])),'dark'))
       root.add(item(new BoxGeometry(.22,.025,.22).translate(...viewPoint([xx,yy,.0125])),'silver'))

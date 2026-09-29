@@ -1,13 +1,13 @@
-import {Group,SphereGeometry,type Object3D} from 'three'
-import {axisValve,cylinder,flange,item,mergeStaticFittings,strainer} from './distributionGeometry'
-import {deaeratorPorts,nativeDeaerator} from './deaeratorPorts'
+import {BoxGeometry,Group,SphereGeometry,type Object3D} from 'three'
+import {axisValve,cylinder,flange,item,mergeStaticFittings,strainer,steamStrainer,pressureGauge} from './distributionGeometry'
+import {deaeratorPorts,nativeDeaerator,da3InstrumentPoint,da3PressurePort} from './deaeratorPorts'
 import {viewPoint,unitSpacing} from './cascadeRoutes'
 import {nativeDeaeratorHardware} from './nativeDeaeratorGeometry'
 
 /** Visible functional fittings; simplified bodies, not supplier CAD substitutes. */
-export function deaeratorHardware(power:number,count=1) {
+export function deaeratorHardware(power:number,count:number,sourceStrainer:Object3D) {
   const native=nativeDeaerator(power,count)
-  if(native)return nativeDeaeratorHardware(native,count)
+  if(native)return nativeDeaeratorHardware(native,count,sourceStrainer)
   const root=new Group();root.name='da_fittings'
   const small=true,p=deaeratorPorts(power,count)
   // Stop / strainer / modulating valve / check / stop on prepared water.
@@ -27,18 +27,30 @@ export function deaeratorHardware(power:number,count=1) {
     root.add(cylinder([x,1.55,1.8],[x,1.6,1.8],.029,'blue'))
   }
   // Steam source -> filter -> two independently regulated branches.
-  strainer(root,[-5.55,2.8,3.2],1.15)
+  steamStrainer(root,[-5.55,2.8,3.2],sourceStrainer)
   axisValve(root,[-4.85,2.8,3.2],[1,0,0],.9,true)
   axisValve(root,[-4.40,2.8,3.2],[1,0,0],.95)
   axisValve(root,[-5.2,1.75,3.2],[0,-1,0],.65,true)
   axisValve(root,[-5.2,1.2,3.2],[0,-1,0],.65)
-  if(small)axisValve(root,[-2.65,-.6,.4],[1,0,0],.52)
+  if(small)axisValve(root,[-2.36,2.35,.4],[1,0,0],.52)
   else axisValve(root,[-3.65,1.525,.91],[0,0,-1],.70)
   // Float overflow device and separate bottom drain: no connection to BDV.
   const y=small?-.8:-1.525
   const body=new SphereGeometry(.12,20,12);body.translate(...viewPoint([-5.22,y,.29]));root.add(item(body,'blue'))
   flange(root,[-5.38,y,.35],[1,0,0],.09,.024);flange(root,[-5.06,y,.35],[1,0,0],.09,.024)
   axisValve(root,[-4.6,small?-2.2:-2.8,small?.153313:.62],[1,0,0],small?.24:.5)
+  // DA3 reference: vent isolation and gauge / vacuum breaker / transmitter /
+  // spare blind on the DN32 instrument bar connected to the existing O nozzle.
+  axisValve(root,[p.vent[0],p.vent[1],2.97],[0,0,1],.22)
+  flange(root,da3PressurePort,[-Math.SQRT1_2,Math.SQRT1_2,0],.0525,.012)
+  pressureGauge(root,da3InstrumentPoint(.36,-.20,.28))
+  axisValve(root,da3InstrumentPoint(.36,-.20,.20),[0,0,1],.16)
+  for(const along of [-.04,.13,.29])root.add(cylinder(da3InstrumentPoint(.36,along,.12),da3InstrumentPoint(.36,along,.22),.009,'silver'))
+  root.add(cylinder(da3InstrumentPoint(.36,-.04,.18),da3InstrumentPoint(.36,-.04,.26),.021,'silver'))
+  const transmitter=new BoxGeometry(.067,.07,.048);transmitter.translate(...viewPoint(da3InstrumentPoint(.36,.13,.285)));root.add(item(transmitter,'dark'))
+  axisValve(root,da3InstrumentPoint(.36,.13,.20),[0,0,1],.14)
+  root.add(cylinder(da3InstrumentPoint(.36,.29,.215),da3InstrumentPoint(.36,.29,.229),.035,'silver'))
+  root.userData.pressureGroup={source:'Группа безопасности ДА-3, АКМАЙ',nozzle:'О',dn:20,point:da3PressurePort}
   // Each attachment ends exactly on a registered flange face.
   flange(root,p.feed,small?[0,-1,0]:[0,0,-1],small?.08:.1075,small?.025:.05)
   flange(root,p.overflow,small?[0,-1,0]:[-1,0,0],small?.08:.0975,small?.025:.04)

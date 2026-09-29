@@ -1,4 +1,301 @@
 {
+  "da15_4": {
+    "label": "ДА-15/4",
+    "source": "PR.15.01.033СБ Деаэратор ДА-15_4.stp",
+    "matrix": [
+      [
+        0.001,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -0.001
+      ],
+      [
+        0.0,
+        0.001,
+        0.0
+      ]
+    ],
+    "offset": [
+      -4.2,
+      -0.0,
+      1.808
+    ],
+    "center": [
+      -4.2,
+      0.0,
+      1.808
+    ],
+    "bounds": [
+      [
+        -5.036,
+        -2.275,
+        0.96386
+      ],
+      [
+        -3.490111,
+        2.275,
+        4.783991
+      ]
+    ],
+    "ports": {
+      "feed": {
+        "point": [
+          -4.2,
+          1.525,
+          1.05
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 100,
+        "flangeRadius": 0.1075,
+        "sourceSolid": 30,
+        "letter": "Д",
+        "sourcePointMM": [
+          -0.0,
+          -758.0,
+          -1525.0
+        ]
+      },
+      "drain": {
+        "point": [
+          -4.2,
+          -1.525,
+          1.05
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 28,
+        "letter": "Г",
+        "sourcePointMM": [
+          0.0,
+          -758.0,
+          1525.0
+        ]
+      },
+      "overflow": {
+        "point": [
+          -5.01,
+          -1.525,
+          1.808
+        ],
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "dn": 80,
+        "flangeRadius": 0.0975,
+        "sourceSolid": 51,
+        "letter": "Е",
+        "sourcePointMM": [
+          -810.0,
+          0.0,
+          1525.0
+        ]
+      },
+      "steam": {
+        "point": [
+          -4.2,
+          1.525,
+          2.616
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 150,
+        "flangeRadius": 0.14,
+        "sourceSolid": 24,
+        "letter": "В",
+        "sourcePointMM": [
+          -0.0,
+          808.0,
+          -1525.0
+        ]
+      },
+      "barb": {
+        "point": [
+          -4.2,
+          0.725,
+          2.616
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 100,
+        "flangeRadius": 0.1075,
+        "sourceSolid": 16,
+        "letter": "Ж",
+        "sourcePointMM": [
+          -0.0,
+          808.0,
+          -725.0
+        ]
+      },
+      "flash": {
+        "point": [
+          -4.2,
+          -1.325,
+          2.616
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 32,
+        "flangeRadius": 0.0675,
+        "sourceSolid": 34,
+        "letter": "Л",
+        "sourcePointMM": [
+          -0.0,
+          808.0,
+          1325.0
+        ]
+      },
+      "hotCondensate": {
+        "point": [
+          -4.2,
+          0.975,
+          2.616
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 26,
+        "letter": "Н",
+        "sourcePointMM": [
+          0.0,
+          808.0,
+          -975.0
+        ]
+      },
+      "recirculation": {
+        "point": [
+          -4.2,
+          1.175,
+          2.616
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 25,
+        "flangeRadius": 0.0525,
+        "sourceSolid": 36,
+        "letter": "М",
+        "sourcePointMM": [
+          -0.0,
+          808.0,
+          -1175.0
+        ]
+      },
+      "water": {
+        "point": [
+          -4.2,
+          -0.595,
+          4.704
+        ],
+        "normal": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 117,
+        "letter": "У колонки",
+        "sourcePointMM": [
+          0.0,
+          2896.0,
+          595.0
+        ]
+      },
+      "condensate": {
+        "point": [
+          -4.2,
+          -1.282,
+          4.049
+        ],
+        "normal": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 106,
+        "letter": "Р колонки",
+        "sourcePointMM": [
+          0.0,
+          2241.0,
+          1282.0
+        ]
+      },
+      "vent": {
+        "point": [
+          -4.2,
+          -0.955,
+          4.707
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dn": 50,
+        "flangeRadius": 0.08,
+        "sourceSolid": 102,
+        "letter": "И колонки",
+        "sourcePointMM": [
+          0.0,
+          2899.0,
+          955.0
+        ]
+      }
+    },
+    "saddleYs": [
+      -1.2,
+      1.2
+    ],
+    "supportWidth": 1.25,
+    "supportElevation": 1,
+    "factoryFloorMM": -808.0,
+    "openedCaps": [
+      87,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      164,
+      166,
+      230
+    ],
+    "flashMode": "factoryNozzle"
+  },
   "da15_8": {
     "label": "ДА-15/8",
     "source": "PR.15.01.161СБ Деаэратор ДА-15-8.stp",

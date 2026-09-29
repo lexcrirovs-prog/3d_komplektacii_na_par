@@ -103,7 +103,7 @@ try {
   }
   assert.equal(await page.getByLabel('Количество котлов',{exact:true}).inputValue(),'5');
   const row=await snapshot();assert.equal(row.counts.boiler,5);assert.equal(row.counts.plus_cabinet,5);assert(row.geometryShared);ratings.push(row);
-  if(power===500)assert.equal(await page.evaluate(()=>window.__s3000.scene.userData.deaeratorKind),'da15_8');
+  if(power===500)assert.equal(await page.evaluate(()=>window.__s3000.scene.userData.deaeratorKind),'da3');
   if([500,3000,5000].includes(power)){await page.getByRole('button',{name:'Общий вид',exact:true}).click();await page.screenshot({path:resolve(out,'cascade-S-'+power+'.png')})}
  }
  await page.getByLabel('Комплектация',{exact:true}).selectOption('standard');await wait(5000,5,'standard');

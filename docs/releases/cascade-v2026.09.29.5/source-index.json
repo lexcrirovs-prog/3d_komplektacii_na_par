@@ -1,0 +1,82 @@
+[
+  {
+    "id": "da15_4",
+    "path": "E:\\YandexDisk\\НОВЫЙ ЗАВОД\\КОНСТРУКТОРСКАЯ ДОКУМЕНТАЦИЯ\\4. КД на ДА\\ДА-15-4\\3D модель\\PR.15.01.033СБ Деаэратор ДА-15_4.stp",
+    "sha256": "f90f0f9e03fdfbd97bcce4f5e89096f5110d92487e254c0d48b06716f0775b6d",
+    "bytes": 4447761
+  },
+  {
+    "id": "da15_4-033",
+    "path": "E:\\YandexDisk\\НОВЫЙ ЗАВОД\\КОНСТРУКТОРСКАЯ ДОКУМЕНТАЦИЯ\\4. КД на ДА\\ДА-15-4\\Чертежи\\PR.15.01.033СБ Деаэратор ДА-15_4.idw.pdf",
+    "sha256": "ee480821ef1e70221099850719b87156ada23e3f742a07d47633a455591b4bf8",
+    "bytes": 554779
+  },
+  {
+    "id": "da15_4-006",
+    "path": "E:\\YandexDisk\\НОВЫЙ ЗАВОД\\КОНСТРУКТОРСКАЯ ДОКУМЕНТАЦИЯ\\4. КД на ДА\\ДА-15-4\\Чертежи\\PR.15.01.006СБ Бак деаэраторный БДА-4.pdf",
+    "sha256": "ef7d5fe13d6161d93c41d3423e22686c7dd9cb39d1db1bd5d0949637b5b6db85",
+    "bytes": 163770
+  },
+  {
+    "id": "da15_4-121",
+    "path": "E:\\YandexDisk\\НОВЫЙ ЗАВОД\\КОНСТРУКТОРСКАЯ ДОКУМЕНТАЦИЯ\\4. КД на ДА\\ДА-15-4\\Чертежи\\PR.15.01.121СБ Колонка деаэрационая КДА-15.idw.pdf",
+    "sha256": "7ab6dc43613d7b53b50333db3fb54cec2ed2f083316a7cb23cae6ed851e6ccbf",
+    "bytes": 153844
+  },
+  {
+    "name": "8. Схема ТМ Актуальная.pdf",
+    "url": "https://disk.yandex.ru/d/OlUBVm1KnnNypw",
+    "bytes": 65266,
+    "sha256": "e335cddd36f9739eb902413c0e6aaf475269ca23bbc66338e08c1e9315fd56f2"
+  },
+  {
+    "name": "Схема+спецификация АКТУАЛЬНОЕ.pdf",
+    "url": "https://disk.yandex.ru/d/OlUBVm1KnnNypw",
+    "bytes": 156207,
+    "sha256": "fe61d3f2d0112bdac3d0889019112d407e9c2fc768c8b58f4c83f0a8ae6ab5d6"
+  },
+  {
+    "name": "Группа безопасности ДА-3.pdf",
+    "url": "https://disk.yandex.ru/d/OlUBVm1KnnNypw",
+    "bytes": 33157,
+    "sha256": "4ea5fb22043747ce97ff9a1a61d420681fbcc85c559535b02d2469a1e2177a02"
+  },
+  {
+    "name": "19.Схема ТМ-объединены с повыс насосами и краном шаровым.pdf",
+    "url": "https://disk.yandex.ru/d/1N2Rk1fNbHPZGQ",
+    "bytes": 90225,
+    "sha256": "482ccde8cd7411414f4df9cb346b1751880e6c8e8ce82dfe55a8adb0615db4a8"
+  },
+  {
+    "date": "2026-09-29",
+    "executor": "Codex / GPT-6",
+    "source": "https://adl.ru/cad-library/",
+    "format": "SAT",
+    "sourceFile": "IS16 Ду100 Ру16.sat",
+    "sourceArchiveSha256": "c15131aafe7e647ac5b41ca78eddbc91cdbca6f498e9cd5fa9b3083c3a8acebc",
+    "originalSTEPFound": false,
+    "lengthMM": 350,
+    "pipeAxis": [
+      1,
+      0,
+      0
+    ],
+    "coverDirection": [
+      0,
+      -1,
+      0
+    ],
+    "boundsCAD": [
+      [
+        -0.17500002682209015,
+        -0.2689140737056732,
+        -0.1097201555967331
+      ],
+      [
+        0.17500001192092896,
+        0.10999997705221176,
+        0.10978061705827713
+      ]
+    ]
+  }
+]

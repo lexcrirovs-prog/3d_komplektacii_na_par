@@ -1,7 +1,7 @@
 {
-  "status": "PASSED_RETAINED_GEOMETRY_WITH_EXTERNAL_DEAERATOR",
+  "status": "PASSED_OPTIMIZED_PART_NAMES_AND_BOUNDS",
   "parts": 125,
-  "bytes": 38018588,
+  "bytes": 18174496,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -15,8 +15,8 @@
         "boiler_tubeplate",
         "boiler_door_labels"
       ],
-      "bytes": 3021136,
-      "sha256": "f14377bce9569c770f7077785ecb20b251010db1f3879bd36338b62d0acead3a"
+      "bytes": 1287812,
+      "sha256": "0724208c095e91e1c61bba1921a89ac3c8d7bf2629eefd26b434555cd36155f1"
     },
     {
       "file": "s4000-1.glb",
@@ -36,8 +36,8 @@
         "bottom_before_auto",
         "mod_direct_bypass"
       ],
-      "bytes": 2216176,
-      "sha256": "b259fe8f7972aa62ab888ccf9a0893045a3623c23f510c55ea95b760b3997755"
+      "bytes": 1096676,
+      "sha256": "881d7674e43367b212c7dca12801dd1bcd02c260f99d6877f3f9dd52ef4d30c2"
     },
     {
       "file": "s4000-2.glb",
@@ -59,8 +59,8 @@
         "bottom_after_auto",
         "control_cabinet"
       ],
-      "bytes": 3255612,
-      "sha256": "c22976aa5f1dcd610e5211a97be81d2d6e2109d938f62486a70d2288a31a3c36"
+      "bytes": 1317228,
+      "sha256": "2a52053bd6612b730bf77980fb00a34dcfe40d355575aeb44ca1d988d0d251ae"
     },
     {
       "file": "s4000-3.glb",
@@ -83,8 +83,8 @@
         "flue_spacer",
         "pr200"
       ],
-      "bytes": 5740488,
-      "sha256": "98f23d5672097a58496f522d5f7aed8b131a9a291938f79df4d73a7cb2f6e2df"
+      "bytes": 1903936,
+      "sha256": "e30626df7b5a1ba772cad004dd8e6c96002a9a2124af9ed8a69025edc74514b0"
     },
     {
       "file": "s4000-4.glb",
@@ -108,8 +108,8 @@
         "pump_delivery",
         "tds_without_vessels"
       ],
-      "bytes": 5706936,
-      "sha256": "eacc7d04db8425407c473d5ba2180e48b5249b8502d1089c7161aef51304fa62"
+      "bytes": 2776096,
+      "sha256": "2f11572e1671c46bb626aa61aa0df5abce72e6e0b27e0d5b7009fe2570d725f6"
     },
     {
       "file": "s4000-5.glb",
@@ -132,8 +132,8 @@
         "bottom_before_gate",
         "mod_eco_bypass"
       ],
-      "bytes": 6112752,
-      "sha256": "5485929830383ab4f7ce00d246be0f241b2499ed73dde772a8e5de1e7b437135"
+      "bytes": 3115856,
+      "sha256": "bd6073541b34940e67f813a8234504d6604aa0c5ce60f91b0bbbab77db4131d5"
     },
     {
       "file": "s4000-6.glb",
@@ -158,8 +158,8 @@
         "steam_delivery",
         "trap_support"
       ],
-      "bytes": 5996612,
-      "sha256": "28bc6fa6f87b48142996bfceec4b66d4a9bff29c0129fd249f188c031941326f"
+      "bytes": 3568144,
+      "sha256": "37f23e530bd6ec2d5ee14b1d4dd677caab302c49770a3dcc53de7a03bae7eb6f"
     },
     {
       "file": "s4000-7.glb",
@@ -181,8 +181,8 @@
         "gpz_bypass",
         "pressure_transmitter"
       ],
-      "bytes": 5968876,
-      "sha256": "becd885eecfabf386042aed3c4681bdb87dfbb0f39d20ae5ef74b0297f25c3ab"
+      "bytes": 3108748,
+      "sha256": "379a13fc3ccc190f4df8d41be3777aaff6969238610a6f8511b97ed275949762"
     }
   ]
 }

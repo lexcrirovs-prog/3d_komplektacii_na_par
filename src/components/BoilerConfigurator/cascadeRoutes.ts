@@ -19,6 +19,13 @@ export function routeCenter(route:Route):Point3 {
   return viewPoint([0,1,2].map(i=>(Math.min(...route.points.map(p=>p[i]))+Math.max(...route.points.map(p=>p[i])))/2))
 }
 
+// F is an oblique factory nozzle. Keep its continuation collinear with that
+// nozzle instead of bending the short inlet stub toward an arbitrary endpoint.
+export function bdvCoolingRoute():Route {
+  const n=Math.SQRT1_2,p:Point3=[3.65+.4965*n,2.4-.4965*n,.9]
+  return {id:'bdv_cooling_stub',label:'Охлаждающая вода → BDV',points:[[p[0]+.7*n,p[1]-.7*n,p[2]],p],radius:.01685,color:'green',requires:['bdv']}
+}
+
 /** Common headers stay beyond the longest economizer and vessel envelopes.
  * Source: 02-2026-TX sheet 3; individual pumps, separate FV/BDV circuits.
  * Header diameter is a visual envelope, not a hydraulic sizing result.

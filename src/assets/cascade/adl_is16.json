@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "source": "https://adl.ru/cad-library/",
+  "format": "SAT",
+  "sourceFile": "IS16 Ду100 Ру16.sat",
+  "sourceArchiveSha256": "c15131aafe7e647ac5b41ca78eddbc91cdbca6f498e9cd5fa9b3083c3a8acebc",
+  "originalSTEPFound": false,
+  "lengthMM": 350,
+  "pipeAxis": [
+    1,
+    0,
+    0
+  ],
+  "coverDirection": [
+    0,
+    -1,
+    0
+  ],
+  "boundsCAD": [
+    [
+      -0.17500002682209015,
+      -0.2689140737056732,
+      -0.1097201555967331
+    ],
+    [
+      0.17500001192092896,
+      0.10999997705221176,
+      0.10978061705827713
+    ]
+  ]
+}

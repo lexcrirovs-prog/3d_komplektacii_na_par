@@ -1,0 +1,1871 @@
+{
+  "date": "2026-09-29",
+  "executor": "Codex / GPT-6",
+  "errorFraction": 0.001,
+  "lockBorder": true,
+  "rows": [
+    {
+      "path": "src/assets/ratings/1000/s4000-0.glb",
+      "before": {
+        "triangles": 274358,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1649732,
+        "sha256": "bbaa8115482cd5651462b4f2e83a4a4231aa1c2cf69ddb80fb9965aa86db9ca0"
+      },
+      "after": {
+        "triangles": 84188,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 681460,
+        "sha256": "baae2fa1134a618ef229b68a9d5bff91b8defcca2d551e4e3a03b44232def023"
+      },
+      "maxBoundsError": 0.00016581308502738867,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1000/s4000-1.glb",
+      "before": {
+        "triangles": 130218,
+        "meshes": 14,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1234620,
+        "sha256": "1747d5e6f415c1340fac25b6712d58655d209c91af9493cc9e509953d27f5fa8"
+      },
+      "after": {
+        "triangles": 62762,
+        "meshes": 14,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 761120,
+        "sha256": "17f5dd6a59b1f61b9b73602d046d66edb99a264ab7ad30a10cd74b73359a42e4"
+      },
+      "maxBoundsError": 0.0002517517059459351,
+      "topLevelParts": 11,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1000/s4000-2.glb",
+      "before": {
+        "triangles": 640607,
+        "meshes": 31,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 5855820,
+        "sha256": "9c79d6f075c22914d3cd1cd4b581ae6ed4b79bb15785838f10cc9bce9432c274"
+      },
+      "after": {
+        "triangles": 174106,
+        "meshes": 30,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 2167860,
+        "sha256": "f6e18212d46d95f29ba3b690bcd0583c085dfa2be33dcda6cb8fb6afa9f64932"
+      },
+      "maxBoundsError": 0.0004755723462215311,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1000/s4000-3.glb",
+      "before": {
+        "triangles": 640633,
+        "meshes": 50,
+        "nodes": 68,
+        "textures": 0,
+        "bytes": 5592128,
+        "sha256": "0ee8b87f5633764bb275a7d9981a604d2db0e2c3d7fd827192239794856c4454"
+      },
+      "after": {
+        "triangles": 215036,
+        "meshes": 49,
+        "nodes": 68,
+        "textures": 0,
+        "bytes": 2985856,
+        "sha256": "9f52be2f56e0e36b79a4d4be99c38728ffc2a7da738af5fd3a881cde9eb1d321"
+      },
+      "maxBoundsError": 0.0007390681594188209,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1000/s4000-4.glb",
+      "before": {
+        "triangles": 640628,
+        "meshes": 32,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 4984652,
+        "sha256": "0ee6a19259986affe1e0587fa7d07a61eecd727bec2399f33d1241f63d0a33f6"
+      },
+      "after": {
+        "triangles": 185963,
+        "meshes": 31,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 2511580,
+        "sha256": "3a5c94512ea24e30baf48187ea6f2c452bde73d5334a8e2e539870ac7409be08"
+      },
+      "maxBoundsError": 0.0002154252109543009,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1000/s4000-5.glb",
+      "before": {
+        "triangles": 640645,
+        "meshes": 30,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 5278736,
+        "sha256": "2304aae83d24126435986ac8178971953370cb9aa9cfd78a5ac9af45d9d017a6"
+      },
+      "after": {
+        "triangles": 181598,
+        "meshes": 30,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 2479824,
+        "sha256": "d53367b044b59c653325b77fc2f5fdd8c7a314c7e5dd6e9ab730a1dff39b3e80"
+      },
+      "maxBoundsError": 0.00028519143166372274,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1000/s4000-6.glb",
+      "before": {
+        "triangles": 640586,
+        "meshes": 34,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 5978592,
+        "sha256": "32500ff959b131541c9c48e966973a929874f4108b07a29bea0ef8c171d52667"
+      },
+      "after": {
+        "triangles": 207814,
+        "meshes": 33,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 2849700,
+        "sha256": "bd3529c45889e3fbfc1329786f6f829734db1346e270caa9e16effc113d6198f"
+      },
+      "maxBoundsError": 0.00017976692551124884,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1000/s4000-7.glb",
+      "before": {
+        "triangles": 640586,
+        "meshes": 50,
+        "nodes": 68,
+        "textures": 0,
+        "bytes": 4201592,
+        "sha256": "c2bcf317395b4d37df62baac4e313574f21f7a94087fe6d3900ecc76fb3c190f"
+      },
+      "after": {
+        "triangles": 192046,
+        "meshes": 46,
+        "nodes": 68,
+        "textures": 0,
+        "bytes": 2502424,
+        "sha256": "6cf2d86753f05228561a9ea5e723857d40eb262bfcba794d9eb66d2aeaf2c5ba"
+      },
+      "maxBoundsError": 0.0004477133704020586,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-0.glb",
+      "before": {
+        "triangles": 273107,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1641892,
+        "sha256": "08dca5331737c519788f0b21768573640691a1f08374c27ddcd02356c3ad4997"
+      },
+      "after": {
+        "triangles": 84023,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 683660,
+        "sha256": "bd3c620f5601d0135f83524aefb74e66d2635b49f5322ea4ca8b31c042c23fa4"
+      },
+      "maxBoundsError": 0.0007339669336943189,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-1.glb",
+      "before": {
+        "triangles": 136918,
+        "meshes": 30,
+        "nodes": 42,
+        "textures": 0,
+        "bytes": 1293304,
+        "sha256": "25cb928ad9c2f1f6841c7b2e19673bfa277eb95e1de92a9948b65d0a688039e2"
+      },
+      "after": {
+        "triangles": 68106,
+        "meshes": 30,
+        "nodes": 42,
+        "textures": 0,
+        "bytes": 806836,
+        "sha256": "5024ad460cf26e5486f4895e13b4e9faf2a18028021ec0d6df192aa9fa4dce65"
+      },
+      "maxBoundsError": 0.0002595599282840984,
+      "topLevelParts": 12,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-2.glb",
+      "before": {
+        "triangles": 647343,
+        "meshes": 35,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 6090856,
+        "sha256": "3a8766fff9d01a3b35209079499655530b13405777c394946865896e8cd53e8e"
+      },
+      "after": {
+        "triangles": 184828,
+        "meshes": 35,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 2348376,
+        "sha256": "66d16564e2f5c52785fbb1cb8825bed2aca5951777fc9557da106f8d0bdbff18"
+      },
+      "maxBoundsError": 0.0004590841153231384,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-3.glb",
+      "before": {
+        "triangles": 647310,
+        "meshes": 29,
+        "nodes": 46,
+        "textures": 0,
+        "bytes": 5666140,
+        "sha256": "2dc271c54f70872893e92884036b7a5b3b16e95dff6d06bb46d8ce9f5135ff10"
+      },
+      "after": {
+        "triangles": 203770,
+        "meshes": 28,
+        "nodes": 46,
+        "textures": 0,
+        "bytes": 2852708,
+        "sha256": "79cb344864bbec2a7fc3a16de003b69dab71d674002d725f16282c777cc529c9"
+      },
+      "maxBoundsError": 0.0007390681594188209,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-4.glb",
+      "before": {
+        "triangles": 647371,
+        "meshes": 45,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 4998156,
+        "sha256": "3c7deda6bccd53dbfeb9bb4f563a675d446ea70213a36a85f3e56b637ec6049f"
+      },
+      "after": {
+        "triangles": 208616,
+        "meshes": 43,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 2742800,
+        "sha256": "2ba123f4555c75378d41ea58940ea3e720e510aea7683e2ae419054a654c3a3a"
+      },
+      "maxBoundsError": 0.0003722585098200337,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-5.glb",
+      "before": {
+        "triangles": 647378,
+        "meshes": 40,
+        "nodes": 59,
+        "textures": 0,
+        "bytes": 5371720,
+        "sha256": "ac6c2dfb77192b7f344c0eaf8b09dd2e98a1f544e7cc3b1a170b6b9762fa0b4f"
+      },
+      "after": {
+        "triangles": 191039,
+        "meshes": 40,
+        "nodes": 59,
+        "textures": 0,
+        "bytes": 2570556,
+        "sha256": "40e8a47d5053f0c09a0701ed8281aaa9d43fb4a6b7c958fb5490c67f3582d65c"
+      },
+      "maxBoundsError": 0.0008279590529127745,
+      "topLevelParts": 19,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-6.glb",
+      "before": {
+        "triangles": 647372,
+        "meshes": 38,
+        "nodes": 57,
+        "textures": 0,
+        "bytes": 5841220,
+        "sha256": "61103228d2ba8fab6613d2b186bba369e9b62c1adb8e00bc8e0df3a0a697c2b1"
+      },
+      "after": {
+        "triangles": 190730,
+        "meshes": 37,
+        "nodes": 57,
+        "textures": 0,
+        "bytes": 2647980,
+        "sha256": "b95e6f35797c342c3edb881216d700e858dae4bcc4e62531496701028b14757f"
+      },
+      "maxBoundsError": 0.00026617433715614425,
+      "topLevelParts": 19,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/1500/s4000-7.glb",
+      "before": {
+        "triangles": 647341,
+        "meshes": 33,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 4120744,
+        "sha256": "83b065a2e08784c0fdcb86feead6ae1637764cdb54c02e00ce9058717277cc2e"
+      },
+      "after": {
+        "triangles": 178860,
+        "meshes": 29,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 2365980,
+        "sha256": "cc244aa38022b4ff6a18d642babc028011327d48c012d762a5cfb08badf760fe"
+      },
+      "maxBoundsError": 0.0004612468615796672,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-0.glb",
+      "before": {
+        "triangles": 281533,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1679384,
+        "sha256": "633ec2e3f9f8cca5a1744892facd03183967974c82ecdc84e86172a66365639f"
+      },
+      "after": {
+        "triangles": 91517,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 724836,
+        "sha256": "ff6a2bcaecf446b2cebab0f18a2199942b012afc118be2837a1fca40a84a6908"
+      },
+      "maxBoundsError": 0.001194208113191375,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-1.glb",
+      "before": {
+        "triangles": 269846,
+        "meshes": 20,
+        "nodes": 35,
+        "textures": 0,
+        "bytes": 2167956,
+        "sha256": "ed253f2e21ba4bf437cf22febe4f10643ac5b14e2637290b62271abbdb57289a"
+      },
+      "after": {
+        "triangles": 74308,
+        "meshes": 20,
+        "nodes": 35,
+        "textures": 0,
+        "bytes": 868004,
+        "sha256": "bf4f2a96ba0db1700ee8baca0a916c0b28b99c500e4d6295acfdf1420296d750"
+      },
+      "maxBoundsError": 0.00043215004529528755,
+      "topLevelParts": 15,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-2.glb",
+      "before": {
+        "triangles": 415158,
+        "meshes": 35,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 3372284,
+        "sha256": "c3113a69d6c5b3e88c4a58ffd79678394cde5235d2e4e4920c530a5a8e035603"
+      },
+      "after": {
+        "triangles": 114076,
+        "meshes": 34,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 1419560,
+        "sha256": "88baae1ce95d7c7811474e55f64cf749ce2788b9ecf6074715690c8178ad23bb"
+      },
+      "maxBoundsError": 0.00097926713169727,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-3.glb",
+      "before": {
+        "triangles": 683179,
+        "meshes": 47,
+        "nodes": 65,
+        "textures": 0,
+        "bytes": 6044144,
+        "sha256": "32289582b9f1af39d80dfa2cc6b2387c8fa8ce29559bc444e448ca07d9fdeab7"
+      },
+      "after": {
+        "triangles": 176968,
+        "meshes": 46,
+        "nodes": 65,
+        "textures": 0,
+        "bytes": 2206800,
+        "sha256": "61e36bbf82514a3ecd2995a60a7502e5161c2334ee32bd3e24d558681e82a0a0"
+      },
+      "maxBoundsError": 0.00028519143166372274,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-4.glb",
+      "before": {
+        "triangles": 683212,
+        "meshes": 44,
+        "nodes": 62,
+        "textures": 0,
+        "bytes": 5714768,
+        "sha256": "e8360c8ef88a8b942afae38eb5f57dc95d3eda8116bee0ca6847d5b4cf11900a"
+      },
+      "after": {
+        "triangles": 212785,
+        "meshes": 43,
+        "nodes": 62,
+        "textures": 0,
+        "bytes": 2932304,
+        "sha256": "213e98f6a00a834985c125eb9f35714541fdecb0af9493498aa1a3ec32fbd14d"
+      },
+      "maxBoundsError": 0.001043348762777896,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-5.glb",
+      "before": {
+        "triangles": 682233,
+        "meshes": 26,
+        "nodes": 42,
+        "textures": 0,
+        "bytes": 5975304,
+        "sha256": "7e12e39abd6899168f8bf7a4417e8e6df0eb7f54783f0c7a265aa81c7e764283"
+      },
+      "after": {
+        "triangles": 228514,
+        "meshes": 26,
+        "nodes": 42,
+        "textures": 0,
+        "bytes": 3095228,
+        "sha256": "3920c93d281e5389b440907beeec5fa7a574dc0e6f691619f3ee82426f6d7fca"
+      },
+      "maxBoundsError": 0.00047466752824631975,
+      "topLevelParts": 16,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-6.glb",
+      "before": {
+        "triangles": 683173,
+        "meshes": 45,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 6049772,
+        "sha256": "529c235744bd9a2d9869f099f7f9d11f72e640f1c9dd0f8647aa464a0c6bd584"
+      },
+      "after": {
+        "triangles": 250788,
+        "meshes": 44,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 3473896,
+        "sha256": "4a7136b06a4b3cb76d564e872f03e253f4b930f387b2f30d50b5ec20dc8756c8"
+      },
+      "maxBoundsError": 0.0005688185122465494,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2000/s4000-7.glb",
+      "before": {
+        "triangles": 683164,
+        "meshes": 33,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 6201488,
+        "sha256": "9542aba46e222b1f5448e09fa7082862e5c2deb59e0f46d63d2f5636748b666e"
+      },
+      "after": {
+        "triangles": 245262,
+        "meshes": 32,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 3497792,
+        "sha256": "0aed1fa3c6ac4ab194dc22d6aac8cb2a16874d01805fbb1d7c53a3766d9df0a1"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-0.glb",
+      "before": {
+        "triangles": 281124,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1671496,
+        "sha256": "f930c5be537d215be6507e8d2bd52ee8224215f4162167070eda86189b8e9083"
+      },
+      "after": {
+        "triangles": 91400,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 722068,
+        "sha256": "6547d31474256084c6b624562b7c523bb97154badc182d8488c3d5b9e62bb5f9"
+      },
+      "maxBoundsError": 0.001194208113191264,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-1.glb",
+      "before": {
+        "triangles": 270331,
+        "meshes": 24,
+        "nodes": 39,
+        "textures": 0,
+        "bytes": 2169648,
+        "sha256": "af3f12cbdf9fac97b03165adf6303e0dae67c749561366bffe9bdaec454d7aab"
+      },
+      "after": {
+        "triangles": 75227,
+        "meshes": 24,
+        "nodes": 39,
+        "textures": 0,
+        "bytes": 871584,
+        "sha256": "28bf3dccacf740325c90c28d5d3487ae8828f3236031a054b3a7ea6e87dd59cd"
+      },
+      "maxBoundsError": 0.0004806571746485133,
+      "topLevelParts": 15,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-2.glb",
+      "before": {
+        "triangles": 415591,
+        "meshes": 33,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 3319032,
+        "sha256": "2ed516661f6aea0f070018a70333902d8c297e582a467d6888e62541060bb2a4"
+      },
+      "after": {
+        "triangles": 111686,
+        "meshes": 32,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 1362304,
+        "sha256": "513acf58226e415db0a8be13cf0317582fe6330905bbcf54c997328b1c97a320"
+      },
+      "maxBoundsError": 0.00097926713169727,
+      "topLevelParts": 16,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-3.glb",
+      "before": {
+        "triangles": 683663,
+        "meshes": 45,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 5997152,
+        "sha256": "781ddf66c217d3431ed8b7267eaba56be73aeeeba79ba5098b3eb47fb84f81cf"
+      },
+      "after": {
+        "triangles": 178456,
+        "meshes": 45,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 2145064,
+        "sha256": "3a8ab0705c677ad2e6db3f20c0ab45bed5d5d345aa386b7995aa23656baa703c"
+      },
+      "maxBoundsError": 9.963571514501335e-05,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-4.glb",
+      "before": {
+        "triangles": 682779,
+        "meshes": 37,
+        "nodes": 54,
+        "textures": 0,
+        "bytes": 5705004,
+        "sha256": "81f0651a480dab512dc8b71265e4429f1410de2257d18a230cb6c168a05ccf57"
+      },
+      "after": {
+        "triangles": 212416,
+        "meshes": 36,
+        "nodes": 54,
+        "textures": 0,
+        "bytes": 2934336,
+        "sha256": "7396e9cbae1a867e527a944f44a22c28be3391884ddecca216d824afc92d4ea4"
+      },
+      "maxBoundsError": 0.001043348762777896,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-5.glb",
+      "before": {
+        "triangles": 683656,
+        "meshes": 30,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 6044352,
+        "sha256": "f0ca68ef970192c41edf6dc0145fa0ba9455dbd51dfd805212c3b4b8fe84a9e4"
+      },
+      "after": {
+        "triangles": 232156,
+        "meshes": 29,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 3162400,
+        "sha256": "663666c43c39314d32d58aaab4d1e64e4d8e8a556f5a96a6810c2d607f6e4efb"
+      },
+      "maxBoundsError": 0.0004985033541378137,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-6.glb",
+      "before": {
+        "triangles": 683649,
+        "meshes": 47,
+        "nodes": 65,
+        "textures": 0,
+        "bytes": 6110192,
+        "sha256": "f49fa40e72b6a7b9031dfb7d7991446567a01d4b2628e78a9dc5c88d005ddbee"
+      },
+      "after": {
+        "triangles": 254618,
+        "meshes": 46,
+        "nodes": 65,
+        "textures": 0,
+        "bytes": 3567900,
+        "sha256": "8925b4e30aafb030c05f2db6b2dac601be6bb6eca608e935c5292af8428c049b"
+      },
+      "maxBoundsError": 0.0002809580610603213,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/2500/s4000-7.glb",
+      "before": {
+        "triangles": 683652,
+        "meshes": 34,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 6177588,
+        "sha256": "313b869d6799753a4d7d280c910ceb9538f38e947d7982396f7b669bbfd5dedd"
+      },
+      "after": {
+        "triangles": 239764,
+        "meshes": 33,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 3462076,
+        "sha256": "7b1f28181252b36752a3fd056d4f6428ff21970d269514f432b19f9222ef8d5a"
+      },
+      "maxBoundsError": 0.0005688185122465494,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-0.glb",
+      "before": {
+        "triangles": 285119,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1689376,
+        "sha256": "ec83d916d525ed1ebd8ec12e7166919d76558800170574cef16b57a99cc53fd9"
+      },
+      "after": {
+        "triangles": 89633,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 707972,
+        "sha256": "3c86cb862c2069f96752b72298a615bfdbda6589d99d95890eda32718c37b089"
+      },
+      "maxBoundsError": 0.00036874457691737916,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-1.glb",
+      "before": {
+        "triangles": 266848,
+        "meshes": 37,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 2219544,
+        "sha256": "12cb0793b5bbfd8a68f8754652ef2738e1f3e3298ac01bb016491891c4efd962"
+      },
+      "after": {
+        "triangles": 89438,
+        "meshes": 37,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 1033332,
+        "sha256": "be67eadf99b963c5bcc12af8e73487419096af3fdfd68cd83343e85d8221153c"
+      },
+      "maxBoundsError": 0.0004909732181769266,
+      "topLevelParts": 15,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-2.glb",
+      "before": {
+        "triangles": 412203,
+        "meshes": 35,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 3292148,
+        "sha256": "4985f28621227aa02c3c02cba81df0ff17468139910ce166076898c8a2d5b355"
+      },
+      "after": {
+        "triangles": 107102,
+        "meshes": 33,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 1332672,
+        "sha256": "95fdb1ade13606db2ca46f502f82c299ee51edb86b529cfc3bf85c5b30b31159"
+      },
+      "maxBoundsError": 0.001170814492070349,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-3.glb",
+      "before": {
+        "triangles": 680197,
+        "meshes": 49,
+        "nodes": 67,
+        "textures": 0,
+        "bytes": 6131648,
+        "sha256": "38ba00a724d4e1b66d79cf15d363a72d9f57ff8e98d4629ab5ff04b9b9e03e0a"
+      },
+      "after": {
+        "triangles": 185954,
+        "meshes": 49,
+        "nodes": 67,
+        "textures": 0,
+        "bytes": 2335040,
+        "sha256": "510b17dc9cf768d52c3e1b208d6b8737adc948422af03b7fafea656815b83bfe"
+      },
+      "maxBoundsError": 0.00026617433715614425,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-4.glb",
+      "before": {
+        "triangles": 680140,
+        "meshes": 36,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 5571404,
+        "sha256": "17ca9e54a7fc972b9483efeaab1b4322f671a57c45917fbe73f45509a54071f8"
+      },
+      "after": {
+        "triangles": 196519,
+        "meshes": 34,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 2713296,
+        "sha256": "5d54f5c4e83a428f37b2f9fc56b7de22bc246765e14306dcd03e22628ff458ab"
+      },
+      "maxBoundsError": 0.0010343132753887208,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-5.glb",
+      "before": {
+        "triangles": 679303,
+        "meshes": 36,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 6118140,
+        "sha256": "d93142d43bd6b90c962701c921ed6bd6ff01d32544f3b974a72e425d600865ca"
+      },
+      "after": {
+        "triangles": 231040,
+        "meshes": 36,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 3140972,
+        "sha256": "cc6cb8359d348c0d3cfa546f704e8b2336ff3e5f8f6c1573119a0d0850653095"
+      },
+      "maxBoundsError": 0.00042573319591210357,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-6.glb",
+      "before": {
+        "triangles": 680188,
+        "meshes": 29,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 5885584,
+        "sha256": "e93dc4263b686d2e7611fabf462ca3e788ff9f8c00bfffee41267966b15153c4"
+      },
+      "after": {
+        "triangles": 216594,
+        "meshes": 27,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 3000288,
+        "sha256": "b3087f41361b158f3e4622b90a14293cf2c8046228a1e06c49da6e101e2fbaea"
+      },
+      "maxBoundsError": 9.963571514501335e-05,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3000/s4000-7.glb",
+      "before": {
+        "triangles": 680206,
+        "meshes": 29,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 6041144,
+        "sha256": "f17764a048f25fb718e5c17e17552f1bf6bbd6884564fd32e87d1f52abbbcc29"
+      },
+      "after": {
+        "triangles": 262514,
+        "meshes": 28,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 3616696,
+        "sha256": "0fd681962ef5b8d0f5f60161201a481d789c6ba896d805aa5532766586e0fd26"
+      },
+      "maxBoundsError": 0.0008388166954668708,
+      "topLevelParts": 19,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-0.glb",
+      "before": {
+        "triangles": 288305,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1697872,
+        "sha256": "1e22769f7dba775d941f1a770cd93c540a46aca9fc5b0f8f4e89bf4d5fe3fb50"
+      },
+      "after": {
+        "triangles": 88675,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 706288,
+        "sha256": "610801c17b7e1d8ab54f1ddb890070d0762f9e83831aa8316914876ae186652c"
+      },
+      "maxBoundsError": 5.5729553423589095e-05,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-1.glb",
+      "before": {
+        "triangles": 266130,
+        "meshes": 20,
+        "nodes": 35,
+        "textures": 0,
+        "bytes": 2135600,
+        "sha256": "474ecc01ed7cf064f6a633a667112d606167a546165e09d8df5867f1aec54a99"
+      },
+      "after": {
+        "triangles": 93158,
+        "meshes": 20,
+        "nodes": 35,
+        "textures": 0,
+        "bytes": 1071092,
+        "sha256": "7f3876a4c4a4e0b597f3b3435c3b80933b890030dda0f9cf63f4907cd3c3a61b"
+      },
+      "maxBoundsError": 0.0005353557164953227,
+      "topLevelParts": 15,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-2.glb",
+      "before": {
+        "triangles": 411377,
+        "meshes": 34,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 3287820,
+        "sha256": "b58bf6e77b7b35c922805a5fde058a97cd79e342d929b69495a1c813f10eaf11"
+      },
+      "after": {
+        "triangles": 107488,
+        "meshes": 33,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 1332112,
+        "sha256": "07e2ca5438a0e1189c156f62f88c67d3b144885c469d7dba351daae5e687bc1a"
+      },
+      "maxBoundsError": 0.0013836898542649578,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-3.glb",
+      "before": {
+        "triangles": 679455,
+        "meshes": 40,
+        "nodes": 58,
+        "textures": 0,
+        "bytes": 6158364,
+        "sha256": "f5898e1bf4632fc5eb1ceb2a254dac717a8c0c3ed51a01565a54a381e9b3088b"
+      },
+      "after": {
+        "triangles": 193347,
+        "meshes": 39,
+        "nodes": 58,
+        "textures": 0,
+        "bytes": 2406564,
+        "sha256": "14b7855362a52f83c068804f0abe5f2d18d4084f7876ea9625f212d0cb84fac0"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-4.glb",
+      "before": {
+        "triangles": 679446,
+        "meshes": 33,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 5551088,
+        "sha256": "255fbc56215d7d0cb75af2022179ce80d2475193020918d850ae9c96b61de77a"
+      },
+      "after": {
+        "triangles": 195414,
+        "meshes": 31,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 2688656,
+        "sha256": "1690e64a607ae34ddfb2a995030bf86ab814bfcf816b4b944b5984e55461db01"
+      },
+      "maxBoundsError": 0.0010343132753887208,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-5.glb",
+      "before": {
+        "triangles": 678563,
+        "meshes": 43,
+        "nodes": 60,
+        "textures": 0,
+        "bytes": 6089256,
+        "sha256": "86c07fa825e7cc07c0de743655892c5aac33f3bfdf034097b405fc8cd60dda45"
+      },
+      "after": {
+        "triangles": 221868,
+        "meshes": 43,
+        "nodes": 60,
+        "textures": 0,
+        "bytes": 2999992,
+        "sha256": "6209f6ad1a7458aa2f218b07608be7790345c01abf539a99781ae5093af33077"
+      },
+      "maxBoundsError": 0.0002851914316639448,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-6.glb",
+      "before": {
+        "triangles": 679462,
+        "meshes": 50,
+        "nodes": 68,
+        "textures": 0,
+        "bytes": 5960680,
+        "sha256": "4d162d04670051b477a83d5badf7d26255a2d698e0fad6e3211c760525161d07"
+      },
+      "after": {
+        "triangles": 216090,
+        "meshes": 48,
+        "nodes": 68,
+        "textures": 0,
+        "bytes": 3051808,
+        "sha256": "ef692da0bbb790aea8d55c70f5914cebe797ee6e21ff6af4778868ec9f7a4e1e"
+      },
+      "maxBoundsError": 0.00044434125629777554,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/3500/s4000-7.glb",
+      "before": {
+        "triangles": 679404,
+        "meshes": 31,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 6029932,
+        "sha256": "f848dea986b882d74659906d2f0a54db9dd09766fecf0e7511fb3ddd769fc0e4"
+      },
+      "after": {
+        "triangles": 260548,
+        "meshes": 30,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 3602484,
+        "sha256": "f61c48b870ad02b883a725b57dc40bde558a82c2548802d2efe386d0f288f2b9"
+      },
+      "maxBoundsError": 0.001032588140885693,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-0.glb",
+      "before": {
+        "triangles": 370928,
+        "meshes": 126,
+        "nodes": 134,
+        "textures": 0,
+        "bytes": 3021136,
+        "sha256": "f14377bce9569c770f7077785ecb20b251010db1f3879bd36338b62d0acead3a"
+      },
+      "after": {
+        "triangles": 152216,
+        "meshes": 126,
+        "nodes": 134,
+        "textures": 0,
+        "bytes": 1287812,
+        "sha256": "0724208c095e91e1c61bba1921a89ac3c8d7bf2629eefd26b434555cd36155f1"
+      },
+      "maxBoundsError": 0.0023756454371692826,
+      "topLevelParts": 8,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-1.glb",
+      "before": {
+        "triangles": 263912,
+        "meshes": 20,
+        "nodes": 34,
+        "textures": 0,
+        "bytes": 2216176,
+        "sha256": "b259fe8f7972aa62ab888ccf9a0893045a3623c23f510c55ea95b760b3997755"
+      },
+      "after": {
+        "triangles": 90814,
+        "meshes": 20,
+        "nodes": 34,
+        "textures": 0,
+        "bytes": 1096676,
+        "sha256": "881d7674e43367b212c7dca12801dd1bcd02c260f99d6877f3f9dd52ef4d30c2"
+      },
+      "maxBoundsError": 0.0002471653658924211,
+      "topLevelParts": 14,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-2.glb",
+      "before": {
+        "triangles": 409143,
+        "meshes": 31,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 3255612,
+        "sha256": "c22976aa5f1dcd610e5211a97be81d2d6e2109d938f62486a70d2288a31a3c36"
+      },
+      "after": {
+        "triangles": 107880,
+        "meshes": 30,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 1317228,
+        "sha256": "2a52053bd6612b730bf77980fb00a34dcfe40d355575aeb44ca1d988d0d251ae"
+      },
+      "maxBoundsError": 0.0002642251938875795,
+      "topLevelParts": 16,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-3.glb",
+      "before": {
+        "triangles": 677186,
+        "meshes": 50,
+        "nodes": 67,
+        "textures": 0,
+        "bytes": 5740488,
+        "sha256": "98f23d5672097a58496f522d5f7aed8b131a9a291938f79df4d73a7cb2f6e2df"
+      },
+      "after": {
+        "triangles": 157254,
+        "meshes": 49,
+        "nodes": 67,
+        "textures": 0,
+        "bytes": 1903936,
+        "sha256": "e30626df7b5a1ba772cad004dd8e6c96002a9a2124af9ed8a69025edc74514b0"
+      },
+      "maxBoundsError": 0.0010937596489384305,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-4.glb",
+      "before": {
+        "triangles": 677220,
+        "meshes": 35,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 5706936,
+        "sha256": "eacc7d04db8425407c473d5ba2180e48b5249b8502d1089c7161aef51304fa62"
+      },
+      "after": {
+        "triangles": 205122,
+        "meshes": 33,
+        "nodes": 53,
+        "textures": 0,
+        "bytes": 2776096,
+        "sha256": "2f11572e1671c46bb626aa61aa0df5abce72e6e0b27e0d5b7009fe2570d725f6"
+      },
+      "maxBoundsError": 0.00042573347786400983,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-5.glb",
+      "before": {
+        "triangles": 677244,
+        "meshes": 34,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 6112752,
+        "sha256": "5485929830383ab4f7ce00d246be0f241b2499ed73dde772a8e5de1e7b437135"
+      },
+      "after": {
+        "triangles": 229353,
+        "meshes": 34,
+        "nodes": 51,
+        "textures": 0,
+        "bytes": 3115856,
+        "sha256": "bd6073541b34940e67f813a8234504d6604aa0c5ce60f91b0bbbab77db4131d5"
+      },
+      "maxBoundsError": 0.0007681527179848047,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-6.glb",
+      "before": {
+        "triangles": 677236,
+        "meshes": 30,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 5996612,
+        "sha256": "28bc6fa6f87b48142996bfceec4b66d4a9bff29c0129fd249f188c031941326f"
+      },
+      "after": {
+        "triangles": 258442,
+        "meshes": 29,
+        "nodes": 49,
+        "textures": 0,
+        "bytes": 3568144,
+        "sha256": "37f23e530bd6ec2d5ee14b1d4dd677caab302c49770a3dcc53de7a03bae7eb6f"
+      },
+      "maxBoundsError": 0.0004611877229763195,
+      "topLevelParts": 19,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/4000/s4000-7.glb",
+      "before": {
+        "triangles": 676328,
+        "meshes": 47,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 5968876,
+        "sha256": "becd885eecfabf386042aed3c4681bdb87dfbb0f39d20ae5ef74b0297f25c3ab"
+      },
+      "after": {
+        "triangles": 221172,
+        "meshes": 45,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 3108748,
+        "sha256": "379a13fc3ccc190f4df8d41be3777aaff6969238610a6f8511b97ed275949762"
+      },
+      "maxBoundsError": 0.0006643116742715005,
+      "topLevelParts": 16,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-0.glb",
+      "before": {
+        "triangles": 278094,
+        "meshes": 30,
+        "nodes": 33,
+        "textures": 0,
+        "bytes": 1697496,
+        "sha256": "e420aa4d802a40070c4bef5e3774fdc5da121205443cfc3551bd0d054dfd08c3"
+      },
+      "after": {
+        "triangles": 97306,
+        "meshes": 30,
+        "nodes": 33,
+        "textures": 0,
+        "bytes": 753996,
+        "sha256": "920b7a944eb3bec8c96d5cb11002e73aa5fa369099b58f3f0b992d5f283d02b4"
+      },
+      "maxBoundsError": 3.329922469674784e-05,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-1.glb",
+      "before": {
+        "triangles": 137626,
+        "meshes": 32,
+        "nodes": 45,
+        "textures": 0,
+        "bytes": 1376280,
+        "sha256": "e0ac5c8534c896bc38618c271d36772c74dd4e6f266a1c6f86209680cc97ce8c"
+      },
+      "after": {
+        "triangles": 76990,
+        "meshes": 32,
+        "nodes": 45,
+        "textures": 0,
+        "bytes": 945380,
+        "sha256": "7e459f52e78306736dd4044e0af0584d65b480c6bf7d4c68ab9f35ceec97170c"
+      },
+      "maxBoundsError": 0.00026262627883300027,
+      "topLevelParts": 13,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-2.glb",
+      "before": {
+        "triangles": 648082,
+        "meshes": 36,
+        "nodes": 54,
+        "textures": 0,
+        "bytes": 6048748,
+        "sha256": "455dbf147975f3554d75818ca7d149e345066ba9a75ded1175485e990d4e28c0"
+      },
+      "after": {
+        "triangles": 181090,
+        "meshes": 35,
+        "nodes": 54,
+        "textures": 0,
+        "bytes": 2321856,
+        "sha256": "7e67486c6dedfd11305ca6a76127b8279ee1eaeae6353defb73da338f42cda18"
+      },
+      "maxBoundsError": 0.00028520071508819633,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-3.glb",
+      "before": {
+        "triangles": 648050,
+        "meshes": 52,
+        "nodes": 69,
+        "textures": 0,
+        "bytes": 5679444,
+        "sha256": "82e5effd0eefc3916d1a25157b2e45a51ae3673ddfaeb72c6c9bd89c24257f6c"
+      },
+      "after": {
+        "triangles": 233984,
+        "meshes": 50,
+        "nodes": 69,
+        "textures": 0,
+        "bytes": 3211900,
+        "sha256": "50a22bf433dfc664d660353a4cf5756c02ca8040a8ce5b3cf09ab14d0395f843"
+      },
+      "maxBoundsError": 6.916519942024024e-05,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-4.glb",
+      "before": {
+        "triangles": 648029,
+        "meshes": 30,
+        "nodes": 46,
+        "textures": 0,
+        "bytes": 5105396,
+        "sha256": "603ef0f1c5e24fab606bffc95d8c42bfb20f19fec20c1afcb83c61f36f96caac"
+      },
+      "after": {
+        "triangles": 199791,
+        "meshes": 30,
+        "nodes": 46,
+        "textures": 0,
+        "bytes": 2762516,
+        "sha256": "fe83895c7272b0772b1ad0129ac0fca80f87160951abd9e9e039880f3f1827b3"
+      },
+      "maxBoundsError": 0.00013210400036076098,
+      "topLevelParts": 16,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-5.glb",
+      "before": {
+        "triangles": 648053,
+        "meshes": 34,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 5278936,
+        "sha256": "5434d4cc8c4588b82fb935a3746cb11ca938fe595466f6ddf35f12348cdc94f2"
+      },
+      "after": {
+        "triangles": 183524,
+        "meshes": 34,
+        "nodes": 52,
+        "textures": 0,
+        "bytes": 2481912,
+        "sha256": "44db48ad84a63bc6557c61b025e134dc1ff98941bc54bdafda35e1fd1158b4a6"
+      },
+      "maxBoundsError": 0.0007390681594188209,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-6.glb",
+      "before": {
+        "triangles": 648062,
+        "meshes": 30,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 6013912,
+        "sha256": "9fad7e4e939da6c25a112e1fb1905f9eacadac87784b602676ee953c28cbd102"
+      },
+      "after": {
+        "triangles": 221646,
+        "meshes": 30,
+        "nodes": 47,
+        "textures": 0,
+        "bytes": 2964976,
+        "sha256": "c3a1f3fce7ca1f941e881ce444f9105d5c1606d4fe3ead9af0469a869950c8ba"
+      },
+      "maxBoundsError": 4.327064062115138e-05,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/500/s4000-7.glb",
+      "before": {
+        "triangles": 648007,
+        "meshes": 31,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 4204700,
+        "sha256": "270237e5296c7a0f278b4bd8970cf80557201cdaf9aab4d0ca27028fa46350c3"
+      },
+      "after": {
+        "triangles": 168324,
+        "meshes": 26,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 2229520,
+        "sha256": "b1659736143ee7fe8491fc5fa54f0014a12df698191ba784f1d528f830660aa9"
+      },
+      "maxBoundsError": 0.00016920296825029268,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-0.glb",
+      "before": {
+        "triangles": 301602,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 1743044,
+        "sha256": "796d4958706eb2a675db199e49426c3778add11c0215b9efee967007dcf1b394"
+      },
+      "after": {
+        "triangles": 88978,
+        "meshes": 22,
+        "nodes": 25,
+        "textures": 0,
+        "bytes": 709436,
+        "sha256": "521539a9a2e948e6153cb6c5cdf03194a3f5865b1f293973c51bbfd3453f4558"
+      },
+      "maxBoundsError": 0.0002041304687736556,
+      "topLevelParts": 3,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-1.glb",
+      "before": {
+        "triangles": 262897,
+        "meshes": 23,
+        "nodes": 38,
+        "textures": 0,
+        "bytes": 2378896,
+        "sha256": "108b731fdabf58bb673294d971e01b46289b0e74c42a57d2e88a9e99e8d00d7e"
+      },
+      "after": {
+        "triangles": 104068,
+        "meshes": 23,
+        "nodes": 38,
+        "textures": 0,
+        "bytes": 1185880,
+        "sha256": "ffd6b627f6460bd6d8e6e7d5269a137f03abd41d963675fb2a7076283ac3b5f3"
+      },
+      "maxBoundsError": 9.963571514501335e-05,
+      "topLevelParts": 15,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-2.glb",
+      "before": {
+        "triangles": 408160,
+        "meshes": 30,
+        "nodes": 46,
+        "textures": 0,
+        "bytes": 3482992,
+        "sha256": "cb3c808b3871941fb0409e04977d12d4009f503ed20b12bb8fc316681387ec73"
+      },
+      "after": {
+        "triangles": 132498,
+        "meshes": 29,
+        "nodes": 46,
+        "textures": 0,
+        "bytes": 1685368,
+        "sha256": "bc4ee8b534007e0a96b00ca709c622980ff788f2d9c73c391ad4bf05181e9938"
+      },
+      "maxBoundsError": 0.000488623798446497,
+      "topLevelParts": 16,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-3.glb",
+      "before": {
+        "triangles": 675292,
+        "meshes": 48,
+        "nodes": 65,
+        "textures": 0,
+        "bytes": 5346520,
+        "sha256": "552377ff9f176a5503fb57be3bb55f45c837639585c822a19a21f130c11c79ca"
+      },
+      "after": {
+        "triangles": 143360,
+        "meshes": 48,
+        "nodes": 65,
+        "textures": 0,
+        "bytes": 1722704,
+        "sha256": "ee6f4ae101f675cf382ce6084e5686c7dc53a25e7cdc0ae5050a07ed46d61b2f"
+      },
+      "maxBoundsError": 0.0006261109283514088,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-4.glb",
+      "before": {
+        "triangles": 676151,
+        "meshes": 32,
+        "nodes": 50,
+        "textures": 0,
+        "bytes": 5751228,
+        "sha256": "954fdb01a3992118e679d0b3ec4f3c3903097d789dc24e0fca36822cf6ebdff9"
+      },
+      "after": {
+        "triangles": 193570,
+        "meshes": 31,
+        "nodes": 50,
+        "textures": 0,
+        "bytes": 2617972,
+        "sha256": "e863e0f05acc5a1df128bb411e2f7d436e50b20d3ebfbfd4376f78e6581a1150"
+      },
+      "maxBoundsError": 0.0005951248651356877,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-5.glb",
+      "before": {
+        "triangles": 676239,
+        "meshes": 45,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 6034816,
+        "sha256": "09b5263e0c16cb8557a5eb39cfeccf8251f4c7d858ffde8b89a2337b6dc99706"
+      },
+      "after": {
+        "triangles": 216536,
+        "meshes": 45,
+        "nodes": 63,
+        "textures": 0,
+        "bytes": 2884532,
+        "sha256": "7a1190d79e2edfbc270f24e76a2aede0e958195bd117225d399e530866adcf8d"
+      },
+      "maxBoundsError": 0.0002570648339315085,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-6.glb",
+      "before": {
+        "triangles": 676186,
+        "meshes": 31,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 5718476,
+        "sha256": "aaceaea61b4f5ff80b892d93e1f42d0f9f2ab1e3cc3d46dfa7b8324c261fd189"
+      },
+      "after": {
+        "triangles": 201364,
+        "meshes": 27,
+        "nodes": 48,
+        "textures": 0,
+        "bytes": 2840076,
+        "sha256": "5b7c1cbcd92fdcc83cbd186caea8a636341dd544639b21ef9381e217193b335d"
+      },
+      "maxBoundsError": 0.0017955653250927295,
+      "topLevelParts": 17,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/ratings/5000/s4000-7.glb",
+      "before": {
+        "triangles": 676196,
+        "meshes": 40,
+        "nodes": 58,
+        "textures": 0,
+        "bytes": 6140844,
+        "sha256": "44e75d9a73c002d09034ae419e9a17ead3e3947e61fb025e8d8ac5a79c0347b8"
+      },
+      "after": {
+        "triangles": 259455,
+        "meshes": 39,
+        "nodes": 58,
+        "textures": 0,
+        "bytes": 3566296,
+        "sha256": "623b452ce80a24fc98252d528ee15ebaa087d57b9b0b91b93129dcb4874c1f4d"
+      },
+      "maxBoundsError": 0.00016531596549973493,
+      "topLevelParts": 18,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/deaerators/da15_4.glb",
+      "errorFraction": 0,
+      "before": {
+        "triangles": 343004,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1569424,
+        "sha256": "e0a485d8301e1357d8a32fdcb566cfa7b4fdad74327dae32d9fca6fe10cfcebe"
+      },
+      "after": {
+        "triangles": 343004,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1557404,
+        "sha256": "171e2a811c50d16821dd4fd843f056445f2928e7973f1dbab7ed18620a690004"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 1,
+      "applied": true
+    },
+    {
+      "path": "src/assets/deaerators/da15_8.glb",
+      "errorFraction": 0,
+      "before": {
+        "triangles": 314354,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1495416,
+        "sha256": "d586b544787855ca53ffb7a3fce37a10909cb2f239d84e309d2146f3df43209a"
+      },
+      "after": {
+        "triangles": 314354,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1484640,
+        "sha256": "75307513139716f705473c11a4eb3bff668642c864aa2f4107155d2397682047"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 1,
+      "applied": true
+    },
+    {
+      "path": "src/assets/deaerators/da25_15.glb",
+      "errorFraction": 0,
+      "before": {
+        "triangles": 408380,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1831300,
+        "sha256": "5eeef16c225b7d0f71092ff13659480515750b02357fb242e0ae42dc9a2a6735"
+      },
+      "after": {
+        "triangles": 408380,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1811160,
+        "sha256": "bbc2f2f606003e2485960974b69c1dd66626e32b86af332655766e23114b7501"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 1,
+      "applied": true
+    },
+    {
+      "path": "src/assets/deaerators/da25_25.glb",
+      "errorFraction": 0,
+      "before": {
+        "triangles": 389846,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1754224,
+        "sha256": "663a68fc6e75577e4ab9212944a8fbd65d8e9e9a8adbd1cb5c689cfd74247b38"
+      },
+      "after": {
+        "triangles": 389846,
+        "meshes": 5,
+        "nodes": 6,
+        "textures": 0,
+        "bytes": 1739916,
+        "sha256": "b299e70c1b753ab9f92d992cb999c773762189bec2b06422f902fb93f007cb23"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 1,
+      "applied": true
+    },
+    {
+      "path": "src/assets/deaerators/da3.glb",
+      "errorFraction": 0.001,
+      "before": {
+        "triangles": 510424,
+        "meshes": 242,
+        "nodes": 243,
+        "textures": 0,
+        "bytes": 3152892,
+        "sha256": "c28f17975e1bb6954e79b810ef0ab09d23387867b876a2a535509b462210b8b9"
+      },
+      "after": {
+        "triangles": 231344,
+        "meshes": 242,
+        "nodes": 243,
+        "textures": 0,
+        "bytes": 1629956,
+        "sha256": "8f02647ace8b525c28d06a62d52216a5cd8704b4eb5f04035578a0408524ca06"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 1,
+      "applied": true
+    },
+    {
+      "path": "src/assets/cascade/cascade.glb",
+      "before": {
+        "triangles": 49708,
+        "meshes": 25,
+        "nodes": 27,
+        "textures": 1,
+        "bytes": 405812,
+        "sha256": "9afefee2fb221681c98364aeaf8493400d492eac36310b0db00d84288d9556e5"
+      },
+      "after": {
+        "triangles": 34952,
+        "meshes": 25,
+        "nodes": 27,
+        "textures": 1,
+        "bytes": 324212,
+        "sha256": "cbf915ca550c01966d5c877f00abb51e1b7a5600bda703be75edd5e87cb39fcb"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 2,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/cascade/comfort.glb",
+      "before": {
+        "triangles": 136520,
+        "meshes": 27,
+        "nodes": 29,
+        "textures": 1,
+        "bytes": 826440,
+        "sha256": "b4261d2096b83e6781e084b4d72604eee0050bc243ebac9117ada851dcfa0f1a"
+      },
+      "after": {
+        "triangles": 124696,
+        "meshes": 27,
+        "nodes": 29,
+        "textures": 1,
+        "bytes": 718188,
+        "sha256": "2f7b0beb476e1928f0ef4060b560588f555388018cae8026b045c57b263a118a"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 2,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/cascade/comfort_plus.glb",
+      "before": {
+        "triangles": 137372,
+        "meshes": 27,
+        "nodes": 29,
+        "textures": 1,
+        "bytes": 835092,
+        "sha256": "4caae857e2b317f5db3d3b0412fd6e722c698439b5d59b1ea7bc114c55295436"
+      },
+      "after": {
+        "triangles": 125548,
+        "meshes": 27,
+        "nodes": 29,
+        "textures": 1,
+        "bytes": 723940,
+        "sha256": "1cec2b24abd9179dcd9863e8c41813b6709fde563ce8d9a415a7395a6d6192d0"
+      },
+      "maxBoundsError": 0,
+      "topLevelParts": 2,
+      "applied": true,
+      "errorFraction": 0.001
+    },
+    {
+      "path": "src/assets/cascade/piping.glb",
+      "before": {
+        "triangles": 230108,
+        "meshes": 12,
+        "nodes": 23,
+        "textures": 0,
+        "bytes": 1409392,
+        "sha256": "ab930ff07c3a64935fa5f3853f20314a66504602fc182316b29584ea6b9a722d"
+      },
+      "after": {
+        "triangles": 46056,
+        "meshes": 12,
+        "nodes": 23,
+        "textures": 0,
+        "bytes": 662124,
+        "sha256": "d6bbaa5831e78e9ec6b009c42e77eac92eee0ea3546472f25ae17da594123ba1"
+      },
+      "maxBoundsError": 0.0008922031723148649,
+      "topLevelParts": 11,
+      "applied": true,
+      "errorFraction": 0.001
+    }
+  ]
+}

@@ -1,12 +1,12 @@
-import {Group,SphereGeometry} from 'three'
-import {axisValve,cylinder,flange,item,mergeStaticFittings,strainer} from './distributionGeometry'
+import {Group,SphereGeometry,type Object3D} from 'three'
+import {axisValve,cylinder,flange,item,mergeStaticFittings,strainer,steamStrainer} from './distributionGeometry'
 import {type NativeDeaerator} from './deaeratorPorts'
 import {approach,deaeratorLayout,pipeRadius} from './nativeDeaeratorRoutes'
 import {viewPoint,unitSpacing,type Point3} from './cascadeRoutes'
 
 /** The supplied STEP owns the vessel/nozzles. These simplified fittings follow
  * the existing TX circuits, with dimensions matched to each connection. */
-export function nativeDeaeratorHardware(n:NativeDeaerator,count:number) {
+export function nativeDeaeratorHardware(n:NativeDeaerator,count:number,sourceStrainer:Object3D) {
   const root=new Group();root.name='da_fittings'
   const p=n.ports,l=deaeratorLayout(n)
   const inlet=(y:number,z:number,regulated:boolean)=>{
@@ -24,7 +24,7 @@ export function nativeDeaeratorHardware(n:NativeDeaerator,count:number) {
     axisValve(root,[x,1.3,1.8],[0,1,0],.28)
     root.add(cylinder([x,1.55,1.8],[x,1.6,1.8],.029,'blue'))
   }
-  strainer(root,[-6.95,l.rear,l.steamZ],1.10)
+  steamStrainer(root,[-6.95,l.rear,l.steamZ],sourceStrainer)
   const mainScale=pipeRadius(p.steam.dn)/.048
   axisValve(root,[-5.86,l.rear,l.steamZ],[1,0,0],mainScale,true)
   axisValve(root,[-4.78,l.rear,l.steamZ],[1,0,0],mainScale)
@@ -32,7 +32,7 @@ export function nativeDeaeratorHardware(n:NativeDeaerator,count:number) {
   for(const [x,actuator] of [[-5.88,true],[-4.85,false]] as const)
     axisValve(root,[x,p.barb.point[1],l.steamZ],[1,0,0],barbScale,actuator)
   // Short bottom connection then full-bore isolation on the horizontal leg.
-  axisValve(root,[-3.52,p.feed.point[1],.72],[1,0,0],pipeRadius(p.feed.dn)/.048)
+  axisValve(root,[-3.45,2.35,.45],[1,0,0],pipeRadius(p.feed.dn)/.048)
   const a:Point3=[-2.50,2.35,.45],b:Point3=[-2.2,2.35,.45]
   root.add(cylinder(a,b,pipeRadius(p.feed.dn),'#328553',count>1?.054:.028))
   root.userData.feedReducer={a,b,inletDN:p.feed.dn,outletDiameter:count>1?.108:.056}

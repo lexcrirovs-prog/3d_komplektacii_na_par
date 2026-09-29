@@ -17,7 +17,7 @@ export function nativeDeaeratorRoutes(n:NativeDeaerator,count:number,steamSource
    ?[[-2.5,l.front,water[2]],[-2.5,water[1],water[2]],water]
    :[[-6.4,water[1],water[2]],water]
  const rows:Route[]=[
-  row('deaerator_feed',`${n.label} → насосы, DN${p.feed.dn}`,[p.feed.point,[p.feed.point[0],p.feed.point[1],.72],[-2.65,p.feed.point[1],.72],[-2.65,2.35,.72],[-2.65,2.35,.45],[-2.50,2.35,.45]],pipeRadius(p.feed.dn),'green'),
+  row('deaerator_feed',`${n.label} → насосы, DN${p.feed.dn}`,[p.feed.point,[p.feed.point[0],p.feed.point[1],.45],[p.feed.point[0],2.35,.45],[-2.50,2.35,.45]],pipeRadius(p.feed.dn),'green'),
   row('da_feed_out','После перехода → всасывающий коллектор насосов',[[-2.2,2.35,.45],[-2.1,2.35,.45]],count>1?.054:.028,'green'),
   row('da_makeup','Подготовленная вода → колонка деаэратора',[[-8.2,l.front,1.6],[-6.4,l.front,1.6],[-6.4,l.front,water[2]],...waterTurn,p.water.point],pipeRadius(p.water.dn),'green'),
   row('da_process_condensate','Конденсат с производства → колонка ДА',[[-8.2,l.front-.5,3.8],[-6.7,l.front-.5,3.8],[-6.7,l.front-.5,cold[2]],[-6.7,cold[1],cold[2]],cold,p.condensate.point],pipeRadius(p.condensate.dn),'green'),
@@ -27,7 +27,7 @@ export function nativeDeaeratorRoutes(n:NativeDeaerator,count:number,steamSource
   row('da_recirculation_header','Возврат рециркуляции питательных насосов',
     [[(count-1)*6.3+2.72,7.65,.6],[-5.95,7.65,.6],[-5.95,7.65,l.recircZ],[-5.95,recirc[1],l.recircZ],[recirc[0],recirc[1],l.recircZ],recirc,p.recirculation.point],pipeRadius(p.recirculation.dn),'green'),
   row('da_heating_supply','Греющий пар → фильтр → регуляторы деаэратора',
-    [steamSource,[steamSource[0],5.6,4.55],[-7.2,5.6,4.55],[-7.2,l.rear,4.55],[-7.2,l.rear,l.steamZ],[-6.4,l.rear,l.steamZ]],.054),
+    [steamSource,[steamSource[0],steamSource[1],4.55],[steamSource[0],5.6,4.55],[-7.2,5.6,4.55],[-7.2,l.rear,4.55],[-7.2,l.rear,l.steamZ],[-6.4,l.rear,l.steamZ]],.054),
   row('da_heating_main','Регулирование основного греющего пара',
     [[-6.4,l.rear,l.steamZ],[-4.2,l.rear,l.steamZ],[-4.2,p.steam.point[1],l.steamZ],p.steam.point],pipeRadius(p.steam.dn)),
   row('da_heating_barb','Регулирование пара на барботаж',

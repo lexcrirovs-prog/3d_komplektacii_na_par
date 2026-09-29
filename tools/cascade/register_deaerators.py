@@ -9,6 +9,13 @@ CACHE=ROOT/'artifacts/deaerators-20260929'
 OUT=ROOT/'src/assets/deaerators'
 # raw source X is the tank axis, Y vertical. Web assembly uses CAD Z up.
 SPECS={
+ 'da15_4':dict(label='ДА-15/4',center=0.,floor=-808.,axisY=0.,radius=608.,tankEnds=[-2058.,2058.],saddles=[-1200.,1200.],width=1.25,
+  matrix=[[1,0,0],[0,0,-1],[0,1,0]],canonicalMatrix=[[0,0,-1],[0,1,0],[1,0,0]],
+  column=[-775.,861.,2698.,308.],gaugeEnd=2.275,gaugeHalfHeight=.5,
+  ports={'feed':(30,100,[0,-1,0],'Д'),'drain':(28,50,[0,-1,0],'Г'),'overflow':(51,80,[-1,0,0],'Е'),
+   'steam':(24,150,[0,1,0],'В'),'barb':(16,100,[0,1,0],'Ж'),'flash':(34,32,[0,1,0],'Л'),
+   'hotCondensate':(26,50,[0,1,0],'Н'),'recirculation':(36,25,[0,1,0],'М'),
+   'water':(117,50,[0,0,-1],'У колонки'),'condensate':(106,50,[0,0,1],'Р колонки'),'vent':(102,50,[0,1,0],'И колонки')}),
  'da15_8':dict(label='ДА-15/8',center=1920.,floor=-1116.24,axisY=0.,radius=908.,tankEnds=[-498.,4338.],saddles=[600.,3240.],width=1.62,
   column=[1180.,1171.,2850.861,308.],
   ports={'feed':(31,100,[0,-1,0],'Д'),'drain':(29,50,[0,-1,0],'Г'),'overflow':(23,80,[0,0,-1],'Е'),
@@ -35,7 +42,7 @@ def main():
  for key,spec in SPECS.items():
   analytic=json.loads((CACHE/(key+'-analytic.json')).read_text(encoding='utf8'))['solids']
   mesh=json.load(gzip.open(CACHE/(key+'.json.gz'),'rt',encoding='utf8'))['solids']
-  matrix=np.array([[0,0,1],[1,0,0],[0,1,0]],float)*.001
+  matrix=np.array(spec.get('matrix',[[0,0,1],[1,0,0],[0,1,0]]),float)*.001
   offset=np.array([-4.2,-spec['center']*.001,1-spec['floor']*.001])
   def place(p):return np.round(matrix@np.array(p)+offset,6).tolist()
   ports={}

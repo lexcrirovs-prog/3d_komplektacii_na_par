@@ -8,10 +8,11 @@ export function routeMedium(id:string):PipeMedium|undefined {
   if(/signal|pressure_connection|cable|bypass/.test(id))return undefined
   if(/distribution_(pocket|leg|drain|return)|da_(process_)?condensate/.test(id))return 'condensate'
   if(/steam|consumer|distribution$|distribution_supply|da_heating|da_vent|fv_return|cascade_header$/.test(id))return 'steam'
-  if(/feed|suction|economizer|eco_after|pump_delivery|direct_inlet|tds|bottom|da_makeup|da_overflow|da_drain|da_recirculation/.test(id))return 'water'
+  if(/feed|suction|economizer|eco_after|pump_delivery|direct_inlet|tds|bottom|cooling|da_makeup|da_overflow|da_drain|da_recirculation/.test(id))return 'water'
   return undefined
 }
 export function mediumLabel(row:Route):string {
+  if(row.id==='bdv_cooling_stub')return 'ОХЛАЖДАЮЩАЯ ВОДА'
   if(/tds/.test(row.id))return 'НЕПРЕРЫВНАЯ ПРОДУВКА'
   if(/bottom/.test(row.id))return 'ПЕРИОДИЧЕСКАЯ ПРОДУВКА'
   if(row.id==='da_overflow')return 'ПЕРЕЛИВ'

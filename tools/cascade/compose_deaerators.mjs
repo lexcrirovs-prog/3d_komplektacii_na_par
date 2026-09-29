@@ -18,7 +18,7 @@ const sha=b=>createHash('sha256').update(b).digest('hex');
 const remove=n=>{const all=[];n.traverse(c=>all.push(c));all.reverse().forEach(c=>c.dispose())};
 const out='src/assets/deaerators',cache='artifacts/deaerators-20260929';await mkdir(out,{recursive:true});
 const rows=[];
-for(const kind of ['da15_8','da25_15','da25_25']) {
+for(const kind of ['da15_4','da15_8','da25_15','da25_25']) {
  const doc=await io.read(`${cache}/${kind}-raw.glb`);
  const before=getBounds(doc.getRoot().listScenes()[0]);
  await doc.transform(weld(),dedup(),prune({keepLeaves:true,keepAttributes:true}),meshopt({encoder:MeshoptEncoder,level:'high',quantizePosition:16,quantizeNormal:12}));

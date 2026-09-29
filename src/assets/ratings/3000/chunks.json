@@ -1,7 +1,7 @@
 {
-  "status": "PASSED_RETAINED_GEOMETRY_WITH_EXTERNAL_DEAERATOR",
+  "status": "PASSED_OPTIMIZED_PART_NAMES_AND_BOUNDS",
   "parts": 124,
-  "bytes": 36948988,
+  "bytes": 17880268,
   "files": [
     {
       "file": "s4000-0.glb",
@@ -10,8 +10,8 @@
         "burner",
         "premium_logo"
       ],
-      "bytes": 1689376,
-      "sha256": "ec83d916d525ed1ebd8ec12e7166919d76558800170574cef16b57a99cc53fd9"
+      "bytes": 707972,
+      "sha256": "3c86cb862c2069f96752b72298a615bfdbda6589d99d95890eda32718c37b089"
     },
     {
       "file": "s4000-1.glb",
@@ -32,8 +32,8 @@
         "mod_eco_bypass",
         "economizer_leveling"
       ],
-      "bytes": 2219544,
-      "sha256": "12cb0793b5bbfd8a68f8754652ef2738e1f3e3298ac01bb016491891c4efd962"
+      "bytes": 1033332,
+      "sha256": "be67eadf99b963c5bcc12af8e73487419096af3fdfd68cd83343e85d8221153c"
     },
     {
       "file": "s4000-2.glb",
@@ -56,8 +56,8 @@
         "bdv_bottom_drain_stub",
         "pr200"
       ],
-      "bytes": 3292148,
-      "sha256": "4985f28621227aa02c3c02cba81df0ff17468139910ce166076898c8a2d5b355"
+      "bytes": 1332672,
+      "sha256": "95fdb1ade13606db2ca46f502f82c299ee51edb86b529cfc3bf85c5b30b31159"
     },
     {
       "file": "s4000-3.glb",
@@ -81,8 +81,8 @@
         "control_cabinet",
         "tds_without_vessels"
       ],
-      "bytes": 6131648,
-      "sha256": "38ba00a724d4e1b66d79cf15d363a72d9f57ff8e98d4629ab5ff04b9b9e03e0a"
+      "bytes": 2335040,
+      "sha256": "510b17dc9cf768d52c3e1b208d6b8737adc948422af03b7fafea656815b83bfe"
     },
     {
       "file": "s4000-4.glb",
@@ -105,8 +105,8 @@
         "bottom_discharge",
         "mod_direct_bypass"
       ],
-      "bytes": 5571404,
-      "sha256": "17ca9e54a7fc972b9483efeaab1b4322f671a57c45917fbe73f45509a54071f8"
+      "bytes": 2713296,
+      "sha256": "5d54f5c4e83a428f37b2f9fc56b7de22bc246765e14306dcd03e22628ff458ab"
     },
     {
       "file": "s4000-5.glb",
@@ -129,8 +129,8 @@
         "pressure_transmitter",
         "trap_support"
       ],
-      "bytes": 6118140,
-      "sha256": "d93142d43bd6b90c962701c921ed6bd6ff01d32544f3b974a72e425d600865ca"
+      "bytes": 3140972,
+      "sha256": "cc6cb8359d348c0d3cfa546f704e8b2336ff3e5f8f6c1573119a0d0850653095"
     },
     {
       "file": "s4000-6.glb",
@@ -154,8 +154,8 @@
         "flue_spacer",
         "pump_delivery"
       ],
-      "bytes": 5885584,
-      "sha256": "e93dc4263b686d2e7611fabf462ca3e788ff9f8c00bfffee41267966b15153c4"
+      "bytes": 3000288,
+      "sha256": "b3087f41361b158f3e4622b90a14293cf2c8046228a1e06c49da6e101e2fbaea"
     },
     {
       "file": "s4000-7.glb",
@@ -180,8 +180,8 @@
         "bottom_after_auto",
         "steam_delivery"
       ],
-      "bytes": 6041144,
-      "sha256": "f17764a048f25fb718e5c17e17552f1bf6bbd6884564fd32e87d1f52abbbcc29"
+      "bytes": 3616696,
+      "sha256": "0fd681962ef5b8d0f5f60161201a481d789c6ba896d805aa5532766586e0fd26"
     }
   ]
 }

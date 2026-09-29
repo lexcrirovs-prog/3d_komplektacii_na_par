@@ -4,11 +4,11 @@ import {deaeratorPorts,nativeDeaerator} from '../../src/components/BoilerConfigu
 import {deaeratorRoutes,condensateBoundary} from '../../src/components/BoilerConfigurator/deaeratorRoutes.ts';
 import {distributionLayout,distributionRoutes} from '../../src/components/BoilerConfigurator/steamDistribution.ts';
 import {identificationSections,routeMedium} from '../../src/components/BoilerConfigurator/pipeIdentification.ts';
-import {cascadeRoutes,flashRoutes} from '../../src/components/BoilerConfigurator/cascadeRoutes.ts';
+import {cascadeRoutes,flashRoutes,bdvCoolingRoute} from '../../src/components/BoilerConfigurator/cascadeRoutes.ts';
 const powers=[500,1000,1500,2000,2500,3000,3500,4000,5000];
 
 test('Factory DA15/8 feed uses bottom D DN100 and has separate flash and overflow entries',()=>{
- const p=deaeratorPorts(1500),rows=deaeratorRoutes(1500),find=id=>rows.find(r=>r.id===id);
+ const p=deaeratorPorts(3000),rows=deaeratorRoutes(3000),find=id=>rows.find(r=>r.id===id);
  assert.deepEqual(p.feed,[-4.2,1.77,1.05524]);assert.equal(p.feedDN,100);
  assert.deepEqual(find('deaerator_feed').points[0],p.feed);
  assert.deepEqual(find('da_overflow').points[0],p.overflow);
@@ -31,11 +31,29 @@ test('DA3 and DA25/25 flash join a steam branch; all larger vessels have separat
  const tee=flash.points.at(-1);
  assert(main.points.some(p=>p.every((v,i)=>v===tee[i])));
  assert(!flash.points.some(p=>p.every((v,i)=>v===main.points.at(-1)[i])));
- const p=deaeratorPorts(4000);
+ const p=deaeratorPorts(4000,3);
  assert.notDeepEqual(p.condensate,p.hotCondensate);
  assert.deepEqual(p.recirculation,[-4.2,-2.6,3.837424]);
  const large=flashRoutes(4000,5)[0].points.at(-1);
  assert(deaeratorRoutes(4000,5).find(r=>r.id==='da_heating_main').points.some(p=>p.every((v,i)=>v===large[i])));
+});
+test('Heating risers and feed runs are orthogonal; the moved manifold needs only a direct drop',()=>{
+ for(const power of powers)for(const count of [1,2,3,4,5]) {
+  for(const id of ['da_heating_supply','deaerator_feed']) {
+   const r=deaeratorRoutes(power,count).find(r=>r.id===id);
+   for(let i=1;i<r.points.length;i++)assert(r.points[i].filter((v,k)=>Math.abs(v-r.points[i-1][k])>1e-7).length<=1,`${power}x${count}/${id}: diagonal segment`);
+  }
+ }
+ for(const count of [2,3,4,5]) {
+  const p=distributionRoutes(count).find(r=>r.id==='cascade_distribution_supply').points;
+  assert.equal(p.length,4);assert.equal(p[1][1],5.6);assert.equal(p[2][1],5.6);
+  assert.equal(p[1][0],p[2][0]);assert.equal(p[2][2],p[3][2]);
+ }
+});
+test('BDV cooling stub is straight and coaxial with the existing oblique F nozzle',()=>{
+ const r=bdvCoolingRoute();assert.equal(r.points.length,2);assert.match(r.label,/Охлаждающая вода/);
+ const [a,b]=r.points,d=a.map((v,i)=>v-b[i]);assert(Math.abs(d[0]+d[1])<1e-7);assert.equal(d[2],0);
+ assert.equal(routeMedium(r.id),'water');
 });
 test('426 mm manifold has two 89 mm pockets with exposed reducers before the trap circuit',()=>{
  for(const count of [2,3,4,5]) {

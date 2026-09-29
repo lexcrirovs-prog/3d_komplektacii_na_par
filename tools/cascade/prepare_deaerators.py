@@ -15,6 +15,7 @@ from inspect_step_internals import inspect
 ROOT = Path('E:/YandexDisk/НОВЫЙ ЗАВОД/КОНСТРУКТОРСКАЯ ДОКУМЕНТАЦИЯ/4. КД на ДА')
 OUT = REPO / 'artifacts/deaerators-20260929'
 SOURCES = {
+    'da15_4': ('ДА-15-4', '3D модель/PR.15.01.033СБ Деаэратор ДА-15_4.stp', 'Чертежи', ['033', '006', '121']),
     'da15_8': ('ДА-15-8', '3D модель/PR.15.01.161СБ Деаэратор ДА-15-8.stp', 'Чертежи', ['161', '124', '121']),
     'da25_15': ('ДА-25-15', 'PR.25.01.269СБ Деаэратор ДА-25_15.stp', 'Чертежи PDF', ['269', '076', '142']),
     'da25_25': ('ДА-25-25-1', '3D модель/PR.25.01.268СБ Деаэратор ДА-25-25-1.stp', 'Чертежи', ['268', '251', '267']),
@@ -37,7 +38,7 @@ def main():
         inventory.append(dict(id=key, path=str(source), sha256=before, bytes=source.stat().st_size))
         for number in numbers:
             candidates = list((ROOT / folder / drawings).glob('*' + number + 'СБ*.pdf'))
-            if number in ['124', '076', '251']:
+            if number in ['006', '124', '076', '251']:
                 candidates = [p for p in candidates if 'Бак' in p.name]
             elif number in ['121', '142', '267']:
                 candidates = [p for p in candidates if 'Колонка' in p.name]

@@ -4,10 +4,10 @@ import {condensateBoundary} from './deaeratorRoutes.ts'
 // Photo/video arrangement. Outlet count is provisional until owner confirmation.
 export const distributionOutletCount=3
 export function distributionLayout(count:number) {
-  const last=(count-1)*6.3,x=last+4.4,z=1.85,y0=3,y1=6
-  const outlets=Array.from({length:distributionOutletCount},(_,i)=>3.5+i*.85)
-  return {last,x,z,y0,y1,outlets,radius:.213,drainY:5.7,drainZ:.72,
-    takeoffs:[3.24,5.70],drainX:x+.40,trap:[x+1.1,5.7,.72] as Point3}
+  const last=(count-1)*6.3,x=last+4.4,z=1.85,y0=2.05,y1=5.05
+  const outlets=Array.from({length:distributionOutletCount},(_,i)=>y0+.5+i*.85)
+  return {last,x,z,y0,y1,outlets,radius:.213,drainY:y1-.3,drainZ:.72,
+    takeoffs:[y0+.24,y1-.3],drainX:x+.40,trap:[x+1.1,y1-.3,.72] as Point3}
 }
 
 export function distributionRoutes(count:number):Route[] {
@@ -15,7 +15,7 @@ export function distributionRoutes(count:number):Route[] {
   const {last,x,z,y0,y1,outlets,radius,drainY:y,drainZ:h,drainX,takeoffs,trap}=distributionLayout(count)
   const row=(id:string,label:string,points:Point3[],radius:number,color='steel'):Route=>({id,label,points,radius,color})
   return [
-    row('cascade_distribution_supply','Спуск коллектора к паровой гребёнке',[[last+.8,5.6,4.55],[x,5.6,4.55],[x,6.55,4.55],[x,6.55,z],[x,y1,z]],.1095),
+    row('cascade_distribution_supply','Спуск коллектора к паровой гребёнке',[[last+.8,5.6,4.55],[x,5.6,4.55],[x,5.6,z],[x,y1,z]],.1095),
     row('cascade_distribution','Паровая гребёнка Ø426 мм',[[x,y1,z],[x,y0,z]],radius),
     ...outlets.map((yy,i)=>row('cascade_consumer_'+(i+1),`Выход гребёнки ${i+1} к потребителю`,[[x,yy,z],[x,yy,2.8],[x+1.5,yy,2.8]],.054)),
     ...takeoffs.map((yy,i)=>row('cascade_distribution_pocket_'+(i+1),'Конденсатный карман Ø89 мм',[[x,yy,z],[x,yy,1.05]],.0445)),

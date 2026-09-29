@@ -1,8 +1,9 @@
-import {BoxGeometry,BufferGeometry,CurvePath,CylinderGeometry,Group,LineCurve3,Mesh,MeshStandardMaterial,QuadraticBezierCurve3,Quaternion,RingGeometry,TorusGeometry,TubeGeometry,Vector3,type Object3D} from 'three'
+import {BoxGeometry,BufferGeometry,CurvePath,CylinderGeometry,Group,LineCurve3,Mesh,MeshStandardMaterial,QuadraticBezierCurve3,Quaternion,RingGeometry,TorusGeometry,Vector3,type Object3D} from 'three'
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import {cascadeRoutes,greyOrigin,unitSpacing,viewPoint,type Point3,type Route} from './cascadeRoutes'
 import {distributionHardware} from './distributionGeometry'
 import {pipeMarkers} from './pipeMarkers'
+import {pipeTube} from './pipeTessellation'
 
 const palette:Record<string,string>={steel:'#647680',green:'#237954',dark:'#46525a',black:'#252c30',zinc:'#687780',white:'#d5ddde'}
 function mesh(geometry:BufferGeometry,color:string) {
@@ -27,7 +28,7 @@ function pipePath(points:Point3[],radius:number) {
 }
 export function routeObject(row:Route) {
   const group=new Group();group.name=row.id;group.userData.route=row
-  const path=pipePath(row.points,row.radius),geometries:BufferGeometry[]=[new TubeGeometry(path,Math.max(16,Math.ceil(path.getLength()*12)),row.radius,12,false)]
+  const path=pipePath(row.points,row.radius),geometries:BufferGeometry[]=[pipeTube(path,row.radius)]
   if(row.color==='black') {
     // Ribs are merged into one mesh per sleeve, not thousands of draw calls.
     const steps=Math.ceil(path.getLength()/.04),axis=new Vector3(0,0,1)

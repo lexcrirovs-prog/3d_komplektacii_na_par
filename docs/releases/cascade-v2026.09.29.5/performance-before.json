@@ -1,0 +1,20 @@
+{
+  "version": "2026.09.29.4",
+  "base": "https://prgz.ru/komplektacii4/",
+  "readyMS": 7758,
+  "viewport": [
+    1540,
+    1040
+  ],
+  "browser": "154.0.8037.58",
+  "mode": "Headless Chrome, 5 x S4000 Comfort+, six-second orbit, first second excluded",
+  "samples": 136,
+  "medianFrameMS": 40,
+  "p95FrameMS": 40.100000000000364,
+  "meanFrameMS": 37.19558823529412,
+  "modelRequests": 11,
+  "modelDecodedBytes": 41013716,
+  "modelTransferBytes": 27742521,
+  "renderTriangles": 16926812,
+  "drawCalls": 2398
+}

@@ -1,0 +1,107 @@
+{
+  "version": "2026.09.29.5",
+  "date": "2026-09-29",
+  "verifiedAt": "2026-09-29T20:25:11.3899431+04:00",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "source_commit": "3eb1999166367687e56cb26efb89a20e6f808e1d",
+  "publication_commit": "c4ea2c3ce969dbcd657b1126bda5316df5e1140b",
+  "manifestSha256": "6ebce148987c804b82f7776d2b0b6e08777c456257835c69a88f6e0d8814485c",
+  "unit_tests": {
+    "report": "unit-tests.log",
+    "passed": 46,
+    "failed": 0
+  },
+  "browser": {
+    "stage": {
+      "matrix": {
+        "mode": "full",
+        "ratings": 9,
+        "report": "browser-matrix-stage.json",
+        "checks": 7,
+        "status": "PASSED_CASCADE_BROWSER"
+      },
+      "deaerator": {
+        "report": "browser-deaerator-stage.json",
+        "checks": 5,
+        "selections": 13,
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER"
+      },
+      "doors": {
+        "report": "browser-doors-stage.json",
+        "checks": 6,
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER"
+      }
+    },
+    "live": {
+      "matrix": {
+        "mode": "smoke",
+        "ratings": 3,
+        "report": "browser-matrix-live.json",
+        "checks": 7,
+        "status": "PASSED_CASCADE_BROWSER"
+      },
+      "deaerator": {
+        "report": "browser-deaerator-live.json",
+        "checks": 5,
+        "selections": 13,
+        "status": "PASSED_MANIFOLD_DEAERATOR_BROWSER"
+      },
+      "doors": {
+        "report": "browser-doors-live.json",
+        "checks": 6,
+        "status": "PASSED_DOORS_DISTRIBUTION_BROWSER"
+      }
+    }
+  },
+  "https": {
+    "stage": {
+      "report": "http-stage.json",
+      "files": 124,
+      "status": "PASSED_HTTPS_HASHES"
+    },
+    "live": {
+      "report": "http-live.json",
+      "files": 124,
+      "status": "PASSED_HTTPS_HASHES"
+    }
+  },
+  "publication": {
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 126,
+      "transferredFiles": 88,
+      "reusedFiles": 38,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.09.29.5",
+      "transferBytes": 132836961
+    },
+    "prepared": {
+      "version": "2026.09.29.5",
+      "candidateSha256": "c47264b00f7561b176ea29ffcaaf174d70e006aedd58e6b1ac62419bd44a6cd7",
+      "manifestSha256": "6ebce148987c804b82f7776d2b0b6e08777c456257835c69a88f6e0d8814485c",
+      "backupSha256": "eba00d47cdd5e817a5ab417efbf4632f34c76d9da24642941e8ed8bc78841ac7",
+      "backupFiles": 124,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.09.29.5/"
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.09.29.5",
+      "neighborsUnchanged": true,
+      "files": 126
+    }
+  },
+  "performance": {
+    "mode": "One cold browser-context run per version on the same machine, Chrome 154, 1540x1040, 5 x S4000 Comfort+, all options. Six-second orbit, first second excluded.",
+    "after": "performance-after.json",
+    "before": "performance-before.json"
+  },
+  "native_cad_changed": false,
+  "scope_limits": [
+    "Separate owner-confirmed single-boiler and cascade capacity tables. Hydraulic sizing and PLC code are outside this web release.",
+    "Factory STEP and SAT derivatives retain source dimensions; some fittings remain simplified.",
+    "AutoCAD and Blender master assemblies retain their previously delivered versions.",
+    "Browser mobile viewport checked, not a physical mobile device.",
+    "Performance observations are not a guarantee for other machines or networks."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "2026.09.29.5",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.09.29.5/",
+  "readyMS": 4550,
+  "viewport": [
+    1540,
+    1040
+  ],
+  "browser": "154.0.8037.58",
+  "mode": "Headless Chrome, 5 x S4000 Comfort+, six-second orbit, first second excluded",
+  "samples": 251,
+  "medianFrameMS": 26.5,
+  "p95FrameMS": 26.799999999999272,
+  "meanFrameMS": 20.046613545816733,
+  "modelRequests": 12,
+  "modelDecodedBytes": 21022380,
+  "modelTransferBytes": 15813901,
+  "renderTriangles": 6512142,
+  "drawCalls": 2399
+}

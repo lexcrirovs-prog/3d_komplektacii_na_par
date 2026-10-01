@@ -1,7 +1,7 @@
 {
   "release": {
-    "version": "2026.09.29.6",
-    "date": "2026-09-29",
+    "version": "2026.10.01.1",
+    "date": "2026-10-01",
     "executor": "Codex / GPT-6",
     "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
     "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb",
@@ -32,7 +32,7 @@
       "ДА-25/25"
     ]
   },
-  "source_commit": "499e67e24f2132bd894a82e4dc23b5de02dcd783",
+  "source_commit": "943e989b6e39c55e1741cf4650cc1a48d30f80a0",
   "files": [
     {
       "path": ".htaccess",
@@ -160,9 +160,9 @@
       "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
     },
     {
-      "path": "assets/index-CFY745UL.js",
+      "path": "assets/index-B8aEArEd.js",
       "bytes": 1177828,
-      "sha256": "c2242bbc232a469feb1f1f90433955a2b0844fcc2584507877b894d305927efe"
+      "sha256": "016e80c1bd01b62c79a93db192d74461d31a88dedf635dc5adaf685956def690"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -235,14 +235,14 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/S3000Configurator-BZHWugvq.js",
-      "bytes": 48039,
-      "sha256": "880ec181a8b2102b39025bb743f0d047f93a069b0aafd8b4e439f9cfa98a4512"
+      "path": "assets/S3000Configurator-Bha1Tl4i.js",
+      "bytes": 58735,
+      "sha256": "c67475a8b224e9a83f3052edd181d2f56ebe32180d68598a2dd6ec0410e7f66d"
     },
     {
-      "path": "assets/S3000Configurator-Crtg_jNt.js",
-      "bytes": 58735,
-      "sha256": "a7ad5120bb2e410d184c1708738584d5d025421b8db4d92b01cb71ea0be522cb"
+      "path": "assets/S3000Configurator-DVFJohIN.js",
+      "bytes": 48039,
+      "sha256": "f736747768a2214fa25bea2710f9a64c1e81cf1567793ac7d4a2f1e2818b90cc"
     },
     {
       "path": "assets/s4000-0-Bijgd8Ih.glb",
@@ -605,9 +605,9 @@
       "sha256": "7b1f28181252b36752a3fd056d4f6428ff21970d269514f432b19f9222ef8d5a"
     },
     {
-      "path": "assets/S4000Configurator-B2-ZBSdH.js",
-      "bytes": 490219,
-      "sha256": "be49b34f992145eba6ed431575daa2ffcd2351ddad1153cbaf1b54d479a34bc4"
+      "path": "assets/S4000Configurator-CgunyaA6.js",
+      "bytes": 492425,
+      "sha256": "815504dfb58322bee135c7d74bb741ab587dbae542d7b24673dd3577a08e811d"
     },
     {
       "path": "assets/style-BWHPCLQK.css",
@@ -617,7 +617,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "790c88413f8d84a0a33e3f2f6562e0aff04a2097d9eb2ff187bee8d025e1e42a"
+      "sha256": "1f990e3c925669467c08a869eea673fbd0011939b0335cc19faebbed675476a3"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -657,7 +657,7 @@
     {
       "path": "version.json",
       "bytes": 926,
-      "sha256": "c4c029d90a3411fb88bdcac03ac9def5599173bebd221af59002c95062294c79"
+      "sha256": "0a8025071b5553619bd8741cb87b6d576a6c7cf328162ae11deb22f9a0cea979"
     }
   ]
 }

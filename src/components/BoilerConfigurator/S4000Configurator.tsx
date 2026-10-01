@@ -22,6 +22,7 @@ import {pickedDoor,toggleDoor,type DoorTarget} from './doorInteraction'
 import {deaeratorAssets} from './deaeratorAssets'
 import {deaeratorLabels,selectDeaerator} from './deaeratorSelection'
 import {nativeDeaerator} from './deaeratorPorts'
+import {applySensorMaterials} from './sensorMaterials'
 import './S3000Configurator.css'
 
 type Point = [number, number, number]
@@ -146,6 +147,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
       object.castShadow=true;object.receiveShadow=true;object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone()
     }})
     generatedMaterials.forEach(m=>m.dispose())
+    units.forEach(applySensorMaterials)
     return copy
   }, [gltfs,trim,count,additions,daModels,daKind,strainer])
   useEffect(() => { invalidate() }, [cabinetDoors, boilerDoors, cascadeOpen, invalidate])
@@ -479,7 +481,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         {active.note && <p className="s3-part-note">{active.note}</p>}
         <button className="s3-focus" onClick={() => focus(active.id)}>Приблизить деталь ↗</button>
       </section>}
-      <div className="s3-caption">Визуальная сборка <span>•</span> 29.09.2026 <span>•</span> v{webVersion.version}</div>
+      <div className="s3-caption">Визуальная сборка <span>•</span> {webVersion.date.split('-').reverse().join('.')} <span>•</span> v{webVersion.version}</div>
     </main>
 
     <aside className="s3-sidebar" aria-label="Комплектация котла">

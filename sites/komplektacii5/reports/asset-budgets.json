@@ -1,0 +1,1082 @@
+[
+  {
+    "power": 500,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1679428,
+    "triangles": 116564,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 500,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1760380,
+    "triangles": 184530,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1760380,
+    "triangles": 250566,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1760380,
+    "triangles": 316602,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1760380,
+    "triangles": 382638,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1840052,
+    "triangles": 125780,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 500,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1921004,
+    "triangles": 202962,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1921004,
+    "triangles": 278214,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1921004,
+    "triangles": 353466,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1921004,
+    "triangles": 428718,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1857832,
+    "triangles": 126098,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 500,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1938784,
+    "triangles": 203598,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1938784,
+    "triangles": 279168,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1938784,
+    "triangles": 354738,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 500,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1938784,
+    "triangles": 430308,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1679820,
+    "triangles": 115356,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 1000,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1760772,
+    "triangles": 182114,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1599644,
+    "triangles": 231796,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1599644,
+    "triangles": 296624,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1599644,
+    "triangles": 361452,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1840468,
+    "triangles": 124572,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1921420,
+    "triangles": 200546,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1760292,
+    "triangles": 259444,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1760292,
+    "triangles": 333488,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1760292,
+    "triangles": 407532,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1858268,
+    "triangles": 124890,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1939220,
+    "triangles": 201182,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1778092,
+    "triangles": 260398,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1778092,
+    "triangles": 334760,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1000,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1778092,
+    "triangles": 409122,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1541028,
+    "triangles": 101184,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 1500,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1621980,
+    "triangles": 168916,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1621980,
+    "triangles": 234718,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1609592,
+    "triangles": 298088,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1662920,
+    "triangles": 371396,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1701688,
+    "triangles": 110405,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1782640,
+    "triangles": 187358,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1782640,
+    "triangles": 262381,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1770252,
+    "triangles": 334972,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1823580,
+    "triangles": 417501,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1719492,
+    "triangles": 110723,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1800444,
+    "triangles": 187994,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1800444,
+    "triangles": 263335,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1788056,
+    "triangles": 336244,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 1500,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1841384,
+    "triangles": 419091,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1530032,
+    "triangles": 100740,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 2000,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1610984,
+    "triangles": 168028,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1598596,
+    "triangles": 230954,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1651924,
+    "triangles": 303818,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1651924,
+    "triangles": 369176,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1690836,
+    "triangles": 109961,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1771788,
+    "triangles": 186470,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1759400,
+    "triangles": 258617,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1812728,
+    "triangles": 340702,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1812728,
+    "triangles": 415281,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1708624,
+    "triangles": 110279,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1789576,
+    "triangles": 187106,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1777188,
+    "triangles": 259571,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1830516,
+    "triangles": 341974,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2000,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1830516,
+    "triangles": 416871,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1530304,
+    "triangles": 100712,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 2500,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1611256,
+    "triangles": 167972,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1652196,
+    "triangles": 238376,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1652196,
+    "triangles": 303706,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1656776,
+    "triangles": 367430,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1691100,
+    "triangles": 109933,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1772052,
+    "triangles": 186414,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1812992,
+    "triangles": 266039,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1812992,
+    "triangles": 340590,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1817572,
+    "triangles": 413535,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1708904,
+    "triangles": 110251,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1789856,
+    "triangles": 187050,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1830796,
+    "triangles": 266993,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1830796,
+    "triangles": 341862,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 2500,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1835376,
+    "triangles": 415125,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1529924,
+    "triangles": 99255,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 3000,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1610876,
+    "triangles": 167490,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1664204,
+    "triangles": 241301,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1668784,
+    "triangles": 306000,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1668784,
+    "triangles": 372305,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1690588,
+    "triangles": 108476,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1771540,
+    "triangles": 185932,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1824868,
+    "triangles": 268964,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1829448,
+    "triangles": 342884,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1829448,
+    "triangles": 418410,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1708384,
+    "triangles": 108794,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1789336,
+    "triangles": 186568,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1842664,
+    "triangles": 269918,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1847244,
+    "triangles": 344156,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3000,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1847244,
+    "triangles": 420000,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1524292,
+    "triangles": 98523,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 3500,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1658572,
+    "triangles": 173532,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1663152,
+    "triangles": 237499,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1663152,
+    "triangles": 303072,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1663152,
+    "triangles": 368645,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1684952,
+    "triangles": 107744,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1819232,
+    "triangles": 191974,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1823812,
+    "triangles": 265162,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1823812,
+    "triangles": 339956,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1823812,
+    "triangles": 414750,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1702748,
+    "triangles": 108062,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1837028,
+    "triangles": 192610,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1841608,
+    "triangles": 266116,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1841608,
+    "triangles": 341228,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 3500,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1841608,
+    "triangles": 416340,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1624348,
+    "triangles": 111642,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 4000,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1705300,
+    "triangles": 184758,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1709880,
+    "triangles": 254338,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1709880,
+    "triangles": 325524,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1709880,
+    "triangles": 396710,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1785176,
+    "triangles": 120863,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1866128,
+    "triangles": 203200,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1870708,
+    "triangles": 282001,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1870708,
+    "triangles": 362408,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1870708,
+    "triangles": 442815,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1802844,
+    "triangles": 121181,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1883796,
+    "triangles": 203836,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1888376,
+    "triangles": 282955,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1888376,
+    "triangles": 363680,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 4000,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1888376,
+    "triangles": 444405,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "standard",
+    "count": 1,
+    "bytes": 1572268,
+    "triangles": 105697,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 5000,
+    "trim": "standard",
+    "count": 2,
+    "bytes": 1653220,
+    "triangles": 172868,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "standard",
+    "count": 3,
+    "bytes": 1657800,
+    "triangles": 236503,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "standard",
+    "count": 4,
+    "bytes": 1657800,
+    "triangles": 301744,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "standard",
+    "count": 5,
+    "bytes": 1657800,
+    "triangles": 366985,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort",
+    "count": 1,
+    "bytes": 1732936,
+    "triangles": 114918,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort",
+    "count": 2,
+    "bytes": 1813888,
+    "triangles": 191310,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort",
+    "count": 3,
+    "bytes": 1818468,
+    "triangles": 264166,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort",
+    "count": 4,
+    "bytes": 1818468,
+    "triangles": 338628,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort",
+    "count": 5,
+    "bytes": 1818468,
+    "triangles": 413090,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort_plus",
+    "count": 1,
+    "bytes": 1750744,
+    "triangles": 115236,
+    "routeTriangleAllowance": 12000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort_plus",
+    "count": 2,
+    "bytes": 1831696,
+    "triangles": 191946,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort_plus",
+    "count": 3,
+    "bytes": 1836276,
+    "triangles": 265120,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort_plus",
+    "count": 4,
+    "bytes": 1836276,
+    "triangles": 339900,
+    "routeTriangleAllowance": 20000
+  },
+  {
+    "power": 5000,
+    "trim": "comfort_plus",
+    "count": 5,
+    "bytes": 1836276,
+    "triangles": 414680,
+    "routeTriangleAllowance": 20000
+  }
+]

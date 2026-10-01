@@ -4,8 +4,19 @@ export type PortPoint=[number,number,number]
 // DA3 nozzle O, DN20: measured face of factory solid 40, not a new penetration.
 export const da3PressurePort:PortPoint=[-3.61194531,.81194531,1.760313]
 export function da3InstrumentPoint(out:number,along=0,dz=0):PortPoint {
-  const n=Math.SQRT1_2,p=da3PressurePort
-  return [p[0]-out*n+along*n,p[1]+out*n+along*n,p[2]+dz]
+  return [-4.14-out,-.25+along,da3PressurePort[2]+dz]
+}
+
+/** Front factory gauge flanges, verified against the four supplied STEP files.
+ * The DA-3 K pair is routed around the jacket to its service side. */
+export function magneticLevelLayout(power:number,count:number) {
+  const n=nativeDeaerator(power,count)
+  const half=n?({'ДА-15/4':.5,'ДА-15/8':.8,'ДА-25/15':.9,'ДА-25/25':1.1}[n.label]!):.6
+  const mid=n?n.center[2]:1.360313
+  const ports:PortPoint[]=n?[[-4.2,n.bounds[0][1],mid-half],[-4.2,n.bounds[0][1],mid+half]]:
+    [[-3.727,-.062,mid-half],[-3.727,-.062,mid+half]]
+  const center:PortPoint=n?[-4.2,n.bounds[0][1]-.28,mid]:[-3.83,-.62,mid]
+  return {center,ports,half,native:!!n}
 }
 import catalog from '../../assets/deaerators/catalog.json' with {type:'json'}
 import {selectDeaerator} from './deaeratorSelection.ts'

@@ -43,14 +43,17 @@ export function deaeratorHardware(power:number,count:number,sourceStrainer:Objec
   // spare blind on the DN32 instrument bar connected to the existing O nozzle.
   axisValve(root,[p.vent[0],p.vent[1],2.97],[0,0,1],.22)
   flange(root,da3PressurePort,[-Math.SQRT1_2,Math.SQRT1_2,0],.0525,.012)
-  pressureGauge(root,da3InstrumentPoint(.36,-.20,.28))
-  axisValve(root,da3InstrumentPoint(.36,-.20,.20),[0,0,1],.16)
-  for(const along of [-.04,.13,.29])root.add(cylinder(da3InstrumentPoint(.36,along,.12),da3InstrumentPoint(.36,along,.22),.009,'silver'))
-  root.add(cylinder(da3InstrumentPoint(.36,-.04,.18),da3InstrumentPoint(.36,-.04,.26),.021,'silver'))
-  const transmitter=new BoxGeometry(.067,.07,.048);transmitter.translate(...viewPoint(da3InstrumentPoint(.36,.13,.285)));root.add(item(transmitter,'dark'))
-  axisValve(root,da3InstrumentPoint(.36,.13,.20),[0,0,1],.14)
-  root.add(cylinder(da3InstrumentPoint(.36,.29,.215),da3InstrumentPoint(.36,.29,.229),.035,'silver'))
+  const safety=new Group();safety.name='da_safety_group';root.add(safety)
+  pressureGauge(safety,da3InstrumentPoint(.36,-.20,.30),[-1,0,0])
+  axisValve(safety,da3InstrumentPoint(.36,-.20,.20),[0,0,1],.16)
+  for(const along of [-.04,.13,.29])safety.add(cylinder(da3InstrumentPoint(.36,along,.12),da3InstrumentPoint(.36,along,.22),.009,'#a0793c'))
+  safety.add(cylinder(da3InstrumentPoint(.36,-.04,.18),da3InstrumentPoint(.36,-.04,.26),.021,'silver'))
+  const transmitter=new BoxGeometry(.067,.07,.048);transmitter.translate(...viewPoint(da3InstrumentPoint(.36,.13,.285)));safety.add(item(transmitter,'dark'))
+  axisValve(safety,da3InstrumentPoint(.36,.13,.20),[0,0,1],.14)
+  safety.add(cylinder(da3InstrumentPoint(.36,.29,.215),da3InstrumentPoint(.36,.29,.229),.035,'silver'))
   root.userData.pressureGroup={source:'Группа безопасности ДА-3, АКМАЙ',nozzle:'О',dn:20,point:da3PressurePort}
+  safety.userData.pressureGroup=root.userData.pressureGroup
+  mergeStaticFittings(safety)
   // Each attachment ends exactly on a registered flange face.
   flange(root,p.feed,small?[0,-1,0]:[0,0,-1],small?.08:.1075,small?.025:.05)
   flange(root,p.overflow,small?[0,-1,0]:[-1,0,0],small?.08:.0975,small?.025:.04)

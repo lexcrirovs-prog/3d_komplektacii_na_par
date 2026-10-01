@@ -1,5 +1,5 @@
 import {connections,unitSpacing,type Route,type Point3} from './cascadeRoutes.ts'
-import {deaeratorPorts,nativeDeaerator,da3InstrumentPoint} from './deaeratorPorts.ts'
+import {deaeratorPorts,nativeDeaerator,da3InstrumentPoint,da3PressurePort} from './deaeratorPorts.ts'
 import {nativeDeaeratorRoutes} from './nativeDeaeratorRoutes.ts'
 
 export const condensateBoundary:Point3=[-6.5,-3,3.2]
@@ -39,9 +39,10 @@ export function deaeratorRoutes(power:number,count=1):Route[] {
     row('da_heating_barb',small?'Пар → гидрозатвор ДА-3':'Регулирование пара на барботаж',barb,small?.038:.054),
     row('da_vent','Выпар → атмосферная линия',[p.vent,[p.vent[0],p.vent[1],small?3.55:5.6]],small?.011:.0285),
     row('da_pressure_siphon','Группа безопасности ДА-3: сифон от штуцера О DN20',
-      [da3InstrumentPoint(0),da3InstrumentPoint(.14),da3InstrumentPoint(.14,0,-.24),da3InstrumentPoint(.36,0,-.24),da3InstrumentPoint(.36,0,.12)],.0135),
+      [da3PressurePort,[-3.88,1.08,1.760313],[-4.10,1.08,1.760313],[-4.10,-.25,1.760313],
+       ...Array.from({length:13},(_,i):Point3=>[-4.3+.2*Math.cos(i*Math.PI/12),-.25,1.680313-.2*Math.sin(i*Math.PI/12)]),da3InstrumentPoint(.36,0,.12)],.0135,'#343d43'),
     row('da_pressure_header','Коллектор приборов ДА-3 DN32',
-      [da3InstrumentPoint(.36,-.26,.12),da3InstrumentPoint(.36,.32,.12)],.0212),
+      [da3InstrumentPoint(.36,-.33,.12),da3InstrumentPoint(.36,.38,.12)],.0212,'#343d43'),
     row('da_overflow','Перелив → поплавковый затвор → дренаж',small?[p.overflow,[-3.1,-.8,1.760313],[-4.25,-.8,1.760313],[-4.25,-.8,.35],[-5.8,-.8,.35]]:
       [p.overflow,[-4.8,-1.525,1.84414],[-4.8,-1.525,.35],[-5.8,-1.525,.35]],small?.0285:.0445,'green'),
     row('da_drain','Слив деаэратора через запорный вентиль',small?[p.drain,[-3.55,.3,.153313],[-3.55,-2.2,.153313],[-5.8,-2.2,.153313]]:

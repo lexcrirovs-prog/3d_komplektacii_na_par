@@ -5,19 +5,19 @@ import importlib.util,json,sys,tarfile,subprocess
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.01.1';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.10.01.2';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='790c88413f8d84a0a33e3f2f6562e0aff04a2097d9eb2ff187bee8d025e1e42a'
+p.BASELINE_HASH='1f990e3c925669467c08a869eea673fbd0011939b0335cc19faebbed675476a3'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
-    report=json.loads((p.REPO/'artifacts/sensor-stage-20261001/report.json').read_text(encoding='utf8'))
-    assert report['status']=='PASSED_SENSOR_CONTRAST_BROWSER' and report['base']==p.STAGE_URL
+    report=json.loads((p.REPO/'artifacts/photo-details-stage/report.json').read_text(encoding='utf8'))
+    assert report['status']=='PASSED_PHOTO_DETAILS_BROWSER' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']
-    expected={(power,trim,1) for power in [500,1000,1500,2000,2500,3000,3500,4000,5000] for trim in ['standard','comfort','comfort_plus']}
-    expected|={(4000,'comfort',2),(4000,'comfort',5)}
+    expected={(power,'comfort',1) for power in [500,1000,1500,2000,2500,3000,3500,4000,5000]}
+    expected|={(500,'comfort',5),(4000,'comfort',2),(4000,'comfort',5),(4000,'standard',1),(4000,'comfort_plus',1)}
     assert {(s['power'],s['trim'],s['count']) for s in report['scenarios']}==expected
-    assert all(s['shaderErrors']==0 for s in report['scenarios']) and report['selection']
+    assert all(s['shaderErrors']==0 for s in report['scenarios']) and report['selection'] and report['visibility']
     assert report['mobile']['width']==390 and not report['mobile']['overflow']
     before=json.loads((p.OUT/'before.json').read_text('utf8'))
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))

@@ -1,11 +1,13 @@
 import {Box3, Group, Vector3, type Object3D} from 'three'
 import cabinetData from '../../assets/cascade/cabinets.json'
 import {connections,correctedFeedRoutes,ecoModulationCenter,flashRoutes,greyOrigin,viewPoint,bdvCoolingRoute} from './cascadeRoutes'
-import {routeObject,correctDa3Level,cableSupport} from './cascadeGeometry'
+import {routeObject,cableSupport} from './cascadeGeometry'
 import {deaeratorRoutes} from './deaeratorRoutes'
 import {deaeratorHardware,openDeaeratorPorts} from './deaeratorGeometry'
 import {pipeMarkers} from './pipeMarkers'
 import {selectDeaerator} from './deaeratorSelection'
+import {addMagneticLevel,da3LevelSensor} from './deaeratorInstruments'
+import {photoServiceDetails,da3InstrumentTray} from './photoServiceDetails'
 
 export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comfort_plus'|'cascade',count=1) {
   const root=model.clone(true);root.name=kind==='cascade'?'cascade_cabinet':'plus_cabinet'
@@ -38,7 +40,12 @@ export function applyFeedCorrection(unit:Group,power:number,count:number,sourceS
     const sleeve=unit.getObjectByName('mod_eco_drive_cable')!
     sleeve.add(cableSupport(sleeve.userData.route.points[1]))
   }
-  if(selectDeaerator(power,count)==='da3')correctDa3Level(unit.getObjectByName('deaerator')!)
+  const da=unit.getObjectByName('deaerator')!
+  addMagneticLevel(da,power,count)
+  if(selectDeaerator(power,count)==='da3'){
+    da.add(da3LevelSensor(),da3InstrumentTray(power))
+  }
+  unit.add(photoServiceDetails(unit,power))
   openDeaeratorPorts(unit.getObjectByName('deaerator')!,power,count)
   unit.getObjectByName('bdv_cooling_marker')?.removeFromParent()
   const coolingMarker=new Group();coolingMarker.name='bdv_cooling_marker';unit.add(coolingMarker)

@@ -60,11 +60,12 @@ try {
    });
    return {kind:s.userData.deaeratorKind,total:s.userData.totalCapacity,feed:s.getObjectByName('deaerator_feed').userData.route.points[0],ports:d.userData.connectedNozzles,
     support:d.userData.supportElevation,bounds:{lo,hi},reducer:s.getObjectByName('da_fittings').userData.feedReducer,
-    visibleCount:s.userData.units.filter(u=>u.getObjectByName('deaerator').visible).length,smallLevel:!!d.getObjectByName('da3_level_column'),
+    visibleCount:s.userData.units.filter(u=>u.getObjectByName('deaerator').visible).length,smallLevel:!!d.getObjectByName('da_magnetic_level'),
     pressureGroup:s.getObjectByName('da_fittings').userData.pressureGroup,heating:s.getObjectByName('da_heating_supply').userData.route.points};
   });
   assert.equal(state.kind,kind);assert.equal(state.total,power*count);assert.equal(state.visibleCount,1);assert.deepEqual(state.feed,ports.feed);assert.deepEqual(state.ports,ports);
-  if(native){assert.equal(state.support,1);assert(Math.abs(state.bounds.lo[1])<.001);assert.equal(state.reducer.inletDN,ports.feedDN);assert(!state.smallLevel)}else {assert(state.smallLevel);assert.equal(state.pressureGroup.nozzle,'О');assert(await vis('da_pressure_siphon'))}
+  assert(state.smallLevel);
+  if(native){assert.equal(state.support,1);assert(Math.abs(state.bounds.lo[1])<.001);assert.equal(state.reducer.inletDN,ports.feedDN)}else {assert.equal(state.pressureGroup.nozzle,'О');assert(await vis('da_pressure_siphon'))}
   for(let i=1;i<state.heating.length;i++)assert(state.heating[i].filter((v,k)=>Math.abs(v-state.heating[i-1][k])>1e-7).length<=1);
   assert(await page.getByText(deaeratorLabels[kind]+' · автоматически для '+(power*count/1000)+' т/ч',{exact:true}).count()===1);
   selections.push({power,count,...state});

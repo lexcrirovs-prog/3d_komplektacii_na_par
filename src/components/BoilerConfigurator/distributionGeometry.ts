@@ -1,4 +1,4 @@
-import {BoxGeometry,BufferGeometry,CanvasTexture,CylinderGeometry,Group,Mesh,MeshStandardMaterial,Quaternion,RingGeometry,SphereGeometry,TorusGeometry,Vector3,type Object3D} from 'three'
+import {BoxGeometry,BufferGeometry,CanvasTexture,CircleGeometry,CylinderGeometry,Group,Mesh,MeshBasicMaterial,MeshStandardMaterial,Quaternion,RingGeometry,SphereGeometry,TorusGeometry,Vector3,type Object3D} from 'three'
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import {viewPoint,type Point3} from './cascadeRoutes'
 import {distributionLayout} from './steamDistribution'
@@ -43,7 +43,7 @@ function valve(root:Group,p:Point3,vertical:boolean,s=1) {
   root.add(cylinder(p,stem,.014*s,'silver'),torus(stem,vertical?[1,0,0]:[0,0,1],.093*s,.010*s))
   for(const sign of [-1,1])root.add(cylinder(stem,vertical?[stem[0],y+sign*.09*s,z]:[x+sign*.09*s,y,stem[2]],.008*s,'dark'))
 }
-export function pressureGauge(root:Group,p:Point3) {
+function gaugeBody(root:Group,p:Point3) {
   const [x,y,z]=p
   root.add(cylinder([x,y,z-.16],p,.007,'silver'))
   // Dial faces the operator, not into the insulated pipe.
@@ -52,8 +52,16 @@ export function pressureGauge(root:Group,p:Point3) {
   const ctx=canvas.getContext('2d')!;ctx.fillStyle='#f4f4ef';ctx.fillRect(0,0,256,256);ctx.strokeStyle='#30363a';ctx.lineWidth=3
   for(let i=0;i<=16;i++){const a=(.75+i/16*1.5)*Math.PI;ctx.beginPath();ctx.moveTo(128+95*Math.cos(a),128+95*Math.sin(a));ctx.lineTo(128+82*Math.cos(a),128+82*Math.sin(a));ctx.stroke()}
   ctx.font='20px Arial';ctx.fillStyle='#30363a';ctx.fillText('бар',110,180);ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(128,128);ctx.lineTo(71,181);ctx.stroke()
-  const t=new CanvasTexture(canvas),g=new CylinderGeometry(.061,.061,.001,32);g.rotateZ(Math.PI/2);g.translate(...viewPoint([x+.017,y,z+.065]))
-  const dial=item(g,'white');(dial.material as MeshStandardMaterial).map=t;dial.userData.generatedTexture=true;root.add(dial)
+  const t=new CanvasTexture(canvas),g=new CircleGeometry(.061,32);g.rotateY(Math.PI/2);g.translate(...viewPoint([x+.017,y,z+.065]))
+  const dial=new Mesh(g,new MeshBasicMaterial({map:t,toneMapped:false}));dial.userData.generatedGeometry=true;dial.userData.generatedTexture=true;root.add(dial)
+}
+
+export function pressureGauge(root:Group,p:Point3,normal:Point3=[1,0,0]) {
+  const local=new Group();gaugeBody(local,[0,0,0])
+  const q=new Quaternion().setFromUnitVectors(new Vector3(1,0,0),new Vector3(...viewPoint(normal)).normalize())
+  for(const child of [...local.children])if(child instanceof Mesh){
+    child.geometry.applyQuaternion(q);child.geometry.translate(...viewPoint(p));root.add(child)
+  }
 }
 
 export function mergeStaticFittings(root:Group) {

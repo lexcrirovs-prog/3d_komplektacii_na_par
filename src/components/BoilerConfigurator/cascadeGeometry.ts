@@ -46,16 +46,6 @@ export function cableSupport(top:Point3) {
   for(let h=.27;h<z;h+=.28)root.add(mesh(box([x,y,h],[.033,.032,.008]),'zinc'))
   return root
 }
-export function correctDa3Level(da:Object3D) {
-  // The former photo column covered inlet Г. Use the two factory K nozzles,
-  // leaving the DN65 steam inlet accessible. Preserve all factory vessel solids.
-  da.getObjectByName('deaerator__dark')?.removeFromParent()
-  for(const id of [73,74,127,128,141,142])da.getObjectByName('DA3_CAD_'+id)?.removeFromParent()
-  const kx=-3.727,ky=-.062,cx=kx-.18*.8660254,cy=ky-.18*.5
-  for(const z of [.760313,1.960313])da.add(routeObject({id:'da3_K_'+z,label:'Штуцер указателя уровня K DN20',points:[[kx,ky,z],[cx,cy,z]],radius:.0135,color:'steel'}))
-  da.add(routeObject({id:'da3_level_column',label:'Указатель уровня ДА-3 на штуцерах K',points:[[cx,cy,.69],[cx,cy,2.03]],radius:.027,color:'#596771'}))
-  da.add(routeObject({id:'da3_level_glass',label:'Стекло указателя уровня',points:[[cx-.026,cy,.78],[cx-.026,cy,1.94]],radius:.009,color:'#b8aa74'}))
-}
 export function cascadePiping(power:number,count:number,sourceTrap:Object3D) {
   const root=new Group();root.name='cascade_piping'
   for(const row of cascadeRoutes(power,count))root.add(routeObject(row))

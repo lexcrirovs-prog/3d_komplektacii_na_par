@@ -1,0 +1,96 @@
+{
+  "version": "2026.10.01.3",
+  "date": "2026-10-01",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "verified_at": "2026-10-01T13:36:13.746674+00:00",
+  "source_commit": "135e49bc319391c96a0fa7d4f5d2ccc5433a082d",
+  "publication_commit": "6d654ab728171a6d1e8c8397c7809f9a77ec0999",
+  "manifestSha256": "c3c2baafbc2eac9eb37a4c88db1c4cb11c6bd334b189e9e402e2579c1ee45b06",
+  "build": "PASSED_TYPESCRIPT_VITE",
+  "unit_tests": {
+    "passed": 12,
+    "capacity_count_combinations": 45
+  },
+  "browser": {
+    "stage": {
+      "status": "PASSED_PHOTO_DETAILS_BROWSER",
+      "selection": true,
+      "visibility": true,
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "errors": [],
+      "scenarios": 14,
+      "report": "browser-stage.json",
+      "minimum_pump_tray_clearance_m": 0.07300022784956361
+    },
+    "live": {
+      "status": "PASSED_PHOTO_DETAILS_BROWSER",
+      "selection": true,
+      "visibility": true,
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "errors": [],
+      "scenarios": 14,
+      "report": "browser-live.json",
+      "minimum_pump_tray_clearance_m": 0.07300022784956361
+    }
+  },
+  "https": {
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 125,
+      "report": "http-stage.json"
+    },
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 125,
+      "report": "http-live.json"
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.10.01.3",
+      "candidateSha256": "aaddd75f9d4bbab991e2debbe0f7476652cbcadd3273499aade21476868ad705",
+      "manifestSha256": "c3c2baafbc2eac9eb37a4c88db1c4cb11c6bd334b189e9e402e2579c1ee45b06",
+      "backupSha256": "260431cb19b15597e596754d8a4e4ad0c0c7aeb31a9794121c4b581c74fc9aa6",
+      "backupFiles": 126,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.10.01.3/"
+    },
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 127,
+      "transferredFiles": 8,
+      "reusedFiles": 119,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.01.3",
+      "transferBytes": 517467
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.01.3",
+      "neighborsUnchanged": true,
+      "files": 127
+    }
+  },
+  "native_cad_changed": false,
+  "unchanged_glb_models": 99,
+  "added_glb": [
+    {
+      "path": "assets/valtec_vt215_dn15-BGGQBXM4.glb",
+      "bytes": 101516,
+      "sha256": "5282abd4286d846b082e36f3c1d4dd2c9f090f24f6adb4b8350434e18e3d63e6"
+    }
+  ],
+  "javascript_delta_bytes": 3030,
+  "javascript_gzip_delta_bytes": 845,
+  "assumptions": [
+    "DA-3 electric actuator housing and adjacent valve exterior reconstructed from photograph; manufacturer not identified.",
+    "Web layout follows annotated photo tie-in; pressure-line equipment specifications are not changed.",
+    "Magnetic level flags are illustrative."
+  ]
+}

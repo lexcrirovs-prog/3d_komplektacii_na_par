@@ -1,0 +1,424 @@
+{
+  "date": "2026-10-01",
+  "photos": [
+    {
+      "file": "2026-10-01_16-33-38.png",
+      "sha256": "036fa62bf27279d30e71eeaf5369a96661914a27a26165fd654669712d4fae0a"
+    },
+    {
+      "file": "2026-10-01_16-42-44.png",
+      "sha256": "7f42c64b3185e5ced844489c0c8a0608a669af0d04a79df115a2f6d798638f1a"
+    },
+    {
+      "file": "2026-10-01_16-52-36.png",
+      "sha256": "7595207c1f0cda8bc1dc2bea5734df81d20bcdb9d67823a143a55aaae47a065c"
+    },
+    {
+      "file": "2026-10-01_16-51-11.png",
+      "sha256": "fad13bca4a0ae0b156ce11f5543d240bf6159db266d1df63fdb4a2aabeebb8e1"
+    },
+    {
+      "file": "2026-10-01_16-49-13.png",
+      "sha256": "8d5ab4875ceb68bbd42e06e66ba26b399b755920349f67201ce1e6c71dd3ac2a"
+    },
+    {
+      "file": "2026-10-01_16-55-01.png",
+      "sha256": "12f746bad33df3d4c313307ecb740907144532d2b3bfff9559ad18ffd7cb1010"
+    }
+  ],
+  "factoryCondensateStubs": [
+    {
+      "power": 500,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "3bc78c8d51be750bd2fbb3c06ca778763076a264338587022ff4e55c860c24d8",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -584.0,
+          -450.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -596.5,
+          -500.0,
+          12.5,
+          -571.5,
+          -450.0
+        ],
+        "solid": 1
+      },
+      "translation": [
+        0,
+        -0.3919999999999999,
+        0.8130000000000001
+      ],
+      "point": [
+        0,
+        0.1080000000000001,
+        0.2290000000000001
+      ]
+    },
+    {
+      "power": 1000,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.1000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "8d4cdcf82dd491cebe08b53cc1a9a0d25388e5ea6d79cd55640079af6348e1cb",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -699.0,
+          -475.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -711.5,
+          -525.0,
+          12.5,
+          -686.5,
+          -475.0
+        ],
+        "solid": 16
+      },
+      "translation": [
+        0,
+        -0.137,
+        0.93
+      ],
+      "point": [
+        0,
+        0.388,
+        0.23099999999999998
+      ]
+    },
+    {
+      "power": 1500,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.1500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "6db8c5fd75d15323c80e1fd4abe4640cdf23cde9f2bd557d61cee5dce1472ea3",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -699.0,
+          -475.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -711.5,
+          -525.0,
+          12.5,
+          -686.5,
+          -475.0
+        ],
+        "solid": 17
+      },
+      "translation": [
+        0,
+        0.04299999999999993,
+        0.93
+      ],
+      "point": [
+        0,
+        0.568,
+        0.23099999999999998
+      ]
+    },
+    {
+      "power": 2000,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.2000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "9cd03dc71ed313573558e536bc32969fcfc5a90b78db1aeedceb7de73e628c01",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -759.0,
+          -530.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -771.5,
+          -580.0,
+          12.5,
+          -746.5,
+          -530.0
+        ],
+        "solid": 1
+      },
+      "translation": [
+        0,
+        0.20799999999999996,
+        1.0
+      ],
+      "point": [
+        0,
+        0.7879999999999999,
+        0.241
+      ]
+    },
+    {
+      "power": 2500,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.2500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "69982d95bdc80c9305fb3f9b161d38155e63b125eff32d31a71f10eff6cf5a17",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -759.0,
+          -530.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -771.5,
+          -580.0,
+          12.5,
+          -746.5,
+          -530.0
+        ],
+        "solid": 16
+      },
+      "translation": [
+        0,
+        0.4580000000000001,
+        1.0
+      ],
+      "point": [
+        0,
+        1.038,
+        0.241
+      ]
+    },
+    {
+      "power": 3000,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.3000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "363637cc2cea7acf562f2f6fd89596b87460dfe7b945c94926e8d537d67da886",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -809.0,
+          -600.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -821.5,
+          -650.0,
+          12.5,
+          -796.5,
+          -600.0
+        ],
+        "solid": 1
+      },
+      "translation": [
+        0,
+        0.6980000000000001,
+        1.06
+      ],
+      "point": [
+        0,
+        1.348,
+        0.251
+      ]
+    },
+    {
+      "power": 3500,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.3500.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "23127fdf61f37ed860d3477d317e45f5339710df4e521b6f74964cc67852a2c8",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -809.0,
+          -600.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -821.5,
+          -650.0,
+          12.5,
+          -796.5,
+          -600.0
+        ],
+        "solid": 1
+      },
+      "translation": [
+        0,
+        0.898,
+        1.06
+      ],
+      "point": [
+        0,
+        1.548,
+        0.251
+      ]
+    },
+    {
+      "power": 4000,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.4000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "bf5f6fb41e07b4c26c24b00520038cf898e6e1498d9df9143875f41c03aa3ad8",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -884.0,
+          -625.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -896.5,
+          -675.0,
+          12.5,
+          -871.5,
+          -625.0
+        ],
+        "solid": 1
+      },
+      "translation": [
+        0,
+        1.3,
+        1.135
+      ],
+      "point": [
+        0,
+        1.975,
+        0.251
+      ]
+    },
+    {
+      "power": 5000,
+      "source": "E:\\CodexArtifacts\\Boiler-Family-v2026.09.13.2\\sources\\boilers\\PR.5000.01.001(S)СБ Общий вид (для проектировщиков).stp",
+      "sha256": "6595afa20fb05c2c65ec7dd721cb8f677f534e2ba2635652920d335e1e7389ce",
+      "cadCylinder": {
+        "radius": 12.5,
+        "origin": [
+          0.0,
+          -959.0,
+          -675.0
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "bounds": [
+          -12.5,
+          -971.5,
+          -725.0,
+          12.5,
+          -946.5,
+          -675.0
+        ],
+        "solid": 1
+      },
+      "translation": [
+        0,
+        1.62,
+        1.218
+      ],
+      "point": [
+        0,
+        2.345,
+        0.2589999999999999
+      ]
+    }
+  ],
+  "ballValve": {
+    "date": "2026-10-01",
+    "executor": "Codex / GPT-6",
+    "model": "VALTEC VT.215.N.04",
+    "dn": 15,
+    "source": "https://valtec.ru/catalog/truboprovodnaya_armatura/sharovye_krany_dlya_vody_base/kran_sharovoj_valtec_base_vt215n.html",
+    "download": "https://valtec.ru/document/technical/drawing/VT.215.N/Stp.zip",
+    "sourceArchiveSha256": "4592537d0694cfd30a287db8d125b05816f1fc015f080ec9102233fdda41d6cf",
+    "sourceStepSha256": "86f2c1d9181b22fb5e943e2d4125ae82be406ff25c322b9df0e25f2eff6b105f",
+    "pipeAxis": [
+      0,
+      1,
+      0
+    ],
+    "stemAxis": [
+      0,
+      0,
+      1
+    ],
+    "ports": [
+      [
+        0,
+        -0.02829112,
+        0
+      ],
+      [
+        0,
+        0.029091,
+        0
+      ]
+    ],
+    "use": "Геометрия крана слива конденсата дымовой камеры. Не меняет спецификацию арматуры напорной продувки."
+  },
+  "optimization": {
+    "path": "src/assets/cascade/valtec_vt215_dn15.glb",
+    "errorFraction": 0.001,
+    "before": {
+      "triangles": 21288,
+      "meshes": 1,
+      "nodes": 1,
+      "textures": 0,
+      "bytes": 1633928,
+      "sha256": "b4fcb4ce4dae6a486225a7ec533c9dc405ec621703b006ed7790511ebf79041e"
+    },
+    "after": {
+      "triangles": 6612,
+      "meshes": 1,
+      "nodes": 1,
+      "textures": 0,
+      "bytes": 101516,
+      "sha256": "5282abd4286d846b082e36f3c1d4dd2c9f090f24f6adb4b8350434e18e3d63e6"
+    },
+    "maxBoundsError": 1.10737261230405e-06,
+    "topLevelParts": 1,
+    "applied": true
+  },
+  "reusedModels": [
+    "pressure_gauge",
+    "pressure_transmitter"
+  ]
+}

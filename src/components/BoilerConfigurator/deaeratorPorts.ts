@@ -4,7 +4,8 @@ export type PortPoint=[number,number,number]
 // DA3 nozzle O, DN20: measured face of factory solid 40, not a new penetration.
 export const da3PressurePort:PortPoint=[-3.61194531,.81194531,1.760313]
 export function da3InstrumentPoint(out:number,along=0,dz=0):PortPoint {
-  return [-4.14-out,-.25+along,da3PressurePort[2]+dz]
+  const n=Math.SQRT1_2,p=da3PressurePort
+  return [p[0]-out*n+along*n,p[1]+out*n+along*n,p[2]+dz]
 }
 
 /** Front factory gauge flanges, verified against the four supplied STEP files.

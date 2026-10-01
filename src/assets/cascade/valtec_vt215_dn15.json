@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-01",
+  "executor": "Codex / GPT-6",
+  "model": "VALTEC VT.215.N.04",
+  "dn": 15,
+  "source": "https://valtec.ru/catalog/truboprovodnaya_armatura/sharovye_krany_dlya_vody_base/kran_sharovoj_valtec_base_vt215n.html",
+  "download": "https://valtec.ru/document/technical/drawing/VT.215.N/Stp.zip",
+  "sourceArchiveSha256": "4592537d0694cfd30a287db8d125b05816f1fc015f080ec9102233fdda41d6cf",
+  "sourceStepSha256": "86f2c1d9181b22fb5e943e2d4125ae82be406ff25c322b9df0e25f2eff6b105f",
+  "pipeAxis": [
+    0,
+    1,
+    0
+  ],
+  "stemAxis": [
+    0,
+    0,
+    1
+  ],
+  "ports": [
+    [
+      0,
+      -0.02829112,
+      0
+    ],
+    [
+      0,
+      0.029091,
+      0
+    ]
+  ],
+  "use": "Геометрия крана слива конденсата дымовой камеры. Не меняет спецификацию арматуры напорной продувки."
+}

@@ -12,6 +12,12 @@ export const cascadeConnections = {
       0.078,
       0.105
     ],
+    "condensate_nozzle": [
+      0,
+      0.1080000000000001,
+      0.2290000000000001
+    ],
+    "condensate_source_solid": 1,
     "bottom_split": [
       0.0,
       2.2,
@@ -43,6 +49,11 @@ export const cascadeConnections = {
       3.1,
       0.125
     ],
+    "bottom_discharge_start": [
+      0.0,
+      3.1,
+      0.125
+    ],
     "boiler_source_sha256": "3bc78c8d51be750bd2fbb3c06ca778763076a264338587022ff4e55c860c24d8",
     "modulation_gland": [
       -4.482269266858907e-08,
@@ -67,6 +78,12 @@ export const cascadeConnections = {
       0.388,
       0.105
     ],
+    "condensate_nozzle": [
+      0,
+      0.388,
+      0.23099999999999998
+    ],
+    "condensate_source_solid": 16,
     "bottom_split": [
       0.0,
       2.2,
@@ -98,6 +115,11 @@ export const cascadeConnections = {
       3.1,
       0.125
     ],
+    "bottom_discharge_start": [
+      0.0,
+      3.1,
+      0.125
+    ],
     "boiler_source_sha256": "8d4cdcf82dd491cebe08b53cc1a9a0d25388e5ea6d79cd55640079af6348e1cb",
     "modulation_gland": [
       -5.91278075390278e-08,
@@ -122,6 +144,12 @@ export const cascadeConnections = {
       0.568,
       0.105
     ],
+    "condensate_nozzle": [
+      0,
+      0.568,
+      0.23099999999999998
+    ],
+    "condensate_source_solid": 17,
     "bottom_split": [
       0.0,
       2.2,
@@ -150,6 +178,11 @@ export const cascadeConnections = {
     ],
     "bottom_end": [
       2.9,
+      3.1,
+      0.125
+    ],
+    "bottom_discharge_start": [
+      0.0,
       3.1,
       0.125
     ],
@@ -188,6 +221,12 @@ export const cascadeConnections = {
       0.788,
       0.115
     ],
+    "condensate_nozzle": [
+      0,
+      0.7879999999999999,
+      0.241
+    ],
+    "condensate_source_solid": 1,
     "bottom_split": [
       0.0,
       2.2,
@@ -216,6 +255,11 @@ export const cascadeConnections = {
     ],
     "bottom_end": [
       2.9,
+      3.1,
+      0.125
+    ],
+    "bottom_discharge_start": [
+      0.0,
       3.1,
       0.125
     ],
@@ -254,6 +298,12 @@ export const cascadeConnections = {
       1.038,
       0.115
     ],
+    "condensate_nozzle": [
+      0,
+      1.038,
+      0.241
+    ],
+    "condensate_source_solid": 16,
     "bottom_split": [
       0.0,
       2.2,
@@ -282,6 +332,11 @@ export const cascadeConnections = {
     ],
     "bottom_end": [
       2.9,
+      3.1,
+      0.125
+    ],
+    "bottom_discharge_start": [
+      0.0,
       3.1,
       0.125
     ],
@@ -320,6 +375,12 @@ export const cascadeConnections = {
       1.348,
       0.125
     ],
+    "condensate_nozzle": [
+      0,
+      1.348,
+      0.251
+    ],
+    "condensate_source_solid": 1,
     "bottom_split": [
       0.0,
       2.2,
@@ -348,6 +409,11 @@ export const cascadeConnections = {
     ],
     "bottom_end": [
       2.9,
+      3.1,
+      0.125
+    ],
+    "bottom_discharge_start": [
+      0.0,
       3.1,
       0.125
     ],
@@ -386,6 +452,12 @@ export const cascadeConnections = {
       1.548,
       0.125
     ],
+    "condensate_nozzle": [
+      0,
+      1.548,
+      0.251
+    ],
+    "condensate_source_solid": 1,
     "bottom_split": [
       0.0,
       2.2,
@@ -414,6 +486,11 @@ export const cascadeConnections = {
     ],
     "bottom_end": [
       2.9,
+      3.1,
+      0.125
+    ],
+    "bottom_discharge_start": [
+      0.0,
       3.1,
       0.125
     ],
@@ -452,6 +529,12 @@ export const cascadeConnections = {
       2.005,
       0.125
     ],
+    "condensate_nozzle": [
+      0,
+      1.975,
+      0.251
+    ],
+    "condensate_source_solid": 1,
     "bottom_split": [
       0.0,
       2.2,
@@ -480,6 +563,11 @@ export const cascadeConnections = {
     ],
     "bottom_end": [
       2.9,
+      3.1,
+      0.125
+    ],
+    "bottom_discharge_start": [
+      0.0,
       3.1,
       0.125
     ],
@@ -518,6 +606,12 @@ export const cascadeConnections = {
       2.355,
       0.133
     ],
+    "condensate_nozzle": [
+      0,
+      2.345,
+      0.2589999999999999
+    ],
+    "condensate_source_solid": 1,
     "bottom_split": [
       0.0,
       2.6,
@@ -547,6 +641,11 @@ export const cascadeConnections = {
     "bottom_end": [
       2.9,
       3.1,
+      0.125
+    ],
+    "bottom_discharge_start": [
+      0.0,
+      3.5,
       0.125
     ],
     "boiler_source_sha256": "6595afa20fb05c2c65ec7dd721cb8f677f534e2ba2635652920d335e1e7389ce",

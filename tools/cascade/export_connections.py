@@ -14,10 +14,17 @@ for power in [500,1000,1500,2000,2500,3000,3500,4000,5000]:
     shift = d['moves']['steam_delivery']
     routes = {r['id']: r for r in d['routes']}
     r = d['registration']
+    analytic=json.loads((Path(r'E:\CodexArtifacts\Boiler-Family-v2026.09.13.2/analytic')/f's{power}.json').read_text('utf8'))
+    stub=[c for c in analytic['cylinders'] if abs(c['radius']-12.5)<.01 and abs(c['origin'][0])<1 and c['origin'][1]<-300 and c['origin'][2]<0]
+    assert len(stub)==1
+    stub=stub[0]
+    small_drain=[0,r['translation'][1]-stub['bounds'][2]*.001,r['translation'][2]+stub['origin'][1]*.001]
     wiring = json.loads((SOURCE/str(power)/'wiring.json').read_text(encoding='utf8'))
     cable = next(w for w in wiring['routes'] if w['id']=='mod_eco_drive_cable')
     row = dict(steam_end=[shift[0],2.1+shift[1],3+shift[2]],
                bottom_nozzle=r['ports']['drain']['position_m'],
+               condensate_nozzle=small_drain,
+               condensate_source_solid=stub['solid'],
                bottom_split=routes['bottom_piping']['points'][-1],
                # Rear casing face: measured on all nine registered CAD meshes
                # at the photo drain height (ray hit tolerance < 0.02 mm).
@@ -27,6 +34,7 @@ for power in [500,1000,1500,2000,2500,3000,3500,4000,5000]:
                direct_modulation=d['modulation']['center'],
                tds_end=routes['tds_common']['points'][-1],
                bottom_end=routes['bottom_discharge']['points'][-1],
+               bottom_discharge_start=routes['bottom_discharge']['points'][0],
                boiler_source_sha256=r['boiler_sha256'],
                modulation_gland=cable['points'][0],
                cabinet_gland=cable['points'][-1],

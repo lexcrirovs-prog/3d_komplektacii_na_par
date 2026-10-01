@@ -4,7 +4,8 @@ import {cascadeRoutes,connections,correctedFeedRoutes,ecoModulationCenter,flashR
 import {distributionLayout} from './steamDistribution.ts'
 import {deaeratorRoutes} from './deaeratorRoutes.ts'
 import {deaeratorLabels,selectDeaerator} from './deaeratorSelection.ts'
-import {nativeDeaerator,magneticLevelLayout} from './deaeratorPorts.ts'
+import {nativeDeaerator,magneticLevelLayout,da3InstrumentPoint} from './deaeratorPorts.ts'
+import {pumpTrayX} from './photoServiceDetails'
 
 export const legacyCabinetParts=new Set(['control_cabinet','cabinet_door','cabinet_interior','lc220','lc440','bc970','pr200','level_controller_1','level_controller_2','level_controller_3','plus_bc970'])
 export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):FamilyPart[] {
@@ -41,13 +42,14 @@ export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):Fami
   result.push({id:'da_fittings',label:'Арматура деаэратора',category:'Обвязка деаэратора',requires:['deaerator'],center:viewPoint([-5.5,-2.6,1.6]),note:'Запорные вентили, фильтр и регулирующий клапан ХОВ, обратные клапаны, регулирование греющего пара, рециркуляция насосов, отдельные перелив и слив. Упрощённая геометрия арматуры по тепловой схеме.'})
   result.push({id:'da_magnetic_level',label:'Магнитный указатель уровня деаэратора',category:'Приборы деаэратора',requires:['deaerator'],center:viewPoint(magneticLevelLayout(power,count).center),note:'Передняя сторона обслуживания. Два подключения к штатным патрубкам, запорные вентили, красно-белые флажки и шкала. Положение флажков иллюстративное.'})
   if(kind==='da3')result.push(
-    {id:'da_safety_group',label:'Группа безопасности ДА-3',category:'Приборы деаэратора',requires:['deaerator'],center:viewPoint([-4.5,-.25,1.96]),note:'Манометр, прерыватель вакуума, преобразователь давления и резервный отвод. U-образная импульсная трубка от штатного штуцера О.'},
+    {id:'da_safety_group',label:'Группа безопасности ДА-3',category:'Приборы деаэратора',requires:['deaerator'],center:viewPoint(da3InstrumentPoint(.46,0,.25)),note:'Группа рядом со штатным штуцером О. Манометр и преобразователь давления — существующие модели приборов котла. U-образная импульсная трубка, прерыватель вакуума и резервный отвод.'},
+    {id:'da_electric_valve',label:'Клапан с электроприводом ДА-3',category:'Обвязка деаэратора',requires:['deaerator'],center:viewPoint([-4.35,.3,1.36]),note:'Регулирующий клапан на вертикальном участке греющего пара перед нижним боковым вводом. Компоновка привода по фотографии; кабель в чёрной гофре.'},
     {id:'da_level_sensor',label:'Датчик уровня ДА-3',category:'Приборы деаэратора',requires:['deaerator'],center:viewPoint([-3.1,-.64,1.01]),note:'Внешний вид по фотографии 01.10.2026. Резьбовая посадка и проводка в гофре до кабельного лотка.'},
     {id:'da_instrument_tray',label:'Кабельный лоток приборов ДА-3',category:'Автоматика',requires:['deaerator'],center:viewPoint([-4.85,-.7,1.2]),note:'Открытый металлический лоток. От приборов — короткие гибкие участки в гофре.'})
   result.push(
     {id:'photo_service_details',label:'Слив и кабельный лоток котла',category:'Монтажные узлы',center:viewPoint([1.1,2.5,.3]),note:'Компоновка по фотографии 01.10.2026.'},
-    {id:'photo_boiler_drain',label:'Малый дренаж котла с врезкой',category:'Монтажные узлы',center:viewPoint([0,connections(power).bottom_nozzle[1],.35]),note:'Кран с красной рукояткой, гнутый подвод и врезка перед запорной арматурой нижней линии. Посадка малого штуцера воспроизведена по фотографии.'},
-    {id:'photo_cable_tray',label:'Напольный перфорированный кабельный лоток',category:'Автоматика',center:viewPoint([2.28,.3,.16]),note:'Открытый П-образный металлический лоток на опорах. Подводы насосов и привода в защитной гофре.'},
+    {id:'photo_boiler_drain',label:'Слив конденсата',category:'Монтажные узлы',center:viewPoint([...connections(power).condensate_nozzle]),note:'Штатный дренажный патрубок под крышкой дымовой камеры → шаровой кран → врезка в общий участок после арматуры продувки. Геометрия крана — VALTEC VT.215.N.04, по модели производителя.'},
+    {id:'photo_cable_tray',label:'Напольный перфорированный кабельный лоток',category:'Автоматика',center:viewPoint([pumpTrayX,.3,.16]),note:'Открытый П-образный металлический лоток на опорах, снаружи насосов и их фланцев. Гофра подходит к лотку в обход вертикальных труб.'},
     {id:'photo_blowdown_wiring',label:'Проводка привода продувки в лоток',category:'Автоматика',center:viewPoint([1.08,connections(power).bottom_split[1]+.65,.35]),note:'Гибкий подвод через кабельный ввод, затем укладка в общий лоток.'})
   return result
 }

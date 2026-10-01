@@ -28,7 +28,7 @@ export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comf
   parent.add(root)
   return root
 }
-export function applyFeedCorrection(unit:Group,power:number,count:number,sourceStrainer:Object3D) {
+export function applyFeedCorrection(unit:Group,power:number,count:number,sourceStrainer:Object3D,sourceBallValve:Object3D) {
   for(const row of [...correctedFeedRoutes(power),...flashRoutes(power,count),...deaeratorRoutes(power,count),bdvCoolingRoute()]) {
     unit.getObjectByName(row.id)?.removeFromParent()
     unit.add(routeObject(row))
@@ -45,11 +45,11 @@ export function applyFeedCorrection(unit:Group,power:number,count:number,sourceS
   if(selectDeaerator(power,count)==='da3'){
     da.add(da3LevelSensor(),da3InstrumentTray(power))
   }
-  unit.add(photoServiceDetails(unit,power))
+  unit.add(photoServiceDetails(unit,power,sourceBallValve))
   openDeaeratorPorts(unit.getObjectByName('deaerator')!,power,count)
   unit.getObjectByName('bdv_cooling_marker')?.removeFromParent()
   const coolingMarker=new Group();coolingMarker.name='bdv_cooling_marker';unit.add(coolingMarker)
-  unit.add(deaeratorHardware(power,count,sourceStrainer))
+  unit.add(deaeratorHardware(power,count,sourceStrainer,unit))
   const c=connections(power),steam=c.steam_end
   for(const row of [
     {id:'steam_delivery',label:'Пар котла',points:[[steam[0],steam[1]-1,steam[2]],[...steam]],radius:c.steam_visual_radius},

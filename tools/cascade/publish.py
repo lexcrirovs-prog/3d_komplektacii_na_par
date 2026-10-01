@@ -5,13 +5,13 @@ import importlib.util,json,sys,tarfile,subprocess
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.01.2';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.10.01.3';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='1f990e3c925669467c08a869eea673fbd0011939b0335cc19faebbed675476a3'
+p.BASELINE_HASH='677117585bda841dbc21fc7b398660888845dfeb128b31968934a2e726897552'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
-    report=json.loads((p.REPO/'artifacts/photo-details-stage/report.json').read_text(encoding='utf8'))
+    report=json.loads((p.REPO/'artifacts/photo-details-v3-stage/report.json').read_text(encoding='utf8'))
     assert report['status']=='PASSED_PHOTO_DETAILS_BROWSER' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']
     expected={(power,'comfort',1) for power in [500,1000,1500,2000,2500,3000,3500,4000,5000]}
@@ -23,7 +23,10 @@ def validate(prepared):
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
     previous={name:digest for name,digest in before['files'].items() if name.endswith('.glb')}
     current={row['path']:row['sha256'] for row in manifest['files'] if row['path'].endswith('.glb')}
-    assert previous==current and previous,'UNEXPECTED_MODEL_CHANGE'
+    assert previous and all(current.get(name)==digest for name,digest in previous.items()),'EXISTING_MODEL_CHANGED'
+    added={name:digest for name,digest in current.items() if name not in previous}
+    assert len(added)==1 and all(name.startswith('assets/valtec_vt215_dn15-') for name in added),'UNEXPECTED_NEW_MODEL'
+    assert set(added.values())=={p.sha((p.REPO/'src/assets/cascade/valtec_vt215_dn15.glb').read_bytes())}
 p.validate_browser_acceptance=validate
 def refresh_prepared():
     """Reuse a verified backup only after a complete live/neighbor drift check.

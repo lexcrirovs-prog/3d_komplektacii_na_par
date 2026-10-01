@@ -3,7 +3,7 @@ import {Box3, Color, Mesh, MeshStandardMaterial, type Object3D} from 'three'
 // 01.10.2026 · Codex / GPT-6. Photo P1270830: steel stems, red caps,
 // matte light housings. Apply only to cloned boiler sensor materials.
 const sensorIds=['lp200','lp400','lcs600','low_level_1','low_level_2','high_level',
-  'pressure_switch_1','pressure_switch_2','pressure_switch_3','pressure_transmitter']
+  'pressure_switch_1','pressure_switch_2','pressure_switch_3','pressure_transmitter','da_pressure_transmitter']
 const steel=new Color('#81929f'),white=new Color('#aebbc5'),red=new Color('#b90825')
 
 function stemAndHead(material:MeshStandardMaterial,boundary:number,capacitive:boolean) {

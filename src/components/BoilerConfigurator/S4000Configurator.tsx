@@ -14,6 +14,7 @@ import photoCabinetUrl from '../../assets/cascade/comfort_plus.glb?url'
 import comfortCabinetUrl from '../../assets/cascade/comfort.glb?url'
 import cascadeCabinetUrl from '../../assets/cascade/cascade.glb?url'
 import adlStrainerUrl from '../../assets/cascade/adl_is16.glb?url'
+import condensateValveUrl from '../../assets/cascade/valtec_vt215_dn15.glb?url'
 import {addPhotoCabinet,applyFeedCorrection} from './cascadeScene'
 import {correctedUnitParts,partInUnit,configurationParts} from './cascadeConfiguration'
 import {unitSpacing} from './cascadeRoutes'
@@ -102,6 +103,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
   const daUrls=useMemo(()=>daEnabled?[deaeratorAssets[daKind]]:[],[daKind,daEnabled])
   const daModels=useGLTF(daUrls)
   const strainer=useGLTF(adlStrainerUrl)
+  const condensateValve=useGLTF(condensateValveUrl)
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
   const { gl, invalidate, camera, controls } = useThree()
   useEffect(()=>{onReady()},[onReady])
@@ -115,7 +117,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     da.traverse(o=>{if(o.name==='deaerator')o.name='deaerator_model'})
     da.name='deaerator';da.userData.deaeratorKind=daKind;unit.add(da)
     copy.userData.deaeratorKind=daKind;copy.userData.totalCapacity=power*count
-    applyFeedCorrection(unit,power,count,strainer.scene)
+    applyFeedCorrection(unit,power,count,strainer.scene,condensateValve.scene)
     copy.updateMatrixWorld(true)
     for (const motion of openingData.groups) {
       const hinge = new Group()
@@ -149,7 +151,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     generatedMaterials.forEach(m=>m.dispose())
     units.forEach(applySensorMaterials)
     return copy
-  }, [gltfs,trim,count,additions,daModels,daKind,strainer])
+  }, [gltfs,trim,count,additions,daModels,daKind,strainer,condensateValve])
   useEffect(() => { invalidate() }, [cabinetDoors, boilerDoors, cascadeOpen, invalidate])
   useFrame((_, delta) => {
     let movingDoor = false

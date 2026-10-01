@@ -1,11 +1,28 @@
-import {BoxGeometry,Group,SphereGeometry,type Object3D} from 'three'
-import {axisValve,cylinder,flange,item,mergeStaticFittings,strainer,steamStrainer,pressureGauge} from './distributionGeometry'
+import {Box3,BoxGeometry,Group,SphereGeometry,Vector3,type Object3D} from 'three'
+import {axisValve,cylinder,flange,item,mergeStaticFittings,strainer,steamStrainer} from './distributionGeometry'
 import {deaeratorPorts,nativeDeaerator,da3InstrumentPoint,da3PressurePort} from './deaeratorPorts'
 import {viewPoint,unitSpacing} from './cascadeRoutes'
 import {nativeDeaeratorHardware} from './nativeDeaeratorGeometry'
+import {sleeve} from './photoServiceDetails'
+
+/** Reuse the exact loaded CAD mesh and dial, with a new mounting transform.
+ * No copied GLB, retessellation, or change to the original boiler instrument. */
+function mountedInstrument(unit:Object3D,id:string,name:string,target:[number,number,number]) {
+  const source=unit.getObjectByName(id)!
+  source.updateWorldMatrix(true,true)
+  const bounds=new Box3().setFromObject(source),anchor=bounds.getCenter(new Vector3());anchor.y=bounds.min.y
+  const root=new Group();root.name=name
+  const local=new Group(),copy=source.clone(true)
+  copy.traverse(o=>{o.name=name+'__'+o.name})
+  source.matrixWorld.decompose(copy.position,copy.quaternion,copy.scale)
+  local.position.copy(anchor).negate();local.add(copy);root.add(local)
+  root.position.set(...viewPoint(target));root.rotation.y=3*Math.PI/4
+  root.userData.reusedModel={sourceId:id,sourceAnchor:anchor.toArray(),mount:target,scale:1}
+  return root
+}
 
 /** Visible functional fittings; simplified bodies, not supplier CAD substitutes. */
-export function deaeratorHardware(power:number,count:number,sourceStrainer:Object3D) {
+export function deaeratorHardware(power:number,count:number,sourceStrainer:Object3D,unit:Object3D) {
   const native=nativeDeaerator(power,count)
   if(native)return nativeDeaeratorHardware(native,count,sourceStrainer)
   const root=new Group();root.name='da_fittings'
@@ -28,29 +45,41 @@ export function deaeratorHardware(power:number,count:number,sourceStrainer:Objec
   }
   // Steam source -> filter -> two independently regulated branches.
   steamStrainer(root,[-5.55,2.8,3.2],sourceStrainer)
-  axisValve(root,[-4.85,2.8,3.2],[1,0,0],.9,true)
   axisValve(root,[-4.40,2.8,3.2],[1,0,0],.95)
+  // Main steam actuator beside the DA3 lower side inlet, as photographed.
+  // Move the former upper regulating device here, keeping one per branch.
+  const electric=new Group();electric.name='da_electric_valve';root.add(electric)
+  const x=-4.35,y=.3,z=1.36
+  electric.add(cylinder([x,y,z-.075],[x,y,z+.075],.060,'blue'))
+  for(const zz of [z-.075,z+.075])flange(electric,[x,y,zz],[0,0,1],.095,.038)
+  electric.add(cylinder([x,y,z],[x,y-.17,z],.018,'silver'))
+  electric.add(item(new BoxGeometry(.20,.16,.095).translate(...viewPoint([x,y-.19,z])),'#184b91'))
+  electric.add(cylinder([x,y-.239,z],[x,y-.245,z],.024,'dark'),cylinder([x,y-.245,z],[x,y-.248,z],.011,'silver'))
+  electric.add(item(new BoxGeometry(.048,.012,.002).translate(...viewPoint([x+.05,y-.239,z+.052])),'#d9b633'))
+  sleeve(electric,'da_electric_valve_cable',[[x-.07,y-.19,z-.08],[x-.18,y-.19,z-.08],[x-.18,-.7,z-.08],[-4.85,-.7,z-.08]],.008)
+  electric.userData.valve={route:'da_heating_main',center:[x,y,z],actuator:'electric',source:'2026-10-01_16-52-36'}
+  axisValve(root,[-4.04,.3,.880313],[1,0,0],.7)
+  mergeStaticFittings(electric)
   axisValve(root,[-5.2,1.75,3.2],[0,-1,0],.65,true)
   axisValve(root,[-5.2,1.2,3.2],[0,-1,0],.65)
   if(small)axisValve(root,[-2.36,2.35,.4],[1,0,0],.52)
   else axisValve(root,[-3.65,1.525,.91],[0,0,-1],.70)
   // Float overflow device and separate bottom drain: no connection to BDV.
-  const y=small?-.8:-1.525
-  const body=new SphereGeometry(.12,20,12);body.translate(...viewPoint([-5.22,y,.29]));root.add(item(body,'blue'))
-  flange(root,[-5.38,y,.35],[1,0,0],.09,.024);flange(root,[-5.06,y,.35],[1,0,0],.09,.024)
+  const overflowY=small?-.8:-1.525
+  const body=new SphereGeometry(.12,20,12);body.translate(...viewPoint([-5.22,overflowY,.29]));root.add(item(body,'blue'))
+  flange(root,[-5.38,overflowY,.35],[1,0,0],.09,.024);flange(root,[-5.06,overflowY,.35],[1,0,0],.09,.024)
   axisValve(root,[-4.6,small?-2.2:-2.8,small?.153313:.62],[1,0,0],small?.24:.5)
   // DA3 reference: vent isolation and gauge / vacuum breaker / transmitter /
   // spare blind on the DN32 instrument bar connected to the existing O nozzle.
   axisValve(root,[p.vent[0],p.vent[1],2.97],[0,0,1],.22)
   flange(root,da3PressurePort,[-Math.SQRT1_2,Math.SQRT1_2,0],.0525,.012)
   const safety=new Group();safety.name='da_safety_group';root.add(safety)
-  pressureGauge(safety,da3InstrumentPoint(.36,-.20,.30),[-1,0,0])
-  axisValve(safety,da3InstrumentPoint(.36,-.20,.20),[0,0,1],.16)
-  for(const along of [-.04,.13,.29])safety.add(cylinder(da3InstrumentPoint(.36,along,.12),da3InstrumentPoint(.36,along,.22),.009,'#a0793c'))
-  safety.add(cylinder(da3InstrumentPoint(.36,-.04,.18),da3InstrumentPoint(.36,-.04,.26),.021,'silver'))
-  const transmitter=new BoxGeometry(.067,.07,.048);transmitter.translate(...viewPoint(da3InstrumentPoint(.36,.13,.285)));safety.add(item(transmitter,'dark'))
-  axisValve(safety,da3InstrumentPoint(.36,.13,.20),[0,0,1],.14)
-  safety.add(cylinder(da3InstrumentPoint(.36,.29,.215),da3InstrumentPoint(.36,.29,.229),.035,'silver'))
+  safety.add(mountedInstrument(unit,'pressure_gauge','da_pressure_gauge',da3InstrumentPoint(.46,-.20,.145)))
+  safety.add(mountedInstrument(unit,'pressure_transmitter','da_pressure_transmitter',da3InstrumentPoint(.46,.13,.145)))
+  for(const along of [-.20,-.04,.13,.29])safety.add(cylinder(da3InstrumentPoint(.46,along,.12),da3InstrumentPoint(.46,along,.16),.009,'#a0793c'))
+  safety.add(cylinder(da3InstrumentPoint(.46,-.04,.16),da3InstrumentPoint(.46,-.04,.26),.021,'silver'))
+  safety.add(cylinder(da3InstrumentPoint(.46,.29,.16),da3InstrumentPoint(.46,.29,.229),.013,'silver'))
+  safety.add(cylinder(da3InstrumentPoint(.46,.29,.215),da3InstrumentPoint(.46,.29,.229),.035,'silver'))
   root.userData.pressureGroup={source:'Группа безопасности ДА-3, АКМАЙ',nozzle:'О',dn:20,point:da3PressurePort}
   safety.userData.pressureGroup=root.userData.pressureGroup
   mergeStaticFittings(safety)

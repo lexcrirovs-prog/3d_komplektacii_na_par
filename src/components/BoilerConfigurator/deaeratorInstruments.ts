@@ -83,6 +83,5 @@ export function da3LevelSensor() {
   root.userData.sensor={source:'Фото 2026-10-01_15-20-57',port,head,type:'Датчик уровня, внешний вид по фото'}
   mergeStaticFittings(root)
   const cable=routeObject({id:'da_level_sensor_cable',label:'Гофра датчика уровня ДА-3',points:[[-3.1,-.656,.986],[-3.1,-.70,.89],[-3.32,-.70,.89],[-3.32,-.70,.25],[-4.85,-.70,.25]],radius:.008,color:'black'})
-  cable.traverse(o=>{if(o instanceof Mesh)(o.material as MeshStandardMaterial).color.set('#b2bbc1')})
   root.add(cable);return root
 }

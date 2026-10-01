@@ -1,0 +1,88 @@
+{
+  "version": "2026.10.01.2",
+  "date": "2026-10-01",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "verified_at": "2026-10-01T12:07:23.523095+00:00",
+  "source_commit": "69d744f6b58018ff50f18fb18c96c49c9c59f696",
+  "publication_commit": "09f273abd91cc78a359abb2c0e5237fcc5551ef6",
+  "manifestSha256": "b95d2d7ba2d22000262ba46f27fd53b11c1c55bfd92435eaca258f79e42993e1",
+  "build": "PASSED_TYPESCRIPT_VITE",
+  "unit_tests": {
+    "passed": 12,
+    "capacity_count_combinations": 45
+  },
+  "browser": {
+    "stage": {
+      "status": "PASSED_PHOTO_DETAILS_BROWSER",
+      "selection": true,
+      "visibility": true,
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "errors": [],
+      "scenarios": 14,
+      "report": "browser-stage.json"
+    },
+    "live": {
+      "status": "PASSED_PHOTO_DETAILS_BROWSER",
+      "selection": true,
+      "visibility": true,
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "errors": [],
+      "scenarios": 14,
+      "report": "browser-live.json"
+    }
+  },
+  "https": {
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 124,
+      "report": "http-stage.json"
+    },
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 124,
+      "report": "http-live.json"
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.10.01.2",
+      "candidateSha256": "15882dd1211519ee19d01b3c292d06c6f77ca36fdb00d7de6636aa24ce343581",
+      "manifestSha256": "b95d2d7ba2d22000262ba46f27fd53b11c1c55bfd92435eaca258f79e42993e1",
+      "backupSha256": "31e1e5c6b91cad7311e6803ccb041f5aa9a705fb198a01d4e1d0fd69c39eefd9",
+      "backupFiles": 126,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.10.01.2/"
+    },
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 126,
+      "transferredFiles": 7,
+      "reusedFiles": 119,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.01.2",
+      "transferBytes": 432308
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.01.2",
+      "neighborsUnchanged": true,
+      "files": 126
+    }
+  },
+  "native_cad_changed": false,
+  "unchanged_glb_models": 99,
+  "javascript_delta_bytes": 10824,
+  "javascript_gzip_delta_bytes": 3595,
+  "generated_textures": "Magnetic level: 192x1024, gauge: 256x256; created in memory, no image downloads",
+  "assumptions": [
+    "Small boiler tap height and fitting sizes reconstructed from photo; rear surface and main line are registered CAD coordinates.",
+    "DA-3 level sensor model not identified; exterior reproduced from supplied photo.",
+    "Red and white magnetic flags are illustrative, not live telemetry."
+  ]
+}

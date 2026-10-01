@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-01",
+  "photos": [
+    {
+      "file": "2026-10-01_15-25-17.png",
+      "sha256": "d7fbbe5379eb45429d47e0c6dccbfa14c5bab86ddd76a39c55e570bc7de554b6"
+    },
+    {
+      "file": "2026-10-01_15-20-57.png",
+      "sha256": "e97cea7ce6fdff5cb3f97591c1e564b1f07b80d9eb2c449f2af70f7c5909af1c"
+    },
+    {
+      "file": "2026-10-01_15-23-08.png",
+      "sha256": "c06ac9aaec0e52a41eaea34c2da0a1eee91bb80836d240fff7a7fa2ab9005491"
+    }
+  ],
+  "front_ports_m": {
+    "da15_4": {
+      "y": -2.275,
+      "z": [
+        1.308,
+        2.308
+      ]
+    },
+    "da15_8": {
+      "y": -2.62,
+      "z": [
+        1.31624,
+        2.91624
+      ]
+    },
+    "da25_15": {
+      "y": -3.225,
+      "z": [
+        1.323557,
+        3.123557
+      ]
+    },
+    "da25_25": {
+      "y": -4.23,
+      "z": [
+        1.329424,
+        3.529424
+      ]
+    }
+  },
+  "basis": "Factory STEP front instrument flange vertices; registered boiler mesh intersections in browser acceptance."
+}

@@ -1,0 +1,114 @@
+{
+  "firstSceneMs": 2956.5,
+  "viewport": [
+    1280,
+    720
+  ],
+  "resources": [
+    {
+      "path": "/komplektacii5/assets/index-V9ilmq0k.js",
+      "transferBytes": 57752,
+      "bodyBytes": 57452,
+      "end": 505.5
+    },
+    {
+      "path": "/komplektacii5/assets/index-BYKjUT6Q.css",
+      "transferBytes": 5456,
+      "bodyBytes": 5156,
+      "end": 334.1000000014901
+    },
+    {
+      "path": "/komplektacii5/data/public-catalog.json",
+      "transferBytes": 6534,
+      "bodyBytes": 6234,
+      "end": 667.8999999985099
+    },
+    {
+      "path": "/komplektacii5/data/docs-manifest.json",
+      "transferBytes": 1872,
+      "bodyBytes": 1572,
+      "end": 937.5
+    },
+    {
+      "path": "/komplektacii5/assets/Viewer-DkO3ARF7.js",
+      "transferBytes": 174408,
+      "bodyBytes": 174108,
+      "end": 1086.699999999255
+    },
+    {
+      "path": "/komplektacii5/premium-logo.png",
+      "transferBytes": 48935,
+      "bodyBytes": 48635,
+      "end": 716.3999999985099
+    },
+    {
+      "path": "/komplektacii5/favicon.svg",
+      "transferBytes": 474,
+      "bodyBytes": 174,
+      "end": 936.8999999985099
+    },
+    {
+      "path": "/komplektacii5/data/lite-manifest.json",
+      "transferBytes": 927,
+      "bodyBytes": 627,
+      "end": 1272.199999999255
+    },
+    {
+      "path": "/komplektacii5/data/ratings/4000.json",
+      "transferBytes": 9533,
+      "bodyBytes": 9233,
+      "end": 1431
+    },
+    {
+      "path": "/komplektacii5/models/4000/base.glb",
+      "transferBytes": 509787,
+      "bodyBytes": 509487,
+      "end": 2579.10000000149
+    },
+    {
+      "path": "/komplektacii5/models/4000/modulation.glb",
+      "transferBytes": 35721,
+      "bodyBytes": 35421,
+      "end": 1697.6000000014901
+    },
+    {
+      "path": "/komplektacii5/models/4000/core.glb",
+      "transferBytes": 150563,
+      "bodyBytes": 150263,
+      "end": 2348.39999999851
+    },
+    {
+      "path": "/komplektacii5/models/4000/trim-comfort.glb",
+      "transferBytes": 7183,
+      "bodyBytes": 6883,
+      "end": 1648.300000000745
+    },
+    {
+      "path": "/komplektacii5/models/4000/burner.glb",
+      "transferBytes": 31229,
+      "bodyBytes": 30929,
+      "end": 2041.8999999985099
+    },
+    {
+      "path": "/komplektacii5/models/4000/gpz.glb",
+      "transferBytes": 29919,
+      "bodyBytes": 29619,
+      "end": 2159.300000000745
+    },
+    {
+      "path": "/komplektacii5/models/shared/cabinet-comfort.glb",
+      "transferBytes": 143863,
+      "bodyBytes": 143563,
+      "end": 2948.89999999851
+    }
+  ],
+  "navigation": 818,
+  "transferredBytes": 1214974,
+  "conditions": {
+    "downloadMbps": 10,
+    "latencyMs": 100,
+    "cacheDisabled": true,
+    "origin": "https://prgz.ru",
+    "cpuThrottle": false
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "status": "PASSED_SENSOR_CONTRAST_BROWSER",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.01.1/",
+  "manifestSha256": "cdbdccad3e8c65114eaa3faede60ab1b10300142020ae0cd9bc06497a9127bd0",
+  "scenarios": [
+    {
+      "power": 500,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1326123,
+      "calls": 622,
+      "shaderErrors": 0
+    },
+    {
+      "power": 500,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1507958,
+      "calls": 626,
+      "shaderErrors": 0
+    },
+    {
+      "power": 500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1548854,
+      "calls": 616,
+      "shaderErrors": 0
+    },
+    {
+      "power": 1000,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1283875,
+      "calls": 620,
+      "shaderErrors": 0
+    },
+    {
+      "power": 1000,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1463154,
+      "calls": 624,
+      "shaderErrors": 0
+    },
+    {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1516696,
+      "calls": 624,
+      "shaderErrors": 0
+    },
+    {
+      "power": 1500,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1413482,
+      "calls": 411,
+      "shaderErrors": 0
+    },
+    {
+      "power": 1500,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1594355,
+      "calls": 419,
+      "shaderErrors": 0
+    },
+    {
+      "power": 1500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1630939,
+      "calls": 409,
+      "shaderErrors": 0
+    },
+    {
+      "power": 2000,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1422958,
+      "calls": 410,
+      "shaderErrors": 0
+    },
+    {
+      "power": 2000,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1603721,
+      "calls": 418,
+      "shaderErrors": 0
+    },
+    {
+      "power": 2000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1640387,
+      "calls": 408,
+      "shaderErrors": 0
+    },
+    {
+      "power": 2500,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1423419,
+      "calls": 410,
+      "shaderErrors": 0
+    },
+    {
+      "power": 2500,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1604782,
+      "calls": 418,
+      "shaderErrors": 0
+    },
+    {
+      "power": 2500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1641854,
+      "calls": 408,
+      "shaderErrors": 0
+    },
+    {
+      "power": 3000,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1386440,
+      "calls": 411,
+      "shaderErrors": 0
+    },
+    {
+      "power": 3000,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1566961,
+      "calls": 418,
+      "shaderErrors": 0
+    },
+    {
+      "power": 3000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1619705,
+      "calls": 418,
+      "shaderErrors": 0
+    },
+    {
+      "power": 3500,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1384834,
+      "calls": 411,
+      "shaderErrors": 0
+    },
+    {
+      "power": 3500,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1565595,
+      "calls": 418,
+      "shaderErrors": 0
+    },
+    {
+      "power": 3500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1600945,
+      "calls": 408,
+      "shaderErrors": 0
+    },
+    {
+      "power": 4000,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1534819,
+      "calls": 514,
+      "shaderErrors": 0
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1714050,
+      "calls": 522,
+      "shaderErrors": 0
+    },
+    {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1764300,
+      "calls": 522,
+      "shaderErrors": 0
+    },
+    {
+      "power": 5000,
+      "trim": "standard",
+      "count": 1,
+      "triangles": 1464375,
+      "calls": 409,
+      "shaderErrors": 0
+    },
+    {
+      "power": 5000,
+      "trim": "comfort",
+      "count": 1,
+      "triangles": 1641128,
+      "calls": 417,
+      "shaderErrors": 0
+    },
+    {
+      "power": 5000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "triangles": 1672884,
+      "calls": 407,
+      "shaderErrors": 0
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 2,
+      "triangles": 2919700,
+      "calls": 1088,
+      "shaderErrors": 0
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 5,
+      "triangles": 6260892,
+      "calls": 2399,
+      "shaderErrors": 0
+    }
+  ],
+  "selection": true,
+  "mobile": {
+    "width": 390,
+    "overflow": false
+  },
+  "errors": [],
+  "optionalIconWarnings": [
+    "https://prgz.ru/favicon.ico"
+  ]
+}

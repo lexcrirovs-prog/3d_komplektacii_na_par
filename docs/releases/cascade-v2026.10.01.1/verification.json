@@ -1,0 +1,77 @@
+{
+  "version": "2026.10.01.1",
+  "date": "2026-10-01",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "url": "https://prgz.ru/komplektacii4/",
+  "source_commit": "943e989b6e39c55e1741cf4650cc1a48d30f80a0",
+  "publication_commit": "8c7358ae7a3c021a1e491ccc86f66e85e63342e3",
+  "manifestSha256": "cdbdccad3e8c65114eaa3faede60ab1b10300142020ae0cd9bc06497a9127bd0",
+  "build": "PASSED_TYPESCRIPT_VITE",
+  "browser": {
+    "stage": {
+      "status": "PASSED_SENSOR_CONTRAST_BROWSER",
+      "scenarios": 29,
+      "selection": true,
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "report": "browser-stage.json"
+    },
+    "live": {
+      "status": "PASSED_SENSOR_CONTRAST_BROWSER",
+      "scenarios": 29,
+      "selection": true,
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "report": "browser-live.json"
+    }
+  },
+  "https": {
+    "stage": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 124,
+      "report": "http-stage.json"
+    },
+    "live": {
+      "status": "PASSED_HTTPS_HASHES",
+      "files": 124,
+      "report": "http-live.json"
+    }
+  },
+  "publication": {
+    "prepared": {
+      "version": "2026.10.01.1",
+      "candidateSha256": "0b1faf7634eeaee1405b78009adf674ad174eb7f8851165e7a565d00c1c8785e",
+      "manifestSha256": "cdbdccad3e8c65114eaa3faede60ab1b10300142020ae0cd9bc06497a9127bd0",
+      "backupSha256": "1824eef6ed42bf39e8de1fdfa900d3012dd1c191d6c70456d1d22c3dff603185",
+      "backupFiles": 126,
+      "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.10.01.1/"
+    },
+    "staged": {
+      "status": "STAGED_HASHES_VERIFIED",
+      "files": 126,
+      "transferredFiles": 7,
+      "reusedFiles": 119,
+      "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.01.1",
+      "transferBytes": 428296
+    },
+    "cutover": {
+      "status": "CUTOVER_OK",
+      "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.01.1",
+      "neighborsUnchanged": true,
+      "files": 126
+    }
+  },
+  "native_cad_changed": false,
+  "unchanged_glb_models": 99,
+  "javascript_before_bytes": 1774821,
+  "javascript_after_bytes": 1777027,
+  "javascript_delta_bytes": 2206,
+  "javascript_gzip_delta_bytes": 785,
+  "new_textures": 0,
+  "added_triangles": 0
+}

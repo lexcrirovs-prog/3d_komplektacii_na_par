@@ -1,7 +1,7 @@
 {
   "release": {
-    "version": "2026.10.01.3",
-    "date": "2026-10-01",
+    "version": "2026.10.02.1",
+    "date": "2026-10-02",
     "executor": "Codex / GPT-6",
     "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
     "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb",
@@ -32,12 +32,17 @@
       "ДА-25/25"
     ]
   },
-  "source_commit": "135e49bc319391c96a0fa7d4f5d2ccc5433a082d",
+  "source_commit": "3a57798b65ce242f5e658c2bae4722f55af07bcf",
   "files": [
     {
       "path": ".htaccess",
       "bytes": 374,
       "sha256": "a83833b8c02ef8af4b64773ab487598c3819dd125f71c24714e402a06f848c1d"
+    },
+    {
+      "path": "api/request-quote.php",
+      "bytes": 7140,
+      "sha256": "e06154a2ddc9687976e8fa8602bff05410dae97166ada9a795df08b25232afa3"
     },
     {
       "path": "assets/.htaccess",
@@ -160,9 +165,9 @@
       "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
     },
     {
-      "path": "assets/index-BDLnZhbE.js",
+      "path": "assets/index-D0b7hU91.js",
       "bytes": 1177837,
-      "sha256": "ce005d76dd83d917ce53f9285c871817e16221a153b8541b680d1b16711caca1"
+      "sha256": "4e5013a3f71a1746cef2d3c3d3d68acb03deff1590e9d0b46f59685da797ff65"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -235,14 +240,14 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/S3000Configurator-CZTBSMzN.js",
+      "path": "assets/S3000Configurator-B85B97eL.js",
       "bytes": 58736,
-      "sha256": "594d906d272350718e9e5427a4aed228b34ab6f467fe6e2d1380ea757937bdbc"
+      "sha256": "be57e7485379cb868979268481421c168251de9b4439199ff40cb0840d34a3c0"
     },
     {
-      "path": "assets/S3000Configurator-DDZtpVgO.js",
+      "path": "assets/S3000Configurator-D5Amgicu.js",
       "bytes": 48039,
-      "sha256": "779b1eeb91ba5b6422694e576607e786a1376d06a346528521c4fb7fa8a309b6"
+      "sha256": "63d46c0c72c53303acca2e9496e2eabc9043bfeda4b88200d806191289c0143c"
     },
     {
       "path": "assets/s4000-0-Bijgd8Ih.glb",
@@ -605,14 +610,14 @@
       "sha256": "7b1f28181252b36752a3fd056d4f6428ff21970d269514f432b19f9222ef8d5a"
     },
     {
-      "path": "assets/S4000Configurator-Lg6uSNO2.js",
-      "bytes": 506269,
-      "sha256": "74e9839af1a263b9b337c37e42e266260be778b3c0e93b9643dbd9e858b6c112"
+      "path": "assets/S4000Configurator-kzqqIOd_.js",
+      "bytes": 547023,
+      "sha256": "1f53f36ce7be82b4a2e80fb6de0261b71a7ad4333519919f9905ddea54cf34f0"
     },
     {
-      "path": "assets/style-BWHPCLQK.css",
-      "bytes": 27441,
-      "sha256": "a18cffbf47c86521f347a8ff54aeb78b368d5426fda08afdd373698fed3bfd83"
+      "path": "assets/style-DzxdkANH.css",
+      "bytes": 33332,
+      "sha256": "712918ea4b2a1ec049769e1ab2703e3e3891527e96d8d5850e0289dfbe08e375"
     },
     {
       "path": "assets/valtec_vt215_dn15-BGGQBXM4.glb",
@@ -622,7 +627,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "debf4de169ac5a49ae3d156d92737f175209f74ab0fa0376960b59ddd52843f5"
+      "sha256": "8a688942b9ee6a558ea3ca1fa6a7dea0e0a0468d22f71cb7d53680631779ab7c"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -662,7 +667,7 @@
     {
       "path": "version.json",
       "bytes": 926,
-      "sha256": "0034c299ea627aa3caa83f1b76a80fc040aac37aca1e39e6ffebb25f0cdc1d18"
+      "sha256": "0a0ccbd42661ed718b6118a8ef1114be480721691f0980aff035d8fd0c136682"
     }
   ]
 }

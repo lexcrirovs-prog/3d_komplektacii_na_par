@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "documents": [
+    {
+      "power": 500,
+      "kind": "boiler-step",
+      "label": "Модель котла S-500 · STEP",
+      "href": "docs/S-500.stp",
+      "mime": "model/step",
+      "bytes": 4894022,
+      "SHA256": "3bc78c8d51be750bd2fbb3c06ca778763076a264338587022ff4e55c860c24d8",
+      "sourcePath": "src/assets/ratings/500/S-500.stp"
+    },
+    {
+      "power": 1000,
+      "kind": "boiler-step",
+      "label": "Модель котла S-1000 · STEP",
+      "href": "docs/S-1000.stp",
+      "mime": "model/step",
+      "bytes": 4927231,
+      "SHA256": "8d4cdcf82dd491cebe08b53cc1a9a0d25388e5ea6d79cd55640079af6348e1cb",
+      "sourcePath": "src/assets/ratings/1000/S-1000.stp"
+    },
+    {
+      "power": 1500,
+      "kind": "boiler-step",
+      "label": "Модель котла S-1500 · STEP",
+      "href": "docs/S-1500.stp",
+      "mime": "model/step",
+      "bytes": 4844891,
+      "SHA256": "6db8c5fd75d15323c80e1fd4abe4640cdf23cde9f2bd557d61cee5dce1472ea3",
+      "sourcePath": "src/assets/ratings/1500/S-1500.stp"
+    },
+    {
+      "power": 1500,
+      "kind": "economizer-pdf",
+      "label": "Габаритный чертёж экономайзера EQS2-1500 · PDF",
+      "href": "docs/EQS2-1500.pdf",
+      "mime": "application/pdf",
+      "bytes": 69430,
+      "SHA256": "b62a433513ab6cb8efbc7f203915154dd498b2e365a4154423238f0550aa421a",
+      "sourcePath": "src/assets/ratings/1500/EQS2-1500.pdf"
+    },
+    {
+      "power": 2000,
+      "kind": "boiler-step",
+      "label": "Модель котла S-2000 · STEP",
+      "href": "docs/S-2000.stp",
+      "mime": "model/step",
+      "bytes": 5034610,
+      "SHA256": "9cd03dc71ed313573558e536bc32969fcfc5a90b78db1aeedceb7de73e628c01",
+      "sourcePath": "src/assets/ratings/2000/S-2000.stp"
+    },
+    {
+      "power": 2000,
+      "kind": "economizer-pdf",
+      "label": "Габаритный чертёж экономайзера EQS2-2000 · PDF",
+      "href": "docs/EQS2-2000.pdf",
+      "mime": "application/pdf",
+      "bytes": 69832,
+      "SHA256": "4c54a708d09e78cc5ece37d6807e37e98ed2f05107b362990d136090e84e9c39",
+      "sourcePath": "src/assets/ratings/2000/EQS2-2000.pdf"
+    },
+    {
+      "power": 2500,
+      "kind": "boiler-step",
+      "label": "Модель котла S-2500 · STEP",
+      "href": "docs/S-2500.stp",
+      "mime": "model/step",
+      "bytes": 5060447,
+      "SHA256": "69982d95bdc80c9305fb3f9b161d38155e63b125eff32d31a71f10eff6cf5a17",
+      "sourcePath": "src/assets/ratings/2500/S-2500.stp"
+    },
+    {
+      "power": 2500,
+      "kind": "economizer-pdf",
+      "label": "Габаритный чертёж экономайзера EQS2-2500 · PDF",
+      "href": "docs/EQS2-2500.pdf",
+      "mime": "application/pdf",
+      "bytes": 69834,
+      "SHA256": "300ed6df17e4004b020ab442fe903793ec2af3f9fb0df51fdb2061dedf63baf4",
+      "sourcePath": "src/assets/ratings/2500/EQS2-2500.pdf"
+    },
+    {
+      "power": 3000,
+      "kind": "boiler-step",
+      "label": "Модель котла S-3000 · STEP",
+      "href": "docs/S-3000.stp",
+      "mime": "model/step",
+      "bytes": 5014262,
+      "SHA256": "363637cc2cea7acf562f2f6fd89596b87460dfe7b945c94926e8d537d67da886",
+      "sourcePath": "src/assets/ratings/3000/S-3000.stp"
+    },
+    {
+      "power": 3000,
+      "kind": "economizer-pdf",
+      "label": "Габаритный чертёж экономайзера EQS2-3000 · PDF",
+      "href": "docs/EQS2-3000.pdf",
+      "mime": "application/pdf",
+      "bytes": 70538,
+      "SHA256": "354417770b2856204ec2202fdc3f82856de19c9fa11ae3723ddc5b261da1d61f",
+      "sourcePath": "src/assets/ratings/3000/EQS2-3000.pdf"
+    },
+    {
+      "power": 3500,
+      "kind": "boiler-step",
+      "label": "Модель котла S-3500 · STEP",
+      "href": "docs/S-3500.stp",
+      "mime": "model/step",
+      "bytes": 5095717,
+      "SHA256": "23127fdf61f37ed860d3477d317e45f5339710df4e521b6f74964cc67852a2c8",
+      "sourcePath": "src/assets/ratings/3500/S-3500.stp"
+    },
+    {
+      "power": 3500,
+      "kind": "economizer-pdf",
+      "label": "Габаритный чертёж экономайзера EQS2-3500 · PDF",
+      "href": "docs/EQS2-3500.pdf",
+      "mime": "application/pdf",
+      "bytes": 70594,
+      "SHA256": "4fe2793b802550030923886b3696b5fbdc3d1f200dbbd98ad1d22aa07295ac75",
+      "sourcePath": "src/assets/ratings/3500/EQS2-3500.pdf"
+    },
+    {
+      "power": 4000,
+      "kind": "boiler-step",
+      "label": "Модель котла S-4000 · STEP",
+      "href": "docs/S-4000.stp",
+      "mime": "model/step",
+      "bytes": 5235758,
+      "SHA256": "bf5f6fb41e07b4c26c24b00520038cf898e6e1498d9df9143875f41c03aa3ad8",
+      "sourcePath": "src/assets/ratings/4000/S-4000.stp"
+    },
+    {
+      "power": 4000,
+      "kind": "economizer-pdf",
+      "label": "Габаритный чертёж экономайзера EQS2-4000 · PDF",
+      "href": "docs/EQS2-4000.pdf",
+      "mime": "application/pdf",
+      "bytes": 71757,
+      "SHA256": "72a149cf06b87abc76769323fcaaa3366feede6cd7a24d51f3b8e47258115579",
+      "sourcePath": "src/assets/ratings/4000/EQS2-4000.pdf"
+    },
+    {
+      "power": 5000,
+      "kind": "boiler-step",
+      "label": "Модель котла S-5000 · STEP",
+      "href": "docs/S-5000.stp",
+      "mime": "model/step",
+      "bytes": 5230848,
+      "SHA256": "6595afa20fb05c2c65ec7dd721cb8f677f534e2ba2635652920d335e1e7389ce",
+      "sourcePath": "src/assets/ratings/5000/S-5000.stp"
+    },
+    {
+      "power": 5000,
+      "kind": "economizer-pdf",
+      "label": "Габаритный чертёж экономайзера EQS2-5000 · PDF",
+      "href": "docs/EQS2-5000.pdf",
+      "mime": "application/pdf",
+      "bytes": 69673,
+      "SHA256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b",
+      "sourcePath": "src/assets/ratings/5000/EQS2-5000.pdf"
+    }
+  ],
+  "brand": [
+    {
+      "kind": "logo",
+      "href": "brand/premium-logo.png",
+      "mime": "image/png",
+      "bytes": 48635,
+      "SHA256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665",
+      "sourcePath": "src/assets/s3000/premium-logo.png"
+    }
+  ],
+  "favicon": null,
+  "faviconStatus": "No favicon or icon link found in the pinned source."
+}

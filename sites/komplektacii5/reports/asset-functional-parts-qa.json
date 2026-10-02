@@ -1,0 +1,2117 @@
+{
+  "status": "CANONICAL_FUNCTIONAL_GEOMETRY_COUNTED",
+  "maxTriangles": 483841,
+  "maxSingleTriangles": 146480,
+  "hardware": [
+    {
+      "power": 500,
+      "count": 1,
+      "triangles": 18558,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 18558,
+      "ids": [
+        "da3_K_0.760313",
+        "da3_K_1.960313",
+        "da3_level_column",
+        "da3_level_glass",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 500,
+      "count": 2,
+      "triangles": 27740,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 19342,
+      "ids": [
+        "da3_K_0.760313",
+        "da3_K_1.960313",
+        "da3_level_column",
+        "da3_level_glass",
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 500,
+      "count": 3,
+      "triangles": 28560,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20126,
+      "ids": [
+        "da3_K_0.760313",
+        "da3_K_1.960313",
+        "da3_level_column",
+        "da3_level_glass",
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 500,
+      "count": 4,
+      "triangles": 29380,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 20910,
+      "ids": [
+        "da3_K_0.760313",
+        "da3_K_1.960313",
+        "da3_level_column",
+        "da3_level_glass",
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 500,
+      "count": 5,
+      "triangles": 30200,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 21694,
+      "ids": [
+        "da3_K_0.760313",
+        "da3_K_1.960313",
+        "da3_level_column",
+        "da3_level_glass",
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1000,
+      "count": 1,
+      "triangles": 18558,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 18558,
+      "ids": [
+        "da3_K_0.760313",
+        "da3_K_1.960313",
+        "da3_level_column",
+        "da3_level_glass",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1000,
+      "count": 2,
+      "triangles": 27740,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 19342,
+      "ids": [
+        "da3_K_0.760313",
+        "da3_K_1.960313",
+        "da3_level_column",
+        "da3_level_glass",
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1000,
+      "count": 3,
+      "triangles": 29428,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20994,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1000,
+      "count": 4,
+      "triangles": 30248,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21778,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1000,
+      "count": 5,
+      "triangles": 31068,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22562,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1500,
+      "count": 1,
+      "triangles": 19426,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 19426,
+      "ids": [
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1500,
+      "count": 2,
+      "triangles": 28608,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 20210,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1500,
+      "count": 3,
+      "triangles": 29428,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20994,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1500,
+      "count": 4,
+      "triangles": 30216,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21746,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 1500,
+      "count": 5,
+      "triangles": 31068,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22562,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2000,
+      "count": 1,
+      "triangles": 19426,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 19426,
+      "ids": [
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2000,
+      "count": 2,
+      "triangles": 28608,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 20210,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2000,
+      "count": 3,
+      "triangles": 29396,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20962,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2000,
+      "count": 4,
+      "triangles": 30248,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21778,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2000,
+      "count": 5,
+      "triangles": 31068,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22562,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2500,
+      "count": 1,
+      "triangles": 19426,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 19426,
+      "ids": [
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2500,
+      "count": 2,
+      "triangles": 28608,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 20210,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2500,
+      "count": 3,
+      "triangles": 29428,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20994,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2500,
+      "count": 4,
+      "triangles": 30248,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21778,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 2500,
+      "count": 5,
+      "triangles": 30796,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22290,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3000,
+      "count": 1,
+      "triangles": 19394,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 19394,
+      "ids": [
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3000,
+      "count": 2,
+      "triangles": 28576,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 20178,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3000,
+      "count": 3,
+      "triangles": 29428,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20994,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3000,
+      "count": 4,
+      "triangles": 29976,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21506,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3000,
+      "count": 5,
+      "triangles": 30796,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22290,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3500,
+      "count": 1,
+      "triangles": 19394,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 19394,
+      "ids": [
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3500,
+      "count": 2,
+      "triangles": 28608,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 20210,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3500,
+      "count": 3,
+      "triangles": 29156,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20722,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3500,
+      "count": 4,
+      "triangles": 29976,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21506,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 3500,
+      "count": 5,
+      "triangles": 30796,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22290,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 1,
+      "triangles": 19426,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 19426,
+      "ids": [
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 2,
+      "triangles": 28608,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 20210,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 3,
+      "triangles": 29156,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20722,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 4,
+      "triangles": 29976,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21506,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 5,
+      "triangles": 30796,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22290,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 5000,
+      "count": 1,
+      "triangles": 19426,
+      "cascadeTriangles": 0,
+      "deaeratorTriangles": 19426,
+      "ids": [
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 5000,
+      "count": 2,
+      "triangles": 28608,
+      "cascadeTriangles": 8398,
+      "deaeratorTriangles": 20210,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 5000,
+      "count": 3,
+      "triangles": 29156,
+      "cascadeTriangles": 8434,
+      "deaeratorTriangles": 20722,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 5000,
+      "count": 4,
+      "triangles": 29976,
+      "cascadeTriangles": 8470,
+      "deaeratorTriangles": 21506,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    },
+    {
+      "power": 5000,
+      "count": 5,
+      "triangles": 30796,
+      "cascadeTriangles": 8506,
+      "deaeratorTriangles": 22290,
+      "ids": [
+        "cascade_supports",
+        "cascade_pressure_sensor",
+        "cascade_distribution_fittings",
+        "cascade_distribution_trap",
+        "da_fittings"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "power": 500,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1679428,
+      "triangles": 116564,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 1824,
+      "hardwareTriangles": 18558,
+      "combinedTriangles": 136946
+    },
+    {
+      "power": 500,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1760380,
+      "triangles": 184530,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 4992,
+      "hardwareTriangles": 27740,
+      "combinedTriangles": 217262
+    },
+    {
+      "power": 500,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1760380,
+      "triangles": 250566,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5592,
+      "hardwareTriangles": 28560,
+      "combinedTriangles": 284718
+    },
+    {
+      "power": 500,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1760380,
+      "triangles": 316602,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6192,
+      "hardwareTriangles": 29380,
+      "combinedTriangles": 352174
+    },
+    {
+      "power": 500,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1760380,
+      "triangles": 382638,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6792,
+      "hardwareTriangles": 30200,
+      "combinedTriangles": 419630
+    },
+    {
+      "power": 500,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1840052,
+      "triangles": 125780,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 1824,
+      "hardwareTriangles": 18558,
+      "combinedTriangles": 146162
+    },
+    {
+      "power": 500,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1921004,
+      "triangles": 202962,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 4992,
+      "hardwareTriangles": 27740,
+      "combinedTriangles": 235694
+    },
+    {
+      "power": 500,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1921004,
+      "triangles": 278214,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5592,
+      "hardwareTriangles": 28560,
+      "combinedTriangles": 312366
+    },
+    {
+      "power": 500,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1921004,
+      "triangles": 353466,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6192,
+      "hardwareTriangles": 29380,
+      "combinedTriangles": 389038
+    },
+    {
+      "power": 500,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1921004,
+      "triangles": 428718,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6792,
+      "hardwareTriangles": 30200,
+      "combinedTriangles": 465710
+    },
+    {
+      "power": 500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1857832,
+      "triangles": 126098,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 1824,
+      "hardwareTriangles": 18558,
+      "combinedTriangles": 146480
+    },
+    {
+      "power": 500,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1938784,
+      "triangles": 203598,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 4992,
+      "hardwareTriangles": 27740,
+      "combinedTriangles": 236330
+    },
+    {
+      "power": 500,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1938784,
+      "triangles": 279168,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5592,
+      "hardwareTriangles": 28560,
+      "combinedTriangles": 313320
+    },
+    {
+      "power": 500,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1938784,
+      "triangles": 354738,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6192,
+      "hardwareTriangles": 29380,
+      "combinedTriangles": 390310
+    },
+    {
+      "power": 500,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1938784,
+      "triangles": 430308,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6792,
+      "hardwareTriangles": 30200,
+      "combinedTriangles": 467300
+    },
+    {
+      "power": 1000,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1679820,
+      "triangles": 115356,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 1824,
+      "hardwareTriangles": 18558,
+      "combinedTriangles": 135738
+    },
+    {
+      "power": 1000,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1760772,
+      "triangles": 182114,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 4992,
+      "hardwareTriangles": 27740,
+      "combinedTriangles": 214846
+    },
+    {
+      "power": 1000,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1599644,
+      "triangles": 231796,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5664,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 266888
+    },
+    {
+      "power": 1000,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1599644,
+      "triangles": 296624,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6264,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 333136
+    },
+    {
+      "power": 1000,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1599644,
+      "triangles": 361452,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6864,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 399384
+    },
+    {
+      "power": 1000,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1840468,
+      "triangles": 124572,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 1824,
+      "hardwareTriangles": 18558,
+      "combinedTriangles": 144954
+    },
+    {
+      "power": 1000,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1921420,
+      "triangles": 200546,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 4992,
+      "hardwareTriangles": 27740,
+      "combinedTriangles": 233278
+    },
+    {
+      "power": 1000,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1760292,
+      "triangles": 259444,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5664,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 294536
+    },
+    {
+      "power": 1000,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1760292,
+      "triangles": 333488,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6264,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 370000
+    },
+    {
+      "power": 1000,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1760292,
+      "triangles": 407532,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6864,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 445464
+    },
+    {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1858268,
+      "triangles": 124890,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 1824,
+      "hardwareTriangles": 18558,
+      "combinedTriangles": 145272
+    },
+    {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1939220,
+      "triangles": 201182,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 4992,
+      "hardwareTriangles": 27740,
+      "combinedTriangles": 233914
+    },
+    {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1778092,
+      "triangles": 260398,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5664,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 295490
+    },
+    {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1778092,
+      "triangles": 334760,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6264,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 371272
+    },
+    {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1778092,
+      "triangles": 409122,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6864,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 447054
+    },
+    {
+      "power": 1500,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1541028,
+      "triangles": 101184,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 122866
+    },
+    {
+      "power": 1500,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1621980,
+      "triangles": 168916,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 203308
+    },
+    {
+      "power": 1500,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1621980,
+      "triangles": 234718,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6744,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 270890
+    },
+    {
+      "power": 1500,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1609592,
+      "triangles": 298088,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7704,
+      "hardwareTriangles": 30216,
+      "combinedTriangles": 336008
+    },
+    {
+      "power": 1500,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1662920,
+      "triangles": 371396,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8688,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 411152
+    },
+    {
+      "power": 1500,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1701688,
+      "triangles": 110405,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 132087
+    },
+    {
+      "power": 1500,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1782640,
+      "triangles": 187358,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 221750
+    },
+    {
+      "power": 1500,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1782640,
+      "triangles": 262381,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6744,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 298553
+    },
+    {
+      "power": 1500,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1770252,
+      "triangles": 334972,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7704,
+      "hardwareTriangles": 30216,
+      "combinedTriangles": 372892
+    },
+    {
+      "power": 1500,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1823580,
+      "triangles": 417501,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8688,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 457257
+    },
+    {
+      "power": 1500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1719492,
+      "triangles": 110723,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 132405
+    },
+    {
+      "power": 1500,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1800444,
+      "triangles": 187994,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 222386
+    },
+    {
+      "power": 1500,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1800444,
+      "triangles": 263335,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6744,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 299507
+    },
+    {
+      "power": 1500,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1788056,
+      "triangles": 336244,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7704,
+      "hardwareTriangles": 30216,
+      "combinedTriangles": 374164
+    },
+    {
+      "power": 1500,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1841384,
+      "triangles": 419091,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8688,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 458847
+    },
+    {
+      "power": 2000,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1530032,
+      "triangles": 100740,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 122422
+    },
+    {
+      "power": 2000,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1610984,
+      "triangles": 168028,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 202420
+    },
+    {
+      "power": 2000,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1598596,
+      "triangles": 230954,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6744,
+      "hardwareTriangles": 29396,
+      "combinedTriangles": 267094
+    },
+    {
+      "power": 2000,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1651924,
+      "triangles": 303818,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7728,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 341794
+    },
+    {
+      "power": 2000,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1651924,
+      "triangles": 369176,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8688,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 408932
+    },
+    {
+      "power": 2000,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1690836,
+      "triangles": 109961,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 131643
+    },
+    {
+      "power": 2000,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1771788,
+      "triangles": 186470,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 220862
+    },
+    {
+      "power": 2000,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1759400,
+      "triangles": 258617,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6744,
+      "hardwareTriangles": 29396,
+      "combinedTriangles": 294757
+    },
+    {
+      "power": 2000,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1812728,
+      "triangles": 340702,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7728,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 378678
+    },
+    {
+      "power": 2000,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1812728,
+      "triangles": 415281,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8688,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 455037
+    },
+    {
+      "power": 2000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1708624,
+      "triangles": 110279,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 131961
+    },
+    {
+      "power": 2000,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1789576,
+      "triangles": 187106,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 221498
+    },
+    {
+      "power": 2000,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1777188,
+      "triangles": 259571,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6744,
+      "hardwareTriangles": 29396,
+      "combinedTriangles": 295711
+    },
+    {
+      "power": 2000,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1830516,
+      "triangles": 341974,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7728,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 379950
+    },
+    {
+      "power": 2000,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1830516,
+      "triangles": 416871,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8688,
+      "hardwareTriangles": 31068,
+      "combinedTriangles": 456627
+    },
+    {
+      "power": 2500,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1530304,
+      "triangles": 100712,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 122394
+    },
+    {
+      "power": 2500,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1611256,
+      "triangles": 167972,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 202364
+    },
+    {
+      "power": 2500,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1652196,
+      "triangles": 238376,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6768,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 274572
+    },
+    {
+      "power": 2500,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1652196,
+      "triangles": 303706,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7728,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 341682
+    },
+    {
+      "power": 2500,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1656776,
+      "triangles": 367430,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 406866
+    },
+    {
+      "power": 2500,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1691100,
+      "triangles": 109933,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 131615
+    },
+    {
+      "power": 2500,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1772052,
+      "triangles": 186414,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 220806
+    },
+    {
+      "power": 2500,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1812992,
+      "triangles": 266039,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6768,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 302235
+    },
+    {
+      "power": 2500,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1812992,
+      "triangles": 340590,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7728,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 378566
+    },
+    {
+      "power": 2500,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1817572,
+      "triangles": 413535,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 452971
+    },
+    {
+      "power": 2500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1708904,
+      "triangles": 110251,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 131933
+    },
+    {
+      "power": 2500,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1789856,
+      "triangles": 187050,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 221442
+    },
+    {
+      "power": 2500,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1830796,
+      "triangles": 266993,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6768,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 303189
+    },
+    {
+      "power": 2500,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1830796,
+      "triangles": 341862,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7728,
+      "hardwareTriangles": 30248,
+      "combinedTriangles": 379838
+    },
+    {
+      "power": 2500,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1835376,
+      "triangles": 415125,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 454561
+    },
+    {
+      "power": 3000,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1529924,
+      "triangles": 99255,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19394,
+      "combinedTriangles": 120905
+    },
+    {
+      "power": 3000,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1610876,
+      "triangles": 167490,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28576,
+      "combinedTriangles": 201850
+    },
+    {
+      "power": 3000,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1664204,
+      "triangles": 241301,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6768,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 277497
+    },
+    {
+      "power": 3000,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1668784,
+      "triangles": 306000,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 343656
+    },
+    {
+      "power": 3000,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1668784,
+      "triangles": 372305,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 411741
+    },
+    {
+      "power": 3000,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1690588,
+      "triangles": 108476,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19394,
+      "combinedTriangles": 130126
+    },
+    {
+      "power": 3000,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1771540,
+      "triangles": 185932,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28576,
+      "combinedTriangles": 220292
+    },
+    {
+      "power": 3000,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1824868,
+      "triangles": 268964,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6768,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 305160
+    },
+    {
+      "power": 3000,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1829448,
+      "triangles": 342884,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 380540
+    },
+    {
+      "power": 3000,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1829448,
+      "triangles": 418410,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 457846
+    },
+    {
+      "power": 3000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1708384,
+      "triangles": 108794,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19394,
+      "combinedTriangles": 130444
+    },
+    {
+      "power": 3000,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1789336,
+      "triangles": 186568,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5784,
+      "hardwareTriangles": 28576,
+      "combinedTriangles": 220928
+    },
+    {
+      "power": 3000,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1842664,
+      "triangles": 269918,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6768,
+      "hardwareTriangles": 29428,
+      "combinedTriangles": 306114
+    },
+    {
+      "power": 3000,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1847244,
+      "triangles": 344156,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 381812
+    },
+    {
+      "power": 3000,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1847244,
+      "triangles": 420000,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 459436
+    },
+    {
+      "power": 3500,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1524292,
+      "triangles": 98523,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19394,
+      "combinedTriangles": 120173
+    },
+    {
+      "power": 3500,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1658572,
+      "triangles": 173532,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 207948
+    },
+    {
+      "power": 3500,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1663152,
+      "triangles": 237499,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 273375
+    },
+    {
+      "power": 3500,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1663152,
+      "triangles": 303072,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 340728
+    },
+    {
+      "power": 3500,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1663152,
+      "triangles": 368645,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 408081
+    },
+    {
+      "power": 3500,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1684952,
+      "triangles": 107744,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19394,
+      "combinedTriangles": 129394
+    },
+    {
+      "power": 3500,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1819232,
+      "triangles": 191974,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 226390
+    },
+    {
+      "power": 3500,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1823812,
+      "triangles": 265162,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 301038
+    },
+    {
+      "power": 3500,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1823812,
+      "triangles": 339956,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 377612
+    },
+    {
+      "power": 3500,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1823812,
+      "triangles": 414750,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 454186
+    },
+    {
+      "power": 3500,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1702748,
+      "triangles": 108062,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2256,
+      "hardwareTriangles": 19394,
+      "combinedTriangles": 129712
+    },
+    {
+      "power": 3500,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1837028,
+      "triangles": 192610,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 227026
+    },
+    {
+      "power": 3500,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1841608,
+      "triangles": 266116,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 301992
+    },
+    {
+      "power": 3500,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1841608,
+      "triangles": 341228,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 378884
+    },
+    {
+      "power": 3500,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1841608,
+      "triangles": 416340,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 455776
+    },
+    {
+      "power": 4000,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1624348,
+      "triangles": 111642,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2280,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 133348
+    },
+    {
+      "power": 4000,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1705300,
+      "triangles": 184758,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 219174
+    },
+    {
+      "power": 4000,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1709880,
+      "triangles": 254338,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 290214
+    },
+    {
+      "power": 4000,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1709880,
+      "triangles": 325524,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 363180
+    },
+    {
+      "power": 4000,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1709880,
+      "triangles": 396710,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 436146
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1785176,
+      "triangles": 120863,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2280,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 142569
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1866128,
+      "triangles": 203200,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 237616
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1870708,
+      "triangles": 282001,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 317877
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1870708,
+      "triangles": 362408,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 400064
+    },
+    {
+      "power": 4000,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1870708,
+      "triangles": 442815,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 482251
+    },
+    {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1802844,
+      "triangles": 121181,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2280,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 142887
+    },
+    {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1883796,
+      "triangles": 203836,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 238252
+    },
+    {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1888376,
+      "triangles": 282955,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 318831
+    },
+    {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1888376,
+      "triangles": 363680,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 401336
+    },
+    {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1888376,
+      "triangles": 444405,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 483841
+    },
+    {
+      "power": 5000,
+      "trim": "standard",
+      "count": 1,
+      "bytes": 1572268,
+      "triangles": 105697,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2280,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 127403
+    },
+    {
+      "power": 5000,
+      "trim": "standard",
+      "count": 2,
+      "bytes": 1653220,
+      "triangles": 172868,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 207284
+    },
+    {
+      "power": 5000,
+      "trim": "standard",
+      "count": 3,
+      "bytes": 1657800,
+      "triangles": 236503,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 272379
+    },
+    {
+      "power": 5000,
+      "trim": "standard",
+      "count": 4,
+      "bytes": 1657800,
+      "triangles": 301744,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 339400
+    },
+    {
+      "power": 5000,
+      "trim": "standard",
+      "count": 5,
+      "bytes": 1657800,
+      "triangles": 366985,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 406421
+    },
+    {
+      "power": 5000,
+      "trim": "comfort",
+      "count": 1,
+      "bytes": 1732936,
+      "triangles": 114918,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2280,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 136624
+    },
+    {
+      "power": 5000,
+      "trim": "comfort",
+      "count": 2,
+      "bytes": 1813888,
+      "triangles": 191310,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 225726
+    },
+    {
+      "power": 5000,
+      "trim": "comfort",
+      "count": 3,
+      "bytes": 1818468,
+      "triangles": 264166,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 300042
+    },
+    {
+      "power": 5000,
+      "trim": "comfort",
+      "count": 4,
+      "bytes": 1818468,
+      "triangles": 338628,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 376284
+    },
+    {
+      "power": 5000,
+      "trim": "comfort",
+      "count": 5,
+      "bytes": 1818468,
+      "triangles": 413090,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 452526
+    },
+    {
+      "power": 5000,
+      "trim": "comfort_plus",
+      "count": 1,
+      "bytes": 1750744,
+      "triangles": 115236,
+      "routeTriangleAllowance": 12000,
+      "routeTriangles": 2280,
+      "hardwareTriangles": 19426,
+      "combinedTriangles": 136942
+    },
+    {
+      "power": 5000,
+      "trim": "comfort_plus",
+      "count": 2,
+      "bytes": 1831696,
+      "triangles": 191946,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 5808,
+      "hardwareTriangles": 28608,
+      "combinedTriangles": 226362
+    },
+    {
+      "power": 5000,
+      "trim": "comfort_plus",
+      "count": 3,
+      "bytes": 1836276,
+      "triangles": 265120,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 6720,
+      "hardwareTriangles": 29156,
+      "combinedTriangles": 300996
+    },
+    {
+      "power": 5000,
+      "trim": "comfort_plus",
+      "count": 4,
+      "bytes": 1836276,
+      "triangles": 339900,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 7680,
+      "hardwareTriangles": 29976,
+      "combinedTriangles": 377556
+    },
+    {
+      "power": 5000,
+      "trim": "comfort_plus",
+      "count": 5,
+      "bytes": 1836276,
+      "triangles": 414680,
+      "routeTriangleAllowance": 20000,
+      "routeTriangles": 8640,
+      "hardwareTriangles": 30796,
+      "combinedTriangles": 454116
+    }
+  ],
+  "limitation": "Counts geometry including canonical low tessellation fittings and strainer. Browser rendering/FPS/visual acceptance not measured. GLB count inherited from source manifest; shadows and outline render passes excluded."
+}

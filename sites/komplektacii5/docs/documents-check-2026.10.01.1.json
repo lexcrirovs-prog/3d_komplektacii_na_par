@@ -1,0 +1,10 @@
+{
+  "status": "PASSED",
+  "mode": "CHECK_ONLY",
+  "sourceCommit": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "manifest": "public/data/docs-manifest.json",
+  "documents": 16,
+  "logos": 1,
+  "bytes": 45878079,
+  "hosting": "NOT_ACCESSED"
+}

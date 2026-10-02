@@ -1,10 +1,11 @@
 import {Box3, Color, Mesh, MeshStandardMaterial, type Object3D} from 'three'
 
-// 01.10.2026 · Codex / GPT-6. Photo P1270830: steel stems, red caps,
-// matte light housings. Apply only to cloned boiler sensor materials.
+// 02.10.2026 · Codex / GPT-6. Steel stems and red caps; the LCS electronic
+// head has a dark blue housing to remain distinct against grey equipment.
 const sensorIds=['lp200','lp400','lcs600','low_level_1','low_level_2','high_level',
   'pressure_switch_1','pressure_switch_2','pressure_switch_3','pressure_transmitter','da_pressure_transmitter']
 const steel=new Color('#81929f'),white=new Color('#aebbc5'),red=new Color('#b90825')
+const electronicHead=new Color('#263d56')
 
 function stemAndHead(material:MeshStandardMaterial,boundary:number,capacitive:boolean) {
   // The CAD importer coloured long triangles by their centre height. That left
@@ -13,7 +14,7 @@ function stemAndHead(material:MeshStandardMaterial,boundary:number,capacitive:bo
   material.onBeforeCompile=shader=>{
     shader.uniforms.sensorBoundary={value:boundary}
     shader.uniforms.sensorSteel={value:steel}
-    shader.uniforms.sensorHead={value:capacitive?white:red}
+    shader.uniforms.sensorHead={value:capacitive?electronicHead:red}
     shader.uniforms.sensorHeadMetalness={value:capacitive?.02:.1}
     shader.uniforms.sensorHeadRoughness={value:capacitive?.7:.43}
     shader.vertexShader='varying float vSensorHeight;\n'+shader.vertexShader
@@ -35,7 +36,8 @@ diffuseColor.rgb=mix(sensorSteel,sensorHead,sensorHeadMask);`)
     shader.fragmentShader=shader.fragmentShader.replace('#include <metalnessmap_fragment>',
       '#include <metalnessmap_fragment>\nmetalnessFactor=mix(0.85,sensorHeadMetalness,sensorHeadMask);')
   }
-  material.customProgramCacheKey=()=>'boiler-sensor-finish-20261001'
+  material.customProgramCacheKey=()=>'boiler-sensor-finish-20261002'
+  material.userData.sensorHead=capacitive?'#263d56':'#b90825'
 }
 
 export function applySensorMaterials(unit:Object3D) {

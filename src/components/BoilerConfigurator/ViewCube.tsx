@@ -67,9 +67,6 @@ export function ViewCube({cubeRef, onView}: {cubeRef: RefObject<SVGGElement>; on
         </g>)}
       </g>
     </svg>
-    <button className="s3-home" title="Показать всю сборку — Home" onClick={() => onView('home')}>
-      <span aria-hidden="true">⌂</span> Общий вид
-    </button>
     <details className="s3-view-menu"><summary>Выбрать вид</summary><div>
       {[...faces,...edges.map(id=>[id,viewLabel(id)] as const),...corners.map(id=>[id,viewLabel(id)] as const)].map(([id, label]) => <button key={id} onClick={e => {
         onView(id); e.currentTarget.closest('details')?.removeAttribute('open')

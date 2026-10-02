@@ -49,7 +49,7 @@ try {
    assert.equal(unit.lcs600.visible,trim!=='standard');
    assert.equal(unit.low_level_1.visible,trim==='comfort_plus');
    for(const id of ['lp200','lp400','lcs600'])for(const m of unit[id].materials){
-    assert.equal(m.program,'boiler-sensor-finish-20261001');assert.equal(m.color,'81929f');assert.equal(m.envMapIntensity,.6);
+    assert.equal(m.program,'boiler-sensor-finish-20261002');assert.equal(m.color,'81929f');assert.equal(m.envMapIntensity,.6);
    }
    for(const id of ['pressure_switch_1','pressure_switch_2','pressure_switch_3']){
     const m=unit[id].materials.find(m=>m.name.includes('Instrument white'));assert.equal(m.color,'aebbc5');assert.equal(m.metalness,.02);

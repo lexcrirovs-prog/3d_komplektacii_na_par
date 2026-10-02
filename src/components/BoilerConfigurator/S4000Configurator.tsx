@@ -24,7 +24,11 @@ import {deaeratorAssets} from './deaeratorAssets'
 import {deaeratorLabels,selectDeaerator} from './deaeratorSelection'
 import {nativeDeaerator} from './deaeratorPorts'
 import {applySensorMaterials} from './sensorMaterials'
+import {applyPresentationDetails} from './presentationDetails'
+import {partInformation} from './partInformation'
+import {QuoteRequest} from './QuoteRequest'
 import './S3000Configurator.css'
+import './customerExperience.css'
 
 type Point = [number, number, number]
 const options = [
@@ -118,6 +122,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     da.name='deaerator';da.userData.deaeratorKind=daKind;unit.add(da)
     copy.userData.deaeratorKind=daKind;copy.userData.totalCapacity=power*count
     applyFeedCorrection(unit,power,count,strainer.scene,condensateValve.scene)
+    applyPresentationDetails(unit,power)
     copy.updateMatrixWorld(true)
     for (const motion of openingData.groups) {
       const hinge = new Group()
@@ -236,7 +241,12 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
       // A camera drag must not become a door click when the pointer is released.
       if(e.delta>5||dragging.current)return
       const door=pickedDoor(e.object)
-      if(door){e.stopPropagation();onDoor(door);return}
+      if(door){
+        e.stopPropagation();onDoor(door)
+        const id=rootPart(e.object,byId)
+        if(id)select(id)
+        return
+      }
       const id = rootPart(e.object,byId); if (id) { e.stopPropagation(); select(id) }
     }}
     onPointerOver={(e: any) => { if (rootPart(e.object,byId)) { e.stopPropagation(); document.body.style.cursor = 'pointer' } }}
@@ -291,6 +301,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const [inputRecovery, setInputRecovery] = useState(0)
   const dragging = useRef(false)
   const active = selected ? byId.get(selected) : undefined
+  const information=active?partInformation(active,config):undefined
   const bomParts=catalog[config.trim]['S-'+config.power].filter(r=>(r.pressure===null||r.pressure===config.pressure)&&(!r.option||enabled.has(r.option))).map(r=>{
     const cabinetRow=config.trim!=='standard'&&['level_controllers','bc970','pr200','lc220','lc440'].includes(r.id)
     const nodes=cabinetRow?['plus_cabinet']:(partMapping[r.id]||[r.id]).filter(id=>byId.has(id)&&isPartVisible(byId.get(id)!,enabled,true,optionalIds))
@@ -335,7 +346,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     }
     const home = (event: KeyboardEvent) => {
       if (event.key !== 'Home' || (event.target instanceof HTMLElement &&
-        (event.target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName)))) return
+        (event.target.isContentEditable || event.target.closest('dialog[open]') || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName)))) return
       event.preventDefault(); standardView('home')
     }
     window.addEventListener('blur', recover)
@@ -430,10 +441,11 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     else if(asset.opening.groups.some(g=>g.id==='boiler'))setBoilerDoors(current=>toggleDoor(current,unit))
   }
 
-  return <div className="s3-app">
+  return <div className="s3-app s4-family">
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
-      {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*count} КГ ПАРА В ЧАС</span><h1>{cascade?`Каскад ${count} × S-${config.power}.`:`S-${config.power} в сборе.`}</h1><p>{cascade?'Свой шкаф у каждого котла. Общий шкаф каскада и паровой коллектор.':`Корпус и патрубки — по заводской модели ${asset.model}.`}<br className="s3-desktop" /> Нажмите на оборудование, чтобы рассмотреть его.</p></div>}
+      <QuoteRequest config={config}/>
+      {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*count} КГ ПАРА В ЧАС</span><h1>{cascade?`Каскад ${count} × S-${config.power}.`:`S-${config.power} в сборе.`}</h1><p>{cascade?'Несколько котлов для совместной работы. Индивидуальные шкафы и общее управление каскадом.':'Котёл, автоматика и обвязка в одной сборке. Выберите оборудование под свою задачу.'}<br className="s3-desktop" /> Нажмите на объект, чтобы узнать его преимущества.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .03, far: 250 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#f2f3ef')}
         onPointerMissed={() => setSelected(null)}>
@@ -464,23 +476,30 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       </div>
       <ViewCube cubeRef={cubeRef} onView={standardView} />
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
-        <button onClick={() => { setSelected(null); cabinetView() }}>Шкаф</button>
-        {cascade&&<button onClick={()=>{setSelected(null);cascadeView()}}>Шкаф каскада</button>}
+        <button className="s3-home" title="Показать всю сборку — Home" onClick={()=>standardView('home')}>⌂ Общий вид</button>
+        <button onClick={() => focus(config.trim==='standard'?'control_cabinet':'plus_cabinet')}>Шкаф</button>
+        {cascade&&<button onClick={()=>focus('cascade_cabinet')}>Шкаф каскада</button>}
         {cascade&&<button onClick={()=>focus('cascade_distribution')}>Гребёнка</button>}
-        {cascade&&Array.from({length:count},(_,i)=><button key={i} onClick={()=>{const x=i*unitSpacing;setSelected(null);requestView([x+2.8,2.7,6.1],[x-.2,1.12,1.4])}}>Котёл {i+1}</button>)}
+        {cascade&&Array.from({length:count},(_,i)=><button key={i} onClick={()=>focus(i?`unit${i+1}:boiler`:'boiler')}>Котёл {i+1}</button>)}
         <button onClick={() => focus('pressure_header')}>Приборы</button>
-        <button onClick={() => { setSelected(null); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
+        <button onClick={() => { setSelected('pump_1'); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
         <button onClick={() => focus('cables')}>Кабели</button>
         <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
         <button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>
         <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
       </nav>
-      {active && <section className="s3-part-card" aria-live="polite">
+      {active && information && <section key={active.id+config.trim} className="s3-part-card" aria-live="polite" aria-label="Сведения об оборудовании" data-part={active.id}>
         <button className="s3-close" aria-label="Закрыть сведения о детали" onClick={() => setSelected(null)}>×</button>
         <div className="s3-part-type">ОБОРУДОВАНИЕ КОТЕЛЬНОЙ</div>
-        <h2>{active.label}</h2>
+        <h2>{active.id.replace(/^unit\d+:/,'')==='burner'?'Горелка котла':active.label}</h2>
         {selectionBom && <p className="s3-part-count">В комплектации: <b>{selectionBom.quantity} {selectionBom.quantity === 1 ? 'шт. / комплект' : 'шт.'}</b></p>}
-        {active.note && <p className="s3-part-note">{active.note}</p>}
+        <p className="s4-part-summary">{information.summary}</p>
+        <ul className="s4-benefits">{information.benefits.map(benefit=><li key={benefit}>{benefit}</li>)}</ul>
+        {(information.specs.length>0||information.details.length>0)&&<details className="s4-part-details"><summary>Характеристики и подробности</summary>
+          {information.specs.length>0&&<ul>{information.specs.map(spec=><li key={spec}>{spec}</li>)}</ul>}
+          {information.details.map(detail=><p key={detail}>{detail}</p>)}
+        </details>}
+        {information.availability&&<p className="s4-availability">{information.availability}</p>}
         <button className="s3-focus" onClick={() => focus(active.id)}>Приблизить деталь ↗</button>
       </section>}
       <div className="s3-caption">Визуальная сборка <span>•</span> {webVersion.date.split('-').reverse().join('.')} <span>•</span> v{webVersion.version}</div>

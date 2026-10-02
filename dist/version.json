@@ -1,5 +1,5 @@
 {
-  "version": "2026.10.02.1",
+  "version": "2026.10.02.2",
   "date": "2026-10-02",
   "executor": "Codex / GPT-6",
   "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
@@ -30,6 +30,6 @@
     "ДА-25/15",
     "ДА-25/25"
   ],
-  "source_commit": "3a57798b65ce242f5e658c2bae4722f55af07bcf",
+  "source_commit": "a620174337ad4a135e96e4eb53c02ce1c56ffc00",
   "url": "https://prgz.ru/komplektacii4/"
 }

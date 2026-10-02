@@ -36,7 +36,7 @@ function quote_message($data) {
         'Мощность одного котла: '.$c['power']." кг/ч\nКоличество котлов: ".$c['cascade']."\nСуммарно: ".($c['power']*$c['cascade'])." кг/ч\nДавление: ".$c['pressure']." бар\nКомплектация: ".$trims[$c['trim']]."\nДополнения: ".($addons?implode(', ',$addons):'нет')."\n\n".
         'Имя: '.$data['name']."\nE-mail: ".$data['email']."\nТелефон: ".$data['phone']."\nКомпания: ".$data['company']."\nКомментарий: ".$data['comment']."\n\n".
         "Согласие на передачу контактов для подготовки предложения: получено\n".
-        'Конфигурация: https://prgz.ru/komplektacii4/?'.http_build_query($query,'','&')."\nВерсия: 2026.10.02.1\n";
+        'Конфигурация: https://prgz.ru/komplektacii4/?'.http_build_query($query,'','&')."\nВерсия: 2026.10.02.2\n";
     return array('to'=>'premium-gas@mail.ru','subject'=>'=?UTF-8?B?'.base64_encode('Запрос КП: '.$c['cascade'].' × PREMIUM S-'.$c['power']).'?=',
         'body'=>chunk_split(base64_encode($body),76,"\r\n"),
         'headers'=>"From: Premium Gas <noreply@prgz.ru>\r\nReply-To: ".$data['email']."\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64");

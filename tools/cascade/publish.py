@@ -1,14 +1,14 @@
-"""Scoped customer-experience release, 2026-10-02, Codex / GPT-6.
+"""Scoped technical-description release, 2026-10-02, Codex / GPT-6.
 Reuses the manifest, immutable staging, drift-check and rollback publisher.
 """
 import importlib.util,json,sys,tarfile,subprocess,concurrent.futures,gzip,urllib.request,urllib.error
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.02.1';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.10.02.2';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='debf4de169ac5a49ae3d156d92737f175209f74ab0fa0376960b59ddd52843f5'
+p.BASELINE_HASH='8a688942b9ee6a558ea3ca1fa6a7dea0e0a0468d22f71cb7d53680631779ab7c'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
     report=json.loads((p.REPO/'artifacts/customer-experience-stage/report.json').read_text(encoding='utf8'))
@@ -18,6 +18,7 @@ def validate(prepared):
     expected|={(500,'comfort',5),(4000,'comfort',2),(4000,'comfort',5),(4000,'standard',1),(4000,'comfort_plus',1)}
     assert {(s['power'],s['trim'],s['count']) for s in report['scenarios']}==expected
     assert all(s['shaderErrors']==0 for s in report['scenarios']) and report['descriptions'] and report['doorCard'] and report['movingPlaque']
+    assert report['technicalDetails']['collapsedByDefault'] and report['technicalDetails']['mobileReachable']
     assert report['quote']['transport']=='INTERCEPTED_NO_MAIL_SENT' and report['quote']['retry']
     assert report['mobile']['width']==390 and not report['mobile']['overflow']
     endpoint=json.loads((p.REPO/'artifacts/customer-experience/quote-endpoint.json').read_text('utf8'))

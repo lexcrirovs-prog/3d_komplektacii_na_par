@@ -38,6 +38,11 @@ try{
  await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(800);await shot('cabinet-card');
  const card=page.locator('.s3-part-card');await card.locator('summary').click();assert.equal(await card.locator('details[open]').count(),1);await shot('expanded-details');
  await page.getByRole('button',{name:'Шкаф каскада',exact:true}).click();assert.equal(await card.locator('details[open]').count(),0);await page.waitForTimeout(700);await shot('cascade-card');
+ // Longer source-grounded descriptions remain optional and do not bury availability.
+ assert.match(await card.locator('.s4-benefits').innerText(),/наработку/);
+ await card.locator('summary').click();assert.match(await card.locator('details').innerText(),/загрузку горелок/);await shot('cascade-technical-details');
+ await page.getByRole('button',{name:'Деаэратор',exact:true}).click();assert.equal(await card.locator('details[open]').count(),0);
+ await card.locator('summary').click();assert.match(await card.locator('details').innerText(),/расходуется часть пара/);await page.waitForTimeout(700);await shot('deaerator-technical-details');
  await page.getByRole('button',{name:/Получить коммерческое предложение/}).click();const dialog=page.getByRole('dialog');
  assert.match(await dialog.locator('.s4-quote-summary').innerText(),/3 × PREMIUM S-4000 · 12 т\/ч · 12 бар · Комфорт/);
  assert.match(await dialog.locator('.s4-quote-addons').innerText(),/ДА-25\/25/);assert.match(await dialog.locator('.s4-quote-recipient').innerText(),/premium-gas@mail.ru/);
@@ -68,10 +73,13 @@ try{
  await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:/Общий вид/}).click();await page.waitForTimeout(700);await shot('mobile-overview');
  await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(500);await shot('mobile-card');
  const mobile=await page.evaluate(()=>({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,cta:document.querySelector('.s4-quote-trigger').getBoundingClientRect().toJSON()}));assert(!mobile.overflow);assert(mobile.cta.x>=0&&mobile.cta.right<=390);
+ await page.getByRole('button',{name:'Деаэратор',exact:true}).click();assert.equal(await card.locator('details[open]').count(),0);await card.locator('summary').click();
+ await card.locator('.s4-availability').scrollIntoViewIfNeeded();await shot('mobile-technical-details');
+ const technicalDetails=await card.locator('.s4-availability').evaluate(o=>{const r=o.getBoundingClientRect(),card=o.closest('.s3-part-card').getBoundingClientRect();return {collapsedByDefault:true,mobileReachable:r.top>=card.top&&r.bottom<=card.bottom&&r.bottom<=innerHeight}});assert(technicalDetails.mobileReachable);
   await page.getByRole('button',{name:'Закрыть сведения о детали',exact:true}).click();assert.equal(await card.count(),0);
  await page.getByRole('button',{name:/Получить коммерческое предложение/}).click();await shot('mobile-quote');
  const box=await dialog.boundingBox();assert(box.x>=0&&box.x+box.width<=390);await page.keyboard.press('Escape');
  assert.deepEqual(errors,[]);
- await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_CUSTOMER_EXPERIENCE',base,manifestSha256,scenarios,errors,mobile,descriptions:true,doorCard:true,movingPlaque,quote:{transport:'INTERCEPTED_NO_MAIL_SENT',posts:posts.length,validation:true,retry:true,configuration:posts[0].config}},null,2));
+ await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_CUSTOMER_EXPERIENCE',base,manifestSha256,scenarios,errors,mobile,technicalDetails,descriptions:true,doorCard:true,movingPlaque,quote:{transport:'INTERCEPTED_NO_MAIL_SENT',posts:posts.length,validation:true,retry:true,configuration:posts[0].config}},null,2));
  console.log('PASSED_CUSTOMER_EXPERIENCE');
 }finally{await browser.close()}

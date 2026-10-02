@@ -1,0 +1,60 @@
+{
+  "version": "2026.10.02.1",
+  "date": "2026-10-02",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "3a57798b65ce242f5e658c2bae4722f55af07bcf",
+  "buildCommit": "eba0050d75134f88a03bcd7b7a156d68d1a3c9bc",
+  "manifestSha256": "f40fb9daf3648c55f0b2da0ad9bcbf7df25a92479fdad076a344b6b562f06c0a",
+  "glb": {
+    "count": 100,
+    "allUnchanged": true
+  },
+  "javascriptDelta": {
+    "bytes": 40754,
+    "gzip": 11027
+  },
+  "unitTests": {
+    "passed": 14,
+    "descriptionCombinations": 135,
+    "deaeratorCombinations": 45
+  },
+  "browser": {
+    "stageScenarios": 14,
+    "liveScenarios": 14,
+    "additionalCascadeCount": 3
+  },
+  "quote": {
+    "transportTests": "FAKE_TRANSPORT",
+    "browserPosts": "INTERCEPTED",
+    "liveRejectedRequests": [
+      405,
+      400,
+      403
+    ],
+    "realMailSent": false,
+    "mailboxDelivery": "NOT_TESTED"
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 9,
+    "reusedFiles": 119,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.02.1",
+    "transferBytes": 454370
+  },
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.02.1",
+    "neighborsUnchanged": true,
+    "files": 128
+  },
+  "prepared": {
+    "version": "2026.10.02.1",
+    "candidateSha256": "2a15777704bc69f90ef9968b70650166e0ea5ff492cb1086001124f61b735954",
+    "manifestSha256": "f40fb9daf3648c55f0b2da0ad9bcbf7df25a92479fdad076a344b6b562f06c0a",
+    "backupSha256": "919fe83f259b820b4effc8e5e085c7a5e27bec5a2ab838520d6183cca9f1e322",
+    "backupFiles": 127,
+    "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.10.02.1/"
+  }
+}

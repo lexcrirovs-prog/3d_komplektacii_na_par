@@ -1,0 +1,71 @@
+{
+  "version": "2026.10.02.2",
+  "date": "2026-10-02",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "a620174337ad4a135e96e4eb53c02ce1c56ffc00",
+  "buildCommit": "b6c134d2eaba27008d790a9f1c26302c2d68f5db",
+  "manifestSha256": "83737965991ba3972a8a58d57e3bc23ad3c7f5a6e7e1a353c1aea8fa8d65909e",
+  "glb": {
+    "count": 100,
+    "allUnchanged": true
+  },
+  "javascriptDelta": {
+    "bytes": 4843,
+    "gzip": 1171
+  },
+  "unitTests": {
+    "passed": 14,
+    "descriptionCombinations": 135,
+    "deaeratorCombinations": 45
+  },
+  "browser": {
+    "stageScenarios": 14,
+    "liveScenarios": 14,
+    "mobileWidth": 390,
+    "technicalDetails": {
+      "collapsedByDefault": true,
+      "mobileReachable": true
+    }
+  },
+  "archive": {
+    "mp3_count": 1208,
+    "transcript_count": 879,
+    "substantive": 691,
+    "placeholder": 188,
+    "substantive_duration_hours": 37.29,
+    "topic_candidates": 144,
+    "merged_copies": 879,
+    "duplicate_636_identical": true,
+    "id_to_mp3_map": "UNVERIFIED; no date inferred from record number",
+    "speaker_labels": "Speaker_00 conflates both participants; speaker inferred only from exchange context",
+    "method": "Keyword scan of all JSON transcripts, contextual review of matching passages. Audio not fully listened to; placeholder records excluded."
+  },
+  "quote": {
+    "realMailSent": false,
+    "mailboxDelivery": "NOT_TESTED",
+    "transportTests": "FAKE_TRANSPORT"
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 8,
+    "reusedFiles": 120,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.02.2",
+    "transferBytes": 447701
+  },
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.02.2",
+    "neighborsUnchanged": true,
+    "files": 128
+  },
+  "prepared": {
+    "version": "2026.10.02.2",
+    "candidateSha256": "1ce8d3b5b1e5607fa94898bbd01ef1a35f948d8dd06e1d2190f74f2ec88fec0c",
+    "manifestSha256": "83737965991ba3972a8a58d57e3bc23ad3c7f5a6e7e1a353c1aea8fa8d65909e",
+    "backupSha256": "c950556fd61cc57a0d70bb4009401ed642d0868a5e9b8b5f4cafb90a7e447c05",
+    "backupFiles": 128,
+    "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.10.02.2/"
+  }
+}

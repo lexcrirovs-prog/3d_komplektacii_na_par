@@ -1,0 +1,101 @@
+{
+  "version": "2026.10.05.2",
+  "date": "2026-10-05",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "19b3d4031e83b53043f8ead7e854103758d7e96d",
+  "buildCommit": "0e1a213631205e9cbb4f1c252f6ab9c44a3f8830",
+  "manifestSha256": "ebf48ad21f3275fb28badb39422b67823e85a96bd1c7ba43d1217db499a6984d",
+  "glb": {
+    "count": 100,
+    "allUnchanged": true
+  },
+  "browser": {
+    "stageScenarios": 14,
+    "liveScenarios": 14,
+    "mobileWidth": 390,
+    "navigation": [
+      {
+        "power": 4000,
+        "count": 1,
+        "labels": [
+          "Котёл",
+          "Деаэратор",
+          "Шкаф",
+          "Экономайзер",
+          "Горелка",
+          "Приборы",
+          "Питание",
+          "Кабели",
+          "⌂ Общий вид"
+        ]
+      },
+      {
+        "power": 4000,
+        "count": 2,
+        "labels": [
+          "Котёл 1",
+          "Котёл 2",
+          "Деаэратор",
+          "Шкаф",
+          "Шкаф каскада",
+          "Экономайзер",
+          "Горелка",
+          "Гребёнка",
+          "Приборы",
+          "Питание",
+          "Кабели",
+          "⌂ Общий вид"
+        ]
+      },
+      {
+        "power": 4000,
+        "count": 5,
+        "labels": [
+          "Котёл 1",
+          "Котёл 2",
+          "Котёл 3",
+          "Котёл 4",
+          "Котёл 5",
+          "Деаэратор",
+          "Шкаф",
+          "Шкаф каскада",
+          "Экономайзер",
+          "Горелка",
+          "Гребёнка",
+          "Приборы",
+          "Питание",
+          "Кабели",
+          "⌂ Общий вид"
+        ]
+      }
+    ]
+  },
+  "quote": {
+    "realMailSent": false,
+    "mailboxDelivery": "NOT_TESTED",
+    "transportTests": "FAKE_TRANSPORT"
+  },
+  "prepared": {
+    "version": "2026.10.05.2",
+    "candidateSha256": "87c09fc8d3b9fc17866dd4bb83a5a0fc1a37ec3a56b5e99d37e0537b93e95841",
+    "manifestSha256": "ebf48ad21f3275fb28badb39422b67823e85a96bd1c7ba43d1217db499a6984d",
+    "backupSha256": "7be6d73de2696b949f279885f6626a8b1342d00fc855d2223481a8ff4d22f246",
+    "backupFiles": 128,
+    "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.10.05.2/"
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 8,
+    "reusedFiles": 120,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.05.2",
+    "transferBytes": 448000
+  },
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.05.2",
+    "neighborsUnchanged": true,
+    "files": 128
+  }
+}

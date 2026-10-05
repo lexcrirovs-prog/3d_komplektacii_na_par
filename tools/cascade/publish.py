@@ -1,24 +1,22 @@
-"""Scoped home-navigation release, 2026-10-05, Codex / GPT-6.
+"""Scoped equipment-selection pulse release, 2026-10-05, Codex / GPT-6.
 Reuses the manifest, immutable staging, drift-check and rollback publisher.
 """
 import importlib.util,json,sys,tarfile,subprocess,concurrent.futures,gzip,urllib.request,urllib.error
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.05.7';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r2'
+p.VERSION='2026.10.05.8';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='e3708d9f4bf6b341c4735079a0fa236dd7e7f86fea9ec1d2d3178e92a9b4f2c6'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r2/'
+p.BASELINE_HASH='4e98b0783de290053b0feecf8859a119ff407089b4fef82e39f5aa42e1b3d96c'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
-    report=json.loads((p.REPO/'artifacts/home-navigation-stage/report.json').read_text('utf8'))
-    assert report['status']=='PASSED_HOME_NAVIGATION' and report['base']==p.STAGE_URL
+    report=json.loads((p.REPO/'artifacts/selection-pulse-stage/report.json').read_text('utf8'))
+    assert report['status']=='PASSED_SELECTION_PULSE' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']
-    assert {s['count'] for s in report['scenarios']}=={1,2,5}
-    assert all(s['initialNeutral'] and s['focusClears'] and s['homeReturns'] for s in report['scenarios'])
-    assert all(report['checks'][key] for key in ['rotation','pan','zoom','homeKey','cubeView','cabinetView','interruptedFlight','reducedMotion'])
-    assert report['mobile']['width']==390 and not report['mobile']['overflow'] and report['mobile']['touchClears'] and report['mobile']['firstHomeVisible']
-    assert report['mobile']['neutralAfterTouch']
+    assert {s['count'] for s in report['scenarios']}=={1,5}
+    assert all(s['cycles']==s['darkCycles']==3 and s['otherUnchanged'] and s['authoredMaterialsUnchanged'] and s['cameraFlight'] and s['hoverNeutral'] for s in report['scenarios'])
+    assert all(report['checks'][key] for key in ['repeatSelection','directMeshClick','switchRestoresPrevious','closeRestores','cascadeUnitIsolation','commonEquipment','homeRestores','sensorShaderPreserved','idleAfterPulse','reducedMotion','mobileTap'])
     before=json.loads((p.OUT/'before.json').read_text('utf8'))
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
     previous={name:digest for name,digest in before['files'].items() if name.endswith('.glb')}

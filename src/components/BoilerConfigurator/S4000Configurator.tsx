@@ -1,7 +1,7 @@
 import { Component, Suspense, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, useProgress } from '@react-three/drei'
-import { Color, Group, Mesh, MeshStandardMaterial, type Object3D } from 'three'
+import { Group, Mesh, MeshStandardMaterial, type Object3D } from 'three'
 import {FamilyCamera, type ViewRequest} from './FamilyCamera'
 import {ViewCube, type StandardView} from './ViewCube'
 import webVersion from '../../assets/s4000/web/version.json'
@@ -24,6 +24,7 @@ import {deaeratorAssets} from './deaeratorAssets'
 import {deaeratorLabels,selectDeaerator} from './deaeratorSelection'
 import {nativeDeaerator} from './deaeratorPorts'
 import {applySensorMaterials} from './sensorMaterials'
+import {installSelectionBrightness, selectedEquipment, SelectionPulse} from './selectionPulse'
 import {applyPresentationDetails} from './presentationDetails'
 import {partInformation} from './partInformation'
 import {QuoteRequest} from './QuoteRequest'
@@ -90,8 +91,8 @@ function BoilerPreview({onReady,enabled,asset}:{onReady:()=>void;enabled:Set<str
   return <primitive object={scene} dispose={null} />
 }
 
-function Assembly({ enabled, selected, showAccessories, select, dragging, cabinetDoors, boilerDoors,onReady,asset,count,cascadeOpen,onDoor }: {
-  enabled: Set<string>; selected: string | null; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
+function Assembly({ enabled, selected, selectionRevision, showAccessories, select, dragging, cabinetDoors, boilerDoors,onReady,asset,count,cascadeOpen,onDoor }: {
+  enabled: Set<string>; selected: string | null; selectionRevision: number; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
   cabinetDoors: ReadonlySet<number>; boilerDoors: ReadonlySet<number>; onReady:()=>void; asset:FamilyAsset;count:number;cascadeOpen:boolean;onDoor:(door:DoorTarget)=>void
 }) {
   const power=Number(asset.id),cascade=count>1,openingData=asset.opening
@@ -110,6 +111,7 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
   const condensateValve=useGLTF(condensateValveUrl)
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
   const { gl, invalidate, camera, controls } = useThree()
+  const selectionPulse = useRef<SelectionPulse | null>(null)
   useEffect(()=>{onReady()},[onReady])
   const scene = useMemo(() => {
     const copy = new Group()
@@ -155,10 +157,12 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
     }})
     generatedMaterials.forEach(m=>m.dispose())
     units.forEach(applySensorMaterials)
+    installSelectionBrightness(copy)
     return copy
   }, [gltfs,trim,count,additions,daModels,daKind,strainer,condensateValve])
   useEffect(() => { invalidate() }, [cabinetDoors, boilerDoors, cascadeOpen, invalidate])
   useFrame((_, delta) => {
+    if (selectionPulse.current?.update(delta)) invalidate()
     let movingDoor = false
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const motions:{hinge:Object3D;target:number}[]=[]
@@ -205,12 +209,6 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
         child.raycast = obj.visible ? function(this: Mesh, raycaster, hits) {
           if (!dragging.current) Mesh.prototype.raycast.call(this, raycaster, hits)
         } : ignoreRaycast
-        const materials = Array.isArray(child.material) ? child.material : [child.material]
-        for (const m of materials) if (m instanceof MeshStandardMaterial) {
-          const highlighted=(index>0?`unit${index+1}:`+part.id:part.id)===selected
-          m.emissive = new Color(highlighted ? '#204775' : '#000000')
-          m.emissiveIntensity = highlighted ? .32 : 0
-        }
       })
      }
      const cabinet=unit.getObjectByName('plus_cabinet');if(cabinet)cabinet.visible=showAccessories&&photo
@@ -222,7 +220,15 @@ function Assembly({ enabled, selected, showAccessories, select, dragging, cabine
       if(obj)obj.visible=isPartVisible(part,enabled,showAccessories,optionalIds)
     }
     invalidate()
-  }, [scene, enabled, selected, showAccessories, dragging, invalidate])
+  }, [scene, enabled, showAccessories, dragging, invalidate])
+  useEffect(() => {
+    const pulse = selected
+      ? new SelectionPulse(selectedEquipment(scene, selected), window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+      : null
+    selectionPulse.current = pulse
+    invalidate()
+    return () => { pulse?.restore(); selectionPulse.current = null }
+  }, [scene, selected, selectionRevision, enabled, showAccessories, invalidate])
   useEffect(() => {
     // Geometry and light stay fixed during orbiting. Refresh only on composition changes.
     gl.shadowMap.autoUpdate = false
@@ -288,6 +294,12 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     window.history.replaceState(null,'',url)
   },[config])
   const [selected, setSelected] = useState<string | null>(null)
+  const [selectionRevision, setSelectionRevision] = useState(0)
+  const selectPart = useCallback((id: string) => {
+    setSelected(id)
+    // Repeated selection of the same detail must restart the cue as well.
+    setSelectionRevision(revision => revision + 1)
+  }, [])
   const [showAccessories, setShowAccessories] = useState(true)
   const [cabinetDoors,setCabinetDoors]=useState<Set<number>>(()=>new Set())
   const [boilerDoors,setBoilerDoors]=useState<Set<number>>(()=>new Set())
@@ -376,7 +388,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   function focus(selection: string) {
     const p = byId.get(selection)
     if (!p) return
-    setSelected(selection)
+    selectPart(selection)
     const id=selection.replace(/^unit\d+:/,''),dx=(Number(selection.match(/^unit(\d+):/)?.[1]||1)-1)*unitSpacing
     if(id==='cascade_cabinet'){cascadeView();return}
     if(id==='plus_cabinet'){cabinetView(dx);return}
@@ -464,7 +476,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <Lightformer intensity={2.5} position={[3,6,-4]} scale={[7,4,1]} rotation={[Math.PI/3,0,0]} />
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
-          <Assembly asset={asset} enabled={enabled} selected={selected} showAccessories={showAccessories} select={setSelected} dragging={dragging}
+          <Assembly asset={asset} enabled={enabled} selected={selected} selectionRevision={selectionRevision} showAccessories={showAccessories} select={selectPart} dragging={dragging}
             cabinetDoors={cabinetDoors} boilerDoors={boilerDoors} onReady={markSceneReady} count={count} cascadeOpen={cascadeOpen} onDoor={clickDoor} />
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[(count-1)*unitSpacing/2,-.007,0]} opacity={.38} scale={25+(count-1)*unitSpacing} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
@@ -489,7 +501,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
         {cascade&&<button onClick={()=>focus('cascade_distribution')}>Гребёнка</button>}
         <button onClick={() => focus('pressure_header')}>Приборы</button>
-        <button onClick={() => { setSelected('pump_1'); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
+        <button onClick={() => { selectPart('pump_1'); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
         <button onClick={() => focus('cables')}>Кабели</button>
         {Array.from({length:count-1},(_,i)=><button key={i+2} onClick={()=>focus(`unit${i+2}:boiler`)}>Котёл {i+2}</button>)}
       </nav>

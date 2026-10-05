@@ -32,7 +32,7 @@
       "ДА-25/25"
     ]
   },
-  "source_commit": "fe2edba99b5eb4953df4551609aa1505c855e0d4",
+  "source_commit": "b90af9dc164ff4dbef9c208748914234539f5207",
   "files": [
     {
       "path": ".htaccess",
@@ -615,9 +615,9 @@
       "sha256": "1f94210186f4eb98ec248e09feaa559f20902bb467293d337a52e51741df5cbd"
     },
     {
-      "path": "assets/style-C0kAbTAk.css",
-      "bytes": 33637,
-      "sha256": "97a52496e05cedd3ab608a41bcec04e62c33e82175712f202a24683b9bfc994b"
+      "path": "assets/style-BUCDZtkZ.css",
+      "bytes": 33651,
+      "sha256": "d51e46ceaf337e31da59ab9bb7fd7403fba8e28e8f4eedf217d1c6eb488be6e7"
     },
     {
       "path": "assets/valtec_vt215_dn15-BGGQBXM4.glb",
@@ -627,7 +627,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "4786f086cbeb71f0e88a9811e3613e104e365641cedde4be3a81058f34289203"
+      "sha256": "4e98b0783de290053b0feecf8859a119ff407089b4fef82e39f5aa42e1b3d96c"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -667,7 +667,7 @@
     {
       "path": "version.json",
       "bytes": 926,
-      "sha256": "9165eea3cad5ec2ae262aceafd6bd4d2bcdf1aaf445f6fb94039f77ef5af186b"
+      "sha256": "4b16ce15305feceffee550f1e9c8fb1dab65aeea0eb16586ef5774110dba76c5"
     }
   ]
 }

@@ -1,0 +1,45 @@
+{
+  "status": "PASSED_SELECTION_PULSE",
+  "base": "http://127.0.0.1:5181/",
+  "manifestSha256": "5e1da67126ac0e76ded5ffbb2898a81f16f963b536c1d6dad3b053c355075ba2",
+  "scenarios": [
+    {
+      "count": 1,
+      "trim": "standard",
+      "cycles": 3,
+      "darkCycles": 3,
+      "min": 0.35021391879251995,
+      "max": 1.649971131622347,
+      "otherUnchanged": true,
+      "authoredMaterialsUnchanged": true,
+      "cameraFlight": true,
+      "hoverNeutral": true
+    },
+    {
+      "count": 5,
+      "trim": "comfort_plus",
+      "cycles": 3,
+      "darkCycles": 3,
+      "min": 0.3500022275136099,
+      "max": 1.6499443129231046,
+      "otherUnchanged": true,
+      "authoredMaterialsUnchanged": true,
+      "cameraFlight": true,
+      "hoverNeutral": true
+    }
+  ],
+  "checks": {
+    "repeatSelection": true,
+    "directMeshClick": true,
+    "switchRestoresPrevious": true,
+    "closeRestores": true,
+    "cascadeUnitIsolation": true,
+    "commonEquipment": true,
+    "homeRestores": true,
+    "sensorShaderPreserved": true,
+    "idleAfterPulse": true,
+    "reducedMotion": true,
+    "mobileTap": true
+  },
+  "errors": []
+}

@@ -1,0 +1,45 @@
+{
+  "status": "PASSED_SELECTION_PULSE",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "5e1da67126ac0e76ded5ffbb2898a81f16f963b536c1d6dad3b053c355075ba2",
+  "scenarios": [
+    {
+      "count": 1,
+      "trim": "standard",
+      "cycles": 3,
+      "darkCycles": 3,
+      "min": 0.3500970281314043,
+      "max": 1.6499999108993642,
+      "otherUnchanged": true,
+      "authoredMaterialsUnchanged": true,
+      "cameraFlight": true,
+      "hoverNeutral": true
+    },
+    {
+      "count": 5,
+      "trim": "comfort_plus",
+      "cycles": 3,
+      "darkCycles": 3,
+      "min": 0.3500471336457486,
+      "max": 1.6499967923809529,
+      "otherUnchanged": true,
+      "authoredMaterialsUnchanged": true,
+      "cameraFlight": true,
+      "hoverNeutral": true
+    }
+  ],
+  "checks": {
+    "repeatSelection": true,
+    "directMeshClick": true,
+    "switchRestoresPrevious": true,
+    "closeRestores": true,
+    "cascadeUnitIsolation": true,
+    "commonEquipment": true,
+    "homeRestores": true,
+    "sensorShaderPreserved": true,
+    "idleAfterPulse": true,
+    "reducedMotion": true,
+    "mobileTap": true
+  },
+  "errors": []
+}

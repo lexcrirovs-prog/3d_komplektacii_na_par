@@ -1,0 +1,29 @@
+{
+  "version": "2026.10.05.8",
+  "date": "2026-10-05",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "3ea9aee8e76037f380086c1930db181e973b74d0",
+  "buildCommit": "6d53743821dc50df2fe68c1d864186404bd985d5",
+  "manifestSha256": "5e1da67126ac0e76ded5ffbb2898a81f16f963b536c1d6dad3b053c355075ba2",
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.05.8",
+    "neighborsUnchanged": true,
+    "files": 128
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 8,
+    "reusedFiles": 120,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.05.8",
+    "transferBytes": 450441
+  },
+  "unchangedGlbFiles": 100,
+  "unitTests": {
+    "command": "node --test tools/cascade/selection-pulse.test.mjs tools/cascade/camera-flight.test.mjs",
+    "passed": 8,
+    "failed": 0
+  }
+}

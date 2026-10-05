@@ -6,15 +6,16 @@ from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 p.VERSION='2026.10.05.4';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r2'
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
 p.BASELINE_HASH='8df52e8b42b427ca5f1632dbafb5456cc2b5822c7e17603bf2b50e87252e3315'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r2/'
 def validate(prepared):
     clearance=json.loads((p.REPO/'artifacts/front-service-stage/report.json').read_text('utf8'))
     assert clearance['status']=='PASSED_FRONT_SERVICE_CLEARANCE' and clearance['base']==p.STAGE_URL
     assert clearance['manifestSha256']==prepared['manifestSha256'] and not clearance['errors']
     assert len(clearance['scenarios'])==12 and not clearance['mobile']['overflow']
+    assert all(s['clearance'] and all(v['intersections']==0 for v in s['clearance']) for s in clearance['scenarios'])
     report=json.loads((p.REPO/'artifacts/customer-experience-stage/report.json').read_text(encoding='utf8'))
     assert report['status']=='PASSED_CUSTOMER_EXPERIENCE' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']

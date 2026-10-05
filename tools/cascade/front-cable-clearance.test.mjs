@@ -24,11 +24,11 @@ test('Front cables extend beyond normalized GLB bounds without wrapping or alter
  assert.deepEqual(Array.from(geometry.attributes.position.array),original);
  for(let i=0;i<9;i++){
   const p=new Vector3().fromBufferAttribute(mesh.geometry.attributes.position,i).applyMatrix4(mesh.matrixWorld);
-  assert(Math.abs(p.x-before[i].x)<1e-6&&Math.abs(p.y-before[i].y)<1e-6);
+  assert(Math.abs(p.x-before[i].x)<1e-6);
   const dz=p.z-before[i].z;
-  if(i<3)assert(Math.abs(dz-.28)<1e-6);
-  else if(i<6)assert(Math.abs(dz)<1e-6);
-  else assert(dz>0&&dz<.28);
+  if(i<3){assert(Math.abs(dz-.12)<1e-6);assert(Math.abs(p.y-before[i].y+.17)<1e-6)}
+  else if(i<6){assert(Math.abs(dz)<1e-6);assert(Math.abs(p.y-before[i].y)<1e-6)}
+  else assert(dz>0&&dz<.12);
  }
  assert(mesh.geometry.boundingBox.max.z>1,'Quantized coordinates must be allowed beyond 1');
  assert(Array.from(mesh.geometry.attributes.normal.array).every(Number.isFinite));

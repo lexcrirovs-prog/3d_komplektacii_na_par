@@ -1,13 +1,15 @@
 import {Float32BufferAttribute,MathUtils,Matrix4,Mesh,Vector3,type Object3D} from 'three'
 
-// 05.10.2026 · Codex / GPT-6. Move the front bend with its cables; extend
-// only the straight approach legs. Instrument entries and cabinet glands stay fixed.
-export const cableTrayFront=-2.60
+// 05.10.2026 · Codex / GPT-6. Move the front bend with its cables towards
+// the floor tray. Instrument entries and cabinet glands stay fixed.
+export const cableTrayFront=-2.44
+export const pressureHarnessDrop=.17
 export function moveFrontCableTray(unit:Object3D) {
   unit.updateWorldMatrix(true,true)
   const point=new Vector3(),shift=-cableTrayFront-2.32
   for(const id of ['cables','wiring_pressure_switch_1','wiring_pressure_switch_2',
     'wiring_pressure_switch_3','wiring_pressure_transmitter','gpz_drive_cable','mod_direct_drive_cable']) {
+    const drop=id==='cables'||id.startsWith('wiring_pressure_')?pressureHarnessDrop:0
     const root=unit.getObjectByName(id)
     root?.traverse(object=>{
       if(!(object instanceof Mesh))return
@@ -22,7 +24,8 @@ export function moveFrontCableTray(unit:Object3D) {
         point.fromBufferAttribute(positions,i).applyMatrix4(object.matrixWorld)
         // The old rounded bend starts at z=2.265; translate it rigidly.
         // The transition ends before that bend, along the straight side legs.
-        point.z+=shift*MathUtils.clamp((point.z-1.90)/.30,0,1)
+        const blend=MathUtils.clamp((point.z-1.90)/.30,0,1)
+        point.z+=shift*blend;point.y-=drop*blend
         point.applyMatrix4(inverse);attribute.setXYZ(i,point.x,point.y,point.z)
       }
       geometry.setAttribute('position',attribute);geometry.deleteAttribute('normal')
@@ -32,5 +35,5 @@ export function moveFrontCableTray(unit:Object3D) {
       object.userData.generatedGeometry=true
     })
   }
-  unit.userData.frontCableTray={previousFront:-2.32,front:cableTrayFront,shift,straightApproach:[1.90,2.20]}
+  unit.userData.frontCableTray={previousFront:-2.32,front:cableTrayFront,shift,pressureHarnessDrop,straightApproach:[1.90,2.20]}
 }

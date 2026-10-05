@@ -1,0 +1,304 @@
+{
+  "status": "PASSED_CAMERA_MOTION",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.05.4-r3/",
+  "manifestSha256": "7f49942b7e48ec79978e564c28a004df2f922142aba1ec30bb1aa1afa259c012",
+  "transitions": [
+    {
+      "name": "overview-to-cabinet",
+      "samples": 122,
+      "activeFrames": 116,
+      "elapsedMs": 1710.800000011921,
+      "pathLength": 27.872303746631516,
+      "maxStep": 0.5815822888110341,
+      "maxStepFraction": 0.02086595690466816,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          -2.492500033378601,
+          2.025000047683716,
+          2.203999989032745
+        ],
+        "target": [
+          -1.152500033378601,
+          1.5750000476837158,
+          1.0239999890327454
+        ],
+        "active": false,
+        "requestId": 1
+      }
+    },
+    {
+      "name": "open-cabinet-button",
+      "samples": 109,
+      "activeFrames": 105,
+      "elapsedMs": 1688,
+      "pathLength": 27.872011973855845,
+      "maxStep": 1.399447665802993,
+      "maxStepFraction": 0.050209782742476054,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          -2.492500033378601,
+          2.025000047683716,
+          2.203999989032745
+        ],
+        "target": [
+          -1.152500033378601,
+          1.5750000476837158,
+          1.0239999890327454
+        ],
+        "active": false,
+        "requestId": 3
+      }
+    },
+    {
+      "name": "close-cabinet-button",
+      "samples": 109,
+      "activeFrames": 105,
+      "elapsedMs": 1686.699999988079,
+      "pathLength": 27.872029021673793,
+      "maxStep": 0.7647057335495369,
+      "maxStepFraction": 0.02743631376656819,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          -2.492500033378601,
+          2.025000047683716,
+          2.203999989032745
+        ],
+        "target": [
+          -1.152500033378601,
+          1.5750000476837158,
+          1.0239999890327454
+        ],
+        "active": false,
+        "requestId": 5
+      }
+    },
+    {
+      "name": "front-to-back",
+      "samples": 142,
+      "activeFrames": 136,
+      "elapsedMs": 1875.699999988079,
+      "pathLength": 75.05740969786945,
+      "maxStep": 1.0614160559526193,
+      "maxStepFraction": 0.01414138937414927,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          -1.7750019215470942,
+          3.0775182146168505,
+          -23.23253264859238
+        ],
+        "target": [
+          -1.775001921547097,
+          3.077518214616849,
+          -1.5733613967895508
+        ],
+        "active": false,
+        "requestId": 7
+      }
+    },
+    {
+      "name": "retarget-in-flight",
+      "samples": 119,
+      "activeFrames": 115,
+      "elapsedMs": 1746.699999988079,
+      "pathLength": 23.89292400735349,
+      "maxStep": 0.501723370940307,
+      "maxStepFraction": 0.02099882671480026,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          1.74600011408329,
+          1.6036098092794415,
+          4.484000039100648
+        ],
+        "target": [
+          -0.0539998859167099,
+          0.7036098092794418,
+          2.284000039100647
+        ],
+        "active": false,
+        "requestId": 10
+      }
+    },
+    {
+      "name": "home-after-lost-gesture",
+      "samples": 94,
+      "activeFrames": 89,
+      "elapsedMs": 1226.5,
+      "pathLength": 9.216882978275985,
+      "maxStep": 0.19881576355656488,
+      "maxStepFraction": 0.021570824325877827,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          14.63192924970394,
+          13.742023475930026,
+          18.114956008711697
+        ],
+        "target": [
+          -1.775001921547097,
+          3.077518214616849,
+          -1.5733613967895508
+        ],
+        "active": false,
+        "requestId": 16
+      }
+    },
+    {
+      "name": "cascade-to-boiler-1",
+      "samples": 104,
+      "activeFrames": 99,
+      "elapsedMs": 1880.699999988079,
+      "pathLength": 65.43218340586441,
+      "maxStep": 1.7138350258835775,
+      "maxStepFraction": 0.02619253915543301,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          5.077791193829691,
+          4.140243667340291,
+          5.8399994765231344
+        ],
+        "target": [
+          0.07779119382969257,
+          1.140243667340291,
+          -0.1600005234768651
+        ],
+        "active": false,
+        "requestId": 1
+      }
+    },
+    {
+      "name": "boiler-1-to-boiler-5",
+      "samples": 101,
+      "activeFrames": 96,
+      "elapsedMs": 1459.9000000357628,
+      "pathLength": 26.252149107502753,
+      "maxStep": 1.1050247659499184,
+      "maxStepFraction": 0.04209273539567498,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          30.277791193829692,
+          4.140243667340291,
+          5.8399994765231344
+        ],
+        "target": [
+          25.277791193829692,
+          1.140243667340291,
+          -0.1600005234768651
+        ],
+        "active": false,
+        "requestId": 2
+      }
+    },
+    {
+      "name": "open-cascade-cabinet",
+      "samples": 94,
+      "activeFrames": 89,
+      "elapsedMs": 1480.4000000357628,
+      "pathLength": 15.706288147534552,
+      "maxStep": 0.4605423029348245,
+      "maxStepFraction": 0.029322160564532667,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          14.95,
+          1.75,
+          4.449999999999999
+        ],
+        "target": [
+          15.83,
+          1.3499999999999999,
+          3.05
+        ],
+        "active": false,
+        "requestId": 3
+      }
+    },
+    {
+      "name": "direct-fifth-cabinet",
+      "samples": 57,
+      "activeFrames": 53,
+      "elapsedMs": 1168.5,
+      "pathLength": 2.3236946466215094,
+      "maxStep": 0.17812193849706306,
+      "maxStepFraction": 0.07665462359955083,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          22.7074999666214,
+          2.025000047683716,
+          2.203999989032745
+        ],
+        "target": [
+          24.047499966621398,
+          1.5750000476837158,
+          1.0239999890327454
+        ],
+        "active": false,
+        "requestId": 5
+      }
+    },
+    {
+      "name": "direct-cascade-cabinet",
+      "samples": 70,
+      "activeFrames": 66,
+      "elapsedMs": 1019.3999999761581,
+      "pathLength": 1.7844099320660056,
+      "maxStep": 0.0551071117068728,
+      "maxStepFraction": 0.030882540338177392,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          14.95,
+          1.75,
+          4.449999999999999
+        ],
+        "target": [
+          15.83,
+          1.3499999999999999,
+          3.05
+        ],
+        "active": false,
+        "requestId": 6
+      }
+    },
+    {
+      "name": "standard-open-cabinet",
+      "samples": 116,
+      "activeFrames": 110,
+      "elapsedMs": 1706,
+      "pathLength": 27.872138052975583,
+      "maxStep": 0.7084598859319241,
+      "maxStepFraction": 0.02541821099570401,
+      "controlsStable": true,
+      "final": {
+        "position": [
+          -2.492500033378601,
+          2.025000047683716,
+          2.203999989032745
+        ],
+        "target": [
+          -1.152500033378601,
+          1.5750000476837158,
+          1.0239999890327454
+        ],
+        "active": false,
+        "requestId": 1
+      }
+    }
+  ],
+  "retarget": true,
+  "manualDragInterrupt": true,
+  "wheelInterrupt": true,
+  "blurRecovery": true,
+  "reducedMotion": true,
+  "individualCabinet": true,
+  "directCascadeCabinet": true,
+  "idleFrames": 0,
+  "errors": []
+}

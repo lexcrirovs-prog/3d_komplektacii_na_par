@@ -1,0 +1,49 @@
+{
+  "version": "2026.10.05.3",
+  "date": "2026-10-05",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "e16a30d219e12b88a0da91c8a6c80b112e29dc59",
+  "buildCommit": "73c737e5b4c66e591cc1fe9cb8292811d34b2692",
+  "manifestSha256": "469ec549d4595b08544bb21dc4cde8fa0a2842dbec9b6daed1552a92f39bcaa5",
+  "glb": {
+    "count": 100,
+    "allUnchanged": true
+  },
+  "browser": {
+    "stageConfigurations": 14,
+    "stageCameraFlights": 12,
+    "liveCameraFlights": 12,
+    "stageCubeDirections": 26,
+    "mobileWidth": 390,
+    "liveMaximumFrameStepFraction": 0.08644208026117872,
+    "liveIdleFrames": 0
+  },
+  "quote": {
+    "realMailSent": false,
+    "mailboxDelivery": "NOT_TESTED",
+    "transportTests": "FAKE_TRANSPORT"
+  },
+  "prepared": {
+    "version": "2026.10.05.3",
+    "candidateSha256": "88807f0bf412bb1f1b666560ad3b320dcc9ead8b9a19434805316f81c0f181ce",
+    "manifestSha256": "469ec549d4595b08544bb21dc4cde8fa0a2842dbec9b6daed1552a92f39bcaa5",
+    "backupSha256": "81c15f16c2cea6c66713b4a29ec6c5ed691abf73ddbb26ab872a5098d30b883c",
+    "backupFiles": 128,
+    "backupUrl": "https://prgz.ru/komplektacii4-before-cascade-v2026.10.05.3/"
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 8,
+    "reusedFiles": 120,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.05.3",
+    "transferBytes": 448604
+  },
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.05.3",
+    "neighborsUnchanged": true,
+    "files": 128
+  }
+}

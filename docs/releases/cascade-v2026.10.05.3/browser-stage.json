@@ -1,0 +1,727 @@
+{
+  "status": "PASSED_CUSTOMER_EXPERIENCE",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.05.3/",
+  "manifestSha256": "469ec549d4595b08544bb21dc4cde8fa0a2842dbec9b6daed1552a92f39bcaa5",
+  "scenarios": [
+    {
+      "power": 500,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1540508,
+      "drawCalls": 677,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.31232,
+            2.115
+          ],
+          "width": 0.22572000000000003,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 1000,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1496212,
+      "drawCalls": 675,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.5147300000000001,
+            2.115
+          ],
+          "width": 0.26433,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 1500,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1607211,
+      "drawCalls": 444,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.5147300000000001,
+            2.115
+          ],
+          "width": 0.26433,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 2000,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1616643,
+      "drawCalls": 443,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.62853,
+            2.115
+          ],
+          "width": 0.28413,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 2500,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1617704,
+      "drawCalls": 443,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.62853,
+            2.115
+          ],
+          "width": 0.28413,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 3000,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1579577,
+      "drawCalls": 443,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.72503,
+            2.115
+          ],
+          "width": 0.30063,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 3500,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1578211,
+      "drawCalls": 443,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.72503,
+            2.115
+          ],
+          "width": 0.30063,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1726524,
+      "drawCalls": 546,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 5000,
+      "count": 1,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1655246,
+      "drawCalls": 442,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.99253,
+            2.115
+          ],
+          "width": 0.35013,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 500,
+      "count": 5,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл 1",
+        "Котёл 2",
+        "Котёл 3",
+        "Котёл 4",
+        "Котёл 5",
+        "Деаэратор",
+        "Шкаф",
+        "Шкаф каскада",
+        "Экономайзер",
+        "Горелка",
+        "Гребёнка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 6070356,
+      "drawCalls": 2122,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.31232,
+            2.115
+          ],
+          "width": 0.22572000000000003,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.31232,
+            2.115
+          ],
+          "width": 0.22572000000000003,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.31232,
+            2.115
+          ],
+          "width": 0.22572000000000003,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.31232,
+            2.115
+          ],
+          "width": 0.22572000000000003,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.31232,
+            2.115
+          ],
+          "width": 0.22572000000000003,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 2,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл 1",
+        "Котёл 2",
+        "Деаэратор",
+        "Шкаф",
+        "Шкаф каскада",
+        "Экономайзер",
+        "Горелка",
+        "Гребёнка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 2941162,
+      "drawCalls": 1124,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 5,
+      "trim": "comfort",
+      "navigation": [
+        "Котёл 1",
+        "Котёл 2",
+        "Котёл 3",
+        "Котёл 4",
+        "Котёл 5",
+        "Деаэратор",
+        "Шкаф",
+        "Шкаф каскада",
+        "Экономайзер",
+        "Горелка",
+        "Гребёнка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 6309486,
+      "drawCalls": 2471,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        },
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 1,
+      "trim": "standard",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1547293,
+      "drawCalls": 538,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    },
+    {
+      "power": 4000,
+      "count": 1,
+      "trim": "comfort_plus",
+      "navigation": [
+        "Котёл",
+        "Деаэратор",
+        "Шкаф",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "⌂ Общий вид"
+      ],
+      "shaderErrors": 0,
+      "triangles": 1776774,
+      "drawCalls": 546,
+      "units": [
+        {
+          "plaque": [
+            0,
+            1.8547799999999999,
+            2.115
+          ],
+          "width": 0.32538,
+          "reference": "Premium S - 4000.3.jpg",
+          "burner": {
+            "hiddenFrontInscriptions": 1
+          },
+          "heads": [
+            "#263d56",
+            "#263d56"
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "mobile": {
+    "width": 390,
+    "overflow": false,
+    "cta": {
+      "x": 12,
+      "y": 74,
+      "width": 230,
+      "height": 50.59375,
+      "top": 74,
+      "right": 242,
+      "bottom": 124.59375,
+      "left": 12
+    }
+  },
+  "technicalDetails": {
+    "collapsedByDefault": true,
+    "mobileReachable": true
+  },
+  "descriptions": true,
+  "doorCard": true,
+  "movingPlaque": true,
+  "quote": {
+    "transport": "INTERCEPTED_NO_MAIL_SENT",
+    "posts": 2,
+    "validation": true,
+    "retry": true,
+    "configuration": {
+      "power": 4000,
+      "trim": "comfort",
+      "pressure": 12,
+      "addons": [
+        "burner",
+        "economizer",
+        "deaerator",
+        "modulation",
+        "gpz",
+        "bdv",
+        "fv"
+      ],
+      "cascade": 3
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "PASSED_QUOTE_ENDPOINT_FAKE_TRANSPORT",
+  "sha256": "f2e2e0c162f644e7e451485dd6b810f8d4db2e89f7e18d9d1a46a3a88afcb969",
+  "runtime": "Hosting PHP CLI",
+  "delivery": "FAKE_TRANSPORT_NO_MAIL_SENT"
+}

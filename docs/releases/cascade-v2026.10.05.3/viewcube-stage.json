@@ -1,0 +1,32 @@
+{
+  "status": "PASSED_VIEWCUBE_BROWSER",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.05.3/",
+  "manifestSha256": "469ec549d4595b08544bb21dc4cde8fa0a2842dbec9b6daed1552a92f39bcaa5",
+  "scenarios": [
+    {
+      "power": 4000,
+      "count": 5,
+      "width": 128,
+      "height": 128,
+      "patches": 26,
+      "targets": 26,
+      "edges": 12,
+      "faces": 6,
+      "edgeViews": 12,
+      "corners": 8,
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "orbit": true,
+      "home": true,
+      "allPresetsFit": true
+    }
+  ],
+  "mobile": {
+    "width": 390,
+    "cubeWidth": 108,
+    "edgeClick": true
+  },
+  "errors": []
+}

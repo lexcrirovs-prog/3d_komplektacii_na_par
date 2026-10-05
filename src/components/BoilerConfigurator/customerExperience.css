@@ -1,9 +1,9 @@
-/* 02.10.2026 · Codex / GPT-6. Opaque reading surfaces over the movable model. */
-.s4-family .s3-brand{background:#fff;border-radius:10px;padding:8px 12px;top:18px;left:20px;box-shadow:0 2px 12px #2234410b}
-.s4-family .s3-view-title{left:20px;top:112px;width:310px;max-width:calc(100% - 180px);padding:17px 19px;border:1px solid #dce2e3;background:#fff;border-radius:12px;box-shadow:0 6px 24px #152f3e0a}
+/* 05.10.2026 · Codex / GPT-6. Translucent top-left surfaces; text stays opaque. */
+.s4-family .s3-brand{background:rgba(255,255,255,.72);border-radius:10px;padding:8px 12px;top:18px;left:20px;box-shadow:0 2px 12px #2234410b}
+.s4-family .s3-view-title{left:20px;top:112px;width:310px;max-width:calc(100% - 180px);padding:17px 19px;border:1px solid #dce2e3;background:rgba(255,255,255,.72);border-radius:12px;box-shadow:0 6px 24px #152f3e0a}
 .s4-family .s3-view-title h1{font-size:30px;line-height:1.15;margin:12px 0;color:#202f3b}
-.s4-family .s3-view-title p{font-size:13px;line-height:1.65;color:#425565;margin-bottom:0}
-.s4-family .s3-view-title>span{color:#526471;font-size:10px;letter-spacing:1.1px}
+.s4-family .s3-view-title p{font-size:13px;line-height:1.65;color:#263944;margin-bottom:0}
+.s4-family .s3-view-title>span{color:#344857;font-size:10px;letter-spacing:1.1px}
 .s4-family .s4-quote-trigger{position:absolute;z-index:3;top:28px;left:50%;transform:translateX(-50%);border:1px solid #b71735;background:#b71735;color:white;border-radius:8px;padding:13px 17px;font-size:13px;font-weight:600;line-height:1.3;cursor:pointer;box-shadow:0 4px 16px #74162918;white-space:nowrap}
 .s4-quote-trigger:hover,.s4-quote-submit:hover{background:#98132b}
 .s4-quote-trigger span{margin-left:9px}

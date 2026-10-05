@@ -1,39 +1,23 @@
-"""Scoped cabinet labels and piping-clearance release, 2026-10-05, Codex / GPT-6.
+"""Scoped translucent-overlay release, 2026-10-05, Codex / GPT-6.
 Reuses the manifest, immutable staging, drift-check and rollback publisher.
 """
 import importlib.util,json,sys,tarfile,subprocess,concurrent.futures,gzip,urllib.request,urllib.error
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.05.4';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r3'
+p.VERSION='2026.10.05.5';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='8df52e8b42b427ca5f1632dbafb5456cc2b5822c7e17603bf2b50e87252e3315'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r3/'
+p.BASELINE_HASH='22e0a4056fae47906be6899b769f71ca935a6b7747ff2130ddbaea5747ef5faf'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
-    clearance=json.loads((p.REPO/'artifacts/front-service-stage/report.json').read_text('utf8'))
-    assert clearance['status']=='PASSED_FRONT_SERVICE_CLEARANCE' and clearance['base']==p.STAGE_URL
-    assert clearance['manifestSha256']==prepared['manifestSha256'] and not clearance['errors']
-    assert len(clearance['scenarios'])==12 and not clearance['mobile']['overflow']
-    assert all(s['clearance'] and all(v['intersections']==0 for v in s['clearance']) for s in clearance['scenarios'])
-    report=json.loads((p.REPO/'artifacts/customer-experience-stage/report.json').read_text(encoding='utf8'))
-    assert report['status']=='PASSED_CUSTOMER_EXPERIENCE' and report['base']==p.STAGE_URL
+    # CSS-only change: desktop/mobile rendering and opaque text over the model.
+    report=json.loads((p.REPO/'artifacts/overlay-stage/report.json').read_text('utf8'))
+    assert report['status']=='PASSED_TRANSLUCENT_OVERLAY' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']
-    expected={(power,'comfort',1) for power in [500,1000,1500,2000,2500,3000,3500,4000,5000]}
-    expected|={(500,'comfort',5),(4000,'comfort',2),(4000,'comfort',5),(4000,'standard',1),(4000,'comfort_plus',1)}
-    assert {(s['power'],s['trim'],s['count']) for s in report['scenarios']}==expected
-    assert all(s['shaderErrors']==0 for s in report['scenarios']) and report['descriptions'] and report['doorCard'] and report['movingPlaque']
-    assert report['technicalDetails']['collapsedByDefault'] and report['technicalDetails']['mobileReachable']
-    assert report['quote']['transport']=='INTERCEPTED_NO_MAIL_SENT' and report['quote']['retry']
-    assert report['mobile']['width']==390 and not report['mobile']['overflow']
-    motion=json.loads((p.REPO/'artifacts/camera-motion-stage/report.json').read_text('utf8'))
-    assert motion['status']=='PASSED_CAMERA_MOTION' and motion['base']==p.STAGE_URL and motion['manifestSha256']==prepared['manifestSha256']
-    assert all(motion[key] for key in ['retarget','manualDragInterrupt','wheelInterrupt','blurRecovery','reducedMotion','individualCabinet','directCascadeCabinet'])
-    cube=json.loads((p.REPO/'artifacts/viewcube-stage/report.json').read_text('utf8'))
-    assert cube['status']=='PASSED_VIEWCUBE_BROWSER' and cube['base']==p.STAGE_URL and cube['manifestSha256']==prepared['manifestSha256']
-    assert all(s['faces']==6 and s['edgeViews']==12 and s['corners']==8 and s['allPresetsFit'] for s in cube['scenarios'])
-    endpoint=json.loads((p.REPO/'artifacts/customer-experience/quote-endpoint.json').read_text('utf8'))
-    assert endpoint['status']=='PASSED_QUOTE_ENDPOINT_FAKE_TRANSPORT' and endpoint['sha256']==p.sha((p.REPO/'public/api/request-quote.php').read_bytes())
+    assert {s['width'] for s in report['scenarios']}=={1600,390}
+    assert all(not s['overflow'] and s['shaderErrors']==0 for s in report['scenarios'])
+    assert all(all(b['background']=='rgba(255, 255, 255, 0.72)' and b['opacity']=='1' for b in s['surfaces']) for s in report['scenarios'])
     before=json.loads((p.OUT/'before.json').read_text('utf8'))
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
     previous={name:digest for name,digest in before['files'].items() if name.endswith('.glb')}

@@ -1,0 +1,34 @@
+{
+  "version": "2026.10.05.9",
+  "date": "2026-10-05",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "aa3cd46c5fcef22caf2518e966918ac38449dc23",
+  "buildCommit": "e48eb8beec90938f3680877c651bfad4d4f19c22",
+  "manifestSha256": "3eaca26defed9af197d843e9c1f192a731fbff829e4af0bd71aacadff7341b9f",
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.05.9",
+    "neighborsUnchanged": true,
+    "files": 128
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 8,
+    "reusedFiles": 120,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.05.9",
+    "transferBytes": 451171
+  },
+  "unchangedGlbFiles": 100,
+  "validation": {
+    "typeScript": true,
+    "productionBuild": true,
+    "vesselVariants": 5,
+    "logoSidesPerVessel": 2,
+    "visualInspection": true,
+    "additionalTrianglesPerVessel": 48,
+    "optionVisibility": true,
+    "selectionPulse": true
+  }
+}

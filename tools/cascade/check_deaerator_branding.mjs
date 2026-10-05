@@ -22,10 +22,12 @@ try {
   });
   assert.equal(state.logos.length,2);assert.equal(state.logos[0].texture,state.logos[1].texture);assert.equal(state.programErrors,0);
   assert(state.logos.every(l=>l.kind===kind&&l.triangles===24&&l.transparent&&!l.castShadow));
+  const originalFov=await page.evaluate(()=>window.__s3000.camera.fov);
   for(const logo of state.logos) {
-   await page.evaluate(logo=>{const s=window.__s3000,c=logo.center,d=Math.min(2.8,Math.max(2.2,logo.width*2.2));s.camera.position.set(c[0]+logo.side*d,c[1]+logo.height*.4,c[2]+logo.width*.4);s.controls.target.set(...c);s.controls.update();s.invalidate()},logo);
+   await page.evaluate(logo=>{const s=window.__s3000,c=logo.center,d=Math.min(2.8,Math.max(2.2,logo.width*2.2));s.camera.fov=logo.width>1.5?65:45;s.camera.updateProjectionMatrix();s.camera.position.set(c[0]+logo.side*d,c[1]+logo.height*.05,c[2]);s.controls.target.set(...c);s.controls.update();s.invalidate()},logo);
    await page.waitForTimeout(500);await page.screenshot({path:resolve(out,`${kind}-${logo.side<0?'left':'right'}.png`)});
   }
+  await page.evaluate(fov=>{const s=window.__s3000;s.camera.fov=fov;s.camera.updateProjectionMatrix();s.invalidate()},originalFov);
   vessels.push({power,count,kind,...state});
  }
  await page.getByRole('checkbox',{name:/^Деаэратор/}).uncheck();

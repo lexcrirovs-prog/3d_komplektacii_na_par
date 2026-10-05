@@ -1,0 +1,98 @@
+{
+  "status": "PASSED_TRANSLUCENT_QUOTE_BUTTON",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.05.6/",
+  "manifestSha256": "f8932c8bd6cc8f372cc655bf92f74de045970b4d9b61330e3fe5cb58e9d7d77f",
+  "scenarios": [
+    {
+      "width": 1600,
+      "overflow": false,
+      "shaderErrors": 0,
+      "surfaces": [
+        {
+          "selector": ".s3-brand",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        {
+          "selector": ".s3-view-title",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        }
+      ],
+      "text": [
+        {
+          "selector": ".s3-view-title h1",
+          "color": "rgb(32, 47, 59)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title p",
+          "color": "rgb(38, 57, 68)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title>span",
+          "color": "rgb(52, 72, 87)",
+          "opacity": "1"
+        }
+      ],
+      "quote": {
+        "background": "rgba(152, 19, 43, 0.72)",
+        "opacity": "1",
+        "color": "rgb(255, 255, 255)",
+        "hover": "rgba(152, 19, 43, 0.86)",
+        "keyboardFocus": true,
+        "focus": "rgba(152, 19, 43, 0.86)",
+        "dialogOpened": true
+      }
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "shaderErrors": 0,
+      "surfaces": [
+        {
+          "selector": ".s3-brand",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        {
+          "selector": ".s3-view-title",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        }
+      ],
+      "text": [
+        {
+          "selector": ".s3-view-title h1",
+          "color": "rgb(32, 47, 59)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title p",
+          "color": "rgb(38, 57, 68)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title>span",
+          "color": "rgb(52, 72, 87)",
+          "opacity": "1"
+        }
+      ],
+      "quote": {
+        "background": "rgba(152, 19, 43, 0.72)",
+        "opacity": "1",
+        "color": "rgb(255, 255, 255)",
+        "hover": "rgba(152, 19, 43, 0.86)",
+        "keyboardFocus": true,
+        "focus": "rgba(152, 19, 43, 0.86)",
+        "dialogOpened": true
+      }
+    }
+  ],
+  "errors": []
+}

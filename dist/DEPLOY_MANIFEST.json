@@ -1,6 +1,6 @@
 {
   "release": {
-    "version": "2026.10.05.7",
+    "version": "2026.10.05.8",
     "date": "2026-10-05",
     "executor": "Codex / GPT-6",
     "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
@@ -32,7 +32,7 @@
       "ДА-25/25"
     ]
   },
-  "source_commit": "b90af9dc164ff4dbef9c208748914234539f5207",
+  "source_commit": "3ea9aee8e76037f380086c1930db181e973b74d0",
   "files": [
     {
       "path": ".htaccess",
@@ -42,7 +42,7 @@
     {
       "path": "api/request-quote.php",
       "bytes": 7140,
-      "sha256": "ce84cbdcd5441b2c3e052a1047bf91e64bb58a0f37faeaba925e6b3c63812f38"
+      "sha256": "a36b8f9504c946d99af93a489479432873bd1b6e905fccc3c53876d3ecdc61ba"
     },
     {
       "path": "assets/.htaccess",
@@ -165,9 +165,9 @@
       "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
     },
     {
-      "path": "assets/index-9dq3Y5ip.js",
+      "path": "assets/index-DflEOjNn.js",
       "bytes": 1177873,
-      "sha256": "b1cc4075465012042cdd005bec047b84649ff7aac291b478415876cf92813293"
+      "sha256": "9a4246ef69a196c0118d9c0027a9617a843d546f3590daa6791ad3dfa61b7789"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -240,14 +240,14 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/S3000Configurator-BG7Oz6tp.js",
+      "path": "assets/S3000Configurator-BdqeMSJb.js",
       "bytes": 58740,
-      "sha256": "cb92bb924f5d1af5f4d24f0a7fbd16a585c5747003470fca33b0df06140a84dc"
+      "sha256": "c7e62b122df54fb3d34987c03c9917c96133e54aea419ceda4b105a5a2bb5eb6"
     },
     {
-      "path": "assets/S3000Configurator-DmIonHyy.js",
+      "path": "assets/S3000Configurator-CA_gPgDN.js",
       "bytes": 48039,
-      "sha256": "6adad23a0db1836ab34a9f42c08e74d2d2764af4fa5744340d8b57fede928d51"
+      "sha256": "7411ce509e33183b5cf5be83d0794d80d2afc0875a0bc6998d28864d8daa5f88"
     },
     {
       "path": "assets/s4000-0-Bijgd8Ih.glb",
@@ -610,9 +610,9 @@
       "sha256": "7b1f28181252b36752a3fd056d4f6428ff21970d269514f432b19f9222ef8d5a"
     },
     {
-      "path": "assets/S4000Configurator-DqMp95zm.js",
-      "bytes": 556752,
-      "sha256": "1f94210186f4eb98ec248e09feaa559f20902bb467293d337a52e51741df5cbd"
+      "path": "assets/S4000Configurator-DuttP2ns.js",
+      "bytes": 558491,
+      "sha256": "1f03aa44ff1da73e7b46032b800906928949005bb63709779a8bae8d81034919"
     },
     {
       "path": "assets/style-BUCDZtkZ.css",
@@ -627,7 +627,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "4e98b0783de290053b0feecf8859a119ff407089b4fef82e39f5aa42e1b3d96c"
+      "sha256": "4e3fa0e17a134646997f9f38110b60ce1c76203fb1dcd5232285d0574fb5c948"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -667,7 +667,7 @@
     {
       "path": "version.json",
       "bytes": 926,
-      "sha256": "4b16ce15305feceffee550f1e9c8fb1dab65aeea0eb16586ef5774110dba76c5"
+      "sha256": "4f1bc0ccedad59893280dda7f85e42a5865378c9cf94735180244355510028a8"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "boiler-configurator-3d",
   "private": true,
-  "version": "2026.10.5-5",
+  "version": "2026.10.5-6",
   "type": "module",
   "scripts": {
     "dev": "vite",

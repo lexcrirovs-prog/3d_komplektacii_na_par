@@ -15,7 +15,7 @@ try {
  const manifestSha256=createHash('sha256').update(await manifest.body()).digest('hex');
  await page.goto(base+'?power=4000&trim=comfort&cascade=5&pressure=12&addons=burner,economizer,deaerator,modulation,gpz,bdv,fv&inspect3d=1',{waitUntil:'domcontentloaded'});
  await page.waitForFunction(()=>window.__s3000?.scene.userData.units?.length===5&&window.__s3000?.controls,null,{timeout:180000});
- await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(700);
+ await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();await page.waitForTimeout(700);
  const point=async(unit,name,local,distance=1.5,aim=true)=>page.evaluate(({unit,name,local,distance,aim})=>{
   const s=window.__s3000,root=unit?s.scene.userData.units[unit-1]:s.scene,o=root.getObjectByName(name);if(!o)throw Error(name);
   o.updateWorldMatrix(true,true);const p=o.position.clone().set(...local);o.localToWorld(p);

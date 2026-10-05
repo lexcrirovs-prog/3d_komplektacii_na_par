@@ -130,8 +130,9 @@ export function distributionHardware(count:number,sourceTrap:Object3D) {
   const actual=sourceTrap.clone(true);actual.name='distribution_trap_model';actual.position.sub(new Vector3(3.02,.48,-4.35));actual.visible=true;trapRoot.add(actual);root.add(trapRoot)
   for(const xx of [x+.78,x+1.65])valve(root,[xx,y,h],false,.34)
   valve(root,[x+1.1,y-.4,h],false,.34)
-  // Y-strainer, removable plug, wafer check valve, and a low drain stub.
-  strainer(root,[x+.92,y,h],.52)
+  // On the steam-header drainage line, turn the strainer cover sideways.
+  strainer(root,[x+.92,y,h],.52,true)
+  root.userData.drainStrainer={center:[x+.92,y,h],pipeAxis:[1,0,0],coverDirection:[0,-1,0]}
   root.add(cylinder([x+1.40,y,h],[x+1.455,y,h],.034,'blue'))
   flange(root,[x+1.38,y,h],[1,0,0],.055,.014);flange(root,[x+1.475,y,h],[1,0,0],.055,.014)
   flange(root,[x+1.92,6.9,h],[0,1,0],.055,.014)

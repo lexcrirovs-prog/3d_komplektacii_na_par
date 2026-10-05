@@ -8,6 +8,7 @@ import {pipeMarkers} from './pipeMarkers'
 import {selectDeaerator} from './deaeratorSelection'
 import {addMagneticLevel,da3LevelSensor} from './deaeratorInstruments'
 import {photoServiceDetails,da3InstrumentTray} from './photoServiceDetails'
+import {moveFrontCableTray} from './frontCableClearance'
 
 export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comfort_plus'|'cascade',count=1) {
   const root=model.clone(true);root.name=kind==='cascade'?'cascade_cabinet':'plus_cabinet'
@@ -46,6 +47,7 @@ export function applyFeedCorrection(unit:Group,power:number,count:number,sourceS
     da.add(da3LevelSensor(),da3InstrumentTray(power))
   }
   unit.add(photoServiceDetails(unit,power,sourceBallValve))
+  moveFrontCableTray(unit)
   openDeaeratorPorts(unit.getObjectByName('deaerator')!,power,count)
   unit.getObjectByName('bdv_cooling_marker')?.removeFromParent()
   const coolingMarker=new Group();coolingMarker.name='bdv_cooling_marker';unit.add(coolingMarker)

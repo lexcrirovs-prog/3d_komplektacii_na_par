@@ -4,6 +4,7 @@ import {connections,viewPoint,type Point3} from './cascadeRoutes'
 import {cylinder,item,mergeStaticFittings} from './distributionGeometry'
 import {routeObject} from './cascadeGeometry'
 import {da3InstrumentPoint} from './deaeratorPorts'
+import {cableTrayFront} from './frontCableClearance'
 
 function box(root:Group,p:Point3,size:Point3,color='silver') {
   root.add(item(new BoxGeometry(size[0],size[2],size[1]).translate(...viewPoint(p)),color))
@@ -44,7 +45,7 @@ export function photoServiceDetails(unit:Object3D,power:number,sourceBallValve:O
   mergeStaticFittings(drain)
 
   const tray=new Group();tray.name='photo_cable_tray';root.add(tray)
-  const cab=c.cabinet_gland,front=-2.32,end=c.bottom_split[1]+.65
+  const cab=c.cabinet_gland,front=cableTrayFront,end=c.bottom_split[1]+.65
   const rows:[Point3,Point3][]=[[[pumpTrayX,front,.13],[pumpTrayX,end,.13]],[[cab[0]-.02,front,.13],[pumpTrayX,front,.13]],[[cab[0]-.02,front,.13],[cab[0]-.02,cab[1]-.14,.13]],[[1.08,end,.13],[pumpTrayX,end,.13]]]
   for(const [a,b] of rows)traySegment(tray,a,b)
   tray.userData.tray={type:'open_perforated',floorMounted:true,paths:rows,width:.15,height:.055}

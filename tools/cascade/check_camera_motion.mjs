@@ -47,16 +47,16 @@ try {
   await end(name);if(screenshot)await page.screenshot({path:resolve(out,name+'-end.png')});
  };
  await load();
- await flight('overview-to-cabinet',()=>page.getByRole('button',{name:'Шкаф',exact:true}).click(),true);
+ await flight('overview-to-cabinet',()=>page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click(),true);
  await home();
- await flight('open-cabinet-button',()=>page.getByRole('button',{name:'Открыть шкаф',exact:true}).click(),true);
+ await flight('open-cabinet-button',()=>page.getByRole('button',{name:'Открыть шкаф управления котлом',exact:true}).click(),true);
  await page.waitForFunction(()=>window.__s3000.scene.userData.units[0].getObjectByName('photo_hinge_boiler').rotation.y>1.7);
- await home();await flight('close-cabinet-button',()=>page.getByRole('button',{name:'Закрыть шкаф',exact:true}).click());
+ await home();await flight('close-cabinet-button',()=>page.getByRole('button',{name:'Закрыть шкаф управления котлом',exact:true}).click());
  await menu('Спереди');await settled();await flight('front-to-back',()=>menu('Сзади'));
  const opposite=recordings.at(-1).frames.map(f=>distance(f.position,f.target));assert(Math.min(...opposite)>Math.max(...opposite)*.5,'Opposite view crossed the model');
  await home();await begin();await page.getByRole('button',{name:'Деаэратор',exact:true}).click();await page.waitForTimeout(300);await page.getByRole('button',{name:'Горелка',exact:true}).click();await end('retarget-in-flight');
  assert(new Set(recordings.at(-1).frames.filter(f=>f.active).map(f=>f.requestId)).size===2);
- await home();await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(200);assert((await pose()).active);
+ await home();await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();await page.waitForTimeout(200);assert((await pose()).active);
  const box=await page.locator('canvas').first().boundingBox();
  const input={x:box.x+box.width*.32,y:box.y+box.height*.6};
  assert.equal(await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.tagName,input),'CANVAS');
@@ -68,14 +68,14 @@ try {
  // A lost gesture must also release cleanly without recreating or resetting the view.
  await page.mouse.move(input.x,input.y);await page.mouse.down();await page.mouse.move(box.x+box.width*.45,box.y+box.height*.7,{steps:4});await page.evaluate(()=>window.dispatchEvent(new Event('blur')));await page.mouse.up();
  await flight('home-after-lost-gesture',()=>page.getByRole('button',{name:/Общий вид/}).click());
- await page.emulateMedia({reducedMotion:'reduce'});await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(100);
+ await page.emulateMedia({reducedMotion:'reduce'});await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();await page.waitForTimeout(100);
  const reduced=await page.evaluate(()=>window.__s3000.camera.userData.cameraMotion);assert(!reduced.active&&reduced.duration===0);
  await page.emulateMedia({reducedMotion:'no-preference'});
  await load(5);
  await flight('cascade-to-boiler-1',()=>page.getByRole('button',{name:'Котёл 1',exact:true}).click());
  await flight('boiler-1-to-boiler-5',()=>page.getByRole('button',{name:'Котёл 5',exact:true}).click(),true);
- await flight('open-cascade-cabinet',()=>page.getByRole('button',{name:'Открыть каскадный шкаф',exact:true}).click());
- await page.getByRole('button',{name:'Закрыть каскадный шкаф',exact:true}).click();await settled();
+ await flight('open-cascade-cabinet',()=>page.getByRole('button',{name:'Открыть шкаф управления каскадом',exact:true}).click());
+ await page.getByRole('button',{name:'Закрыть шкаф управления каскадом',exact:true}).click();await settled();
  const point=async(unit,name,local)=>{
   await settled();return page.evaluate(({unit,name,local})=>{
    const s=window.__s3000,o=(unit?s.scene.userData.units[unit-1]:s.scene).getObjectByName(name);o.updateWorldMatrix(true,true);
@@ -90,7 +90,7 @@ try {
  const individual=await page.evaluate(()=>window.__s3000.scene.userData.units.map(u=>u.getObjectByName('photo_hinge_boiler').rotation.y));assert(individual.slice(0,4).every(a=>a===0));
  hit=await point(0,'cascade_door',[-.12,.22,.002]);await flight('direct-cascade-cabinet',()=>page.mouse.click(hit.x,hit.y));
  await page.waitForFunction(()=>window.__s3000.scene.getObjectByName('photo_hinge_cascade').rotation.y>1.7);
- await load(1,'standard');await flight('standard-open-cabinet',()=>page.getByRole('button',{name:'Открыть шкаф',exact:true}).click());
+ await load(1,'standard');await flight('standard-open-cabinet',()=>page.getByRole('button',{name:'Открыть шкаф управления котлом',exact:true}).click());
  await page.waitForFunction(()=>window.__s3000.scene.userData.units[0].getObjectByName('opening_cabinet').rotation.y< -1.8);
  await page.waitForTimeout(1200);
  const beforeIdle=await page.evaluate(()=>window.__s3000.gl.info.render.frame);await page.waitForTimeout(350);const afterIdle=await page.evaluate(()=>window.__s3000.gl.info.render.frame);

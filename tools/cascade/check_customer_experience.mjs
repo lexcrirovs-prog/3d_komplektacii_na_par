@@ -30,15 +30,16 @@ try{
   await load(power,count,trim);const state=await inspect();assert.equal(state.shaderErrors,0);assert.equal(state.units.length,count);
   for(const unit of state.units){assert.equal(unit.plaque[0],0);assert(unit.width>.2);assert.equal(unit.burner.hiddenFrontInscriptions,1);assert(unit.heads.length>0&&unit.heads.every(c=>c==='#263d56'))}
   assert.equal(await page.locator('.s3-navigation .s3-home').count(),0);assert.equal(await page.locator('.s3-view-controls button').first().innerText(),count===1?'Котёл':'Котёл 1');
-  await page.getByRole('button',{name:'Шкаф',exact:true}).click();const card=page.locator('.s3-part-card');await card.waitFor();
+  await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();const card=page.locator('.s3-part-card');await card.waitFor();
+  assert.match(await card.locator('h2').innerText(),/Шкаф управления котлом/);
   assert((await card.locator('.s4-benefits li').count())>0);assert.equal(await card.locator('details[open]').count(),0);assert((await card.locator('.s4-availability').innerText()).includes(trim==='standard'?'Стандарт':'Комфорт'));
   await page.getByRole('button',{name:/Общий вид/,exact:false}).click();await page.waitForTimeout(400);
   scenarios.push({power,count,trim,navigation:await page.locator('.s3-view-controls button').allTextContents(),...state});console.log('SCENARIO',power,count,trim);
  }
  await load(4000,3);await shot('overview');
- await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(800);await shot('cabinet-card');
+ await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();await page.waitForTimeout(800);await shot('cabinet-card');
  const card=page.locator('.s3-part-card');await card.locator('summary').click();assert.equal(await card.locator('details[open]').count(),1);await shot('expanded-details');
- await page.getByRole('button',{name:'Шкаф каскада',exact:true}).click();assert.equal(await card.locator('details[open]').count(),0);await page.waitForTimeout(700);await shot('cascade-card');
+ await page.getByRole('button',{name:'Шкаф управления каскадом',exact:true}).click();assert.equal(await card.locator('details[open]').count(),0);assert.match(await card.locator('h2').innerText(),/Шкаф управления каскадом/);await page.waitForTimeout(700);await shot('cascade-card');
  // Longer source-grounded descriptions remain optional and do not bury availability.
  assert.match(await card.locator('.s4-benefits').innerText(),/наработку/);
  await card.locator('summary').click();assert.match(await card.locator('details').innerText(),/загрузку горелок/);await shot('cascade-technical-details');
@@ -72,7 +73,7 @@ try{
  await view([head[0]+1.05,head[1]+.4,head[2]+1.4],head);await shot('sensor-head');
  // Mobile has a reachable quote CTA and scrollable details without page overflow.
  await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:/Общий вид/}).click();await page.waitForTimeout(700);await shot('mobile-overview');
- await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(500);await shot('mobile-card');
+ await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();await page.waitForTimeout(500);await shot('mobile-card');
  const mobile=await page.evaluate(()=>({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,cta:document.querySelector('.s4-quote-trigger').getBoundingClientRect().toJSON()}));assert(!mobile.overflow);assert(mobile.cta.x>=0&&mobile.cta.right<=390);
  await page.getByRole('button',{name:'Деаэратор',exact:true}).click();assert.equal(await card.locator('details[open]').count(),0);await card.locator('summary').click();
  await card.locator('.s4-availability').scrollIntoViewIfNeeded();await shot('mobile-technical-details');

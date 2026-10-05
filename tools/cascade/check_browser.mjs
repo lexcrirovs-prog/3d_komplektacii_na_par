@@ -50,17 +50,17 @@ try {
   assert.equal(await visible('cascade_distribution'),n>1);
  }
  checks.push('Counts 1,2,3,4,5 change geometry and persist in URL');
- await page.getByRole('button',{name:'Открыть шкафы котлов',exact:true}).click();
+ await page.getByRole('button',{name:'Открыть шкафы управления котлами',exact:true}).click();
  await page.waitForFunction(()=>window.__s3000.scene.userData.units.every(g=>Math.abs(g.getObjectByName('photo_hinge_boiler').rotation.y-105*Math.PI/180)<.0001),null,{timeout:20000});
  await page.screenshot({path:resolve(out,'comfort-plus-open.png')});
- await page.getByRole('button',{name:'Закрыть шкафы котлов',exact:true}).click();
+ await page.getByRole('button',{name:'Закрыть шкафы управления котлами',exact:true}).click();
  await page.getByLabel('Комплектация',{exact:true}).selectOption('comfort');await wait(4000,5,'comfort');
  assert(await page.evaluate(()=>window.__s3000.scene.userData.units.every(g=>g.getObjectByName('plus_cabinet').userData.displayScale===.8)));
- await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.screenshot({path:resolve(out,'comfort-closed.png')});
- await page.getByRole('button',{name:'Открыть шкафы котлов',exact:true}).click();
+ await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();await page.screenshot({path:resolve(out,'comfort-closed.png')});
+ await page.getByRole('button',{name:'Открыть шкафы управления котлами',exact:true}).click();
  await page.waitForFunction(()=>window.__s3000.scene.userData.units.every(g=>Math.abs(g.getObjectByName('photo_hinge_boiler').rotation.y-105*Math.PI/180)<.0001));
  await page.screenshot({path:resolve(out,'comfort-open.png')});
- await page.getByRole('button',{name:'Открыть каскадный шкаф',exact:true}).click();
+ await page.getByRole('button',{name:'Открыть шкаф управления каскадом',exact:true}).click();
  await page.waitForFunction(()=>Math.abs(window.__s3000.scene.getObjectByName('photo_hinge_cascade').rotation.y-105*Math.PI/180)<.0001);
  await page.screenshot({path:resolve(out,'cascade-cabinet-open.png')});
  await page.getByRole('button',{name:'Открыть дверь котла',exact:true}).click();
@@ -76,7 +76,7 @@ try {
  }
  checks.push('DA/economizer/FV/BDV independently switch their piping; modulation cable follows economizer option');
  await page.getByRole('tab',{name:'Оборудование',exact:true}).click();
- assert(await page.getByText('Общий каскадный шкаф автоматики',{exact:true}).count()>=1);
+ assert(await page.getByText('Шкаф управления каскадом',{exact:true}).count()>=1);
  assert(await page.getByText('Датчик давления общего коллектора',{exact:true}).count()>=1);
  await page.getByRole('tab',{name:'Сборка',exact:true}).click();
  // Each rating uses its own factory model; unit count remains five after switching.

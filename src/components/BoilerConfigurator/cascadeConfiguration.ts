@@ -15,6 +15,9 @@ export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):Fami
     center:native?viewPoint(native.center):parts.find(p=>p.id==='deaerator')!.center,
     note:`Автоматический выбор по ${count===1?'единичной мощности котла':'суммарной мощности каскада'} ${power*count/1000} т/ч. ${native?'Геометрия и патрубки из заводской STEP-модели. Опорная плоскость поднята на 1 м.':'Вертикальная заводская модель ДА-3.'}`})
   const set=(id:string,change:Partial<FamilyPart>)=>{const row=result.find(p=>p.id===id);if(row)Object.assign(row,change)}
+  set('control_cabinet',{label:'Шкаф управления котлом «Стандарт»'})
+  set('cabinet_door',{label:'Дверь шкафа управления котлом'})
+  set('cabinet_interior',{label:'Внутреннее оборудование шкафа управления котлом'})
   set('direct_inlet',{excludes:['economizer']})
   set('bdv_cooling_stub',{label:'Охлаждающая вода → BDV',center:routeCenter(bdvCoolingRoute()),note:'Прямой подвод по оси заводского штуцера F.'})
   set('bdv_cooling_marker',{label:'Подключение охлаждающей воды BDV',note:'Охлаждающая вода',center:routeCenter(bdvCoolingRoute())})
@@ -62,12 +65,12 @@ export function partInUnit(part:FamilyPart,unit:number,count:number,photoCabinet
 }
 export function extraParts(power:number,count:number,trim:Trim,center:number[]):FamilyPart[] {
   const result:FamilyPart[]=[]
-  if(trim!=='standard')result.push({id:'plus_cabinet',label:`Шкаф котла «${trim==='comfort'?'Комфорт':'Комфорт+'}»`,category:'Автоматика',note:`Корпус 650 × 500 × 220 мм, по фотографиям. ${trim==='comfort'?'Дисплей на 20% меньше по ширине и высоте, чем в «Комфорт+».':'Сенсорная панель и четыре прибора на двери.'}`,center})
+  if(trim!=='standard')result.push({id:'plus_cabinet',label:`Шкаф управления котлом «${trim==='comfort'?'Комфорт':'Комфорт+'}»`,category:'Автоматика',note:`Корпус 650 × 500 × 220 мм, по фотографиям. ${trim==='comfort'?'Дисплей на 20% меньше по ширине и высоте, чем в «Комфорт+».':'Сенсорная панель и четыре прибора на двери.'}`,center})
   if(count>1) {
     const g=greyOrigin(count)
-    result.push({id:'cascade_cabinet',label:'Общий каскадный шкаф автоматики',category:'Автоматика',note:'Корпус 400 × 400 × 150 мм. Связь со шкафами котлов и датчиком давления общего коллектора — по схеме ШУ КПК 01.',center:viewPoint([g[0],g[1],g[2]+.2])})
+    result.push({id:'cascade_cabinet',label:'Шкаф управления каскадом',category:'Автоматика',note:'Корпус 400 × 400 × 150 мм. Связь со шкафами управления котлами и датчиком давления общего коллектора — по схеме ШУ КПК 01.',center:viewPoint([g[0],g[1],g[2]+.2])})
     for(const p of cascadeRoutes(power,count))result.push({id:p.id,label:p.label,center:routeCenter(p),requires:p.requires,excludes:p.excludes,category:'Каскадная обвязка',note:p.id==='cascade_header'?'Размер коллектора показан для компоновки. Подбор диаметра на суммарный расход выполняется проектом.':''})
-    result.push({id:'cascade_pressure_sensor',label:'Датчик давления общего парового коллектора',category:'Автоматика',note:'ШУ КПК 01, листы 2 и 8: измерение давления общего коллектора, сигнал в каскадный шкаф.',center:viewPoint([(count-1)*unitSpacing+.3,5.6,4.86])})
+    result.push({id:'cascade_pressure_sensor',label:'Датчик давления общего парового коллектора',category:'Автоматика',note:'ШУ КПК 01, листы 2 и 8: измерение давления общего коллектора, сигнал в шкаф управления каскадом.',center:viewPoint([(count-1)*unitSpacing+.3,5.6,4.86])})
     result.push({id:'cascade_supports',label:'Опоры общего коллектора и шкафа',category:'Каскадная обвязка',note:'',center:[g[0],2.2,-5.6]})
     const d=distributionLayout(count)
     result.push({id:'cascade_distribution_fittings',label:'Арматура и опоры паровой гребёнки',category:'Распределение пара',note:'Ввод, выходы к потребителям, манометр. Компоновка по видео 29.09.2026 и 02-2026-ТХ, лист 8.',center:viewPoint([d.x,4.5,1.85])})

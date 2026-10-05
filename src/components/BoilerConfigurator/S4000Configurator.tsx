@@ -305,9 +305,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const bomParts=catalog[config.trim]['S-'+config.power].filter(r=>(r.pressure===null||r.pressure===config.pressure)&&(!r.option||enabled.has(r.option))).map(r=>{
     const cabinetRow=config.trim!=='standard'&&['level_controllers','bc970','pr200','lc220','lc440'].includes(r.id)
     const nodes=cabinetRow?['plus_cabinet']:(partMapping[r.id]||[r.id]).filter(id=>byId.has(id)&&isPartVisible(byId.get(id)!,enabled,true,optionalIds))
-    return {...r,quantity:r.quantity*count,nodes}
+    return {...r,label:r.id==='relay_control'?'Шкаф управления котлом «Стандарт»':r.label,quantity:r.quantity*count,nodes}
   })
-  if(cascade)bomParts.push({id:'cascade_cabinet',label:'Общий каскадный шкаф автоматики',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
+  if(cascade)bomParts.push({id:'cascade_cabinet',label:'Шкаф управления каскадом',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
   if(enabled.has('deaerator'))bomParts.push({id:'deaerator',label:`Деаэратор ${daLabel}`,quantity:1,pressure:null,option:'deaerator',source_row:0,nodes:['deaerator']})
   if(cascade)bomParts.push({id:'cascade_pressure_sensor',label:'Датчик давления общего коллектора',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_pressure_sensor']})
   if(cascade)bomParts.push({id:'cascade_distribution',label:'Паровая распределительная гребёнка',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution']},{id:'cascade_distribution_trap',label:'Конденсатоотводчик паровой гребёнки',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution_trap']})
@@ -478,8 +478,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
         {Array.from({length:count},(_,i)=><button key={i} onClick={()=>focus(i?`unit${i+1}:boiler`:'boiler')}>{cascade?`Котёл ${i+1}`:'Котёл'}</button>)}
         <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
-        <button onClick={() => focus(config.trim==='standard'?'control_cabinet':'plus_cabinet')}>Шкаф</button>
-        {cascade&&<button onClick={()=>focus('cascade_cabinet')}>Шкаф каскада</button>}
+        <button onClick={() => focus(config.trim==='standard'?'control_cabinet':'plus_cabinet')}>Шкаф управления котлом</button>
+        {cascade&&<button onClick={()=>focus('cascade_cabinet')}>Шкаф управления каскадом</button>}
         <button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>
         <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
         {cascade&&<button onClick={()=>focus('cascade_distribution')}>Гребёнка</button>}
@@ -525,9 +525,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <div className="s3-section-label">ЗАГЛЯНУТЬ ВНУТРЬ</div>
             <p>Нажмите на дверь прямо в 3D, чтобы открыть или закрыть её. В каскаде каждая дверь открывается отдельно.</p>
             <button disabled={!sceneReady} aria-pressed={cabinetOpen} onClick={openCabinet}>
-              <span>{cabinetOpen ? (cascade?'Закрыть шкафы котлов':'Закрыть шкаф') : (cascade?'Открыть шкафы котлов':'Открыть шкаф')}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
+              <span>{cabinetOpen ? (cascade?'Закрыть шкафы управления котлами':'Закрыть шкаф управления котлом') : (cascade?'Открыть шкафы управления котлами':'Открыть шкаф управления котлом')}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
             </button>
-            {cascade&&<button disabled={!sceneReady} aria-pressed={cascadeOpen} onClick={()=>{setCascadeOpen(v=>!v);setShowAccessories(true);setSelected(null);cascadeView();showModelOnMobile()}}><span>{cascadeOpen?'Закрыть каскадный шкаф':'Открыть каскадный шкаф'}</span><span aria-hidden="true">↗</span></button>}
+            {cascade&&<button disabled={!sceneReady} aria-pressed={cascadeOpen} onClick={()=>{setCascadeOpen(v=>!v);setShowAccessories(true);setSelected(null);cascadeView();showModelOnMobile()}}><span>{cascadeOpen?'Закрыть шкаф управления каскадом':'Открыть шкаф управления каскадом'}</span><span aria-hidden="true">↗</span></button>}
             <button disabled={!sceneReady || asset.tubeCount===null} aria-pressed={boilerOpen} onClick={openBoiler}>
               <span>{boilerOpen ? 'Закрыть дверь котла' : 'Открыть дверь котла'}</span><span aria-hidden="true">{boilerOpen ? '↶' : '↗'}</span>
             </button>

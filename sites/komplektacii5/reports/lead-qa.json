@@ -1,0 +1,75 @@
+{
+  "version": "2026.10.01.1",
+  "date": "2026-10-01",
+  "executor": "Codex / GPT-6",
+  "runtime": "PHP 8.5.11 (cli) (built: Sep 22 2026 13:51:38) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.5.11, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.11, Copyright (c), by Zend Technologies",
+  "transport": "capture/fail only; PREMIUM_TEST_MODE=1; localhost cli-server",
+  "realEmailsSent": 0,
+  "storage": "C:\\Users\\Алексей\\Documents\\Codex\\2026-10-01\\sites-plugin-sites-openai-curated-remote\\work\\lead-test\\1790855851696-43336",
+  "scenarios": [
+    {
+      "name": "Method, media type, malformed JSON, oversized body and origin validation",
+      "passed": true
+    },
+    {
+      "name": "Contact validation rejects missing, wrong-type, overlong, injected and honeypot values",
+      "passed": true
+    },
+    {
+      "name": "Configuration validation rejects invalid types, duplicates and incompatible modules",
+      "passed": true
+    },
+    {
+      "name": "Phone-only/email-only, Unicode boundary and allowed origins remain usable",
+      "passed": true
+    },
+    {
+      "name": "270 valid configurations produce matching server-owned catalog and shared equipment",
+      "passed": true
+    },
+    {
+      "name": "Success, safe replay, canonical module ordering and conflicting payload ID",
+      "passed": true
+    },
+    {
+      "name": "Parallel duplicate across two PHP processes is captured once",
+      "passed": true
+    },
+    {
+      "name": "Per-IP limit is five attempts/10 minutes and replay remains available",
+      "passed": true
+    },
+    {
+      "name": "Global limit permits 25 attempts/minute and blocks request 26 regardless of IP bucket",
+      "passed": true
+    },
+    {
+      "name": "Expired windows are pruned and limits reserve capacity across concurrent requests",
+      "passed": true
+    },
+    {
+      "name": "Windows transient replacement lock recovers; persistent lock fails before capture",
+      "passed": true
+    },
+    {
+      "name": "Mail transport failure is explicit and the same request can retry safely",
+      "passed": true
+    },
+    {
+      "name": "Pending/unknown and corrupt persisted states fail closed without another capture",
+      "passed": true
+    },
+    {
+      "name": "Unavailable/private-storage guards prevent acceptance and public writes",
+      "passed": true
+    }
+  ],
+  "matrixConfigurations": 270,
+  "limitations": [
+    "Runtime tests use PHP 8.5.11, not PHP 5.6. PHP 5.6 compatibility is syntax/API inspection only.",
+    "Beget PHP/sendmail and actual delivery to premium-gas@mail.ru are not exercised.",
+    "Global limit applies to this application; other sites on the Beget account may also send mail."
+  ],
+  "finishedAt": "2026-10-01T11:57:41.801Z",
+  "passed": true
+}

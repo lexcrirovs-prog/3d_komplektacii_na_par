@@ -1,0 +1,61 @@
+{
+  "sourceCommit": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "method": "Canonical helper bundle; primitive segment counts only reduced. Supports and DA3 columns use source positions verbatim. No duplicate route pipes.",
+  "sources": [
+    {
+      "path": "src/components/BoilerConfigurator/distributionGeometry.ts",
+      "sourceSHA256": "a6a5afcf823ebcde15001d3bd561f5bc83c77680a68e8e81be3d49a52576e39e",
+      "derivedSHA256": "f518c1fd223b0450fa835aef917e98eaa204bf72cd3d66c1df95936f38948ef0"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/deaeratorGeometry.ts",
+      "sourceSHA256": "3d98ae921797a476456e2ecb5246df95ed3ddbcf245e2ccfd8565f26711dc3fc",
+      "derivedSHA256": "2a0ab94353329d77a7059138c957a704098b4924245a0b091687432e93970050"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/cascadeRoutes.ts",
+      "sourceSHA256": "38e8395fad52e4fb276eda9bd501fbcdb31020460d158461750e7c0ea145682e",
+      "derivedSHA256": "38e8395fad52e4fb276eda9bd501fbcdb31020460d158461750e7c0ea145682e"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/deaeratorSelection.ts",
+      "sourceSHA256": "4ef8a2133de63c2428b574ed26bf7b3c7480376076558c62448c6e6716e51364",
+      "derivedSHA256": "4ef8a2133de63c2428b574ed26bf7b3c7480376076558c62448c6e6716e51364"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/familyRules.ts",
+      "sourceSHA256": "ce728991a862d36552958953f137a870d189137b7eac91669584d18c5cf293aa",
+      "derivedSHA256": "ce728991a862d36552958953f137a870d189137b7eac91669584d18c5cf293aa"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/deaeratorPorts.ts",
+      "sourceSHA256": "f87b3ab65a838179c1a5d4c3f4b829eaa2e34d19381e39ed1a555fc971140f8d",
+      "derivedSHA256": "f87b3ab65a838179c1a5d4c3f4b829eaa2e34d19381e39ed1a555fc971140f8d"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/nativeDeaeratorGeometry.ts",
+      "sourceSHA256": "f6c16e2945f1e8648b5fe3bcb33f1986999f9cd980bdfe82482097cd4ccb7a3b",
+      "derivedSHA256": "d1eac30c4c607f33bff0d32a14c939b2d8d49086d20e4609b1303cb3e243ba88"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/steamDistribution.ts",
+      "sourceSHA256": "8b14ab9580adca508020d483ab3345e1259e5985369d03dcde0dc9e092a2109d",
+      "derivedSHA256": "8b14ab9580adca508020d483ab3345e1259e5985369d03dcde0dc9e092a2109d"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/cascadeConnections.ts",
+      "sourceSHA256": "f70c80700250b073ad01d0b2b77b71942c4310047f8a31e720d1fc30e0d21763",
+      "derivedSHA256": "f70c80700250b073ad01d0b2b77b71942c4310047f8a31e720d1fc30e0d21763"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/nativeDeaeratorRoutes.ts",
+      "sourceSHA256": "1f3bdaa0027e33757aab42e7b16056a411f80f31172ad472e508c9dc10165584",
+      "derivedSHA256": "1f3bdaa0027e33757aab42e7b16056a411f80f31172ad472e508c9dc10165584"
+    },
+    {
+      "path": "src/components/BoilerConfigurator/deaeratorRoutes.ts",
+      "sourceSHA256": "c146955aedb4ef295d7ec3114ee0ae1f063fe1766f63d6bcb756233aa81b8f05",
+      "derivedSHA256": "c146955aedb4ef295d7ec3114ee0ae1f063fe1766f63d6bcb756233aa81b8f05"
+    }
+  ]
+}

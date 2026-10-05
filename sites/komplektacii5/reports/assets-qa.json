@@ -1,0 +1,647 @@
+{
+  "status": "PASSED_ASSET_STRUCTURE_SOURCES_AND_BUDGETS",
+  "date": "2026-10-01",
+  "sourceCommit": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "files": 105,
+  "sourceFilesUnchanged": 80,
+  "configurationScenarios": 135,
+  "maxBytes": 1939220,
+  "maxSingleTrianglesIncludingRouteAllowance": 138098,
+  "maxCascadeTrianglesIncludingRouteAllowance": 464405,
+  "maxEnvelopeDriftM": 0.000021593695263444346,
+  "sourceArtworkUnchanged": true,
+  "orphans": [],
+  "checks": [
+    {
+      "url": "models/500/fv.glb",
+      "bytes": 86252,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/500/base.glb",
+      "bytes": 730568,
+      "triangles": 45463,
+      "semanticRoots": 57
+    },
+    {
+      "url": "models/500/modulation.glb",
+      "bytes": 53340,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/500/trim-comfort.glb",
+      "bytes": 12780,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/500/gpz.glb",
+      "bytes": 43608,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/500/burner.glb",
+      "bytes": 56696,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/500/cabinet-standard.glb",
+      "bytes": 70408,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/500/bdv.glb",
+      "bytes": 70276,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/500/trim-plus.glb",
+      "bytes": 16180,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/500/core.glb",
+      "bytes": 148864,
+      "triangles": 9288,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/1000/fv.glb",
+      "bytes": 86256,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/1000/base.glb",
+      "bytes": 742524,
+      "triangles": 45441,
+      "semanticRoots": 57
+    },
+    {
+      "url": "models/1000/modulation.glb",
+      "bytes": 53336,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/1000/trim-comfort.glb",
+      "bytes": 12796,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/1000/gpz.glb",
+      "bytes": 43648,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/1000/burner.glb",
+      "bytes": 56708,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/1000/cabinet-standard.glb",
+      "bytes": 70400,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/1000/bdv.glb",
+      "bytes": 70284,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/1000/trim-plus.glb",
+      "bytes": 16200,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/1000/core.glb",
+      "bytes": 137248,
+      "triangles": 8102,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/1500/fv.glb",
+      "bytes": 86252,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/1500/base.glb",
+      "bytes": 746416,
+      "triangles": 45471,
+      "semanticRoots": 57
+    },
+    {
+      "url": "models/1500/modulation.glb",
+      "bytes": 53396,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/1500/trim-comfort.glb",
+      "bytes": 12808,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/1500/gpz.glb",
+      "bytes": 43652,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/1500/burner.glb",
+      "bytes": 56708,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/1500/cabinet-standard.glb",
+      "bytes": 70400,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/1500/bdv.glb",
+      "bytes": 70284,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/1500/trim-plus.glb",
+      "bytes": 16204,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/1500/core.glb",
+      "bytes": 135896,
+      "triangles": 8050,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/1500/economizer.glb",
+      "bytes": 19736,
+      "triangles": 1042,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/2000/fv.glb",
+      "bytes": 86252,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/2000/base.glb",
+      "bytes": 738740,
+      "triangles": 45159,
+      "semanticRoots": 56
+    },
+    {
+      "url": "models/2000/modulation.glb",
+      "bytes": 53392,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/2000/trim-comfort.glb",
+      "bytes": 12808,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/2000/gpz.glb",
+      "bytes": 43628,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/2000/burner.glb",
+      "bytes": 56696,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/2000/cabinet-standard.glb",
+      "bytes": 70256,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/2000/bdv.glb",
+      "bytes": 70280,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/2000/trim-plus.glb",
+      "bytes": 16188,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/2000/core.glb",
+      "bytes": 134560,
+      "triangles": 8040,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/2000/economizer.glb",
+      "bytes": 17940,
+      "triangles": 912,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/2500/fv.glb",
+      "bytes": 86256,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/2500/base.glb",
+      "bytes": 738540,
+      "triangles": 45139,
+      "semanticRoots": 56
+    },
+    {
+      "url": "models/2500/modulation.glb",
+      "bytes": 53392,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/2500/trim-comfort.glb",
+      "bytes": 12808,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/2500/gpz.glb",
+      "bytes": 43656,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/2500/burner.glb",
+      "bytes": 56696,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/2500/cabinet-standard.glb",
+      "bytes": 70264,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/2500/bdv.glb",
+      "bytes": 70280,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/2500/trim-plus.glb",
+      "bytes": 16204,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/2500/core.glb",
+      "bytes": 134540,
+      "triangles": 8004,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/2500/economizer.glb",
+      "bytes": 18392,
+      "triangles": 950,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/3000/fv.glb",
+      "bytes": 86252,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/3000/base.glb",
+      "bytes": 738800,
+      "triangles": 45151,
+      "semanticRoots": 56
+    },
+    {
+      "url": "models/3000/modulation.glb",
+      "bytes": 53368,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/3000/trim-comfort.glb",
+      "bytes": 12812,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/3000/gpz.glb",
+      "bytes": 43620,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/3000/burner.glb",
+      "bytes": 56708,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/3000/cabinet-standard.glb",
+      "bytes": 70400,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/3000/bdv.glb",
+      "bytes": 70280,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/3000/trim-plus.glb",
+      "bytes": 16196,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/3000/core.glb",
+      "bytes": 147288,
+      "triangles": 9151,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/3000/economizer.glb",
+      "bytes": 17308,
+      "triangles": 766,
+      "semanticRoots": 4
+    },
+    {
+      "url": "models/3500/fv.glb",
+      "bytes": 86248,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/3500/base.glb",
+      "bytes": 742252,
+      "triangles": 45157,
+      "semanticRoots": 56
+    },
+    {
+      "url": "models/3500/modulation.glb",
+      "bytes": 53384,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/3500/trim-comfort.glb",
+      "bytes": 12812,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/3500/gpz.glb",
+      "bytes": 43644,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/3500/burner.glb",
+      "bytes": 56708,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/3500/cabinet-standard.glb",
+      "bytes": 70404,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/3500/bdv.glb",
+      "bytes": 70284,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/3500/trim-plus.glb",
+      "bytes": 16196,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/3500/core.glb",
+      "bytes": 138220,
+      "triangles": 8425,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/3500/economizer.glb",
+      "bytes": 17248,
+      "triangles": 760,
+      "semanticRoots": 4
+    },
+    {
+      "url": "models/4000/fv.glb",
+      "bytes": 86252,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/4000/base.glb",
+      "bytes": 730536,
+      "triangles": 44533,
+      "semanticRoots": 53
+    },
+    {
+      "url": "models/4000/modulation.glb",
+      "bytes": 53152,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/4000/core.glb",
+      "bytes": 198420,
+      "triangles": 14664,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/4000/trim-comfort.glb",
+      "bytes": 12676,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/4000/gpz.glb",
+      "bytes": 43532,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/4000/burner.glb",
+      "bytes": 56668,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/4000/cabinet-standard.glb",
+      "bytes": 70100,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/4000/bdv.glb",
+      "bytes": 70280,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/4000/trim-plus.glb",
+      "bytes": 16068,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/4000/economizer.glb",
+      "bytes": 16180,
+      "triangles": 758,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/5000/fv.glb",
+      "bytes": 86244,
+      "triangles": 4794,
+      "semanticRoots": 8
+    },
+    {
+      "url": "models/5000/base.glb",
+      "bytes": 738608,
+      "triangles": 44847,
+      "semanticRoots": 55
+    },
+    {
+      "url": "models/5000/modulation.glb",
+      "bytes": 53404,
+      "triangles": 3571,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/5000/trim-comfort.glb",
+      "bytes": 12812,
+      "triangles": 489,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/5000/gpz.glb",
+      "bytes": 43620,
+      "triangles": 2786,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/5000/burner.glb",
+      "bytes": 56708,
+      "triangles": 4254,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/5000/cabinet-standard.glb",
+      "bytes": 70396,
+      "triangles": 4259,
+      "semanticRoots": 5
+    },
+    {
+      "url": "models/5000/bdv.glb",
+      "bytes": 70276,
+      "triangles": 4078,
+      "semanticRoots": 6
+    },
+    {
+      "url": "models/5000/trim-plus.glb",
+      "bytes": 16208,
+      "triangles": 908,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/5000/core.glb",
+      "bytes": 138708,
+      "triangles": 8525,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/5000/economizer.glb",
+      "bytes": 15076,
+      "triangles": 670,
+      "semanticRoots": 3
+    },
+    {
+      "url": "models/shared/cabinet-comfort.glb",
+      "bytes": 218252,
+      "triangles": 12011,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/shared/cabinet-comfort_plus.glb",
+      "bytes": 219852,
+      "triangles": 12107,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/shared/cabinet-cascade.glb",
+      "bytes": 80952,
+      "triangles": 1930,
+      "semanticRoots": 2
+    },
+    {
+      "url": "models/shared/da3.glb",
+      "bytes": 419416,
+      "triangles": 42364,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/shared/da15_4.glb",
+      "bytes": 258288,
+      "triangles": 27218,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/shared/da15_8.glb",
+      "bytes": 245900,
+      "triangles": 24786,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/shared/da25_15.glb",
+      "bytes": 299228,
+      "triangles": 32292,
+      "semanticRoots": 1
+    },
+    {
+      "url": "models/shared/da25_25.glb",
+      "bytes": 303808,
+      "triangles": 30686,
+      "semanticRoots": 1
+    }
+  ],
+  "visualAcceptance": "NOT_RUN_BY_ASSET_AGENT"
+}

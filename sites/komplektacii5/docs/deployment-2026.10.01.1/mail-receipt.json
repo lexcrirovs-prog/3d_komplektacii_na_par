@@ -1,0 +1,25 @@
+{
+  "received": true,
+  "requestId": "9d1d9052-9160-4e01-9289-f0f90368acd5",
+  "recipient": "premium-gas@mail.ru",
+  "sender": "no-reply@prgz.ru",
+  "sentAt": "2026-10-01T13:06:01.000Z",
+  "receivedAt": "2026-10-01T13:06:02.000Z",
+  "folder": "INBOX",
+  "configuration": {
+    "power": 4000,
+    "trim": "comfort",
+    "pressure": 12,
+    "cascade": 1,
+    "addons": [
+      "burner",
+      "gpz"
+    ],
+    "mode": "director"
+  },
+  "compositionRows": 32,
+  "configurationUrlVerified": true,
+  "siteVersion": "2026.10.01.1",
+  "sourceCommit": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "verification": "Exact request UUID located and message fetched read-only through Mail.ru gateway. Actual recipient, configuration, composition and final URL verified. One real website submission; no mailbox send or mutation."
+}

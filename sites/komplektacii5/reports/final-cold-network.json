@@ -1,0 +1,90 @@
+{
+  "conditions": {
+    "downloadMbps": 10,
+    "latencyMs": 100,
+    "cacheDisabled": true,
+    "gzip": true
+  },
+  "run": {
+    "firstSceneMs": 1914.7999999970198,
+    "resources": [
+      {
+        "name": "index-V9ilmq0k.js",
+        "bytes": 57861,
+        "end": 309.29999999701977
+      },
+      {
+        "name": "index-BYKjUT6Q.css",
+        "bytes": 5450,
+        "end": 262.79999999701977
+      },
+      {
+        "name": "docs-manifest.json",
+        "bytes": 1836,
+        "end": 451.8999999985099
+      },
+      {
+        "name": "public-catalog.json",
+        "bytes": 6530,
+        "end": 467.3999999985099
+      },
+      {
+        "name": "Viewer-DkO3ARF7.js",
+        "bytes": 175472,
+        "end": 639.2999999970198
+      },
+      {
+        "name": "premium-logo.png",
+        "bytes": 48935,
+        "end": 529.1999999992549
+      },
+      {
+        "name": "lite-manifest.json",
+        "bytes": 932,
+        "end": 795.3999999985099
+      },
+      {
+        "name": "4000.json",
+        "bytes": 9459,
+        "end": 922.2999999970198
+      },
+      {
+        "name": "base.glb",
+        "bytes": 509524,
+        "end": 1673.199999999255
+      },
+      {
+        "name": "modulation.glb",
+        "bytes": 35875,
+        "end": 1165.199999999255
+      },
+      {
+        "name": "core.glb",
+        "bytes": 151489,
+        "end": 1383.8999999985099
+      },
+      {
+        "name": "trim-comfort.glb",
+        "bytes": 7241,
+        "end": 1086.5999999977648
+      },
+      {
+        "name": "gpz.glb",
+        "bytes": 30069,
+        "end": 1180.0999999977648
+      },
+      {
+        "name": "burner.glb",
+        "bytes": 31561,
+        "end": 1196.5999999977648
+      },
+      {
+        "name": "cabinet-comfort.glb",
+        "bytes": 144594,
+        "end": 1908.5
+      }
+    ],
+    "navigation": 823,
+    "transferredBytes": 1217651
+  }
+}

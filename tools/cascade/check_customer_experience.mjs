@@ -45,7 +45,7 @@ try{
  await card.locator('summary').click();assert.match(await card.locator('details').innerText(),/расходуется часть пара/);await page.waitForTimeout(700);await shot('deaerator-technical-details');
  await page.getByRole('button',{name:/Получить коммерческое предложение/}).click();const dialog=page.getByRole('dialog');
  assert.match(await dialog.locator('.s4-quote-summary').innerText(),/3 × PREMIUM S-4000 · 12 т\/ч · 12 бар · Комфорт/);
- assert.match(await dialog.locator('.s4-quote-addons').innerText(),/ДА-25\/25/);assert.match(await dialog.locator('.s4-quote-recipient').innerText(),/premium-gas@mail.ru/);
+ assert.match(await dialog.locator('.s4-quote-addons').innerText(),/ДА-25\/25/);assert.equal(await dialog.getByText('Получатель: premium-gas@mail.ru',{exact:true}).count(),0);
  let posts=[];
  await page.route('**/api/request-quote.php',async route=>{
   assert.equal(route.request().method(),'POST');posts.push(route.request().postDataJSON());

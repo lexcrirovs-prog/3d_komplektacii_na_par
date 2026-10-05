@@ -34,7 +34,6 @@
 .s4-quote-dialog input:not([type=checkbox]),.s4-quote-dialog textarea{box-sizing:border-box;display:block;width:100%;border:1px solid #b8c6cf;border-radius:6px;padding:10px;margin-top:5px;background:#fff;color:#233644;font:inherit;resize:vertical}
 .s4-quote-dialog .s4-consent{display:flex;align-items:flex-start;gap:9px;font-size:11px;color:#4c6070}.s4-consent input{flex-shrink:0;margin:4px 0;accent-color:#b71735}
 .s4-quote-dialog .s4-honeypot{display:none}
-.s4-quote-recipient{font-size:11px;color:#526573}
 .s4-quote-submit,.s4-quote-success button{border:0;border-radius:7px;background:#b71735;color:#fff;font:inherit;font-size:14px;padding:12px 20px;cursor:pointer}
 .s4-mail-link{font-size:12px;color:#315a77;margin-left:18px}
 .s4-quote-error{font-size:13px;padding:10px 13px;line-height:1.5;background:#fff0f1;border-left:3px solid #a01a2e;color:#8d1127}

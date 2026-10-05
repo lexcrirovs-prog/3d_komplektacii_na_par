@@ -51,7 +51,6 @@ export function QuoteRequest({config}:{config:FamilyConfig}){
           <label>Комментарий к запросу<textarea name="comment" rows={3} maxLength={2000} placeholder="Топливо, задача, сроки поставки…"/></label>
           <label className="s4-honeypot" aria-hidden="true">Сайт<input name="website" tabIndex={-1} autoComplete="off"/></label>
           <label className="s4-consent"><input name="consent" type="checkbox" required/><span>Согласен передать указанные контакты и конфигурацию в Premium Gas для подготовки и обсуждения предложения.</span></label>
-          <p className="s4-quote-recipient">Получатель: premium-gas@mail.ru</p>
           {error&&<p role="alert" className="s4-quote-error">{error}</p>}
           <button type="submit" className="s4-quote-submit">{status==='sending'?'Передаём запрос…':'Отправить запрос'}</button>
           <a className="s4-mail-link" href={fallback}>Написать по почте</a>

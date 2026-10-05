@@ -29,7 +29,9 @@ try{
  for(const [power,count,trim] of configs){
   await load(power,count,trim);const state=await inspect();assert.equal(state.shaderErrors,0);assert.equal(state.units.length,count);
   for(const unit of state.units){assert.equal(unit.plaque[0],0);assert(unit.width>.2);assert.equal(unit.burner.hiddenFrontInscriptions,1);assert(unit.heads.length>0&&unit.heads.every(c=>c==='#263d56'))}
-  assert.equal(await page.locator('.s3-navigation .s3-home').count(),0);assert.equal(await page.locator('.s3-view-controls button').first().innerText(),count===1?'Котёл':'Котёл 1');
+  assert.equal(await page.locator('.s3-navigation .s3-home').count(),0);assert.match(await page.locator('.s3-view-controls button').first().innerText(),/Общий вид/);
+  assert.equal(await page.locator('.s3-view-controls button').nth(1).innerText(),count===1?'Котёл':'Котёл 1');
+  if(count>1)assert.deepEqual((await page.locator('.s3-view-controls button').allTextContents()).slice(-(count-1)),Array.from({length:count-1},(_,i)=>`Котёл ${i+2}`));
   await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();const card=page.locator('.s3-part-card');await card.waitFor();
   assert.match(await card.locator('h2').innerText(),/Шкаф управления котлом/);
   assert((await card.locator('.s4-benefits li').count())>0);assert.equal(await card.locator('details[open]').count(),0);assert((await card.locator('.s4-availability').innerText()).includes(trim==='standard'?'Стандарт':'Комфорт'));

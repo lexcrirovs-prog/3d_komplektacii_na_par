@@ -297,6 +297,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const [query, setQuery] = useState('')
   const [initialView] = useState(() => overviewView(enabled.has('deaerator')))
   const [view, setView] = useState<ViewRequest>(() => ({ id: 0, ...initialView, standard: 'home' }))
+  const [homeActive, setHomeActive] = useState(false)
   const cubeRef = useRef<SVGGElement>(null)
   const [inputRecovery, setInputRecovery] = useState(0)
   const dragging = useRef(false)
@@ -315,10 +316,12 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const visibleRows = bomParts.filter(row => searchText(row.label).includes(searchText(query)))
 
   function requestView(position: Point, target: Point) {
+    setHomeActive(false)
     dragging.current = false
     setView(old => ({ id: old.id + 1, position, target }))
   }
   function standardView(standard: StandardView) {
+    setHomeActive(standard === 'home')
     setSelected(null)
     dragging.current = false
     setView(old => ({...old, id: old.id + 1, standard}))
@@ -333,6 +336,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     requestView([p[0]-.8,p[1]+.4,p[2]+1.4],[p[0]+.08,p[1],p[2]])
   }
   function overview(withDeaerator = enabled.has('deaerator')) {
+    setHomeActive(false)
     setSelected(null)
     const next = overviewView(withDeaerator)
     dragging.current = false
@@ -465,7 +469,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[(count-1)*unitSpacing/2,-.007,0]} opacity={.38} scale={25+(count-1)*unitSpacing} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
         <OrbitControls makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
-          enableDamping dampingFactor={.08} onStart={() => { dragging.current = true }} onEnd={() => { dragging.current = false }} />
+          enableDamping dampingFactor={.08} onStart={() => { dragging.current = true; setHomeActive(false) }} onEnd={() => { dragging.current = false }} />
         <FamilyCamera request={view} ready={sceneReady} recovery={inputRecovery} cubeRef={cubeRef} />
       </Canvas></ModelBoundary>
       <Loading />
@@ -476,7 +480,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       </div>
       <ViewCube cubeRef={cubeRef} onView={standardView} />
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
-        {Array.from({length:count},(_,i)=><button key={i} onClick={()=>focus(i?`unit${i+1}:boiler`:'boiler')}>{cascade?`Котёл ${i+1}`:'Котёл'}</button>)}
+        <button className="s3-home" aria-pressed={homeActive} title="Вернуться к общему виду — Home" onClick={()=>standardView('home')}>⌂ Общий вид</button>
+        <button onClick={()=>focus('boiler')}>{cascade?'Котёл 1':'Котёл'}</button>
         <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
         <button onClick={() => focus(config.trim==='standard'?'control_cabinet':'plus_cabinet')}>Шкаф управления котлом</button>
         {cascade&&<button onClick={()=>focus('cascade_cabinet')}>Шкаф управления каскадом</button>}
@@ -486,7 +491,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         <button onClick={() => focus('pressure_header')}>Приборы</button>
         <button onClick={() => { setSelected('pump_1'); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
         <button onClick={() => focus('cables')}>Кабели</button>
-        <button className="s3-home" title="Показать всю сборку — Home" onClick={()=>standardView('home')}>⌂ Общий вид</button>
+        {Array.from({length:count-1},(_,i)=><button key={i+2} onClick={()=>focus(`unit${i+2}:boiler`)}>Котёл {i+2}</button>)}
       </nav>
       {active && information && <section key={active.id+config.trim} className="s3-part-card" aria-live="polite" aria-label="Сведения об оборудовании" data-part={active.id}>
         <button className="s3-close" aria-label="Закрыть сведения о детали" onClick={() => setSelected(null)}>×</button>

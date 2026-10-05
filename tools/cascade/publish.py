@@ -1,25 +1,23 @@
-"""Scoped translucent quote-button release, 2026-10-05, Codex / GPT-6.
+"""Scoped home-navigation release, 2026-10-05, Codex / GPT-6.
 Reuses the manifest, immutable staging, drift-check and rollback publisher.
 """
 import importlib.util,json,sys,tarfile,subprocess,concurrent.futures,gzip,urllib.request,urllib.error
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.05.6';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.10.05.7';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='98fe2079dc3680865f35eb904a75438e64ec46265402d6b6bc1bd26e4bace708'
+p.BASELINE_HASH='e3708d9f4bf6b341c4735079a0fa236dd7e7f86fea9ec1d2d3178e92a9b4f2c6'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
-    # CSS-only change: desktop/mobile rendering and opaque text over the model.
-    report=json.loads((p.REPO/'artifacts/quote-button-stage/report.json').read_text('utf8'))
-    assert report['status']=='PASSED_TRANSLUCENT_QUOTE_BUTTON' and report['base']==p.STAGE_URL
+    report=json.loads((p.REPO/'artifacts/home-navigation-stage/report.json').read_text('utf8'))
+    assert report['status']=='PASSED_HOME_NAVIGATION' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']
-    assert {s['width'] for s in report['scenarios']}=={1600,390}
-    assert all(not s['overflow'] and s['shaderErrors']==0 for s in report['scenarios'])
-    assert all(all(b['background']=='rgba(255, 255, 255, 0.72)' and b['opacity']=='1' for b in s['surfaces']) for s in report['scenarios'])
-    assert all(s['quote']['background']=='rgba(152, 19, 43, 0.72)' and s['quote']['opacity']=='1' and s['quote']['dialogOpened'] and s['quote']['keyboardFocus'] for s in report['scenarios'])
-    assert all(s['quote']['hover']=='rgba(152, 19, 43, 0.86)' and s['quote']['focus']=='rgba(152, 19, 43, 0.86)' for s in report['scenarios'])
+    assert {s['count'] for s in report['scenarios']}=={1,2,5}
+    assert all(s['initialNeutral'] and s['focusClears'] and s['homeReturns'] for s in report['scenarios'])
+    assert all(report['checks'][key] for key in ['rotation','pan','zoom','homeKey','cubeView','cabinetView','interruptedFlight','reducedMotion'])
+    assert report['mobile']['width']==390 and not report['mobile']['overflow'] and report['mobile']['touchClears'] and report['mobile']['firstHomeVisible']
     before=json.loads((p.OUT/'before.json').read_text('utf8'))
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
     previous={name:digest for name,digest in before['files'].items() if name.endswith('.glb')}

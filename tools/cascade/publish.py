@@ -6,10 +6,10 @@ from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 p.VERSION='2026.10.05.4';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r2'
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r3'
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
 p.BASELINE_HASH='8df52e8b42b427ca5f1632dbafb5456cc2b5822c7e17603bf2b50e87252e3315'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r2/'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r3/'
 def validate(prepared):
     clearance=json.loads((p.REPO/'artifacts/front-service-stage/report.json').read_text('utf8'))
     assert clearance['status']=='PASSED_FRONT_SERVICE_CLEARANCE' and clearance['base']==p.STAGE_URL

@@ -25,7 +25,7 @@ try {
    const u0=s.scene.userData.units[0],triangles=[];
    u0.getObjectByName('burner').traverse(m=>{if(!m.isMesh)return;const a=m.geometry.attributes.position,idx=m.geometry.index;
     const vertices=Array.from({length:a.count},(_,i)=>m.position.clone().fromBufferAttribute(a,i).applyMatrix4(m.matrixWorld).sub(u0.position).toArray());
-    for(let i=0;i<(idx?.count||a.count);i+=3){const t=[0,1,2].map(k=>vertices[idx?idx.getX(i+k):i+k]);if(t.some(p=>p[2]>2.2&&p[1]<.5))triangles.push(t)}
+    for(let i=0;i<(idx?.count||a.count);i+=3){const t=[0,1,2].map(k=>vertices[idx?idx.getX(i+k):i+k]);if(t.some(p=>p[2]>2.2)&&t.some(p=>p[1]<.5))triangles.push(t)}
    });
    return {triangles,shaderErrors:s.gl.info.programs.filter(p=>p.diagnostics?.runnable===false).length,units:s.scene.userData.units.map(u=>{
     const cables=[];
@@ -48,7 +48,7 @@ try {
   }
   const volumes=state.units[0].cables.filter(c=>c.frontMin.every(Number.isFinite)).map(c=>({id:c.id,min:c.frontMin,max:c.frontMax}));
   volumes.push({id:'floor_front_tray',min:[-.6,.125,2.36],max:[.6,.191,2.52]});
-  state.clearance=volumes.map(v=>{const box=new Box3(new Vector3(...v.min),new Vector3(...v.max));const intersections=state.triangles.filter(t=>box.intersectsTriangle(new Triangle(...t.map(p=>new Vector3(...p))))).length;assert.equal(intersections,0,`${power}/${v.id}: burner interference`);return {id:v.id,intersections,min:v.min,max:v.max}});
+  state.clearance=volumes.map(v=>{const box=new Box3(new Vector3(...v.min),new Vector3(...v.max)).expandByScalar(.005);const intersections=state.triangles.filter(t=>box.intersectsTriangle(new Triangle(...t.map(p=>new Vector3(...p))))).length;assert.equal(intersections,0,`${power}/${v.id}: burner interference`);return {id:v.id,intersections,margin:.005,min:v.min,max:v.max}});
   delete state.triangles;
   await page.getByRole('button',{name:'Шкаф управления котлом',exact:true}).click();await settled();
   assert.match(await page.locator('.s3-part-card h2').innerText(),/Шкаф управления котлом/);

@@ -40,3 +40,14 @@ test('Rear instrument entries keep the original shared geometry and materials',(
  const geometry=mesh.geometry,material=mesh.material;moveFrontCableTray(unit);
  assert.equal(mesh.geometry,geometry);assert.equal(mesh.material,material);
 });
+
+test('Sparse straight tube faces bend at the same boundaries as the corrugation ribs',()=>{
+ const unit=new Group(),mesh=new Mesh(new BufferGeometry(),new MeshStandardMaterial());mesh.name='wiring_pressure_switch_1';unit.add(mesh);
+ mesh.geometry.setAttribute('position',new Float32BufferAttribute([-.007,.32,1,.007,.32,1,.007,.32,2.5,-.007,.32,2.5],3));
+ mesh.geometry.setIndex([0,1,2,0,2,3]);moveFrontCableTray(unit);
+ const a=mesh.geometry.attributes.position,points=Array.from({length:a.count},(_,i)=>new Vector3().fromBufferAttribute(a,i));
+ assert(points.some(p=>Math.abs(p.z-1.9)<1e-6&&Math.abs(p.y-.32)<1e-6));
+ assert(points.some(p=>Math.abs(p.z-2.32)<1e-6&&Math.abs(p.y-.15)<1e-6));
+ const indices=mesh.geometry.index;
+ for(let i=0;i<indices.count;i+=3){const z=[0,1,2].map(k=>points[indices.getX(i+k)].z);assert(!(Math.min(...z)<1.9-1e-6&&Math.max(...z)>1.9+1e-6));assert(!(Math.min(...z)<2.32-1e-6&&Math.max(...z)>2.32+1e-6))}
+});

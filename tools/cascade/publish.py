@@ -1,22 +1,26 @@
-"""Scoped equipment-selection pulse release, 2026-10-05, Codex / GPT-6.
+"""Scoped deaerator branding release, 2026-10-05, Codex / GPT-6.
 Reuses the manifest, immutable staging, drift-check and rollback publisher.
 """
 import importlib.util,json,sys,tarfile,subprocess,concurrent.futures,gzip,urllib.request,urllib.error
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.05.8';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.10.05.9';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='4e98b0783de290053b0feecf8859a119ff407089b4fef82e39f5aa42e1b3d96c'
+p.BASELINE_HASH='4e3fa0e17a134646997f9f38110b60ce1c76203fb1dcd5232285d0574fb5c948'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
-    report=json.loads((p.REPO/'artifacts/selection-pulse-stage/report.json').read_text('utf8'))
-    assert report['status']=='PASSED_SELECTION_PULSE' and report['base']==p.STAGE_URL
+    report=json.loads((p.REPO/'artifacts/deaerator-branding-stage/report.json').read_text('utf8'))
+    assert report['status']=='PASSED_DEAERATOR_BRANDING' and report['base']==p.STAGE_URL
     assert report['manifestSha256']==prepared['manifestSha256'] and not report['errors']
-    assert {s['count'] for s in report['scenarios']}=={1,5}
-    assert all(s['cycles']==s['darkCycles']==3 and s['otherUnchanged'] and s['authoredMaterialsUnchanged'] and s['cameraFlight'] and s['hoverNeutral'] for s in report['scenarios'])
-    assert all(report['checks'][key] for key in ['repeatSelection','directMeshClick','switchRestoresPrevious','closeRestores','cascadeUnitIsolation','commonEquipment','homeRestores','sensorShaderPreserved','idleAfterPulse','reducedMotion','mobileTap'])
+    assert {v['kind'] for v in report['vessels']}=={'da3','da15_4','da15_8','da25_15','da25_25'}
+    for vessel in report['vessels']:
+        logos=vessel['logos']
+        assert len(logos)==2 and {logo['side'] for logo in logos}=={-1,1}
+        assert logos[0]['texture']==logos[1]['texture'] and not vessel['programErrors']
+        assert all(logo['triangles']==24 and logo['transparent'] and not logo['castShadow'] for logo in logos)
+    assert report['optionVisibility'] and report['selectionPulse']
     before=json.loads((p.OUT/'before.json').read_text('utf8'))
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
     previous={name:digest for name,digest in before['files'].items() if name.endswith('.glb')}

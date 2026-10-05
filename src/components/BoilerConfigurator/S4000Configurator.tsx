@@ -1,6 +1,6 @@
 import { Component, Suspense, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, useProgress } from '@react-three/drei'
+import { ContactShadows, Environment, Lightformer, OrbitControls, useGLTF, useProgress, useTexture } from '@react-three/drei'
 import { Group, Mesh, MeshStandardMaterial, type Object3D } from 'three'
 import {FamilyCamera, type ViewRequest} from './FamilyCamera'
 import {ViewCube, type StandardView} from './ViewCube'
@@ -26,6 +26,7 @@ import {nativeDeaerator} from './deaeratorPorts'
 import {applySensorMaterials} from './sensorMaterials'
 import {installSelectionBrightness, selectedEquipment, SelectionPulse} from './selectionPulse'
 import {applyPresentationDetails} from './presentationDetails'
+import {addDeaeratorBranding} from './deaeratorBranding'
 import {partInformation} from './partInformation'
 import {QuoteRequest} from './QuoteRequest'
 import './S3000Configurator.css'
@@ -107,6 +108,7 @@ function Assembly({ enabled, selected, selectionRevision, showAccessories, selec
   const daKind=selectDeaerator(power,count),daEnabled=enabled.has('deaerator')
   const daUrls=useMemo(()=>daEnabled?[deaeratorAssets[daKind]]:[],[daKind,daEnabled])
   const daModels=useGLTF(daUrls)
+  const brandingTexture=useTexture(premiumLogo)
   const strainer=useGLTF(adlStrainerUrl)
   const condensateValve=useGLTF(condensateValveUrl)
   const gltfs=useMemo(()=>[core,...accessoryModels],[core,accessoryModels])
@@ -122,6 +124,7 @@ function Assembly({ enabled, selected, selectionRevision, showAccessories, selec
     // DA3's file has its own root; use one named parent for every vessel type.
     da.traverse(o=>{if(o.name==='deaerator')o.name='deaerator_model'})
     da.name='deaerator';da.userData.deaeratorKind=daKind;unit.add(da)
+    if(daEnabled)addDeaeratorBranding(da,power,count,brandingTexture)
     copy.userData.deaeratorKind=daKind;copy.userData.totalCapacity=power*count
     applyFeedCorrection(unit,power,count,strainer.scene,condensateValve.scene)
     applyPresentationDetails(unit,power)
@@ -153,13 +156,13 @@ function Assembly({ enabled, selected, selectionRevision, showAccessories, selec
     const generatedMaterials=new Set<MeshStandardMaterial>()
     copy.traverse(object=>{if(object instanceof Mesh){
       if(object.userData.generatedGeometry)for(const m of (Array.isArray(object.material)?object.material:[object.material]))generatedMaterials.add(m)
-      object.castShadow=true;object.receiveShadow=true;object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone()
+      object.castShadow=!object.userData.deaeratorBranding;object.receiveShadow=!object.userData.deaeratorBranding;object.material=Array.isArray(object.material)?object.material.map(m=>m.clone()):object.material.clone()
     }})
     generatedMaterials.forEach(m=>m.dispose())
     units.forEach(applySensorMaterials)
     installSelectionBrightness(copy)
     return copy
-  }, [gltfs,trim,count,additions,daModels,daKind,strainer,condensateValve])
+  }, [gltfs,trim,count,additions,daModels,daKind,strainer,condensateValve,daEnabled,brandingTexture])
   useEffect(() => { invalidate() }, [cabinetDoors, boilerDoors, cascadeOpen, invalidate])
   useFrame((_, delta) => {
     if (selectionPulse.current?.update(delta)) invalidate()

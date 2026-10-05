@@ -476,17 +476,17 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
       </div>
       <ViewCube cubeRef={cubeRef} onView={standardView} />
       <nav className="s3-view-controls" aria-label="Ракурсы модели">
-        <button className="s3-home" title="Показать всю сборку — Home" onClick={()=>standardView('home')}>⌂ Общий вид</button>
+        {Array.from({length:count},(_,i)=><button key={i} onClick={()=>focus(i?`unit${i+1}:boiler`:'boiler')}>{cascade?`Котёл ${i+1}`:'Котёл'}</button>)}
+        <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
         <button onClick={() => focus(config.trim==='standard'?'control_cabinet':'plus_cabinet')}>Шкаф</button>
         {cascade&&<button onClick={()=>focus('cascade_cabinet')}>Шкаф каскада</button>}
+        <button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>
+        <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
         {cascade&&<button onClick={()=>focus('cascade_distribution')}>Гребёнка</button>}
-        {cascade&&Array.from({length:count},(_,i)=><button key={i} onClick={()=>focus(i?`unit${i+1}:boiler`:'boiler')}>Котёл {i+1}</button>)}
         <button onClick={() => focus('pressure_header')}>Приборы</button>
         <button onClick={() => { setSelected('pump_1'); setShowAccessories(true); requestView([6.3,4.6,-6.5],[.3,1.45,-1.4]) }}>Питание</button>
         <button onClick={() => focus('cables')}>Кабели</button>
-        <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
-        <button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>
-        <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
+        <button className="s3-home" title="Показать всю сборку — Home" onClick={()=>standardView('home')}>⌂ Общий вид</button>
       </nav>
       {active && information && <section key={active.id+config.trim} className="s3-part-card" aria-live="polite" aria-label="Сведения об оборудовании" data-part={active.id}>
         <button className="s3-close" aria-label="Закрыть сведения о детали" onClick={() => setSelected(null)}>×</button>

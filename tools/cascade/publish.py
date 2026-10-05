@@ -1,14 +1,14 @@
-"""Scoped quote-form copy release, 2026-10-05, Codex / GPT-6.
+"""Scoped equipment-navigation release, 2026-10-05, Codex / GPT-6.
 Reuses the manifest, immutable staging, drift-check and rollback publisher.
 """
 import importlib.util,json,sys,tarfile,subprocess,concurrent.futures,gzip,urllib.request,urllib.error
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.05.1';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.10.05.2';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='809744e9ced47873bae2db1aecfcaefe6969c49e97dd03eedb0d64c6eda90411'
+p.BASELINE_HASH='237b8d9af4c5a1dcef2b583171737391d7e9f168e667b1e362fb9086797f5a5e'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
     report=json.loads((p.REPO/'artifacts/customer-experience-stage/report.json').read_text(encoding='utf8'))

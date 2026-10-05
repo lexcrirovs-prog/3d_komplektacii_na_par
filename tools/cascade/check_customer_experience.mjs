@@ -1,4 +1,4 @@
-// 02.10.2026 · Codex / GPT-6. All valid quote POSTs are intercepted: no real mail.
+// 05.10.2026 · Codex / GPT-6. All valid quote POSTs are intercepted: no real mail.
 import {createRequire} from 'node:module';import {resolve} from 'node:path';import {mkdir,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
 const require=createRequire(resolve(process.env.S3000_BROWSER_RUNTIME,'package.json'));
 const {chromium}=require('playwright');const [base,out,mode]=process.argv.slice(2);await mkdir(out,{recursive:true});
@@ -28,11 +28,11 @@ try{
  for(const [power,count,trim] of configs){
   await load(power,count,trim);const state=await inspect();assert.equal(state.shaderErrors,0);assert.equal(state.units.length,count);
   for(const unit of state.units){assert.equal(unit.plaque[0],0);assert(unit.width>.2);assert.equal(unit.burner.hiddenFrontInscriptions,1);assert(unit.heads.length>0&&unit.heads.every(c=>c==='#263d56'))}
-  assert.equal(await page.locator('.s3-navigation .s3-home').count(),0);assert.equal(await page.locator('.s3-view-controls button').first().innerText(),'⌂ Общий вид');
+  assert.equal(await page.locator('.s3-navigation .s3-home').count(),0);assert.equal(await page.locator('.s3-view-controls button').first().innerText(),count===1?'Котёл':'Котёл 1');
   await page.getByRole('button',{name:'Шкаф',exact:true}).click();const card=page.locator('.s3-part-card');await card.waitFor();
   assert((await card.locator('.s4-benefits li').count())>0);assert.equal(await card.locator('details[open]').count(),0);assert((await card.locator('.s4-availability').innerText()).includes(trim==='standard'?'Стандарт':'Комфорт'));
   await page.getByRole('button',{name:/Общий вид/,exact:false}).click();await page.waitForTimeout(400);
-  scenarios.push({power,count,trim,...state});console.log('SCENARIO',power,count,trim);
+  scenarios.push({power,count,trim,navigation:await page.locator('.s3-view-controls button').allTextContents(),...state});console.log('SCENARIO',power,count,trim);
  }
  await load(4000,3);await shot('overview');
  await page.getByRole('button',{name:'Шкаф',exact:true}).click();await page.waitForTimeout(800);await shot('cabinet-card');

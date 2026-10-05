@@ -1,14 +1,14 @@
-"""Scoped equipment-navigation release, 2026-10-05, Codex / GPT-6.
+"""Scoped camera-flight release, 2026-10-05, Codex / GPT-6.
 Reuses the manifest, immutable staging, drift-check and rollback publisher.
 """
 import importlib.util,json,sys,tarfile,subprocess,concurrent.futures,gzip,urllib.request,urllib.error
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
-p.VERSION='2026.10.05.2';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
+p.VERSION='2026.10.05.3';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
 p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
-p.BASELINE_HASH='237b8d9af4c5a1dcef2b583171737391d7e9f168e667b1e362fb9086797f5a5e'
+p.BASELINE_HASH='8e262a26d32c13c70b3d115d7ef37a0d7dd82dd2e38113939655de858ab2d7cf'
 p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
 def validate(prepared):
     report=json.loads((p.REPO/'artifacts/customer-experience-stage/report.json').read_text(encoding='utf8'))
@@ -21,6 +21,12 @@ def validate(prepared):
     assert report['technicalDetails']['collapsedByDefault'] and report['technicalDetails']['mobileReachable']
     assert report['quote']['transport']=='INTERCEPTED_NO_MAIL_SENT' and report['quote']['retry']
     assert report['mobile']['width']==390 and not report['mobile']['overflow']
+    motion=json.loads((p.REPO/'artifacts/camera-motion-stage/report.json').read_text('utf8'))
+    assert motion['status']=='PASSED_CAMERA_MOTION' and motion['base']==p.STAGE_URL and motion['manifestSha256']==prepared['manifestSha256']
+    assert all(motion[key] for key in ['retarget','manualDragInterrupt','wheelInterrupt','blurRecovery','reducedMotion','individualCabinet','directCascadeCabinet'])
+    cube=json.loads((p.REPO/'artifacts/viewcube-stage/report.json').read_text('utf8'))
+    assert cube['status']=='PASSED_VIEWCUBE_BROWSER' and cube['base']==p.STAGE_URL and cube['manifestSha256']==prepared['manifestSha256']
+    assert all(s['faces']==6 and s['edgeViews']==12 and s['corners']==8 and s['allPresetsFit'] for s in cube['scenarios'])
     endpoint=json.loads((p.REPO/'artifacts/customer-experience/quote-endpoint.json').read_text('utf8'))
     assert endpoint['status']=='PASSED_QUOTE_ENDPOINT_FAKE_TRANSPORT' and endpoint['sha256']==p.sha((p.REPO/'public/api/request-quote.php').read_bytes())
     before=json.loads((p.OUT/'before.json').read_text('utf8'))

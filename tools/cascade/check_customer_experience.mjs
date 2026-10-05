@@ -14,8 +14,9 @@ try{
   await page.waitForFunction(({power,count})=>window.__s3000?.family===String(power)&&window.__s3000.scene.userData.units.length===count&&window.__s3000.gl.info.render.triangles>100000,{power,count},{timeout:180000});
   await page.waitForTimeout(700);
  };
- const shot=name=>page.screenshot({path:resolve(out,name+'.png')});
- const view=async(position,target)=>{await page.evaluate(({position,target})=>{const s=window.__s3000;s.camera.position.set(...position);s.controls.target.set(...target);s.controls.update();s.invalidate()},{position,target});await page.waitForTimeout(350)};
+ const settled=()=>page.waitForFunction(()=>!window.__s3000?.camera.userData.cameraMotion?.active,null,{timeout:15000});
+ const shot=async name=>{await settled();return page.screenshot({path:resolve(out,name+'.png')})};
+ const view=async(position,target)=>{await settled();await page.evaluate(({position,target})=>{const s=window.__s3000;s.camera.position.set(...position);s.controls.target.set(...target);s.controls.update();s.invalidate()},{position,target});await page.waitForTimeout(350)};
  const inspect=()=>page.evaluate(()=>{
   const s=window.__s3000;return {shaderErrors:s.gl.info.programs.filter(p=>p.diagnostics?.runnable===false).length,
    triangles:s.gl.info.render.triangles,drawCalls:s.gl.info.render.calls,

@@ -21,18 +21,20 @@ try {
  const manifestSha256=createHash('sha256').update(await manifest.body()).digest('hex');
  page.on('pageerror',e=>errors.push(e.message));
  const pose=()=>page.evaluate(()=>{const s=window.__s3000;return s.camera.position.clone().sub(s.controls.target).normalize().toArray()});
- const checkPose=async d=>{const length=Math.hypot(...d),actual=await pose();assert(Math.hypot(...actual.map((v,i)=>v-d[i]/length))<.002,`${actual} != ${d}`)};
+ const settled=()=>page.waitForFunction(()=>!window.__s3000?.camera.userData.cameraMotion?.active,null,{timeout:15000});
+ const checkPose=async d=>{await settled();const length=Math.hypot(...d),actual=await pose();assert(Math.hypot(...actual.map((v,i)=>v-d[i]/length))<.002,`${actual} != ${d}`)};
  const menu=async id=>{await page.locator('.s3-view-menu summary').click();const label=id.split('-').map((w,i)=>i?names[w].toLowerCase():names[w]).join(' · ');await page.locator('.s3-view-menu').getByRole('button',{name:label,exact:true}).click();await page.waitForTimeout(90)};
  const centroid=locator=>locator.evaluate(n=>{const ps=Array.from(n.points),p=n.ownerSVGElement.createSVGPoint();p.x=ps.reduce((a,p)=>a+p.x,0)/ps.length;p.y=ps.reduce((a,p)=>a+p.y,0)/ps.length;const s=p.matrixTransform(n.getScreenCTM());return {x:s.x,y:s.y}});
- const clickPatch=async id=>{const polygon=page.locator(`.s3-cube [data-view="${id}"]`);assert(await polygon.isVisible(),id);const p=await centroid(polygon);assert.equal(await polygon.evaluate(n=>getComputedStyle(n).cursor),'pointer');await page.mouse.click(p.x,p.y);await page.waitForTimeout(100)};
+ const clickPatch=async id=>{await settled();const polygon=page.locator(`.s3-cube [data-view="${id}"]`);assert(await polygon.isVisible(),id);const p=await centroid(polygon);assert.equal(await polygon.evaluate(n=>getComputedStyle(n).cursor),'pointer');await page.mouse.click(p.x,p.y);await page.waitForTimeout(100);await settled()};
  const fit=async()=>{
+  await settled();
   const bounds=await page.evaluate(()=>{const s=window.__s3000;let maxX=0,maxY=0;s.camera.updateMatrixWorld();s.scene.updateWorldMatrix(true,true);s.scene.getObjectByName('rating-assembly').traverseVisible(n=>{if(!n.isMesh)return;if(!n.geometry.boundingBox)n.geometry.computeBoundingBox();const b=n.geometry.boundingBox;for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z]){const p=n.position.clone().set(x,y,z).applyMatrix4(n.matrixWorld).project(s.camera);maxX=Math.max(maxX,Math.abs(p.x));maxY=Math.max(maxY,Math.abs(p.y))}});return {maxX,maxY}});
   assert(bounds.maxX<1&&bounds.maxY<1,`Clipped preset: ${JSON.stringify(bounds)}`);
  };
- for(const [power,count] of (mode==='baseline'?[[4000,5]]:[[500,1],[3000,1],[4000,5]])) {
+ for(const [power,count] of (mode==='baseline'||mode==='cascade'?[[4000,5]]:[[500,1],[3000,1],[4000,5]])) {
   await page.goto(base+`?power=${power}&cascade=${count}&trim=comfort&pressure=12&addons=burner,economizer,deaerator,modulation,gpz,bdv,fv&inspect3d=1`,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(({power,count})=>window.__s3000?.family===String(power)&&window.__s3000?.scene.userData.units?.length===count&&window.__s3000?.gl.info.render.triangles>100000,{power,count},{timeout:180000});
-  await page.getByRole('button',{name:'Общий вид',exact:true}).click();await page.waitForTimeout(250);
+  await page.getByRole('button',{name:/Общий вид/}).click();await page.waitForTimeout(250);await settled();
   const state=await page.locator('.s3-cube-space').evaluate(n=>({width:n.getBoundingClientRect().width,height:n.getBoundingClientRect().height,patches:n.querySelectorAll('polygon').length,targets:n.querySelectorAll('[role="button"]').length,edges:n.querySelectorAll('.s3-cube-edge[role="button"]').length}));
   if(mode==='baseline') {
    await page.locator('.s3-navigation').screenshot({path:resolve(out,'cube-before.png')});
@@ -53,13 +55,13 @@ try {
    await checkPose([side==='left'?-1:1,vertical==='top'?1:-1,depth==='front'?1:-1]);await fit();
   }
   for(const [key,id] of [['Enter','top-front'],['Space','front-left']]) {
-   await menu('front');await page.locator(`.s3-cube [data-view="${id}"]`).focus();await page.keyboard.press(key);await page.waitForTimeout(100);await checkPose(edgeDirections[id]);
+   await menu('front');await settled();await page.locator(`.s3-cube [data-view="${id}"]`).focus();await page.keyboard.press(key);await page.waitForTimeout(100);await checkPose(edgeDirections[id]);
   }
   await menu('top-front');await checkPose(edgeDirections['top-front']);
   const target=page.locator('.s3-cube [data-view="top-front"]'),p=await centroid(target);await page.mouse.move(p.x,p.y);
   assert.equal(await target.evaluate(n=>getComputedStyle(n).fill),'rgb(132, 182, 215)');
   if(power===4000){await page.locator('.s3-navigation').screenshot({path:resolve(out,'cube-edge-hover.png')});await page.screenshot({path:resolve(out,'cascade-edge-view.png')})}
-  await page.getByRole('button',{name:'Общий вид',exact:true}).click();await page.waitForTimeout(160);await fit();
+  await page.getByRole('button',{name:/Общий вид/}).click();await page.waitForTimeout(160);await fit();
   const before=await pose(),box=await page.locator('canvas').first().boundingBox();
   await page.mouse.move(box.x+box.width*.55,box.y+box.height*.6);await page.mouse.down();await page.mouse.move(box.x+box.width*.65,box.y+box.height*.5,{steps:8});await page.mouse.up();await page.waitForTimeout(250);
   assert(Math.hypot(...(await pose()).map((v,i)=>v-before[i]))>.03,'Orbit stopped responding');
@@ -68,7 +70,7 @@ try {
   scenarios.push({power,count,...state,faces:6,edgeViews:12,corners:8,keyboard:['Enter','Space'],orbit:true,home:true,allPresetsFit:true});
  }
  if(mode!=='baseline') {
-  await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Общий вид',exact:true}).click();await page.waitForTimeout(120);
+  await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:/Общий вид/}).click();await page.waitForTimeout(120);await settled();
   await menu('front');await clickPatch('top-front');await checkPose(edgeDirections['top-front']);await fit();
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await page.screenshot({path:resolve(out,'cube-mobile.png')});

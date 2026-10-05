@@ -436,8 +436,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
 
   function clickDoor({kind,unit}:DoorTarget) {
     setSelected(null)
-    if(kind==='cascade')setCascadeOpen(value=>!value)
-    else if(kind==='cabinet')setCabinetDoors(current=>toggleDoor(current,unit))
+    if(kind==='cascade'){setCascadeOpen(value=>!value);cascadeView()}
+    else if(kind==='cabinet'){setCabinetDoors(current=>toggleDoor(current,unit));cabinetView((unit-1)*unitSpacing)}
     else if(asset.opening.groups.some(g=>g.id==='boiler'))setBoilerDoors(current=>toggleDoor(current,unit))
   }
 
@@ -464,9 +464,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             cabinetDoors={cabinetDoors} boilerDoors={boilerDoors} onReady={markSceneReady} count={count} cascadeOpen={cascadeOpen} onDoor={clickDoor} />
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[(count-1)*unitSpacing/2,-.007,0]} opacity={.38} scale={25+(count-1)*unitSpacing} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
-        <OrbitControls key={`${view.id}:${inputRecovery}`} makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
+        <OrbitControls makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
           enableDamping dampingFactor={.08} onStart={() => { dragging.current = true }} onEnd={() => { dragging.current = false }} />
-        <FamilyCamera request={view} ready={sceneReady} cubeRef={cubeRef} />
+        <FamilyCamera request={view} ready={sceneReady} recovery={inputRecovery} cubeRef={cubeRef} />
       </Canvas></ModelBoundary>
       <Loading />
       <div className="s3-media-legend" aria-label="Маркировка трубопроводов по ГОСТ Р 71918-2024">

@@ -1,18 +1,48 @@
-import {useEffect, useMemo, type RefObject} from 'react'
+import {useEffect, useMemo, useRef, type RefObject} from 'react'
 import {useFrame, useThree} from '@react-three/fiber'
 import {Box3, Mesh, PerspectiveCamera, Quaternion, Vector3} from 'three'
 import {cubePatches, viewDirections, type StandardView} from './ViewCube'
+import type {OrbitControls as OrbitControlsImpl} from 'three-stdlib'
+import {createCameraFlight, sampleCameraFlight, type CameraFlight} from './cameraFlight'
 
 export type ViewRequest = {id: number; position: [number, number, number]; target: [number, number, number]; standard?: StandardView}
 
-// Each explicit request gets fresh OrbitControls in the parent. This also
-// clears a lost pointer gesture and damping before applying the requested pose.
-export function FamilyCamera({request, ready, cubeRef}: {request: ViewRequest; ready: boolean; cubeRef: RefObject<SVGGElement>}) {
+// 05.10.2026 · Codex / GPT-6. Keep controls and the current pose between views.
+export function FamilyCamera({request, ready, recovery, cubeRef}: {request: ViewRequest; ready: boolean; recovery: number; cubeRef: RefObject<SVGGElement>}) {
   const {camera, controls, scene, size, invalidate} = useThree()
   const cubeRotation = useMemo(() => new Quaternion(), [])
   const cubePose = useMemo(() => ({rotation:new Quaternion(), initialized:false}), [])
+  const flight = useRef<{path: CameraFlight; elapsed: number; started: boolean; damping: boolean} | null>(null)
+  const initialized = useRef(false)
+
+  function stop(orbit: OrbitControlsImpl) {
+    if (flight.current) orbit.enableDamping = flight.current.damping
+    flight.current = null
+    if (camera.userData.cameraMotion) camera.userData.cameraMotion.active = false
+  }
+  function clearGesture(orbit: OrbitControlsImpl) {
+    const position = camera.position.clone(), target = orbit.target.clone(), damping = orbit.enableDamping
+    // Flush remaining inertia, then restore the exact visible pose before reset.
+    orbit.enableDamping = false
+    orbit.update()
+    camera.position.copy(position); orbit.target.copy(target)
+    orbit.saveState(); orbit.reset()
+    orbit.enableDamping = damping
+  }
   useEffect(() => {
-    const orbit = controls as any
+    const orbit = controls as OrbitControlsImpl | undefined
+    if (!orbit) return
+    const cancel = () => stop(orbit)
+    orbit.addEventListener('start', cancel)
+    return () => { orbit.removeEventListener('start', cancel); stop(orbit) }
+  }, [controls, camera])
+  useEffect(() => {
+    const orbit = controls as OrbitControlsImpl | undefined
+    if (!orbit) return
+    stop(orbit); clearGesture(orbit); invalidate()
+  }, [recovery, controls])
+  useEffect(() => {
+    const orbit = controls as OrbitControlsImpl | undefined
     if (!orbit || !(camera instanceof PerspectiveCamera)) return
     camera.fov = size.width < size.height ? 45 : 39
     camera.updateProjectionMatrix()
@@ -46,15 +76,34 @@ export function FamilyCamera({request, ready, cubeRef}: {request: ViewRequest; r
         position.copy(target).add(direction.multiplyScalar(distance * 1.16))
       }
     }
-    camera.position.copy(position)
-    orbit.target.copy(target)
-    const damping = orbit.enableDamping
-    orbit.enableDamping = false
-    orbit.update()
-    orbit.enableDamping = damping
+    stop(orbit)
+    clearGesture(orbit)
+    const path = createCameraFlight(camera.position, orbit.target, position, target)
+    const animate = initialized.current && request.id > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      && (camera.position.distanceToSquared(position) > 1e-8 || orbit.target.distanceToSquared(target) > 1e-8)
+    initialized.current = true
+    camera.userData.cameraMotion = {active: animate, requestId: request.id, duration: animate ? path.duration : 0}
+    if (animate) {
+      flight.current = {path, elapsed: 0, started: false, damping: orbit.enableDamping}
+      orbit.enableDamping = false
+    } else {
+      camera.position.copy(position); orbit.target.copy(target); orbit.update()
+    }
     invalidate()
   }, [request, controls, ready, camera, scene, size.width, size.height, invalidate])
-  useFrame(() => {
+  useFrame((_, delta) => {
+    const motion = flight.current, orbit = controls as OrbitControlsImpl | undefined
+    if (motion && orbit) {
+      // Demand rendering can supply a large first delta after idle. Start at the
+      // current pose; cap delayed frames so a slow device does not jump ahead.
+      if (motion.started) motion.elapsed += Math.min(delta, .05)
+      motion.started = true
+      const progress = Math.min(motion.elapsed / motion.path.duration, 1)
+      sampleCameraFlight(motion.path, progress, camera.position, orbit.target)
+      orbit.update()
+      if (progress === 1) stop(orbit)
+      else invalidate()
+    }
     if (!cubeRef.current) return
     if(cubePose.initialized&&cubePose.rotation.equals(camera.quaternion))return
     cubePose.rotation.copy(camera.quaternion);cubePose.initialized=true

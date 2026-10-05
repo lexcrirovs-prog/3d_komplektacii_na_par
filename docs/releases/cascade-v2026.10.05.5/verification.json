@@ -1,0 +1,23 @@
+{
+  "version": "2026.10.05.5",
+  "date": "2026-10-05",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "47099ac",
+  "buildCommit": "e33db82",
+  "manifestSha256": "00f34ed8cbb276fdc68d5a2786da95c918aef8bad558a6c51b1bbe3d8c408c28",
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.05.5",
+    "neighborsUnchanged": true,
+    "files": 128
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 9,
+    "reusedFiles": 119,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.05.5",
+    "transferBytes": 457439
+  }
+}

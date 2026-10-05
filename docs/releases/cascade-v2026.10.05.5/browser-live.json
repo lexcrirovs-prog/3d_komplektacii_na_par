@@ -1,0 +1,80 @@
+{
+  "status": "PASSED_TRANSLUCENT_OVERLAY",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "00f34ed8cbb276fdc68d5a2786da95c918aef8bad558a6c51b1bbe3d8c408c28",
+  "scenarios": [
+    {
+      "width": 1600,
+      "overflow": false,
+      "shaderErrors": 0,
+      "surfaces": [
+        {
+          "selector": ".s3-brand",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        {
+          "selector": ".s3-view-title",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        }
+      ],
+      "text": [
+        {
+          "selector": ".s3-view-title h1",
+          "color": "rgb(32, 47, 59)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title p",
+          "color": "rgb(38, 57, 68)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title>span",
+          "color": "rgb(52, 72, 87)",
+          "opacity": "1"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "shaderErrors": 0,
+      "surfaces": [
+        {
+          "selector": ".s3-brand",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        {
+          "selector": ".s3-view-title",
+          "background": "rgba(255, 255, 255, 0.72)",
+          "opacity": "1",
+          "pointerEvents": "none"
+        }
+      ],
+      "text": [
+        {
+          "selector": ".s3-view-title h1",
+          "color": "rgb(32, 47, 59)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title p",
+          "color": "rgb(38, 57, 68)",
+          "opacity": "1"
+        },
+        {
+          "selector": ".s3-view-title>span",
+          "color": "rgb(52, 72, 87)",
+          "opacity": "1"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

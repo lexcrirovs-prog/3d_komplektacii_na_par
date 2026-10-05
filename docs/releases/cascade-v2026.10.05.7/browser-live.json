@@ -1,0 +1,94 @@
+{
+  "status": "PASSED_HOME_NAVIGATION",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "6cfe30600a291e0fe974430f79c9cd5958e23ca4c1db6e58db8a403165e3d20f",
+  "scenarios": [
+    {
+      "count": 1,
+      "width": 1600,
+      "navigation": [
+        "⌂ Общий вид",
+        "Котёл",
+        "Деаэратор",
+        "Шкаф управления котлом",
+        "Экономайзер",
+        "Горелка",
+        "Приборы",
+        "Питание",
+        "Кабели"
+      ],
+      "initialNeutral": true,
+      "focusClears": true,
+      "homeReturns": true,
+      "normal": "rgba(0, 0, 0, 0)",
+      "active": "rgb(216, 228, 235)"
+    },
+    {
+      "count": 2,
+      "width": 1600,
+      "navigation": [
+        "⌂ Общий вид",
+        "Котёл 1",
+        "Деаэратор",
+        "Шкаф управления котлом",
+        "Шкаф управления каскадом",
+        "Экономайзер",
+        "Горелка",
+        "Гребёнка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "Котёл 2"
+      ],
+      "initialNeutral": true,
+      "focusClears": true,
+      "homeReturns": true,
+      "normal": "rgba(0, 0, 0, 0)",
+      "active": "rgb(216, 228, 235)"
+    },
+    {
+      "count": 5,
+      "width": 1600,
+      "navigation": [
+        "⌂ Общий вид",
+        "Котёл 1",
+        "Деаэратор",
+        "Шкаф управления котлом",
+        "Шкаф управления каскадом",
+        "Экономайзер",
+        "Горелка",
+        "Гребёнка",
+        "Приборы",
+        "Питание",
+        "Кабели",
+        "Котёл 2",
+        "Котёл 3",
+        "Котёл 4",
+        "Котёл 5"
+      ],
+      "initialNeutral": true,
+      "focusClears": true,
+      "homeReturns": true,
+      "normal": "rgba(0, 0, 0, 0)",
+      "active": "rgb(216, 228, 235)"
+    }
+  ],
+  "checks": {
+    "rotation": true,
+    "pan": true,
+    "zoom": true,
+    "homeKey": true,
+    "cubeView": true,
+    "cabinetView": true,
+    "interruptedFlight": true,
+    "reducedMotion": true
+  },
+  "mobile": {
+    "width": 390,
+    "overflow": false,
+    "touchClears": true,
+    "neutralAfterTouch": true,
+    "firstHomeVisible": true
+  },
+  "errors": []
+}

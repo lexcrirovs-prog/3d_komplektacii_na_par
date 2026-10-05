@@ -67,9 +67,10 @@ try {
  for(let i=1;i<=8;i++)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:tx+6*i,y:ty+3*i}]});
  await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
  await mobile.waitForTimeout(800);await pressed(mobile,false);assert(delta(beforeTouch.p,(await pose(mobile)).p)>.01);
+ const neutralAfterTouch=await mobile.locator('.s3-home').evaluate(e=>getComputedStyle(e).backgroundColor==='rgba(0, 0, 0, 0)');assert(neutralAfterTouch,'Sticky touch hover looks like an active Home button');
  const mobileState=await mobile.evaluate(()=>({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth}));assert(!mobileState.overflow);
  await mobile.screenshot({path:resolve(out,'mobile-after-touch.png')});
  assert.deepEqual(errors,[]);
- await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_HOME_NAVIGATION',base,manifestSha256,scenarios,checks,mobile:{...mobileState,touchClears:true,firstHomeVisible:true},errors},null,2)+'\n');
+ await writeFile(resolve(out,'report.json'),JSON.stringify({status:'PASSED_HOME_NAVIGATION',base,manifestSha256,scenarios,checks,mobile:{...mobileState,touchClears:true,neutralAfterTouch,firstHomeVisible:true},errors},null,2)+'\n');
  console.log('PASSED_HOME_NAVIGATION');
 }finally{await browser.close()}

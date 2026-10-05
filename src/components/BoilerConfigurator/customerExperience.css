@@ -10,6 +10,7 @@
 .s4-quote-trigger span{margin-left:9px}
 .s4-family .s3-view-controls .s3-home{width:auto;margin:0;padding:11px 15px;box-shadow:none;border:0;border-radius:8px;font-size:12px;background:transparent;color:#495c6b;flex-shrink:0}
 .s4-family .s3-view-controls .s3-home[aria-pressed=true]{background:#d8e4eb;color:#183b50;box-shadow:inset 0 1px 3px #183b5038}
+@media(hover:none){.s4-family .s3-view-controls .s3-home[aria-pressed=false]{background:transparent}}
 .s4-family .s3-part-card{width:330px;max-width:calc(100% - 24px);max-height:min(68%,650px);bottom:122px;padding:23px;background:#fff;border:1px solid #d6dfe4;box-shadow:0 10px 35px #203a4e25;color:#263944}
 .s4-family .s3-part-card h2{color:#20313e;font-size:19px;line-height:1.35;margin-bottom:12px;padding-right:12px}
 .s4-family .s3-part-type{color:#8b2440;letter-spacing:1px;font-size:9px}

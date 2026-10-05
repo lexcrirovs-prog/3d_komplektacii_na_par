@@ -6,10 +6,10 @@ from pathlib import Path
 spec=importlib.util.spec_from_file_location('publisher',Path(__file__).parents[1]/'s3000/publish-web.py')
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 p.VERSION='2026.10.05.7';p.OUT=p.REPO/'artifacts'/('publication-v'+p.VERSION)
-p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION
+p.STAGE=p.ROOT+'/komplektacii4-stage-v'+p.VERSION+'-r2'
 p.BACKUP=p.ROOT+'/komplektacii4-before-cascade-v'+p.VERSION
 p.BASELINE_HASH='e3708d9f4bf6b341c4735079a0fa236dd7e7f86fea9ec1d2d3178e92a9b4f2c6'
-p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'/'
+p.STAGE_URL='https://prgz.ru/komplektacii4-stage-v'+p.VERSION+'-r2/'
 def validate(prepared):
     report=json.loads((p.REPO/'artifacts/home-navigation-stage/report.json').read_text('utf8'))
     assert report['status']=='PASSED_HOME_NAVIGATION' and report['base']==p.STAGE_URL
@@ -18,6 +18,7 @@ def validate(prepared):
     assert all(s['initialNeutral'] and s['focusClears'] and s['homeReturns'] for s in report['scenarios'])
     assert all(report['checks'][key] for key in ['rotation','pan','zoom','homeKey','cubeView','cabinetView','interruptedFlight','reducedMotion'])
     assert report['mobile']['width']==390 and not report['mobile']['overflow'] and report['mobile']['touchClears'] and report['mobile']['firstHomeVisible']
+    assert report['mobile']['neutralAfterTouch']
     before=json.loads((p.OUT/'before.json').read_text('utf8'))
     manifest=json.loads((p.REPO/'dist/DEPLOY_MANIFEST.json').read_text('utf8'))
     previous={name:digest for name,digest in before['files'].items() if name.endswith('.glb')}

@@ -1,7 +1,7 @@
 {
   "release": {
-    "version": "2026.10.05.9",
-    "date": "2026-10-05",
+    "version": "2026.10.12.1",
+    "date": "2026-10-12",
     "executor": "Codex / GPT-6",
     "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
     "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb",
@@ -25,14 +25,15 @@
     ],
     "deaerator_selection": "confirmed_single_and_cascade_capacity_20260929",
     "deaerators": [
-      "ДА-3",
-      "ДА-15/4",
-      "ДА-15/8",
-      "ДА-25/15",
-      "ДА-25/25"
-    ]
+      "Р”Рђ-3",
+      "Р”Рђ-15/4",
+      "Р”Рђ-15/8",
+      "Р”Рђ-25/15",
+      "Р”Рђ-25/25"
+    ],
+    "cascade_cabinet": "optional_nonstandard_multiple_boilers"
   },
-  "source_commit": "aa3cd46c5fcef22caf2518e966918ac38449dc23",
+  "source_commit": "ba95663e1f01f610b3c6bc792515789faa7bdaca",
   "files": [
     {
       "path": ".htaccess",
@@ -41,8 +42,8 @@
     },
     {
       "path": "api/request-quote.php",
-      "bytes": 7140,
-      "sha256": "072beb066ace56f6123d7baf673e9d6d48e7fc5d545823d54153e4e04c970edb"
+      "bytes": 7806,
+      "sha256": "3d1d1f0a49f82093c88b2d91ad460329598db235d7d0bb7e7dba75800c60d3ed"
     },
     {
       "path": "assets/.htaccess",
@@ -165,9 +166,9 @@
       "sha256": "8766e29b550212bc7457e05206304c16ea435d9849006fca0d56966d7a8d855b"
     },
     {
-      "path": "assets/index-DIZ_qtGw.js",
-      "bytes": 1177882,
-      "sha256": "1a21465c0ab15667f0afa804f921bb38474e4bdfc6502cf532c5a5389a6e8f93"
+      "path": "assets/index-D7w_Vx3C.js",
+      "bytes": 1177918,
+      "sha256": "b110df44daf206cf67a0fdadab8810b2ee4ccd1688123b3bdef5d01d6e6a7ef9"
     },
     {
       "path": "assets/premium-logo--EbfrTdO.png",
@@ -240,14 +241,14 @@
       "sha256": "1ebaf3cf6829378aa9f230dc4f03f9475354c518e63e043b6d272c918b329ce4"
     },
     {
-      "path": "assets/S3000Configurator-DyqtWZCB.js",
-      "bytes": 58741,
-      "sha256": "431bcb8307ca1dc7eb14bac7631a7718fc9d38c4fc04499630f2ff51a71b7e81"
+      "path": "assets/S3000Configurator-Bv0vqk6h.js",
+      "bytes": 58785,
+      "sha256": "468757cded5f3c48638c02b3027105c4ccee4f8e0aabbda8702b92008e280a25"
     },
     {
-      "path": "assets/S3000Configurator-oj1LxChq.js",
+      "path": "assets/S3000Configurator-Dgmw7Ej_.js",
       "bytes": 48039,
-      "sha256": "bb28f27279b8100f90fdade670eab464a861831b274df91ab2a8063f4dafc9f3"
+      "sha256": "15c047e4dff53efc32db4c74495822b625a6d7c140b98250bf0a59b8c541b527"
     },
     {
       "path": "assets/s4000-0-Bijgd8Ih.glb",
@@ -610,14 +611,14 @@
       "sha256": "7b1f28181252b36752a3fd056d4f6428ff21970d269514f432b19f9222ef8d5a"
     },
     {
-      "path": "assets/S4000Configurator-CUBguMsD.js",
-      "bytes": 559933,
-      "sha256": "ae0043dee17824172962cf9861ced85fa3927c809f6c8052fa7d9f01c8279cae"
+      "path": "assets/S4000Configurator-Dih97hPt.js",
+      "bytes": 569771,
+      "sha256": "6db13187d809f1af8a6f7060f35379566044b4ba33ccb13b0b02c9d07b3b548d"
     },
     {
-      "path": "assets/style-BUCDZtkZ.css",
-      "bytes": 33651,
-      "sha256": "d51e46ceaf337e31da59ab9bb7fd7403fba8e28e8f4eedf217d1c6eb488be6e7"
+      "path": "assets/style-C2Xycgle.css",
+      "bytes": 33815,
+      "sha256": "6f14da59f7be4a784a8496107c12a50da475bc3b12194b9842a053debf9b91e8"
     },
     {
       "path": "assets/valtec_vt215_dn15-BGGQBXM4.glb",
@@ -627,7 +628,7 @@
     {
       "path": "index.html",
       "bytes": 2065,
-      "sha256": "1573138e0efdd9479fbb6fc7d166f67b6a596414ba5c1c729c2a02e976501165"
+      "sha256": "e4c300e4e82f17a4d8dc7452f6a5eb3129f118f2b7adee93c154526f45addf1c"
     },
     {
       "path": "models/bcv_7250.glb",
@@ -666,8 +667,8 @@
     },
     {
       "path": "version.json",
-      "bytes": 926,
-      "sha256": "b17962d217f7aea104039c4c60168fd0da49d21b300a0a8e8d4961510eea8521"
+      "bytes": 1013,
+      "sha256": "6af9fc532862f1e51d466d6e1b5b031eaee6dd8558eac52969c83f59168f7191"
     }
   ]
 }

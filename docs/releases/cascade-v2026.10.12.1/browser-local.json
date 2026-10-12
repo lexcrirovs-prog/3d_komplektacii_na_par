@@ -1,0 +1,1130 @@
+{
+  "status": "PASSED_CONFIGURATION_20261012",
+  "base": "http://127.0.0.1:5181/",
+  "manifestSha256": "e98a1d489cb794648b322f2546b97c4e945c7c18605c6fda0be12a08373d5728",
+  "variants": [
+    {
+      "power": "500",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": false,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -5.8,
+          4.199999999999999,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -5.8,
+          4.374999999999999,
+          4.55
+        ],
+        "outlet": [
+          -5.8,
+          4.0249999999999995,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.628,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            1.887000024318695
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            1.887000024318695
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            0.48,
+            4.699999809265137,
+            1.887000024318695
+          ],
+          "end": [
+            0.48,
+            8.5,
+            1.887000024318695
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 1641564,
+        "calls": 726,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "1000",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": false,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -5.8,
+          4.199999999999999,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -5.8,
+          4.374999999999999,
+          4.55
+        ],
+        "outlet": [
+          -5.8,
+          4.0249999999999995,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.68,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.11899995803833
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.11899995803833
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            0.48,
+            4.699999809265137,
+            2.11899995803833
+          ],
+          "end": [
+            0.48,
+            8.5,
+            2.11899995803833
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 6,
+        "calls": 3,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "1500",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          4.262499999999999,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          4.437499999999999,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          4.0874999999999995,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.68,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.118771066937755
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.118771066937755
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.11899995803833
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.11899995803833
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 6,
+        "calls": 3,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "2000",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          4.262499999999999,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          4.437499999999999,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          4.0874999999999995,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.74,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.2487786239031546
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.2487786239031546
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.2490001916885376
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.2490001916885376
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 1711596,
+        "calls": 484,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "2500",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          4.262499999999999,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          4.437499999999999,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          4.0874999999999995,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.74,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.2490001916885376
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.2490001916885376
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.2490001916885376
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.2490001916885376
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 6,
+        "calls": 3,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "3000",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          4.435,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          4.609999999999999,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          4.26,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.802,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.3589999675750732
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.3589999675750732
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.3589999675750732
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.3589999675750732
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 6,
+        "calls": 3,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "3500",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          4.435,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          4.609999999999999,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          4.26,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.802,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.359234427662265
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.359234427662265
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.3587777891982276
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.3587777891982276
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 6,
+        "calls": 3,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "4000",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          4.7375,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          4.9125,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          4.5625,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.879,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.3887822592234027
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.3887822592234027
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.3890000581741333
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.3890000581741333
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 6,
+        "calls": 3,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "5000",
+      "count": 1,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          4.7375,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          4.9125,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          4.5625,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.982,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.546999931335449
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.546999931335449
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.546999931335449
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.546999931335449
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 1747312,
+        "calls": 483,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "4000",
+      "count": 5,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": false,
+      "modulation": false,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          5.24,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          5.415,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          5.065,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.879,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.3887822592234027
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.3887822592234027
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.3890000581741333
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.3890000581741333
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 2338434,
+        "calls": 1031,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "4000",
+      "count": 3,
+      "cabinet": false,
+      "signals": 0,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          5.24,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          5.415,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          5.065,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.879,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.3887822592234027
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.3887822592234027
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.3890000581741333
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.3890000581741333
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 2707056,
+        "calls": 1077,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "4000",
+      "count": 3,
+      "cabinet": true,
+      "signals": 1,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          5.24,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          5.415,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          5.065,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.879,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.3887822592234027
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.3887822592234027
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.3890000581741333
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.3890000581741333
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 2762112,
+        "calls": 1080,
+        "shaderErrors": 0
+      }
+    },
+    {
+      "power": "4000",
+      "count": 5,
+      "cabinet": true,
+      "signals": 1,
+      "economizer": true,
+      "modulation": true,
+      "strainer": {
+        "manufacturer": "АДЛ",
+        "model": "IS16 DN100",
+        "pipeAxis": [
+          0,
+          -1,
+          0
+        ],
+        "coverDirection": [
+          -1,
+          0,
+          0
+        ],
+        "center": [
+          -7.2,
+          5.24,
+          4.55
+        ]
+      },
+      "filterGap": {
+        "inlet": [
+          -7.2,
+          5.415,
+          4.55
+        ],
+        "outlet": [
+          -7.2,
+          5.065,
+          4.55
+        ],
+        "length": 0.35
+      },
+      "spacer": {
+        "source": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf",
+        "sourceSha256": "212bbc4256e86911e0dd3dad6f777d3381bef5e9025454bdb87a178167d28dd5",
+        "overallLength": 0.2,
+        "plateThickness": 0.014,
+        "axisHeight": 0.879,
+        "removed": {
+          "reuse PREMIUM charcoal enamel [61, 71, 82]": 240,
+          "reuse Machined stainless [208, 218, 226]": 580,
+          "reuse Cast aluminium [177, 184, 191]": 26
+        },
+        "triangleCount": 2496
+      },
+      "discharges": [
+        {
+          "start": [
+            -0.82,
+            4.699999809265137,
+            2.3887822592234027
+          ],
+          "end": [
+            -0.82,
+            8.5,
+            2.3887822592234027
+          ],
+          "independent": true
+        },
+        {
+          "start": [
+            -0.48,
+            4.699999809265137,
+            2.3890000581741333
+          ],
+          "end": [
+            -0.48,
+            8.5,
+            2.3890000581741333
+          ],
+          "independent": true
+        }
+      ],
+      "gl": {
+        "triangles": 2856500,
+        "calls": 1079,
+        "shaderErrors": 0
+      }
+    }
+  ],
+  "trimTransitions": true,
+  "quotePreview": true,
+  "urlRoundtrip": true,
+  "spacerDoorAttached": true,
+  "errors": []
+}

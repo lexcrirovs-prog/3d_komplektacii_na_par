@@ -1,0 +1,42 @@
+{
+  "version": "2026.10.12.1",
+  "date": "2026-10-12",
+  "executor": "Codex / GPT-6",
+  "status": "PUBLISHED_VERIFIED",
+  "sourceCommit": "ba95663e1f01f610b3c6bc792515789faa7bdaca",
+  "buildCommit": "2993a87332742c2e35e32817f945cb47126fd17c",
+  "manifestSha256": "e98a1d489cb794648b322f2546b97c4e945c7c18605c6fda0be12a08373d5728",
+  "cutover": {
+    "status": "CUTOVER_OK",
+    "backup": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-before-cascade-v2026.10.12.1",
+    "neighborsUnchanged": true,
+    "files": 128
+  },
+  "staged": {
+    "status": "STAGED_HASHES_VERIFIED",
+    "files": 128,
+    "transferredFiles": 9,
+    "reusedFiles": 119,
+    "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii4-stage-v2026.10.12.1",
+    "transferBytes": 462691
+  },
+  "unchangedGlbFiles": 100,
+  "validation": {
+    "typeScript": true,
+    "productionBuild": true,
+    "unitTests": 18,
+    "browserVariantsPerEnvironment": 13,
+    "browserEnvironments": [
+      "local",
+      "stage",
+      "live"
+    ],
+    "trimTransitions": true,
+    "quotePreview": true,
+    "urlRoundtrip": true,
+    "spacerDoorAttached": true,
+    "visualInspection": true,
+    "quoteTransport": "FAKE_TRANSPORT_NO_MAIL_SENT",
+    "githubCI": "CI_NOT_CONFIGURED"
+  }
+}

@@ -95,10 +95,11 @@ export function strainer(root:Group,p:Point3,s=.6,steam=false) {
   root.add(cylinder([x-.10*s,y,z],[x+.10*s,y,z],.052*s,'blue'),cylinder(p,point(.14,.17),.042*s,'blue'),cylinder(point(.12,.15),point(.17,.20),.05*s,'silver'))
 }
 
-export function steamStrainer(root:Group,p:Point3,source:Object3D) {
+export function steamStrainer(root:Group,p:Point3,source:Object3D,axis:Point3=[1,0,0]) {
   const model=source.clone(true);model.name='adl_steam_strainer'
   model.position.set(...viewPoint(p));model.visible=true
-  model.userData.strainer={manufacturer:'АДЛ',model:'IS16 DN100',pipeAxis:[1,0,0],coverDirection:[0,-1,0],center:p}
+  model.quaternion.setFromUnitVectors(new Vector3(1,0,0),new Vector3(...viewPoint(axis)))
+  model.userData.strainer={manufacturer:'АДЛ',model:'IS16 DN100',pipeAxis:axis,coverDirection:[axis[1],-axis[0],0],center:p}
   root.add(model)
 }
 

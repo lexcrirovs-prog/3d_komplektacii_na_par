@@ -11,7 +11,8 @@ export function QuoteRequest({config}:{config:FamilyConfig}){
   const count=boilerCount(config.cascade),trim=trims.find(t=>t.id===config.trim)!.label
   const addons=Object.keys(names).filter(id=>config.addons.has(id))
   const summary=`${count} × PREMIUM S-${config.power} · ${config.power*count/1000} т/ч · ${config.pressure} бар · ${trim}`
-  const fallback=`mailto:premium-gas@mail.ru?subject=${encodeURIComponent('Запрос КП: '+summary)}&body=${encodeURIComponent(summary+'\nДополнения: '+addons.map(id=>names[id]).join(', ')+'\n'+window.location.href)}`
+  const cabinetSummary='Шкаф управления каскадом: '+(config.cascadeCabinet?'установлен':'не выбран')
+  const fallback=`mailto:premium-gas@mail.ru?subject=${encodeURIComponent('Запрос КП: '+summary)}&body=${encodeURIComponent(summary+'\n'+cabinetSummary+'\nДополнения: '+addons.map(id=>names[id]).join(', ')+'\n'+window.location.href)}`
   async function submit(event:FormEvent<HTMLFormElement>){
     event.preventDefault()
     if(status==='sending')return
@@ -38,6 +39,7 @@ export function QuoteRequest({config}:{config:FamilyConfig}){
       <button className="s3-close" type="button" aria-label="Закрыть запрос КП" disabled={status==='sending'} onClick={()=>dialog.current?.close()}>×</button>
       <div className="s3-eyebrow">ВАША КОНФИГУРАЦИЯ</div><h2 id="quote-title">Получить коммерческое предложение</h2>
       <p className="s4-quote-summary">{summary}</p>
+      <p className="s4-quote-addons">{cabinetSummary}</p>
       <p className="s4-quote-addons">{addons.length?addons.map(id=>id==='deaerator'?deaeratorLabels[selectDeaerator(config.power,count)]:names[id]).join(' · '):'Без дополнительных модулей'}</p>
       {status==='success'?<div role="status" className="s4-quote-success"><h3>Запрос передан в отдел продаж</h3><p>Конфигурация и ваши контакты переданы для отправки на <b>premium-gas@mail.ru</b>.</p><button type="button" onClick={()=>dialog.current?.close()}>Вернуться к модели</button></div>:
       <form onSubmit={submit}>

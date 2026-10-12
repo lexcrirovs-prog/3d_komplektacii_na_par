@@ -30,7 +30,8 @@ test('Exclusive and optional equipment is labelled independently of expanded det
  const config={power:2000,trim:'comfort_plus',pressure:12,cascade:1,addons:new Set(['modulation'])};
  const p=(id,requires=[],excludes=[])=>({id,requires,excludes,label:id,category:'',note:'internal source',center:[0,0,0]});
  assert.match(partInformation(p('low_level_1',['comfort_plus']),config).availability,/Только.*Комфорт\+/);
- assert.match(partInformation(p('mod_direct',['comfort','modulation']),config).availability,/Дополнительная опция/);
+ assert.match(partInformation(p('mod_direct',['comfort','modulation']),config).availability,/Входит в комплектацию «Комфорт\+»/);
+ assert.match(partInformation(p('mod_direct',['comfort','modulation']),{...config,trim:'comfort'}).availability,/Дополнительная опция/);
  assert.match(partInformation(p('deaerator',['deaerator']),config).specs[0],/ДА-15\/4/);
  assert(!JSON.stringify(partInformation(p('boiler'),config)).includes('internal source'));
 });

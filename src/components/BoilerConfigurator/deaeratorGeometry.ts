@@ -4,6 +4,7 @@ import {deaeratorPorts,nativeDeaerator,da3InstrumentPoint,da3PressurePort} from 
 import {viewPoint,unitSpacing} from './cascadeRoutes'
 import {nativeDeaeratorHardware} from './nativeDeaeratorGeometry'
 import {sleeve} from './photoServiceDetails'
+import {deaeratorStrainer} from './deaeratorStrainer'
 
 /** Reuse the exact loaded CAD mesh and dial, with a new mounting transform.
  * No copied GLB, retessellation, or change to the original boiler instrument. */
@@ -44,7 +45,8 @@ export function deaeratorHardware(power:number,count:number,sourceStrainer:Objec
     root.add(cylinder([x,1.55,1.8],[x,1.6,1.8],.029,'blue'))
   }
   // Steam source -> filter -> two independently regulated branches.
-  steamStrainer(root,[-5.55,2.8,3.2],sourceStrainer)
+  const filter=deaeratorStrainer(power,count)
+  steamStrainer(root,filter.center,sourceStrainer,filter.axis)
   axisValve(root,[-4.40,2.8,3.2],[1,0,0],.95)
   // Main steam actuator beside the DA3 lower side inlet, as photographed.
   // Move the former upper regulating device here, keeping one per branch.

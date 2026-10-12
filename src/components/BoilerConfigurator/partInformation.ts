@@ -11,11 +11,17 @@ const descriptions:Record<string,Description>={}
 function describe(ids:string,summary:string,benefits:string[],details:string[]=[]){
   for(const id of ids.split(' '))descriptions[id]={summary,benefits,details}
 }
+describe('burner_spacer','Дистанционная проставка соединяет горелку с передней плитой котла.',
+  ['Два фланца обеспечивают разъёмное присоединение.','Рёбра жёсткости усиливают соединение фланцев с трубой.'],
+  ['Длина 200 мм, толщина фланцев 14 мм. Контуры и крепёжные отверстия взяты из приложенного DXF.'])
+describe('adl_steam_strainer','Сетчатый фильтр АДЛ IS16 задерживает механические примеси перед регулированием греющего пара.',
+  ['Защищает расположенную дальше регулирующую арматуру.','Боковая крышка даёт доступ к сетке для обслуживания.'],
+  ['В сборке использована модель производителя DN100, длиной 350 мм. Фильтр стоит на верхнем горизонтальном участке перед спуском.'])
 
 describe('boiler boiler_door_labels premium_logo',
   'Паровой котёл для технологических процессов и теплоснабжения предприятия.',
   ['Горелка, приборы и обвязка объединены в одну сборку.','Комплектация подбирается под требуемую степень автоматизации.'],
-  ['Питательная вода поступает в котёл, нагревается и превращается в пар. Пар направляется к потребителям через запорную арматуру.','В каскаде каждый котёл сохраняет свой шкаф управления, а общий шкаф координирует работу установки.'])
+  ['Питательная вода поступает в котёл, нагревается и превращается в пар. Пар направляется к потребителям через запорную арматуру.','В каскаде каждый котёл сохраняет свой шкаф управления, а дополнительный общий шкаф координирует работу установки при его выборе.'])
 describe('boiler_door boiler_tubes boiler_tubeplate',
   'Передняя дверь открывает доступ к жаровой трубе и дымогарным трубам.',
   ['Удобный доступ для осмотра и очистки поверхностей нагрева.'],
@@ -245,9 +251,9 @@ export function partInformation(part:FamilyPart,config:FamilyConfig):PartInforma
   else if(excludes.includes('comfort_plus'))availability='Входит в комплектации «Стандарт» и «Комфорт».'
   if(id==='plus_cabinet')availability=`Шкаф выбранной комплектации «${config.trim==='comfort'?'Комфорт':'Комфорт+'}».`
   const option=(['modulation','gpz','economizer','burner','deaerator','bdv','fv'] as const).find(o=>requires.includes(o)||id===o)
-  const optionCopy:Record<string,string>={modulation:'Дополнительная опция для «Комфорт» и «Комфорт+».',gpz:config.power>=4000?'Входит в комплектацию S-4000 и S-5000.':'Дополнительная опция дистанционного управления.',economizer:'Дополнительное оборудование для котлов от 1500 кг/ч.',burner:'Показан при выборе дополнения «Горелка».',deaerator:'Предусмотрен при выборе деаэратора.',bdv:'Предусмотрен при выборе бака продувки BDV.',fv:'Предусмотрен при выборе сепаратора FV.'}
-  if(option)availability=[availability,optionCopy[option]].filter(Boolean).join(' ')
+  const optionCopy:Record<string,string>={modulation:config.trim==='comfort_plus'?'Входит в комплектацию «Комфорт+».':'Дополнительная опция для «Комфорт».',gpz:config.power>=4000?'Входит в комплектацию S-4000 и S-5000.':'Дополнительная опция дистанционного управления.',economizer:'Для котлов от 1500 кг/ч в «Комфорт+» или «Комфорт» с модуляцией питательной воды.',burner:'Показан при выборе дополнения «Горелка».',deaerator:'Предусмотрен при выборе деаэратора.',bdv:'Предусмотрен при выборе бака продувки BDV.',fv:'Предусмотрен при выборе сепаратора FV.'}
+  if(option)availability=option==='modulation'?optionCopy[option]:[availability,optionCopy[option]].filter(Boolean).join(' ')
   if(id.startsWith('da_')&&selectDeaerator(config.power,count)==='da3'&&['da_safety_group','da_level_sensor','da_electric_valve','da_pressure_header','da_pressure_siphon','da_instrument_tray'].includes(id))availability='Узел обвязки ДА-3. Появляется при выборе этого деаэратора.'
-  if(id.startsWith('cascade_'))availability=[availability,`Входит в обвязку каскада из ${count} котлов.`].filter(Boolean).join(' ')
+  if(id.startsWith('cascade_'))availability=[availability,id==='cascade_cabinet'||id.startsWith('cascade_signal_')||id.startsWith('cascade_pressure_')?'При выборе шкафа управления каскадом. Доступен для нескольких котлов в «Комфорт» и «Комфорт+».':`Общая обвязка ${count} котлов, независимо от выбора каскадного шкафа.`].filter(Boolean).join(' ')
   return {...text,specs,availability,covered:!!key}
 }

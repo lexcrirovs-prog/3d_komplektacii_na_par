@@ -1,5 +1,5 @@
 <?php
-// 02.10.2026 · Codex / GPT-6. Fixed recipient, server validation; no browser-supplied headers.
+// 12.10.2026 · Codex / GPT-6. Fixed recipient, server validation; no browser-supplied headers.
 // PHP 5.6 compatible because this hosting account also has a legacy CLI runtime.
 function quote_validate($data) {
     if (!is_array($data) || !isset($data['consent']) || $data['consent'] !== true) return false;
@@ -17,8 +17,11 @@ function quote_validate($data) {
     foreach ($c['addons'] as $addon) if (!is_string($addon) || !in_array($addon,$known,true)) return false;
     $c['addons'] = array_values(array_intersect($known,$c['addons']));
     if ($c['power'] >= 4000 && !in_array('gpz',$c['addons'],true)) $c['addons'][] = 'gpz';
-    if ($c['power'] < 1500) $c['addons'] = array_values(array_diff($c['addons'],array('economizer')));
     if ($c['trim'] === 'standard') $c['addons'] = array_values(array_diff($c['addons'],array('modulation')));
+    if ($c['trim'] === 'comfort_plus' && !in_array('modulation',$c['addons'],true)) $c['addons'][] = 'modulation';
+    if ($c['power'] < 1500 || $c['trim'] === 'standard' || !in_array('modulation',$c['addons'],true)) $c['addons'] = array_values(array_diff($c['addons'],array('economizer')));
+    if (isset($c['cascadeCabinet']) && !is_bool($c['cascadeCabinet'])) return false;
+    $c['cascadeCabinet'] = isset($c['cascadeCabinet']) && $c['cascadeCabinet'] === true && $c['cascade'] > 1 && $c['trim'] !== 'standard';
     $out['config'] = $c;
     return $out;
 }
@@ -31,12 +34,13 @@ function quote_message($data) {
     $c=$data['config'];$trims=array('standard'=>'Стандарт','comfort'=>'Комфорт','comfort_plus'=>'Комфорт+');
     $names=array('burner'=>'Горелка','economizer'=>'Экономайзер','deaerator'=>'Деаэратор','modulation'=>'Модуляция питательной воды','gpz'=>'ГПЗ с электроприводом','bdv'=>'Бак продувки BDV','fv'=>'Сепаратор вторичного пара FV');
     $addons=array();foreach($c['addons'] as $id) $addons[]=$id==='deaerator'?quote_deaerator($c['power'],$c['cascade']):$names[$id];
-    $query=array('power'=>$c['power'],'cascade'=>$c['cascade'],'pressure'=>$c['pressure'],'trim'=>$c['trim'],'addons'=>implode(',',$c['addons']));
+    $query=array('power'=>$c['power'],'cascade'=>$c['cascade'],'cascadeCabinet'=>$c['cascadeCabinet']?1:0,'pressure'=>$c['pressure'],'trim'=>$c['trim'],'addons'=>implode(',',$c['addons']));
     $body="Запрос коммерческого предложения PREMIUM\n\n".
         'Мощность одного котла: '.$c['power']." кг/ч\nКоличество котлов: ".$c['cascade']."\nСуммарно: ".($c['power']*$c['cascade'])." кг/ч\nДавление: ".$c['pressure']." бар\nКомплектация: ".$trims[$c['trim']]."\nДополнения: ".($addons?implode(', ',$addons):'нет')."\n\n".
+        'Шкаф управления каскадом: '.($c['cascadeCabinet']?'установлен':'не выбран')."\n\n".
         'Имя: '.$data['name']."\nE-mail: ".$data['email']."\nТелефон: ".$data['phone']."\nКомпания: ".$data['company']."\nКомментарий: ".$data['comment']."\n\n".
         "Согласие на передачу контактов для подготовки предложения: получено\n".
-        'Конфигурация: https://prgz.ru/komplektacii4/?'.http_build_query($query,'','&')."\nВерсия: 2026.10.05.9\n";
+        'Конфигурация: https://prgz.ru/komplektacii4/?'.http_build_query($query,'','&')."\nВерсия: 2026.10.12.1\n";
     return array('to'=>'premium-gas@mail.ru','subject'=>'=?UTF-8?B?'.base64_encode('Запрос КП: '.$c['cascade'].' × PREMIUM S-'.$c['power']).'?=',
         'body'=>chunk_split(base64_encode($body),76,"\r\n"),
         'headers'=>"From: Premium Gas <noreply@prgz.ru>\r\nReply-To: ".$data['email']."\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64");

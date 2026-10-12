@@ -26,8 +26,17 @@ function pipePath(points:Point3[],radius:number) {
   path.add(new LineCurve3(last,vertices[vertices.length-1]))
   return path
 }
-export function routeObject(row:Route) {
+export function routeObject(row:Route,gap?:{segment:number;length:number}) {
   const group=new Group();group.name=row.id;group.userData.route=row
+  if(gap) {
+    const a=row.points[gap.segment],b=row.points[gap.segment+1],direction=new Vector3(...b).sub(new Vector3(...a)),length=direction.length()
+    if(length<=gap.length+.22)throw new Error('Insufficient straight length for inline fitting: '+row.id)
+    direction.normalize()
+    const center=new Vector3(...a).add(new Vector3(...b)).multiplyScalar(.5)
+    const inlet=center.clone().addScaledVector(direction,-gap.length/2).toArray() as Point3,outlet=center.clone().addScaledVector(direction,gap.length/2).toArray() as Point3
+    group.add(routeObject({...row,id:row.id+'_before_filter',points:[...row.points.slice(0,gap.segment+1),inlet]}),routeObject({...row,id:row.id+'_after_filter',points:[outlet,...row.points.slice(gap.segment+1)]}))
+    group.userData.inlineGap={inlet,outlet,length:gap.length};return group
+  }
   const path=pipePath(row.points,row.radius),geometries:BufferGeometry[]=[pipeTube(path,row.radius)]
   if(row.color==='black') {
     // Ribs are merged into one mesh per sleeve, not thousands of draw calls.
@@ -46,20 +55,22 @@ export function cableSupport(top:Point3) {
   for(let h=.27;h<z;h+=.28)root.add(mesh(box([x,y,h],[.033,.032,.008]),'zinc'))
   return root
 }
-export function cascadePiping(power:number,count:number,sourceTrap:Object3D) {
+export function cascadePiping(power:number,count:number,sourceTrap:Object3D,cascadeCabinet=false) {
   const root=new Group();root.name='cascade_piping'
-  for(const row of cascadeRoutes(power,count))root.add(routeObject(row))
+  for(const row of cascadeRoutes(power,count,cascadeCabinet))root.add(routeObject(row))
   const last=(count-1)*unitSpacing,geometries:BufferGeometry[]=[]
   for(const x of [-.55,...Array.from({length:count-1},(_,i)=>(i+.5)*unitSpacing),last+.7]) {
     geometries.push(box([x,5.6,2.19],[.1,.1,4.38]),box([x,5.6,.015],[.38,.38,.03]),box([x,5.6,4.403],[.30,.28,.025]))
   }
   const [gx,gy]=greyOrigin(count)
-  for(const dx of [-.15,.15])geometries.push(box([gx+dx,gy+.12,.73],[.038,.038,1.46]),box([gx+dx,gy+.06,.014],[.1,.43,.028]))
-  for(const z of [1.23,1.48])geometries.push(box([gx,gy+.137,z],[.4,.028,.035]))
+  if(cascadeCabinet)for(const dx of [-.15,.15])geometries.push(box([gx+dx,gy+.12,.73],[.038,.038,1.46]),box([gx+dx,gy+.06,.014],[.1,.43,.028]))
+  if(cascadeCabinet)for(const z of [1.23,1.48])geometries.push(box([gx,gy+.137,z],[.4,.028,.035]))
   const support=new Group();support.name='cascade_supports';support.add(mesh(mergeGeometries(geometries)!,'zinc'));root.add(support);geometries.forEach(g=>g.dispose())
-  const pressure=new Group();pressure.name='cascade_pressure_sensor'
-  pressure.add(mesh(box([last+.3,5.6,4.86],[.08,.055,.12]),'white'),mesh(box([last+.3,5.571,4.86],[.048,.004,.033]),'black'))
-  root.add(pressure)
+  if(cascadeCabinet) {
+    const pressure=new Group();pressure.name='cascade_pressure_sensor'
+    pressure.add(mesh(box([last+.3,5.6,4.86],[.08,.055,.12]),'white'),mesh(box([last+.3,5.571,4.86],[.048,.004,.033]),'black'))
+    root.add(pressure)
+  }
   const flange=new CylinderGeometry(.17,.17,.026,24,1,true);flange.rotateZ(Math.PI/2);flange.translate(last+.8,4.55,-5.6)
   const faces=[-1,1].map(side=>new RingGeometry(.101,.17,24).rotateY(side*Math.PI/2).translate(last+.8+side*.013,4.55,-5.6))
   root.getObjectByName('cascade_header')!.add(mesh(mergeGeometries([flange,...faces])!,'steel'))

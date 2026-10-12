@@ -9,6 +9,7 @@ import {selectDeaerator} from './deaeratorSelection'
 import {addMagneticLevel,da3LevelSensor} from './deaeratorInstruments'
 import {photoServiceDetails,da3InstrumentTray} from './photoServiceDetails'
 import {moveFrontCableTray} from './frontCableClearance'
+import {extendSafetyDischarges} from './safetyDischarge'
 
 export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comfort_plus'|'cascade',count=1) {
   const root=model.clone(true);root.name=kind==='cascade'?'cascade_cabinet':'plus_cabinet'
@@ -30,9 +31,10 @@ export function addPhotoCabinet(parent:Group,model:Object3D,kind:'comfort'|'comf
   return root
 }
 export function applyFeedCorrection(unit:Group,power:number,count:number,sourceStrainer:Object3D,sourceBallValve:Object3D) {
+  extendSafetyDischarges(unit,power)
   for(const row of [...correctedFeedRoutes(power),...flashRoutes(power,count),...deaeratorRoutes(power,count),bdvCoolingRoute()]) {
     unit.getObjectByName(row.id)?.removeFromParent()
-    unit.add(routeObject(row))
+    unit.add(routeObject(row,row.id==='da_heating_supply'?{segment:3,length:.35}:undefined))
   }
   const target=ecoModulationCenter(power)
   if(target) {

@@ -30,7 +30,7 @@ export function bdvCoolingRoute():Route {
  * Source: 02-2026-TX sheet 3; individual pumps, separate FV/BDV circuits.
  * Header diameter is a visual envelope, not a hydraulic sizing result.
  */
-export function cascadeRoutes(power:number,count:number):Route[] {
+export function cascadeRoutes(power:number,count:number,cascadeCabinet=false):Route[] {
   if(count<2)return []
   const c=connections(power),last=(count-1)*unitSpacing,headerY=5.6,feedY=6.6,tdsY=6.0,bottomY=6.3,headerZ=4.55
   const rows:Route[]=[]
@@ -53,11 +53,11 @@ export function cascadeRoutes(power:number,count:number):Route[] {
       add('cascade_tds_'+(i+1),`Непрерывная продувка котла ${i+1}`,[[x+1.56,2.95,.92],[x+1.56,tdsY,.92]],.0135,'dark')
     }
     const [gx,gy,gz]=greyOrigin(count),level=.065+i*.026,cabX=x-1.18+c.cabinet_shift[0],cabZ=1.25+c.cabinet_shift[2]
-    add('cascade_signal_'+(i+1),`Связь каскадного шкафа с котлом ${i+1} в гофре`,[[gx-.10+i*.045,gy+.08,gz],[gx-.10+i*.045,gy+.08,level],[cabX,gy+.08,level],[cabX,-1,level],[cabX,-1,cabZ]],.011,'black')
+    if(cascadeCabinet)add('cascade_signal_'+(i+1),`Связь каскадного шкафа с котлом ${i+1} в гофре`,[[gx-.10+i*.045,gy+.08,gz],[gx-.10+i*.045,gy+.08,level],[cabX,gy+.08,level],[cabX,-1,level],[cabX,-1,cabZ]],.011,'black')
   }
   const [gx,gy]=greyOrigin(count),px=last+.3
-  add('cascade_pressure_connection','Отбор давления общего коллектора',[[px,headerY,headerZ],[px,headerY,headerZ+.25]],.008,'steel')
-  add('cascade_pressure_signal','Датчик коллектора → шкаф управления каскадом в гофре',[[px+.04,headerY,headerZ+.3],[px+.15,headerY,headerZ+.3],[px+.15,headerY,.055],[px+.15,7,.055],[gx+.3,7,.055],[gx+.3,gy+.14,.055],[gx+.3,gy+.14,1.16],[gx+.14,gy+.14,1.16]],.008,'black')
+  if(cascadeCabinet)add('cascade_pressure_connection','Отбор давления общего коллектора',[[px,headerY,headerZ],[px,headerY,headerZ+.25]],.008,'steel')
+  if(cascadeCabinet)add('cascade_pressure_signal','Датчик коллектора → шкаф управления каскадом в гофре',[[px+.04,headerY,headerZ+.3],[px+.15,headerY,headerZ+.3],[px+.15,headerY,.055],[px+.15,7,.055],[gx+.3,7,.055],[gx+.3,gy+.14,.055],[gx+.3,gy+.14,1.16],[gx+.14,gy+.14,1.16]],.008,'black')
   return [...rows,...distributionRoutes(count)]
 }
 

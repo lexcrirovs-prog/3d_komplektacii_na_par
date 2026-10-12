@@ -24,7 +24,7 @@ export function nativeDeaeratorHardware(n:NativeDeaerator,count:number,sourceStr
     axisValve(root,[x,1.3,1.8],[0,1,0],.28)
     root.add(cylinder([x,1.55,1.8],[x,1.6,1.8],.029,'blue'))
   }
-  steamStrainer(root,[-6.95,l.rear,l.steamZ],sourceStrainer)
+  steamStrainer(root,[-7.2,(5.6+l.rear)/2,4.55],sourceStrainer,[0,Math.sign(l.rear-5.6),0])
   const mainScale=pipeRadius(p.steam.dn)/.048
   axisValve(root,[-5.86,l.rear,l.steamZ],[1,0,0],mainScale,true)
   axisValve(root,[-4.78,l.rear,l.steamZ],[1,0,0],mainScale)

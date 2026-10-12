@@ -92,18 +92,18 @@ function BoilerPreview({onReady,enabled,asset}:{onReady:()=>void;enabled:Set<str
   return <primitive object={scene} dispose={null} />
 }
 
-function Assembly({ enabled, selected, selectionRevision, showAccessories, select, dragging, cabinetDoors, boilerDoors,onReady,asset,count,cascadeOpen,onDoor }: {
+function Assembly({ enabled, selected, selectionRevision, showAccessories, select, dragging, cabinetDoors, boilerDoors,onReady,asset,count,cascadeCabinet,cascadeOpen,onDoor }: {
   enabled: Set<string>; selected: string | null; selectionRevision: number; showAccessories: boolean; select: (id: string) => void; dragging: React.MutableRefObject<boolean>;
-  cabinetDoors: ReadonlySet<number>; boilerDoors: ReadonlySet<number>; onReady:()=>void; asset:FamilyAsset;count:number;cascadeOpen:boolean;onDoor:(door:DoorTarget)=>void
+  cabinetDoors: ReadonlySet<number>; boilerDoors: ReadonlySet<number>; onReady:()=>void; asset:FamilyAsset;count:number;cascadeCabinet:boolean;cascadeOpen:boolean;onDoor:(door:DoorTarget)=>void
 }) {
   const power=Number(asset.id),cascade=count>1,openingData=asset.opening
   const parts=useMemo(()=>correctedUnitParts(asset.parts,power,count),[asset,count])
   const trim:Trim=enabled.has('comfort_plus')?'comfort_plus':enabled.has('comfort')?'comfort':'standard'
   const photo=trim!=='standard'
-  const byId=useMemo(()=>new Map(configurationParts(asset.parts,power,count,trim).map(p=>[p.id,p])),[asset,count,trim])
+  const byId=useMemo(()=>new Map(configurationParts(asset.parts,power,count,trim,cascadeCabinet).map(p=>[p.id,p])),[asset,count,trim,cascadeCabinet])
   const core=useGLTF(asset.urls[0])
   const accessoryModels=useGLTF(asset.urls.slice(1))
-  const additionUrls=useMemo(()=>[...(photo?[trim==='comfort'?comfortCabinetUrl:photoCabinetUrl]:[]),...(cascade?[cascadeCabinetUrl]:[])],[trim,cascade])
+  const additionUrls=useMemo(()=>[...(photo?[trim==='comfort'?comfortCabinetUrl:photoCabinetUrl]:[]),...(cascadeCabinet?[cascadeCabinetUrl]:[])],[trim,cascadeCabinet])
   const additions=useGLTF(additionUrls)
   const daKind=selectDeaerator(power,count),daEnabled=enabled.has('deaerator')
   const daUrls=useMemo(()=>daEnabled?[deaeratorAssets[daKind]]:[],[daKind,daEnabled])
@@ -126,6 +126,7 @@ function Assembly({ enabled, selected, selectionRevision, showAccessories, selec
     da.name='deaerator';da.userData.deaeratorKind=daKind;unit.add(da)
     if(daEnabled)addDeaeratorBranding(da,power,count,brandingTexture)
     copy.userData.deaeratorKind=daKind;copy.userData.totalCapacity=power*count
+    copy.userData.cascadeCabinet=cascadeCabinet
     applyFeedCorrection(unit,power,count,strainer.scene,condensateValve.scene)
     applyPresentationDetails(unit,power)
     copy.updateMatrixWorld(true)
@@ -149,8 +150,8 @@ function Assembly({ enabled, selected, selectionRevision, showAccessories, selec
       for(let index=1;index<count;index++) {
         const next=unit.clone(true);next.name=`boiler_unit_${index+1}`;next.position.x=unitSpacing*index;copy.add(next);units.push(next)
       }
-      addPhotoCabinet(copy,additions[photo?1:0].scene,'cascade',count)
-      copy.add(cascadePiping(power,count,unit.getObjectByName('condensate_trap')!))
+      if(cascadeCabinet)addPhotoCabinet(copy,additions[photo?1:0].scene,'cascade',count)
+      copy.add(cascadePiping(power,count,unit.getObjectByName('condensate_trap')!,cascadeCabinet))
     }
     copy.userData.units=units
     const generatedMaterials=new Set<MeshStandardMaterial>()
@@ -162,7 +163,7 @@ function Assembly({ enabled, selected, selectionRevision, showAccessories, selec
     units.forEach(applySensorMaterials)
     installSelectionBrightness(copy)
     return copy
-  }, [gltfs,trim,count,additions,daModels,daKind,strainer,condensateValve,daEnabled,brandingTexture])
+  }, [gltfs,trim,count,additions,daModels,daKind,strainer,condensateValve,daEnabled,brandingTexture,cascadeCabinet])
   useEffect(() => { invalidate() }, [cabinetDoors, boilerDoors, cascadeOpen, invalidate])
   useFrame((_, delta) => {
     if (selectionPulse.current?.update(delta)) invalidate()
@@ -173,7 +174,7 @@ function Assembly({ enabled, selected, selectionRevision, showAccessories, selec
       for (const motion of openingData.groups) motions.push({hinge:unit.getObjectByName(`opening_${motion.id}`)!,target:(motion.id==='cabinet'?cabinetDoors:boilerDoors).has(index+1)?motion.angle_degrees*Math.PI/180:0})
       if(photo)motions.push({hinge:unit.getObjectByName('photo_hinge_boiler')!,target:cabinetDoors.has(index+1)?105*Math.PI/180:0})
     }
-    if(cascade)motions.push({hinge:scene.getObjectByName('photo_hinge_cascade')!,target:cascadeOpen?105*Math.PI/180:0})
+    if(cascadeCabinet)motions.push({hinge:scene.getObjectByName('photo_hinge_cascade')!,target:cascadeOpen?105*Math.PI/180:0})
     for (const {hinge,target} of motions) {
       const error = target - hinge.rotation.y
       if (Math.abs(error) < .00005) continue
@@ -274,15 +275,15 @@ export function S4000Configurator() {
     const p=new URLSearchParams(window.location.search)
     const trim=trims.find(t=>t.id===p.get('trim'))?.id || 'comfort'
     const requestedPower=Number(p.get('power')||4000)
-    return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions(),cascade:boilerCount(p.get('cascade'))})
+    return normalizeConfig({power:requestedPower,trim,pressure:p.get('pressure')==='8'?8:12,addons:initialOptions(),cascade:boilerCount(p.get('cascade')),cascadeCabinet:p.get('cascadeCabinet')==='1'})
   })
   return <FamilyViewer key={`${config.power}:${config.cascade}`} config={config} setConfig={setConfig} />
 }
 function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:FamilyConfig)=>void}) {
   const asset=familyAssets[config.power]
-  const count=boilerCount(config.cascade),cascade=count>1
+  const count=boilerCount(config.cascade),cascade=count>1,cascadeCabinet=config.cascadeCabinet===true
   const daLabel=deaeratorLabels[selectDeaerator(config.power,count)]
-  const parts=configurationParts(asset.parts,config.power,count,config.trim), byId=new Map(parts.map(p=>[p.id,p]))
+  const parts=configurationParts(asset.parts,config.power,count,config.trim,cascadeCabinet), byId=new Map(parts.map(p=>[p.id,p]))
   const [sceneReady,setSceneReady]=useState(false)
   const [coreReady,setCoreReady]=useState(false)
   const markCoreReady=useCallback(()=>setCoreReady(true),[])
@@ -294,6 +295,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     url.searchParams.set('power',String(config.power));url.searchParams.set('trim',config.trim);url.searchParams.set('pressure',String(config.pressure))
     url.searchParams.set('addons',options.filter(o=>config.addons.has(o.id)).map(o=>o.id).join(','))
     if(cascade)url.searchParams.set('cascade',String(count));else url.searchParams.delete('cascade')
+    if(cascadeCabinet)url.searchParams.set('cascadeCabinet','1');else url.searchParams.delete('cascadeCabinet')
     window.history.replaceState(null,'',url)
   },[config])
   const [selected, setSelected] = useState<string | null>(null)
@@ -308,6 +310,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
   const [boilerDoors,setBoilerDoors]=useState<Set<number>>(()=>new Set())
   const cabinetOpen=cabinetDoors.size>0,boilerOpen=boilerDoors.size>0
   const [cascadeOpen,setCascadeOpen]=useState(false)
+  useEffect(()=>{if(!cascadeCabinet)setCascadeOpen(false)},[cascadeCabinet])
   const [tab, setTab] = useState<'assembly' | 'equipment'>('assembly')
   const [query, setQuery] = useState('')
   const [initialView] = useState(() => overviewView(enabled.has('deaerator')))
@@ -323,9 +326,9 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     const nodes=cabinetRow?['plus_cabinet']:(partMapping[r.id]||[r.id]).filter(id=>byId.has(id)&&isPartVisible(byId.get(id)!,enabled,true,optionalIds))
     return {...r,label:r.id==='relay_control'?'Шкаф управления котлом «Стандарт»':r.label,quantity:r.quantity*count,nodes}
   })
-  if(cascade)bomParts.push({id:'cascade_cabinet',label:'Шкаф управления каскадом',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
+  if(cascadeCabinet)bomParts.push({id:'cascade_cabinet',label:'Шкаф управления каскадом',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_cabinet']})
   if(enabled.has('deaerator'))bomParts.push({id:'deaerator',label:`Деаэратор ${daLabel}`,quantity:1,pressure:null,option:'deaerator',source_row:0,nodes:['deaerator']})
-  if(cascade)bomParts.push({id:'cascade_pressure_sensor',label:'Датчик давления общего коллектора',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_pressure_sensor']})
+  if(cascadeCabinet)bomParts.push({id:'cascade_pressure_sensor',label:'Датчик давления общего коллектора',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_pressure_sensor']})
   if(cascade)bomParts.push({id:'cascade_distribution',label:'Паровая распределительная гребёнка',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution']},{id:'cascade_distribution_trap',label:'Конденсатоотводчик паровой гребёнки',quantity:1,pressure:null,option:null,source_row:0,nodes:['cascade_distribution_trap']})
   const selectionBom = selected ? bomParts.find(p => p.nodes.includes(selected.replace(/^unit\d+:/,''))) : undefined
   const visibleRows = bomParts.filter(row => searchText(row.label).includes(searchText(query)))
@@ -378,14 +381,11 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     }
   }, [])
   function toggle(id: string) {
-    if (id === 'gpz' && config.power>=4000 || id==='modulation' && config.trim==='standard') return
+    if (id === 'gpz' && config.power>=4000 || id==='modulation' && config.trim!=='comfort') return
     const next = new Set(config.addons)
     next.has(id) ? next.delete(id) : next.add(id)
     setConfig(normalizeConfig({...config,addons:next}))
     if (active && !isPartVisible(active, next, showAccessories, optionalIds)) setSelected(null)
-    const url = new URL(window.location.href)
-    url.searchParams.set('addons', options.filter(o => next.has(o.id)).map(o => o.id).join(','))
-    window.history.replaceState(null, '', url)
     if (id === 'deaerator') overview(next.has(id))
   }
   function focus(selection: string) {
@@ -464,7 +464,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     <main className="s3-viewer" aria-label="3D-визуализация котла">
       <header className="s3-brand"><img className="s3-logo" src={premiumLogo} alt="Premium" /><div className="s3-edition">S {config.power} <span>3D</span></div></header>
       <QuoteRequest config={config}/>
-      {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*count} КГ ПАРА В ЧАС</span><h1>{cascade?`Каскад ${count} × S-${config.power}.`:`S-${config.power} в сборе.`}</h1><p>{cascade?'Несколько котлов для совместной работы. Индивидуальные шкафы и общее управление каскадом.':'Котёл, автоматика и обвязка в одной сборке. Выберите оборудование под свою задачу.'}<br className="s3-desktop" /> Нажмите на объект, чтобы узнать его преимущества.</p></div>}
+      {!active && !cabinetOpen && !boilerOpen && !cascadeOpen && <div className="s3-view-title"><span>{trimLabel.toUpperCase()} · {config.power*count} КГ ПАРА В ЧАС</span><h1>{cascade?`${cascadeCabinet?'Каскад':'Котельная'} ${count} × S-${config.power}.`:`S-${config.power} в сборе.`}</h1><p>{cascade?(cascadeCabinet?'Несколько котлов для совместной работы. Индивидуальные шкафы и общее управление каскадом.':'Несколько котлов с индивидуальными шкафами управления и общей обвязкой.'):'Котёл, автоматика и обвязка в одной сборке. Выберите оборудование под свою задачу.'}<br className="s3-desktop" /> Нажмите на объект, чтобы узнать его преимущества.</p></div>}
       <ModelBoundary><Canvas shadows frameloop="demand" camera={{ position: initialView.position, fov: 39, near: .03, far: 250 }} dpr={[1,1.6]}
         gl={{ antialias: true, alpha: false }} onCreated={({ gl }) => gl.setClearColor('#f2f3ef')}
         onPointerMissed={() => setSelected(null)}>
@@ -480,7 +480,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <Lightformer intensity={2} position={[0,3,6]} scale={[9,5,1]} rotation={[0,Math.PI,0]} />
           </Environment>
           <Assembly asset={asset} enabled={enabled} selected={selected} selectionRevision={selectionRevision} showAccessories={showAccessories} select={selectPart} dragging={dragging}
-            cabinetDoors={cabinetDoors} boilerDoors={boilerDoors} onReady={markSceneReady} count={count} cascadeOpen={cascadeOpen} onDoor={clickDoor} />
+            cabinetDoors={cabinetDoors} boilerDoors={boilerDoors} onReady={markSceneReady} count={count} cascadeCabinet={cascadeCabinet} cascadeOpen={cascadeOpen} onDoor={clickDoor} />
           {!boilerOpen && <ContactShadows key={[...enabled].join(',')+showAccessories} position={[(count-1)*unitSpacing/2,-.007,0]} opacity={.38} scale={25+(count-1)*unitSpacing} blur={2.4} far={5} resolution={512} frames={1} />}
         </Suspense>}
         <OrbitControls makeDefault target={initialView.target} minDistance={.6} maxDistance={160} maxPolarAngle={Math.PI}
@@ -499,8 +499,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
         <button onClick={()=>focus('boiler')}>{cascade?'Котёл 1':'Котёл'}</button>
         <button disabled={!enabled.has('deaerator')} onClick={() => focus('deaerator')}>Деаэратор</button>
         <button onClick={() => focus(config.trim==='standard'?'control_cabinet':'plus_cabinet')}>Шкаф управления котлом</button>
-        {cascade&&<button onClick={()=>focus('cascade_cabinet')}>Шкаф управления каскадом</button>}
-        <button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>
+        {cascadeCabinet&&<button onClick={()=>focus('cascade_cabinet')}>Шкаф управления каскадом</button>}
+        {config.trim!=='standard'&&<button disabled={!enabled.has('economizer')} onClick={() => focus('economizer')}>Экономайзер</button>}
         <button disabled={!enabled.has('burner')} onClick={() => focus('burner')}>Горелка</button>
         {cascade&&<button onClick={()=>focus('cascade_distribution')}>Гребёнка</button>}
         <button onClick={() => focus('pressure_header')}>Приборы</button>
@@ -528,7 +528,8 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
     <aside className="s3-sidebar" aria-label="Комплектация котла">
       <div className="s3-sidebar-heading"><div className="s3-eyebrow">ПОД ВАШУ ЗАДАЧУ</div><h2>PREMIUM S-{config.power}</h2><p>Паровой котёл с навесным оборудованием</p>
         <div className="s3-config-selects">
-          <label>Количество котлов<select aria-label="Количество котлов" value={count} onChange={e=>{setConfig(normalizeConfig({...config,cascade:Number(e.target.value)}));setSelected(null)}}>{[1,2,3,4,5].map(n=><option value={n} key={n}>{n===1?'Один котёл':`Каскад · ${n} ${n===5?'котлов':'котла'}`}</option>)}</select></label>
+          <label>Количество котлов<select aria-label="Количество котлов" value={count} onChange={e=>{setConfig(normalizeConfig({...config,cascade:Number(e.target.value)}));setSelected(null)}}>{[1,2,3,4,5].map(n=><option value={n} key={n}>{n===1?'Один котёл':`${n} ${n===5?'котлов':'котла'}`}</option>)}</select></label>
+          <label>Шкаф управления каскадом<select aria-label="Шкаф управления каскадом" value={cascadeCabinet?'1':'0'} disabled={!cascade||config.trim==='standard'} onChange={e=>{setConfig(normalizeConfig({...config,cascadeCabinet:e.target.value==='1'}));setSelected(null);setCascadeOpen(false)}}><option value="0">Без шкафа</option><option value="1">Установить</option></select>{(!cascade||config.trim==='standard')&&<small>{config.trim==='standard'?'Доступен в «Комфорт» и «Комфорт+»':'Для двух и более котлов'}</small>}</label>
           <label>Паропроизводительность<select aria-label="Паропроизводительность" value={config.power} onChange={e=>{setConfig(normalizeConfig({...config,power:Number(e.target.value)}));setSelected(null)}}>{powers.map(power=><option key={power} value={power}>{power} кг/ч</option>)}</select></label>
           <label>Комплектация<select aria-label="Комплектация" value={config.trim} onChange={e=>{setConfig(normalizeConfig({...config,trim:e.target.value as Trim}));setSelected(null)}}>{trims.map(t=><option key={t.id} value={t.id}>{t.label}</option>)}</select></label>
           <label>Рабочее давление<select aria-label="Рабочее давление" value={config.pressure} onChange={e=>{setConfig({...config,pressure:Number(e.target.value) as 8|12});setSelected(null)}}><option value={8}>8 бар</option><option value={12}>12 бар</option></select></label>
@@ -547,15 +548,15 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
             <button disabled={!sceneReady} aria-pressed={cabinetOpen} onClick={openCabinet}>
               <span>{cabinetOpen ? (cascade?'Закрыть шкафы управления котлами':'Закрыть шкаф управления котлом') : (cascade?'Открыть шкафы управления котлами':'Открыть шкаф управления котлом')}</span><span aria-hidden="true">{cabinetOpen ? '↶' : '↗'}</span>
             </button>
-            {cascade&&<button disabled={!sceneReady} aria-pressed={cascadeOpen} onClick={()=>{setCascadeOpen(v=>!v);setShowAccessories(true);setSelected(null);cascadeView();showModelOnMobile()}}><span>{cascadeOpen?'Закрыть шкаф управления каскадом':'Открыть шкаф управления каскадом'}</span><span aria-hidden="true">↗</span></button>}
+            {cascadeCabinet&&<button disabled={!sceneReady} aria-pressed={cascadeOpen} onClick={()=>{setCascadeOpen(v=>!v);setShowAccessories(true);setSelected(null);cascadeView();showModelOnMobile()}}><span>{cascadeOpen?'Закрыть шкаф управления каскадом':'Открыть шкаф управления каскадом'}</span><span aria-hidden="true">↗</span></button>}
             <button disabled={!sceneReady || asset.tubeCount===null} aria-pressed={boilerOpen} onClick={openBoiler}>
               <span>{boilerOpen ? 'Закрыть дверь котла' : 'Открыть дверь котла'}</span><span aria-hidden="true">{boilerOpen ? '↶' : '↗'}</span>
             </button>
             <p>{asset.tubeCount===null?`Шкаф можно открыть. Для S-${config.power} показана заводская модель общего вида.`:boilerOpen ? `Внутри — ${asset.tubeCount} дымогарных труб и жаровая труба.` : 'Рассмотрите внутреннее оборудование шкафа и трубки котла.'}</p>
           </section>
-          <section className="s3-option-section"><div className="s3-section-label">ДОПОЛНИТЕЛЬНЫЕ МОДУЛИ</div>{options.map(option => <label className={`s3-option ${enabled.has(option.id) ? 'enabled' : ''}`} key={option.id}>
-            <input type="checkbox" disabled={option.id === 'gpz'&&config.power>=4000||option.id==='modulation'&&config.trim==='standard'||option.id==='economizer'&&config.power<1500} checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
-            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='economizer'&&config.power<1500?'Применяется на котлах от 1500 кг/ч':option.id==='modulation'&&config.trim==='standard'?'Доступна в комплектациях «Комфорт» и «Комфорт+»':option.id==='gpz'&&config.power<4000?'Дополнительная опция дистанционного управления':option.id==='deaerator'?daLabel+' · автоматически для '+(config.power*count/1000)+' т/ч':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
+          <section className="s3-option-section"><div className="s3-section-label">ДОПОЛНИТЕЛЬНЫЕ МОДУЛИ</div>{options.filter(o=>config.trim!=='standard'||!['economizer','modulation'].includes(o.id)).map(option => <label className={`s3-option ${enabled.has(option.id) ? 'enabled' : ''}`} key={option.id}>
+            <input type="checkbox" disabled={option.id === 'gpz'&&config.power>=4000||option.id==='modulation'&&config.trim==='comfort_plus'||option.id==='economizer'&&(config.power<1500||!enabled.has('modulation'))} checked={enabled.has(option.id)} onChange={() => toggle(option.id)} />
+            <span className="s3-option-body"><strong>{option.title}</strong><small>{option.id==='economizer'&&config.power<1500?'Применяется на котлах от 1500 кг/ч':option.id==='economizer'&&!enabled.has('modulation')?'Сначала включите модуляцию питательной воды':option.id==='modulation'&&config.trim==='comfort_plus'?'Входит в комплектацию «Комфорт+»':option.id==='gpz'&&config.power<4000?'Дополнительная опция дистанционного управления':option.id==='deaerator'?daLabel+' · автоматически для '+(config.power*count/1000)+' т/ч':option.subtitle}</small></span><span className="s3-toggle" aria-hidden="true" />
           </label>)}</section>
           <section className="s3-flow" aria-live="polite" data-feed-route={enabled.has('economizer') ? 'economizer' : 'direct'}>
             <div className="s3-section-label">ПУТЬ ПИТАТЕЛЬНОЙ ВОДЫ</div>
@@ -564,7 +565,7 @@ function FamilyViewer({config,setConfig}:{config:FamilyConfig;setConfig:(value:F
           </section>
           <section className="s3-detail-callout"><div><strong>Дистанционное управление ГПЗ</strong><p>Пункт 49 ФНП требует дистанционного управления при производительности более 4000 кг/ч. Тип привода определяется проектом. В комплектации PREMIUM электропривод предусмотрен уже с 4000 кг/ч.</p></div></section>
           <p className="s3-assembly-note">Сборка показывает внешний вид оборудования. Расположение обвязки и её присоединения требуют сверки с монтажной схемой.</p>
-          <section className="s3-detail-callout"><div><strong>Заводские чертежи</strong><p><a href={asset.boilerDrawing} download>Модель котла S-{config.power} · STEP</a></p>{asset.economizerDrawing&&<p><a href={asset.economizerDrawing} target="_blank" rel="noreferrer">Габаритный чертёж экономайзера · PDF</a></p>}</div></section>
+          <section className="s3-detail-callout"><div><strong>Заводские чертежи</strong><p><a href={asset.boilerDrawing} download>Модель котла S-{config.power} · STEP</a></p>{config.trim!=='standard'&&asset.economizerDrawing&&<p><a href={asset.economizerDrawing} target="_blank" rel="noreferrer">Габаритный чертёж экономайзера · PDF</a></p>}</div></section>
         </> : <>
           <label className="s3-search"><span className="s3-sr-only">Найти оборудование</span><input type="search" placeholder="Найти прибор или арматуру" value={query} onChange={e => setQuery(e.target.value)} /></label>
           <p className="s3-list-note">PREMIUM S-{config.power} · {trimLabel} · {config.pressure} бар<br />Состав выбранной комплектации. Нажмите на позицию для просмотра.</p>

@@ -1,6 +1,7 @@
 export type VisibilityPart = { id: string; requires?: string[]; excludes?: string[] }
 
 export function isPartVisible(part: VisibilityPart, enabled: ReadonlySet<string>, showAccessories: boolean, optionalIds: ReadonlySet<string>) {
+  if(part.id==='burner_spacer')return enabled.has('burner')
   if (['boiler', 'boiler_door', 'boiler_door_labels', 'boiler_cladding', 'premium_logo', 'boiler_tubes', 'boiler_tubeplate'].includes(part.id)) return true
   if (optionalIds.has(part.id)) return enabled.has(part.id)
   return showAccessories

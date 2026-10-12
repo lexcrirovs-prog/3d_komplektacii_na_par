@@ -6,6 +6,8 @@ import {deaeratorRoutes} from './deaeratorRoutes.ts'
 import {deaeratorLabels,selectDeaerator} from './deaeratorSelection.ts'
 import {nativeDeaerator,magneticLevelLayout,da3InstrumentPoint} from './deaeratorPorts.ts'
 import {pumpTrayX} from './photoServiceDetails'
+import {burnerAxisHeight} from './burnerSpacer'
+import {deaeratorStrainer} from './deaeratorStrainer'
 
 export const legacyCabinetParts=new Set(['control_cabinet','cabinet_door','cabinet_interior','lc220','lc440','bc970','pr200','level_controller_1','level_controller_2','level_controller_3','plus_bc970'])
 export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):FamilyPart[] {
@@ -15,6 +17,8 @@ export function correctedUnitParts(parts:FamilyPart[],power:number,count=1):Fami
     center:native?viewPoint(native.center):parts.find(p=>p.id==='deaerator')!.center,
     note:`Автоматический выбор по ${count===1?'единичной мощности котла':'суммарной мощности каскада'} ${power*count/1000} т/ч. ${native?'Геометрия и патрубки из заводской STEP-модели. Опорная плоскость поднята на 1 м.':'Вертикальная заводская модель ДА-3.'}`})
   const set=(id:string,change:Partial<FamilyPart>)=>{const row=result.find(p=>p.id===id);if(row)Object.assign(row,change)}
+  result.push({id:'burner_spacer',label:'Дистанционная проставка горелки',category:'Горелка',requires:['burner'],center:[0,burnerAxisHeight(power),2.128],note:'Длина 200 мм. Контуры фланцев и отверстия — из PR.05.01.013-05. Серое покрытие, как у котла.'})
+  result.push({id:'adl_steam_strainer',label:'Паровой фильтр АДЛ IS16 DN100',category:'Обвязка деаэратора',requires:['deaerator'],center:viewPoint(deaeratorStrainer(power,count).center),note:'Модель из CAD-библиотеки АДЛ. Установлен на верхнем горизонтальном участке до спуска. Отстойник обращён вбок.'})
   set('control_cabinet',{label:'Шкаф управления котлом «Стандарт»'})
   set('cabinet_door',{label:'Дверь шкафа управления котлом'})
   set('cabinet_interior',{label:'Внутреннее оборудование шкафа управления котлом'})
@@ -63,15 +67,15 @@ export function partInUnit(part:FamilyPart,unit:number,count:number,photoCabinet
   if(unit===0)return true
   return !sharedParts.has(part.id)&&!(part.requires||[]).some(id=>['deaerator','fv','bdv'].includes(id))
 }
-export function extraParts(power:number,count:number,trim:Trim,center:number[]):FamilyPart[] {
+export function extraParts(power:number,count:number,trim:Trim,center:number[],cascadeCabinet=false):FamilyPart[] {
   const result:FamilyPart[]=[]
   if(trim!=='standard')result.push({id:'plus_cabinet',label:`Шкаф управления котлом «${trim==='comfort'?'Комфорт':'Комфорт+'}»`,category:'Автоматика',note:`Корпус 650 × 500 × 220 мм, по фотографиям. ${trim==='comfort'?'Дисплей на 20% меньше по ширине и высоте, чем в «Комфорт+».':'Сенсорная панель и четыре прибора на двери.'}`,center})
   if(count>1) {
     const g=greyOrigin(count)
-    result.push({id:'cascade_cabinet',label:'Шкаф управления каскадом',category:'Автоматика',note:'Корпус 400 × 400 × 150 мм. Связь со шкафами управления котлами и датчиком давления общего коллектора — по схеме ШУ КПК 01.',center:viewPoint([g[0],g[1],g[2]+.2])})
-    for(const p of cascadeRoutes(power,count))result.push({id:p.id,label:p.label,center:routeCenter(p),requires:p.requires,excludes:p.excludes,category:'Каскадная обвязка',note:p.id==='cascade_header'?'Размер коллектора показан для компоновки. Подбор диаметра на суммарный расход выполняется проектом.':''})
-    result.push({id:'cascade_pressure_sensor',label:'Датчик давления общего парового коллектора',category:'Автоматика',note:'ШУ КПК 01, листы 2 и 8: измерение давления общего коллектора, сигнал в шкаф управления каскадом.',center:viewPoint([(count-1)*unitSpacing+.3,5.6,4.86])})
-    result.push({id:'cascade_supports',label:'Опоры общего коллектора и шкафа',category:'Каскадная обвязка',note:'',center:[g[0],2.2,-5.6]})
+    if(cascadeCabinet)result.push({id:'cascade_cabinet',label:'Шкаф управления каскадом',category:'Автоматика',note:'Корпус 400 × 400 × 150 мм. Связь со шкафами управления котлами и датчиком давления общего коллектора — по схеме ШУ КПК 01.',center:viewPoint([g[0],g[1],g[2]+.2])})
+    for(const p of cascadeRoutes(power,count,cascadeCabinet))result.push({id:p.id,label:p.label,center:routeCenter(p),requires:p.requires,excludes:p.excludes,category:'Каскадная обвязка',note:p.id==='cascade_header'?'Размер коллектора показан для компоновки. Подбор диаметра на суммарный расход выполняется проектом.':''})
+    if(cascadeCabinet)result.push({id:'cascade_pressure_sensor',label:'Датчик давления общего парового коллектора',category:'Автоматика',note:'ШУ КПК 01, листы 2 и 8: измерение давления общего коллектора, сигнал в шкаф управления каскадом.',center:viewPoint([(count-1)*unitSpacing+.3,5.6,4.86])})
+    result.push({id:'cascade_supports',label:cascadeCabinet?'Опоры общего коллектора и шкафа':'Опоры общего коллектора',category:'Каскадная обвязка',note:'',center:[g[0],2.2,-5.6]})
     const d=distributionLayout(count)
     result.push({id:'cascade_distribution_fittings',label:'Арматура и опоры паровой гребёнки',category:'Распределение пара',note:'Ввод, выходы к потребителям, манометр. Компоновка по видео 29.09.2026 и 02-2026-ТХ, лист 8.',center:viewPoint([d.x,4.5,1.85])})
     result.push({id:'cascade_distribution_trap',label:'Конденсатоотводчик паровой гребёнки',category:'Возврат конденсата',note:'Фильтр, запорные вентили, конденсатоотводчик, обратный клапан и закрытый байпас. Показана имеющаяся геометрия A31 DN25; подбор типоразмера выполняется по расходу и перепаду.',center:viewPoint(d.trap)})
@@ -80,8 +84,8 @@ export function extraParts(power:number,count:number,trim:Trim,center:number[]):
   }
   return result
 }
-export function configurationParts(parts:FamilyPart[],power:number,count:number,trim:Trim):FamilyPart[] {
-  const first=[...correctedUnitParts(parts,power,count),...extraParts(power,count,trim,parts.find(p=>p.id==='control_cabinet')!.center)]
+export function configurationParts(parts:FamilyPart[],power:number,count:number,trim:Trim,cascadeCabinet=false):FamilyPart[] {
+  const first=[...correctedUnitParts(parts,power,count),...extraParts(power,count,trim,parts.find(p=>p.id==='control_cabinet')!.center,cascadeCabinet&&trim!=='standard')]
   const result=[...first]
   for(let unit=1;unit<count;unit++)result.push(...first.filter(p=>!p.id.startsWith('cascade_')&&partInUnit(p,unit,count,trim!=='standard')).map(p=>({...p,id:`unit${unit+1}:`+p.id,label:`Котёл ${unit+1} · `+p.label,center:[p.center[0]+unitSpacing*unit,p.center[1],p.center[2]]})))
   return result

@@ -14,7 +14,7 @@ test('1–5 units persist across all nine ratings, all trims and both pressures'
  for(const power of powers)for(const trim of trims)for(const pressure of [8,12])for(const count of [1,2,3,4,5]) {
   const c=normalizeConfig({power,trim:trim.id,pressure,cascade:count,addons:options});
   assert.equal(c.cascade,count);assert.equal(c.power,power);assert.equal(c.trim,trim.id);
-  assert.equal(c.addons.has('economizer'),power>=1500);
+  assert.equal(c.addons.has('economizer'),power>=1500&&trim.id!=='standard');
   assert.equal(c.addons.has('modulation'),trim.id!=='standard');
   assert.equal(normalizeConfig({...c,power:5000,trim:'standard'}).cascade,count);
  }
@@ -23,7 +23,7 @@ test('1–5 units persist across all nine ratings, all trims and both pressures'
 });
 test('Every steam branch starts on the registered outlet and terminates on the common header',()=>{
  for(const power of powers)for(const count of [2,3,4,5]) {
-  const rows=cascadeRoutes(power,count),steam=rows.filter(r=>/^cascade_steam_/.test(r.id));
+  const rows=cascadeRoutes(power,count,true),steam=rows.filter(r=>/^cascade_steam_/.test(r.id));
   assert.equal(steam.length,count);assert.equal(rows.filter(r=>/^cascade_suction_/.test(r.id)).length,count);
   const header=rows.find(r=>r.id==='cascade_header');
   for(let i=0;i<count;i++) {

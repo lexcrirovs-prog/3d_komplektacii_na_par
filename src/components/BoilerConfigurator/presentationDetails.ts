@@ -1,9 +1,11 @@
 import {CanvasTexture,Mesh,MeshBasicMaterial,PlaneGeometry,SRGBColorSpace,Vector3,type Object3D} from 'three'
+import {applyBurnerSpacer} from './burnerSpacer'
 
 // 02.10.2026 · Codex / GPT-6. Plaque layout from Premium S - 4000.3.jpg.
 // Shell radii and centre heights are from the existing family registration.
 const shells:Record<number,[number,number]>={500:[.813,.684],1000:[.93,.801],1500:[.93,.801],2000:[1,.861],2500:[1,.861],3000:[1.06,.911],3500:[1.06,.911],4000:[1.135,.986],5000:[1.218,1.061]}
 export function applyPresentationDetails(unit:Object3D,power:number){
+  applyBurnerSpacer(unit,power)
   unit.updateWorldMatrix(true,true)
   const labels=unit.getObjectByName('boiler_door_labels'),parent=labels||unit.getObjectByName('boiler')!
   const old=labels?.getObjectByName('PREMIUM');if(old)old.visible=false

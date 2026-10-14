@@ -1,0 +1,29 @@
+{
+  "status": "REMOVED_VERIFIED",
+  "date": "2026-10-14",
+  "executor": "Codex / GPT-6",
+  "files": 76,
+  "bytes": 10590047842.0,
+  "planSha256": "fcc875dec0aa32e644a4df3e378906299744af47553f848c8001c943b5cd6748",
+  "protectedFilesChecked": 423,
+  "currentVersion": "2026.10.12.1",
+  "retainedVersions": [
+    "2026.10.12.1",
+    "2026.10.05.9"
+  ],
+  "disk": "C",
+  "freeBefore": 9217056768,
+  "freeAfter": 19486769152,
+  "freeSpaceIncrease": 10269712384,
+  "scope": "Local artifacts/publication-v* archives only",
+  "sourceCommitBeforeCleanup": "bc7348b5e17a96a0299c7af8cbc3ede084345954",
+  "supersededVersions": 28,
+  "latestApplicationReleaseDate": "2026-10-12",
+  "liveManifestUnchanged": true,
+  "liveManifestSha256": "e98a1d489cb794648b322f2546b97c4e945c7c18605c6fda0be12a08373d5728",
+  "trackedFilesUnchangedBeforeDocumentation": true,
+  "recursiveDeletes": false,
+  "serverWrites": false,
+  "sourceModelDeletes": false,
+  "gitHistoryDeletes": false
+}

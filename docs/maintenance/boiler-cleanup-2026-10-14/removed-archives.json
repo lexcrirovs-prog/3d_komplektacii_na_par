@@ -1,0 +1,534 @@
+[
+  {
+    "relative": "artifacts/publication-v2026.09.12.1/candidate.tar.gz",
+    "version": "2026.09.12.1",
+    "bytes": 38210993,
+    "sha256": "2d2234d8fd48b931703f8319384afa5bc6dc45b9c7584c67366f7df99a2c5ebc",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.12.1/previous-publication.tar.gz",
+    "version": "2026.09.12.1",
+    "bytes": 15042938,
+    "sha256": "8bfda1ccf43df554a2231b4b3392be51f5057657c5e3d130f3fe9bb98a8b8820",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.12.2/candidate.tar.gz",
+    "version": "2026.09.12.2",
+    "bytes": 79200813,
+    "sha256": "78cfe89f2b6163f8b208993ae8acda2c053eed97999552d02dda91a5e91aea4c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.12.2/previous-publication.tar.gz",
+    "version": "2026.09.12.2",
+    "bytes": 38363888,
+    "sha256": "6f397071eec6b8fe2f6c46e70c868620736750f0b8d9c828e07bacd0c051cf49",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.1/candidate.tar.gz",
+    "version": "2026.09.13.1",
+    "bytes": 101164459,
+    "sha256": "ca58cbcdf2f49ea045c98412c7ac7a87d50d537457cf0c944743da6e898de03a",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.1/previous-publication.tar.gz",
+    "version": "2026.09.13.1",
+    "bytes": 79517031,
+    "sha256": "d87e49ed359bcc9b3ad750171f2739f805055323076f288b6fdd0ecaa4d8e3ae",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.2/candidate.tar.gz",
+    "version": "2026.09.13.2",
+    "bytes": 269588140,
+    "sha256": "150be7569a45d667b9efb15363e059a3fe5ba185f24c274ce624c54202f353ef",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.2/previous-publication.tar.gz",
+    "version": "2026.09.13.2",
+    "bytes": 101547873,
+    "sha256": "01baa8e26afba4e479e8a1656aa709a2ec5c8a859ced1e498e80b693baded43c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.3/candidate.tar.gz",
+    "version": "2026.09.13.3",
+    "bytes": 273860382,
+    "sha256": "8a56dc2903ddccee00e1cb9f6474d0462f7ad6af53fba1ad8b025f2dced3d51c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.3/previous-publication.tar.gz",
+    "version": "2026.09.13.3",
+    "bytes": 270946994,
+    "sha256": "a7a6d27a9e3840dc8eed5ec9db5bb805f029ad1cd4a27737cecf4a7ad243fda6",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.4/candidate.tar.gz",
+    "version": "2026.09.13.4",
+    "bytes": 272760772,
+    "sha256": "50eaadbb0616943f7de36be1d5da3b2dac83fd3a72ed023cc8506f359cda420a",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.4/previous-publication.tar.gz",
+    "version": "2026.09.13.4",
+    "bytes": 275251913,
+    "sha256": "00c77d3f3df30ec71c370ecd390b442bf3d317742afe181c3e845c813ed4385f",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.5/candidate.tar.gz",
+    "version": "2026.09.13.5",
+    "bytes": 272786672,
+    "sha256": "478169892e8e9cad8eceb6901fc4e37cd59ada6529d00b39f24653cf674ec866",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.5/previous-publication.tar.gz",
+    "version": "2026.09.13.5",
+    "bytes": 274133334,
+    "sha256": "dfeb8b3a961e1f924325fb9ff0620aaa13b27a3ee620392f946a1f6eac6afab4",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.6/candidate.tar.gz",
+    "version": "2026.09.13.6",
+    "bytes": 273429777,
+    "sha256": "4a90ed86201ba6a23c51a83317934127d0bb768fd5d6126b2eda36aecf70b885",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.13.6/previous-publication.tar.gz",
+    "version": "2026.09.13.6",
+    "bytes": 274166451,
+    "sha256": "708cb11f89758fd3a5eabc50eaee6f652e07ee8ef516eedc3efcd1763115cb1f",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.28.1/candidate.tar.gz",
+    "version": "2026.09.28.1",
+    "bytes": 274698985,
+    "sha256": "d6c9b729810652d92661be63ade1bb4a87f3ac55ac56ed91b58a56012db1f24c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.28.1/previous-publication.tar.gz",
+    "version": "2026.09.28.1",
+    "bytes": 274809681,
+    "sha256": "95f517081b0a42604a38e72ce3b7dfd599a4e395661dc61df63528fe24fddee2",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.28.1/delta.tar.gz",
+    "version": "2026.09.28.1",
+    "bytes": 1664308,
+    "sha256": "9c1514f3133468ead6b3a82c715dde8aff1b4c4a51ea2ddb87f2c94de3da1960",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.1/candidate.tar.gz",
+    "version": "2026.09.29.1",
+    "bytes": 285261569,
+    "sha256": "8c3e1a9745e77f85d9780e1037b20e377c6cb42a48b60e272545830991d257d2",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.1/previous-publication.tar.gz",
+    "version": "2026.09.29.1",
+    "bytes": 276071596,
+    "sha256": "5c2d6f2889ec03883dea2151b1d276b19a40e24e7a3a529aad8e105301b2584e",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.1/delta.tar.gz",
+    "version": "2026.09.29.1",
+    "bytes": 1308042,
+    "sha256": "39c8dd2ea7a3a00ed63d418886e390df5f75d10e95fb1db58e44576fe0f0ab96",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.2/candidate.tar.gz",
+    "version": "2026.09.29.2",
+    "bytes": 274325431,
+    "sha256": "fc81778c46da401ea5b455640104ff0c663563ba80aeb8d51923d1aaff73d8b3",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.2/previous-publication.tar.gz",
+    "version": "2026.09.29.2",
+    "bytes": 275708382,
+    "sha256": "bd7a20adf2a57290c8abb74e4f94a72daad2c03217eeee712cb821c397b00720",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.2/delta.tar.gz",
+    "version": "2026.09.29.2",
+    "bytes": 1299151,
+    "sha256": "cfdd28746993c71e260020140e7c61d5a90bfb8f45ca8cec85c7f961031eec94",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.3/candidate.tar.gz",
+    "version": "2026.09.29.3",
+    "bytes": 274331471,
+    "sha256": "cad086a0cf8a43cbbd88b0dfeac6ce4e90d3e546ad34ed6732d7a3af90aa0821",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.3/previous-publication.tar.gz",
+    "version": "2026.09.29.3",
+    "bytes": 275709763,
+    "sha256": "f927aa347d867143df0fcf85d4b033ccb338ab2d757c2dc54bf7f1cd20284730",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.3/delta.tar.gz",
+    "version": "2026.09.29.3",
+    "bytes": 427828,
+    "sha256": "80be32777cbd2bf5f5311a0be072164124c72de5eae41c3bfcf31119013ac766",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.4/candidate.tar.gz",
+    "version": "2026.09.29.4",
+    "bytes": 253258464,
+    "sha256": "a0c07775cdb913120773ae9d61bc75ddfb1322575669394d23ece6ba0e5f37d8",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.4/previous-publication.tar.gz",
+    "version": "2026.09.29.4",
+    "bytes": 275711896,
+    "sha256": "d2d3e6863a3cb8bd030391eb51227b384bb1a80d76d02b0aa79abb6bff8ab900",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.4/delta.tar.gz",
+    "version": "2026.09.29.4",
+    "bytes": 54369317,
+    "sha256": "5ed450bb6afc68d3f43e3543e1cab680adda710b6bd47f9d6831e185f6a6be13",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.5/candidate.tar.gz",
+    "version": "2026.09.29.5",
+    "bytes": 154103609,
+    "sha256": "c47264b00f7561b176ea29ffcaaf174d70e006aedd58e6b1ac62419bd44a6cd7",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.5/previous-publication.tar.gz",
+    "version": "2026.09.29.5",
+    "bytes": 254534953,
+    "sha256": "eba00d47cdd5e817a5ab417efbf4632f34c76d9da24642941e8ed8bc78841ac7",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.5/delta.tar.gz",
+    "version": "2026.09.29.5",
+    "bytes": 132836961,
+    "sha256": "10b64b186a41fabfe35bcf4adeace06733f6c6f48529f5854d730df42dac0ade",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.6/candidate.tar.gz",
+    "version": "2026.09.29.6",
+    "bytes": 154103568,
+    "sha256": "4e7f29863c97ff7dff6db7c0984bc6b2540e345a357abaa4eb0591e0964cb5dd",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.6/previous-publication.tar.gz",
+    "version": "2026.09.29.6",
+    "bytes": 154692291,
+    "sha256": "f2ed44206c2beb7ef7583cee79153554c043ec6afa0ec1dbdf41960a081ef919",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.09.29.6/delta.tar.gz",
+    "version": "2026.09.29.6",
+    "bytes": 433978,
+    "sha256": "f18b7ee6e1ac06e40fbcc4c53122e801f314a1f87941a5f9e801de33bb1d4a93",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.1/candidate.tar.gz",
+    "version": "2026.10.01.1",
+    "bytes": 154104907,
+    "sha256": "0b1faf7634eeaee1405b78009adf674ad174eb7f8851165e7a565d00c1c8785e",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.1/previous-publication.tar.gz",
+    "version": "2026.10.01.1",
+    "bytes": 154696945,
+    "sha256": "1824eef6ed42bf39e8de1fdfa900d3012dd1c191d6c70456d1d22c3dff603185",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.1/delta.tar.gz",
+    "version": "2026.10.01.1",
+    "bytes": 428296,
+    "sha256": "c5867e5cc097c9919651b7478a2efe2f8a98fad460882714f1f50e1b0b75412e",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.2/candidate.tar.gz",
+    "version": "2026.10.01.2",
+    "bytes": 154108698,
+    "sha256": "15882dd1211519ee19d01b3c292d06c6f77ca36fdb00d7de6636aa24ce343581",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.2/previous-publication.tar.gz",
+    "version": "2026.10.01.2",
+    "bytes": 154684032,
+    "sha256": "31e1e5c6b91cad7311e6803ccb041f5aa9a705fb198a01d4e1d0fd69c39eefd9",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.2/delta.tar.gz",
+    "version": "2026.10.01.2",
+    "bytes": 432308,
+    "sha256": "c7822f74e4d2b05c247e4c9e39d7f432dbe4a41cdecef538f433d1a06321b65c",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.3/candidate.tar.gz",
+    "version": "2026.10.01.3",
+    "bytes": 154194317,
+    "sha256": "aaddd75f9d4bbab991e2debbe0f7476652cbcadd3273499aade21476868ad705",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.3/previous-publication.tar.gz",
+    "version": "2026.10.01.3",
+    "bytes": 154692142,
+    "sha256": "260431cb19b15597e596754d8a4e4ad0c0c7aeb31a9794121c4b581c74fc9aa6",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.01.3/delta.tar.gz",
+    "version": "2026.10.01.3",
+    "bytes": 517467,
+    "sha256": "799b3faa3ffcd95f6c8e164daf01ade539e27f6c99a4e5c8294f4e15c74003f4",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.02.1/candidate.tar.gz",
+    "version": "2026.10.02.1",
+    "bytes": 154204161,
+    "sha256": "2a15777704bc69f90ef9968b70650166e0ea5ff492cb1086001124f61b735954",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.02.1/previous-publication.tar.gz",
+    "version": "2026.10.02.1",
+    "bytes": 154777762,
+    "sha256": "919fe83f259b820b4effc8e5e085c7a5e27bec5a2ab838520d6183cca9f1e322",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.02.1/delta.tar.gz",
+    "version": "2026.10.02.1",
+    "bytes": 454370,
+    "sha256": "624126819cb75a267b3ed97899d08efb27b5705fac02036b2ac9cf83331329de",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.02.2/candidate.tar.gz",
+    "version": "2026.10.02.2",
+    "bytes": 154204778,
+    "sha256": "1ce8d3b5b1e5607fa94898bbd01ef1a35f948d8dd06e1d2190f74f2ec88fec0c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.02.2/previous-publication.tar.gz",
+    "version": "2026.10.02.2",
+    "bytes": 154800590,
+    "sha256": "c950556fd61cc57a0d70bb4009401ed642d0868a5e9b8b5f4cafb90a7e447c05",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.02.2/delta.tar.gz",
+    "version": "2026.10.02.2",
+    "bytes": 447701,
+    "sha256": "d513c88d3acc632b9aa9e0f6f6aa5c138d3731bb72d8ba1fa127768ebf634e0e",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.1/candidate.tar.gz",
+    "version": "2026.10.05.1",
+    "bytes": 154205987,
+    "sha256": "bef02c6690f53e242c2904ae172d1c84ef84527a24881073e71fe0cb5e595c5d",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.1/previous-publication.tar.gz",
+    "version": "2026.10.05.1",
+    "bytes": 154791025,
+    "sha256": "836899259f232ed99881fdd183c84d25d5b34eb082a0b8cfba450d1374f8c7fd",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.1/delta.tar.gz",
+    "version": "2026.10.05.1",
+    "bytes": 455913,
+    "sha256": "00d4884435a14d92d626459cab5a675075f5fee04b4d0978f6f81318aa871f56",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.2/candidate.tar.gz",
+    "version": "2026.10.05.2",
+    "bytes": 154205615,
+    "sha256": "87c09fc8d3b9fc17866dd4bb83a5a0fc1a37ec3a56b5e99d37e0537b93e95841",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.2/previous-publication.tar.gz",
+    "version": "2026.10.05.2",
+    "bytes": 154792059,
+    "sha256": "7be6d73de2696b949f279885f6626a8b1342d00fc855d2223481a8ff4d22f246",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.2/delta.tar.gz",
+    "version": "2026.10.05.2",
+    "bytes": 448000,
+    "sha256": "e843ba37c488ab4f82ee62fb1c2d36b297b729e212439b01a603383d814de6a5",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.3/candidate.tar.gz",
+    "version": "2026.10.05.3",
+    "bytes": 154205573,
+    "sha256": "88807f0bf412bb1f1b666560ad3b320dcc9ead8b9a19434805316f81c0f181ce",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.3/previous-publication.tar.gz",
+    "version": "2026.10.05.3",
+    "bytes": 154796838,
+    "sha256": "81c15f16c2cea6c66713b4a29ec6c5ed691abf73ddbb26ab872a5098d30b883c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.3/delta.tar.gz",
+    "version": "2026.10.05.3",
+    "bytes": 448604,
+    "sha256": "b66288a42a73ff542872218aa5d28c98950a0092012fc107b1c896cc8ad735e3",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.4/candidate.tar.gz",
+    "version": "2026.10.05.4",
+    "bytes": 158220274,
+    "sha256": "9aafe6d69be7c01f28c39acbdd945e2c99f480dff5d0ae74acd7488f7053d982",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.4/previous-publication.tar.gz",
+    "version": "2026.10.05.4",
+    "bytes": 154796049,
+    "sha256": "1b8f484a0f93f7098da966286b1b16d17930e58f55acad623a6a258ec68af00e",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.4/delta.tar.gz",
+    "version": "2026.10.05.4",
+    "bytes": 450059,
+    "sha256": "8dbd917bf4569f5e113d7331ec5208c7d4bfe833ec4a89ac69bb8992e872db73",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.5/candidate.tar.gz",
+    "version": "2026.10.05.5",
+    "bytes": 154207154,
+    "sha256": "95b1b90189b120fadc3ec5409758c9713bc2d29d187cb924449de09bd2c86ffa",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.5/previous-publication.tar.gz",
+    "version": "2026.10.05.5",
+    "bytes": 154791558,
+    "sha256": "7890ab88cb43dcef11bf56a0dccffe089dafd5185827324b9af7b614e26a8921",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.5/delta.tar.gz",
+    "version": "2026.10.05.5",
+    "bytes": 457439,
+    "sha256": "052dea4c946262e8320808fa161b7b7fb930b41b6a8736a071cb21826c679ae8",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.6/candidate.tar.gz",
+    "version": "2026.10.05.6",
+    "bytes": 154208305,
+    "sha256": "affc5d94244ed594e0d9e700d05c6e57a0326fef9f18a596a064d71965489f62",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.6/previous-publication.tar.gz",
+    "version": "2026.10.05.6",
+    "bytes": 154798066,
+    "sha256": "4f49b4d24c984579bd000544e00c5220b5e5b6aaff44d550770bf5ae519e290b",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.6/delta.tar.gz",
+    "version": "2026.10.05.6",
+    "bytes": 457809,
+    "sha256": "843e00a00f92f391dd011128ceaf9a7fa98ae4e6d500ec75cb9d7606fc45ce4c",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.7/candidate.tar.gz",
+    "version": "2026.10.05.7",
+    "bytes": 158220719,
+    "sha256": "31c08baebb95cb98798e9cd211736af50855b7d591229a958e7bc77b80c48359",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.7/previous-publication.tar.gz",
+    "version": "2026.10.05.7",
+    "bytes": 154792295,
+    "sha256": "9da2fa8abacb661c95de79175a868558e52641573712429feebdbaa4853c4b2c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.7/delta.tar.gz",
+    "version": "2026.10.05.7",
+    "bytes": 457600,
+    "sha256": "b75f1bffee4136e0c064dc598d96e616552af74e1ed2721f62caab9ce66c6f6d",
+    "releaseHashMatched": false
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.8/candidate.tar.gz",
+    "version": "2026.10.05.8",
+    "bytes": 154207766,
+    "sha256": "5ff6529ff444a04a41a6224d0eb273cd19282226e9b7f954873371e84ebf506c",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.8/previous-publication.tar.gz",
+    "version": "2026.10.05.8",
+    "bytes": 154800546,
+    "sha256": "55ca359ff937a03101973696e420f058d6d3e15f4468dae4a27cc0c4c9df8011",
+    "releaseHashMatched": true
+  },
+  {
+    "relative": "artifacts/publication-v2026.10.05.8/delta.tar.gz",
+    "version": "2026.10.05.8",
+    "bytes": 450441,
+    "sha256": "dee2a5d597ae377e912d1868b89023528d7a09b2d977e5891bb54011e580bcdf",
+    "releaseHashMatched": false
+  }
+]

@@ -1,0 +1,299 @@
+{
+  "status": "BLOCKED_AUTOMATIC_APPROVAL",
+  "date": "2026-10-16",
+  "executor": "Codex / GPT-6",
+  "renderVersion": "2026.10.16.2",
+  "sourceVersion": "2026.10.12.1",
+  "authorization": "User requested deletion of the delivered local render bundle: ок, удаляй",
+  "targetDirectory": "C:\\Users\\Алексей\\Documents\\New project\\output\\blender-s3000-3x-comfort-plus-20261016",
+  "fileCount": 32,
+  "bytes": 260947188.0,
+  "files": [
+    {
+      "relativePath": "assembly.glb",
+      "bytes": 53168132,
+      "lastWriteTimeUtc": "2026-10-16T11:17:19.7293286Z",
+      "sha256": "25ff11f6cd36aa3792b84091e62ec45b06dd9dad3b8b4d11827ff348d528c243"
+    },
+    {
+      "relativePath": "blender-scene.json",
+      "bytes": 1792,
+      "lastWriteTimeUtc": "2026-10-16T11:24:15.0839105Z",
+      "sha256": "dddd2aa351ed653addcb5b21670f5a3f619008a088e71a6060acd3adfe9d7546"
+    },
+    {
+      "relativePath": "cabinet-open-reference.png",
+      "bytes": 461103,
+      "lastWriteTimeUtc": "2026-10-16T11:17:19.6784473Z",
+      "sha256": "24aa9eeff6fac37ed530224a795ea53bd3a1a86bbbd83e0264aacd7e4db6e64c"
+    },
+    {
+      "relativePath": "configuration-reference.png",
+      "bytes": 389945,
+      "lastWriteTimeUtc": "2026-10-16T11:17:15.2101711Z",
+      "sha256": "39a2706837401cd03f17110da848372746e908c0ecf089658050908784454555"
+    },
+    {
+      "relativePath": "export-manifest.json",
+      "bytes": 449295,
+      "lastWriteTimeUtc": "2026-10-16T11:17:19.8141294Z",
+      "sha256": "78f52d5cce1531ed910917456142a2073b3c90b8fbacf0730224a2090e94201d"
+    },
+    {
+      "relativePath": "import-audit.json",
+      "bytes": 33074,
+      "lastWriteTimeUtc": "2026-10-16T11:25:26.6171935Z",
+      "sha256": "4f792b2fbd0f63ac021ff2ea16a6314de5953de93987dd1701fc2f633deddae7"
+    },
+    {
+      "relativePath": "import-audit.log",
+      "bytes": 541,
+      "lastWriteTimeUtc": "2026-10-16T11:25:26.9846638Z",
+      "sha256": "ea895a3528e97ec720dda6f0b5c8b7370def09cc8a62fd7c69535104a3236533"
+    },
+    {
+      "relativePath": "inspect_cameras.py",
+      "bytes": 666,
+      "lastWriteTimeUtc": "2026-10-16T11:23:10.3520804Z",
+      "sha256": "460cc5af517aa50e63ca3894ce5bfba31c06b96ffa79b1ed6cc0e52f2f494684"
+    },
+    {
+      "relativePath": "inspect-v2.log",
+      "bytes": 927,
+      "lastWriteTimeUtc": "2026-10-16T11:28:31.9304217Z",
+      "sha256": "add697afd9c1307bdf06922575d7e861fdf8829609ea5c9d4917b9a6c23ecd7d"
+    },
+    {
+      "relativePath": "inspect.log",
+      "bytes": 871,
+      "lastWriteTimeUtc": "2026-10-16T11:23:13.7232606Z",
+      "sha256": "ea7a26a101f5a34876d9004978654163944d0b617b84b9167549a85b891a93ad"
+    },
+    {
+      "relativePath": "pr-before.json",
+      "bytes": 12074,
+      "lastWriteTimeUtc": "2026-10-16T11:35:49.4128627Z",
+      "sha256": "ce67b035b20449dde79d3b12e2b36d7da78b3952fe81f0dbd9530a61720e82ae"
+    },
+    {
+      "relativePath": "pr-body-after.md",
+      "bytes": 15151,
+      "lastWriteTimeUtc": "2026-10-16T11:41:49.31384Z",
+      "sha256": "80f40b33d16c7bae543f74cc7e6c9ac61ae02a132865db5d729538a8b6eebd04"
+    },
+    {
+      "relativePath": "pr-render-comment.md",
+      "bytes": 3580,
+      "lastWriteTimeUtc": "2026-10-16T11:40:22.7898221Z",
+      "sha256": "2e98db6df4cbc89c276af074619918e3d1e8e5ecadb64983266f077221a0449d"
+    },
+    {
+      "relativePath": "PREMIUM_3xS3000_ComfortPlus_2026-10-16.blend",
+      "bytes": 152558589,
+      "lastWriteTimeUtc": "2026-10-16T11:24:15.0739537Z",
+      "sha256": "721840ea69c36e43bf75e0694d87cfa0d489d8d83c5824987e050907a730d15c"
+    },
+    {
+      "relativePath": "preview-v2.log",
+      "bytes": 195423,
+      "lastWriteTimeUtc": "2026-10-16T11:24:30.9060485Z",
+      "sha256": "0866b99a248063c2cbe16d8f584ffdc9dc7bbafbd59869fdab2ebad017c1ff42"
+    },
+    {
+      "relativePath": "preview.log",
+      "bytes": 195298,
+      "lastWriteTimeUtc": "2026-10-16T11:21:09.1366965Z",
+      "sha256": "6ee2d825b319133ecd94f8c8998e50de33bfad7f325143ac58b0106dfb715f7b"
+    },
+    {
+      "relativePath": "published-manifest.json",
+      "bytes": 21910,
+      "lastWriteTimeUtc": "2026-10-16T11:25:33.6149162Z",
+      "sha256": "e98a1d489cb794648b322f2546b97c4e945c7c18605c6fda0be12a08373d5728"
+    },
+    {
+      "relativePath": "README.md",
+      "bytes": 5683,
+      "lastWriteTimeUtc": "2026-10-16T11:39:22.9911762Z",
+      "sha256": "614079e752227c008f2395112c7990b91eda312b0371f5f7f4748eb7e5229b21"
+    },
+    {
+      "relativePath": "render-final.log",
+      "bytes": 202797,
+      "lastWriteTimeUtc": "2026-10-16T11:37:57.978606Z",
+      "sha256": "5d112d934569b906bc4b1f28ab4137ebe9e553d5a098ea9729c0faafcbe6e86d"
+    },
+    {
+      "relativePath": "Renders_3xS3000_ComfortPlus_2026-10-16.zip",
+      "bytes": 25268188,
+      "lastWriteTimeUtc": "2026-10-16T11:39:23.6305266Z",
+      "sha256": "18119d7fafc1e91daa0545fdb87511063a42c6c176f811b54445610be2dcde16"
+    },
+    {
+      "relativePath": "source-asset-verification.json",
+      "bytes": 2873,
+      "lastWriteTimeUtc": "2026-10-16T11:25:33.7357256Z",
+      "sha256": "977ae16e75be63bda2846e906a69cc8e06c2721ea2d42b97feec163d86f3fe2a"
+    },
+    {
+      "relativePath": "verification.json",
+      "bytes": 2755,
+      "lastWriteTimeUtc": "2026-10-16T11:39:22.9895801Z",
+      "sha256": "7ec5778d0d1795b3c8bc012948f3df90b1802eba86bf94d4945f9ca119d855a2"
+    },
+    {
+      "relativePath": "previews\\01_overall.png",
+      "bytes": 638058,
+      "lastWriteTimeUtc": "2026-10-16T11:24:21.0189384Z",
+      "sha256": "c1184e6196bd7a8ea8a83d0b8157a8599a997702bfd89fd703ff505119383143"
+    },
+    {
+      "relativePath": "previews\\02_boiler.png",
+      "bytes": 726163,
+      "lastWriteTimeUtc": "2026-10-16T11:24:23.7522599Z",
+      "sha256": "aa08a32c84ced48770c441c702bd918259eaf1fd29f81203fe4ab9b5ad62bd03"
+    },
+    {
+      "relativePath": "previews\\03_cabinet_closed.png",
+      "bytes": 619921,
+      "lastWriteTimeUtc": "2026-10-16T11:24:26.8981581Z",
+      "sha256": "f06669483a40256c7e3b546bbd72c7b611443ed6611f71546c7f5848c7f4879d"
+    },
+    {
+      "relativePath": "previews\\04_cabinet_open.png",
+      "bytes": 711596,
+      "lastWriteTimeUtc": "2026-10-16T11:24:29.9807138Z",
+      "sha256": "c152766209aa85f9bd73d501f8c800484c40ea2d33289c8364176d8ba655c3c0"
+    },
+    {
+      "relativePath": "previews\\verification.json",
+      "bytes": 1035,
+      "lastWriteTimeUtc": "2026-10-16T11:24:29.9909273Z",
+      "sha256": "d765665954f7808a10e3071b1e42335e71750d07d3e226c5a0cc342c13ed5038"
+    },
+    {
+      "relativePath": "renders\\01_overall.png",
+      "bytes": 6238459,
+      "lastWriteTimeUtc": "2026-10-16T11:27:55.3948228Z",
+      "sha256": "3f144ff5cf43a13c03bae5d83e4f04387f37d67edb860c28365ce3bb5d0d0cb7"
+    },
+    {
+      "relativePath": "renders\\02_boiler.png",
+      "bytes": 6633207,
+      "lastWriteTimeUtc": "2026-10-16T11:32:51.036201Z",
+      "sha256": "43f5b89ebb186dc6780597b2de9426336350b0c5b1456f5e4735de9f160a5ff4"
+    },
+    {
+      "relativePath": "renders\\03_cabinet_closed.png",
+      "bytes": 5879180,
+      "lastWriteTimeUtc": "2026-10-16T11:35:23.3587993Z",
+      "sha256": "94664fed9c460294e85a6d1cae82cc1d8c31c6062bc8181109732b21cb90bc5d"
+    },
+    {
+      "relativePath": "renders\\04_cabinet_open.png",
+      "bytes": 6507854,
+      "lastWriteTimeUtc": "2026-10-16T11:37:57.3324326Z",
+      "sha256": "0132fa06fd3fa6c8cebbc34d79b8a4f0b800bac4a14cef3a03887ffa2065bc6b"
+    },
+    {
+      "relativePath": "renders\\verification.json",
+      "bytes": 1048,
+      "lastWriteTimeUtc": "2026-10-16T11:37:57.3463599Z",
+      "sha256": "b9196b5dfddfa264430e98a9feff2d1929e3524f724e29e561847d198b234956"
+    }
+  ],
+  "emptyDirectoriesToRemove": [
+    "previews",
+    "renders"
+  ],
+  "preservedRepositoryFiles": [
+    {
+      "relativePath": "docs/renders/2026-10-16-s3000-comfort-plus/images/01_overall.png",
+      "bytes": 6238459,
+      "sha256": "3f144ff5cf43a13c03bae5d83e4f04387f37d67edb860c28365ce3bb5d0d0cb7"
+    },
+    {
+      "relativePath": "docs/renders/2026-10-16-s3000-comfort-plus/images/02_boiler.png",
+      "bytes": 6633207,
+      "sha256": "43f5b89ebb186dc6780597b2de9426336350b0c5b1456f5e4735de9f160a5ff4"
+    },
+    {
+      "relativePath": "docs/renders/2026-10-16-s3000-comfort-plus/images/03_cabinet_closed.png",
+      "bytes": 5879180,
+      "sha256": "94664fed9c460294e85a6d1cae82cc1d8c31c6062bc8181109732b21cb90bc5d"
+    },
+    {
+      "relativePath": "docs/renders/2026-10-16-s3000-comfort-plus/images/04_cabinet_open.png",
+      "bytes": 6507854,
+      "sha256": "0132fa06fd3fa6c8cebbc34d79b8a4f0b800bac4a14cef3a03887ffa2065bc6b"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-0.glb",
+      "bytes": 707972,
+      "sha256": "3c86cb862c2069f96752b72298a615bfdbda6589d99d95890eda32718c37b089"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-3.glb",
+      "bytes": 2335040,
+      "sha256": "510b17dc9cf768d52c3e1b208d6b8737adc948422af03b7fafea656815b83bfe"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-5.glb",
+      "bytes": 3140972,
+      "sha256": "cc6cb8359d348c0d3cfa546f704e8b2336ff3e5f8f6c1573119a0d0850653095"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-4.glb",
+      "bytes": 2713296,
+      "sha256": "5d54f5c4e83a428f37b2f9fc56b7de22bc246765e14306dcd03e22628ff458ab"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-2.glb",
+      "bytes": 1332672,
+      "sha256": "95fdb1ade13606db2ca46f502f82c299ee51edb86b529cfc3bf85c5b30b31159"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-6.glb",
+      "bytes": 3000288,
+      "sha256": "b3087f41361b158f3e4622b90a14293cf2c8046228a1e06c49da6e101e2fbaea"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-1.glb",
+      "bytes": 1033332,
+      "sha256": "be67eadf99b963c5bcc12af8e73487419096af3fdfd68cd83343e85d8221153c"
+    },
+    {
+      "relativePath": "src/assets/ratings/3000/s4000-7.glb",
+      "bytes": 3616696,
+      "sha256": "0fd681962ef5b8d0f5f60161201a481d789c6ba896d805aa5532766586e0fd26"
+    },
+    {
+      "relativePath": "src/assets/cascade/comfort_plus.glb",
+      "bytes": 723940,
+      "sha256": "1cec2b24abd9179dcd9863e8c41813b6709fde563ce8d9a415a7395a6d6192d0"
+    },
+    {
+      "relativePath": "src/assets/deaerators/da25_15.glb",
+      "bytes": 1811160,
+      "sha256": "bbc2f2f606003e2485960974b69c1dd66626e32b86af332655766e23114b7501"
+    },
+    {
+      "relativePath": "src/assets/cascade/adl_is16.glb",
+      "bytes": 59816,
+      "sha256": "f5345a2d55da1fd35fdea1675da89b5dc3891ca652cf49dc527e65439e989b38"
+    },
+    {
+      "relativePath": "src/assets/cascade/valtec_vt215_dn15.glb",
+      "bytes": 101516,
+      "sha256": "5282abd4286d846b082e36f3c1d4dd2c9f090f24f6adb4b8350434e18e3d63e6"
+    }
+  ],
+  "sourceAssetsUnchangedBefore": true,
+  "toolResult": "CreateProcess rejected: blocked by policy",
+  "deletionCommandStarted": false,
+  "deletedFiles": 0,
+  "freedBytes": 0,
+  "localFilesVerifiedAfter": 32,
+  "preservedFilesVerifiedAfter": 16,
+  "verifiedUtc": "2026-10-16T12:52:14.3420308Z"
+}

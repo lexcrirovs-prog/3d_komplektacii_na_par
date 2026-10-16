@@ -1,0 +1,106 @@
+{
+  "status": "PASSED_RENDER_DELIVERY",
+  "version": "2026.10.16.1",
+  "date": "2026-10-16",
+  "executor": "Codex / GPT-6",
+  "sourceVersion": "2026.10.12.1",
+  "sourceCommit": "d980d2f5f59a56aa5ebeb2a0cca1bcbdca74cca9",
+  "configuration": {
+    "power": 5000,
+    "count": 5,
+    "totalKgH": 25000,
+    "trim": "comfort_plus",
+    "pressureBar": 12,
+    "deaerator": "da25_25",
+    "cascadeCabinet": true,
+    "economizers": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "blenderVersion": "3.3.3",
+  "blend": {
+    "file": "PREMIUM_5xS5000_ComfortPlus_2026-10-16.blend",
+    "bytes": 234141350,
+    "sha256": "ce8b5543d4549dd888ff7e65c40f2b83cb9480de3dd3849dc10463bf95ebf7d2"
+  },
+  "packedTextures": true,
+  "reopenedScene": true,
+  "meshObjects": 1921,
+  "exportedTriangles": 6126370,
+  "blenderTriangles": 6096601,
+  "duplicateOrInvalidFacesRemovedByImporter": 29769,
+  "unexplainedGeometryDifference": 0,
+  "renders": [
+    {
+      "file": "01_overall_front.png",
+      "bytes": 6190213,
+      "sha256": "78f67ccf3e6daf57640cc88a6fc5354a6905d221742e5a45a3f41b4d9e820a89",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        43.321185190117326,
+        44.202535044300305,
+        44.584797777102686
+      ],
+      "visualReview": "PASSED"
+    },
+    {
+      "file": "02_boiler_line.png",
+      "bytes": 5775307,
+      "sha256": "edeeabf2db41f4eec7f1e9df34f70109d7375e46332ef428d49dc1a6ef5cc3c8",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        45.99739513197823,
+        46.67089209809805,
+        46.88703860617665
+      ],
+      "visualReview": "PASSED"
+    },
+    {
+      "file": "03_overall_rear.png",
+      "bytes": 6109025,
+      "sha256": "ef5a45c72b0938555c266b5fbea4cc67ef1beb441f84c0d4309e2ed882970907",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        40.67933904728584,
+        41.40783738581666,
+        41.460759931688614
+      ],
+      "visualReview": "PASSED"
+    },
+    {
+      "file": "04_deaerator.png",
+      "bytes": 6551494,
+      "sha256": "016e909ce5e7a29805cf0d6a8a7049b8ba51472b8e3a5ee7474ca4498d24b55d",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        45.60973044348756,
+        45.28396185384305,
+        45.031139875171945
+      ],
+      "visualReview": "PASSED"
+    },
+    {
+      "file": "05_controls.png",
+      "bytes": 6311583,
+      "sha256": "d918c33db98f8f9b7fa82d3de4fc8abd0efffc2b1ff27748e6cd53a984bd38aa",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        39.30307635518661,
+        38.732182005864445,
+        38.859024400244046
+      ],
+      "visualReview": "PASSED"
+    }
+  ],
+  "sourceAssetsChanged": false,
+  "websiteDeployed": false
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASSED",
+  "sourceCommit": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "configurations": 54,
+  "uniqueRowDefinitions": 104,
+  "itemDefinitions": 35,
+  "sourceRowChecks": 1602,
+  "documents": 16,
+  "catalogBytes": 37585,
+  "documentsBytes": 45829444,
+  "allDocumentAndLogoCopiesHashVerified": true,
+  "fullCatalogMatchesPressureFilteredInput": true,
+  "allAvailableStaticSemanticPartIdsExistAcrossNinePowers": true,
+  "notes": [
+    "Shared module scope follows cascade scene, not an unprovided piping BOM.",
+    "FV/BDV counts describe the current visual configuration; detailed vessel sizing remains project-dependent."
+  ]
+}

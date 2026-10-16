@@ -1,0 +1,4 @@
+output/
+pilot-output/
+*.generated.mjs
+*.log

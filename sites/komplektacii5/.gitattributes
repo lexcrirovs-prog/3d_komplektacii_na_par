@@ -1,0 +1,2 @@
+# Preserve the exact deployed manifest bytes, including its original line endings.
+docs/deployment-2026.10.01.1/DEPLOY_MANIFEST.json -text

@@ -1,0 +1,40 @@
+{
+  "at": 1790860329.9362884,
+  "checks": [
+    {
+      "path": "api/lead.php",
+      "method": "GET",
+      "status": 405,
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"status\":\"error\",\"message\":\"Используйте форму запроса КП.\"}"
+    },
+    {
+      "path": "api/lead.php",
+      "method": "POST",
+      "status": 422,
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"status\":\"error\",\"message\":\"Некорректный номер запроса.\"}"
+    },
+    {
+      "path": ".htaccess",
+      "method": "GET",
+      "status": 403,
+      "contentType": "text/html; charset=iso-8859-1",
+      "body": "Forbidden"
+    },
+    {
+      "path": "api/.htaccess",
+      "method": "GET",
+      "status": 403,
+      "contentType": "text/html; charset=iso-8859-1",
+      "body": "Forbidden"
+    }
+  ],
+  "acceptedRequestAfterRename": {
+    "requestId": "9d1d9052-9160-4e01-9289-f0f90368acd5",
+    "status": "accepted",
+    "privateStorage": true,
+    "mode": "0o700"
+  },
+  "realEmailsSent": 1
+}

@@ -1,0 +1,13 @@
+{
+  "at": 1790859846.9421186,
+  "stage": "/home/p/premiuig/prgz.ru/public_html/komplektacii5-review-20261001-1",
+  "verification": {
+    "files": 227,
+    "bytes": 231006612,
+    "manifestSha256": "e964999f5dc5a514c8e993c4d6179bf1af9602b3c0f805e0b752d60fbabc13c0",
+    "verified": true
+  },
+  "phpLint": "No syntax errors detected in /home/p/premiuig/prgz.ru/public_html/komplektacii5-review-20261001-1/api/lead.php\n",
+  "privateStorage": "/home/p/premiuig/prgz.ru/.komplektacii5-leads",
+  "storageMode": "0o700"
+}

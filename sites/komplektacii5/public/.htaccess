@@ -1,0 +1,11 @@
+# Scoped to /komplektacii5 only. Original /komplektacii4 has its own configuration.
+Options -Indexes
+AddType model/gltf-binary .glb
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE model/gltf-binary application/javascript text/javascript text/css application/json text/html image/svg+xml
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

@@ -1,0 +1,22 @@
+{
+  "status": "PUBLISHED_VERIFIED",
+  "version": "2026.10.01.1",
+  "date": "2026-10-01",
+  "executor": "Codex / GPT-6",
+  "url": "https://prgz.ru/komplektacii5/",
+  "applicationCommit": "0c8b8ccdc97617285a09265efcf8dc5bc1277792",
+  "factoryBaseline": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "publishedAt": "2026-10-01T13:08:22.697277+00:00",
+  "serverFilesVerified": 227,
+  "httpsFilesVerified": 224,
+  "gzipGlbFiles": 186,
+  "protectedKomplektacii4Files": 126,
+  "protectedKomplektacii4Unchanged": true,
+  "realEmailsSent": 1,
+  "receiptRequestId": "9d1d9052-9160-4e01-9289-f0f90368acd5",
+  "receiptReceivedAt": "2026-10-01T13:06:02.000Z",
+  "firstSceneMs": 2956.5,
+  "firstSceneTransferBytes": 1214974,
+  "physicalPhoneTested": false,
+  "approvedPackageSha256": "b45509a94e7fcf5fc7167520cd894c20c99aa35aa603fc751d106c9b8cf8e106"
+}

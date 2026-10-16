@@ -1,0 +1,65 @@
+{
+  "status": "PASSED_SHIPPED_HASHES_PACKING_SOURCE_AND_EXHAUSTIVE_BUDGETS",
+  "date": "2026-10-01",
+  "sourceCommit": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "files": 105,
+  "sourceFilesUnchanged": 80,
+  "detailedCopiesUnchanged": 81,
+  "canonicalSourceAssetsAndComponentsMatchPinnedCommit": true,
+  "configurationsChecked": 22400,
+  "orphans": [],
+  "maxBytes": {
+    "config": {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "pressure": 8,
+      "cascade": 2,
+      "addons": [
+        "burner",
+        "deaerator",
+        "bdv"
+      ]
+    },
+    "bytes": 1999036,
+    "triangles": 220758
+  },
+  "maxSingle": {
+    "config": {
+      "power": 500,
+      "trim": "comfort",
+      "pressure": 8,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "deaerator",
+        "modulation",
+        "gpz",
+        "bdv",
+        "fv"
+      ]
+    },
+    "bytes": 1899868,
+    "triangles": 146162
+  },
+  "maxCascade": {
+    "config": {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "pressure": 8,
+      "cascade": 5,
+      "addons": [
+        "burner",
+        "economizer",
+        "deaerator",
+        "modulation",
+        "gpz",
+        "bdv",
+        "fv"
+      ]
+    },
+    "bytes": 1948192,
+    "triangles": 483671
+  },
+  "missingCatalogSemantics": [],
+  "limits": "Selected model payload only, including ADL strainer. Geometry counts include functional helper and current 6-sided tubes. Initial HTML/JS/JSON, shadow render passes, ghost comparison and GPU/FPS excluded."
+}

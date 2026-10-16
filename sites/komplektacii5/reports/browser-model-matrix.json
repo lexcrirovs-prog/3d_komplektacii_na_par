@@ -1,0 +1,380 @@
+[
+  {
+    "config": {
+      "power": 500,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 78548,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 500,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 73625,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 500,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 73813,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 1000,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 78344,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 1000,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72417,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 1000,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 73349,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 1500,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 78322,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 1500,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72395,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 1500,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72583,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 2000,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 78000,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 2000,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72073,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 2000,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72261,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 2500,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 77944,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 2500,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72017,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 2500,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72205,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 3000,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 79103,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 3000,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 73176,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 3000,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 74108,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 3500,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 78383,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 3500,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72456,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 3500,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72644,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 4000,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 83998,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 4000,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 78071,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 4000,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 79003,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 5000,
+      "trim": "standard",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 78173,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 5000,
+      "trim": "comfort",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72246,
+    "error": "false"
+  },
+  {
+    "config": {
+      "power": 5000,
+      "trim": "comfort_plus",
+      "pressure": 12,
+      "cascade": 1,
+      "addons": [
+        "burner",
+        "gpz"
+      ]
+    },
+    "triangles": 72434,
+    "error": "false"
+  }
+]

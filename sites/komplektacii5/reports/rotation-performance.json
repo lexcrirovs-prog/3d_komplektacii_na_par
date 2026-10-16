@@ -1,0 +1,28 @@
+{
+  "profile": {
+    "width": 1366,
+    "height": 900,
+    "dpr": 1.0000000149011612,
+    "renderer": "WebKit WebGL"
+  },
+  "frames": 179,
+  "medianFps": 74.62686567164381,
+  "p95FrameMs": 13.5,
+  "visibleRenderTriangles": 483673,
+  "calls": 1006,
+  "configuration": {
+    "power": 4000,
+    "trim": "comfort_plus",
+    "pressure": 12,
+    "cascade": 5,
+    "addons": [
+      "burner",
+      "economizer",
+      "deaerator",
+      "modulation",
+      "gpz",
+      "bdv",
+      "fv"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": "2026.10.01.1",
+  "date": "2026-10-01",
+  "executor": "Codex / GPT-6",
+  "status": "LOCAL_REVIEW",
+  "factorySource": "cc919366206eb317e7f21e90247ed1870cb276cd",
+  "ui": {
+    "lightScenes": 27,
+    "addonAddRemove": 14,
+    "automaticModulationRemoval": true,
+    "automaticDeaeratorReplacement": true,
+    "quantityChanges": true,
+    "rapidLastChoice": true,
+    "modeKeepsConfiguration": true,
+    "modeDoesNotCreateDelta": true,
+    "sharedDeltaForSceneBomText": true,
+    "removedGhostFocus": true,
+    "cabinetAndBoilerOpening": true,
+    "stepAndPdfDownloaded": true,
+    "noWebglFallback": true,
+    "modelLoadFailureFallback": true,
+    "viewerChunkFailureBoundary": true,
+    "formFailurePreservesData": true,
+    "keyboardRotation": true,
+    "reducedMotion": true,
+    "font200At390pxNoPageOverflow": true,
+    "readOnlyWebMcpValidAndInvalid": true
+  },
+  "publication": "NOT_DEPLOYED",
+  "realEmailCount": 0,
+  "limitations": [
+    "Measurements use local gzip server; verify Beget compression and delivery after approval.",
+    "PHP HTTP tests use 8.5.11; PHP5.6 compatibility inspected statically.",
+    "Responsive desktop browser emulation is not a physical phone or long-term memory test.",
+    "Light geometry is a presentation derivative, not an engineering surface tolerance claim."
+  ]
+}

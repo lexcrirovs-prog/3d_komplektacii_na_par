@@ -1,0 +1,80 @@
+{
+  "status": "PASSED_SOURCE_ASSET_PARITY",
+  "date": "2026-10-16",
+  "executor": "Codex / GPT-6",
+  "sourceVersion": "2026.10.12.1",
+  "files": [
+    {
+      "source": "/src/assets/ratings/3000/s4000-0.glb",
+      "published": "assets/s4000-0-Bijgd8Ih.glb",
+      "bytes": 707972,
+      "sha256": "3c86cb862c2069f96752b72298a615bfdbda6589d99d95890eda32718c37b089"
+    },
+    {
+      "source": "/src/assets/ratings/3000/s4000-3.glb",
+      "published": "assets/s4000-3-D0WqpxEV.glb",
+      "bytes": 2335040,
+      "sha256": "510b17dc9cf768d52c3e1b208d6b8737adc948422af03b7fafea656815b83bfe"
+    },
+    {
+      "source": "/src/assets/ratings/3000/s4000-5.glb",
+      "published": "assets/s4000-5-CIUVteDp.glb",
+      "bytes": 3140972,
+      "sha256": "cc6cb8359d348c0d3cfa546f704e8b2336ff3e5f8f6c1573119a0d0850653095"
+    },
+    {
+      "source": "/src/assets/ratings/3000/s4000-4.glb",
+      "published": "assets/s4000-4-U5taL_Xc.glb",
+      "bytes": 2713296,
+      "sha256": "5d54f5c4e83a428f37b2f9fc56b7de22bc246765e14306dcd03e22628ff458ab"
+    },
+    {
+      "source": "/src/assets/ratings/3000/s4000-2.glb",
+      "published": "assets/s4000-2-BAnVUT5K.glb",
+      "bytes": 1332672,
+      "sha256": "95fdb1ade13606db2ca46f502f82c299ee51edb86b529cfc3bf85c5b30b31159"
+    },
+    {
+      "source": "/src/assets/ratings/3000/s4000-6.glb",
+      "published": "assets/s4000-6-CfnXvVCi.glb",
+      "bytes": 3000288,
+      "sha256": "b3087f41361b158f3e4622b90a14293cf2c8046228a1e06c49da6e101e2fbaea"
+    },
+    {
+      "source": "/src/assets/ratings/3000/s4000-1.glb",
+      "published": "assets/s4000-1-BTr3N5mc.glb",
+      "bytes": 1033332,
+      "sha256": "be67eadf99b963c5bcc12af8e73487419096af3fdfd68cd83343e85d8221153c"
+    },
+    {
+      "source": "/src/assets/ratings/3000/s4000-7.glb",
+      "published": "assets/s4000-7-9dEQDMRj.glb",
+      "bytes": 3616696,
+      "sha256": "0fd681962ef5b8d0f5f60161201a481d789c6ba896d805aa5532766586e0fd26"
+    },
+    {
+      "source": "/src/assets/cascade/comfort_plus.glb",
+      "published": "assets/comfort_plus-BgZXyJ9I.glb",
+      "bytes": 723940,
+      "sha256": "1cec2b24abd9179dcd9863e8c41813b6709fde563ce8d9a415a7395a6d6192d0"
+    },
+    {
+      "source": "/src/assets/deaerators/da25_15.glb",
+      "published": "assets/da25_15-CLETLHil.glb",
+      "bytes": 1811160,
+      "sha256": "bbc2f2f606003e2485960974b69c1dd66626e32b86af332655766e23114b7501"
+    },
+    {
+      "source": "/src/assets/cascade/adl_is16.glb",
+      "published": "assets/adl_is16-CQy1Iafp.glb",
+      "bytes": 59816,
+      "sha256": "f5345a2d55da1fd35fdea1675da89b5dc3891ca652cf49dc527e65439e989b38"
+    },
+    {
+      "source": "/src/assets/cascade/valtec_vt215_dn15.glb",
+      "published": "assets/valtec_vt215_dn15-BGGQBXM4.glb",
+      "bytes": 101516,
+      "sha256": "5282abd4286d846b082e36f3c1d4dd2c9f090f24f6adb4b8350434e18e3d63e6"
+    }
+  ]
+}

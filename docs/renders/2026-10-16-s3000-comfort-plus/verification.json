@@ -1,0 +1,97 @@
+{
+  "status": "PASSED_RENDER_DELIVERY",
+  "version": "2026.10.16.2",
+  "date": "2026-10-16",
+  "executor": "Codex / GPT-6",
+  "sourceVersion": "2026.10.12.1",
+  "sourceCommit": "2d69e5d0bbb22f25040bf6af7d488e691965649b",
+  "sourceUrl": "https://prgz.ru/komplektacii4/?power=3000&trim=comfort_plus&pressure=12&addons=burner%2Ceconomizer%2Cdeaerator%2Cmodulation%2Cgpz%2Cbdv%2Cfv&cascade=3",
+  "configuration": {
+    "power": 3000,
+    "count": 3,
+    "totalKgH": 9000,
+    "trim": "comfort_plus",
+    "pressureBar": 12,
+    "deaerator": "da25_15",
+    "cascadeCabinet": false,
+    "economizers": [
+      true,
+      true,
+      true
+    ]
+  },
+  "blenderVersion": "3.3.3",
+  "blend": {
+    "file": "PREMIUM_3xS3000_ComfortPlus_2026-10-16.blend",
+    "bytes": 152558589,
+    "sha256": "721840ea69c36e43bf75e0694d87cfa0d489d8d83c5824987e050907a730d15c"
+  },
+  "packedTextures": true,
+  "reopenedScene": true,
+  "meshObjects": 1246,
+  "animatedDoorMeshes": 45,
+  "exportedTriangles": 3977991,
+  "blenderTriangles": 3960377,
+  "duplicateOrInvalidFacesRemovedByImporter": 17614,
+  "unexplainedGeometryDifference": 0,
+  "renders": [
+    {
+      "file": "01_overall.png",
+      "bytes": 6238459,
+      "sha256": "3f144ff5cf43a13c03bae5d83e4f04387f37d67edb860c28365ce3bb5d0d0cb7",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        45.16536531919229,
+        45.51484204250816,
+        45.10388955902155
+      ],
+      "frame": 1,
+      "visualReview": "PASSED"
+    },
+    {
+      "file": "02_boiler.png",
+      "bytes": 6633207,
+      "sha256": "43f5b89ebb186dc6780597b2de9426336350b0c5b1456f5e4735de9f160a5ff4",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        48.2005985178529,
+        46.256836848634066,
+        45.26734933035122
+      ],
+      "frame": 21,
+      "visualReview": "PASSED"
+    },
+    {
+      "file": "03_cabinet_closed.png",
+      "bytes": 5879180,
+      "sha256": "94664fed9c460294e85a6d1cae82cc1d8c31c6062bc8181109732b21cb90bc5d",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        62.37249201506436,
+        70.85860268006603,
+        67.04248218918616
+      ],
+      "frame": 41,
+      "visualReview": "PASSED"
+    },
+    {
+      "file": "04_cabinet_open.png",
+      "bytes": 6507854,
+      "sha256": "0132fa06fd3fa6c8cebbc34d79b8a4f0b800bac4a14cef3a03887ffa2065bc6b",
+      "width": 3200,
+      "height": 2000,
+      "standardDeviation": [
+        62.061972053432044,
+        68.58274169140348,
+        66.19860213681436
+      ],
+      "frame": 61,
+      "visualReview": "PASSED"
+    }
+  ],
+  "sourceAssetsChanged": false,
+  "websiteDeployed": false
+}

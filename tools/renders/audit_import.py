@@ -3,8 +3,11 @@ import bpy, json, sys, struct, hashlib
 from pathlib import Path
 from collections import Counter
 import numpy as np
-d = Path(sys.argv[sys.argv.index('--') + 1])
-bpy.ops.wm.open_mainfile(filepath=str(d/'PREMIUM_5xS5000_ComfortPlus_2026-10-16.blend'), use_scripts=False)
+args = sys.argv[sys.argv.index('--') + 1:]
+d = Path(args[0])
+# 16.10.2026 · Codex / GPT-6. Reuse the audit for the four S-3000 views.
+scene_name = args[1] if len(args) > 1 else 'PREMIUM_5xS5000_ComfortPlus_2026-10-16.blend'
+bpy.ops.wm.open_mainfile(filepath=str(d/scene_name), use_scripts=False)
 b = (d/'assembly.glb').read_bytes()
 n = struct.unpack_from('<I', b, 12)[0]
 g = json.loads(b[20:20+n]); blob = b[28+n:]

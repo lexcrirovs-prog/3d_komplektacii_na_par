@@ -112,7 +112,7 @@ def main():
             except Exception as exc:
                 failures.append(dict(id=futures[future]['id'], error=str(exc)))
                 print('ERROR: '+str(exc), file=sys.stderr, flush=True)
-    audit = dict(version='2026.10.19.1', author='Codex / GPT-6', selection=str(args.selection),
+    audit = dict(version='2026.10.19.2', author='Codex / GPT-6', selection=str(args.selection),
                  sourceUpAxis=args.up_axis, deflectionMm=args.deflection,
                  angularDeflectionRad=args.angle, completed=completed, failures=failures)
     write_json(args.metadata/'build-audit.json', audit)
@@ -131,7 +131,7 @@ def main():
             item['doors'] = old['doors']
         current[item['id']] = item
     catalog['models'] = sorted(current.values(), key=lambda r:(r['family'], r['powerKw'], r['variant']))
-    catalog['version'] = '2026.10.19.1'
+    catalog['version'] = '2026.10.19.2'
     write_json(catalog_path, catalog)
     print(json.dumps(dict(catalog=str(catalog_path), models=len(catalog['models']),
                           bytes=sum(r['bytes'] for r in catalog['models']), failures=0)), flush=True)

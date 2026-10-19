@@ -22,7 +22,7 @@ from pathlib import Path, PurePosixPath
 spec = importlib.util.spec_from_file_location('base_publisher', Path(__file__).parents[1] / 's3000/publish-web.py')
 p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
-p.VERSION = '2026.10.19.1'
+p.VERSION = '2026.10.19.2'
 p.OUT = p.REPO / 'artifacts' / ('publication-v' + p.VERSION)
 p.STAGE = p.ROOT + '/komplektacii4-stage-v' + p.VERSION
 p.STAGE_URL = 'https://prgz.ru/komplektacii4-stage-v' + p.VERSION + '/'

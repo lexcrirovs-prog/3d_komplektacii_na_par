@@ -31,7 +31,7 @@ try{
     page.on('response',response=>{if(response.ok()&&/\.glb(?:\?|$)/.test(response.url())&&!/[?&](url|import)(?:[=&]|$)/.test(response.url()))downloads.push(response.url())});
     try{
       await page.goto(base+'?section=hotwater&hwModel='+encodeURIComponent(model.id)+'&inspect3d=1',{waitUntil:'domcontentloaded'});
-      await page.waitForFunction(id=>window.__hotwater?.ready&&window.__hotwater.model===id&&window.__hotwater.gl.info.render.triangles>0,model.id,{timeout:180000});
+      await page.waitForFunction(id=>window.__hotwater?.ready&&window.__hotwater.model===id&&window.__hotwater.gl.info.render.triangles>2,model.id,{timeout:180000});
       await page.locator('.hw-loading').waitFor({state:'hidden',timeout:180000});
       assert.equal(await page.locator('.hw-error').count(),0,'Viewer reports a load error');
       const loadedMs=Math.round(performance.now()-started);
@@ -45,7 +45,11 @@ try{
           if(node.isInstancedMesh)instances+=node.count;
           if(!node.isMesh||node.userData.renderProxy)return;
           sourceMeshes++;node.geometry.computeBoundingBox();
-          const box=node.geometry.boundingBox.clone().applyMatrix4(node.matrixWorld);
+          // A transformed local AABB overestimates rotated CAD parts. Compare
+          // actual world-space vertices with source dimensions instead.
+          const box=node.geometry.boundingBox.clone().makeEmpty(),point=node.position.clone();
+          const positions=node.geometry.attributes.position;
+          for(let i=0;i<positions.count;i++)box.expandByPoint(point.fromBufferAttribute(positions,i).applyMatrix4(node.matrixWorld));
           if(bounds)bounds.union(box);else bounds=box;
         });
         return {calls:gl.info.render.calls,triangles:gl.info.render.triangles,memory:{...gl.info.memory},nodes,sourceMeshes,instances,hinges,bounds:bounds?{min:bounds.min.toArray(),max:bounds.max.toArray(),size:bounds.max.clone().sub(bounds.min).toArray()}:null};
@@ -61,13 +65,13 @@ try{
       await page.screenshot({path:resolve(out,screenshot)});
       let openScreenshot=null;
       if(model.doors?.length){
-        await page.getByRole('button',{name:'Открыть двери',exact:true}).click();
+        await page.getByRole('button',{name:/^Открыть двери/}).click();
         await page.waitForFunction(expected=>{
           const hinges=[];window.__hotwater.scene.traverse(node=>{if(node.name.startsWith('door_hinge_'))hinges.push(node)});
           return hinges.length===expected&&hinges.every(node=>Math.abs(node.quaternion.w)<.999);
         },model.doors.length);
         openScreenshot=model.id+'-open.png';await page.screenshot({path:resolve(out,openScreenshot)});
-        await page.getByRole('button',{name:'Закрыть двери',exact:true}).click();
+        await page.getByRole('button',{name:/^Закрыть двери/}).click();
         await page.waitForFunction(()=>{const hinges=[];window.__hotwater.scene.traverse(node=>{if(node.name.startsWith('door_hinge_'))hinges.push(node)});return hinges.every(node=>Math.abs(node.quaternion.w-1)<.0001)});
       }
       assert.deepEqual(errors,[]);

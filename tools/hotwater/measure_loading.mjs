@@ -67,7 +67,7 @@ const report={date:'2026-10-19',executor:'Codex / GPT-6',status:'BENCHMARK_RUNNI
   network:{downloadMbps:4,uploadMbps:1,latencyMs:80,cdp:network,cpuThrottling:false},
   environment:{platform:process.platform,arch:process.arch,viewport,deviceScaleFactor:1,headless:true},
   method:{runsPerModel:2,cold:'New isolated browser context, HTTP cache disabled, service workers blocked and bypassed',
-    ready:'First animation frame with inspect3d.ready, requested model ID, rendered triangles, and no visible loading/error overlay',
+    ready:'First animation frame with inspect3d.ready, requested model ID, more than the floor-only frame (1 draw call / 2 triangles), and no visible loading/error overlay',
     observationAfterReadyMs:1000,timeoutMs,byteMetric:'CDP Network.loadingFinished.encodedDataLength; HTTP transfer bytes, including protocol headers as reported by Chromium',
     resourceTiming:'Browser transferSize / encodedBodySize / decodedBodySize are recorded separately',
     geometry:'The selected production GLB is loaded in full. This harness performs no LOD substitution, geometry edits, or visibility changes.'},
@@ -112,7 +112,7 @@ try{
         const visible=selector=>[...document.querySelectorAll(selector)].some(element=>element.getClientRects().length&&getComputedStyle(element).visibility!=='hidden');
         const tick=()=>{
           const view=window.__hotwater;
-          if(view?.ready&&view.model===id&&view.gl.info.render.triangles>0&&!visible('.hw-loading')&&!visible('.hw-error')){
+          if(view?.ready&&view.model===id&&view.gl.info.render.calls>1&&view.gl.info.render.triangles>2&&!visible('.hw-loading')&&!visible('.hw-error')){
             window.__hwBenchmark.readyMs=performance.now();
             window.__hwBenchmark.callsAtReady=view.gl.info.render.calls;
             window.__hwBenchmark.trianglesAtReady=view.gl.info.render.triangles;
@@ -171,7 +171,7 @@ try{
   if(servedManifestSha256){
     try{
       const response=await fetch(manifestUrl,{signal:AbortSignal.timeout(15000),cache:'no-store'});
-      if(!response.ok()||hash(Buffer.from(await response.arrayBuffer()))!==servedManifestSha256)failures.push({error:'Served production manifest changed during measurement'});
+      if(!response.ok||hash(Buffer.from(await response.arrayBuffer()))!==servedManifestSha256)failures.push({error:'Served production manifest changed during measurement'});
     }catch(error){failures.push({error:'Could not recheck served production manifest: '+String(error)})}
   }
   report.summary=selections.map(({role,model})=>{

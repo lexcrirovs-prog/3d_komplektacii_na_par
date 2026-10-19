@@ -202,7 +202,9 @@ export class WaterViewer {
       if(generation!==this.generation||this.stopped){disposeTree(imported);return}
       const root=new Group();root.name='hotwater_model';root.add(imported)
       imported.updateMatrixWorld(true)
-      const sourceBox=new Box3().setFromObject(imported)
+      // A rotated part's transformed local AABB can extend below its vertices.
+      // Ground and centre the source geometry exactly before creating proxies.
+      const sourceBox=new Box3().setFromObject(imported,true)
       if(sourceBox.isEmpty()){disposeTree(root);throw new Error('Пустая геометрия')}
       const size=sourceBox.getSize(new Vector3()),center=sourceBox.getCenter(new Vector3())
       // CAD derivatives already use metres and glTF's Y-up convention.
@@ -303,7 +305,7 @@ export class WaterViewer {
         try{
           const imported=await this.fetchModel(assetUrl(spec.asset),spec.bytes,controller.signal,value=>{load.progress=Math.round(value);this.emit()})
           if(this.stopped||generation!==this.generation||!this.wanted.has(id)||controller.signal.aborted){disposeTree(imported);return}
-          const box=new Box3().setFromObject(imported)
+          const box=new Box3().setFromObject(imported,true)
           if(box.isEmpty()){disposeTree(imported);throw new Error('Пустая геометрия')}
           const center=box.getCenter(new Vector3()),size=box.getSize(new Vector3())
           imported.position.add(new Vector3(-center.x,-box.min.y,-center.z))

@@ -7,7 +7,8 @@ export default defineConfig({
   assetsInclude: ['**/*.glb'],
   build: {
     target: 'es2020',
-    cssCodeSplit: false,
+    cssCodeSplit: true,
+    manifest: true,
     modulePreload: { polyfill: false },
     assetsInlineLimit: 4096,
   },

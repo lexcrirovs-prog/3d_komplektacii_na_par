@@ -3,12 +3,13 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {normalizeConfig,powers,trims,familyFor} from '../../src/components/BoilerConfigurator/familyRules.ts';
 const catalog=JSON.parse(readFileSync(new URL('../../src/assets/s4000/web/catalog.json',import.meta.url)));
-test('Economizer is unavailable below 1500, including restored URL selections',()=>{
- for(const power of powers)for(const trim of trims) {
-  const c=normalizeConfig({power,trim:trim.id,pressure:12,addons:new Set(['economizer'])});
-  assert.equal(c.addons.has('economizer'),power>=1500);
+// 19.10.2026 · Codex / GPT-6. Match the owner's confirmed 12.10 trim rules.
+test('Economizer needs 1500+, a non-standard trim and feed-water modulation',()=>{
+ for(const power of powers)for(const trim of trims)for(const modulation of [false,true]) {
+  const c=normalizeConfig({power,trim:trim.id,pressure:12,addons:new Set(['economizer',...(modulation?['modulation']:[])])});
+  assert.equal(c.addons.has('economizer'),power>=1500&&trim.id!=='standard'&&(trim.id==='comfort_plus'||modulation));
  }
- assert(!normalizeConfig({power:1000,trim:'comfort',pressure:12,addons:normalizeConfig({power:1500,trim:'comfort',pressure:12,addons:new Set(['economizer'])}).addons}).addons.has('economizer'));
+ assert(!normalizeConfig({power:1000,trim:'comfort',pressure:12,addons:normalizeConfig({power:1500,trim:'comfort',pressure:12,addons:new Set(['economizer','modulation'])}).addons}).addons.has('economizer'));
 });
 test('Electric GPZ is mandatory from 4000 inclusive, optional below; standard never has modulation',()=>{
  for(const power of powers)for(const trim of trims){

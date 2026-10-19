@@ -1,0 +1,2092 @@
+{
+  "version": "2026.10.19.1",
+  "models": [
+    {
+      "id": "cla-250-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-250",
+      "powerKw": 250,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\1. PREMIUM-СLA-250\\3D-модели\\PR.250.02.001СБ Общий вид.stp",
+      "sourceSha256": "f4a9fa8d37f1296dd01f20a26ea472bae980426360299b0ffe439194089fd60e",
+      "sourceFile": "PR.250.02.001СБ Общий вид.stp",
+      "asset": "cla-250-51.glb",
+      "bytes": 814568,
+      "triangles": 398874,
+      "dimensionsM": [
+        1.81536,
+        1.08,
+        1.18
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:3",
+          "pivot": [
+            -0.49,
+            -0.01,
+            1.213
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "d415ad32e32223b05f2b7e02f57318ffed856f664f05a3eb959ac8316a56aeed"
+    },
+    {
+      "id": "cla-250-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-250",
+      "powerKw": 250,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\1. PREMIUM-СLA-250 (На 57 трубе) от 06.11.2025\\3D-модель\\PR.250.03.001СБ Общий вид.stp",
+      "sourceSha256": "78a5ad910b22f28b0281933f86837259aa911dba5f096002c40ff1ca9baea9af",
+      "sourceFile": "PR.250.03.001СБ Общий вид.stp",
+      "asset": "cla-250-57.glb",
+      "bytes": 808888,
+      "triangles": 339654,
+      "dimensionsM": [
+        1.81536,
+        1.08,
+        1.18
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:3",
+          "pivot": [
+            -0.49,
+            -0.01,
+            1.213
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "c9c12910ab27cfbe73558b1bcb5b94c7948e80c86e120b4f25803343fd6de7f1"
+    },
+    {
+      "id": "cla-500-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-500",
+      "powerKw": 500,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\2. PREMIUM-СLA-500\\3D-модели\\PR.500.02.001СБ Общий вид.stp",
+      "sourceSha256": "2cc48a5058ce65d88afdfde1a30bf177479dbb7f3205439a448e903c7d0ca195",
+      "sourceFile": "PR.500.02.001СБ Общий вид.stp",
+      "asset": "cla-500-51.glb",
+      "bytes": 970820,
+      "triangles": 668316,
+      "dimensionsM": [
+        2.070347,
+        1.242,
+        1.38
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:5",
+          "pivot": [
+            -0.57,
+            -0.016,
+            1.438
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "50e7bf4803e461a20198e05c8a99fb301006e04e6ca43fba6c7451a965cb9810"
+    },
+    {
+      "id": "cla-500-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-500",
+      "powerKw": 500,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\2. PREMIUM-СLA-500 (На 57 трубе) от 06.11.2025\\3D-модель\\PR.500.03.001СБ Общий вид.stp",
+      "sourceSha256": "e3e15f6030fb4dff20a517f37f9432e249e079018977d85b7a8442b9b649891c",
+      "sourceFile": "PR.500.03.001СБ Общий вид.stp",
+      "asset": "cla-500-57.glb",
+      "bytes": 969900,
+      "triangles": 575450,
+      "dimensionsM": [
+        2.070347,
+        1.242,
+        1.38
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:5",
+          "pivot": [
+            -0.57,
+            -0.016,
+            1.438
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "00a97aa71688f406648267ff2c13090876969ba51e6fdae9c8c45852444dd002"
+    },
+    {
+      "id": "cla-750-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-750",
+      "powerKw": 750,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\3. PREMIUM-СLA-750\\3D модель\\PR.750.02.001СБ Общий вид.stp",
+      "sourceSha256": "8db8f9d80a0d4a193ca58bcc6d566f327d4dd1f466bfe97aa868b9bd4a068c63",
+      "sourceFile": "PR.750.02.001СБ Общий вид.stp",
+      "asset": "cla-750-51.glb",
+      "bytes": 706804,
+      "triangles": 985114,
+      "dimensionsM": [
+        2.230355,
+        1.392,
+        1.53
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:31",
+          "pivot": [
+            -0.605,
+            -0.016,
+            1.57
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "fdb5f805c812e5fc3f0e10485a2e15c84688ab3a41e405e042cd1f36692210af"
+    },
+    {
+      "id": "cla-750-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-750",
+      "powerKw": 750,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\3. PREMIUM-СLA-750 (На 57 трубе) от 06.11.2025\\3D-модель\\PR.750.03.001СБ Общий вид.stp",
+      "sourceSha256": "b7e8a71ca3473575f8971d7e8b18a4cb7d4dfccc8df4c3feabcbdb48908122ce",
+      "sourceFile": "PR.750.03.001СБ Общий вид.stp",
+      "asset": "cla-750-57.glb",
+      "bytes": 696904,
+      "triangles": 787309,
+      "dimensionsM": [
+        2.230355,
+        1.392,
+        1.53
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:12",
+          "pivot": [
+            -0.605,
+            -0.016,
+            1.57
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "5ce10492fa4e67b7d2705d43f110455f231a9e404faa72a20b28aff0f1c58b89"
+    },
+    {
+      "id": "cla-1000-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-1000",
+      "powerKw": 1000,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\4. PREMIUM-СLA-1000\\3D-модель\\PR.1000.02.001СБ Общий вид.stp",
+      "sourceSha256": "587bb88a4ff0a8174120e464cdacfe044e00a1d4495a5df795a6bbee5b373560",
+      "sourceFile": "PR.1000.02.001СБ Общий вид.stp",
+      "asset": "cla-1000-51.glb",
+      "bytes": 769336,
+      "triangles": 1194906,
+      "dimensionsM": [
+        2.500417,
+        1.47,
+        1.63
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:3",
+          "pivot": [
+            -0.665,
+            -0.007,
+            1.79
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "0469bd2ce1d2ab65bf376cc7c8bbe11a9f533e8496cf5f66bf42dfee40e02e34"
+    },
+    {
+      "id": "cla-1000-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-1000",
+      "powerKw": 1000,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\4. PREMIUM-СLA-1000 (На 57 трубе) 06.10.2025\\3D-модель\\PR.1000.03.001СБ Общий вид.stp",
+      "sourceSha256": "86f65472c5f76358d3834a54a40adf7f7f5fa2c7352e495f640b3765c7be9eab",
+      "sourceFile": "PR.1000.03.001СБ Общий вид.stp",
+      "asset": "cla-1000-57.glb",
+      "bytes": 772536,
+      "triangles": 1005540,
+      "dimensionsM": [
+        2.500417,
+        1.47,
+        1.63
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:3",
+          "pivot": [
+            -0.665,
+            -0.007,
+            1.79
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "4202b3930a232ff27ffd2de1040b037830c4409fff74b9ae8ba7dc18a9e32628"
+    },
+    {
+      "id": "cla-1250-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-1250",
+      "powerKw": 1250,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\5. PREMIUM-СLA-1250\\3D-модель\\PR.1250.02.001СБ Общий вид.stp",
+      "sourceSha256": "436ea798310a1e7416768d4cfe88f8b7eccaa775f85abee0a5fc8e08e3c71eb6",
+      "sourceFile": "PR.1250.02.001СБ Общий вид.stp",
+      "asset": "cla-1250-51.glb",
+      "bytes": 773136,
+      "triangles": 1326044,
+      "dimensionsM": [
+        2.700463,
+        1.47,
+        1.63
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:122",
+          "pivot": [
+            -0.665,
+            -0.007,
+            1.9899999
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "c468c678e7e085532c329770fbf1a60a5955772a0a7eba1f09504832fdcdcd9b"
+    },
+    {
+      "id": "cla-1250-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-1250",
+      "powerKw": 1250,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\5. PREMIUM-СLA-1250 (На 57 трубе) от 06.10.2025\\3D модель\\PR.1250.03.001СБ Общий вид.stp",
+      "sourceSha256": "75828d488d0ccf66cf5b103a69754a2baac50243c928d5340c2e07782e34304d",
+      "sourceFile": "PR.1250.03.001СБ Общий вид.stp",
+      "asset": "cla-1250-57.glb",
+      "bytes": 780836,
+      "triangles": 1092008,
+      "dimensionsM": [
+        2.700463,
+        1.47,
+        1.63
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:40",
+          "pivot": [
+            -0.665,
+            -0.007,
+            1.9899999
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "dddaec0b83a71970cada8f385087c69700ac5bb0c473546928c5fb96999445a3"
+    },
+    {
+      "id": "cla-1500-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-1500",
+      "powerKw": 1500,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\6. PREMIUM-СLA-1500\\3D-модель\\PR.1500.02.001СБ Общий вид.stp",
+      "sourceSha256": "1512ef7075a8c500d2151d05edd5f4abbe276c463feed149f51a834939f986d4",
+      "sourceFile": "PR.1500.02.001СБ Общий вид.stp",
+      "asset": "cla-1500-51.glb",
+      "bytes": 1353072,
+      "triangles": 1620090,
+      "dimensionsM": [
+        2.860373,
+        1.62,
+        1.78
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:28",
+          "pivot": [
+            -0.715,
+            -0.007,
+            2.115
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "c4405d5fb5d26f2599b3506fb3094a1572a71d1b2b7710c6eb9677a18432ca4f"
+    },
+    {
+      "id": "cla-1500-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-1500",
+      "powerKw": 1500,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\6. PREMIUM-СLA-1500 (На 57 трубе) от 06.10.2025\\3D модель\\PR.1500.03.001СБ Общий вид.stp",
+      "sourceSha256": "2810a8c9e0cfcf0feeb765b0f634563dbe4a7c818402f14bd1478999e225487a",
+      "sourceFile": "PR.1500.03.001СБ Общий вид.stp",
+      "asset": "cla-1500-57.glb",
+      "bytes": 1352696,
+      "triangles": 1356900,
+      "dimensionsM": [
+        2.860373,
+        1.62,
+        1.78
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:28",
+          "pivot": [
+            -0.715,
+            -0.007,
+            2.115
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "63ff8be7d8a5ae05fa2f6250a18e0760a2ba6093e106aa3f34316ba27715e1ac"
+    },
+    {
+      "id": "cla-1750-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-1750",
+      "powerKw": 1750,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\7. PREMIUM-СLA-1750\\3D-модель\\PR.1750.02.001СБ Общий вид.stp",
+      "sourceSha256": "973c7a0677534375d9eb94c29776fc533e18a1c4bd94c1c41ce58dfe17f993a9",
+      "sourceFile": "PR.1750.02.001СБ Общий вид.stp",
+      "asset": "cla-1750-51.glb",
+      "bytes": 1358520,
+      "triangles": 1707596,
+      "dimensionsM": [
+        3.060373,
+        1.62,
+        1.78
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:97",
+          "pivot": [
+            -0.715,
+            -0.007,
+            2.315
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "272688ea8b90dce8623dc8b4d2c577533c9540e815f4f33c6f8ef75c746125a8"
+    },
+    {
+      "id": "cla-1750-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-1750",
+      "powerKw": 1750,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\7. PREMIUM-СLA-1750 (На 57 трубе) от 08.10.2025\\3D модель\\PR.1750.03.001СБ Общий вид.stp",
+      "sourceSha256": "2f21cadf3ce8fb34a81e0257f21ee47c0a74e7dd5cc43294df376c4ab4c4bde5",
+      "sourceFile": "PR.1750.03.001СБ Общий вид.stp",
+      "asset": "cla-1750-57.glb",
+      "bytes": 1356600,
+      "triangles": 1383852,
+      "dimensionsM": [
+        3.060373,
+        1.62,
+        1.78
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:49",
+          "pivot": [
+            -0.715,
+            -0.007,
+            2.315
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "9d2eb95afe4c86acbb91c8119da6a52bfcbe9afd69f33562be1f48cca34e67e2"
+    },
+    {
+      "id": "cla-2000-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-2000",
+      "powerKw": 2000,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\8. PREMIUM-СLA-2000\\3D-модель\\PR.2000.02.001СБ Общий вид.stp",
+      "sourceSha256": "a3aca0211cedd0296f1d94a339c8cd7f4d389151266f583b7265ce06f45defc1",
+      "sourceFile": "PR.2000.02.001СБ Общий вид.stp",
+      "asset": "cla-2000-51.glb",
+      "bytes": 1534940,
+      "triangles": 2010964,
+      "dimensionsM": [
+        3.255347,
+        1.824,
+        1.987999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:113",
+          "pivot": [
+            -0.84,
+            -0.011,
+            2.45
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "8c69492efb7a59dcef15c136a767f650c035af0a26c781c8bd4b3f7222b46e8e"
+    },
+    {
+      "id": "cla-2000-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-2000",
+      "powerKw": 2000,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\8. PREMIUM-СLA-2000 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.2000.03.001СБ Общий вид.stp",
+      "sourceSha256": "e261a87c9a5038ea8600fb6630c52a4a35d570a8c78cc8beb7107b8e98b478a2",
+      "sourceFile": "PR.2000.03.001СБ Общий вид.stp",
+      "asset": "cla-2000-57.glb",
+      "bytes": 1544148,
+      "triangles": 1702730,
+      "dimensionsM": [
+        3.255347,
+        1.824,
+        1.987999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:7",
+          "pivot": [
+            -0.84,
+            -0.011,
+            2.45
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "f6f3648189447c4262b5e3454aafb6eb0df2e5eecb047741eb357cdccb05b45e"
+    },
+    {
+      "id": "cla-2500-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-2500",
+      "powerKw": 2500,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\9. PREMIUM-СLA-2500\\3D-модель\\PR.2500.02.001СБ Общий вид.stp",
+      "sourceSha256": "12da7df420e7c8e7f9bf3c0840824a8fe05c6b987011870b5aef86c7f0c94244",
+      "sourceFile": "PR.2500.02.001СБ Общий вид.stp",
+      "asset": "cla-2500-51.glb",
+      "bytes": 1545424,
+      "triangles": 2189312,
+      "dimensionsM": [
+        3.455347,
+        1.824,
+        1.987999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:112",
+          "pivot": [
+            -0.84,
+            -0.011,
+            2.65
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "c2a4de5aff1eb8f051efd5a478c8ae54a2c709904563d0444bf13fa40e632f9b"
+    },
+    {
+      "id": "cla-2500-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-2500",
+      "powerKw": 2500,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\9. PREMIUM-СLA-2500 (На 57трубе) от 06.10.2025\\3D-модель\\PR.2500.03.001СБ Общий вид.stp",
+      "sourceSha256": "04ce7231be2491ec96340d787a392a4c7ab2c66fec7d8ae06bbc8901254d338d",
+      "sourceFile": "PR.2500.03.001СБ Общий вид.stp",
+      "asset": "cla-2500-57.glb",
+      "bytes": 1531736,
+      "triangles": 1834350,
+      "dimensionsM": [
+        3.455347,
+        1.824,
+        1.987999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:6",
+          "pivot": [
+            -0.84,
+            -0.011,
+            2.65
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "32b4ce09107f6d1422135c202771771f32f53bcdc5d849a9e8d975c135a1721f"
+    },
+    {
+      "id": "cla-3000-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-3000",
+      "powerKw": 3000,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\10. PREMIUM-СLA-3000\\3D-модель\\PR.3000.02.001СБ Общий вид.stp",
+      "sourceSha256": "68529a339b39811151a21ba50b1120828053380e80bc354ae33f3429676161bc",
+      "sourceFile": "PR.3000.02.001СБ Общий вид.stp",
+      "asset": "cla-3000-51.glb",
+      "bytes": 1619512,
+      "triangles": 2398338,
+      "dimensionsM": [
+        3.505353,
+        1.974,
+        2.137999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:147",
+          "pivot": [
+            -0.915,
+            -0.011,
+            2.625
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "c9412b3b9ac7109e19c4bf1e0a3b3f8e1184d9fd0763491f6fe3b07be4c103d6"
+    },
+    {
+      "id": "cla-3000-51-dn150",
+      "family": "cla",
+      "label": "PREMIUM CLA-3000",
+      "powerKw": 3000,
+      "variant": "51 мм; Ду 150",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\15. PREMIUM-СLA-3000 (Ду 150)\\3D-модель\\PR.3000.03.001СБ Общий вид.stp",
+      "sourceSha256": "f2a45b15284fe593b36b919e031dfab1e2e5bd145956e5b9e939df5f72e2f6fa",
+      "sourceFile": "PR.3000.03.001СБ Общий вид.stp",
+      "asset": "cla-3000-51-dn150.glb",
+      "bytes": 1555484,
+      "triangles": 2301828,
+      "dimensionsM": [
+        3.820347,
+        1.8,
+        1.95
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:56",
+          "pivot": [
+            -0.84,
+            -0.011,
+            3.015
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "de2c8a1d08bfa29efb13c28299d598b0ad5fe0c69946d6269077fe0be420d603"
+    },
+    {
+      "id": "cla-3000-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-3000",
+      "powerKw": 3000,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\10. PREMIUM-СLA-3000 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.3000.04.001СБ Общий вид.stp",
+      "sourceSha256": "0504d46c66f64878f765709575e284a0b304b7676485661d49513abce92e91bd",
+      "sourceFile": "PR.3000.04.001СБ Общий вид.stp",
+      "asset": "cla-3000-57.glb",
+      "bytes": 1605900,
+      "triangles": 2063389,
+      "dimensionsM": [
+        3.505353,
+        1.974,
+        2.137999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:29",
+          "pivot": [
+            -0.915,
+            -0.011,
+            2.625
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "aa87dba4af15acea18a142e0888ff418a6c43acd6d6fd67236ac36f895e77ec0"
+    },
+    {
+      "id": "cla-3500-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-3500",
+      "powerKw": 3500,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\11. PREMIUM-CLA-3500\\3D-модель\\PR.3500.02.001СБ Общий вид.stp",
+      "sourceSha256": "a87842c52e50b99b1fcd32b59e31e60cb91f849fa367217add036c7a60258f82",
+      "sourceFile": "PR.3500.02.001СБ Общий вид.stp",
+      "asset": "cla-3500-51.glb",
+      "bytes": 1632008,
+      "triangles": 2577150,
+      "dimensionsM": [
+        3.910373,
+        1.974,
+        2.137999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:104",
+          "pivot": [
+            -0.915,
+            -0.011,
+            3.03
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "61340e35a8146054cf987eb2309fa23b114deecbbe71e783c8361cd16e216d94"
+    },
+    {
+      "id": "cla-3500-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-3500",
+      "powerKw": 3500,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\11. PREMIUM-СLA-3500 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.3500.03.001СБ Общий вид.stp",
+      "sourceSha256": "df60498c1380342a3ae726f44fadee0f822d9376ed5cf84f2da8e63a0a6f480e",
+      "sourceFile": "PR.3500.03.001СБ Общий вид.stp",
+      "asset": "cla-3500-57.glb",
+      "bytes": 1648756,
+      "triangles": 2422224,
+      "dimensionsM": [
+        3.910373,
+        1.974,
+        2.137999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:45",
+          "pivot": [
+            -0.915,
+            -0.011,
+            3.03
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "28f700174401e9fed5f23b909c8eecf290a3b0a849021c4fc65a5cdb3e3fcc4a"
+    },
+    {
+      "id": "cla-4000-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-4000",
+      "powerKw": 4000,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\12. PREMIUM-СLA-4000\\3D-модель\\PR.4000.02.001СБ Общий вид.stp",
+      "sourceSha256": "6cd1933dd50a72dc9d009d7916d146aeca1080b546e5bd8b9913cad82eae4936",
+      "sourceFile": "PR.4000.02.001СБ Общий вид.stp",
+      "asset": "cla-4000-51.glb",
+      "bytes": 1739316,
+      "triangles": 2627576,
+      "dimensionsM": [
+        4.405393,
+        2.074,
+        2.237999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:169",
+          "pivot": [
+            -0.965,
+            -0.011,
+            3.5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "f3c7698eede09d50d790e175d4b058fbe6f3bbeb3d8dfe6042df90a48d3888be"
+    },
+    {
+      "id": "cla-4000-57",
+      "family": "cla",
+      "label": "PREMIUM CLA-4000",
+      "powerKw": 4000,
+      "variant": "57 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\12. PREMIUM-СLA-4000 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.4000.03.001СБ Общий вид.stp",
+      "sourceSha256": "ca9d825ac4375dde7c31e9dc465edd253bbf980e45adc719c8d871eb8ee852ea",
+      "sourceFile": "PR.4000.03.001СБ Общий вид.stp",
+      "asset": "cla-4000-57.glb",
+      "bytes": 1711768,
+      "triangles": 2248777,
+      "dimensionsM": [
+        4.405393,
+        2.074,
+        2.237999
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:47",
+          "pivot": [
+            -0.965,
+            -0.011,
+            3.5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "b3b36a3e9ddf8259c904e8140406e41958da9c406d001997bec309eadcc50765"
+    },
+    {
+      "id": "cla-5000-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-5000",
+      "powerKw": 5000,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\13. PREMIUM-СLA-5000\\3D-модели\\PR.5000.02.001СБ Общий вид.stp",
+      "sourceSha256": "eef0a833ad73a4469194e7ddf8381d8d1ef7bc34a08c385b54d6da0cc57eea5f",
+      "sourceFile": "PR.5000.02.001СБ Общий вид.stp",
+      "asset": "cla-5000-51.glb",
+      "bytes": 2170880,
+      "triangles": 3597256,
+      "dimensionsM": [
+        4.822743,
+        2.324,
+        2.542992
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:163",
+          "pivot": [
+            -1.065,
+            -0.013,
+            3.776
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "73b84192cfaf6e2b5875648b199055400f0a615a6c8c0a63d16497719d21f45b"
+    },
+    {
+      "id": "cla-6000-51",
+      "family": "cla",
+      "label": "PREMIUM CLA-6000",
+      "powerKw": 6000,
+      "variant": "51 мм",
+      "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\14. PREMIUM-СLA-6000\\3D-модели\\PR.6000.02.001СБ Общий вид.stp",
+      "sourceSha256": "1e3f16ccb819815b733fee8a0c4b8472013da57086aeb55ebd6656564edfded2",
+      "sourceFile": "PR.6000.02.001СБ Общий вид.stp",
+      "asset": "cla-6000-51.glb",
+      "bytes": 2181292,
+      "triangles": 3897564,
+      "dimensionsM": [
+        5.302743,
+        2.324,
+        2.542992
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:204",
+          "pivot": [
+            -1.065,
+            -0.013,
+            4.256
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "91bab1ff4b021c535260db055bb201bea2bfbff51b480201b1ebaf0f456907b0"
+    },
+    {
+      "id": "e-1000-20260925",
+      "family": "e",
+      "label": "PREMIUM E-1000",
+      "powerKw": 1000,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\01. PREMIUM E-1000\\3D-модель\\PR.Е.1000.01.01.001 ВО Котёл водогрейный E-1000.01.stp",
+      "sourceSha256": "14dc8f1f9e7c94500d306d8494ab2b4dc958019397214fc7daf7c792d996c3f8",
+      "sourceFile": "PR.Е.1000.01.01.001 ВО Котёл водогрейный E-1000.01.stp",
+      "asset": "e-1000-20260925.glb",
+      "bytes": 1583340,
+      "triangles": 862706,
+      "dimensionsM": [
+        2.964767,
+        1.676,
+        1.883746
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.755,
+            -0.0055,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "a195787d17e2b9bfb070752d888fae373c54a511088310eae0e0b63365f70343"
+    },
+    {
+      "id": "e-1500-20260925",
+      "family": "e",
+      "label": "PREMIUM E-1500",
+      "powerKw": 1500,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\02. PREMIUM E-1500\\3D-модель\\PR.Е.1500.01.01.001 ВО Котёл водогрейный E-1500.01.stp",
+      "sourceSha256": "bf396c2695aeae49687ca0c165ee6bf615a1bf82768e8f8c4f81e90113c5368f",
+      "sourceFile": "PR.Е.1500.01.01.001 ВО Котёл водогрейный E-1500.01.stp",
+      "asset": "e-1500-20260925.glb",
+      "bytes": 1582000,
+      "triangles": 912184,
+      "dimensionsM": [
+        3.214767,
+        1.676,
+        1.883746
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.755,
+            -0.0055,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "988a85cfeed8368ba348696ed5fe3779ff629c200f7a296e27a7e6cb59dd56cc"
+    },
+    {
+      "id": "e-2000-20260925",
+      "family": "e",
+      "label": "PREMIUM E-2000",
+      "powerKw": 2000,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\03. PREMIUM E-2000\\3D-модель\\PR.Е.2000.01.01.001 ВО Котёл водогрейный E-2000.01.stp",
+      "sourceSha256": "541ceb7399ae46bde490869c8944693a903078888df7f4d62d8526d9561f5300",
+      "sourceFile": "PR.Е.2000.01.01.001 ВО Котёл водогрейный E-2000.01.stp",
+      "asset": "e-2000-20260925.glb",
+      "bytes": 1731584,
+      "triangles": 944130,
+      "dimensionsM": [
+        3.454766,
+        1.819254,
+        2.025746
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.815,
+            -0.0055,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "8f54d410975df3f1b7c97c04a5d2d1fa826afae8d92ee69484b683ee0dff0aa9"
+    },
+    {
+      "id": "e-2500-20260925",
+      "family": "e",
+      "label": "PREMIUM E-2500",
+      "powerKw": 2500,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\04. PREMIUM E-2500\\3D-модель\\PR.Е.2500.01.01.001 ВО Котёл водогрейный E-2500.01.stp",
+      "sourceSha256": "9ebfecb9e5f3b70d8f867cba1d5afe0cdc53af34e26550223822bd59f45c24c2",
+      "sourceFile": "PR.Е.2500.01.01.001 ВО Котёл водогрейный E-2500.01.stp",
+      "asset": "e-2500-20260925.glb",
+      "bytes": 1734232,
+      "triangles": 985860,
+      "dimensionsM": [
+        3.754766,
+        1.819254,
+        2.025746
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.815,
+            -0.0055,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "c9c0bd34901b5eeab3d5985e8887f285b3d22c0bccd46dae03add56ccae73e3e"
+    },
+    {
+      "id": "e-3000-20260925",
+      "family": "e",
+      "label": "PREMIUM E-3000",
+      "powerKw": 3000,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\05. PREMIUM E-3000\\3D-модель\\PR.Е.3000.01.01.001 ВО Котёл водогрейный E-3000.01.stp",
+      "sourceSha256": "84dbda1876005da5b3d8486de65fd2907491262c668f54393c7f2a9314807801",
+      "sourceFile": "PR.Е.3000.01.01.001 ВО Котёл водогрейный E-3000.01.stp",
+      "asset": "e-3000-20260925.glb",
+      "bytes": 1836912,
+      "triangles": 1143732,
+      "dimensionsM": [
+        4.054766,
+        1.939286,
+        2.149817
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.86,
+            -0.0025,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "e39fe0ab070e3d5481ff6eda785a2383663c9d79149f7091926160ab2c899fd3"
+    },
+    {
+      "id": "e-3500-20260925",
+      "family": "e",
+      "label": "PREMIUM E-3500",
+      "powerKw": 3500,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\06. PREMIUM E-3500\\3D-модель\\PR.Е.3500.01.01.001 ВО Котёл водогрейный E-3500.01.stp",
+      "sourceSha256": "00e2a019fd0a84be56d29a6545f6d96509a5dcbc8d51c2662f8b1eb5fcf3e446",
+      "sourceFile": "PR.Е.3500.01.01.001 ВО Котёл водогрейный E-3500.01.stp",
+      "asset": "e-3500-20260925.glb",
+      "bytes": 1813188,
+      "triangles": 1030210,
+      "dimensionsM": [
+        4.404766,
+        1.939286,
+        2.149817
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.86,
+            -0.0025,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "f3432946ac3ee836948cdf1d98b00708c68c402d1fbd885882c6d9ddad876296"
+    },
+    {
+      "id": "e-4000-20260925",
+      "family": "e",
+      "label": "PREMIUM E-4000",
+      "powerKw": 4000,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\07. PREMIUM E-4000\\3D-модель\\PR.Е.4000.01.01.001 ВО Котёл водогрейный E-4000.01.stp",
+      "sourceSha256": "b78949fc2d724b7d05b41495e3771956878ce1c9b54b26452d66b29073d8b827",
+      "sourceFile": "PR.Е.4000.01.01.001 ВО Котёл водогрейный E-4000.01.stp",
+      "asset": "e-4000-20260925.glb",
+      "bytes": 2124112,
+      "triangles": 1182032,
+      "dimensionsM": [
+        4.556761,
+        2.18,
+        2.389817
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.965,
+            -0.0025,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "aa32be7f622c11763bf15964f885eaf88536c53b2a02e977334ff9c625a1435f"
+    },
+    {
+      "id": "e-5000-20260925",
+      "family": "e",
+      "label": "PREMIUM E-5000",
+      "powerKw": 5000,
+      "variant": "РКД 25.09.2026",
+      "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\08. PREMIUM E-5000\\3D-модель\\PR.Е.5000.01.01.001 ВО Котёл водогрейный E-5000.01.stp",
+      "sourceSha256": "15f62caad7f7c73ee45ccd0fc8558ff69dd7ec8cfb0da63ca50e0b67136bc01d",
+      "sourceFile": "PR.Е.5000.01.01.001 ВО Котёл водогрейный E-5000.01.stp",
+      "asset": "e-5000-20260925.glb",
+      "bytes": 2146384,
+      "triangles": 1262040,
+      "dimensionsM": [
+        4.806761,
+        2.18,
+        2.389817
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            -0.965,
+            -0.0025,
+            0.095
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Фронтовая дверь"
+        }
+      ],
+      "assetSha256": "14c87f1c4684f6ae70b9f06bdb3cfb437257536189ef17399c2de9471fddd653"
+    },
+    {
+      "id": "e-long-2500-06",
+      "family": "e-long",
+      "label": "PREMIUM E Long-2500",
+      "powerKw": 2500,
+      "variant": "0,6 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.2500.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "sourceSha256": "f1bd11886a89fd4054a47d41da50903956ea6940caf0f6e64bf3aa81393a6d57",
+      "sourceFile": "PR.2500.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "asset": "e-long-2500-06.glb",
+      "bytes": 1361876,
+      "triangles": 2148430,
+      "dimensionsM": [
+        4.278,
+        2.196,
+        2.517
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:206",
+          "pivot": [
+            -1.028,
+            0.066,
+            3.31
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:272",
+          "pivot": [
+            1.028,
+            0.066,
+            3.31
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "ef89b0b6de750ba3640c94ba1bd1f9cd0084281a1cb124858fa6936d6a657ac4"
+    },
+    {
+      "id": "e-long-2500-10",
+      "family": "e-long",
+      "label": "PREMIUM E Long-2500",
+      "powerKw": 2500,
+      "variant": "1 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.2500.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "sourceSha256": "51e6dd36340cb71002ba79bdb1eca930da9dd479c49789e41fe4e4d591749d4f",
+      "sourceFile": "PR.2500.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "asset": "e-long-2500-10.glb",
+      "bytes": 1360724,
+      "triangles": 2148468,
+      "dimensionsM": [
+        4.278,
+        2.196,
+        2.517
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:206",
+          "pivot": [
+            -1.028,
+            0.066,
+            3.31
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:272",
+          "pivot": [
+            1.028,
+            0.066,
+            3.31
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "cfc9632680cb6d72a8e24208f29c2b998d6d72d35838b9fbb3ef5121738cb7cf"
+    },
+    {
+      "id": "e-long-3500-06",
+      "family": "e-long",
+      "label": "PREMIUM E Long-3500",
+      "powerKw": 3500,
+      "variant": "0,6 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.3500.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "sourceSha256": "71dbf9aa30947320fb2feb9e0973fc05e059fc44e94a095897b59e96d870f515",
+      "sourceFile": "PR.3500.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "asset": "e-long-3500-06.glb",
+      "bytes": 1438244,
+      "triangles": 2666510,
+      "dimensionsM": [
+        4.778,
+        2.35,
+        2.669
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:153",
+          "pivot": [
+            -1.105,
+            0.066,
+            3.81
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:154",
+          "pivot": [
+            1.105,
+            0.066,
+            3.81
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "7111b75faac55481299250552fb42affc2ab0735d16c57a4f782b57d4af1339a"
+    },
+    {
+      "id": "e-long-3500-10",
+      "family": "e-long",
+      "label": "PREMIUM E Long-3500",
+      "powerKw": 3500,
+      "variant": "1 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.3500.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "sourceSha256": "4f8466effd1727ff636e39c695d0c96bcc5603df0dac94f6344a0c71595f92c8",
+      "sourceFile": "PR.3500.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "asset": "e-long-3500-10.glb",
+      "bytes": 1438552,
+      "triangles": 2666534,
+      "dimensionsM": [
+        4.778,
+        2.35,
+        2.669
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:153",
+          "pivot": [
+            -1.105,
+            0.066,
+            3.81
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:154",
+          "pivot": [
+            1.105,
+            0.066,
+            3.81
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "b354b2475aa56ee4e58adbbe574636e9db00c149ba31ce85da75bc8801ec1266"
+    },
+    {
+      "id": "e-long-3500-20260609-06",
+      "family": "e-long",
+      "label": "PREMIUM E Long-3500",
+      "powerKw": 3500,
+      "variant": "E-3500.01 Long; РКД 09.06.2026; 0,6 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\РКД КВа 3х (PREMIUM-Е Long) 09.06.2026\\PREMIUM (E-3500-0,6 Long)\\3D-модель\\PR.ЕL.3500.01.01.001 ВО Котёл водогрейный E-3500.01 Long.stp",
+      "sourceSha256": "45478e4546bb45d523220f5affe6d6e804efb847189b7bf0a407b2e0828bd478",
+      "sourceFile": "PR.ЕL.3500.01.01.001 ВО Котёл водогрейный E-3500.01 Long.stp",
+      "asset": "e-long-3500-20260609-06.glb",
+      "bytes": 1374244,
+      "triangles": 1867056,
+      "dimensionsM": [
+        4.911208,
+        2.349993,
+        2.642
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:2",
+          "pivot": [
+            1.079,
+            0.361,
+            0.2565
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:89",
+          "pivot": [
+            -1.079,
+            0.361,
+            0.2565
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        }
+      ],
+      "assetSha256": "965d29a91a7e1b82939b590c64921abb2457567915d84366220286b0f2490415"
+    },
+    {
+      "id": "e-long-4000-06",
+      "family": "e-long",
+      "label": "PREMIUM E Long-4000",
+      "powerKw": 4000,
+      "variant": "0,6 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.4000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "sourceSha256": "f8d7ddf81f3d4a218070f6160292a5671a936ec3611c7dbddbe2ee61afbefdca",
+      "sourceFile": "PR.4000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "asset": "e-long-4000-06.glb",
+      "bytes": 1433992,
+      "triangles": 2686314,
+      "dimensionsM": [
+        4.973,
+        2.35,
+        2.669
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:118",
+          "pivot": [
+            -1.105,
+            0.066,
+            4.005
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:119",
+          "pivot": [
+            1.105,
+            0.066,
+            4.005
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "61e918c1533c987d58b9940030933de926bab8fc57695f8a4a5e0d46b28914f5"
+    },
+    {
+      "id": "e-long-4000-10",
+      "family": "e-long",
+      "label": "PREMIUM E Long-4000",
+      "powerKw": 4000,
+      "variant": "1 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.4000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "sourceSha256": "06179a20d27cc686b20d73eb87eb186c8b4431716abd69a6b2b99470f6faa63b",
+      "sourceFile": "PR.4000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "asset": "e-long-4000-10.glb",
+      "bytes": 1433944,
+      "triangles": 2686284,
+      "dimensionsM": [
+        4.973,
+        2.35,
+        2.669
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:118",
+          "pivot": [
+            -1.105,
+            0.066,
+            4.005
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:119",
+          "pivot": [
+            1.105,
+            0.066,
+            4.005
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "41e8431405cd3d7fff17fbba860f929e691b56f581624f52129b5f17df9fc0e2"
+    },
+    {
+      "id": "e-long-5000-06",
+      "family": "e-long",
+      "label": "PREMIUM E Long-5000",
+      "powerKw": 5000,
+      "variant": "0,6 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.5000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "sourceSha256": "2478651e60c22401d96267cda695e5622a97fae4bd7e5ec31f283427cb7f1e1d",
+      "sourceFile": "PR.5000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "asset": "e-long-5000-06.glb",
+      "bytes": 1352832,
+      "triangles": 2147102,
+      "dimensionsM": [
+        5.273,
+        2.45,
+        2.769
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:37",
+          "pivot": [
+            -1.155,
+            0.066,
+            4.305
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:166",
+          "pivot": [
+            1.155,
+            0.066,
+            4.305
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "80ceb8a58918ad24b3f5a321f6b6e495e437dd5f4656ae2296ca3b9110c8bef3"
+    },
+    {
+      "id": "e-long-5000-10",
+      "family": "e-long",
+      "label": "PREMIUM E Long-5000",
+      "powerKw": 5000,
+      "variant": "1 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.5000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "sourceSha256": "bd01cf6a309c43c50f7172fc438723fb6b3f56b545b2efee324cdda92655cb08",
+      "sourceFile": "PR.5000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "asset": "e-long-5000-10.glb",
+      "bytes": 1353640,
+      "triangles": 2147144,
+      "dimensionsM": [
+        5.273,
+        2.45,
+        2.769
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:37",
+          "pivot": [
+            -1.155,
+            0.066,
+            4.305
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:166",
+          "pivot": [
+            1.155,
+            0.066,
+            4.305
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "328a8f7d1ce13d49c665c0d8854d3b866da2c8d7b6cfd508bb648121e834d3f3"
+    },
+    {
+      "id": "e-long-6000-06",
+      "family": "e-long",
+      "label": "PREMIUM E Long-6000",
+      "powerKw": 6000,
+      "variant": "0,6 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.6000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "sourceSha256": "a6d99c86b89ff175739c156dd119c773eb709dde04077550fe0542eaded68a5a",
+      "sourceFile": "PR.6000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "asset": "e-long-6000-06.glb",
+      "bytes": 1351168,
+      "triangles": 2288722,
+      "dimensionsM": [
+        5.613,
+        2.45,
+        2.769
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:71",
+          "pivot": [
+            -1.155,
+            0.066,
+            4.645
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:176",
+          "pivot": [
+            1.155,
+            0.066,
+            4.645
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "f50f9f7ec17b6f62fe3aa3f8664db9a7760643aaed738f71ad673965b6488b60"
+    },
+    {
+      "id": "e-long-6000-10",
+      "family": "e-long",
+      "label": "PREMIUM E Long-6000",
+      "powerKw": 6000,
+      "variant": "1 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.6000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "sourceSha256": "3a371cd28e35cad6b5e0420457de869f525357d00ff91b835d782ec6c8bdf3a3",
+      "sourceFile": "PR.6000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "asset": "e-long-6000-10.glb",
+      "bytes": 1350756,
+      "triangles": 2288786,
+      "dimensionsM": [
+        5.613,
+        2.45,
+        2.769
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:71",
+          "pivot": [
+            -1.155,
+            0.066,
+            4.645
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:176",
+          "pivot": [
+            1.155,
+            0.066,
+            4.645
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "ce798043f0cf03da97b6fe9e8c2e7440d771974dce0f5e2cb8b5408aad90587b"
+    },
+    {
+      "id": "e-long-7000-06",
+      "family": "e-long",
+      "label": "PREMIUM E Long-7000",
+      "powerKw": 7000,
+      "variant": "0,6 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.7000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "sourceSha256": "d4709164ef326e0c6f6cb4b5338d09f4a52dd8b00e155d67d241b1591e5be060",
+      "sourceFile": "PR.7000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
+      "asset": "e-long-7000-06.glb",
+      "bytes": 1381772,
+      "triangles": 2435038,
+      "dimensionsM": [
+        5.973,
+        2.65,
+        2.969
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:3",
+          "pivot": [
+            -1.255,
+            0.066,
+            5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:4",
+          "pivot": [
+            1.255,
+            0.066,
+            5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "e0c994e6e5edae3e2d3f4e603a27826f8dd4ad8cbd02afb38269a7bc2361de6f"
+    },
+    {
+      "id": "e-long-7000-10",
+      "family": "e-long",
+      "label": "PREMIUM E Long-7000",
+      "powerKw": 7000,
+      "variant": "1 МПа",
+      "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.7000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "sourceSha256": "55e3ce764119fc3e2868f4a04cf5d60efd5f2a42c05ea513db6efb7e465a88b5",
+      "sourceFile": "PR.7000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
+      "asset": "e-long-7000-10.glb",
+      "bytes": 1381528,
+      "triangles": 2435032,
+      "dimensionsM": [
+        5.973,
+        2.65,
+        2.969
+      ],
+      "doors": [
+        {
+          "node": "occurrence:0:1:1:1:3",
+          "pivot": [
+            -1.255,
+            0.066,
+            5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": -1.7453292519943295,
+          "label": "Левая створка"
+        },
+        {
+          "node": "occurrence:0:1:1:1:4",
+          "pivot": [
+            1.255,
+            0.066,
+            5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "angle": 1.7453292519943295,
+          "label": "Правая створка"
+        }
+      ],
+      "assetSha256": "fabcf300e93358cb379e3f2b0da96df79272b2dccf5d021ca0b6f95c68468dbc"
+    }
+  ],
+  "accessories": [
+    {
+      "id": "cla250-native",
+      "category": "plate",
+      "label": "Заготовка плиты CLA-250 · 330 × 330 × 10 мм",
+      "sourceFile": "PR.250.02.001СБ Общий вид.stp",
+      "asset": "plate__cla250-native.glb",
+      "bytes": 20400,
+      "dimensionsM": [
+        0.33000001311302185,
+        0.33000001311302185,
+        0.010000109672546387
+      ],
+      "description": "Заводская глухая плита фронтовой двери с крепёжными отверстиями. Центральное отверстие под горелку в исходной модели не выполнено.",
+      "sourceKind": "cad_component",
+      "fitStatus": "visual-fit",
+      "notes": "Из полной сборки CLA-250. Для другого исполнения требуется сверка крепления.",
+      "assetSha256": "db8297ab82c4a75962c92d6c5ef5561502ca8b79468c0f786992a2b778677af3"
+    },
+    {
+      "id": "e1500-cib205-plate",
+      "category": "plate",
+      "label": "Плита E-1500.02 · Cib Unigas E205",
+      "sourceFile": "PR.05.01.01.022 Дистанционная проставка Cib Unigas E205A.dxf; PR.05.01.01.022 Дистанционная проставка Cib Unigas E205A.pdf",
+      "asset": "plate__e1500-cib205-plate.glb",
+      "bytes": 27584,
+      "dimensionsM": [
+        0.47999998927116394,
+        0.47999998927116394,
+        0.010000021196901798
+      ],
+      "description": "Контур и отверстия восстановлены из заводского DXF. Помогает сравнить крепление горелки с фронтовой дверью.",
+      "sourceKind": "dxf_extrusion",
+      "fitStatus": "visual-fit",
+      "notes": "Толщина 10 мм по каталогу листа. Применение к конкретной ревизии E-1500 сверяется по чертежу.",
+      "assetSha256": "21c37abfd2d1f6f169c8583c72bf6f730a6857fdedb51b54e4516e698284aac1"
+    },
+    {
+      "id": "e1500-cib205",
+      "category": "spacer",
+      "label": "Проставка 180 мм · E-1500.02 / Cib Unigas E205",
+      "sourceFile": "PR.05.01.01.022 Дистанционная проставка Cib Unigas E205A.dxf; PR.05.01.01.022 Дистанционная проставка Cib Unigas E205A.pdf",
+      "asset": "spacer__e1500-cib205.glb",
+      "bytes": 52908,
+      "dimensionsM": [
+        0.47999998927116394,
+        0.47999998927116394,
+        0.18000002205371857
+      ],
+      "description": "Обеспечивает вынос горелки от фронта котла. Отдельная примерка показывает длину проставки, фланцы и крепёжные отверстия.",
+      "sourceKind": "dxf_pdf_visualization",
+      "fitStatus": "visual-fit",
+      "notes": "Длина и сечение по PDF, контуры по DXF; выбирать после сверки модели горелки и ревизии котла. Цвет принят серый.",
+      "assetSha256": "1d2c21fc5445cbee080bc0d09c3767c3eb65170c1cf6250ebe4b33bce70b57dd"
+    },
+    {
+      "id": "c3000-rs410",
+      "category": "spacer",
+      "label": "Проставка 200 мм · C-3000 / ExEco RS 410 M BLU",
+      "sourceFile": "PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.dxf; PR.05.01.013-05 Дистанционная проставка ЭксЭко RS 410 M BLU.pdf",
+      "asset": "spacer__c3000-rs410.glb",
+      "bytes": 51388,
+      "dimensionsM": [
+        0.550000011920929,
+        0.550000011920929,
+        0.20000001788139343
+      ],
+      "description": "Обеспечивает вынос горелки от фронта котла. Отдельная примерка показывает длину проставки, фланцы и крепёжные отверстия.",
+      "sourceKind": "dxf_pdf_visualization",
+      "fitStatus": "visual-fit",
+      "notes": "Длина и сечение по PDF, контуры по DXF; выбирать после сверки модели горелки и ревизии котла. Цвет принят серый.",
+      "assetSha256": "ecb2856b39e59d76fd7cbba5e2014d96c5c3ecfa80bfa1e51389d41e43d508b9"
+    },
+    {
+      "id": "c2500-supply",
+      "category": "collector",
+      "label": "Коллектор подачи C-2500 с приборами",
+      "sourceFile": "Коллектор котла С-2500 с датчиками.pdf",
+      "asset": "collector__c2500-supply.glb",
+      "bytes": 31740,
+      "dimensionsM": [
+        0.9239999651908875,
+        0.5375000238418579,
+        0.33500000834465027
+      ],
+      "description": "Объединяет точки контроля температуры, давления и протока на подающей линии. Приборы видны рядом и доступны для осмотра.",
+      "sourceKind": "pdf_visualization",
+      "fitStatus": "visual-fit",
+      "notes": "Диаметры корпуса и фланцев по PDF; приборы и длина 900 мм приняты для визуализации. Для CLA/Premium E предусмотрена визуальная примерка, присоединения не подтверждены.",
+      "assetSha256": "5e55e13eee29b8e452e342bf663c2a231248ae3b107dac9205b7475cee813a16"
+    },
+    {
+      "id": "c4000-supply",
+      "category": "collector",
+      "label": "Коллектор подачи C-4000 с приборами",
+      "sourceFile": "C-4000 коллектор.pdf",
+      "asset": "collector__c4000-supply.glb",
+      "bytes": 31736,
+      "dimensionsM": [
+        0.9300000071525574,
+        0.5375000238418579,
+        0.33500000834465027
+      ],
+      "description": "Объединяет точки контроля температуры, давления и протока на подающей линии. Приборы видны рядом и доступны для осмотра.",
+      "sourceKind": "pdf_visualization",
+      "fitStatus": "visual-fit",
+      "notes": "Диаметры корпуса и фланцев по PDF; приборы и длина 900 мм приняты для визуализации. Для CLA/Premium E предусмотрена визуальная примерка, присоединения не подтверждены.",
+      "assetSha256": "9c6513bcdc416482b67abad9ea39b442cf5d17e30ccd7eb8ad29b94ee2d8bf74"
+    },
+    {
+      "id": "premium-boiler",
+      "category": "cabinet",
+      "label": "Блок управления котлом · 400 × 300 мм",
+      "sourceFile": "Блок управления.pdf",
+      "asset": "cabinet__premium-boiler.glb",
+      "bytes": 20868,
+      "dimensionsM": [
+        0.30000001192092896,
+        0.4180000126361847,
+        0.2150000035762787
+      ],
+      "description": "Показывает состояние котла и даёт доступ к настройкам управления.",
+      "sourceKind": "pdf_visualization",
+      "fitStatus": "visual-fit",
+      "notes": "Размеры фасада по заводскому PDF. Глубина и малые элементы приняты для визуализации; крепление к котлу требует согласования.",
+      "assetSha256": "e7e441549ec5b4ae7cef076e59f483be3e61ebe870378769e7d29831ce926ab6"
+    },
+    {
+      "id": "premium-cascade",
+      "category": "cabinet",
+      "label": "Шкаф управления каскадом · 600 × 600 мм",
+      "sourceFile": "Щит каскад.pdf",
+      "asset": "cabinet__premium-cascade.glb",
+      "bytes": 21232,
+      "dimensionsM": [
+        0.6000000238418579,
+        0.6180000305175781,
+        0.23500001430511475
+      ],
+      "description": "Объединяет управление несколькими котлами и отображает состояние котлового контура.",
+      "sourceKind": "pdf_visualization",
+      "fitStatus": "visual-fit",
+      "notes": "Размеры фасада по заводскому PDF. Глубина и малые элементы приняты для визуализации; крепление к котлу требует согласования.",
+      "assetSha256": "0b36d3253a33a393ef9f1b9f3ecc77659fc7d697c76de47297f1938984dc1263"
+    },
+    {
+      "id": "relief-shape",
+      "category": "safety",
+      "label": "Сбросной клапан · визуальная примерка",
+      "sourceFile": "s4000-2.glb",
+      "asset": "safety__relief-shape.glb",
+      "bytes": 653664,
+      "dimensionsM": [
+        0.2501520812511444,
+        0.48199987411499023,
+        0.17956018447875977
+      ],
+      "description": "Позволяет оценить расположение предохранительного клапана и место для его обслуживания.",
+      "sourceKind": "existing_cad_visualization",
+      "fitStatus": "visual-fit",
+      "notes": "Геометрия из проверенной модели арматуры паровой сборки. Применимость к воде, DN и настройка давления здесь не заявлены; выбираются по проекту.",
+      "assetSha256": "51d8b5637502b629f74a790185b459016a9d65ed45d7e7676e060851d5a97b57"
+    }
+  ]
+}

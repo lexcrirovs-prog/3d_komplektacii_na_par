@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-19",
+  "result": "PASS",
+  "base": "https://prgz.ru/komplektacii4/",
+  "manifestSha256": "c95efb81fbabc52e8d19e31269e1e083bf5474f50817c60266b71da697fe8417",
+  "families": [
+    {
+      "model": "cla-250-51",
+      "calls": 115,
+      "triangles": 398976,
+      "memory": {
+        "geometries": 94,
+        "textures": 2
+      },
+      "canvas": {
+        "width": 1240,
+        "height": 958
+      },
+      "family": "cla",
+      "doorsChecked": 1,
+      "requestedGlb": [
+        "https://prgz.ru/komplektacii4/assets/cla-250-51-fX0S-gW1.glb"
+      ]
+    },
+    {
+      "model": "e-1000-20260925",
+      "calls": 162,
+      "triangles": 865716,
+      "memory": {
+        "geometries": 132,
+        "textures": 2
+      },
+      "canvas": {
+        "width": 1240,
+        "height": 958
+      },
+      "family": "e",
+      "doorsChecked": 1,
+      "requestedGlb": [
+        "https://prgz.ru/komplektacii4/assets/e-1000-20260925-C5KayICW.glb"
+      ]
+    },
+    {
+      "model": "e-long-2500-06",
+      "calls": 172,
+      "triangles": 2148532,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "canvas": {
+        "width": 1240,
+        "height": 958
+      },
+      "family": "e-long",
+      "doorsChecked": 2,
+      "requestedGlb": [
+        "https://prgz.ru/komplektacii4/assets/e-long-2500-06-C7wZdX_O.glb"
+      ]
+    }
+  ],
+  "selectedAccessories": [
+    "relief-shape",
+    "cla250-native",
+    "e1500-cib205",
+    "c2500-supply",
+    "premium-boiler"
+  ],
+  "idleFrames": 1,
+  "errors": [],
+  "requests": [
+    "https://prgz.ru/komplektacii4/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4/assets/e-1000-20260925-C5KayICW.glb",
+    "https://prgz.ru/komplektacii4/assets/e-long-2500-06-C7wZdX_O.glb",
+    "https://prgz.ru/komplektacii4/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4/assets/safety__relief-shape-DVzuiph9.glb",
+    "https://prgz.ru/komplektacii4/assets/plate__cla250-native-B-Ch71jA.glb",
+    "https://prgz.ru/komplektacii4/assets/spacer__e1500-cib205-Cw06f77N.glb",
+    "https://prgz.ru/komplektacii4/assets/collector__c2500-supply-wX40GcPX.glb",
+    "https://prgz.ru/komplektacii4/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4/assets/plate__cla250-native-B-Ch71jA.glb",
+    "https://prgz.ru/komplektacii4/assets/spacer__e1500-cib205-Cw06f77N.glb",
+    "https://prgz.ru/komplektacii4/assets/collector__c2500-supply-wX40GcPX.glb",
+    "https://prgz.ru/komplektacii4/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4/assets/safety__relief-shape-DVzuiph9.glb"
+  ]
+}

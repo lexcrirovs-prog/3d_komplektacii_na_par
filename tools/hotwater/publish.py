@@ -64,6 +64,25 @@ def public_file(name):
     return not name.lower().endswith('.php') and not any(part.startswith('.') for part in PurePosixPath(name).parts)
 
 
+def validate_cache_policy(name, header):
+    directives = {part.strip().split('=', 1)[0]: part.strip().split('=', 1)[1].strip('"') if '=' in part else True
+                  for part in header.lower().split(',') if part.strip()}
+    try:
+        lifetime = int(directives.get('max-age', 0))
+    except (TypeError, ValueError):
+        lifetime = 0
+    if name.startswith('assets/'):
+        require('no-cache' not in directives and 'no-store' not in directives, 'ASSET_CACHE_DISABLED: ' + name)
+        if name.endswith('.glb'):
+            require('immutable' in directives and lifetime >= 31536000, 'GLB_CACHE_POLICY_MISMATCH: ' + name)
+        else:
+            # Beget's nginx handles JS/CSS before Apache, imposing seven days.
+            # Content-hashed URLs remain safe; do not claim a one-year TTL there.
+            require(lifetime >= 604800, 'ASSET_CACHE_POLICY_MISMATCH: ' + name)
+    elif name.endswith(('.html', '.json')):
+        require('no-cache' in directives or 'no-store' in directives, 'ENTRY_CACHE_POLICY_MISMATCH: ' + name)
+
+
 def local_candidate():
     dist = p.REPO / 'dist'
     manifest_bytes = (dist / 'DEPLOY_MANIFEST.json').read_bytes()
@@ -300,10 +319,7 @@ def verify_static_http(base, prepared, files, actual, success_status, evidence_n
             data = gzip.decompress(wire) if encoding == 'gzip' else wire
             require(response.status == 200 and p.sha(data) == digest, 'HTTP_HASH_MISMATCH: ' + name)
             cache = response.headers.get('Cache-Control', '').lower()
-            if name.startswith('assets/'):
-                require('immutable' in cache and 'max-age=31536000' in cache, 'ASSET_CACHE_POLICY_MISMATCH: ' + name)
-            elif name.endswith(('.html', '.json')):
-                require('no-cache' in cache or 'no-store' in cache, 'ENTRY_CACHE_POLICY_MISMATCH: ' + name)
+            validate_cache_policy(name, cache)
             return dict(path=name, sha256=p.sha(data), status=response.status, wireBytes=len(wire), decodedBytes=len(data),
                         encoding=encoding, cacheControl=cache, contentType=response.headers.get('Content-Type'))
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:

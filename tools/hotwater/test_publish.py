@@ -111,6 +111,18 @@ class PublishGates(unittest.TestCase):
             with self.subTest(changed=changed),self.assertRaisesRegex(RuntimeError,'MAIL_API_CHANGED'):
                 publisher.validate_mail_api(before,changed)
 
+    def test_cache_policy_distinguishes_glb_from_host_managed_static_files(self):
+        for name, header in [('assets/boiler-abc.glb','public, max-age=31536000, immutable'),
+                             ('assets/app-abc.js','max-age=604800'),('assets/app-abc.css','public, max-age=604800'),
+                             ('index.html','no-cache'),('version.json','no-store')]:
+            publisher.validate_cache_policy(name,header)
+        for name, header in [('assets/boiler-abc.glb','max-age=604800'),
+                             ('assets/boiler-abc.glb','max-age=31536000'),
+                             ('assets/app-abc.js','max-age=0'),('assets/app-abc.css','max-age=604800, no-store'),
+                             ('index.html','max-age=604800')]:
+            with self.subTest(name=name,header=header),self.assertRaises(RuntimeError):
+                publisher.validate_cache_policy(name,header)
+
     def test_gate_records_stage_acceptance_without_server_calls(self):
         reports, catalog = reports_fixture()
         files = {'index.html': 'index', 'DEPLOY_MANIFEST.json': 'candidate'}

@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-19",
+  "result": "PASS",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/",
+  "manifestSha256": "c95efb81fbabc52e8d19e31269e1e083bf5474f50817c60266b71da697fe8417",
+  "checks": [
+    "Named source CAD part picked and focused after instancing; short native-colour pulse completes",
+    "Slow E model request aborted on change to E Long; stale load did not replace current model",
+    "GPU geometry and texture counts return to original values after family round trip",
+    "Injected model download failure presents retry; retry reconstructs viewer and loads real model",
+    "Failed option does not retry in a loop; deselection clears error; pending option survives main-model replacement",
+    "Real steam/water links retain both configurations and read latest steam selector changes"
+  ],
+  "selection": "PR05010661",
+  "initialMemory": {
+    "geometries": 94,
+    "textures": 2
+  },
+  "returnedMemory": {
+    "geometries": 94,
+    "textures": 2
+  },
+  "errors": [],
+  "failures": [
+    {
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-1000-20260925-C5KayICW.glb",
+      "error": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-1000-20260925-C5KayICW.glb",
+      "error": {
+        "errorText": "net::ERR_FAILED"
+      }
+    },
+    {
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+      "error": {
+        "errorText": "net::ERR_FAILED"
+      }
+    },
+    {
+      "url": "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+      "error": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    }
+  ],
+  "requests": [
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-1000-20260925-C5KayICW.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-long-2500-06-C7wZdX_O.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-1000-20260925-C5KayICW.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-1000-20260925-C5KayICW.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-1000-20260925-C5KayICW.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-0-DJLi2cl5.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-1-CczpegYe.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-2-BfVz1c6_.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-3-C0bYSe55.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-4-Cg7iJ2x2.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-5-BQ4gEaM4.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-6-C5KHZvNk.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-7-CKxLNzWO.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/comfort-B2-_dRhL.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/da3-DJvjEthU.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/adl_is16-CQy1Iafp.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/valtec_vt215_dn15-BGGQBXM4.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/s4000-0-DqYz9Rs1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.19.2/assets/e-1000-20260925-C5KayICW.glb"
+  ]
+}

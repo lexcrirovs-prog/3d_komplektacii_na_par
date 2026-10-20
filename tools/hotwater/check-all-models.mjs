@@ -1,4 +1,4 @@
-// 19.10.2026 · Codex / GPT-6. Run only against the frozen production build.
+// 20.10.2026 · Codex / GPT-6. Verify original URLs, commercial families and CAD geometry.
 import {createRequire} from 'node:module';
 import {resolve} from 'node:path';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
@@ -12,16 +12,38 @@ const [base,out='output/hotwater-all-models']=process.argv.slice(2);
 assert(base,'Usage: node tools/hotwater/check-all-models.mjs <production-preview-url> [output]');
 const publication=await acceptance(base);
 assert(publication.manifestSha256,'All-model acceptance requires a frozen production build');
+const version=JSON.parse(await readFile('dist/version.json','utf8'));
+const date=version.date||'2026-10-20',executedAt=new Date().toISOString(),displayDate=date.split('-').reverse().join('.');
 const catalogPath='src/assets/hotwater/catalog.json';
 const catalogBytes=await readFile(catalogPath),catalog=JSON.parse(catalogBytes);
 const catalogSha256=createHash('sha256').update(catalogBytes).digest('hex');
-assert(catalog.models.length>=3,'Expected a populated, frozen model catalog');
+const expectedFamilies={
+  cla:{button:'C',description:/Двухходовые.*одна дверь/i,label:/^PREMIUM C-/,doors:1},
+  e:{button:'E · 2 двери',description:/Две распашные двери/i,label:/^PREMIUM E-\d+$/,doors:2},
+  'e-long':{button:'E Long',description:/тепличных хозяйств.*две двери/i,label:/^PREMIUM E Long-/,doors:2},
+  'e-single':{button:'E · 1 дверь',description:/Трёхходовые.*одна дверь/i,label:/^PREMIUM E-\d+$/,doors:1},
+};
+// Keep the 48 previously shared model URLs valid after changing their display
+// families. In particular, a legacy e-long ID is not evidence of an E Long unit.
+const legacyModels=[
+  ...[250,500,750,1000,1250,1500,1750,2000,2500,3000,3500,4000].flatMap(power=>['51','57'].map(variant=>({id:`cla-${power}-${variant}`,family:'cla'}))),
+  ...['cla-3000-51-dn150','cla-5000-51','cla-6000-51'].map(id=>({id,family:'cla'})),
+  ...[1000,1500,2000,2500,3000,3500,4000,5000].map(power=>({id:`e-${power}-20260925`,family:'e-single'})),
+  ...[2500,3500,4000,5000,6000,7000].flatMap(power=>['06','10'].map(variant=>({id:`e-long-${power}-${variant}`,family:'e'}))),
+  {id:'e-long-3500-20260609-06',family:'e-long'},
+];
+for(const expected of legacyModels){
+  const model=catalog.models.find(model=>model.id===expected.id);
+  assert(model,'Previously shared model URL is missing: '+expected.id);
+  assert.equal(model.family,expected.family,'Incorrect commercial family for '+expected.id);
+}
+assert.deepEqual([...new Set(catalog.models.map(model=>model.family))].sort(),Object.keys(expectedFamilies).sort(),'Four owner-confirmed commercial families required');
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const pageErrors=[],models=[],failures=[];
 const esc=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const save=async()=>{
-  await writeFile(resolve(out,'all-models-evidence.json'),JSON.stringify({date:'2026-10-19',result:failures.length?'FAIL':models.length===catalog.models.length?'PASS':'RUNNING',base,manifestSha256:publication.manifestSha256,catalogSha256,expectedModels:catalog.models.length,checkedModels:models.length,models,failures,pageErrors},null,2));
+  await writeFile(resolve(out,'all-models-evidence.json'),JSON.stringify({date,executedAt,version:version.version,result:failures.length?'FAIL':models.length===catalog.models.length?'PASS':'RUNNING',base,manifestSha256:publication.manifestSha256,catalogSha256,legacyUrls:legacyModels.length,expectedModels:catalog.models.length,checkedModels:models.length,models,failures,pageErrors},null,2));
 };
 try{
   for(const model of catalog.models){
@@ -35,6 +57,37 @@ try{
       await page.locator('.hw-loading').waitFor({state:'hidden',timeout:180000});
       assert.equal(await page.locator('.hw-error').count(),0,'Viewer reports a load error');
       const loadedMs=Math.round(performance.now()-started);
+      const family=expectedFamilies[model.family];
+      assert(family,'Unknown commercial family: '+model.family);
+      assert.match(model.label,family.label,'Source filename leaked into the commercial model name');
+      assert.equal(model.doors?.length||0,family.doors,'Door count disagrees with the commercial family');
+      assert.equal(new URL(page.url()).searchParams.get('hwModel'),model.id,'Previously shared model URL changed');
+      assert.equal(await page.locator('.hw-field select').inputValue(),model.id);
+      assert.equal(await page.locator('.hw-hero h1').innerText(),model.label);
+      assert.match(await page.locator('.hw-hero .hw-eyebrow').innerText(),family.description);
+      const active=page.locator('.hw-family-tabs [aria-pressed="true"]');
+      assert.equal(await active.count(),1);
+      assert.equal(await active.getAttribute('data-family'),model.family);
+      assert.equal(await active.innerText(),family.button);
+      const hero=await page.locator('.hw-hero p').innerText();
+      assert(hero.includes(model.variant),'The selected execution is missing from the visible hero text');
+      let waterExecution=null;
+      if(model.family==='e'){
+        const superheated=model.id.endsWith('-10');
+        const pressure=superheated?1:.6,temperature=superheated?150:115;
+        assert.equal(model.operatingPressureMpa,pressure,'Incorrect owner-confirmed pressure');
+        assert.equal(model.maxWaterTemperatureC,temperature,'Incorrect owner-confirmed temperature');
+        assert.equal(model.waterExecution,superheated?'superheated':'hot-water');
+        assert.match(model.variant,superheated?/1 МПа.*150 °C.*перегретая вода/:/0,6 МПа.*115 °C/);
+        const specText=await page.locator('.hw-specs').innerText();
+        assert(specText.includes(new Intl.NumberFormat('ru-RU').format(pressure)+' МПа'),'Visible pressure is missing');
+        assert(specText.includes('до '+temperature+' °C'),'Visible water temperature is missing');
+        if(superheated){
+          assert.match(await page.locator('.hw-hero .hw-eyebrow').innerText(),/перегретая вода/i);
+          assert.match(specText,/Перегретая вода/i);
+        }
+        waterExecution={pressureMpa:pressure,maxTemperatureC:temperature,superheated,visibleValuesVerified:true};
+      }
       const stats=await page.evaluate(()=>{
         const {scene,gl}=window.__hotwater,root=scene.getObjectByName('hotwater_model');
         let bounds=null,nodes=0,sourceMeshes=0,instances=0;const hinges=[];
@@ -75,7 +128,7 @@ try{
         await page.waitForFunction(()=>{const hinges=[];window.__hotwater.scene.traverse(node=>{if(node.name.startsWith('door_hinge_'))hinges.push(node)});return hinges.every(node=>Math.abs(node.quaternion.w-1)<.0001)});
       }
       assert.deepEqual(errors,[]);
-      models.push({id:model.id,label:model.label,family:model.family,variant:model.variant,loadedMs,bytes:model.bytes,doors:model.doors?.length||0,screenshot,openScreenshot,...stats,downloads});
+      models.push({id:model.id,label:model.label,family:model.family,variant:model.variant,classificationVerified:true,originalUrlVerified:true,waterExecution,loadedMs,bytes:model.bytes,doors:model.doors?.length||0,screenshot,openScreenshot,...stats,downloads});
       console.log(JSON.stringify({id:model.id,result:'PASS',index:models.length,total:catalog.models.length,loadedMs,calls:stats.calls,triangles:stats.triangles,doors:model.doors?.length||0}));
     }catch(error){
       failures.push({id:model.id,message:String(error),errors,downloads});
@@ -87,7 +140,7 @@ try{
   try{await publication.verify()}catch(error){failures.push({id:'publication',message:String(error)})}
   if(currentSha!==catalogSha256)failures.push({id:'catalog',message:'Catalog changed during verification; rerun with frozen inputs'});
   const figures=models.map(model=>`<figure><a href="${esc(model.screenshot)}"><img loading="lazy" src="${esc(model.screenshot)}" alt="${esc(model.label)}"></a><figcaption><b>${esc(model.label)}</b> · ${esc(model.variant)}<br>${model.calls} вызовов отрисовки · ${model.triangles.toLocaleString('ru')} треугольников · ${model.doors} дверей${model.openScreenshot?` · <a href="${esc(model.openScreenshot)}">Открытые двери</a>`:''}</figcaption></figure>`).join('\n');
-  await writeFile(resolve(out,'contact-sheet.html'),`<!doctype html><html lang="ru"><meta charset="utf-8"><title>Водогрейные котлы — проверка моделей 19.10.2026</title><style>body{font:14px Arial;margin:24px;background:#eef1ef;color:#243b3c}main{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}figure{margin:0;background:white;padding:8px;border-radius:8px}img{width:100%;display:block}figcaption{padding:10px;line-height:1.6}a{color:#245b57}</style><h1>Водогрейные котлы · 19.10.2026</h1><p>${models.length} / ${catalog.models.length} проверено. Ошибок: ${failures.length}. Исполнитель: Codex / GPT-6.</p><main>${figures}</main></html>`);
+  await writeFile(resolve(out,'contact-sheet.html'),`<!doctype html><html lang="ru"><meta charset="utf-8"><title>Водогрейные котлы — проверка моделей ${esc(displayDate)}</title><style>body{font:14px Arial;margin:24px;background:#eef1ef;color:#243b3c}main{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}figure{margin:0;background:white;padding:8px;border-radius:8px}img{width:100%;display:block}figcaption{padding:10px;line-height:1.6}a{color:#245b57}</style><h1>Водогрейные котлы · ${esc(displayDate)}</h1><p>${models.length} / ${catalog.models.length} проверено. Ошибок: ${failures.length}. Версия: ${esc(version.version)}. Исполнитель: Codex / GPT-6.</p><main>${figures}</main></html>`);
   await save();assert.equal(failures.length,0,JSON.stringify(failures));
   console.log(JSON.stringify({result:'PASS',models:models.length,catalogSha256,out}));
 }finally{await browser.close()}

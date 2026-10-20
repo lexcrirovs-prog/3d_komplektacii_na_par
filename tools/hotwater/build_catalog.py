@@ -65,8 +65,11 @@ def build_one(row, args):
     if report['sourceSha256'] != row['sourceSha256'] or report['outputSha256'] != digest(asset):
         raise ValueError('Derivative verification failed: ' + row['id'])
     bounds = report['bounds']
-    item = {key: row[key] for key in ('id', 'family', 'label', 'powerKw', 'variant',
+    item = {key: row[key] for key in ('id', 'family', 'label', 'powerKw', 'variant', 'executionMapping',
                                      'sourceRelativePath', 'sourceSha256')}
+    for key in ('operatingPressureMpa', 'maxWaterTemperatureC', 'waterExecution'):
+        if key in row:
+            item[key] = row[key]
     item.update(sourceFile=source.name, asset=asset.name, bytes=asset.stat().st_size,
                 triangles=report['instanceTriangles'],
                 dimensionsM=[round(bounds[i+3]-bounds[i], 6) for i in (2,0,1)],
@@ -112,7 +115,7 @@ def main():
             except Exception as exc:
                 failures.append(dict(id=futures[future]['id'], error=str(exc)))
                 print('ERROR: '+str(exc), file=sys.stderr, flush=True)
-    audit = dict(version='2026.10.19.2', author='Codex / GPT-6', selection=str(args.selection),
+    audit = dict(version='2026.10.20.1', author='Codex / GPT-6', selection=str(args.selection),
                  sourceUpAxis=args.up_axis, deflectionMm=args.deflection,
                  angularDeflectionRad=args.angle, completed=completed, failures=failures)
     write_json(args.metadata/'build-audit.json', audit)
@@ -131,7 +134,8 @@ def main():
             item['doors'] = old['doors']
         current[item['id']] = item
     catalog['models'] = sorted(current.values(), key=lambda r:(r['family'], r['powerKw'], r['variant']))
-    catalog['version'] = '2026.10.19.2'
+    catalog['version'] = '2026.10.20.1'
+    catalog['classification'] = read_json(args.selection).get('classification')
     write_json(catalog_path, catalog)
     print(json.dumps(dict(catalog=str(catalog_path), models=len(catalog['models']),
                           bytes=sum(r['bytes'] for r in catalog['models']), failures=0)), flush=True)

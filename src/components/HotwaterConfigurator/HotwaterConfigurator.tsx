@@ -49,19 +49,19 @@ export default function HotwaterConfigurator(){
     <section className="hw-stage" aria-label="Трёхмерная модель котла">
       <div className="hw-canvas" ref={host}/>
       <header className="hw-brand"><img src={premiumLogo} alt="Premium gas company"/><span>ВОДОГРЕЙНЫЕ КОТЛЫ</span></header>
-      <div className="hw-hero"><span className="hw-eyebrow">{family.description} / 3D</span><h1>{model.label}</h1><p>{fmt(model.powerKw)} <span>кВт</span><i/> {model.variant}</p></div>
+      <div className="hw-hero"><span className="hw-eyebrow">{family.description}{model.waterExecution==='superheated'?' · перегретая вода':''} / 3D</span><h1>{model.label}</h1><p>{fmt(model.powerKw)} <span>кВт</span><i/> {model.variant}</p></div>
       <div className="hw-instructions">Вращайте модель мышью или пальцем<span>Колесо — приближение · правая кнопка — перемещение</span></div>
       {state.loading&&<div className="hw-loading" role="status"><span className="hw-spinner"/><b>Подготавливаем {model.label}</b><span>{state.progress<100?'Загрузка модели '+Math.round(state.progress)+'%':'Собираем трёхмерный вид…'}</span><progress max={100} value={state.progress}/></div>}
       {state.error&&<div className="hw-error" role="alert"><b>Модель не загрузилась</b><p>{state.error}</p><button onClick={()=>setRevision(v=>v+1)}>Повторить загрузку</button></div>}
       {!!state.selected&&<article className="hw-part"><button className="hw-close" aria-label="Закрыть описание" onClick={()=>viewer.current?.clearSelection()}>×</button><span className="hw-eyebrow">ВЫБРАННЫЙ ЭЛЕМЕНТ</span><h3>{sourceTitle}</h3><p>{viewer.current?.selectedDescription()||'Деталь исходной заводской сборки. Можно рассмотреть её с любой стороны.'}</p><button onClick={()=>viewer.current?.focusSelection()}>Приблизить деталь ↗</button></article>}
       <nav className="hw-views" aria-label="Ракурсы модели">{([['overall','Общий вид'],['front','Спереди'],['rear','Сзади'],['side','Сбоку'],['top','Сверху']] as [ViewName,string][]).map(([id,title])=><button key={id} className={view===id?'active':''} aria-pressed={view===id} disabled={state.loading} onClick={()=>setCamera(id)}>{title}</button>)}</nav>
-      <div className="hw-version">PREMIUM / Водогрейные · 19.10.2026</div>
+      <div className="hw-version">PREMIUM / Водогрейные · 20.10.2026</div>
     </section>
     <aside className="hw-panel" aria-label="Выбор водогрейного котла">
       <div className="hw-panel-heading"><span className="hw-eyebrow">ВАША КОНФИГУРАЦИЯ</span><h2>Тепло. В деталях.</h2><p>Выберите котёл и примерьте оборудование.</p></div>
-      <section className="hw-control-section"><h3><span>01</span> Серия котла</h3><div className="hw-family-tabs">{families.filter(f=>models.some(m=>m.family===f.id)).map(f=><button key={f.id} aria-pressed={model.family===f.id} onClick={()=>{if(f.id!==model.family)choose(models.find(m=>m.family===f.id)!)}}>{f.short}</button>)}</div>
+      <section className="hw-control-section"><h3><span>01</span> Серия котла</h3><div className="hw-family-tabs">{families.filter(f=>models.some(m=>m.family===f.id)).map(f=><button key={f.id} data-family={f.id} aria-pressed={model.family===f.id} title={f.label+' · '+f.description} onClick={()=>{if(f.id!==model.family)choose(models.find(m=>m.family===f.id)!)}}>{f.short}</button>)}</div>
         <label className="hw-field">Модель и исполнение<select value={model.id} onChange={e=>choose(models.find(m=>m.id===e.target.value)!)}>{familyModels.map(m=><option key={m.id} value={m.id}>{m.label} · {m.variant}</option>)}</select></label>
-        <div className="hw-specs"><div><b>{fmt(model.powerKw)}</b><span>кВт · мощность</span></div><div><b>{family.short}</b><span>{family.description}</span></div></div>
+        <div className="hw-specs"><div><b>{fmt(model.powerKw)}</b><span>кВт · мощность</span></div><div><b>{family.short}</b><span>{family.description}</span></div>{model.operatingPressureMpa!==undefined&&<div><b>{fmt(model.operatingPressureMpa)} МПа</b><span>Рабочее давление</span></div>}{model.maxWaterTemperatureC!==undefined&&<div><b>до {model.maxWaterTemperatureC} °C</b><span>{model.waterExecution==='superheated'?'Перегретая вода':'Температура воды'}</span></div>}</div>
         {!!model.doors?.length&&<button className="hw-door-button" disabled={state.loading} onClick={()=>{const next=!opened;viewer.current?.openDoors(next);setOpened(next)}}>{opened?'Закрыть двери':'Открыть двери'} <span>↗</span></button>}
       </section>
       <section className="hw-control-section"><h3><span>02</span> Навесное оборудование</h3><p className="hw-section-note">Опции загружаются при выборе. Примерка помогает оценить габариты и расположение. Крепления проверяются по чертежам.</p>

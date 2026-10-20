@@ -6,13 +6,13 @@
     {
       "id": "cla-250-51",
       "family": "cla",
-      "label": "PREMIUM CLA-250",
+      "label": "PREMIUM C-250",
       "powerKw": 250,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\1. PREMIUM-СLA-250\\3D-модели\\PR.250.02.001СБ Общий вид.stp",
       "sourceSha256": "f4a9fa8d37f1296dd01f20a26ea472bae980426360299b0ffe439194089fd60e",
       "sourceBytes": 4822733,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-250",
         "PR.200.01.025СБ Фронтовая дверь",
@@ -28,13 +28,13 @@
     {
       "id": "cla-250-57",
       "family": "cla",
-      "label": "PREMIUM CLA-250",
+      "label": "PREMIUM C-250",
       "powerKw": 250,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\1. PREMIUM-СLA-250 (На 57 трубе) от 06.11.2025\\3D-модель\\PR.250.03.001СБ Общий вид.stp",
       "sourceSha256": "78a5ad910b22f28b0281933f86837259aa911dba5f096002c40ff1ca9baea9af",
       "sourceBytes": 4963325,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-250",
         "PR.200.01.025СБ Фронтовая дверь",
@@ -50,13 +50,13 @@
     {
       "id": "cla-500-51",
       "family": "cla",
-      "label": "PREMIUM CLA-500",
+      "label": "PREMIUM C-500",
       "powerKw": 500,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\2. PREMIUM-СLA-500\\3D-модели\\PR.500.02.001СБ Общий вид.stp",
       "sourceSha256": "2cc48a5058ce65d88afdfde1a30bf177479dbb7f3205439a448e903c7d0ca195",
       "sourceBytes": 5827431,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-500",
         "PR.200.01.009СБ Фронтовая дверь",
@@ -71,13 +71,13 @@
     {
       "id": "cla-500-57",
       "family": "cla",
-      "label": "PREMIUM CLA-500",
+      "label": "PREMIUM C-500",
       "powerKw": 500,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\2. PREMIUM-СLA-500 (На 57 трубе) от 06.11.2025\\3D-модель\\PR.500.03.001СБ Общий вид.stp",
       "sourceSha256": "e3e15f6030fb4dff20a517f37f9432e249e079018977d85b7a8442b9b649891c",
       "sourceBytes": 5967086,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-500",
         "PR.200.01.009СБ Фронтовая дверь",
@@ -92,13 +92,13 @@
     {
       "id": "cla-750-51",
       "family": "cla",
-      "label": "PREMIUM CLA-750",
+      "label": "PREMIUM C-750",
       "powerKw": 750,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\3. PREMIUM-СLA-750\\3D модель\\PR.750.02.001СБ Общий вид.stp",
       "sourceSha256": "8db8f9d80a0d4a193ca58bcc6d566f327d4dd1f466bfe97aa868b9bd4a068c63",
       "sourceBytes": 3768455,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-750",
         "PR.200.01.029СБ Фронтовая дверь",
@@ -113,13 +113,13 @@
     {
       "id": "cla-750-57",
       "family": "cla",
-      "label": "PREMIUM CLA-750",
+      "label": "PREMIUM C-750",
       "powerKw": 750,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\3. PREMIUM-СLA-750 (На 57 трубе) от 06.11.2025\\3D-модель\\PR.750.03.001СБ Общий вид.stp",
       "sourceSha256": "b7e8a71ca3473575f8971d7e8b18a4cb7d4dfccc8df4c3feabcbdb48908122ce",
       "sourceBytes": 3854989,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-750",
         "PR.200.01.029СБ Фронтовая дверь",
@@ -134,13 +134,13 @@
     {
       "id": "cla-1000-51",
       "family": "cla",
-      "label": "PREMIUM CLA-1000",
+      "label": "PREMIUM C-1000",
       "powerKw": 1000,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\4. PREMIUM-СLA-1000\\3D-модель\\PR.1000.02.001СБ Общий вид.stp",
       "sourceSha256": "587bb88a4ff0a8174120e464cdacfe044e00a1d4495a5df795a6bbee5b373560",
       "sourceBytes": 4569462,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1000",
         "PR.200.01.001СБ Фронтовая дверь",
@@ -155,13 +155,13 @@
     {
       "id": "cla-1000-57",
       "family": "cla",
-      "label": "PREMIUM CLA-1000",
+      "label": "PREMIUM C-1000",
       "powerKw": 1000,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\4. PREMIUM-СLA-1000 (На 57 трубе) 06.10.2025\\3D-модель\\PR.1000.03.001СБ Общий вид.stp",
       "sourceSha256": "86f65472c5f76358d3834a54a40adf7f7f5fa2c7352e495f640b3765c7be9eab",
       "sourceBytes": 4782421,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1000",
         "PR.200.01.001СБ Фронтовая дверь",
@@ -176,13 +176,13 @@
     {
       "id": "cla-1250-51",
       "family": "cla",
-      "label": "PREMIUM CLA-1250",
+      "label": "PREMIUM C-1250",
       "powerKw": 1250,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\5. PREMIUM-СLA-1250\\3D-модель\\PR.1250.02.001СБ Общий вид.stp",
       "sourceSha256": "436ea798310a1e7416768d4cfe88f8b7eccaa775f85abee0a5fc8e08e3c71eb6",
       "sourceBytes": 4671281,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1000",
         "PR.200.01.001СБ Фронтовая дверь",
@@ -197,13 +197,13 @@
     {
       "id": "cla-1250-57",
       "family": "cla",
-      "label": "PREMIUM CLA-1250",
+      "label": "PREMIUM C-1250",
       "powerKw": 1250,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\5. PREMIUM-СLA-1250 (На 57 трубе) от 06.10.2025\\3D модель\\PR.1250.03.001СБ Общий вид.stp",
       "sourceSha256": "75828d488d0ccf66cf5b103a69754a2baac50243c928d5340c2e07782e34304d",
       "sourceBytes": 4857732,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1000",
         "PR.200.01.001СБ Фронтовая дверь",
@@ -218,13 +218,13 @@
     {
       "id": "cla-1500-51",
       "family": "cla",
-      "label": "PREMIUM CLA-1500",
+      "label": "PREMIUM C-1500",
       "powerKw": 1500,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\6. PREMIUM-СLA-1500\\3D-модель\\PR.1500.02.001СБ Общий вид.stp",
       "sourceSha256": "1512ef7075a8c500d2151d05edd5f4abbe276c463feed149f51a834939f986d4",
       "sourceBytes": 7290965,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1500",
         "PR.200.01.005СБ Фронтовая дверь",
@@ -239,13 +239,13 @@
     {
       "id": "cla-1500-57",
       "family": "cla",
-      "label": "PREMIUM CLA-1500",
+      "label": "PREMIUM C-1500",
       "powerKw": 1500,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\6. PREMIUM-СLA-1500 (На 57 трубе) от 06.10.2025\\3D модель\\PR.1500.03.001СБ Общий вид.stp",
       "sourceSha256": "2810a8c9e0cfcf0feeb765b0f634563dbe4a7c818402f14bd1478999e225487a",
       "sourceBytes": 7102455,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1500",
         "PR.200.01.005СБ Фронтовая дверь",
@@ -260,13 +260,13 @@
     {
       "id": "cla-1750-51",
       "family": "cla",
-      "label": "PREMIUM CLA-1750",
+      "label": "PREMIUM C-1750",
       "powerKw": 1750,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\7. PREMIUM-СLA-1750\\3D-модель\\PR.1750.02.001СБ Общий вид.stp",
       "sourceSha256": "973c7a0677534375d9eb94c29776fc533e18a1c4bd94c1c41ce58dfe17f993a9",
       "sourceBytes": 7096914,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1500",
         "PR.200.01.005СБ Фронтовая дверь",
@@ -281,13 +281,13 @@
     {
       "id": "cla-1750-57",
       "family": "cla",
-      "label": "PREMIUM CLA-1750",
+      "label": "PREMIUM C-1750",
       "powerKw": 1750,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\7. PREMIUM-СLA-1750 (На 57 трубе) от 08.10.2025\\3D модель\\PR.1750.03.001СБ Общий вид.stp",
       "sourceSha256": "2f21cadf3ce8fb34a81e0257f21ee47c0a74e7dd5cc43294df376c4ab4c4bde5",
       "sourceBytes": 7200929,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-1500",
         "PR.200.01.005СБ Фронтовая дверь",
@@ -302,13 +302,13 @@
     {
       "id": "cla-2000-51",
       "family": "cla",
-      "label": "PREMIUM CLA-2000",
+      "label": "PREMIUM C-2000",
       "powerKw": 2000,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\8. PREMIUM-СLA-2000\\3D-модель\\PR.2000.02.001СБ Общий вид.stp",
       "sourceSha256": "a3aca0211cedd0296f1d94a339c8cd7f4d389151266f583b7265ce06f45defc1",
       "sourceBytes": 8991107,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-2000",
         "PR.200.01.013СБ Фронтовая дверь",
@@ -323,13 +323,13 @@
     {
       "id": "cla-2000-57",
       "family": "cla",
-      "label": "PREMIUM CLA-2000",
+      "label": "PREMIUM C-2000",
       "powerKw": 2000,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\8. PREMIUM-СLA-2000 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.2000.03.001СБ Общий вид.stp",
       "sourceSha256": "e261a87c9a5038ea8600fb6630c52a4a35d570a8c78cc8beb7107b8e98b478a2",
       "sourceBytes": 9450176,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-2000",
         "PR.200.01.013СБ Фронтовая дверь",
@@ -344,13 +344,13 @@
     {
       "id": "cla-2500-51",
       "family": "cla",
-      "label": "PREMIUM CLA-2500",
+      "label": "PREMIUM C-2500",
       "powerKw": 2500,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\9. PREMIUM-СLA-2500\\3D-модель\\PR.2500.02.001СБ Общий вид.stp",
       "sourceSha256": "12da7df420e7c8e7f9bf3c0840824a8fe05c6b987011870b5aef86c7f0c94244",
       "sourceBytes": 9084258,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-2000",
         "PR.200.01.013СБ Фронтовая дверь",
@@ -365,13 +365,13 @@
     {
       "id": "cla-2500-57",
       "family": "cla",
-      "label": "PREMIUM CLA-2500",
+      "label": "PREMIUM C-2500",
       "powerKw": 2500,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\9. PREMIUM-СLA-2500 (На 57трубе) от 06.10.2025\\3D-модель\\PR.2500.03.001СБ Общий вид.stp",
       "sourceSha256": "04ce7231be2491ec96340d787a392a4c7ab2c66fec7d8ae06bbc8901254d338d",
       "sourceBytes": 9388806,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-2000",
         "PR.200.01.013СБ Фронтовая дверь",
@@ -386,13 +386,13 @@
     {
       "id": "cla-3000-51",
       "family": "cla",
-      "label": "PREMIUM CLA-3000",
+      "label": "PREMIUM C-3000",
       "powerKw": 3000,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\10. PREMIUM-СLA-3000\\3D-модель\\PR.3000.02.001СБ Общий вид.stp",
       "sourceSha256": "68529a339b39811151a21ba50b1120828053380e80bc354ae33f3429676161bc",
       "sourceBytes": 10597352,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-3000",
         "PR.200.01.018СБ Изоляция фронтовой двери",
@@ -407,13 +407,13 @@
     {
       "id": "cla-3000-51-dn150",
       "family": "cla",
-      "label": "PREMIUM CLA-3000",
+      "label": "PREMIUM C-3000",
       "powerKw": 3000,
       "variant": "51 мм; Ду 150",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\15. PREMIUM-СLA-3000 (Ду 150)\\3D-модель\\PR.3000.03.001СБ Общий вид.stp",
       "sourceSha256": "f2a45b15284fe593b36b919e031dfab1e2e5bd145956e5b9e939df5f72e2f6fa",
       "sourceBytes": 9253912,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-2000",
         "PR.200.01.013СБ Фронтовая дверь",
@@ -428,13 +428,13 @@
     {
       "id": "cla-3000-57",
       "family": "cla",
-      "label": "PREMIUM CLA-3000",
+      "label": "PREMIUM C-3000",
       "powerKw": 3000,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\10. PREMIUM-СLA-3000 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.3000.04.001СБ Общий вид.stp",
       "sourceSha256": "0504d46c66f64878f765709575e284a0b304b7676485661d49513abce92e91bd",
       "sourceBytes": 10935012,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-3000",
         "PR.200.01.018СБ Изоляция фронтовой двери",
@@ -449,13 +449,13 @@
     {
       "id": "cla-3500-51",
       "family": "cla",
-      "label": "PREMIUM CLA-3500",
+      "label": "PREMIUM C-3500",
       "powerKw": 3500,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\11. PREMIUM-CLA-3500\\3D-модель\\PR.3500.02.001СБ Общий вид.stp",
       "sourceSha256": "a87842c52e50b99b1fcd32b59e31e60cb91f849fa367217add036c7a60258f82",
       "sourceBytes": 10790226,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-3000",
         "PR.200.01.018СБ Изоляция фронтовой двери",
@@ -470,13 +470,13 @@
     {
       "id": "cla-3500-57",
       "family": "cla",
-      "label": "PREMIUM CLA-3500",
+      "label": "PREMIUM C-3500",
       "powerKw": 3500,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\11. PREMIUM-СLA-3500 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.3500.03.001СБ Общий вид.stp",
       "sourceSha256": "df60498c1380342a3ae726f44fadee0f822d9376ed5cf84f2da8e63a0a6f480e",
       "sourceBytes": 12975224,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-3000",
         "PR.200.01.018СБ Изоляция фронтовой двери",
@@ -491,13 +491,13 @@
     {
       "id": "cla-4000-51",
       "family": "cla",
-      "label": "PREMIUM CLA-4000",
+      "label": "PREMIUM C-4000",
       "powerKw": 4000,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\12. PREMIUM-СLA-4000\\3D-модель\\PR.4000.02.001СБ Общий вид.stp",
       "sourceSha256": "6cd1933dd50a72dc9d009d7916d146aeca1080b546e5bd8b9913cad82eae4936",
       "sourceBytes": 9825004,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-4000",
         "PR.200.01.022СБ Изоляция фронтовой двери",
@@ -512,13 +512,13 @@
     {
       "id": "cla-4000-57",
       "family": "cla",
-      "label": "PREMIUM CLA-4000",
+      "label": "PREMIUM C-4000",
       "powerKw": 4000,
       "variant": "57 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\1. Котлы CLA на шовной трубе 57\\12. PREMIUM-СLA-4000 (На 57 трубе) от 06.10.2025\\3D-модель\\PR.4000.03.001СБ Общий вид.stp",
       "sourceSha256": "ca9d825ac4375dde7c31e9dc465edd253bbf980e45adc719c8d871eb8ee852ea",
       "sourceBytes": 9978387,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX крышки CLA-4000",
         "PR.200.01.022СБ Изоляция фронтовой двери",
@@ -533,13 +533,13 @@
     {
       "id": "cla-5000-51",
       "family": "cla",
-      "label": "PREMIUM CLA-5000",
+      "label": "PREMIUM C-5000",
       "powerKw": 5000,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\13. PREMIUM-СLA-5000\\3D-модели\\PR.5000.02.001СБ Общий вид.stp",
       "sourceSha256": "eef0a833ad73a4469194e7ddf8381d8d1ef7bc34a08c385b54d6da0cc57eea5f",
       "sourceBytes": 11413774,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX двери CLA-5000",
         "AVANTEX крышки CLA-5000",
@@ -555,13 +555,13 @@
     {
       "id": "cla-6000-51",
       "family": "cla",
-      "label": "PREMIUM CLA-6000",
+      "label": "PREMIUM C-6000",
       "powerKw": 6000,
       "variant": "51 мм",
       "sourceRelativePath": "6. котлы Premium CLA\\2. Котлы CLA на шовной трубе 51\\14. PREMIUM-СLA-6000\\3D-модели\\PR.6000.02.001СБ Общий вид.stp",
       "sourceSha256": "1e3f16ccb819815b733fee8a0c4b8472013da57086aeb55ebd6656564edfded2",
       "sourceBytes": 11517536,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-c",
       "doorEvidence": [
         "AVANTEX двери CLA-5000",
         "AVANTEX крышки CLA-5000",
@@ -576,150 +576,174 @@
     },
     {
       "id": "e-1000-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-1000",
       "powerKw": 1000,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\01. PREMIUM E-1000\\3D-модель\\PR.Е.1000.01.01.001 ВО Котёл водогрейный E-1000.01.stp",
       "sourceSha256": "14dc8f1f9e7c94500d306d8494ab2b4dc958019397214fc7daf7c792d996c3f8",
       "sourceBytes": 8171496,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-00 Крышка ВУ",
         "PR.200.01.01.001 СБ Фронтовая дверь",
         "PR.200.01.01.002 СБ Задняя крышка",
         "PR.200.01.01.004 СБ Фронтовая дверь с изоляцией"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-1500-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-1500",
       "powerKw": 1500,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\02. PREMIUM E-1500\\3D-модель\\PR.Е.1500.01.01.001 ВО Котёл водогрейный E-1500.01.stp",
       "sourceSha256": "bf396c2695aeae49687ca0c165ee6bf615a1bf82768e8f8c4f81e90113c5368f",
       "sourceBytes": 8188103,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-00 Крышка ВУ",
         "PR.200.01.01.001 СБ Фронтовая дверь",
         "PR.200.01.01.002 СБ Задняя крышка",
         "PR.200.01.01.004 СБ Фронтовая дверь с изоляцией"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-2000-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-2000",
       "powerKw": 2000,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\03. PREMIUM E-2000\\3D-модель\\PR.Е.2000.01.01.001 ВО Котёл водогрейный E-2000.01.stp",
       "sourceSha256": "541ceb7399ae46bde490869c8944693a903078888df7f4d62d8526d9561f5300",
       "sourceBytes": 8990228,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-01 Крышка ВУ",
         "PR.200.01.01.008 СБ Фронтовая дверь",
         "PR.200.01.01.009 СБ Задняя крышка",
         "PR.200.01.01.010 СБ Фронтовая дверь с изоляцией"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-2500-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-2500",
       "powerKw": 2500,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\04. PREMIUM E-2500\\3D-модель\\PR.Е.2500.01.01.001 ВО Котёл водогрейный E-2500.01.stp",
       "sourceSha256": "9ebfecb9e5f3b70d8f867cba1d5afe0cdc53af34e26550223822bd59f45c24c2",
       "sourceBytes": 9103184,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-01 Крышка ВУ",
         "PR.200.01.01.008 СБ Фронтовая дверь",
         "PR.200.01.01.009 СБ Задняя крышка",
         "PR.200.01.01.010 СБ Фронтовая дверь с изоляцией"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-3000-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-3000",
       "powerKw": 3000,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\05. PREMIUM E-3000\\3D-модель\\PR.Е.3000.01.01.001 ВО Котёл водогрейный E-3000.01.stp",
       "sourceSha256": "84dbda1876005da5b3d8486de65fd2907491262c668f54393c7f2a9314807801",
       "sourceBytes": 9752858,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-02 Крышка ВУ",
         "PR.200.01.01.016 СБ Фронтовая дверь",
         "PR.200.01.01.017 СБ Фронтовая дверь с изоляцией",
         "PR.200.01.01.018 СБ Задняя крышка"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-3500-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-3500",
       "powerKw": 3500,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\06. PREMIUM E-3500\\3D-модель\\PR.Е.3500.01.01.001 ВО Котёл водогрейный E-3500.01.stp",
       "sourceSha256": "00e2a019fd0a84be56d29a6545f6d96509a5dcbc8d51c2662f8b1eb5fcf3e446",
       "sourceBytes": 9495321,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-02 Крышка ВУ",
         "PR.200.01.01.016 СБ Фронтовая дверь",
         "PR.200.01.01.017 СБ Фронтовая дверь с изоляцией",
         "PR.200.01.01.018 СБ Задняя крышка"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-4000-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-4000",
       "powerKw": 4000,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\07. PREMIUM E-4000\\3D-модель\\PR.Е.4000.01.01.001 ВО Котёл водогрейный E-4000.01.stp",
       "sourceSha256": "b78949fc2d724b7d05b41495e3771956878ce1c9b54b26452d66b29073d8b827",
       "sourceBytes": 11238477,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-02 Крышка ВУ",
         "PR.200.01.01.012 СБ Фронтовая дверь",
         "PR.200.01.01.013 СБ Задняя крышка",
         "PR.200.01.01.014 СБ Фронтовая дверь с изоляцией"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-5000-20260925",
-      "family": "e",
+      "family": "e-single",
       "label": "PREMIUM E-5000",
       "powerKw": 5000,
       "variant": "РКД 25.09.2026",
       "sourceRelativePath": "3.1. котлы водогрейные трехходовые Premium E\\РКД (PREMIUM E) 25.09.2026\\08. PREMIUM E-5000\\3D-модель\\PR.Е.5000.01.01.001 ВО Котёл водогрейный E-5000.01.stp",
       "sourceSha256": "15f62caad7f7c73ee45ccd0fc8558ff69dd7ec8cfb0da63ca50e0b67136bc01d",
       "sourceBytes": 11342287,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-three-pass-single-door",
       "doorEvidence": [
         "PR.05.01.01.084-02 Крышка ВУ",
         "PR.200.01.01.012 СБ Фронтовая дверь",
         "PR.200.01.01.013 СБ Задняя крышка",
         "PR.200.01.01.014 СБ Фронтовая дверь с изоляцией"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-long-2500-06",
-      "family": "e-long",
-      "label": "PREMIUM E Long-2500",
+      "family": "e",
+      "label": "PREMIUM E-2500",
       "powerKw": 2500,
-      "variant": "0,6 МПа",
+      "variant": "0,6 МПа · до 115 °C",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.2500.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
       "sourceSha256": "f1bd11886a89fd4054a47d41da50903956ea6940caf0f6e64bf3aa81393a6d57",
       "sourceBytes": 6459379,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -729,18 +753,21 @@
         "БСТВЭ фронт двери Е 2500",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-long-2500-10",
-      "family": "e-long",
-      "label": "PREMIUM E Long-2500",
+      "family": "e",
+      "label": "PREMIUM E-2500",
       "powerKw": 2500,
-      "variant": "1 МПа",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.2500.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
       "sourceSha256": "51e6dd36340cb71002ba79bdb1eca930da9dd479c49789e41fe4e4d591749d4f",
       "sourceBytes": 6425700,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -750,18 +777,21 @@
         "БСТВЭ фронт двери Е 2500",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 1,
+      "maxWaterTemperatureC": 150,
+      "waterExecution": "superheated"
     },
     {
       "id": "e-long-3500-06",
-      "family": "e-long",
-      "label": "PREMIUM E Long-3500",
+      "family": "e",
+      "label": "PREMIUM E-3500",
       "powerKw": 3500,
-      "variant": "0,6 МПа",
+      "variant": "0,6 МПа · до 115 °C",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.3500.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
       "sourceSha256": "71dbf9aa30947320fb2feb9e0973fc05e059fc44e94a095897b59e96d870f515",
       "sourceBytes": 6635866,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -771,18 +801,21 @@
         "БСТВЭ фронт двери 4000",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-long-3500-10",
-      "family": "e-long",
-      "label": "PREMIUM E Long-3500",
+      "family": "e",
+      "label": "PREMIUM E-3500",
       "powerKw": 3500,
-      "variant": "1 МПа",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.3500.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
       "sourceSha256": "4f8466effd1727ff636e39c695d0c96bcc5603df0dac94f6344a0c71595f92c8",
       "sourceBytes": 6609080,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -792,7 +825,10 @@
         "БСТВЭ фронт двери 4000",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 1,
+      "maxWaterTemperatureC": 150,
+      "waterExecution": "superheated"
     },
     {
       "id": "e-long-3500-20260609-06",
@@ -803,7 +839,7 @@
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\РКД КВа 3х (PREMIUM-Е Long) 09.06.2026\\PREMIUM (E-3500-0,6 Long)\\3D-модель\\PR.ЕL.3500.01.01.001 ВО Котёл водогрейный E-3500.01 Long.stp",
       "sourceSha256": "45478e4546bb45d523220f5affe6d6e804efb847189b7bf0a407b2e0828bd478",
       "sourceBytes": 7324240,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-long-greenhouse",
       "doorEvidence": [
         "PR.05.01.01.048 Крышка лючка короба",
         "PR.100.01.01.015-00 СБ Фронтовая дверь",
@@ -813,14 +849,14 @@
     },
     {
       "id": "e-long-4000-06",
-      "family": "e-long",
-      "label": "PREMIUM E Long-4000",
+      "family": "e",
+      "label": "PREMIUM E-4000",
       "powerKw": 4000,
-      "variant": "0,6 МПа",
+      "variant": "0,6 МПа · до 115 °C",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.4000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
       "sourceSha256": "f8d7ddf81f3d4a218070f6160292a5671a936ec3611c7dbddbe2ee61afbefdca",
       "sourceBytes": 6677165,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -830,18 +866,21 @@
         "БСТВЭ фронт двери 4000",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-long-4000-10",
-      "family": "e-long",
-      "label": "PREMIUM E Long-4000",
+      "family": "e",
+      "label": "PREMIUM E-4000",
       "powerKw": 4000,
-      "variant": "1 МПа",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.4000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
       "sourceSha256": "06179a20d27cc686b20d73eb87eb186c8b4431716abd69a6b2b99470f6faa63b",
       "sourceBytes": 6644356,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -851,18 +890,21 @@
         "БСТВЭ фронт двери 4000",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 1,
+      "maxWaterTemperatureC": 150,
+      "waterExecution": "superheated"
     },
     {
       "id": "e-long-5000-06",
-      "family": "e-long",
-      "label": "PREMIUM E Long-5000",
+      "family": "e",
+      "label": "PREMIUM E-5000",
       "powerKw": 5000,
-      "variant": "0,6 МПа",
+      "variant": "0,6 МПа · до 115 °C",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.5000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
       "sourceSha256": "2478651e60c22401d96267cda695e5622a97fae4bd7e5ec31f283427cb7f1e1d",
       "sourceBytes": 6296880,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -872,18 +914,21 @@
         "Сетка крышки",
         "Шнур двери фронт 6000",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-long-5000-10",
-      "family": "e-long",
-      "label": "PREMIUM E Long-5000",
+      "family": "e",
+      "label": "PREMIUM E-5000",
       "powerKw": 5000,
-      "variant": "1 МПа",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.5000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
       "sourceSha256": "bd01cf6a309c43c50f7172fc438723fb6b3f56b545b2efee324cdda92655cb08",
       "sourceBytes": 6302228,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -893,18 +938,21 @@
         "Сетка крышки",
         "Шнур двери фронт 6000",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 1,
+      "maxWaterTemperatureC": 150,
+      "waterExecution": "superheated"
     },
     {
       "id": "e-long-6000-06",
-      "family": "e-long",
-      "label": "PREMIUM E Long-6000",
+      "family": "e",
+      "label": "PREMIUM E-6000",
       "powerKw": 6000,
-      "variant": "0,6 МПа",
+      "variant": "0,6 МПа · до 115 °C",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.6000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
       "sourceSha256": "a6d99c86b89ff175739c156dd119c773eb709dde04077550fe0542eaded68a5a",
       "sourceBytes": 6331647,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -914,18 +962,21 @@
         "Сетка крышки",
         "Шнур двери фронт 6000",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-long-6000-10",
-      "family": "e-long",
-      "label": "PREMIUM E Long-6000",
+      "family": "e",
+      "label": "PREMIUM E-6000",
       "powerKw": 6000,
-      "variant": "1 МПа",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.6000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
       "sourceSha256": "3a371cd28e35cad6b5e0420457de869f525357d00ff91b835d782ec6c8bdf3a3",
       "sourceBytes": 6344621,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -935,18 +986,21 @@
         "Сетка крышки",
         "Шнур двери фронт 6000",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 1,
+      "maxWaterTemperatureC": 150,
+      "waterExecution": "superheated"
     },
     {
       "id": "e-long-7000-06",
-      "family": "e-long",
-      "label": "PREMIUM E Long-7000",
+      "family": "e",
+      "label": "PREMIUM E-7000",
       "powerKw": 7000,
-      "variant": "0,6 МПа",
+      "variant": "0,6 МПа · до 115 °C",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.7000.01.001(Е)СБ Котел водогрейный (0,6 МПа).stp",
       "sourceSha256": "d4709164ef326e0c6f6cb4b5338d09f4a52dd8b00e155d67d241b1591e5be060",
       "sourceBytes": 6382642,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -956,18 +1010,21 @@
         "БСТВЭ фронт двери 7000",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 0.6,
+      "maxWaterTemperatureC": 115,
+      "waterExecution": "hot-water"
     },
     {
       "id": "e-long-7000-10",
-      "family": "e-long",
-      "label": "PREMIUM E Long-7000",
+      "family": "e",
+      "label": "PREMIUM E-7000",
       "powerKw": 7000,
-      "variant": "1 МПа",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
       "sourceRelativePath": "3. котлы водогрейные трехходовые Premium E (Long)\\Для сайта\\3Д\\PR.7000.01.001(Е)СБ Котел водогрейный (1 МПа).stp",
       "sourceSha256": "55e3ce764119fc3e2868f4a04cf5d60efd5f2a42c05ea513db6efb7e465a88b5",
       "sourceBytes": 6363608,
-      "executionMapping": "unconfirmed",
+      "executionMapping": "premium-e-double-door",
       "doorEvidence": [
         "AVANTEX крышки 6000",
         "PR.200.01.057СБ Крышка",
@@ -977,12 +1034,21 @@
         "БСТВЭ фронт двери 7000",
         "Сетка крышки",
         "Шнур крышки 6000"
-      ]
+      ],
+      "operatingPressureMpa": 1,
+      "maxWaterTemperatureC": 150,
+      "waterExecution": "superheated"
     }
   ],
   "caveats": [
     "Execution labels greenhouse/superheated not assigned without verified source mapping.",
     "Door evidence lists named assembly parts, not proven independent opening doors.",
     "Source dimensions, temperature and pressure must be taken from matched model drawings, not folder alone."
-  ]
+  ],
+  "classification": {
+    "confirmedDate": "2026-10-20",
+    "basis": "Owner clarification and engineering drawings; see docs/hotwater/SOURCES.md",
+    "executor": "Codex / GPT-6",
+    "temperatureMapping": "Premium E: 0.6 MPa / 115 C; 1 MPa / 150 C. Confirmed by owner 2026-10-20."
+  }
 }

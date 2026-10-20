@@ -1,4 +1,4 @@
-"""PREMIUM hotwater preview, 19.10.2026, Codex / GPT-6.
+"""PREMIUM hotwater incremental release, 20.10.2026, Codex / GPT-6.
 
 Prepare a verified backup, create a separate immutable stage, verify its actual
 bytes and cache policy, and assess release evidence. Cutover and rollback are
@@ -22,14 +22,17 @@ from pathlib import Path, PurePosixPath
 spec = importlib.util.spec_from_file_location('base_publisher', Path(__file__).parents[1] / 's3000/publish-web.py')
 p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
-p.VERSION = '2026.10.19.2'
+p.VERSION = '2026.10.20.1'
 p.OUT = p.REPO / 'artifacts' / ('publication-v' + p.VERSION)
 p.STAGE = p.ROOT + '/komplektacii4-stage-v' + p.VERSION
 p.STAGE_URL = 'https://prgz.ru/komplektacii4-stage-v' + p.VERSION + '/'
 p.BACKUP = p.ROOT + '/komplektacii4-before-hotwater-v' + p.VERSION
 HELD = p.ROOT + '/komplektacii4-held-hotwater-v' + p.VERSION
-BASELINE_VERSION = '2026.10.12.1'
-EXPECTED_OLD_GLB = 100
+BASELINE_VERSION = '2026.10.19.2'
+EXPECTED_OLD_GLB = 157
+BASELINE_HOTWATER_GLB = 57
+# Source audit on 20.10: 48 existing models and nine options, no new geometry.
+# Data alone must not broaden the accepted release inventory.
 EXPECTED_MODELS = 48
 EXPECTED_ACCESSORIES = 9
 
@@ -106,23 +109,31 @@ def local_candidate():
     require(len(catalog['models']) == EXPECTED_MODELS and len(catalog['accessories']) == EXPECTED_ACCESSORIES,
             'INCOMPLETE_HOTWATER_CATALOG')
     vite = read_json(dist / '.vite/manifest.json')
-    new_paths = set()
+    water_paths = set()
     for row in catalog['models'] + catalog['accessories']:
         record = vite.get('src/assets/hotwater/' + row['asset'])
         require(record and record['file'] in files, 'MISSING_HOTWATER_ASSET: ' + row['asset'])
-        new_paths.add(record['file'])
-    require(len(new_paths) == EXPECTED_MODELS + EXPECTED_ACCESSORIES, 'DUPLICATE_HOTWATER_ASSETS')
-    return manifest_hash, files, catalog, new_paths
+        water_paths.add(record['file'])
+    require(len(water_paths) == EXPECTED_MODELS + EXPECTED_ACCESSORIES, 'DUPLICATE_HOTWATER_ASSETS')
+    return manifest_hash, files, catalog, water_paths
 
 
-def validate_glbs(before_files, files, new_paths):
+def validate_glbs(before_files, files, water_paths, baseline_water_paths):
     old = {name: digest for name, digest in before_files.items() if name.endswith('.glb')}
     current = {name: digest for name, digest in files.items() if name.endswith('.glb')}
-    require(len(old) == EXPECTED_OLD_GLB, 'BASELINE_EXPECTED_100_GLB')
+    require(len(old) == EXPECTED_OLD_GLB, f'BASELINE_EXPECTED_{EXPECTED_OLD_GLB}_GLB')
     require(all(current.get(name) == digest for name, digest in old.items()), 'EXISTING_GLB_CHANGED_OR_REMOVED')
+    baseline_water_paths = set(baseline_water_paths)
+    require(len(baseline_water_paths) == BASELINE_HOTWATER_GLB and baseline_water_paths <= set(old),
+            'BASELINE_HOTWATER_ASSET_INVENTORY_MISMATCH')
+    water_paths = set(water_paths)
+    require(len(water_paths) == EXPECTED_MODELS + EXPECTED_ACCESSORIES, 'HOTWATER_ASSET_COUNT_MISMATCH')
+    require(water_paths <= set(current), 'CATALOG_GLB_MISSING')
+    require(water_paths & set(old) == baseline_water_paths, 'BASELINE_HOTWATER_CATALOG_CHANGED_OR_REMOVED')
     added = set(current) - set(old)
-    require(added == set(new_paths) and len(added) == EXPECTED_MODELS + EXPECTED_ACCESSORIES,
-            'EXPECTED_EXACTLY_57_NEW_HOTWATER_GLB')
+    expected_added = water_paths - set(old)
+    require(added == expected_added and len(added) == EXPECTED_MODELS + EXPECTED_ACCESSORIES - BASELINE_HOTWATER_GLB,
+            'UNEXPECTED_NEW_GLB')
     return dict(preservedGlb=len(old), addedGlb=len(added), totalGlb=len(current))
 
 
@@ -132,7 +143,7 @@ def validate_mail_api(before_files, files):
     require(original and current == original, 'MAIL_API_CHANGED_OR_REMOVED')
 
 
-# Executed remotely only by explicitly selected prepare/stage/verify-stage.
+# Remote snippets run only inside the selected publisher command.
 REMOTE_HELPERS = '''import json,pathlib,hashlib,datetime
 def need(ok,message):
  if not ok:raise RuntimeError(message)
@@ -173,18 +184,21 @@ expected_index={baseline_index_sha!r}
 if expected_index:need(files.get('index.html')==expected_index,'BASELINE_INDEX_CHANGED')
 else:need(version=={BASELINE_VERSION!r} and manifest['release']['version']==version,'UNEXPECTED_BASELINE_VERSION')
 for item in manifest['files']:need(files.get(item['path'])==item['sha256'],'LIVE_MANIFEST_HASH_MISMATCH')
+vite=json.loads((live/'.vite/manifest.json').read_text())
+hotwater_paths=[v['file'] for k,v in vite.items() if k.startswith('src/assets/hotwater/') and k.endswith('.glb')]
+need(len(hotwater_paths)=={BASELINE_HOTWATER_GLB} and len(set(hotwater_paths))=={BASELINE_HOTWATER_GLB} and all(n in files for n in hotwater_paths),'BASELINE_HOTWATER_ASSET_INVENTORY_MISMATCH')
 neighbors={{n:sha(root/n) for n in ['.htaccess','index.php','index.html','kaskad/index.html'] if (root/n).is_file()}}
-print(json.dumps({{'capturedUtc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'version':version,'indexSha256':files['index.html'],'manifestSha256':files['DEPLOY_MANIFEST.json'],'files':files,'neighbors':neighbors}}))
+print(json.dumps({{'capturedUtc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'version':version,'indexSha256':files['index.html'],'manifestSha256':files['DEPLOY_MANIFEST.json'],'files':files,'hotwaterPaths':sorted(hotwater_paths),'neighbors':neighbors}}))
 ''')
 
 
 def prepare(args):
     require(not (p.OUT / 'prepared.json').exists(), 'PREPARATION_EXISTS_USE_NEW_VERSION_OR_REVIEW_EXISTING_EVIDENCE')
-    manifest_hash, files, catalog, new_paths = local_candidate()
+    manifest_hash, files, catalog, water_paths = local_candidate()
     if args.baseline_index_sha:
         require(re.fullmatch(r'[0-9a-f]{64}', args.baseline_index_sha), 'INVALID_BASELINE_INDEX_SHA256')
     before = baseline_snapshot(args.baseline_index_sha)
-    preservation = validate_glbs(before['files'], files, new_paths)
+    preservation = validate_glbs(before['files'], files, water_paths, before['hotwaterPaths'])
     validate_mail_api(before['files'], files)
     p.save('before.json', before)
     backup = p.OUT / 'previous-publication.tar.gz'
@@ -214,12 +228,12 @@ def prepared_candidate():
     prepared = read_json(p.OUT / 'prepared.json')
     before = read_json(p.OUT / 'before.json')
     require(prepared['beforeSha256'] == p.sha((p.OUT / 'before.json').read_bytes()), 'BASELINE_EVIDENCE_CHANGED')
-    manifest_hash, files, catalog, new_paths = local_candidate()
+    manifest_hash, files, catalog, water_paths = local_candidate()
     require(prepared['version'] == p.VERSION and prepared['manifestSha256'] == manifest_hash, 'CANDIDATE_CHANGED_SINCE_PREPARE')
     require(prepared['catalogSha256'] == p.sha((p.REPO / 'src/assets/hotwater/catalog.json').read_bytes()), 'CATALOG_CHANGED_SINCE_PREPARE')
     require(prepared['baselineIndexSha256'] == before['files']['index.html'], 'BASELINE_EVIDENCE_MISMATCH')
     require(p.sha((p.OUT / 'previous-publication.tar.gz').read_bytes()) == prepared['backupSha256'], 'LOCAL_BACKUP_CHANGED')
-    validate_glbs(before['files'], files, new_paths)
+    validate_glbs(before['files'], files, water_paths, before['hotwaterPaths'])
     validate_mail_api(before['files'], files)
     return prepared, before, files, catalog
 
@@ -343,7 +357,7 @@ def validate_reports(reports, manifest_hash, catalog, catalog_hash):
             require(report.get('pageErrors' if name == 'models' else 'errors') == [], 'REPORT_HAS_ERRORS: ' + name)
     models = reports['models']
     require(models.get('result') == 'PASS' and models.get('expectedModels') == EXPECTED_MODELS
-            and models.get('checkedModels') == EXPECTED_MODELS and not models.get('failures'), 'ALL_48_MODELS_NOT_VERIFIED')
+            and models.get('checkedModels') == EXPECTED_MODELS and not models.get('failures'), f'ALL_{EXPECTED_MODELS}_MODELS_NOT_VERIFIED')
     require(models.get('catalogSha256') == catalog_hash, 'MODEL_REPORT_CATALOG_MISMATCH')
     expected = {row['id']: row for row in catalog['models']}
     require(len(models['models']) == EXPECTED_MODELS and {row['id'] for row in models['models']} == set(expected), 'MODEL_REPORT_ID_MISMATCH')
@@ -353,7 +367,9 @@ def validate_reports(reports, manifest_hash, catalog, catalog_hash):
     lifecycle = reports['lifecycle']
     require(lifecycle.get('result') == 'PASS' and len(set(lifecycle.get('checks', []))) == 6, 'SIX_LIFECYCLE_CHECKS_REQUIRED')
     browser = reports['browser']
-    require(browser.get('result') == 'PASS' and {row['family'] for row in browser.get('families', [])} == {'cla', 'e', 'e-long'}
+    expected_families = {row['family'] for row in catalog['models']}
+    require(browser.get('result') == 'PASS' and {row['family'] for row in browser.get('families', [])} == expected_families
+            and len(browser.get('families', [])) == len(expected_families)
             and len(browser.get('selectedAccessories', [])) == 5 and browser.get('idleFrames', 999) <= 3, 'HOTWATER_BROWSER_CHECKS_REQUIRED')
     sections = reports['sections']
     require(sections.get('result') == 'PASS' and sections.get('testCount') == sections.get('passed') == 4
@@ -463,7 +479,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     actions = parser.add_subparsers(dest='command', required=True)
     prep = actions.add_parser('prepare', help='Read live baseline and save a verified local backup; no server writes')
-    prep.add_argument('--baseline-index-sha', help='Explicit live index SHA256; otherwise require baseline version 2026.10.12.1')
+    prep.add_argument('--baseline-index-sha', help='Explicit live index SHA256; otherwise require baseline version ' + BASELINE_VERSION)
     actions.add_parser('stage', help='Create only the separate versioned stage using a verified delta')
     actions.add_parser('verify-stage', help='Read stage/live hashes and GET static stage files; no API requests')
     actions.add_parser('verify-live', help='Read live/backup/neighbor hashes and GET static live files; no API requests')

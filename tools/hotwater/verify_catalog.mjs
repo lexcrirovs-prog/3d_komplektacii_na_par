@@ -8,6 +8,11 @@ const catalogBuffer=await readFile(resolve(root,'catalog.json'));
 const catalog=JSON.parse(catalogBuffer);
 assert.equal(catalog.models.length,48,'All 48 selected assemblies must be shipped');
 assert.equal(catalog.accessories.length,9,'All 9 accessory derivatives must be shipped');
+// 20.10.2026 · Codex / GPT-6. Preserve old URLs while separating the owner's series.
+const selection=JSON.parse(await readFile('docs/hotwater/source-selection.json','utf8'));
+assert.deepEqual(catalog.models.map(m=>m.id).sort(),selection.records.map(m=>m.id).sort(),'Source and UI model IDs must agree');
+assert.deepEqual(Object.fromEntries(['cla','e','e-long','e-single'].map(f=>[f,catalog.models.filter(m=>m.family===f).length])),
+ {cla:27,e:12,'e-long':1,'e-single':8},'Incorrect commercial series mapping');
 const ids=new Set(),rows=[];
 for(const item of [...catalog.models,...catalog.accessories]){
  assert(!ids.has(item.id),'Duplicate ID '+item.id);ids.add(item.id);
@@ -31,13 +36,22 @@ for(const item of [...catalog.models,...catalog.accessories]){
   assert(Math.abs(door.angle)>1 && Math.abs(door.angle)<Math.PI,'Door angle must be radians');
  }
  if(item.family){
+  const selected=selection.records.find(row=>row.id===item.id);
+  for(const key of ['family','label','variant','executionMapping','sourceSha256','sourceRelativePath','operatingPressureMpa','maxWaterTemperatureC','waterExecution'])
+   assert.equal(item[key],selected[key],'Source/catalog classification mismatch: '+item.id+' '+key);
+  if(item.family==='e'){
+   const high=item.id.endsWith('-10');
+   assert.equal(item.operatingPressureMpa,high?1:0.6,'Owner-confirmed pressure: '+item.id);
+   assert.equal(item.maxWaterTemperatureC,high?150:115,'Owner-confirmed temperature: '+item.id);
+   assert.equal(item.waterExecution,high?'superheated':'hot-water','Owner-confirmed water execution: '+item.id);
+  }
   assert(/^[a-f0-9]{64}$/.test(item.sourceSha256),'Missing source SHA256');
   assert(item.doors?.length>=1,'Missing door configuration '+item.id);
-  assert.equal(item.doors.length,item.family==='e-long'?2:1,'Incorrect independent door count '+item.id);
+  assert.equal(item.doors.length,['e','e-long'].includes(item.family)?2:1,'Incorrect independent door count '+item.id);
  }
  rows.push({id:item.id,bytes:bytes.length,nodes:gltf.nodes.length,meshes:gltf.meshes.length,doors:item.doors?.length||0});
 }
 assert(catalogBuffer.length<160_000,'Manifest must remain lightweight');
-const report={status:'PASSED_LOCAL',date:'2026-10-19',executor:'Codex / GPT-6',models:catalog.models.length,accessories:catalog.accessories.length,catalogBytes:catalogBuffer.length,totalModelBytes:rows.reduce((s,r)=>s+r.bytes,0),maxSelectedModelBytes:Math.max(...rows.map(r=>r.bytes)),rows};
+const report={status:'PASSED_LOCAL',date:'2026-10-20',executor:'Codex / GPT-6',models:catalog.models.length,accessories:catalog.accessories.length,catalogBytes:catalogBuffer.length,totalModelBytes:rows.reduce((s,r)=>s+r.bytes,0),maxSelectedModelBytes:Math.max(...rows.map(r=>r.bytes)),rows};
 if(process.argv[2])await writeFile(process.argv[2],JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));

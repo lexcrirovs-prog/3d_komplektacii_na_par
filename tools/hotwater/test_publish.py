@@ -1,4 +1,4 @@
-"""19.10.2026 · Codex / GPT-6. Pure gates only; never contacts SSH/HTTP."""
+"""20.10.2026 · Codex / GPT-6. Pure gates only; never contacts SSH/HTTP."""
 import copy
 from contextlib import redirect_stdout
 import ctypes
@@ -18,15 +18,17 @@ spec.loader.exec_module(publisher)
 
 
 def reports_fixture():
-    catalog = {'models': [{'id': str(i), 'doors': [{}]} for i in range(48)]}
-    model_rows = [dict(id=str(i), calls=100, triangles=50000, doors=1, hinges=['door_hinge_0'], downloads=['asset.glb']) for i in range(48)]
+    families = ['cla', 'e', 'e-long', 'e-single']
+    model_count = publisher.EXPECTED_MODELS
+    catalog = {'models': [{'id': str(i), 'family': families[i % len(families)], 'doors': [{}]} for i in range(model_count)]}
+    model_rows = [dict(id=str(i), calls=100, triangles=50000, doors=1, hinges=['door_hinge_0'], downloads=['asset.glb']) for i in range(model_count)]
     variant = dict(power=500, strainer={'center': [0, 0, 4.55]}, filterGap={'length': .35},
                    spacer={'overallLength': .2, 'triangleCount': 1000}, discharges=[{'end': [0, 8.5, 0]}], gl={'shaderErrors': 0})
     powers = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 5000, 4000, 4000, 4000, 4000]
     reports = {
-        'models': dict(result='PASS', expectedModels=48, checkedModels=48, catalogSha256='catalog', models=model_rows, failures=[], pageErrors=[]),
+        'models': dict(result='PASS', expectedModels=model_count, checkedModels=model_count, catalogSha256='catalog', models=model_rows, failures=[], pageErrors=[]),
         'lifecycle': dict(result='PASS', checks=[str(i) for i in range(6)]),
-        'browser': dict(result='PASS', families=[{'family': f} for f in ['cla', 'e', 'e-long']], selectedAccessories=[str(i) for i in range(5)], idleFrames=0),
+        'browser': dict(result='PASS', families=[{'family': f} for f in families], selectedAccessories=[str(i) for i in range(5)], idleFrames=0),
         'sections': dict(result='PASS', testCount=4, passed=4, failed=0, checks=[str(i) for i in range(4)]),
         'steam': dict(status='PASSED_CONFIGURATION_20261012', variants=[dict(copy.deepcopy(variant), power=power) for power in powers],
                       trimTransitions=True, quotePreview=True, urlRoundtrip=True, spacerDoorAttached=True),
@@ -37,6 +39,41 @@ def reports_fixture():
 
 
 class PublishGates(unittest.TestCase):
+    def test_baseline_snapshot_uses_exact_private_vite_water_inventory(self):
+        with TemporaryDirectory() as folder:
+            root = Path(folder).resolve(); live = root / 'live'; live.mkdir()
+            (live / 'assets').mkdir(); (live / '.vite').mkdir()
+            (live / 'index.html').write_bytes(b'baseline')
+            (live / 'version.json').write_text(json.dumps({'version': publisher.BASELINE_VERSION}))
+            for name in ['water-a.glb', 'water-b.glb', 'steam.glb']:
+                (live / 'assets' / name).write_bytes(name.encode())
+            vite = {
+                'src/assets/hotwater/water-a.glb': {'file': 'assets/water-a.glb'},
+                'src/assets/hotwater/water-b.glb': {'file': 'assets/water-b.glb'},
+                'src/assets/steam.glb': {'file': 'assets/steam.glb'},
+            }
+            def write_manifest():
+                (live / '.vite/manifest.json').write_text(json.dumps(vite))
+                files = [{'path': file.relative_to(live).as_posix(), 'sha256': publisher.p.sha(file.read_bytes())}
+                         for file in live.rglob('*') if file.is_file() and file.name != 'DEPLOY_MANIFEST.json']
+                (live / 'DEPLOY_MANIFEST.json').write_text(json.dumps({
+                    'release': {'version': publisher.BASELINE_VERSION}, 'files': files}))
+            def local_remote(code):
+                stream = io.StringIO()
+                with redirect_stdout(stream):
+                    exec(code, {})
+                return json.loads(stream.getvalue())
+            write_manifest()
+            with patch.multiple(publisher.p, ROOT=str(root), LIVE=str(live), STAGE=str(root / 'stage'),
+                                BACKUP=str(root / 'backup')), patch.object(publisher, 'HELD', str(root / 'held')), \
+                 patch.object(publisher, 'BASELINE_HOTWATER_GLB', 2), patch.object(publisher.p, 'remote', side_effect=local_remote):
+                snapshot = publisher.baseline_snapshot(None)
+                self.assertEqual(snapshot['hotwaterPaths'], ['assets/water-a.glb', 'assets/water-b.glb'])
+                vite['src/assets/hotwater/water-b.glb']['file'] = 'assets/water-a.glb'
+                write_manifest()
+                with self.assertRaisesRegex(RuntimeError, 'BASELINE_HOTWATER_ASSET_INVENTORY'):
+                    publisher.baseline_snapshot(None)
+
     def test_directory_exchange_flow_and_error_recovery_on_local_fixtures(self):
         # The platform primitive is mocked on Windows. Execute the actual remote
         # script bodies against disposable directories to check drift/recovery.
@@ -89,20 +126,49 @@ class PublishGates(unittest.TestCase):
                             publisher.cutover(SimpleNamespace())
                         self.assertEqual(exchanges,[]);self.assertTrue(stage.is_dir())
 
-    def test_preserves_100_old_and_adds_only_57_known_glb(self):
-        before = {'assets/old-%d.glb' % i: 'old-%d' % i for i in range(100)}
-        # Keys are intentionally unique; all old path/hash pairs must survive.
-        new = {'assets/new-%d.glb' % i: 'new-%d' % i for i in range(57)}
-        self.assertEqual(publisher.validate_glbs(before, dict(before, **new), set(new))['totalGlb'], 157)
-        changed = dict(before, **new); changed['assets/old-1.glb'] = 'modified'
+    def test_preserves_157_existing_glb_without_new_geometry_for_label_release(self):
+        steam = {'assets/steam-%d.glb' % i: 'steam-%d' % i for i in range(100)}
+        water = {'assets/water-%d.glb' % i: 'water-%d' % i for i in range(57)}
+        before = dict(steam, **water)
+        self.assertEqual(publisher.validate_glbs(before, before, set(water), set(water)), dict(preservedGlb=157, addedGlb=0, totalGlb=157))
+        changed = dict(before); changed['assets/water-1.glb'] = 'modified'
         with self.assertRaisesRegex(RuntimeError, 'EXISTING_GLB_CHANGED'):
-            publisher.validate_glbs(before, changed, set(new))
-        with self.assertRaisesRegex(RuntimeError, 'EXACTLY_57'):
-            publisher.validate_glbs(before, dict(before, **new, unexpected='not a glb', **{'assets/rogue.glb': 'x'}), set(new))
+            publisher.validate_glbs(before, changed, set(water), set(water))
+        with self.assertRaisesRegex(RuntimeError, 'UNEXPECTED_NEW_GLB'):
+            publisher.validate_glbs(before, dict(before, **{'assets/rogue.glb': 'x'}), set(water), set(water))
+        missing = dict(before);missing.pop('assets/steam-1.glb')
+        with self.assertRaisesRegex(RuntimeError, 'EXISTING_GLB_CHANGED'):
+            publisher.validate_glbs(before, missing, set(water), set(water))
+        with self.assertRaisesRegex(RuntimeError, 'BASELINE_HOTWATER_ASSET_INVENTORY'):
+            publisher.validate_glbs(before, before, set(water), set(water) - {'assets/water-1.glb'})
+
+    def test_new_model_requires_explicit_scope_and_exact_catalog_asset(self):
+        steam = {'assets/steam-%d.glb' % i: 'steam-%d' % i for i in range(100)}
+        water = {'assets/water-%d.glb' % i: 'water-%d' % i for i in range(57)}
+        before = dict(steam, **water); candidate = dict(before, **{'assets/original-e.glb': 'new'})
+        catalog_paths = set(water) | {'assets/original-e.glb'}
+        with self.assertRaisesRegex(RuntimeError, 'HOTWATER_ASSET_COUNT_MISMATCH'):
+            publisher.validate_glbs(before, candidate, catalog_paths, set(water))
+        with patch.object(publisher, 'EXPECTED_MODELS', 49):
+            self.assertEqual(publisher.validate_glbs(before, candidate, catalog_paths, set(water))['addedGlb'], 1)
+            with self.assertRaisesRegex(RuntimeError, 'CATALOG_GLB_MISSING'):
+                publisher.validate_glbs(before, before, catalog_paths, set(water))
+            with self.assertRaisesRegex(RuntimeError, 'BASELINE_HOTWATER_CATALOG_CHANGED'):
+                publisher.validate_glbs(before, candidate, (catalog_paths - {'assets/water-1.glb'}) | {'assets/steam-1.glb'}, set(water))
 
     def test_valid_evidence(self):
         reports, catalog = reports_fixture()
         publisher.validate_reports(reports, 'candidate', catalog, 'catalog')
+
+    def test_browser_must_cover_every_family_exactly_once(self):
+        reports, catalog = reports_fixture()
+        reports['browser']['families'].pop()
+        with self.assertRaisesRegex(RuntimeError, 'HOTWATER_BROWSER_CHECKS_REQUIRED'):
+            publisher.validate_reports(reports, 'candidate', catalog, 'catalog')
+        reports, catalog = reports_fixture()
+        reports['browser']['families'].append(reports['browser']['families'][0])
+        with self.assertRaisesRegex(RuntimeError, 'HOTWATER_BROWSER_CHECKS_REQUIRED'):
+            publisher.validate_reports(reports, 'candidate', catalog, 'catalog')
 
     def test_mail_api_requires_byte_identical_tree(self):
         before={'api/request-quote.php':'original','api/.htaccess':'headers','index.html':'old'}

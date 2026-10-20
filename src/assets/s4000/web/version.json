@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.19.2",
-  "date": "2026-10-19",
+  "version": "2026.10.20.1",
+  "date": "2026-10-20",
   "executor": "Codex / GPT-6",
   "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
   "source_blend_commit": "ece59f86446be5c2d23443f8c08ba642e314bddb",
@@ -33,14 +33,15 @@
   "cascade_cabinet": "optional_nonstandard_multiple_boilers",
   "sections": {
     "hotwater": {
-      "version": "2026.10.19.2",
+      "version": "2026.10.20.1",
       "families": [
-        "CLA",
-        "E",
-        "E Long"
+        "C",
+        "E — две двери",
+        "E Long — тепличные",
+        "E — одна дверь"
       ],
       "separate_lazy_loading": true,
-      "source_mapping": "commercial_execution_labels_pending",
+      "source_mapping": "owner_confirmed_20261020",
       "model_count": 48
     },
     "steam": {

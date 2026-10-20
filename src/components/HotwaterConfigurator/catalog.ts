@@ -6,6 +6,7 @@ export type WaterModel = {
   id: string; family: string; label: string; powerKw: number; variant: string;
   sourceFile: string; sourceRelativePath: string; sourceSha256: string;
   asset: string; bytes: number; triangles: number; dimensionsM: Point;
+  operatingPressureMpa?: number; maxWaterTemperatureC?: number; waterExecution?: string;
   doors?: {node: string; pivot: Point; axis: Point; angle: number; label: string}[];
 }
 export type WaterAccessory = {
@@ -31,9 +32,12 @@ export function assetUrl(file:string) {
   return url
 }
 export const families = [
-  {id:'cla', label:'PREMIUM CLA', short:'CLA', description:'Двухходовые котлы'},
-  {id:'e', label:'PREMIUM E', short:'E', description:'Трёхходовые · цельная дверь'},
-  {id:'e-long', label:'PREMIUM E Long', short:'E Long', description:'Трёхходовые · две створки'},
+  // 20.10.2026 · Codex / GPT-6. Commercial series confirmed by the owner;
+  // source filenames and existing model IDs remain unchanged.
+  {id:'cla', label:'PREMIUM C', short:'C', description:'Двухходовые котлы · одна дверь'},
+  {id:'e', label:'PREMIUM E', short:'E · 2 двери', description:'Две распашные двери'},
+  {id:'e-long', label:'PREMIUM E Long', short:'E Long', description:'Для тепличных хозяйств · две двери'},
+  {id:'e-single', label:'PREMIUM E', short:'E · 1 дверь', description:'Трёхходовые · одна дверь'},
 ]
 export const categories = [
   {id:'safety', label:'Сбросные клапаны', text:'Защита водяного контура от превышения давления.'},

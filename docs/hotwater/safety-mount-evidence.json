@@ -1,0 +1,2128 @@
+{
+  "version": "2026.10.20",
+  "executor": "Codex / GPT-6",
+  "status": "SOURCE_MOUNTING_FACES_VERIFIED",
+  "coordinates": "Original model GLB coordinates, metres, Y-up; apply the viewer's model-root translation afterward.",
+  "modelCount": 48,
+  "mountCount": 69,
+  "limits": [
+    "Mount counts are existing CAD attachment nozzles, not an independent safety-valve capacity or quantity calculation.",
+    "Flange DN/PN are copied from native source part names; they do not establish compatibility of the illustrative valve.",
+    "Existing illustrative valve has a DN40-size inlet. Other source flange sizes require separately selected geometry or explicit visual-fit treatment.",
+    "Outlet direction is an explicit display choice, not a source-documented discharge route."
+  ],
+  "derivation": "Native standard flange SOLID local X=0 transformed by source matrixWorld. Validated -localX=[0,1,0], local minX=0, upper face=world maxY, stable source occurrence and original hashes. No source geometry scaling.",
+  "evidence": [
+    {
+      "identification": "manual-position-5-and-CAD-nozzle-code",
+      "documents": [
+        {
+          "relativePath": "6. котлы Premium CLA/2. Котлы CLA на шовной трубе 51/11. PREMIUM-CLA-3500/PR.3500.01.001 РЭ Руководство по монтажу и эксплуатации.pdf",
+          "pages": [
+            6,
+            7
+          ],
+          "proof": "Upper single relief-valve nozzle; longitudinal section position 5 lies between inlet and outlet nozzles."
+        }
+      ],
+      "scope": "Family manual role plus exact per-model assembly code, native flange name and geometry; not a valve capacity selection."
+    },
+    {
+      "identification": "explicit-source-assembly-name",
+      "proof": "Two STEP assemblies explicitly named 'Штуцер предохранительного клапана', each containing its pipe and native flange."
+    },
+    {
+      "identification": "general-drawing-relief-nozzle-label-and-CAD-code",
+      "documents": [
+        {
+          "relativePath": "3. котлы водогрейные трехходовые Premium E (Long)/PREMIUM-E-2500/PREMIUM-E-2500 (от 10.07.2025)/Чертежи PDF/PR.2500.01.001(Е)СБ Общий вид.pdf",
+          "pages": [
+            1
+          ],
+          "proof": "General drawing labels two upper nozzles 'Предохранительные клапана', with DN and PN matching the source flange names."
+        }
+      ]
+    },
+    {
+      "identification": "general-drawing-relief-nozzle-label-and-CAD-code",
+      "documents": [
+        {
+          "relativePath": "3. котлы водогрейные трехходовые Premium E (Long)/PREMIUM-E-3500/PREMIUM-E-3500 (от 10.07.2025)/Чнртежи PDF/PR.3500.01.001(Е)СБ Общий вид.pdf",
+          "pages": [
+            1
+          ],
+          "proof": "General drawing labels two upper nozzles 'Предохранительные клапана', with DN and PN matching the source flange names."
+        }
+      ]
+    },
+    {
+      "identification": "general-drawing-relief-nozzle-label-and-CAD-code",
+      "documents": [
+        {
+          "relativePath": "3. котлы водогрейные трехходовые Premium E (Long)/PREMIUM-E-4000/PREMIUM-E-4000 (от 10.07.2025)/Чертежи PDF/PR.4000.01.001(Е)СБ Общий вид.pdf",
+          "pages": [
+            1
+          ],
+          "proof": "General drawing labels two upper nozzles 'Предохранительные клапана', with DN and PN matching the source flange names."
+        }
+      ]
+    },
+    {
+      "identification": "general-drawing-relief-nozzle-label-and-CAD-code",
+      "documents": [
+        {
+          "relativePath": "3. котлы водогрейные трехходовые Premium E (Long)/PREMIUM-E-5000/PREMIUM-E-5000 (от 10.07.2025)/Чертежи PDF/PR.5000.01.001(Е)СБ Общий вид.pdf",
+          "pages": [
+            1
+          ],
+          "proof": "General drawing labels two upper nozzles 'Предохранительные клапана', with DN and PN matching the source flange names."
+        }
+      ]
+    },
+    {
+      "identification": "general-drawing-relief-nozzle-label-and-CAD-code",
+      "documents": [
+        {
+          "relativePath": "3. котлы водогрейные трехходовые Premium E (Long)/PREMIUM-E-6000/PREMIUM-E-6000 (от 10.07.2025)/Чертежи PDF/PR.6000.01.001(Е)СБ Общий вид.pdf",
+          "pages": [
+            1
+          ],
+          "proof": "General drawing labels two upper nozzles 'Предохранительные клапана', with DN and PN matching the source flange names."
+        }
+      ]
+    },
+    {
+      "identification": "general-drawing-relief-nozzle-label-and-CAD-code",
+      "documents": [
+        {
+          "relativePath": "3. котлы водогрейные трехходовые Premium E (Long)/PREMIUM-E-7000/PREMIUM-E-7000 (от 10.07.2025)/Чертежи PDF/PR.7000.01.001(Е)СБ Общий вид.pdf",
+          "pages": [
+            1
+          ],
+          "proof": "General drawing labels two upper nozzles 'Предохранительные клапана', with DN and PN matching the source flange names."
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "cla-250-51",
+      "family": "cla",
+      "sourceSha256": "f4a9fa8d37f1296dd01f20a26ea472bae980426360299b0ffe439194089fd60e",
+      "assetSha256": "d415ad32e32223b05f2b7e02f57318ffed856f664f05a3eb959ac8316a56aeed",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.575,
+            0.428
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 32-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 32,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-250-57",
+      "family": "cla",
+      "sourceSha256": "78a5ad910b22f28b0281933f86837259aa911dba5f096002c40ff1ca9baea9af",
+      "assetSha256": "c9c12910ab27cfbe73558b1bcb5b94c7948e80c86e120b4f25803343fd6de7f1",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.575,
+            0.428
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 32-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 32,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-500-51",
+      "family": "cla",
+      "sourceSha256": "2cc48a5058ce65d88afdfde1a30bf177479dbb7f3205439a448e903c7d0ca195",
+      "assetSha256": "50e7bf4803e461a20198e05c8a99fb301006e04e6ca43fba6c7451a965cb9810",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.675,
+            0.553
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 40-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 40,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-500-57",
+      "family": "cla",
+      "sourceSha256": "e3e15f6030fb4dff20a517f37f9432e249e079018977d85b7a8442b9b649891c",
+      "assetSha256": "00a97aa71688f406648267ff2c13090876969ba51e6fdae9c8c45852444dd002",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.675,
+            0.553
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 40-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 40,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-750-51",
+      "family": "cla",
+      "sourceSha256": "8db8f9d80a0d4a193ca58bcc6d566f327d4dd1f466bfe97aa868b9bd4a068c63",
+      "assetSha256": "fdb5f805c812e5fc3f0e10485a2e15c84688ab3a41e405e042cd1f36692210af",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.75,
+            0.58
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 40-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 40,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-750-57",
+      "family": "cla",
+      "sourceSha256": "b7e8a71ca3473575f8971d7e8b18a4cb7d4dfccc8df4c3feabcbdb48908122ce",
+      "assetSha256": "5ce10492fa4e67b7d2705d43f110455f231a9e404faa72a20b28aff0f1c58b89",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.75,
+            0.58
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 40-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 40,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1000-51",
+      "family": "cla",
+      "sourceSha256": "587bb88a4ff0a8174120e464cdacfe044e00a1d4495a5df795a6bbee5b373560",
+      "assetSha256": "0469bd2ce1d2ab65bf376cc7c8bbe11a9f533e8496cf5f66bf42dfee40e02e34",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.8,
+            0.645
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:2",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1000-57",
+      "family": "cla",
+      "sourceSha256": "86f65472c5f76358d3834a54a40adf7f7f5fa2c7352e495f640b3765c7be9eab",
+      "assetSha256": "4202b3930a232ff27ffd2de1040b037830c4409fff74b9ae8ba7dc18a9e32628",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.8,
+            0.645
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:2",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1250-51",
+      "family": "cla",
+      "sourceSha256": "436ea798310a1e7416768d4cfe88f8b7eccaa775f85abee0a5fc8e08e3c71eb6",
+      "assetSha256": "c468c678e7e085532c329770fbf1a60a5955772a0a7eba1f09504832fdcdcd9b",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.8,
+            0.785
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.002СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1250-57",
+      "family": "cla",
+      "sourceSha256": "75828d488d0ccf66cf5b103a69754a2baac50243c928d5340c2e07782e34304d",
+      "assetSha256": "dddaec0b83a71970cada8f385087c69700ac5bb0c473546928c5fb96999445a3",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.8,
+            0.785
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.002СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1500-51",
+      "family": "cla",
+      "sourceSha256": "1512ef7075a8c500d2151d05edd5f4abbe276c463feed149f51a834939f986d4",
+      "assetSha256": "c4405d5fb5d26f2599b3506fb3094a1572a71d1b2b7710c6eb9677a18432ca4f",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.875,
+            0.805
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1500-57",
+      "family": "cla",
+      "sourceSha256": "2810a8c9e0cfcf0feeb765b0f634563dbe4a7c818402f14bd1478999e225487a",
+      "assetSha256": "63ff8be7d8a5ae05fa2f6250a18e0760a2ba6093e106aa3f34316ba27715e1ac",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.875,
+            0.805
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1750-51",
+      "family": "cla",
+      "sourceSha256": "973c7a0677534375d9eb94c29776fc533e18a1c4bd94c1c41ce58dfe17f993a9",
+      "assetSha256": "272688ea8b90dce8623dc8b4d2c577533c9540e815f4f33c6f8ef75c746125a8",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.875,
+            0.855
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-1750-57",
+      "family": "cla",
+      "sourceSha256": "2f21cadf3ce8fb34a81e0257f21ee47c0a74e7dd5cc43294df376c4ab4c4bde5",
+      "assetSha256": "9d2eb95afe4c86acbb91c8119da6a52bfcbe9afd69f33562be1f48cca34e67e2",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.875,
+            0.855
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-2000-51",
+      "family": "cla",
+      "sourceSha256": "a3aca0211cedd0296f1d94a339c8cd7f4d389151266f583b7265ce06f45defc1",
+      "assetSha256": "8c69492efb7a59dcef15c136a767f650c035af0a26c781c8bd4b3f7222b46e8e",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.975,
+            0.93
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-2000-57",
+      "family": "cla",
+      "sourceSha256": "e261a87c9a5038ea8600fb6630c52a4a35d570a8c78cc8beb7107b8e98b478a2",
+      "assetSha256": "f6f3648189447c4262b5e3454aafb6eb0df2e5eecb047741eb357cdccb05b45e",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.975,
+            0.93
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-2500-51",
+      "family": "cla",
+      "sourceSha256": "12da7df420e7c8e7f9bf3c0840824a8fe05c6b987011870b5aef86c7f0c94244",
+      "assetSha256": "c2a4de5aff1eb8f051efd5a478c8ae54a2c709904563d0444bf13fa40e632f9b",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.975,
+            1.01
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-2500-57",
+      "family": "cla",
+      "sourceSha256": "04ce7231be2491ec96340d787a392a4c7ab2c66fec7d8ae06bbc8901254d338d",
+      "assetSha256": "32b4ce09107f6d1422135c202771771f32f53bcdc5d849a9e8d975c135a1721f",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.975,
+            1.01
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-3000-51",
+      "family": "cla",
+      "sourceSha256": "68529a339b39811151a21ba50b1120828053380e80bc354ae33f3429676161bc",
+      "assetSha256": "c9412b3b9ac7109e19c4bf1e0a3b3f8e1184d9fd0763491f6fe3b07be4c103d6",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.05,
+            0.985
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-3000-51-dn150",
+      "family": "cla",
+      "sourceSha256": "f2a45b15284fe593b36b919e031dfab1e2e5bd145956e5b9e939df5f72e2f6fa",
+      "assetSha256": "de2c8a1d08bfa29efb13c28299d598b0ad5fe0c69946d6269077fe0be420d603",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            0.945,
+            1.275
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.031СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-3000-57",
+      "family": "cla",
+      "sourceSha256": "0504d46c66f64878f765709575e284a0b304b7676485661d49513abce92e91bd",
+      "assetSha256": "aa87dba4af15acea18a142e0888ff418a6c43acd6d6fd67236ac36f895e77ec0",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.05,
+            0.985
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-3500-51",
+      "family": "cla",
+      "sourceSha256": "a87842c52e50b99b1fcd32b59e31e60cb91f849fa367217add036c7a60258f82",
+      "assetSha256": "61340e35a8146054cf987eb2309fa23b114deecbbe71e783c8361cd16e216d94",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.05,
+            1.21
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-3500-57",
+      "family": "cla",
+      "sourceSha256": "df60498c1380342a3ae726f44fadee0f822d9376ed5cf84f2da8e63a0a6f480e",
+      "assetSha256": "28f700174401e9fed5f23b909c8eecf290a3b0a849021c4fc65a5cdb3e3fcc4a",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.05,
+            1.21
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-4000-51",
+      "family": "cla",
+      "sourceSha256": "6cd1933dd50a72dc9d009d7916d146aeca1080b546e5bd8b9913cad82eae4936",
+      "assetSha256": "f3c7698eede09d50d790e175d4b058fbe6f3bbeb3d8dfe6042df90a48d3888be",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.1,
+            1.48
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-4000-57",
+      "family": "cla",
+      "sourceSha256": "ca9d825ac4375dde7c31e9dc465edd253bbf980e45adc719c8d871eb8ee852ea",
+      "assetSha256": "b3b36a3e9ddf8259c904e8140406e41958da9c406d001997bec309eadcc50765",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.1,
+            1.48
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-5000-51",
+      "family": "cla",
+      "sourceSha256": "eef0a833ad73a4469194e7ddf8381d8d1ef7bc34a08c385b54d6da0cc57eea5f",
+      "assetSha256": "73b84192cfaf6e2b5875648b199055400f0a615a6c8c0a63d16497719d21f45b",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.285,
+            1.541
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.038СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "cla-6000-51",
+      "family": "cla",
+      "sourceSha256": "1e3f16ccb819815b733fee8a0c4b8472013da57086aeb55ebd6656564edfded2",
+      "assetSha256": "91bab1ff4b021c535260db055bb201bea2bfbff51b480201b1ebaf0f456907b0",
+      "evidenceIndex": 0,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.285,
+            1.771
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.038СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-10-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-1000-20260925",
+      "family": "e-single",
+      "sourceSha256": "14dc8f1f9e7c94500d306d8494ab2b4dc958019397214fc7daf7c792d996c3f8",
+      "assetSha256": "a195787d17e2b9bfb070752d888fae373c54a511088310eae0e0b63365f70343",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.95,
+            -0.9
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            0.95,
+            -0.5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-1500-20260925",
+      "family": "e-single",
+      "sourceSha256": "bf396c2695aeae49687ca0c165ee6bf615a1bf82768e8f8c4f81e90113c5368f",
+      "assetSha256": "988a85cfeed8368ba348696ed5fe3779ff629c200f7a296e27a7e6cb59dd56cc",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            0.95,
+            -0.9
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:16:3",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            0.95,
+            -0.5
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:16:5",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-2000-20260925",
+      "family": "e-single",
+      "sourceSha256": "541ceb7399ae46bde490869c8944693a903078888df7f4d62d8526d9561f5300",
+      "assetSha256": "8f54d410975df3f1b7c97c04a5d2d1fa826afae8d92ee69484b683ee0dff0aa9",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.02,
+            -1.05
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            1.02,
+            -0.6
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-2500-20260925",
+      "family": "e-single",
+      "sourceSha256": "9ebfecb9e5f3b70d8f867cba1d5afe0cdc53af34e26550223822bd59f45c24c2",
+      "assetSha256": "c9c0bd34901b5eeab3d5985e8887f285b3d22c0bccd46dae03add56ccae73e3e",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.02,
+            -1.05
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            1.02,
+            -0.6
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-3000-20260925",
+      "family": "e-single",
+      "sourceSha256": "84dbda1876005da5b3d8486de65fd2907491262c668f54393c7f2a9314807801",
+      "assetSha256": "e39fe0ab070e3d5481ff6eda785a2383663c9d79149f7091926160ab2c899fd3",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.08,
+            -1.05
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            1.08,
+            -0.6
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-3500-20260925",
+      "family": "e-single",
+      "sourceSha256": "00e2a019fd0a84be56d29a6545f6d96509a5dcbc8d51c2662f8b1eb5fcf3e446",
+      "assetSha256": "f3432946ac3ee836948cdf1d98b00708c68c402d1fbd885882c6d9ddad876296",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.08,
+            -1.05
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:2",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            1.08,
+            -0.6
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:4",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-4000-20260925",
+      "family": "e-single",
+      "sourceSha256": "b78949fc2d724b7d05b41495e3771956878ce1c9b54b26452d66b29073d8b827",
+      "assetSha256": "aa32be7f622c11763bf15964f885eaf88536c53b2a02e977334ff9c625a1435f",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.2,
+            -1.2
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            1.2,
+            -0.7
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-5000-20260925",
+      "family": "e-single",
+      "sourceSha256": "15f62caad7f7c73ee45ccd0fc8558ff69dd7ec8cfb0da63ca50e0b67136bc01d",
+      "assetSha256": "14c87f1c4684f6ae70b9f06bdb3cfb437257536189ef17399c2de9471fddd653",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.2,
+            -1.2
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 10
+        },
+        {
+          "position": [
+            0.0,
+            1.2,
+            -0.7
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-10:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 10
+        }
+      ]
+    },
+    {
+      "id": "e-long-2500-06",
+      "family": "e",
+      "sourceSha256": "f1bd11886a89fd4054a47d41da50903956ea6940caf0f6e64bf3aa81393a6d57",
+      "assetSha256": "ef89b0b6de750ba3640c94ba1bd1f9cd0084281a1cb124858fa6936d6a657ac4",
+      "evidenceIndex": 2,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.19,
+            0.01
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.19,
+            0.31
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-2500-10",
+      "family": "e",
+      "sourceSha256": "51e6dd36340cb71002ba79bdb1eca930da9dd479c49789e41fe4e4d591749d4f",
+      "assetSha256": "cfc9632680cb6d72a8e24208f29c2b998d6d72d35838b9fbb3ef5121738cb7cf",
+      "evidenceIndex": 2,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.19,
+            0.01
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.19,
+            0.31
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-3500-06",
+      "family": "e",
+      "sourceSha256": "71dbf9aa30947320fb2feb9e0973fc05e059fc44e94a095897b59e96d870f515",
+      "assetSha256": "7111b75faac55481299250552fb42affc2ab0735d16c57a4f782b57d4af1339a",
+      "evidenceIndex": 3,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.21
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:3",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.51
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-3500-10",
+      "family": "e",
+      "sourceSha256": "4f8466effd1727ff636e39c695d0c96bcc5603df0dac94f6344a0c71595f92c8",
+      "assetSha256": "b354b2475aa56ee4e58adbbe574636e9db00c149ba31ce85da75bc8801ec1266",
+      "evidenceIndex": 3,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.21
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:3",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.51
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-3500-20260609-06",
+      "family": "e-long",
+      "sourceSha256": "45478e4546bb45d523220f5affe6d6e804efb847189b7bf0a407b2e0828bd478",
+      "assetSha256": "965d29a91a7e1b82939b590c64921abb2457567915d84366220286b0f2490415",
+      "evidenceIndex": 1,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.65,
+            -3.55
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:13:6",
+          "sourceName": "PR.400.01.01.005 СБ Штуцер предохранительного клапана:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            -0.0,
+            1.65,
+            -3.25
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:13:5",
+          "sourceName": "PR.400.01.01.005 СБ Штуцер предохранительного клапана:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-4000-06",
+      "family": "e",
+      "sourceSha256": "f8d7ddf81f3d4a218070f6160292a5671a936ec3611c7dbddbe2ee61afbefdca",
+      "assetSha256": "61e918c1533c987d58b9940030933de926bab8fc57695f8a4a5e0d46b28914f5",
+      "evidenceIndex": 4,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.305
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.605
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-4000-10",
+      "family": "e",
+      "sourceSha256": "06179a20d27cc686b20d73eb87eb186c8b4431716abd69a6b2b99470f6faa63b",
+      "assetSha256": "41e8431405cd3d7fff17fbba860f929e691b56f581624f52129b5f17df9fc0e2",
+      "evidenceIndex": 4,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.305
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.265,
+            0.605
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 50-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 50,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-5000-06",
+      "family": "e",
+      "sourceSha256": "2478651e60c22401d96267cda695e5622a97fae4bd7e5ec31f283427cb7f1e1d",
+      "assetSha256": "80ceb8a58918ad24b3f5a321f6b6e495e437dd5f4656ae2296ca3b9110c8bef3",
+      "evidenceIndex": 5,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.315,
+            -0.045
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:8",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            -0.0,
+            1.315,
+            0.255
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:3",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-5000-10",
+      "family": "e",
+      "sourceSha256": "bd01cf6a309c43c50f7172fc438723fb6b3f56b545b2efee324cdda92655cb08",
+      "assetSha256": "328a8f7d1ce13d49c665c0d8854d3b866da2c8d7b6cfd508bb648121e834d3f3",
+      "evidenceIndex": 5,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.315,
+            -0.045
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:8",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            -0.0,
+            1.315,
+            0.255
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:3",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-6000-06",
+      "family": "e",
+      "sourceSha256": "a6d99c86b89ff175739c156dd119c773eb709dde04077550fe0542eaded68a5a",
+      "assetSha256": "f50f9f7ec17b6f62fe3aa3f8664db9a7760643aaed738f71ad673965b6488b60",
+      "evidenceIndex": 6,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.315,
+            -0.105
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.315,
+            0.195
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:6",
+          "sourceName": "PR.400.01.025СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-6000-10",
+      "family": "e",
+      "sourceSha256": "3a371cd28e35cad6b5e0420457de869f525357d00ff91b835d782ec6c8bdf3a3",
+      "assetSha256": "ce798043f0cf03da97b6fe9e8c2e7440d771974dce0f5e2cb8b5408aad90587b",
+      "evidenceIndex": 6,
+      "mounts": [
+        {
+          "position": [
+            0.0,
+            1.315,
+            -0.105
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            0.0,
+            1.315,
+            0.195
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:14:6",
+          "sourceName": "PR.400.01.025СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 65-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 65,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-7000-06",
+      "family": "e",
+      "sourceSha256": "d4709164ef326e0c6f6cb4b5338d09f4a52dd8b00e155d67d241b1591e5be060",
+      "assetSha256": "e0c994e6e5edae3e2d3f4e603a27826f8dd4ad8cbd02afb38269a7bc2361de6f",
+      "evidenceIndex": 7,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.415,
+            0.05
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.029СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            -0.0,
+            1.415,
+            0.4
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:7",
+          "sourceName": "PR.400.01.029СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 16
+        }
+      ]
+    },
+    {
+      "id": "e-long-7000-10",
+      "family": "e",
+      "sourceSha256": "55e3ce764119fc3e2868f4a04cf5d60efd5f2a42c05ea513db6efb7e465a88b5",
+      "assetSha256": "fabcf300e93358cb379e3f2b0da96df79272b2dccf5d021ca0b6f95c68468dbc",
+      "evidenceIndex": 7,
+      "mounts": [
+        {
+          "position": [
+            -0.0,
+            1.415,
+            0.05
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.029СБ Штуцер:2",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 16
+        },
+        {
+          "position": [
+            -0.0,
+            1.415,
+            0.4
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "outletDirection": [
+            -1,
+            0,
+            0
+          ],
+          "sourceNode": "occurrence:0:1:1:10:7",
+          "sourceName": "PR.400.01.029СБ Штуцер:1",
+          "sourceFlangeName": "Фланец 1 ГОСТ 12820-80 80-16-1:1",
+          "connectionType": "flange",
+          "sourceFlangeDN": 80,
+          "sourceFlangePN": 16
+        }
+      ]
+    }
+  ]
+}

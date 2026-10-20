@@ -308,10 +308,34 @@ export class WaterViewer {
           const box=new Box3().setFromObject(imported,true)
           if(box.isEmpty()){disposeTree(imported);throw new Error('Пустая геометрия')}
           const center=box.getCenter(new Vector3()),size=box.getSize(new Vector3())
-          imported.position.add(new Vector3(-center.x,-box.min.y,-center.z))
-          const root=new Group();root.name='accessory_'+id;root.add(imported)
+          const root=new Group();root.name='accessory_'+id
           root.userData={kind:'accessory',accessoryId:id,label:spec.label,description:spec.description}
-          const base=this.accessoryPosition(spec.category,size)
+          let base:Vector3
+          if(spec.category==='safety'){
+            // 20.10.2026 · Codex / GPT-6. Mate the actual valve inlet to each
+            // documented CAD nozzle, before any centring or floor placement.
+            const mounts=this.model?.safetyMounts,connection=spec.mounting
+            if(!mounts?.length||!connection){disposeTree(imported);throw new Error('Не определены штатные места клапанов')}
+            base=this.modelRoot!.position.clone()
+            for(const [index,mount] of mounts.entries()){
+              const valve=new Group();valve.name='safety_mount_'+index
+              const up=new Vector3().fromArray(mount.axis).normalize()
+              const rotation=new Quaternion().setFromUnitVectors(new Vector3().fromArray(connection.axis).normalize(),up)
+              const fromOutlet=new Vector3().fromArray(connection.outletDirection).applyQuaternion(rotation).normalize()
+              const toOutlet=new Vector3().fromArray(mount.outletDirection).normalize()
+              const turn=Math.atan2(up.dot(new Vector3().crossVectors(fromOutlet,toOutlet)),fromOutlet.dot(toOutlet))
+              rotation.premultiply(new Quaternion().setFromAxisAngle(up,turn))
+              valve.quaternion.copy(rotation)
+              valve.position.fromArray(mount.position).sub(new Vector3().fromArray(connection.inlet).applyQuaternion(rotation))
+              valve.userData={sourceNode:mount.sourceNode,sourceName:mount.sourceName}
+              // Copies share buffers/materials and add no network downloads.
+              valve.add(index===0?imported:imported.clone(true));root.add(valve)
+            }
+            root.userData.description='Сбросные клапаны на штатных патрубках '+this.model!.label+'. Количество: '+mounts.length+'. '+spec.notes
+          }else{
+            imported.position.add(new Vector3(-center.x,-box.min.y,-center.z))
+            root.add(imported);base=this.accessoryPosition(spec.category,size)
+          }
           root.position.copy(base);this.prepareMeshes(root);this.scene.add(root)
           this.instanceRepeatedMeshes(root)
           this.accessoryRoots.set(id,{spec,root,base,offset:new Vector3()})
@@ -333,7 +357,6 @@ export class WaterViewer {
     const boiler=this.modelBox.getSize(new Vector3()),position=new Vector3()
     // Unverified connection points are shown alongside the source assembly.
     // Keep physical scale, with the controls available for a layout try-on.
-    if(category==='safety')position.set(-boiler.x*.5-size.x*.5-.35,0,boiler.z*.3)
     if(category==='collector')position.set(boiler.x*.5+size.x*.5+.45,0,-boiler.z*.4)
     if(category==='cabinet')position.set(boiler.x*.5+size.x*.5+.35,.12,boiler.z*.28)
     if(category==='plate'||category==='spacer'){
@@ -363,6 +386,12 @@ export class WaterViewer {
   private applyPlacement(id:string){
     const entry=this.accessoryRoots.get(id)
     if(!entry)return
+    if(entry.spec.category==='safety'){
+      // Old shared URLs may contain offsets from the former side-by-side preview.
+      // These no longer detach a valve from its factory nozzle.
+      entry.root.position.copy(entry.base);entry.root.rotation.set(0,0,0)
+      this.dirtyShadows();return
+    }
     const placement=this.placements[id]||{x:0,y:0,z:0,turns:0}
     entry.offset.set(placement.x,placement.y,placement.z)
     entry.root.position.copy(entry.base).add(entry.offset)

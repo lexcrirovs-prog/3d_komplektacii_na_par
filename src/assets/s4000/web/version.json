@@ -1,5 +1,5 @@
 {
-  "version": "2026.10.20.1",
+  "version": "2026.10.20.2",
   "date": "2026-10-20",
   "executor": "Codex / GPT-6",
   "source_blend_sha256": "6a6aa9f357c6d4f402e4ee59e6efd0673abffba05439ba125176905383e36c33",
@@ -33,7 +33,7 @@
   "cascade_cabinet": "optional_nonstandard_multiple_boilers",
   "sections": {
     "hotwater": {
-      "version": "2026.10.20.1",
+      "version": "2026.10.20.2",
       "families": [
         "C",
         "E — две двери",
@@ -42,7 +42,9 @@
       ],
       "separate_lazy_loading": true,
       "source_mapping": "owner_confirmed_20261020",
-      "model_count": 48
+      "model_count": 48,
+      "safety_mount_count": 69,
+      "safety_mounting": "source_cad_flange_faces"
     },
     "steam": {
       "geometry_version": "2026.10.12.1",

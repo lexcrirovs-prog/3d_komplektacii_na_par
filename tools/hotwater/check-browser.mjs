@@ -12,6 +12,8 @@ const version=JSON.parse(await readFile(publication.manifestSha256?'dist/version
 const date=version.date||'2026-10-20',executedAt=new Date().toISOString();
 const catalog=JSON.parse(await readFile('src/assets/hotwater/catalog.json','utf8'));
 assert(catalog.models.length,'Catalog must contain real models before browser checks');
+const safetyOption=catalog.accessories.find(option=>option.category==='safety');
+assert(safetyOption?.mounting,'Safety valve requires measured inlet and axes');
 const expectedFamilies=[
   {id:'cla',button:'C',description:/Двухходовые.*одна дверь/i,doors:1},
   {id:'e',button:'E · 2 двери',description:/Две распашные двери/i,doors:2},
@@ -24,7 +26,7 @@ const queryFor=id=>'?' + new URLSearchParams({...originalSteam,section:'hotwater
 const assertSteamQuery=url=>{for(const [key,value] of Object.entries(originalSteam))assert.equal(new URL(url).searchParams.get(key),value,'Lost original URL parameter '+key)};
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chrome',headless:true});
-const requests=[],startedRequests=[],errors=[],evidence=[];
+const requests=[],startedRequests=[],errors=[],evidence=[],safetyEvidence=[];
 try{
   const page=await browser.newPage({viewport:{width:1600,height:1000},reducedMotion:'reduce'});
   page.on('pageerror',error=>errors.push(error.message));
@@ -55,6 +57,38 @@ try{
     assert.equal(new URL(page.url()).searchParams.get('hwModel'),model.id,'Existing model URL must remain unchanged');
     assertSteamQuery(page.url());
   };
+  const assertSafetyMounts=async(model,context)=>{
+    assert.equal(model.safetyMounts?.length,model.family==='cla'?1:2,'Unexpected factory safety nozzle count for '+model.id);
+    const checks=await page.evaluate(({model,spec})=>{
+      const scene=window.__hotwater.scene,boiler=scene.getObjectByName('hotwater_model'),root=scene.getObjectByName('accessory_'+spec.id);
+      scene.updateMatrixWorld(true);
+      const valves=root?.children.filter(node=>node.name.startsWith('safety_mount_'))||[];
+      const vector=point=>boiler.position.clone().fromArray(point);
+      return {count:valves.length,mounts:model.safetyMounts.map((mount,index)=>{
+        const valve=valves.find(node=>node.name==='safety_mount_'+index);
+        if(!valve)return {missing:true,index};
+        const target=boiler.localToWorld(vector(mount.position)),actual=valve.localToWorld(vector(spec.mounting.inlet));
+        const targetAxis=vector(mount.axis).transformDirection(boiler.matrixWorld),actualAxis=vector(spec.mounting.axis).transformDirection(valve.matrixWorld);
+        const targetOutlet=vector(mount.outletDirection).transformDirection(boiler.matrixWorld),actualOutlet=vector(spec.mounting.outletDirection).transformDirection(valve.matrixWorld);
+        let sourceMeshes=0;valve.traverse(node=>{if(node.isMesh&&!node.userData.renderProxy)sourceMeshes++});
+        return {index,sourceNode:valve.userData.sourceNode,sourceName:valve.userData.sourceName,sourceMeshes,scale:valve.getWorldScale(vector([0,0,0])).toArray(),targetM:target.toArray(),inletM:actual.toArray(),positionErrorM:actual.distanceTo(target),axisError:actualAxis.distanceTo(targetAxis),outletDirectionError:actualOutlet.distanceTo(targetOutlet)};
+      })};
+    },{model,spec:safetyOption});
+    assert.equal(checks.count,model.safetyMounts.length,'One valve is required for every documented safety nozzle');
+    for(const [index,check] of checks.mounts.entries()){
+      assert(!check.missing,'Safety instance is missing: '+index);
+      assert(check.sourceMeshes>0,'Anchored valve has no source geometry');
+      assert(check.scale.every(value=>Math.abs(value-1)<1e-6),'Valve geometry must not be resized to fit a nozzle');
+      assert(check.positionErrorM<1e-6,'Valve inlet is detached from its source CAD nozzle');
+      assert(check.axisError<1e-6,'Valve inlet axis does not align with the nozzle');
+      assert(check.outletDirectionError<1e-6,'Valve outlet points in the wrong direction');
+      assert.equal(check.sourceNode,model.safetyMounts[index].sourceNode);
+      assert.equal(check.sourceName,model.safetyMounts[index].sourceName);
+    }
+    assert.match(await page.locator('.hw-option').filter({has:page.locator('#hw-safety')}).locator('.hw-fit-label').innerText(),new RegExp('На штатных патрубках.*'+checks.count+' шт'));
+    safetyEvidence.push({model:model.id,context,...checks});
+    return checks;
+  };
   for(const [index,family] of expectedFamilies.entries()){
     const model=catalog.models.find(model=>model.family===family.id);
     const start=requests.length;
@@ -79,6 +113,16 @@ try{
       await page.getByRole('button',{name:'Закрыть двери'}).click();
       await page.waitForFunction(()=>{const hinges=[];window.__hotwater.scene.traverse(node=>{if(node.name.startsWith('door_hinge_'))hinges.push(node)});return hinges.every(node=>Math.abs(node.quaternion.w-1)<.0001)});
     }
+    const beforeSafety=requests.length;
+    await page.locator('#hw-safety').selectOption(safetyOption.id);
+    await page.waitForFunction(id=>window.__hotwater.accessories.includes(id),safetyOption.id,{timeout:120000});
+    await ready(model.id);
+    await assertSafetyMounts(model,'family-tab');
+    assert.equal(requests.length-beforeSafety,1,'A pair of valves must reuse one downloaded GLB');
+    assert.equal(await page.locator('.hw-placement').count(),0,'Mounted safety valves must not expose free XYZ/rotation controls');
+    await page.screenshot({path:resolve(out,family.id+'-safety.png')});
+    await page.locator('#hw-safety').selectOption('');
+    await page.waitForFunction(()=>window.__hotwater.accessories.length===0);
     let superheatedCheck=null;
     if(family.id==='e'){
       const superheated=catalog.models.find(item=>item.family==='e'&&item.id.endsWith('-10'));
@@ -123,11 +167,16 @@ try{
   await page.getByRole('button',{name:'Общий вид',exact:true}).click();
   await page.screenshot({path:resolve(out,'accessories.png')});
   assert.equal(requests.length-optionRequests,selected.length,'Each selected option should be fetched once');
+  await assertSafetyMounts(model,'all-options');
   if(selected.length){
-    const firstId=selected[0];
+    const movable=selected.filter(id=>catalog.accessories.find(option=>option.id===id)?.category!=='safety');
+    assert(movable.length,'A movable option is needed for the placement check');
+    const firstId=movable[0];
     const before=await page.evaluate(id=>window.__hotwater.scene.getObjectByName('accessory_'+id).position.toArray(),firstId);
     await page.locator('.hw-placement>summary').click();
+    assert.equal(await page.locator('.hw-placement fieldset').count(),movable.length,'Mounted safety valves leaked into manual layout controls');
     const first=page.locator('.hw-placement fieldset').first();
+    assert.equal(await first.locator('legend').innerText(),catalog.accessories.find(option=>option.id===firstId).label,'Placement check must move the first non-safety option');
     await first.locator('input').first().focus();await first.locator('input').first().press('ArrowRight');
     await first.getByRole('button',{name:'Повернуть на 90°'}).click();
     await page.waitForFunction(id=>Math.abs(window.__hotwater.scene.getObjectByName('accessory_'+id).rotation.y-Math.PI/2)<.001,firstId);
@@ -139,6 +188,17 @@ try{
     await page.waitForFunction(ids=>ids.every(id=>window.__hotwater.accessories.includes(id)),selected);
     const restored=await page.evaluate(id=>{const root=window.__hotwater.scene.getObjectByName('accessory_'+id);return {position:root.position.toArray(),rotation:root.rotation.y}},firstId);
     assert.deepEqual(restored.position,after);assert(Math.abs(restored.rotation-Math.PI/2)<.001);
+    await assertSafetyMounts(model,'restored-layout');
+    // Links created by the former side-by-side preview must not detach a valve.
+    const legacyUrl=new URL(page.url()),legacyLayout=JSON.parse(legacyUrl.searchParams.get('hwLayout')||'{}');
+    legacyLayout[safetyOption.id]={x:8,y:-3,z:7,turns:3};
+    legacyUrl.searchParams.set('hwLayout',JSON.stringify(legacyLayout));
+    await page.goto(legacyUrl.href,{waitUntil:'domcontentloaded'});await ready(model.id);
+    await page.waitForFunction(ids=>ids.every(id=>window.__hotwater.accessories.includes(id)),selected);
+    await assertSafetyMounts(model,'legacy-safety-offset-ignored');
+    const normalizedLayout=JSON.parse(new URL(page.url()).searchParams.get('hwLayout')||'{}');
+    assert.equal(normalizedLayout[safetyOption.id],undefined,'Legacy free safety offsets must be removed from shared links');
+    assert.deepEqual(normalizedLayout[firstId],legacyLayout[firstId],'Removing an obsolete safety offset changed another option');
     await page.getByRole('button',{name:'Общий вид',exact:true}).click();
   }
   const before=await page.evaluate(()=>window.__hotwater.gl.info.render.frame);
@@ -171,6 +231,6 @@ try{
   assert.equal(steamUrl.searchParams.get('hwLayout'),new URL(page.url()).searchParams.get('hwLayout'),'Section link lost the shared layout');
   assert.deepEqual(errors,[]);
   await publication.verify();
-  await writeFile(resolve(out,'browser-evidence.json'),JSON.stringify({date,executedAt,version:version.version,result:'PASS',base,manifestSha256:publication.manifestSha256,families:evidence,originalSteam,mobileGrid,selectedAccessories:selected,idleFrames:after-before,errors,requests},null,2));
+  await writeFile(resolve(out,'browser-evidence.json'),JSON.stringify({date,executedAt,version:version.version,result:'PASS',base,manifestSha256:publication.manifestSha256,families:evidence,safetyMounts:safetyEvidence,originalSteam,mobileGrid,selectedAccessories:selected,idleFrames:after-before,errors,requests},null,2));
   console.log(JSON.stringify({result:'PASS',families:evidence.length,accessories:selected.length,requests:requests.length,out}));
 }finally{await browser.close()}

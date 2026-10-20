@@ -10,6 +10,7 @@ import concurrent.futures
 import gzip
 import importlib.util
 import json
+import math
 import re
 import subprocess
 import sys
@@ -22,7 +23,7 @@ from pathlib import Path, PurePosixPath
 spec = importlib.util.spec_from_file_location('base_publisher', Path(__file__).parents[1] / 's3000/publish-web.py')
 p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
-p.VERSION = '2026.10.20.1'
+p.VERSION = '2026.10.20.2'
 p.OUT = p.REPO / 'artifacts' / ('publication-v' + p.VERSION)
 p.STAGE = p.ROOT + '/komplektacii4-stage-v' + p.VERSION
 p.STAGE_URL = 'https://prgz.ru/komplektacii4-stage-v' + p.VERSION + '/'
@@ -35,6 +36,7 @@ BASELINE_HOTWATER_GLB = 57
 # Data alone must not broaden the accepted release inventory.
 EXPECTED_MODELS = 48
 EXPECTED_ACCESSORIES = 9
+EXPECTED_SAFETY_MOUNTS = 69
 
 
 def require(condition, message):
@@ -348,13 +350,72 @@ def verify_static_http(base, prepared, files, actual, success_status, evidence_n
     status(result['status'], url=base, files=len(verified), glb=sum(row['path'].endswith('.glb') for row in verified), apiRequests=0)
 
 
+def validate_safety_measurement(row, model):
+    mounts = row.get('mounts', [])
+    expected = model.get('safetyMounts', [])
+    require(row.get('count') == len(expected) and len(mounts) == len(expected),
+            'SAFETY_INSTANCE_COUNT_MISMATCH: ' + model['id'])
+    for index, (actual, source) in enumerate(zip(mounts, expected)):
+        require(actual.get('index') == index and not actual.get('missing') and actual.get('sourceMeshes', 0) > 0,
+                'SAFETY_GEOMETRY_NOT_RENDERED: ' + model['id'])
+        require(actual.get('sourceNode') == source['sourceNode'] and actual.get('sourceName') == source['sourceName'],
+                'SAFETY_CAD_SOURCE_MISMATCH: ' + model['id'])
+        scale = actual.get('scale', [])
+        require(len(scale) == 3 and all(isinstance(value, (int, float)) and math.isfinite(value)
+                                       and abs(value - 1) < 1e-6 for value in scale),
+                'SAFETY_SCALE_CHANGED: ' + model['id'])
+        for key in ('positionErrorM', 'axisError', 'outletDirectionError'):
+            value = actual.get(key)
+            require(isinstance(value, (int, float)) and math.isfinite(value) and 0 <= value < 1e-6,
+                    'SAFETY_ALIGNMENT_NOT_VERIFIED: ' + model['id'] + ':' + key)
+
+
+def validate_safety_reports(safety, browser, catalog, catalog_hash):
+    expected = {row['id']: row for row in catalog['models']}
+    require(len(expected) == EXPECTED_MODELS
+            and all(len(row.get('safetyMounts', [])) == (1 if row['family'] == 'cla' else 2) for row in expected.values())
+            and sum(len(row['safetyMounts']) for row in expected.values()) == EXPECTED_SAFETY_MOUNTS,
+            'SAFETY_CATALOG_MOUNT_COUNT_MISMATCH')
+    require(safety.get('result') == 'PASS' and safety.get('expectedModels') == safety.get('checkedModels') == EXPECTED_MODELS
+            and safety.get('expectedMounts') == safety.get('checkedMounts') == EXPECTED_SAFETY_MOUNTS
+            and safety.get('failures') == [], 'ALL_48_SAFETY_MODELS_AND_69_MOUNTS_REQUIRED')
+    require(safety.get('catalogSha256') == catalog_hash, 'SAFETY_REPORT_CATALOG_MISMATCH')
+    rows = safety.get('models', [])
+    require(len(rows) == EXPECTED_MODELS and {row['id'] for row in rows} == set(expected), 'SAFETY_REPORT_ID_MISMATCH')
+    options = {row['id']: row for row in catalog.get('accessories', []) if row['category'] == 'safety'}
+    for row in rows:
+        model = expected[row['id']]
+        option = options.get(row.get('accessory'))
+        require(option and (not option.get('compatibleModels') or model['id'] in option['compatibleModels']),
+                'SAFETY_OPTION_MISMATCH: ' + model['id'])
+        require(row.get('family') == model['family'] and row.get('calls', 0) > 0 and row.get('triangles', 0) > 0
+                and len(row.get('downloads', [])) == len(set(row.get('downloads', []))) == 2,
+                'SAFETY_RENDER_OR_DOWNLOADS_NOT_VERIFIED: ' + model['id'])
+        validate_safety_measurement(row, model)
+    browser_mounts = browser.get('safetyMounts', [])
+    family_checks = [row for row in browser_mounts if row.get('context') == 'family-tab']
+    family_models = {row['model'] for row in browser.get('families', [])}
+    require(len(family_checks) == len(family_models)
+            and {row['model'] for row in family_checks} == family_models, 'SAFETY_BROWSER_FAMILY_COVERAGE_REQUIRED')
+    baseline_model = next(row['id'] for row in expected.values() if row['family'] == 'cla')
+    contexts = ('all-options', 'restored-layout', 'legacy-safety-offset-ignored')
+    require(len(browser_mounts) == len(family_models) + len(contexts)
+            and all(sum(row.get('context') == context and row.get('model') == baseline_model
+                        for row in browser_mounts) == 1 for context in contexts),
+            'SAFETY_BROWSER_LAYOUT_COVERAGE_REQUIRED')
+    for row in browser_mounts:
+        require(row.get('model') in expected, 'SAFETY_BROWSER_MODEL_UNKNOWN')
+        validate_safety_measurement(row, expected[row['model']])
+
+
 def validate_reports(reports, manifest_hash, catalog, catalog_hash):
+    require(set(reports) == {'models', 'safety', 'lifecycle', 'browser', 'sections', 'steam'}, 'COMPLETE_RELEASE_REPORTS_REQUIRED')
     for name, report in reports.items():
         require(report.get('manifestSha256') == manifest_hash, 'REPORT_MANIFEST_MISMATCH: ' + name)
         if name != 'sections':
             require(report.get('base') == p.STAGE_URL, 'REPORT_NOT_FOR_STAGE: ' + name)
         if name != 'sections':
-            require(report.get('pageErrors' if name == 'models' else 'errors') == [], 'REPORT_HAS_ERRORS: ' + name)
+            require(report.get('pageErrors' if name in ('models', 'safety') else 'errors') == [], 'REPORT_HAS_ERRORS: ' + name)
     models = reports['models']
     require(models.get('result') == 'PASS' and models.get('expectedModels') == EXPECTED_MODELS
             and models.get('checkedModels') == EXPECTED_MODELS and not models.get('failures'), f'ALL_{EXPECTED_MODELS}_MODELS_NOT_VERIFIED')
@@ -371,6 +432,7 @@ def validate_reports(reports, manifest_hash, catalog, catalog_hash):
     require(browser.get('result') == 'PASS' and {row['family'] for row in browser.get('families', [])} == expected_families
             and len(browser.get('families', [])) == len(expected_families)
             and len(browser.get('selectedAccessories', [])) == 5 and browser.get('idleFrames', 999) <= 3, 'HOTWATER_BROWSER_CHECKS_REQUIRED')
+    validate_safety_reports(reports['safety'], browser, catalog, catalog_hash)
     sections = reports['sections']
     require(sections.get('result') == 'PASS' and sections.get('testCount') == sections.get('passed') == 4
             and sections.get('failed') == 0 and len(sections.get('checks', [])) == 4, 'FOUR_SECTION_CHECKS_REQUIRED')
@@ -393,7 +455,7 @@ def cutover_gate(args):
             and http.get('apiRequests') == 0, 'STAGE_SERVER_HASHES_NOT_VERIFIED')
     expected_http = {name: digest for name, digest in files.items() if public_file(name)}
     require({row['path']: row['sha256'] for row in http['files']} == expected_http, 'STAGE_HTTP_COVERAGE_INCOMPLETE')
-    paths = {name: Path(getattr(args, name + '_report')) for name in ('models', 'lifecycle', 'browser', 'sections', 'steam')}
+    paths = {name: Path(getattr(args, name + '_report')) for name in ('models', 'safety', 'lifecycle', 'browser', 'sections', 'steam')}
     reports = {name: read_json(path) for name, path in paths.items()}
     validate_reports(reports, prepared['manifestSha256'], catalog, prepared['catalogSha256'])
     result = dict(status='STAGE_ACCEPTANCE_PASSED', checkedUtc=now(),
@@ -467,6 +529,7 @@ print(json.dumps({{'status':'ROLLED_BACK_HASHES_VERIFIED','method':'renameat2_RE
 def evidence_arguments(parser):
     for name, default in {
         'models':'output/hotwater-all-models/all-models-evidence.json',
+        'safety':'output/hotwater-safety-mounts/safety-mounts-evidence.json',
         'lifecycle':'output/hotwater-lifecycle/lifecycle-evidence.json',
         'browser':'output/hotwater-browser/browser-evidence.json',
         'sections':'output/hotwater-sections/section-evidence.json',

@@ -2,11 +2,13 @@
 import data from '../../assets/hotwater/catalog.json'
 import {uniqueOptions} from './configuration'
 export type Point = [number, number, number]
+export type SafetyMount = {position:Point;axis:Point;outletDirection:Point;sourceNode:string;sourceName:string;sourceFlangeDN:number;sourceFlangePN:number}
 export type WaterModel = {
   id: string; family: string; label: string; powerKw: number; variant: string;
   sourceFile: string; sourceRelativePath: string; sourceSha256: string;
   asset: string; bytes: number; triangles: number; dimensionsM: Point;
   operatingPressureMpa?: number; maxWaterTemperatureC?: number; waterExecution?: string;
+  safetyMounts?: SafetyMount[];
   doors?: {node: string; pivot: Point; axis: Point; angle: number; label: string}[];
 }
 export type WaterAccessory = {
@@ -14,6 +16,7 @@ export type WaterAccessory = {
   sourceFile: string; asset: string; bytes: number; dimensionsM: Point;
   description: string; compatibleModels?: string[];
   sourceKind?:string; fitStatus?:string; notes?:string;
+  mounting?:{inlet:Point;axis:Point;outletDirection:Point};
 }
 function point(values:number[]):Point {
   if(values.length!==3 || !values.every(Number.isFinite))throw new Error('Некорректные координаты в каталоге моделей')
@@ -23,8 +26,11 @@ function category(value:string):WaterAccessory['category'] {
   if(value==='safety'||value==='plate'||value==='spacer'||value==='collector'||value==='cabinet')return value
   throw new Error('Неизвестная категория оборудования: '+value)
 }
-export const models:WaterModel[] = data.models.map(model=>({...model,dimensionsM:point(model.dimensionsM),doors:model.doors.map(door=>({...door,pivot:point(door.pivot),axis:point(door.axis)}))}))
-export const accessories:WaterAccessory[] = data.accessories.map(accessory=>({...accessory,category:category(accessory.category),dimensionsM:point(accessory.dimensionsM)}))
+export const models:WaterModel[] = data.models.map(model=>({...model,dimensionsM:point(model.dimensionsM),
+  safetyMounts:model.safetyMounts.map(mount=>({...mount,position:point(mount.position),axis:point(mount.axis),outletDirection:point(mount.outletDirection)})),
+  doors:model.doors.map(door=>({...door,pivot:point(door.pivot),axis:point(door.axis)}))}))
+export const accessories:WaterAccessory[] = data.accessories.map(accessory=>({...accessory,category:category(accessory.category),dimensionsM:point(accessory.dimensionsM),
+  mounting:accessory.mounting?{inlet:point(accessory.mounting.inlet),axis:point(accessory.mounting.axis),outletDirection:point(accessory.mounting.outletDirection)}:undefined}))
 const assets = import.meta.glob('../../assets/hotwater/*.glb', {eager: true, query: '?url', import: 'default'}) as Record<string,string>
 export function assetUrl(file:string) {
   const url = assets['../../assets/hotwater/'+file]

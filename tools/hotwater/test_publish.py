@@ -20,15 +20,34 @@ spec.loader.exec_module(publisher)
 def reports_fixture():
     families = ['cla', 'e', 'e-long', 'e-single']
     model_count = publisher.EXPECTED_MODELS
-    catalog = {'models': [{'id': str(i), 'family': families[i % len(families)], 'doors': [{}]} for i in range(model_count)]}
+    model_families = ['cla'] * 27 + ['e'] * 12 + ['e-long'] + ['e-single'] * 8
+    catalog = {'models': [{'id': str(i), 'family': model_families[i], 'doors': [{}],
+                          'safetyMounts': [{'sourceNode': f'occurrence:{i}:{j}', 'sourceName': f'nozzle-{i}-{j}'}
+                                           for j in range(1 if model_families[i] == 'cla' else 2)]}
+                         for i in range(model_count)],
+               'accessories': [{'id': 'safety-valve', 'category': 'safety'}]}
+    safety_rows = []
+    for model in catalog['models']:
+        safety_rows.append(dict(id=model['id'], family=model['family'], accessory='safety-valve',
+            count=len(model['safetyMounts']), calls=100, triangles=50000, downloads=['model.glb', 'valve.glb'],
+            mounts=[dict(source, index=index, sourceMeshes=3, scale=[1, 1, 1],
+                         positionErrorM=0, axisError=0, outletDirectionError=0)
+                    for index, source in enumerate(model['safetyMounts'])]))
+    family_models = [next(model for model in catalog['models'] if model['family'] == family) for family in families]
+    browser_mounts = [dict(copy.deepcopy(safety_rows[int(model['id'])]), model=model['id'], context='family-tab') for model in family_models]
+    browser_mounts.extend(dict(copy.deepcopy(safety_rows[0]), model='0', context=context)
+                          for context in ('all-options', 'restored-layout', 'legacy-safety-offset-ignored'))
     model_rows = [dict(id=str(i), calls=100, triangles=50000, doors=1, hinges=['door_hinge_0'], downloads=['asset.glb']) for i in range(model_count)]
     variant = dict(power=500, strainer={'center': [0, 0, 4.55]}, filterGap={'length': .35},
                    spacer={'overallLength': .2, 'triangleCount': 1000}, discharges=[{'end': [0, 8.5, 0]}], gl={'shaderErrors': 0})
     powers = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 5000, 4000, 4000, 4000, 4000]
     reports = {
         'models': dict(result='PASS', expectedModels=model_count, checkedModels=model_count, catalogSha256='catalog', models=model_rows, failures=[], pageErrors=[]),
+        'safety': dict(result='PASS', expectedModels=model_count, checkedModels=model_count,
+                       expectedMounts=69, checkedMounts=69, catalogSha256='catalog', models=safety_rows, failures=[], pageErrors=[]),
         'lifecycle': dict(result='PASS', checks=[str(i) for i in range(6)]),
-        'browser': dict(result='PASS', families=[{'family': f} for f in families], selectedAccessories=[str(i) for i in range(5)], idleFrames=0),
+        'browser': dict(result='PASS', families=[{'family': model['family'], 'model': model['id']} for model in family_models],
+                        safetyMounts=browser_mounts, selectedAccessories=[str(i) for i in range(5)], idleFrames=0),
         'sections': dict(result='PASS', testCount=4, passed=4, failed=0, checks=[str(i) for i in range(4)]),
         'steam': dict(status='PASSED_CONFIGURATION_20261012', variants=[dict(copy.deepcopy(variant), power=power) for power in powers],
                       trimTransitions=True, quotePreview=True, urlRoundtrip=True, spacerDoorAttached=True),
@@ -169,6 +188,38 @@ class PublishGates(unittest.TestCase):
         reports['browser']['families'].append(reports['browser']['families'][0])
         with self.assertRaisesRegex(RuntimeError, 'HOTWATER_BROWSER_CHECKS_REQUIRED'):
             publisher.validate_reports(reports, 'candidate', catalog, 'catalog')
+
+    def test_safety_requires_every_model_and_mount_with_current_catalog(self):
+        cases = [
+            ('missing report', lambda reports: reports.pop('safety'), 'COMPLETE_RELEASE_REPORTS_REQUIRED'),
+            ('wrong count', lambda reports: reports['safety'].update(checkedMounts=68), 'ALL_48_SAFETY'),
+            ('duplicate model', lambda reports: reports['safety']['models'].__setitem__(-1, reports['safety']['models'][0]), 'SAFETY_REPORT_ID'),
+            ('old catalog', lambda reports: reports['safety'].update(catalogSha256='old'), 'SAFETY_REPORT_CATALOG'),
+            ('wrong nozzle', lambda reports: reports['safety']['models'][0]['mounts'][0].update(sourceNode='other'), 'SAFETY_CAD_SOURCE'),
+            ('missing geometry', lambda reports: reports['safety']['models'][0]['mounts'][0].update(sourceMeshes=0), 'SAFETY_GEOMETRY'),
+            ('wrong scale', lambda reports: reports['safety']['models'][0]['mounts'][0].update(scale=[1, 1, .5]), 'SAFETY_SCALE'),
+            ('misaligned inlet', lambda reports: reports['safety']['models'][0]['mounts'][0].update(positionErrorM=.001), 'SAFETY_ALIGNMENT'),
+            ('nonfinite axis', lambda reports: reports['safety']['models'][0]['mounts'][0].update(axisError=float('nan')), 'SAFETY_ALIGNMENT'),
+            ('negative error', lambda reports: reports['safety']['models'][0]['mounts'][0].update(outletDirectionError=-1), 'SAFETY_ALIGNMENT'),
+            ('duplicate download', lambda reports: reports['safety']['models'][0].update(downloads=['same.glb', 'same.glb']), 'SAFETY_RENDER_OR_DOWNLOADS'),
+            ('wrong option', lambda reports: reports['safety']['models'][0].update(accessory='plate'), 'SAFETY_OPTION'),
+        ]
+        for name, mutate, error in cases:
+            reports, catalog = reports_fixture(); mutate(reports)
+            with self.subTest(name=name), self.assertRaisesRegex(RuntimeError, error):
+                publisher.validate_reports(reports, 'candidate', catalog, 'catalog')
+
+    def test_safety_browser_checks_cover_families_and_restored_links(self):
+        for mode in ['missing-family', 'missing-legacy-link', 'detached-restored-valve']:
+            reports, catalog = reports_fixture()
+            if mode == 'missing-family':
+                reports['browser']['safetyMounts'].pop(0)
+            elif mode == 'missing-legacy-link':
+                reports['browser']['safetyMounts'].pop()
+            else:
+                reports['browser']['safetyMounts'][-1]['mounts'][0]['positionErrorM'] = 8
+            with self.subTest(mode=mode), self.assertRaisesRegex(RuntimeError, 'SAFETY_BROWSER_|SAFETY_ALIGNMENT'):
+                publisher.validate_reports(reports, 'candidate', catalog, 'catalog')
 
     def test_mail_api_requires_byte_identical_tree(self):
         before={'api/request-quote.php':'original','api/.htaccess':'headers','index.html':'old'}

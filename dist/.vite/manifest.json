@@ -10,20 +10,20 @@
     "file": "assets/S3000Configurator-CSFg-kdo.css",
     "src": "_S3000Configurator-CSFg-kdo.css"
   },
-  "_S3000Configurator-CYUcxHeI.js": {
-    "file": "assets/S3000Configurator-CYUcxHeI.js",
+  "_S3000Configurator-xHsNG5lx.js": {
+    "file": "assets/S3000Configurator-xHsNG5lx.js",
     "name": "S3000Configurator",
     "imports": [
       "index.html",
       "_three.module-D8ZkPw-i.js",
-      "_index-BJG_2JJ4.js"
+      "_index-D1PbDDO2.js"
     ],
     "css": [
       "assets/S3000Configurator-CSFg-kdo.css"
     ]
   },
-  "_index-BJG_2JJ4.js": {
-    "file": "assets/index-BJG_2JJ4.js",
+  "_index-D1PbDDO2.js": {
+    "file": "assets/index-D1PbDDO2.js",
     "name": "index",
     "isDynamicEntry": true,
     "imports": [
@@ -56,12 +56,12 @@
     "name": "three.module"
   },
   "index.html": {
-    "file": "assets/index-DyqxSblo.js",
+    "file": "assets/index-ODtvfqZJ.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
-      "_index-BJG_2JJ4.js",
+      "_index-D1PbDDO2.js",
       "src/components/HotwaterConfigurator/HotwaterConfigurator.tsx"
     ],
     "css": [
@@ -737,16 +737,16 @@
     "src": "src/assets/s3000/web/s3000-equipment.glb"
   },
   "src/components/BoilerConfigurator/S3000Configurator.tsx": {
-    "file": "assets/S3000Configurator-CSePHU-R.js",
+    "file": "assets/S3000Configurator-DHaeplXH.js",
     "name": "S3000Configurator",
     "src": "src/components/BoilerConfigurator/S3000Configurator.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_index-BJG_2JJ4.js",
+      "_index-D1PbDDO2.js",
       "_three.module-D8ZkPw-i.js",
       "_premium-logo-B45T0Uwn.js",
-      "_S3000Configurator-CYUcxHeI.js"
+      "_S3000Configurator-xHsNG5lx.js"
     ],
     "assets": [
       "assets/s3000-boiler-D6a3-OHI.glb",
@@ -756,16 +756,16 @@
     ]
   },
   "src/components/BoilerConfigurator/S4000Configurator.tsx": {
-    "file": "assets/S4000Configurator-DmbAH8_5.js",
+    "file": "assets/S4000Configurator-Bzn3cMb5.js",
     "name": "S4000Configurator",
     "src": "src/components/BoilerConfigurator/S4000Configurator.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_index-BJG_2JJ4.js",
+      "_index-D1PbDDO2.js",
       "_three.module-D8ZkPw-i.js",
       "_premium-logo-B45T0Uwn.js",
-      "_S3000Configurator-CYUcxHeI.js",
+      "_S3000Configurator-xHsNG5lx.js",
       "_BufferGeometryUtils-DUaiHPLO.js"
     ],
     "css": [
@@ -873,7 +873,7 @@
     ]
   },
   "src/components/HotwaterConfigurator/HotwaterConfigurator.tsx": {
-    "file": "assets/HotwaterConfigurator-CpVFkWzK.js",
+    "file": "assets/HotwaterConfigurator-Drax-E8e.js",
     "name": "HotwaterConfigurator",
     "src": "src/components/HotwaterConfigurator/HotwaterConfigurator.tsx",
     "isDynamicEntry": true,
@@ -884,7 +884,7 @@
       "_BufferGeometryUtils-DUaiHPLO.js"
     ],
     "css": [
-      "assets/HotwaterConfigurator-DHJ-JO-M.css"
+      "assets/HotwaterConfigurator-CwULJQmC.css"
     ],
     "assets": [
       "assets/cabinet__premium-boiler-CYu0PbBB.glb",

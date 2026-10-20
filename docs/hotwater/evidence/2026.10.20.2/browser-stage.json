@@ -1,0 +1,487 @@
+{
+  "date": "2026-10-20",
+  "executedAt": "2026-10-20T16:22:40.117Z",
+  "version": "2026.10.20.2",
+  "result": "PASS",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/",
+  "manifestSha256": "a29e0ad1e835d13ef4f77c4854585e59ee2ba9e2081124de2edeb9030721a60c",
+  "families": [
+    {
+      "model": "cla-250-51",
+      "calls": 115,
+      "triangles": 398976,
+      "memory": {
+        "geometries": 94,
+        "textures": 2
+      },
+      "canvas": {
+        "width": 1240,
+        "height": 958
+      },
+      "family": "cla",
+      "visibleLabel": "C",
+      "classificationVerified": true,
+      "arrival": "original-model-url",
+      "activeTabNoOp": true,
+      "doorsChecked": 1,
+      "requestedGlb": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb"
+      ],
+      "superheatedCheck": null
+    },
+    {
+      "model": "e-long-2500-06",
+      "calls": 172,
+      "triangles": 2148532,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "canvas": {
+        "width": 1240,
+        "height": 958
+      },
+      "family": "e",
+      "visibleLabel": "E · 2 двери",
+      "classificationVerified": true,
+      "arrival": "tab-click",
+      "activeTabNoOp": true,
+      "doorsChecked": 2,
+      "requestedGlb": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-06-C7wZdX_O.glb"
+      ],
+      "superheatedCheck": {
+        "id": "e-long-2500-10",
+        "pressureMpa": 1,
+        "maxTemperatureC": 150,
+        "changedBy": "model-selector",
+        "visibleValuesVerified": true
+      }
+    },
+    {
+      "model": "e-long-3500-20260609-06",
+      "calls": 185,
+      "triangles": 1867158,
+      "memory": {
+        "geometries": 141,
+        "textures": 2
+      },
+      "canvas": {
+        "width": 1240,
+        "height": 958
+      },
+      "family": "e-long",
+      "visibleLabel": "E Long",
+      "classificationVerified": true,
+      "arrival": "tab-click",
+      "activeTabNoOp": true,
+      "doorsChecked": 2,
+      "requestedGlb": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-20260609-06-Cuoliy_p.glb"
+      ],
+      "superheatedCheck": null
+    },
+    {
+      "model": "e-1000-20260925",
+      "calls": 162,
+      "triangles": 865716,
+      "memory": {
+        "geometries": 132,
+        "textures": 2
+      },
+      "canvas": {
+        "width": 1240,
+        "height": 958
+      },
+      "family": "e-single",
+      "visibleLabel": "E · 1 дверь",
+      "classificationVerified": true,
+      "arrival": "tab-click",
+      "activeTabNoOp": true,
+      "doorsChecked": 1,
+      "requestedGlb": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-1000-20260925-C5KayICW.glb"
+      ],
+      "superheatedCheck": null
+    }
+  ],
+  "safetyMounts": [
+    {
+      "model": "cla-250-51",
+      "context": "family-tab",
+      "count": 1,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "inletM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ]
+    },
+    {
+      "model": "e-long-2500-06",
+      "context": "family-tab",
+      "count": 2,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.4750094063385264,
+            -1.2709987334603856
+          ],
+          "inletM": [
+            0,
+            2.4750094063385264,
+            -1.2709987334603856
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.4750094063385264,
+            -0.9709987334603856
+          ],
+          "inletM": [
+            0,
+            2.4750094063385264,
+            -0.9709987334603857
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ]
+    },
+    {
+      "model": "e-long-3500-20260609-06",
+      "context": "family-tab",
+      "count": 2,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:13:6",
+          "sourceName": "PR.400.01.01.005 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.3906023904099292
+          ],
+          "inletM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.3906023904099292
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:13:5",
+          "sourceName": "PR.400.01.01.005 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.0906023904099293
+          ],
+          "inletM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.0906023904099293
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ]
+    },
+    {
+      "model": "e-1000-20260925",
+      "context": "family-tab",
+      "count": 2,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.868013795461454,
+            0.2816163448400425
+          ],
+          "inletM": [
+            0,
+            1.868013795461454,
+            0.2816163448400425
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.868013795461454,
+            0.6816163448400425
+          ],
+          "inletM": [
+            0,
+            1.868013795461454,
+            0.6816163448400425
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ]
+    },
+    {
+      "model": "cla-250-51",
+      "context": "all-options",
+      "count": 1,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "inletM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ]
+    },
+    {
+      "model": "cla-250-51",
+      "context": "restored-layout",
+      "count": 1,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "inletM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ]
+    },
+    {
+      "model": "cla-250-51",
+      "context": "legacy-safety-offset-ignored",
+      "count": 1,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "inletM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ]
+    }
+  ],
+  "originalSteam": {
+    "power": "3000",
+    "trim": "comfort_plus",
+    "cascade": "3",
+    "pressure": "12"
+  },
+  "mobileGrid": {
+    "display": "grid",
+    "buttons": [
+      {
+        "family": "cla",
+        "left": 27,
+        "top": 726.65625,
+        "right": 193,
+        "width": 166,
+        "height": 34,
+        "textFits": true
+      },
+      {
+        "family": "e",
+        "left": 197,
+        "top": 726.65625,
+        "right": 363,
+        "width": 166,
+        "height": 34,
+        "textFits": true
+      },
+      {
+        "family": "e-long",
+        "left": 27,
+        "top": 764.65625,
+        "right": 193,
+        "width": 166,
+        "height": 34,
+        "textFits": true
+      },
+      {
+        "family": "e-single",
+        "left": 197,
+        "top": 764.65625,
+        "right": 363,
+        "width": 166,
+        "height": 34,
+        "textFits": true
+      }
+    ]
+  },
+  "selectedAccessories": [
+    "relief-shape",
+    "cla250-native",
+    "e1500-cib205",
+    "c2500-supply",
+    "premium-boiler"
+  ],
+  "idleFrames": 1,
+  "errors": [],
+  "requests": [
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-06-C7wZdX_O.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-10-Bkx8kGLJ.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-06-C7wZdX_O.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-20260609-06-Cuoliy_p.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-1000-20260925-C5KayICW.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-57-Bs1HaV9t.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/plate__cla250-native-B-Ch71jA.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/spacer__e1500-cib205-Cw06f77N.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/collector__c2500-supply-wX40GcPX.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/plate__cla250-native-B-Ch71jA.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/spacer__e1500-cib205-Cw06f77N.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/collector__c2500-supply-wX40GcPX.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/plate__cla250-native-B-Ch71jA.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/spacer__e1500-cib205-Cw06f77N.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/collector__c2500-supply-wX40GcPX.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+  ]
+}

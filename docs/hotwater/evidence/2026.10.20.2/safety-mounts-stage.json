@@ -1,0 +1,2346 @@
+{
+  "date": "2026-10-20",
+  "executedAt": "2026-10-20T16:17:58.488Z",
+  "version": "2026.10.20.2",
+  "result": "PASS",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/",
+  "manifestSha256": "a29e0ad1e835d13ef4f77c4854585e59ee2ba9e2081124de2edeb9030721a60c",
+  "catalogSha256": "b38b9dc1bcafcc50d20036b0f0c5b4d086ffb1401ee0dd0e66e0ff707d6643e4",
+  "expectedModels": 48,
+  "checkedModels": 48,
+  "expectedMounts": 69,
+  "checkedMounts": 69,
+  "scope": "Geometric inlet positions, axes, unchanged instance scale and one asset download per option. Hydraulic/pressure compatibility is outside this check.",
+  "models": [
+    {
+      "id": "cla-250-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 117,
+      "triangles": 459305,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "inletM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-250-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 117,
+      "triangles": 400085,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.007СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "inletM": [
+            0,
+            1.1800052065384647,
+            -0.0656799033338934
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-57-Bs1HaV9t.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-500-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 123,
+      "triangles": 728747,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.380007082607347,
+            -0.03817331412644909
+          ],
+          "inletM": [
+            0,
+            1.380007082607347,
+            -0.03817331412644909
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-500-51-BxoDmDb-.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-500-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 122,
+      "triangles": 635881,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.380007082607347,
+            -0.03817331412644909
+          ],
+          "inletM": [
+            0,
+            1.380007082607347,
+            -0.03817331412644909
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-500-57-DctS926l.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-750-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 117,
+      "triangles": 1045545,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.5300038198048527,
+            -0.06317719420531343
+          ],
+          "inletM": [
+            0,
+            1.5300038198048527,
+            -0.06317719420531343
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-750-51-D5dpPJf-.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-750-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 116,
+      "triangles": 847740,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.004СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.5300038198048527,
+            -0.06317719420531343
+          ],
+          "inletM": [
+            0,
+            1.5300038198048527,
+            -0.06317719420531343
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-750-57-C73fdZ91.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1000-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 135,
+      "triangles": 1255337,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:2",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.6299999833106995,
+            -0.08313821234384577
+          ],
+          "inletM": [
+            0,
+            1.6299999833106995,
+            -0.08313821234384577
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1000-51-Dmvrz_iJ.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1000-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 136,
+      "triangles": 1065971,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:2",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.6299999833106995,
+            -0.08313821234384577
+          ],
+          "inletM": [
+            0,
+            1.6299999833106995,
+            -0.08313821234384577
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1000-57-DjCIBDtf.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1250-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 124,
+      "triangles": 1386475,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.002СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.6299999833106995,
+            -0.04316117676521636
+          ],
+          "inletM": [
+            0,
+            1.6299999833106995,
+            -0.04316117676521636
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1250-51-CZnYLas5.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1250-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 127,
+      "triangles": 1152439,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.002СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.6299999833106995,
+            -0.04316117676521636
+          ],
+          "inletM": [
+            0,
+            1.6299999833106995,
+            -0.04316117676521636
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1250-57-NAp7Ir2t.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1500-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 134,
+      "triangles": 1680521,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.7800071958267034,
+            -0.07816029410035907
+          ],
+          "inletM": [
+            0,
+            1.7800071958267034,
+            -0.07816029410035907
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1500-51-QOlFi4ID.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1500-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 135,
+      "triangles": 1417331,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.7800071958267034,
+            -0.07816029410035907
+          ],
+          "inletM": [
+            0,
+            1.7800071958267034,
+            -0.07816029410035907
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1500-57-ByjKAVMK.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1750-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 135,
+      "triangles": 1768027,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.7800079127441384,
+            -0.12816029410035923
+          ],
+          "inletM": [
+            0,
+            1.7800079127441384,
+            -0.12816029410035923
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1750-51-JfPoF49k.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-1750-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 133,
+      "triangles": 1444283,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.7800079127441384,
+            -0.12816029410035923
+          ],
+          "inletM": [
+            0,
+            1.7800079127441384,
+            -0.12816029410035923
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1750-57-DFaGwmOA.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-2000-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 133,
+      "triangles": 2071395,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.9800021490717619,
+            -0.08067319480068369
+          ],
+          "inletM": [
+            0,
+            1.9800021490717619,
+            -0.08067319480068369
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2000-51-D1K3idtF.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-2000-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 132,
+      "triangles": 1763161,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.9800021490717619,
+            -0.08067319480068369
+          ],
+          "inletM": [
+            0,
+            1.9800021490717619,
+            -0.08067319480068369
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2000-57-atqWlakb.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-2500-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 133,
+      "triangles": 2249743,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.9799999952316285,
+            -0.10067319480068382
+          ],
+          "inletM": [
+            0,
+            1.9799999952316285,
+            -0.10067319480068393
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2500-51-CkldBJ3Y.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-2500-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 133,
+      "triangles": 1894781,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.9799999952316285,
+            -0.10067319480068382
+          ],
+          "inletM": [
+            0,
+            1.9799999952316285,
+            -0.10067319480068393
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2500-57-CK-xB-66.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-3000-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 132,
+      "triangles": 2458769,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.130000042915344,
+            -0.07567659407765015
+          ],
+          "inletM": [
+            0,
+            2.130000042915344,
+            -0.07567659407765015
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3000-51-IomjzRaK.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-3000-51-dn150",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 132,
+      "triangles": 2362259,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.031СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.9500004718618702,
+            -0.01817319480068358
+          ],
+          "inletM": [
+            0,
+            1.9500004718618702,
+            -0.01817319480068369
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3000-51-dn150-CUO-Hg4N.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-3000-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 132,
+      "triangles": 2123820,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.130000042915344,
+            -0.07567659407765015
+          ],
+          "inletM": [
+            0,
+            2.130000042915344,
+            -0.07567659407765015
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3000-57-Dh-UgG5H.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-3500-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 131,
+      "triangles": 2637581,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.130019997941763,
+            -0.05318626155552586
+          ],
+          "inletM": [
+            0,
+            2.130019997941763,
+            -0.05318626155552597
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3500-51-D1ilO9Tg.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-3500-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 132,
+      "triangles": 2482655,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.130019997941763,
+            -0.05318626155552586
+          ],
+          "inletM": [
+            0,
+            2.130019997941763,
+            -0.05318626155552597
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3500-57-DOTax2dc.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-4000-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 131,
+      "triangles": 2688007,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.2299999952316285,
+            -0.005696233771013137
+          ],
+          "inletM": [
+            0,
+            2.2299999952316285,
+            -0.005696233771013247
+          ],
+          "positionErrorM": 1.1015494072452725e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-4000-51-C1iuZKoY.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-4000-57",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 131,
+      "triangles": 2309208,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:4",
+          "sourceName": "PR.400.01.002СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.2299999952316285,
+            -0.005696233771013137
+          ],
+          "inletM": [
+            0,
+            2.2299999952316285,
+            -0.005696233771013247
+          ],
+          "positionErrorM": 1.1015494072452725e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-4000-57-BmoVO05h.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-5000-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 134,
+      "triangles": 3657687,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:5",
+          "sourceName": "PR.400.01.038СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.540011337369596,
+            -0.04437139010191893
+          ],
+          "inletM": [
+            0,
+            2.540011337369596,
+            -0.04437139010191904
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-5000-51-CPJQwHvz.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "cla-6000-51",
+      "family": "cla",
+      "accessory": "relief-shape",
+      "count": 1,
+      "calls": 134,
+      "triangles": 3957995,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:3:3",
+          "sourceName": "PR.400.01.038СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.5399999952316286,
+            -0.05437139010192116
+          ],
+          "inletM": [
+            0,
+            2.5399999952316286,
+            -0.05437139010192127
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-6000-51-Cet0vap5.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-1000-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 166,
+      "triangles": 986374,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.868013795461454,
+            0.2816163448400425
+          ],
+          "inletM": [
+            0,
+            1.868013795461454,
+            0.2816163448400425
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.868013795461454,
+            0.6816163448400425
+          ],
+          "inletM": [
+            0,
+            1.868013795461454,
+            0.6816163448400425
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-1000-20260925-C5KayICW.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-1500-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 165,
+      "triangles": 1035852,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:16:3",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.8680181289867117,
+            0.4066163448400425
+          ],
+          "inletM": [
+            0,
+            1.8680181289867117,
+            0.4066163448400425
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:16:5",
+          "sourceName": "PR.400.01.01.002 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            1.8680181289867117,
+            0.8066163448400425
+          ],
+          "inletM": [
+            0,
+            1.8680181289867117,
+            0.8066163448400425
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-1500-20260925-Cu5QGNm0.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-2000-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 166,
+      "triangles": 1067850,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.010000009536743,
+            0.3866187615636787
+          ],
+          "inletM": [
+            0,
+            2.010000009536743,
+            0.3866187615636786
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.010000009536743,
+            0.8366187615636788
+          ],
+          "inletM": [
+            0,
+            2.010000009536743,
+            0.8366187615636788
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-2000-20260925-AFMc05OU.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-2500-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 166,
+      "triangles": 1109580,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.0100076905572632,
+            0.5366187615636786
+          ],
+          "inletM": [
+            0,
+            2.0100076905572632,
+            0.5366187615636785
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.0100076905572632,
+            0.9866187615636787
+          ],
+          "inletM": [
+            0,
+            2.0100076905572632,
+            0.9866187615636787
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-2500-20260925-lfSxXFlI.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-3000-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 169,
+      "triangles": 1267476,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            -1.1102230246251565e-16,
+            2.1299999523162843,
+            0.6866180330971277
+          ],
+          "inletM": [
+            -1.1102230246251565e-16,
+            2.1299999523162843,
+            0.6866180330971275
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            -1.1102230246251565e-16,
+            2.1299999523162843,
+            1.1366180330971276
+          ],
+          "inletM": [
+            -1.1102230246251565e-16,
+            2.1299999523162843,
+            1.1366180330971278
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-3000-20260925-D3sF1Lc5.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-3500-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 167,
+      "triangles": 1153954,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:2",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            -1.1102230246251565e-16,
+            2.130002134066289,
+            0.8616180330971273
+          ],
+          "inletM": [
+            -1.1102230246251565e-16,
+            2.130002134066289,
+            0.8616180330971271
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:4",
+          "sourceName": "PR.400.01.01.012 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            -1.1102230246251565e-16,
+            2.130002134066289,
+            1.3116180330971274
+          ],
+          "inletM": [
+            -1.1102230246251565e-16,
+            2.130002134066289,
+            1.3116180330971274
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-3500-20260925-DO1m7xfp.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-4000-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 174,
+      "triangles": 1305816,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.370028622738742,
+            0.7876203778577406
+          ],
+          "inletM": [
+            0,
+            2.370028622738742,
+            0.7876203778577405
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.370028622738742,
+            1.2876203778577406
+          ],
+          "inletM": [
+            0,
+            2.370028622738742,
+            1.2876203778577406
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-4000-20260925-DtnNchr7.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-5000-20260925",
+      "family": "e-single",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 173,
+      "triangles": 1385824,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:17:3",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.370007592614826,
+            0.9126203778577378
+          ],
+          "inletM": [
+            0,
+            2.370007592614826,
+            0.9126203778577376
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:17:5",
+          "sourceName": "PR.400.01.01.014 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.370007592614826,
+            1.4126203778577378
+          ],
+          "inletM": [
+            0,
+            2.370007592614826,
+            1.412620377857738
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-5000-20260925-CsOlvQFn.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-2500-06",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 176,
+      "triangles": 2269190,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.4750094063385264,
+            -1.2709987334603856
+          ],
+          "inletM": [
+            0,
+            2.4750094063385264,
+            -1.2709987334603856
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.4750094063385264,
+            -0.9709987334603856
+          ],
+          "inletM": [
+            0,
+            2.4750094063385264,
+            -0.9709987334603857
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-06-C7wZdX_O.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-2500-10",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 176,
+      "triangles": 2269228,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.474999966621399,
+            -1.2709987334603856
+          ],
+          "inletM": [
+            0,
+            2.474999966621399,
+            -1.2709987334603856
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.474999966621399,
+            -0.9709987334603856
+          ],
+          "inletM": [
+            0,
+            2.474999966621399,
+            -0.9709987334603857
+          ],
+          "positionErrorM": 1.1102230246251565e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-10-Bkx8kGLJ.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-3500-06",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 176,
+      "triangles": 2787270,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:3",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270007220120997,
+            -1.3209982770099469
+          ],
+          "inletM": [
+            0,
+            2.6270007220120997,
+            -1.3209982770099467
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270007220120997,
+            -1.0209982770099468
+          ],
+          "inletM": [
+            0,
+            2.6270007220120997,
+            -1.0209982770099466
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-06-BUvx_xoe.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-3500-10",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 176,
+      "triangles": 2787294,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:3",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270013597301376,
+            -1.3209982770099469
+          ],
+          "inletM": [
+            0,
+            2.6270013597301376,
+            -1.3209982770099467
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270013597301376,
+            -1.0209982770099468
+          ],
+          "inletM": [
+            0,
+            2.6270013597301376,
+            -1.0209982770099466
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-10-CrBi4mWr.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-3500-20260609-06",
+      "family": "e-long",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 189,
+      "triangles": 1987816,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:13:6",
+          "sourceName": "PR.400.01.01.005 СБ Штуцер предохранительного клапана:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.3906023904099292
+          ],
+          "inletM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.3906023904099292
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:13:5",
+          "sourceName": "PR.400.01.01.005 СБ Штуцер предохранительного клапана:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.0906023904099293
+          ],
+          "inletM": [
+            9.2148511043888e-15,
+            2.594999942779552,
+            -1.0906023904099293
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-20260609-06-Cuoliy_p.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-4000-06",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 175,
+      "triangles": 2807074,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270007220120997,
+            -1.323498277009947
+          ],
+          "inletM": [
+            0,
+            2.6270007220120997,
+            -1.3234982770099468
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270007220120997,
+            -1.023498277009947
+          ],
+          "inletM": [
+            0,
+            2.6270007220120997,
+            -1.023498277009947
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-4000-06-DpgAlyIC.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-4000-10",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 175,
+      "triangles": 2807044,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:9",
+          "sourceName": "PR.400.01.034СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270013597301376,
+            -1.323498277009947
+          ],
+          "inletM": [
+            0,
+            2.6270013597301376,
+            -1.3234982770099468
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.034СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.6270013597301376,
+            -1.023498277009947
+          ],
+          "inletM": [
+            0,
+            2.6270013597301376,
+            -1.023498277009947
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-4000-10-CzwNIcuq.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-5000-06",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 176,
+      "triangles": 2267862,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:14:8",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.7269999408721923,
+            -1.8234984126520348
+          ],
+          "inletM": [
+            0,
+            2.7269999408721923,
+            -1.8234984126520348
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:3",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.7269999408721923,
+            -1.5234984126520348
+          ],
+          "inletM": [
+            0,
+            2.7269999408721923,
+            -1.5234984126520348
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-5000-06-DjLybbGQ.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-5000-10",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 176,
+      "triangles": 2267904,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:14:8",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.7270048682419428,
+            -1.8234984126520348
+          ],
+          "inletM": [
+            0,
+            2.7270048682419428,
+            -1.8234984126520348
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:3",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.7270048682419428,
+            -1.5234984126520348
+          ],
+          "inletM": [
+            0,
+            2.7270048682419428,
+            -1.5234984126520348
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-5000-10-DsQQsSHi.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-6000-06",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 175,
+      "triangles": 2409482,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.727036868740955,
+            -2.0534984126520337
+          ],
+          "inletM": [
+            0,
+            2.727036868740955,
+            -2.0534984126520333
+          ],
+          "positionErrorM": 4.440892098500626e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:14:6",
+          "sourceName": "PR.400.01.025СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.727036868740955,
+            -1.7534984126520334
+          ],
+          "inletM": [
+            0,
+            2.727036868740955,
+            -1.7534984126520334
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-6000-06-DNHHN-zC.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-6000-10",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 175,
+      "triangles": 2409546,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:14:9",
+          "sourceName": "PR.400.01.025СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.727036868740955,
+            -2.0534984126520337
+          ],
+          "inletM": [
+            0,
+            2.727036868740955,
+            -2.0534984126520333
+          ],
+          "positionErrorM": 4.440892098500626e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:14:6",
+          "sourceName": "PR.400.01.025СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.727036868740955,
+            -1.7534984126520334
+          ],
+          "inletM": [
+            0,
+            2.727036868740955,
+            -1.7534984126520334
+          ],
+          "positionErrorM": 0,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-6000-10-DJCQzTko.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-7000-06",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 175,
+      "triangles": 2555798,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.029СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.9269999647140503,
+            -2.0734986929558135
+          ],
+          "inletM": [
+            0,
+            2.9269999647140503,
+            -2.073498692955813
+          ],
+          "positionErrorM": 4.440892098500626e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:7",
+          "sourceName": "PR.400.01.029СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.9269999647140503,
+            -1.7234986929558134
+          ],
+          "inletM": [
+            0,
+            2.9269999647140503,
+            -1.7234986929558131
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-7000-06-HdGwpcsC.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    },
+    {
+      "id": "e-long-7000-10",
+      "family": "e",
+      "accessory": "relief-shape",
+      "count": 2,
+      "calls": 175,
+      "triangles": 2555792,
+      "mounts": [
+        {
+          "index": 0,
+          "sourceNode": "occurrence:0:1:1:10:8",
+          "sourceName": "PR.400.01.029СБ Штуцер:2",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.9270032561275743,
+            -2.0734986929558135
+          ],
+          "inletM": [
+            0,
+            2.9270032561275743,
+            -2.073498692955813
+          ],
+          "positionErrorM": 4.440892098500626e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        },
+        {
+          "index": 1,
+          "sourceNode": "occurrence:0:1:1:10:7",
+          "sourceName": "PR.400.01.029СБ Штуцер:1",
+          "sourceMeshes": 2,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "targetM": [
+            0,
+            2.9270032561275743,
+            -1.7234986929558134
+          ],
+          "inletM": [
+            0,
+            2.9270032561275743,
+            -1.7234986929558131
+          ],
+          "positionErrorM": 2.220446049250313e-16,
+          "axisError": 0,
+          "outletDirectionError": 0
+        }
+      ],
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-7000-10-BMepprRb.glb",
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/safety__relief-shape-DVzuiph9.glb"
+      ]
+    }
+  ],
+  "failures": [],
+  "pageErrors": []
+}

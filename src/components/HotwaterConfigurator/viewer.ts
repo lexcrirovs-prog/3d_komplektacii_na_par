@@ -11,6 +11,7 @@ import {RoomEnvironment} from 'three/examples/jsm/environments/RoomEnvironment.j
 import {MeshoptDecoder} from 'three/examples/jsm/libs/meshopt_decoder.module.js'
 import {assetUrl,type WaterAccessory,type WaterModel} from './catalog'
 import type {Placement} from './configuration'
+import {applyAppearance} from './appearance'
 
 export type ViewName = 'overall'|'front'|'rear'|'side'|'top'|'free'
 export type ViewerState = {loading:boolean;progress:number;error:string;selected:string}
@@ -93,8 +94,8 @@ export class WaterViewer {
     this.renderer.shadowMap.enabled=true
     this.renderer.shadowMap.type=PCFSoftShadowMap
     this.renderer.shadowMap.autoUpdate=false
-    this.scene.background=new Color('#eef1ef')
-    this.scene.fog=new Fog('#eef1ef',40,120)
+    this.scene.background=new Color('#eef0f2')
+    this.scene.fog=new Fog('#eef0f2',40,120)
     this.camera.position.set(6,4.5,7)
     this.host.appendChild(this.renderer.domElement)
     this.renderer.domElement.style.display='block'
@@ -123,7 +124,7 @@ export class WaterViewer {
     this.fillLight=new DirectionalLight('#d8e9ff',.75)
     this.fillLight.position.set(5,5,-4)
     this.scene.add(this.keyLight,this.keyLight.target,this.fillLight)
-    this.floor=new Mesh(new PlaneGeometry(2,2),new MeshStandardMaterial({color:'#e8ece9',roughness:.93,metalness:0}))
+    this.floor=new Mesh(new PlaneGeometry(2,2),new MeshStandardMaterial({color:'#e7e9ec',roughness:.93,metalness:0}))
     this.floor.rotation.x=-Math.PI/2;this.floor.position.y=-.008;this.floor.receiveShadow=true
     this.floor.name='studio_floor';this.floor.scale.setScalar(60);this.scene.add(this.floor)
     this.resize=new ResizeObserver(this.resizeViewport)
@@ -209,6 +210,7 @@ export class WaterViewer {
       const size=sourceBox.getSize(new Vector3()),center=sourceBox.getCenter(new Vector3())
       // CAD derivatives already use metres and glTF's Y-up convention.
       root.userData={kind:'boiler',label:model.label,description:'Заводская 3D-сборка '+model.label+'. '+model.variant+'. Тепловая мощность '+model.powerKw+' кВт.'}
+      applyAppearance(imported,model)
       this.prepareMeshes(imported)
       for(const motion of model.doors||[]){
         let node=imported.getObjectByName(motion.node)
@@ -229,7 +231,7 @@ export class WaterViewer {
       this.controls.minDistance=Math.max(.08,radius*.08);this.controls.maxDistance=radius*15
       this.camera.far=Math.max(200,radius*40);this.camera.updateProjectionMatrix()
       this.floor.scale.setScalar(Math.max(200,radius*50))
-      this.scene.fog=new Fog('#eef1ef',radius*18,radius*45)
+      this.scene.fog=new Fog('#eef0f2',radius*18,radius*45)
       this.keyLight.position.set(-radius*1.4,radius*2.5,radius*1.7)
       this.keyLight.target.position.set(0,size.y*.45,0)
       this.fillLight.position.set(radius*2,radius*1.4,-radius*2)
@@ -460,7 +462,7 @@ export class WaterViewer {
     let named=!!label&&!/^mesh\b|^scene\b|^node\b/i.test(label)
     let ancestor:Object3D|null=hit.object
     while(ancestor){
-      if(ancestor.userData.kind==='accessory'){selected=ancestor;label=ancestor.userData.label;detail=ancestor.userData.description;break}
+      if(ancestor.userData.kind==='accessory'||ancestor.userData.kind==='connection'){selected=ancestor;label=ancestor.userData.label;detail=ancestor.userData.description;break}
       if(ancestor===this.modelRoot){if(!label||/^mesh\b/i.test(label)){label=this.model?.label||'Корпус котла';detail=ancestor.userData.description}break}
       if(!named&&ancestor.name&&!/^mesh\b|^scene\b|^node\b/i.test(ancestor.name)){selected=ancestor;label=humanName(ancestor.name);named=true}
       ancestor=ancestor.parent

@@ -3,16 +3,19 @@ import data from '../../assets/hotwater/catalog.json'
 import {uniqueOptions} from './configuration'
 export type Point = [number, number, number]
 export type SafetyMount = {position:Point;axis:Point;outletDirection:Point;sourceNode:string;sourceName:string;sourceFlangeDN:number;sourceFlangePN:number}
+export type WaterConnection = {role:'supply'|'return';sourceNode:string;sourceName:string;position:Point;axis:Point}
+export type FinishOverride = {sourceNode:string;materialName:string;color:Point}
 export type WaterModel = {
   id: string; family: string; label: string; powerKw: number; variant: string;
   sourceFile: string; sourceRelativePath: string; sourceSha256: string;
   asset: string; bytes: number; triangles: number; dimensionsM: Point;
   operatingPressureMpa?: number; maxWaterTemperatureC?: number; waterExecution?: string;
   safetyMounts?: SafetyMount[];
+  waterConnections?: WaterConnection[]; finishOverrides?: FinishOverride[];
   doors?: {node: string; pivot: Point; axis: Point; angle: number; label: string}[];
 }
 export type WaterAccessory = {
-  id: string; category: 'safety'|'plate'|'spacer'|'collector'|'cabinet'; label: string;
+  id: string; category: 'safety'|'plate'|'spacer'|'collector'|'cabinet'|'cascade-cabinet'; label: string;
   sourceFile: string; asset: string; bytes: number; dimensionsM: Point;
   description: string; compatibleModels?: string[];
   sourceKind?:string; fitStatus?:string; notes?:string;
@@ -23,10 +26,12 @@ function point(values:number[]):Point {
   return [values[0],values[1],values[2]]
 }
 function category(value:string):WaterAccessory['category'] {
-  if(value==='safety'||value==='plate'||value==='spacer'||value==='collector'||value==='cabinet')return value
+  if(value==='safety'||value==='plate'||value==='spacer'||value==='collector'||value==='cabinet'||value==='cascade-cabinet')return value
   throw new Error('Неизвестная категория оборудования: '+value)
 }
 export const models:WaterModel[] = data.models.map(model=>({...model,dimensionsM:point(model.dimensionsM),
+  waterConnections:('waterConnections' in model?model.waterConnections:[] as unknown[]) as WaterConnection[],
+  finishOverrides:('finishOverrides' in model?model.finishOverrides:[] as unknown[]) as FinishOverride[],
   safetyMounts:model.safetyMounts.map(mount=>({...mount,position:point(mount.position),axis:point(mount.axis),outletDirection:point(mount.outletDirection)})),
   doors:model.doors.map(door=>({...door,pivot:point(door.pivot),axis:point(door.axis)}))}))
 export const accessories:WaterAccessory[] = data.accessories.map(accessory=>({...accessory,category:category(accessory.category),dimensionsM:point(accessory.dimensionsM),
@@ -50,7 +55,8 @@ export const categories = [
   {id:'plate', label:'Переходная плита', text:'Сопряжение крепления горелки и фронтовой двери.'},
   {id:'spacer', label:'Дистанционная проставка', text:'Вынос горелки относительно фронта котла.'},
   {id:'collector', label:'Коллектор', text:'Объединение и распределение потоков теплоносителя.'},
-  {id:'cabinet', label:'Шкаф автоматики', text:'Органы управления и размещение электрической автоматики.'},
+  {id:'cabinet', label:'Шкаф управления котлом', text:'Индивидуальная автоматика на боковой стороне котла.'},
+  {id:'cascade-cabinet', label:'Шкаф управления каскадом', text:'Общее управление котлами. Отдельный шкаф на стойке рядом с котлом.'},
 ] as const
 export function initialModel(search:string) {
   return models.find(m=>m.id===new URLSearchParams(search).get('hwModel')) ?? models.find(m=>m.id==='cla-250-57') ?? models[0]

@@ -1,4 +1,4 @@
-"""20.10.2026 · Codex / GPT-6. Pure gates only; never contacts SSH/HTTP."""
+"""21.10.2026 · Codex / GPT-6. Pure gates only; never contacts SSH/HTTP."""
 import copy
 from contextlib import redirect_stdout
 import ctypes

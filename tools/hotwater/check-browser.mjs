@@ -156,7 +156,7 @@ try{
   assert.equal(startedRequests.length,alternateRequests,'Active C tab requested another model');
   await page.locator('.hw-field select').selectOption(model.id);await ready(model.id);
   const optionRequests=requests.length,selected=[];
-  for(const category of ['safety','plate','spacer','collector','cabinet']){
+  for(const category of ['safety','plate','spacer','collector','cabinet','cascade-cabinet']){
     const option=catalog.accessories.find(a=>a.category===category&&(!a.compatibleModels||a.compatibleModels.includes(model.id)));
     assert(option,'A selectable '+category+' option is required for the baseline C model');
     selected.push(option.id);
@@ -169,7 +169,7 @@ try{
   assert.equal(requests.length-optionRequests,selected.length,'Each selected option should be fetched once');
   await assertSafetyMounts(model,'all-options');
   if(selected.length){
-    const movable=selected.filter(id=>catalog.accessories.find(option=>option.id===id)?.category!=='safety');
+    const movable=selected.filter(id=>!['safety','cabinet','cascade-cabinet'].includes(catalog.accessories.find(option=>option.id===id)?.category));
     assert(movable.length,'A movable option is needed for the placement check');
     const firstId=movable[0];
     const before=await page.evaluate(id=>window.__hotwater.scene.getObjectByName('accessory_'+id).position.toArray(),firstId);

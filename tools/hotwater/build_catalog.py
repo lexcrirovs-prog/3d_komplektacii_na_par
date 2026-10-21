@@ -115,7 +115,7 @@ def main():
             except Exception as exc:
                 failures.append(dict(id=futures[future]['id'], error=str(exc)))
                 print('ERROR: '+str(exc), file=sys.stderr, flush=True)
-    audit = dict(version='2026.10.20.2', author='Codex / GPT-6', selection=str(args.selection),
+    audit = dict(version='2026.10.21.1', author='Codex / GPT-6', selection=str(args.selection),
                  sourceUpAxis=args.up_axis, deflectionMm=args.deflection,
                  angularDeflectionRad=args.angle, completed=completed, failures=failures)
     write_json(args.metadata/'build-audit.json', audit)
@@ -134,9 +134,13 @@ def main():
             item['doors'] = old['doors']
         if from_cache and old and old.get('sourceSha256') == item['sourceSha256'] and old.get('safetyMounts'):
             item['safetyMounts'] = old['safetyMounts']
+        if from_cache and old and old.get('sourceSha256') == item['sourceSha256']:
+            for key in ('waterConnections', 'finishOverrides'):
+                if key in old:
+                    item[key] = old[key]
         current[item['id']] = item
     catalog['models'] = sorted(current.values(), key=lambda r:(r['family'], r['powerKw'], r['variant']))
-    catalog['version'] = '2026.10.20.2'
+    catalog['version'] = '2026.10.21.1'
     catalog['classification'] = read_json(args.selection).get('classification')
     write_json(catalog_path, catalog)
     print(json.dumps(dict(catalog=str(catalog_path), models=len(catalog['models']),

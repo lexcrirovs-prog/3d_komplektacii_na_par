@@ -4,7 +4,10 @@
 .hw-shell button{cursor:pointer;transition:background .18s,color .18s;border:0}
 .hw-shell button:disabled{cursor:wait;opacity:.5}
 .hw-shell button:focus-visible,.hw-shell select:focus-visible,.hw-shell summary:focus-visible{outline:2px solid #266b65;outline-offset:3px}
-.hw-stage{position:relative;min-width:0;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#fbfcf8,#e3e9e1)}
+.hw-stage{position:relative;min-width:0;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#fbfcfd,#e7e9ec)}
+.hw-water-legend{position:absolute;bottom:145px;left:30px;display:flex;gap:13px;padding:6px 9px;border-radius:5px;background:#ffffffe6;font-size:10px;color:#34424e;pointer-events:none}
+.hw-water-legend span{display:flex;align-items:center;gap:6px}.hw-water-legend i{width:17px;height:4px;border-radius:2px}.hw-water-legend .supply{background:#cf3030}.hw-water-legend .return{background:#246bce}
+@media(max-width:700px){.hw-water-legend{left:18px;bottom:98px;font-size:9px}}
 .hw-canvas{position:absolute;inset:0;touch-action:none}
 .hw-canvas canvas{display:block;width:100%;height:100%}
 .hw-brand{position:absolute;left:28px;top:24px;display:flex;gap:18px;align-items:center;pointer-events:none}

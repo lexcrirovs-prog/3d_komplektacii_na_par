@@ -1,4 +1,4 @@
-"""PREMIUM hotwater incremental release, 20.10.2026, Codex / GPT-6.
+"""PREMIUM hotwater incremental release, 21.10.2026, Codex / GPT-6.
 
 Prepare a verified backup, create a separate immutable stage, verify its actual
 bytes and cache policy, and assess release evidence. Cutover and rollback are
@@ -23,16 +23,16 @@ from pathlib import Path, PurePosixPath
 spec = importlib.util.spec_from_file_location('base_publisher', Path(__file__).parents[1] / 's3000/publish-web.py')
 p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
-p.VERSION = '2026.10.20.2'
+p.VERSION = '2026.10.21.1'
 p.OUT = p.REPO / 'artifacts' / ('publication-v' + p.VERSION)
 p.STAGE = p.ROOT + '/komplektacii4-stage-v' + p.VERSION
 p.STAGE_URL = 'https://prgz.ru/komplektacii4-stage-v' + p.VERSION + '/'
 p.BACKUP = p.ROOT + '/komplektacii4-before-hotwater-v' + p.VERSION
 HELD = p.ROOT + '/komplektacii4-held-hotwater-v' + p.VERSION
-BASELINE_VERSION = '2026.10.19.2'
+BASELINE_VERSION = '2026.10.20.2'
 EXPECTED_OLD_GLB = 157
 BASELINE_HOTWATER_GLB = 57
-# Source audit on 20.10: 48 existing models and nine options, no new geometry.
+# Release scope on 21.10: 48 existing models and nine options, no new geometry.
 # Data alone must not broaden the accepted release inventory.
 EXPECTED_MODELS = 48
 EXPECTED_ACCESSORIES = 9

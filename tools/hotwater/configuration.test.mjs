@@ -23,3 +23,11 @@ test('Only one option per category can be selected, including by shared URL',()=
 test('Deselecting an option removes its layout from the shared URL',()=>{
  assert.equal(new URLSearchParams(layoutQuery('?hwLayout=old',{plate:{x:1,y:0,z:0,turns:0}},[])).has('hwLayout'),false);
 });
+
+test('Boiler and cascade cabinets coexist and keep existing shared option IDs',()=>{
+ const options=[{id:'premium-boiler',category:'cabinet'},{id:'premium-cascade',category:'cascade-cabinet'}];
+ assert.deepEqual(uniqueOptions(options,['premium-boiler','premium-cascade']),['premium-boiler','premium-cascade']);
+ assert.deepEqual(uniqueOptions(options,['premium-cascade']),['premium-cascade']);
+ const query='?hwLayout='+encodeURIComponent(JSON.stringify({'premium-boiler':{x:8,y:8,z:8,turns:2},plate:{x:.3,y:0,z:0,turns:1}}));
+ assert.deepEqual(initialLayout(query,['plate']),{plate:{x:.3,y:0,z:0,turns:1}});
+});

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-19",
+  "result": "PASS",
+  "manifestSha256": "c95efb81fbabc52e8d19e31269e1e083bf5474f50817c60266b71da697fe8417",
+  "checks": [
+    "Initial page has two lazy section entry points and no eager model graph",
+    "Hotwater module has no static dependency on the steam model catalog",
+    "Steam graph does not load the hotwater viewer or its model URLs",
+    "Product styles remain split from the initial navigation shell"
+  ],
+  "testCount": 4,
+  "passed": 4,
+  "failed": 0,
+  "exitCode": 0
+}

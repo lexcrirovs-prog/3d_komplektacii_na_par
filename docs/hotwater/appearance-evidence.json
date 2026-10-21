@@ -1,0 +1,506 @@
+{
+  "date": "2026-10-21",
+  "executor": "Codex / GPT-6",
+  "scope": "Named E front panels only; rear insulation retains CAD materials. New finish is opaque neutral grey, matching each family casing.",
+  "models": [
+    {
+      "id": "e-1000-20260925",
+      "sourceSha256": "14dc8f1f9e7c94500d306d8494ab2b4dc958019397214fc7daf7c792d996c3f8",
+      "assetSha256": "a195787d17e2b9bfb070752d888fae373c54a511088310eae0e0b63365f70343",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:66:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.017 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-1500-20260925",
+      "sourceSha256": "bf396c2695aeae49687ca0c165ee6bf615a1bf82768e8f8c4f81e90113c5368f",
+      "assetSha256": "988a85cfeed8368ba348696ed5fe3779ff629c200f7a296e27a7e6cb59dd56cc",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:65:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.017 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-2000-20260925",
+      "sourceSha256": "541ceb7399ae46bde490869c8944693a903078888df7f4d62d8526d9561f5300",
+      "assetSha256": "8f54d410975df3f1b7c97c04a5d2d1fa826afae8d92ee69484b683ee0dff0aa9",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:66:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.090 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-2500-20260925",
+      "sourceSha256": "9ebfecb9e5f3b70d8f867cba1d5afe0cdc53af34e26550223822bd59f45c24c2",
+      "assetSha256": "c9c0bd34901b5eeab3d5985e8887f285b3d22c0bccd46dae03add56ccae73e3e",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:66:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.090 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-3000-20260925",
+      "sourceSha256": "84dbda1876005da5b3d8486de65fd2907491262c668f54393c7f2a9314807801",
+      "assetSha256": "e39fe0ab070e3d5481ff6eda785a2383663c9d79149f7091926160ab2c899fd3",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:66:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.113 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-3500-20260925",
+      "sourceSha256": "00e2a019fd0a84be56d29a6545f6d96509a5dcbc8d51c2662f8b1eb5fcf3e446",
+      "assetSha256": "f3432946ac3ee836948cdf1d98b00708c68c402d1fbd885882c6d9ddad876296",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:65:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.113 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-4000-20260925",
+      "sourceSha256": "b78949fc2d724b7d05b41495e3771956878ce1c9b54b26452d66b29073d8b827",
+      "assetSha256": "aa32be7f622c11763bf15964f885eaf88536c53b2a02e977334ff9c625a1435f",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:68:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.099 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-5000-20260925",
+      "sourceSha256": "15f62caad7f7c73ee45ccd0fc8558ff69dd7ec8cfb0da63ca50e0b67136bc01d",
+      "assetSha256": "14c87f1c4684f6ae70b9f06bdb3cfb437257536189ef17399c2de9471fddd653",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:68:1",
+          "materialName": "CAD_6",
+          "sourceName": "PR.05.01.01.099 Лист ФД:1",
+          "sourceColour": [
+            0.0051815,
+            0.4072402,
+            0.0684782,
+            0.52
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-2500-06",
+      "sourceSha256": "f1bd11886a89fd4054a47d41da50903956ea6940caf0f6e64bf3aa81393a6d57",
+      "assetSha256": "ef89b0b6de750ba3640c94ba1bd1f9cd0084281a1cb124858fa6936d6a657ac4",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:92:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-2500-10",
+      "sourceSha256": "51e6dd36340cb71002ba79bdb1eca930da9dd479c49789e41fe4e4d591749d4f",
+      "assetSha256": "cfc9632680cb6d72a8e24208f29c2b998d6d72d35838b9fbb3ef5121738cb7cf",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:92:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-3500-06",
+      "sourceSha256": "71dbf9aa30947320fb2feb9e0973fc05e059fc44e94a095897b59e96d870f515",
+      "assetSha256": "7111b75faac55481299250552fb42affc2ab0735d16c57a4f782b57d4af1339a",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:93:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-3500-10",
+      "sourceSha256": "4f8466effd1727ff636e39c695d0c96bcc5603df0dac94f6344a0c71595f92c8",
+      "assetSha256": "b354b2475aa56ee4e58adbbe574636e9db00c149ba31ce85da75bc8801ec1266",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:93:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-3500-20260609-06",
+      "sourceSha256": "45478e4546bb45d523220f5affe6d6e804efb847189b7bf0a407b2e0828bd478",
+      "assetSha256": "965d29a91a7e1b82939b590c64921abb2457567915d84366220286b0f2490415",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:104:2",
+          "materialName": "CAD_5",
+          "sourceName": "PR.08.01.01.018 Изоляция ФД:1",
+          "sourceColour": [
+            0.0409152,
+            0.1070231,
+            0.06301,
+            1
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        },
+        {
+          "sourceNode": "occurrence:0:1:1:132:2",
+          "materialName": "CAD_5",
+          "sourceName": "PR.08.01.01.018 Изоляция ФД:2",
+          "sourceColour": [
+            0.0409152,
+            0.1070231,
+            0.06301,
+            1
+          ],
+          "color": [
+            0.5209956,
+            0.5209956,
+            0.5209956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-4000-06",
+      "sourceSha256": "f8d7ddf81f3d4a218070f6160292a5671a936ec3611c7dbddbe2ee61afbefdca",
+      "assetSha256": "61e918c1533c987d58b9940030933de926bab8fc57695f8a4a5e0d46b28914f5",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:93:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-4000-10",
+      "sourceSha256": "06179a20d27cc686b20d73eb87eb186c8b4431716abd69a6b2b99470f6faa63b",
+      "assetSha256": "41e8431405cd3d7fff17fbba860f929e691b56f581624f52129b5f17df9fc0e2",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:93:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-5000-06",
+      "sourceSha256": "2478651e60c22401d96267cda695e5622a97fae4bd7e5ec31f283427cb7f1e1d",
+      "assetSha256": "80ceb8a58918ad24b3f5a321f6b6e495e437dd5f4656ae2296ca3b9110c8bef3",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:94:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-5000-10",
+      "sourceSha256": "bd01cf6a309c43c50f7172fc438723fb6b3f56b545b2efee324cdda92655cb08",
+      "assetSha256": "328a8f7d1ce13d49c665c0d8854d3b866da2c8d7b6cfd508bb648121e834d3f3",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:94:1",
+          "materialName": "CAD_5",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-6000-06",
+      "sourceSha256": "a6d99c86b89ff175739c156dd119c773eb709dde04077550fe0542eaded68a5a",
+      "assetSha256": "f50f9f7ec17b6f62fe3aa3f8664db9a7760643aaed738f71ad673965b6488b60",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:97:1",
+          "materialName": "CAD_6",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-6000-10",
+      "sourceSha256": "3a371cd28e35cad6b5e0420457de869f525357d00ff91b835d782ec6c8bdf3a3",
+      "assetSha256": "ce798043f0cf03da97b6fe9e8c2e7440d771974dce0f5e2cb8b5408aad90587b",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:97:1",
+          "materialName": "CAD_6",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-7000-06",
+      "sourceSha256": "d4709164ef326e0c6f6cb4b5338d09f4a52dd8b00e155d67d241b1591e5be060",
+      "assetSha256": "e0c994e6e5edae3e2d3f4e603a27826f8dd4ad8cbd02afb38269a7bc2361de6f",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:109:1",
+          "materialName": "CAD_6",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-long-7000-10",
+      "sourceSha256": "55e3ce764119fc3e2868f4a04cf5d60efd5f2a42c05ea513db6efb7e465a88b5",
+      "assetSha256": "fabcf300e93358cb379e3f2b0da96df79272b2dccf5d021ca0b6f95c68468dbc",
+      "finishOverrides": [
+        {
+          "sourceNode": "occurrence:0:1:1:109:1",
+          "materialName": "CAD_6",
+          "sourceName": "AVANTEX крышки 6000:1",
+          "sourceColour": [
+            0.1878208,
+            0.3049873,
+            0.2050787,
+            1
+          ],
+          "color": [
+            0.5149177,
+            0.5028865,
+            0.4910209
+          ]
+        }
+      ]
+    }
+  ]
+}

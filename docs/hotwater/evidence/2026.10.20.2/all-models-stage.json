@@ -1,0 +1,2297 @@
+{
+  "date": "2026-10-20",
+  "executedAt": "2026-10-20T16:21:52.106Z",
+  "version": "2026.10.20.2",
+  "result": "PASS",
+  "base": "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/",
+  "manifestSha256": "a29e0ad1e835d13ef4f77c4854585e59ee2ba9e2081124de2edeb9030721a60c",
+  "catalogSha256": "b38b9dc1bcafcc50d20036b0f0c5b4d086ffb1401ee0dd0e66e0ff707d6643e4",
+  "legacyUrls": 48,
+  "expectedModels": 48,
+  "checkedModels": 48,
+  "models": [
+    {
+      "id": "cla-250-51",
+      "label": "PREMIUM C-250",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 3201,
+      "bytes": 814568,
+      "doors": 1,
+      "screenshot": "cla-250-51.png",
+      "openScreenshot": "cla-250-51-open.png",
+      "calls": 115,
+      "triangles": 398976,
+      "memory": {
+        "geometries": 94,
+        "textures": 2
+      },
+      "nodes": 368,
+      "sourceMeshes": 314,
+      "instances": 231,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:3"
+      ],
+      "bounds": {
+        "min": [
+          -0.5400000214576721,
+          5.551115123125783e-17,
+          -0.9076799034382015
+        ],
+        "max": [
+          0.5400000214576721,
+          1.1800058175295602,
+          0.9076799034382015
+        ],
+        "size": [
+          1.0800000429153442,
+          1.1800058175295602,
+          1.815359806876403
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-51-fX0S-gW1.glb"
+      ]
+    },
+    {
+      "id": "cla-250-57",
+      "label": "PREMIUM C-250",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2039,
+      "bytes": 808888,
+      "doors": 1,
+      "screenshot": "cla-250-57.png",
+      "openScreenshot": "cla-250-57-open.png",
+      "calls": 115,
+      "triangles": 339756,
+      "memory": {
+        "geometries": 94,
+        "textures": 2
+      },
+      "nodes": 396,
+      "sourceMeshes": 302,
+      "instances": 219,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:3"
+      ],
+      "bounds": {
+        "min": [
+          -0.5400000214576721,
+          5.551115123125783e-17,
+          -0.9076799034382015
+        ],
+        "max": [
+          0.5400000214576721,
+          1.1800058175295602,
+          0.9076799034382015
+        ],
+        "size": [
+          1.0800000429153442,
+          1.1800058175295602,
+          1.815359806876403
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-250-57-Bs1HaV9t.glb"
+      ]
+    },
+    {
+      "id": "cla-500-51",
+      "label": "PREMIUM C-500",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 8893,
+      "bytes": 970820,
+      "doors": 1,
+      "screenshot": "cla-500-51.png",
+      "openScreenshot": "cla-500-51-open.png",
+      "calls": 121,
+      "triangles": 668418,
+      "memory": {
+        "geometries": 96,
+        "textures": 2
+      },
+      "nodes": 440,
+      "sourceMeshes": 385,
+      "instances": 295,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:5"
+      ],
+      "bounds": {
+        "min": [
+          -0.6209999918937683,
+          5.551115123125783e-17,
+          -1.0351733142307573
+        ],
+        "max": [
+          0.6209999918937683,
+          1.380007906735538,
+          1.035173314230757
+        ],
+        "size": [
+          1.2419999837875366,
+          1.380007906735538,
+          2.0703466284615146
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-500-51-BxoDmDb-.glb"
+      ]
+    },
+    {
+      "id": "cla-500-57",
+      "label": "PREMIUM C-500",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 9420,
+      "bytes": 969900,
+      "doors": 1,
+      "screenshot": "cla-500-57.png",
+      "openScreenshot": "cla-500-57-open.png",
+      "calls": 120,
+      "triangles": 575552,
+      "memory": {
+        "geometries": 96,
+        "textures": 2
+      },
+      "nodes": 505,
+      "sourceMeshes": 368,
+      "instances": 279,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:5"
+      ],
+      "bounds": {
+        "min": [
+          -0.6209999918937683,
+          5.551115123125783e-17,
+          -1.0351733142307573
+        ],
+        "max": [
+          0.6209999918937683,
+          1.380007906735538,
+          1.035173314230757
+        ],
+        "size": [
+          1.2419999837875366,
+          1.380007906735538,
+          2.0703466284615146
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-500-57-DctS926l.glb"
+      ]
+    },
+    {
+      "id": "cla-750-51",
+      "label": "PREMIUM C-750",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2175,
+      "bytes": 706804,
+      "doors": 1,
+      "screenshot": "cla-750-51.png",
+      "openScreenshot": "cla-750-51-open.png",
+      "calls": 115,
+      "triangles": 985216,
+      "memory": {
+        "geometries": 94,
+        "textures": 2
+      },
+      "nodes": 635,
+      "sourceMeshes": 503,
+      "instances": 421,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:31"
+      ],
+      "bounds": {
+        "min": [
+          -0.6959999799728394,
+          0,
+          -1.1151771943096216
+        ],
+        "max": [
+          0.6959999799728394,
+          1.530004643933044,
+          1.1151771943096216
+        ],
+        "size": [
+          1.3919999599456787,
+          1.530004643933044,
+          2.230354388619243
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-750-51-D5dpPJf-.glb"
+      ]
+    },
+    {
+      "id": "cla-750-57",
+      "label": "PREMIUM C-750",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2283,
+      "bytes": 696904,
+      "doors": 1,
+      "screenshot": "cla-750-57.png",
+      "openScreenshot": "cla-750-57-open.png",
+      "calls": 114,
+      "triangles": 787411,
+      "memory": {
+        "geometries": 93,
+        "textures": 2
+      },
+      "nodes": 570,
+      "sourceMeshes": 397,
+      "instances": 315,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:12"
+      ],
+      "bounds": {
+        "min": [
+          -0.6959999799728394,
+          0,
+          -1.1151771943096216
+        ],
+        "max": [
+          0.6959999799728394,
+          1.530004643933044,
+          1.1151771943096216
+        ],
+        "size": [
+          1.3919999599456787,
+          1.530004643933044,
+          2.230354388619243
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-750-57-C73fdZ91.glb"
+      ]
+    },
+    {
+      "id": "cla-1000-51",
+      "label": "PREMIUM C-1000",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2249,
+      "bytes": 769336,
+      "doors": 1,
+      "screenshot": "cla-1000-51.png",
+      "openScreenshot": "cla-1000-51-open.png",
+      "calls": 133,
+      "triangles": 1195008,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 536,
+      "sourceMeshes": 477,
+      "instances": 379,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:3"
+      ],
+      "bounds": {
+        "min": [
+          -0.735005569390885,
+          0,
+          -1.2502084160133609
+        ],
+        "max": [
+          0.735005569390885,
+          1.6299992815712618,
+          1.2502084160133609
+        ],
+        "size": [
+          1.47001113878177,
+          1.6299992815712618,
+          2.5004168320267217
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1000-51-Dmvrz_iJ.glb"
+      ]
+    },
+    {
+      "id": "cla-1000-57",
+      "label": "PREMIUM C-1000",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2020,
+      "bytes": 772536,
+      "doors": 1,
+      "screenshot": "cla-1000-57.png",
+      "openScreenshot": "cla-1000-57-open.png",
+      "calls": 134,
+      "triangles": 1005642,
+      "memory": {
+        "geometries": 107,
+        "textures": 2
+      },
+      "nodes": 653,
+      "sourceMeshes": 454,
+      "instances": 355,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:3"
+      ],
+      "bounds": {
+        "min": [
+          -0.735005569390885,
+          0,
+          -1.2502084160133609
+        ],
+        "max": [
+          0.735005569390885,
+          1.6299992815712618,
+          1.2502084160133609
+        ],
+        "size": [
+          1.47001113878177,
+          1.6299992815712618,
+          2.5004168320267217
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1000-57-DjCIBDtf.glb"
+      ]
+    },
+    {
+      "id": "cla-1250-51",
+      "label": "PREMIUM C-1250",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2094,
+      "bytes": 773136,
+      "doors": 1,
+      "screenshot": "cla-1250-51.png",
+      "openScreenshot": "cla-1250-51-open.png",
+      "calls": 122,
+      "triangles": 1326146,
+      "memory": {
+        "geometries": 101,
+        "textures": 2
+      },
+      "nodes": 685,
+      "sourceMeshes": 546,
+      "instances": 459,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:122"
+      ],
+      "bounds": {
+        "min": [
+          -0.7350029026392043,
+          0,
+          -1.3502313804347317
+        ],
+        "max": [
+          0.7350029026392043,
+          1.6299992815712607,
+          1.3502313804347317
+        ],
+        "size": [
+          1.4700058052784086,
+          1.6299992815712607,
+          2.7004627608694634
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1250-51-CZnYLas5.glb"
+      ]
+    },
+    {
+      "id": "cla-1250-57",
+      "label": "PREMIUM C-1250",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2082,
+      "bytes": 780836,
+      "doors": 1,
+      "screenshot": "cla-1250-57.png",
+      "openScreenshot": "cla-1250-57-open.png",
+      "calls": 125,
+      "triangles": 1092110,
+      "memory": {
+        "geometries": 103,
+        "textures": 2
+      },
+      "nodes": 640,
+      "sourceMeshes": 444,
+      "instances": 353,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:40"
+      ],
+      "bounds": {
+        "min": [
+          -0.7350029026392043,
+          0,
+          -1.3502313804347317
+        ],
+        "max": [
+          0.7350029026392043,
+          1.6299992815712607,
+          1.3502313804347317
+        ],
+        "size": [
+          1.4700058052784086,
+          1.6299992815712607,
+          2.7004627608694634
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1250-57-NAp7Ir2t.glb"
+      ]
+    },
+    {
+      "id": "cla-1500-51",
+      "label": "PREMIUM C-1500",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2469,
+      "bytes": 1353072,
+      "doors": 1,
+      "screenshot": "cla-1500-51.png",
+      "openScreenshot": "cla-1500-51-open.png",
+      "calls": 132,
+      "triangles": 1620192,
+      "memory": {
+        "geometries": 105,
+        "textures": 2
+      },
+      "nodes": 573,
+      "sourceMeshes": 514,
+      "instances": 416,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:28"
+      ],
+      "bounds": {
+        "min": [
+          -0.8100000023841858,
+          -1.3877787807814457e-17,
+          -1.430186334256847
+        ],
+        "max": [
+          0.8100000023841858,
+          1.7800064940872657,
+          1.4301863342568475
+        ],
+        "size": [
+          1.6200000047683716,
+          1.7800064940872657,
+          2.8603726685136945
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1500-51-QOlFi4ID.glb"
+      ]
+    },
+    {
+      "id": "cla-1500-57",
+      "label": "PREMIUM C-1500",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 8582,
+      "bytes": 1352696,
+      "doors": 1,
+      "screenshot": "cla-1500-57.png",
+      "openScreenshot": "cla-1500-57-open.png",
+      "calls": 133,
+      "triangles": 1357002,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 701,
+      "sourceMeshes": 484,
+      "instances": 385,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:28"
+      ],
+      "bounds": {
+        "min": [
+          -0.8100000023841858,
+          -1.3877787807814457e-17,
+          -1.430186334256847
+        ],
+        "max": [
+          0.8100000023841858,
+          1.7800064940872657,
+          1.4301863342568475
+        ],
+        "size": [
+          1.6200000047683716,
+          1.7800064940872657,
+          2.8603726685136945
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1500-57-ByjKAVMK.glb"
+      ]
+    },
+    {
+      "id": "cla-1750-51",
+      "label": "PREMIUM C-1750",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 7830,
+      "bytes": 1358520,
+      "doors": 1,
+      "screenshot": "cla-1750-51.png",
+      "openScreenshot": "cla-1750-51-open.png",
+      "calls": 133,
+      "triangles": 1707698,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 762,
+      "sourceMeshes": 608,
+      "instances": 510,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:97"
+      ],
+      "bounds": {
+        "min": [
+          -0.8100000023841858,
+          1.3877787807814457e-17,
+          -1.5301863342568471
+        ],
+        "max": [
+          0.8100000023841858,
+          1.780007211004703,
+          1.5301863342568476
+        ],
+        "size": [
+          1.6200000047683716,
+          1.780007211004703,
+          3.0603726685136947
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1750-51-JfPoF49k.glb"
+      ]
+    },
+    {
+      "id": "cla-1750-57",
+      "label": "PREMIUM C-1750",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2196,
+      "bytes": 1356600,
+      "doors": 1,
+      "screenshot": "cla-1750-57.png",
+      "openScreenshot": "cla-1750-57-open.png",
+      "calls": 131,
+      "triangles": 1383954,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 695,
+      "sourceMeshes": 481,
+      "instances": 384,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:49"
+      ],
+      "bounds": {
+        "min": [
+          -0.8100000023841858,
+          1.3877787807814457e-17,
+          -1.5301863342568471
+        ],
+        "max": [
+          0.8100000023841858,
+          1.780007211004703,
+          1.5301863342568476
+        ],
+        "size": [
+          1.6200000047683716,
+          1.780007211004703,
+          3.0603726685136947
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-1750-57-DFaGwmOA.glb"
+      ]
+    },
+    {
+      "id": "cla-2000-51",
+      "label": "PREMIUM C-2000",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2175,
+      "bytes": 1534940,
+      "doors": 1,
+      "screenshot": "cla-2000-51.png",
+      "openScreenshot": "cla-2000-51-open.png",
+      "calls": 131,
+      "triangles": 2011066,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 813,
+      "sourceMeshes": 646,
+      "instances": 550,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:113"
+      ],
+      "bounds": {
+        "min": [
+          -0.9120026074074068,
+          9.71445146547012e-17,
+          -1.6276731949049918
+        ],
+        "max": [
+          0.9120026074074068,
+          1.988002183447025,
+          1.627673194904992
+        ],
+        "size": [
+          1.8240052148148136,
+          1.988002183447025,
+          3.2553463898099837
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2000-51-D1K3idtF.glb"
+      ]
+    },
+    {
+      "id": "cla-2000-57",
+      "label": "PREMIUM C-2000",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2254,
+      "bytes": 1544148,
+      "doors": 1,
+      "screenshot": "cla-2000-57.png",
+      "openScreenshot": "cla-2000-57-open.png",
+      "calls": 130,
+      "triangles": 1702832,
+      "memory": {
+        "geometries": 105,
+        "textures": 2
+      },
+      "nodes": 748,
+      "sourceMeshes": 508,
+      "instances": 412,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:7"
+      ],
+      "bounds": {
+        "min": [
+          -0.9120026074074068,
+          9.71445146547012e-17,
+          -1.6276731949049918
+        ],
+        "max": [
+          0.9120026074074068,
+          1.988002183447025,
+          1.627673194904992
+        ],
+        "size": [
+          1.8240052148148136,
+          1.988002183447025,
+          3.2553463898099837
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2000-57-atqWlakb.glb"
+      ]
+    },
+    {
+      "id": "cla-2500-51",
+      "label": "PREMIUM C-2500",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 3817,
+      "bytes": 1545424,
+      "doors": 1,
+      "screenshot": "cla-2500-51.png",
+      "openScreenshot": "cla-2500-51-open.png",
+      "calls": 131,
+      "triangles": 2189414,
+      "memory": {
+        "geometries": 107,
+        "textures": 2
+      },
+      "nodes": 813,
+      "sourceMeshes": 646,
+      "instances": 550,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:112"
+      ],
+      "bounds": {
+        "min": [
+          -0.9120026074074068,
+          0,
+          -1.727673194904992
+        ],
+        "max": [
+          0.9120026074074068,
+          1.9880000296068916,
+          1.7276731949049922
+        ],
+        "size": [
+          1.8240052148148136,
+          1.9880000296068916,
+          3.455346389809984
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2500-51-CkldBJ3Y.glb"
+      ]
+    },
+    {
+      "id": "cla-2500-57",
+      "label": "PREMIUM C-2500",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2177,
+      "bytes": 1531736,
+      "doors": 1,
+      "screenshot": "cla-2500-57.png",
+      "openScreenshot": "cla-2500-57-open.png",
+      "calls": 131,
+      "triangles": 1834452,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 569,
+      "sourceMeshes": 509,
+      "instances": 412,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:6"
+      ],
+      "bounds": {
+        "min": [
+          -0.9120026074074068,
+          0,
+          -1.727673194904992
+        ],
+        "max": [
+          0.9120026074074068,
+          1.9880000296068916,
+          1.7276731949049922
+        ],
+        "size": [
+          1.8240052148148136,
+          1.9880000296068916,
+          3.455346389809984
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-2500-57-CK-xB-66.glb"
+      ]
+    },
+    {
+      "id": "cla-3000-51",
+      "label": "PREMIUM C-3000",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 13326,
+      "bytes": 1619512,
+      "doors": 1,
+      "screenshot": "cla-3000-51.png",
+      "openScreenshot": "cla-3000-51-open.png",
+      "calls": 130,
+      "triangles": 2398440,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 859,
+      "sourceMeshes": 681,
+      "instances": 586,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:147"
+      ],
+      "bounds": {
+        "min": [
+          -0.9869999885559082,
+          0,
+          -1.7526765941819584
+        ],
+        "max": [
+          0.9869999885559082,
+          2.138000065369685,
+          1.7526765941819584
+        ],
+        "size": [
+          1.9739999771118164,
+          2.138000065369685,
+          3.505353188363917
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3000-51-IomjzRaK.glb"
+      ]
+    },
+    {
+      "id": "cla-3000-51-dn150",
+      "label": "PREMIUM C-3000",
+      "family": "cla",
+      "variant": "51 мм; Ду 150",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2124,
+      "bytes": 1555484,
+      "doors": 1,
+      "screenshot": "cla-3000-51-dn150.png",
+      "openScreenshot": "cla-3000-51-dn150-open.png",
+      "calls": 130,
+      "triangles": 2301930,
+      "memory": {
+        "geometries": 105,
+        "textures": 2
+      },
+      "nodes": 602,
+      "sourceMeshes": 542,
+      "instances": 446,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:56"
+      ],
+      "bounds": {
+        "min": [
+          -0.9000063948309388,
+          9.71445146547012e-17,
+          -1.9101731949049916
+        ],
+        "max": [
+          0.9000063948309388,
+          1.9500021808451897,
+          1.9101731949049918
+        ],
+        "size": [
+          1.8000127896618776,
+          1.9500021808451897,
+          3.820346389809983
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3000-51-dn150-CUO-Hg4N.glb"
+      ]
+    },
+    {
+      "id": "cla-3000-57",
+      "label": "PREMIUM C-3000",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2172,
+      "bytes": 1605900,
+      "doors": 1,
+      "screenshot": "cla-3000-57.png",
+      "openScreenshot": "cla-3000-57-open.png",
+      "calls": 130,
+      "triangles": 2063491,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 591,
+      "sourceMeshes": 532,
+      "instances": 436,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:29"
+      ],
+      "bounds": {
+        "min": [
+          -0.9869999885559082,
+          0,
+          -1.7526765941819584
+        ],
+        "max": [
+          0.9869999885559082,
+          2.138000065369685,
+          1.7526765941819584
+        ],
+        "size": [
+          1.9739999771118164,
+          2.138000065369685,
+          3.505353188363917
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3000-57-Dh-UgG5H.glb"
+      ]
+    },
+    {
+      "id": "cla-3500-51",
+      "label": "PREMIUM C-3500",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2627,
+      "bytes": 1632008,
+      "doors": 1,
+      "screenshot": "cla-3500-51.png",
+      "openScreenshot": "cla-3500-51-open.png",
+      "calls": 129,
+      "triangles": 2577252,
+      "memory": {
+        "geometries": 105,
+        "textures": 2
+      },
+      "nodes": 624,
+      "sourceMeshes": 565,
+      "instances": 470,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:104"
+      ],
+      "bounds": {
+        "min": [
+          -0.9869999885559082,
+          1.3877787807814457e-17,
+          -1.9551862616598341
+        ],
+        "max": [
+          0.9869999885559082,
+          2.138020020396103,
+          1.9551862616598343
+        ],
+        "size": [
+          1.9739999771118164,
+          2.138020020396103,
+          3.9103725233196682
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3500-51-D1ilO9Tg.glb"
+      ]
+    },
+    {
+      "id": "cla-3500-57",
+      "label": "PREMIUM C-3500",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 18466,
+      "bytes": 1648756,
+      "doors": 1,
+      "screenshot": "cla-3500-57.png",
+      "openScreenshot": "cla-3500-57-open.png",
+      "calls": 130,
+      "triangles": 2422326,
+      "memory": {
+        "geometries": 106,
+        "textures": 2
+      },
+      "nodes": 797,
+      "sourceMeshes": 534,
+      "instances": 438,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:45"
+      ],
+      "bounds": {
+        "min": [
+          -0.9869999885559082,
+          1.3877787807814457e-17,
+          -1.9551862616598341
+        ],
+        "max": [
+          0.9869999885559082,
+          2.138020020396103,
+          1.9551862616598343
+        ],
+        "size": [
+          1.9739999771118164,
+          2.138020020396103,
+          3.9103725233196682
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-3500-57-DOTax2dc.glb"
+      ]
+    },
+    {
+      "id": "cla-4000-51",
+      "label": "PREMIUM C-4000",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2223,
+      "bytes": 1739316,
+      "doors": 1,
+      "screenshot": "cla-4000-51.png",
+      "openScreenshot": "cla-4000-51-open.png",
+      "calls": 129,
+      "triangles": 2627678,
+      "memory": {
+        "geometries": 107,
+        "textures": 2
+      },
+      "nodes": 883,
+      "sourceMeshes": 700,
+      "instances": 608,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:169"
+      ],
+      "bounds": {
+        "min": [
+          -1.0369999408721924,
+          0,
+          -2.2026962338753213
+        ],
+        "max": [
+          1.0369999408721924,
+          2.237999999804572,
+          2.2026962338753213
+        ],
+        "size": [
+          2.0739998817443848,
+          2.237999999804572,
+          4.405392467750643
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-4000-51-C1iuZKoY.glb"
+      ]
+    },
+    {
+      "id": "cla-4000-57",
+      "label": "PREMIUM C-4000",
+      "family": "cla",
+      "variant": "57 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 13691,
+      "bytes": 1711768,
+      "doors": 1,
+      "screenshot": "cla-4000-57.png",
+      "openScreenshot": "cla-4000-57-open.png",
+      "calls": 129,
+      "triangles": 2248879,
+      "memory": {
+        "geometries": 107,
+        "textures": 2
+      },
+      "nodes": 599,
+      "sourceMeshes": 539,
+      "instances": 446,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:47"
+      ],
+      "bounds": {
+        "min": [
+          -1.0369999408721924,
+          0,
+          -2.2026962338753213
+        ],
+        "max": [
+          1.0369999408721924,
+          2.237999999804572,
+          2.2026962338753213
+        ],
+        "size": [
+          2.0739998817443848,
+          2.237999999804572,
+          4.405392467750643
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-4000-57-BmoVO05h.glb"
+      ]
+    },
+    {
+      "id": "cla-5000-51",
+      "label": "PREMIUM C-5000",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2431,
+      "bytes": 2170880,
+      "doors": 1,
+      "screenshot": "cla-5000-51.png",
+      "openScreenshot": "cla-5000-51-open.png",
+      "calls": 132,
+      "triangles": 3597358,
+      "memory": {
+        "geometries": 110,
+        "textures": 2
+      },
+      "nodes": 697,
+      "sourceMeshes": 637,
+      "instances": 541,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:163"
+      ],
+      "bounds": {
+        "min": [
+          -1.162002882746231,
+          8.326672684688674e-17,
+          -2.411371390206227
+        ],
+        "max": [
+          1.162002882746231,
+          2.5430033379494326,
+          2.411371390206227
+        ],
+        "size": [
+          2.324005765492462,
+          2.5430033379494326,
+          4.822742780412454
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-5000-51-CPJQwHvz.glb"
+      ]
+    },
+    {
+      "id": "cla-6000-51",
+      "label": "PREMIUM C-6000",
+      "family": "cla",
+      "variant": "51 мм",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 13054,
+      "bytes": 2181292,
+      "doors": 1,
+      "screenshot": "cla-6000-51.png",
+      "openScreenshot": "cla-6000-51-open.png",
+      "calls": 132,
+      "triangles": 3897666,
+      "memory": {
+        "geometries": 110,
+        "textures": 2
+      },
+      "nodes": 699,
+      "sourceMeshes": 639,
+      "instances": 543,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:204"
+      ],
+      "bounds": {
+        "min": [
+          -1.162002882746231,
+          0,
+          -2.6513713902062293
+        ],
+        "max": [
+          1.162002882746231,
+          2.542991995811465,
+          2.6513713902062293
+        ],
+        "size": [
+          2.324005765492462,
+          2.542991995811465,
+          5.3027427804124585
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/cla-6000-51-Cet0vap5.glb"
+      ]
+    },
+    {
+      "id": "e-1000-20260925",
+      "label": "PREMIUM E-1000",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2161,
+      "bytes": 1583340,
+      "doors": 1,
+      "screenshot": "e-1000-20260925.png",
+      "openScreenshot": "e-1000-20260925-open.png",
+      "calls": 162,
+      "triangles": 865716,
+      "memory": {
+        "geometries": 132,
+        "textures": 2
+      },
+      "nodes": 670,
+      "sourceMeshes": 588,
+      "instances": 471,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -0.8380090923320531,
+          -2.0816681711721685e-17,
+          -1.4823830697156282
+        ],
+        "max": [
+          0.8380090923320531,
+          1.8837585648994082,
+          1.4823830697156288
+        ],
+        "size": [
+          1.6760181846641062,
+          1.8837585648994082,
+          2.9647661394312568
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-1000-20260925-C5KayICW.glb"
+      ]
+    },
+    {
+      "id": "e-1500-20260925",
+      "label": "PREMIUM E-1500",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2170,
+      "bytes": 1582000,
+      "doors": 1,
+      "screenshot": "e-1500-20260925.png",
+      "openScreenshot": "e-1500-20260925-open.png",
+      "calls": 161,
+      "triangles": 915194,
+      "memory": {
+        "geometries": 132,
+        "textures": 2
+      },
+      "nodes": 649,
+      "sourceMeshes": 568,
+      "instances": 451,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -0.8380090923320531,
+          2.7755575615628914e-17,
+          -1.6073830697156282
+        ],
+        "max": [
+          0.8380090923320531,
+          1.883762898424666,
+          1.6073830697156288
+        ],
+        "size": [
+          1.6760181846641062,
+          1.883762898424666,
+          3.2147661394312568
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-1500-20260925-Cu5QGNm0.glb"
+      ]
+    },
+    {
+      "id": "e-2000-20260925",
+      "label": "PREMIUM E-2000",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2122,
+      "bytes": 1731584,
+      "doors": 1,
+      "screenshot": "e-2000-20260925.png",
+      "openScreenshot": "e-2000-20260925-open.png",
+      "calls": 162,
+      "triangles": 947192,
+      "memory": {
+        "geometries": 132,
+        "textures": 2
+      },
+      "nodes": 674,
+      "sourceMeshes": 598,
+      "instances": 481,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -0.9096270799636841,
+          0,
+          -1.7273847209917166
+        ],
+        "max": [
+          0.9096270799636841,
+          2.0257447789746945,
+          1.7273847209917164
+        ],
+        "size": [
+          1.8192541599273682,
+          2.0257447789746945,
+          3.4547694419834327
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-2000-20260925-AFMc05OU.glb"
+      ]
+    },
+    {
+      "id": "e-2500-20260925",
+      "label": "PREMIUM E-2500",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 24049,
+      "bytes": 1734232,
+      "doors": 1,
+      "screenshot": "e-2500-20260925.png",
+      "openScreenshot": "e-2500-20260925-open.png",
+      "calls": 162,
+      "triangles": 988922,
+      "memory": {
+        "geometries": 132,
+        "textures": 2
+      },
+      "nodes": 674,
+      "sourceMeshes": 598,
+      "instances": 481,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -0.9096270799636841,
+          2.7755575615628914e-17,
+          -1.877384720991717
+        ],
+        "max": [
+          0.9096270799636841,
+          2.0257524599952146,
+          1.8773847209917163
+        ],
+        "size": [
+          1.8192541599273682,
+          2.0257524599952146,
+          3.7547694419834334
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-2500-20260925-lfSxXFlI.glb"
+      ]
+    },
+    {
+      "id": "e-3000-20260925",
+      "label": "PREMIUM E-3000",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 13279,
+      "bytes": 1836912,
+      "doors": 1,
+      "screenshot": "e-3000-20260925.png",
+      "openScreenshot": "e-3000-20260925-open.png",
+      "calls": 165,
+      "triangles": 1146818,
+      "memory": {
+        "geometries": 133,
+        "textures": 2
+      },
+      "nodes": 689,
+      "sourceMeshes": 614,
+      "instances": 493,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -0.9696431159973145,
+          0,
+          -2.027383992525166
+        ],
+        "max": [
+          0.9696431159973145,
+          2.1498154583947704,
+          2.027383992525166
+        ],
+        "size": [
+          1.939286231994629,
+          2.1498154583947704,
+          4.054767985050332
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-3000-20260925-D3sF1Lc5.glb"
+      ]
+    },
+    {
+      "id": "e-3500-20260925",
+      "label": "PREMIUM E-3500",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2163,
+      "bytes": 1813188,
+      "doors": 1,
+      "screenshot": "e-3500-20260925.png",
+      "openScreenshot": "e-3500-20260925-open.png",
+      "calls": 163,
+      "triangles": 1033296,
+      "memory": {
+        "geometries": 131,
+        "textures": 2
+      },
+      "nodes": 686,
+      "sourceMeshes": 612,
+      "instances": 493,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -0.9696431159973145,
+          8.326672684688674e-17,
+          -2.202383992525166
+        ],
+        "max": [
+          0.9696431159973145,
+          2.149817640144775,
+          2.202383992525166
+        ],
+        "size": [
+          1.939286231994629,
+          2.149817640144775,
+          4.404767985050332
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-3500-20260925-DO1m7xfp.glb"
+      ]
+    },
+    {
+      "id": "e-4000-20260925",
+      "label": "PREMIUM E-4000",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 3706,
+      "bytes": 2124112,
+      "doors": 1,
+      "screenshot": "e-4000-20260925.png",
+      "openScreenshot": "e-4000-20260925-open.png",
+      "calls": 170,
+      "triangles": 1185158,
+      "memory": {
+        "geometries": 136,
+        "textures": 2
+      },
+      "nodes": 742,
+      "sourceMeshes": 667,
+      "instances": 541,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -1.0900071885390274,
+          -1.1102230246251565e-16,
+          -2.2783811174720374
+        ],
+        "max": [
+          1.0900071885390274,
+          2.389844128817228,
+          2.278381117472037
+        ],
+        "size": [
+          2.180014377078055,
+          2.389844128817228,
+          4.556762234944074
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-4000-20260925-DtnNchr7.glb"
+      ]
+    },
+    {
+      "id": "e-5000-20260925",
+      "label": "PREMIUM E-5000",
+      "family": "e-single",
+      "variant": "РКД 25.09.2026",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 2277,
+      "bytes": 2146384,
+      "doors": 1,
+      "screenshot": "e-5000-20260925.png",
+      "openScreenshot": "e-5000-20260925-open.png",
+      "calls": 169,
+      "triangles": 1265166,
+      "memory": {
+        "geometries": 136,
+        "textures": 2
+      },
+      "nodes": 749,
+      "sourceMeshes": 674,
+      "instances": 549,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2"
+      ],
+      "bounds": {
+        "min": [
+          -1.0900071885390274,
+          5.551115123125783e-17,
+          -2.4033811174720343
+        ],
+        "max": [
+          1.0900071885390274,
+          2.389823098693312,
+          2.4033811174720343
+        ],
+        "size": [
+          2.180014377078055,
+          2.389823098693312,
+          4.806762234944069
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-5000-20260925-CsOlvQFn.glb"
+      ]
+    },
+    {
+      "id": "e-long-2500-06",
+      "label": "PREMIUM E-2500",
+      "family": "e",
+      "variant": "0,6 МПа · до 115 °C",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 0.6,
+        "maxTemperatureC": 115,
+        "superheated": false,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 4374,
+      "bytes": 1361876,
+      "doors": 2,
+      "screenshot": "e-long-2500-06.png",
+      "openScreenshot": "e-long-2500-06-open.png",
+      "calls": 172,
+      "triangles": 2148532,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "nodes": 862,
+      "sourceMeshes": 787,
+      "instances": 659,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:206",
+        "door_hinge_occurrence:0:1:1:1:272"
+      ],
+      "bounds": {
+        "min": [
+          -1.09798257816488,
+          5.551115123125783e-17,
+          -2.1390013809805306
+        ],
+        "max": [
+          1.09798257816488,
+          2.517009406338526,
+          2.1390013809805306
+        ],
+        "size": [
+          2.19596515632976,
+          2.517009406338526,
+          4.278002761961061
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-06-C7wZdX_O.glb"
+      ]
+    },
+    {
+      "id": "e-long-2500-10",
+      "label": "PREMIUM E-2500",
+      "family": "e",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 1,
+        "maxTemperatureC": 150,
+        "superheated": true,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 7516,
+      "bytes": 1360724,
+      "doors": 2,
+      "screenshot": "e-long-2500-10.png",
+      "openScreenshot": "e-long-2500-10-open.png",
+      "calls": 172,
+      "triangles": 2148570,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "nodes": 862,
+      "sourceMeshes": 787,
+      "instances": 659,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:206",
+        "door_hinge_occurrence:0:1:1:1:272"
+      ],
+      "bounds": {
+        "min": [
+          -1.09798257816488,
+          0,
+          -2.1390013809805306
+        ],
+        "max": [
+          1.09798257816488,
+          2.516999966621399,
+          2.1390013809805306
+        ],
+        "size": [
+          2.19596515632976,
+          2.516999966621399,
+          4.278002761961061
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-2500-10-Bkx8kGLJ.glb"
+      ]
+    },
+    {
+      "id": "e-long-3500-06",
+      "label": "PREMIUM E-3500",
+      "family": "e",
+      "variant": "0,6 МПа · до 115 °C",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 0.6,
+        "maxTemperatureC": 115,
+        "superheated": false,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 8498,
+      "bytes": 1438244,
+      "doors": 2,
+      "screenshot": "e-long-3500-06.png",
+      "openScreenshot": "e-long-3500-06-open.png",
+      "calls": 172,
+      "triangles": 2666612,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "nodes": 918,
+      "sourceMeshes": 844,
+      "instances": 715,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:153",
+        "door_hinge_occurrence:0:1:1:1:154"
+      ],
+      "bounds": {
+        "min": [
+          -1.1749942740147779,
+          1.1102230246251565e-16,
+          -2.389001837430971
+        ],
+        "max": [
+          1.1749942740147779,
+          2.6690007220120995,
+          2.389001837430971
+        ],
+        "size": [
+          2.3499885480295557,
+          2.6690007220120995,
+          4.778003674861942
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-06-BUvx_xoe.glb"
+      ]
+    },
+    {
+      "id": "e-long-3500-10",
+      "label": "PREMIUM E-3500",
+      "family": "e",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 1,
+        "maxTemperatureC": 150,
+        "superheated": true,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 7245,
+      "bytes": 1438552,
+      "doors": 2,
+      "screenshot": "e-long-3500-10.png",
+      "openScreenshot": "e-long-3500-10-open.png",
+      "calls": 172,
+      "triangles": 2666636,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "nodes": 918,
+      "sourceMeshes": 844,
+      "instances": 715,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:153",
+        "door_hinge_occurrence:0:1:1:1:154"
+      ],
+      "bounds": {
+        "min": [
+          -1.1749942740147779,
+          5.551115123125783e-17,
+          -2.389001837430971
+        ],
+        "max": [
+          1.1749942740147779,
+          2.669001359730138,
+          2.389001837430971
+        ],
+        "size": [
+          2.3499885480295557,
+          2.669001359730138,
+          4.778003674861942
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-10-CrBi4mWr.glb"
+      ]
+    },
+    {
+      "id": "e-long-3500-20260609-06",
+      "label": "PREMIUM E Long-3500",
+      "family": "e-long",
+      "variant": "E-3500.01 Long; РКД 09.06.2026; 0,6 МПа",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": null,
+      "loadedMs": 5612,
+      "bytes": 1374244,
+      "doors": 2,
+      "screenshot": "e-long-3500-20260609-06.png",
+      "openScreenshot": "e-long-3500-20260609-06-open.png",
+      "calls": 185,
+      "triangles": 1867158,
+      "memory": {
+        "geometries": 141,
+        "textures": 2
+      },
+      "nodes": 862,
+      "sourceMeshes": 793,
+      "instances": 643,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:2",
+        "door_hinge_occurrence:0:1:1:1:89"
+      ],
+      "bounds": {
+        "min": [
+          -1.1749810728529158,
+          0,
+          -2.4556059614405803
+        ],
+        "max": [
+          1.1749810728529155,
+          2.641999942779552,
+          2.4556059614405803
+        ],
+        "size": [
+          2.349962145705831,
+          2.641999942779552,
+          4.911211922881161
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-3500-20260609-06-Cuoliy_p.glb"
+      ]
+    },
+    {
+      "id": "e-long-4000-06",
+      "label": "PREMIUM E-4000",
+      "family": "e",
+      "variant": "0,6 МПа · до 115 °C",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 0.6,
+        "maxTemperatureC": 115,
+        "superheated": false,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 2369,
+      "bytes": 1433992,
+      "doors": 2,
+      "screenshot": "e-long-4000-06.png",
+      "openScreenshot": "e-long-4000-06-open.png",
+      "calls": 171,
+      "triangles": 2686416,
+      "memory": {
+        "geometries": 133,
+        "textures": 2
+      },
+      "nodes": 917,
+      "sourceMeshes": 843,
+      "instances": 715,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:118",
+        "door_hinge_occurrence:0:1:1:1:119"
+      ],
+      "bounds": {
+        "min": [
+          -1.1749942740147779,
+          1.1102230246251565e-16,
+          -2.4865018374309713
+        ],
+        "max": [
+          1.1749942740147779,
+          2.6690007220120995,
+          2.4865018374309713
+        ],
+        "size": [
+          2.3499885480295557,
+          2.6690007220120995,
+          4.973003674861943
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-4000-06-DpgAlyIC.glb"
+      ]
+    },
+    {
+      "id": "e-long-4000-10",
+      "label": "PREMIUM E-4000",
+      "family": "e",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 1,
+        "maxTemperatureC": 150,
+        "superheated": true,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 15024,
+      "bytes": 1433944,
+      "doors": 2,
+      "screenshot": "e-long-4000-10.png",
+      "openScreenshot": "e-long-4000-10-open.png",
+      "calls": 171,
+      "triangles": 2686386,
+      "memory": {
+        "geometries": 133,
+        "textures": 2
+      },
+      "nodes": 917,
+      "sourceMeshes": 843,
+      "instances": 715,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:118",
+        "door_hinge_occurrence:0:1:1:1:119"
+      ],
+      "bounds": {
+        "min": [
+          -1.1749942740147779,
+          5.551115123125783e-17,
+          -2.4865018374309713
+        ],
+        "max": [
+          1.1749942740147779,
+          2.669001359730138,
+          2.4865018374309713
+        ],
+        "size": [
+          2.3499885480295557,
+          2.669001359730138,
+          4.973003674861943
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-4000-10-CzwNIcuq.glb"
+      ]
+    },
+    {
+      "id": "e-long-5000-06",
+      "label": "PREMIUM E-5000",
+      "family": "e",
+      "variant": "0,6 МПа · до 115 °C",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 0.6,
+        "maxTemperatureC": 115,
+        "superheated": false,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 2550,
+      "bytes": 1352832,
+      "doors": 2,
+      "screenshot": "e-long-5000-06.png",
+      "openScreenshot": "e-long-5000-06-open.png",
+      "calls": 172,
+      "triangles": 2147204,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "nodes": 797,
+      "sourceMeshes": 723,
+      "instances": 594,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:37",
+        "door_hinge_occurrence:0:1:1:1:166"
+      ],
+      "bounds": {
+        "min": [
+          -1.2250095135354253,
+          0,
+          -2.636501701788886
+        ],
+        "max": [
+          1.2250095135354253,
+          2.7689999408721926,
+          2.6365017017888857
+        ],
+        "size": [
+          2.4500190270708506,
+          2.7689999408721926,
+          5.273003403577771
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-5000-06-DjLybbGQ.glb"
+      ]
+    },
+    {
+      "id": "e-long-5000-10",
+      "label": "PREMIUM E-5000",
+      "family": "e",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 1,
+        "maxTemperatureC": 150,
+        "superheated": true,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 8342,
+      "bytes": 1353640,
+      "doors": 2,
+      "screenshot": "e-long-5000-10.png",
+      "openScreenshot": "e-long-5000-10-open.png",
+      "calls": 172,
+      "triangles": 2147246,
+      "memory": {
+        "geometries": 134,
+        "textures": 2
+      },
+      "nodes": 794,
+      "sourceMeshes": 720,
+      "instances": 591,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:37",
+        "door_hinge_occurrence:0:1:1:1:166"
+      ],
+      "bounds": {
+        "min": [
+          -1.2250095135354253,
+          -1.1102230246251565e-16,
+          -2.636501701788886
+        ],
+        "max": [
+          1.2250095135354253,
+          2.769004868241943,
+          2.6365017017888857
+        ],
+        "size": [
+          2.4500190270708506,
+          2.769004868241943,
+          5.273003403577771
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-5000-10-DsQQsSHi.glb"
+      ]
+    },
+    {
+      "id": "e-long-6000-06",
+      "label": "PREMIUM E-6000",
+      "family": "e",
+      "variant": "0,6 МПа · до 115 °C",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 0.6,
+        "maxTemperatureC": 115,
+        "superheated": false,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 3131,
+      "bytes": 1351168,
+      "doors": 2,
+      "screenshot": "e-long-6000-06.png",
+      "openScreenshot": "e-long-6000-06-open.png",
+      "calls": 171,
+      "triangles": 2288824,
+      "memory": {
+        "geometries": 133,
+        "textures": 2
+      },
+      "nodes": 797,
+      "sourceMeshes": 723,
+      "instances": 595,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:71",
+        "door_hinge_occurrence:0:1:1:1:176"
+      ],
+      "bounds": {
+        "min": [
+          -1.2250095135354253,
+          8.326672684688674e-17,
+          -2.8065017017888843
+        ],
+        "max": [
+          1.2250095135354253,
+          2.7690368687409554,
+          2.8065017017888847
+        ],
+        "size": [
+          2.4500190270708506,
+          2.7690368687409554,
+          5.613003403577769
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-6000-06-DNHHN-zC.glb"
+      ]
+    },
+    {
+      "id": "e-long-6000-10",
+      "label": "PREMIUM E-6000",
+      "family": "e",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 1,
+        "maxTemperatureC": 150,
+        "superheated": true,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 2289,
+      "bytes": 1350756,
+      "doors": 2,
+      "screenshot": "e-long-6000-10.png",
+      "openScreenshot": "e-long-6000-10-open.png",
+      "calls": 171,
+      "triangles": 2288888,
+      "memory": {
+        "geometries": 133,
+        "textures": 2
+      },
+      "nodes": 797,
+      "sourceMeshes": 723,
+      "instances": 595,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:71",
+        "door_hinge_occurrence:0:1:1:1:176"
+      ],
+      "bounds": {
+        "min": [
+          -1.2250095135354253,
+          8.326672684688674e-17,
+          -2.8065017017888843
+        ],
+        "max": [
+          1.2250095135354253,
+          2.7690368687409554,
+          2.8065017017888847
+        ],
+        "size": [
+          2.4500190270708506,
+          2.7690368687409554,
+          5.613003403577769
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-6000-10-DJCQzTko.glb"
+      ]
+    },
+    {
+      "id": "e-long-7000-06",
+      "label": "PREMIUM E-7000",
+      "family": "e",
+      "variant": "0,6 МПа · до 115 °C",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 0.6,
+        "maxTemperatureC": 115,
+        "superheated": false,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 2736,
+      "bytes": 1381772,
+      "doors": 2,
+      "screenshot": "e-long-7000-06.png",
+      "openScreenshot": "e-long-7000-06-open.png",
+      "calls": 171,
+      "triangles": 2435140,
+      "memory": {
+        "geometries": 133,
+        "textures": 2
+      },
+      "nodes": 817,
+      "sourceMeshes": 743,
+      "instances": 615,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:3",
+        "door_hinge_occurrence:0:1:1:1:4"
+      ],
+      "bounds": {
+        "min": [
+          -1.3250029776793912,
+          0,
+          -2.9865014214851042
+        ],
+        "max": [
+          1.3250029776793912,
+          2.96899996471405,
+          2.9865014214851042
+        ],
+        "size": [
+          2.6500059553587825,
+          2.96899996471405,
+          5.9730028429702084
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-7000-06-HdGwpcsC.glb"
+      ]
+    },
+    {
+      "id": "e-long-7000-10",
+      "label": "PREMIUM E-7000",
+      "family": "e",
+      "variant": "1 МПа · до 150 °C · перегретая вода",
+      "classificationVerified": true,
+      "originalUrlVerified": true,
+      "waterExecution": {
+        "pressureMpa": 1,
+        "maxTemperatureC": 150,
+        "superheated": true,
+        "visibleValuesVerified": true
+      },
+      "loadedMs": 2244,
+      "bytes": 1381528,
+      "doors": 2,
+      "screenshot": "e-long-7000-10.png",
+      "openScreenshot": "e-long-7000-10-open.png",
+      "calls": 171,
+      "triangles": 2435134,
+      "memory": {
+        "geometries": 133,
+        "textures": 2
+      },
+      "nodes": 817,
+      "sourceMeshes": 743,
+      "instances": 615,
+      "hinges": [
+        "door_hinge_occurrence:0:1:1:1:3",
+        "door_hinge_occurrence:0:1:1:1:4"
+      ],
+      "bounds": {
+        "min": [
+          -1.3250029776793912,
+          -5.551115123125783e-17,
+          -2.9865014214851042
+        ],
+        "max": [
+          1.3250029776793912,
+          2.969003256127574,
+          2.9865014214851042
+        ],
+        "size": [
+          2.6500059553587825,
+          2.969003256127574,
+          5.9730028429702084
+        ]
+      },
+      "downloads": [
+        "https://prgz.ru/komplektacii4-stage-v2026.10.20.2/assets/e-long-7000-10-BMepprRb.glb"
+      ]
+    }
+  ],
+  "failures": [],
+  "pageErrors": []
+}

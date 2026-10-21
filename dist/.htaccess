@@ -1,4 +1,4 @@
-# PREMIUM S-3000 only. Do not move to the website root.
+# PREMIUM steam and hotwater configurator only. Do not move to the website root.
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|json)$">
     Header set Cache-Control "no-cache"

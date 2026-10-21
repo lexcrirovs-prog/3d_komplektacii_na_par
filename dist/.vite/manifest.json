@@ -1,0 +1,949 @@
+{
+  "_BufferGeometryUtils-DUaiHPLO.js": {
+    "file": "assets/BufferGeometryUtils-DUaiHPLO.js",
+    "name": "BufferGeometryUtils",
+    "imports": [
+      "_three.module-D8ZkPw-i.js"
+    ]
+  },
+  "_S3000Configurator-CSFg-kdo.css": {
+    "file": "assets/S3000Configurator-CSFg-kdo.css",
+    "src": "_S3000Configurator-CSFg-kdo.css"
+  },
+  "_S3000Configurator-xHsNG5lx.js": {
+    "file": "assets/S3000Configurator-xHsNG5lx.js",
+    "name": "S3000Configurator",
+    "imports": [
+      "index.html",
+      "_three.module-D8ZkPw-i.js",
+      "_index-D1PbDDO2.js"
+    ],
+    "css": [
+      "assets/S3000Configurator-CSFg-kdo.css"
+    ]
+  },
+  "_index-D1PbDDO2.js": {
+    "file": "assets/index-D1PbDDO2.js",
+    "name": "index",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_three.module-D8ZkPw-i.js"
+    ],
+    "dynamicImports": [
+      "src/components/BoilerConfigurator/S3000Configurator.tsx",
+      "src/components/BoilerConfigurator/S4000Configurator.tsx"
+    ],
+    "assets": [
+      "assets/boiler-DinVE5OY.glb",
+      "assets/deaerator-BbqYfy15.glb",
+      "assets/elbow_pc_f20-DO38bAlJ.glb",
+      "assets/bcv_7250-CkMcE7H9.glb",
+      "assets/bcv_925-k9_oO04u.glb",
+      "assets/cp_930--TKERaHD.glb",
+      "assets/dn32h50-DWIQZzpu.glb"
+    ]
+  },
+  "_premium-logo-B45T0Uwn.js": {
+    "file": "assets/premium-logo-B45T0Uwn.js",
+    "name": "premium-logo",
+    "assets": [
+      "assets/premium-logo--EbfrTdO.png"
+    ]
+  },
+  "_three.module-D8ZkPw-i.js": {
+    "file": "assets/three.module-D8ZkPw-i.js",
+    "name": "three.module"
+  },
+  "index.html": {
+    "file": "assets/index-ODtvfqZJ.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "_index-D1PbDDO2.js",
+      "src/components/HotwaterConfigurator/HotwaterConfigurator.tsx"
+    ],
+    "css": [
+      "assets/index-C_gloRmP.css"
+    ]
+  },
+  "src/assets/bcv_7250.glb": {
+    "file": "assets/bcv_7250-CkMcE7H9.glb",
+    "src": "src/assets/bcv_7250.glb"
+  },
+  "src/assets/bcv_925.glb": {
+    "file": "assets/bcv_925-k9_oO04u.glb",
+    "src": "src/assets/bcv_925.glb"
+  },
+  "src/assets/boiler.glb": {
+    "file": "assets/boiler-DinVE5OY.glb",
+    "src": "src/assets/boiler.glb"
+  },
+  "src/assets/cascade/adl_is16.glb": {
+    "file": "assets/adl_is16-CQy1Iafp.glb",
+    "src": "src/assets/cascade/adl_is16.glb"
+  },
+  "src/assets/cascade/cascade.glb": {
+    "file": "assets/cascade-Bky7Y6ng.glb",
+    "src": "src/assets/cascade/cascade.glb"
+  },
+  "src/assets/cascade/comfort.glb": {
+    "file": "assets/comfort-B2-_dRhL.glb",
+    "src": "src/assets/cascade/comfort.glb"
+  },
+  "src/assets/cascade/comfort_plus.glb": {
+    "file": "assets/comfort_plus-BgZXyJ9I.glb",
+    "src": "src/assets/cascade/comfort_plus.glb"
+  },
+  "src/assets/cascade/valtec_vt215_dn15.glb": {
+    "file": "assets/valtec_vt215_dn15-BGGQBXM4.glb",
+    "src": "src/assets/cascade/valtec_vt215_dn15.glb"
+  },
+  "src/assets/cp_930.glb": {
+    "file": "assets/cp_930--TKERaHD.glb",
+    "src": "src/assets/cp_930.glb"
+  },
+  "src/assets/deaerator.glb": {
+    "file": "assets/deaerator-BbqYfy15.glb",
+    "src": "src/assets/deaerator.glb"
+  },
+  "src/assets/deaerators/da15_4.glb": {
+    "file": "assets/da15_4-DEB_H07D.glb",
+    "src": "src/assets/deaerators/da15_4.glb"
+  },
+  "src/assets/deaerators/da15_8.glb": {
+    "file": "assets/da15_8-DpYE62g8.glb",
+    "src": "src/assets/deaerators/da15_8.glb"
+  },
+  "src/assets/deaerators/da25_15.glb": {
+    "file": "assets/da25_15-CLETLHil.glb",
+    "src": "src/assets/deaerators/da25_15.glb"
+  },
+  "src/assets/deaerators/da25_25.glb": {
+    "file": "assets/da25_25-Bk56zpdp.glb",
+    "src": "src/assets/deaerators/da25_25.glb"
+  },
+  "src/assets/deaerators/da3.glb": {
+    "file": "assets/da3-DJvjEthU.glb",
+    "src": "src/assets/deaerators/da3.glb"
+  },
+  "src/assets/dn32h50.glb": {
+    "file": "assets/dn32h50-DWIQZzpu.glb",
+    "src": "src/assets/dn32h50.glb"
+  },
+  "src/assets/elbow_pc_f20.glb": {
+    "file": "assets/elbow_pc_f20-DO38bAlJ.glb",
+    "src": "src/assets/elbow_pc_f20.glb"
+  },
+  "src/assets/hotwater/cabinet__premium-boiler.glb": {
+    "file": "assets/cabinet__premium-boiler-CYu0PbBB.glb",
+    "src": "src/assets/hotwater/cabinet__premium-boiler.glb"
+  },
+  "src/assets/hotwater/cabinet__premium-cascade.glb": {
+    "file": "assets/cabinet__premium-cascade-DKEAzFlT.glb",
+    "src": "src/assets/hotwater/cabinet__premium-cascade.glb"
+  },
+  "src/assets/hotwater/cla-1000-51.glb": {
+    "file": "assets/cla-1000-51-Dmvrz_iJ.glb",
+    "src": "src/assets/hotwater/cla-1000-51.glb"
+  },
+  "src/assets/hotwater/cla-1000-57.glb": {
+    "file": "assets/cla-1000-57-DjCIBDtf.glb",
+    "src": "src/assets/hotwater/cla-1000-57.glb"
+  },
+  "src/assets/hotwater/cla-1250-51.glb": {
+    "file": "assets/cla-1250-51-CZnYLas5.glb",
+    "src": "src/assets/hotwater/cla-1250-51.glb"
+  },
+  "src/assets/hotwater/cla-1250-57.glb": {
+    "file": "assets/cla-1250-57-NAp7Ir2t.glb",
+    "src": "src/assets/hotwater/cla-1250-57.glb"
+  },
+  "src/assets/hotwater/cla-1500-51.glb": {
+    "file": "assets/cla-1500-51-QOlFi4ID.glb",
+    "src": "src/assets/hotwater/cla-1500-51.glb"
+  },
+  "src/assets/hotwater/cla-1500-57.glb": {
+    "file": "assets/cla-1500-57-ByjKAVMK.glb",
+    "src": "src/assets/hotwater/cla-1500-57.glb"
+  },
+  "src/assets/hotwater/cla-1750-51.glb": {
+    "file": "assets/cla-1750-51-JfPoF49k.glb",
+    "src": "src/assets/hotwater/cla-1750-51.glb"
+  },
+  "src/assets/hotwater/cla-1750-57.glb": {
+    "file": "assets/cla-1750-57-DFaGwmOA.glb",
+    "src": "src/assets/hotwater/cla-1750-57.glb"
+  },
+  "src/assets/hotwater/cla-2000-51.glb": {
+    "file": "assets/cla-2000-51-D1K3idtF.glb",
+    "src": "src/assets/hotwater/cla-2000-51.glb"
+  },
+  "src/assets/hotwater/cla-2000-57.glb": {
+    "file": "assets/cla-2000-57-atqWlakb.glb",
+    "src": "src/assets/hotwater/cla-2000-57.glb"
+  },
+  "src/assets/hotwater/cla-250-51.glb": {
+    "file": "assets/cla-250-51-fX0S-gW1.glb",
+    "src": "src/assets/hotwater/cla-250-51.glb"
+  },
+  "src/assets/hotwater/cla-250-57.glb": {
+    "file": "assets/cla-250-57-Bs1HaV9t.glb",
+    "src": "src/assets/hotwater/cla-250-57.glb"
+  },
+  "src/assets/hotwater/cla-2500-51.glb": {
+    "file": "assets/cla-2500-51-CkldBJ3Y.glb",
+    "src": "src/assets/hotwater/cla-2500-51.glb"
+  },
+  "src/assets/hotwater/cla-2500-57.glb": {
+    "file": "assets/cla-2500-57-CK-xB-66.glb",
+    "src": "src/assets/hotwater/cla-2500-57.glb"
+  },
+  "src/assets/hotwater/cla-3000-51-dn150.glb": {
+    "file": "assets/cla-3000-51-dn150-CUO-Hg4N.glb",
+    "src": "src/assets/hotwater/cla-3000-51-dn150.glb"
+  },
+  "src/assets/hotwater/cla-3000-51.glb": {
+    "file": "assets/cla-3000-51-IomjzRaK.glb",
+    "src": "src/assets/hotwater/cla-3000-51.glb"
+  },
+  "src/assets/hotwater/cla-3000-57.glb": {
+    "file": "assets/cla-3000-57-Dh-UgG5H.glb",
+    "src": "src/assets/hotwater/cla-3000-57.glb"
+  },
+  "src/assets/hotwater/cla-3500-51.glb": {
+    "file": "assets/cla-3500-51-D1ilO9Tg.glb",
+    "src": "src/assets/hotwater/cla-3500-51.glb"
+  },
+  "src/assets/hotwater/cla-3500-57.glb": {
+    "file": "assets/cla-3500-57-DOTax2dc.glb",
+    "src": "src/assets/hotwater/cla-3500-57.glb"
+  },
+  "src/assets/hotwater/cla-4000-51.glb": {
+    "file": "assets/cla-4000-51-C1iuZKoY.glb",
+    "src": "src/assets/hotwater/cla-4000-51.glb"
+  },
+  "src/assets/hotwater/cla-4000-57.glb": {
+    "file": "assets/cla-4000-57-BmoVO05h.glb",
+    "src": "src/assets/hotwater/cla-4000-57.glb"
+  },
+  "src/assets/hotwater/cla-500-51.glb": {
+    "file": "assets/cla-500-51-BxoDmDb-.glb",
+    "src": "src/assets/hotwater/cla-500-51.glb"
+  },
+  "src/assets/hotwater/cla-500-57.glb": {
+    "file": "assets/cla-500-57-DctS926l.glb",
+    "src": "src/assets/hotwater/cla-500-57.glb"
+  },
+  "src/assets/hotwater/cla-5000-51.glb": {
+    "file": "assets/cla-5000-51-CPJQwHvz.glb",
+    "src": "src/assets/hotwater/cla-5000-51.glb"
+  },
+  "src/assets/hotwater/cla-6000-51.glb": {
+    "file": "assets/cla-6000-51-Cet0vap5.glb",
+    "src": "src/assets/hotwater/cla-6000-51.glb"
+  },
+  "src/assets/hotwater/cla-750-51.glb": {
+    "file": "assets/cla-750-51-D5dpPJf-.glb",
+    "src": "src/assets/hotwater/cla-750-51.glb"
+  },
+  "src/assets/hotwater/cla-750-57.glb": {
+    "file": "assets/cla-750-57-C73fdZ91.glb",
+    "src": "src/assets/hotwater/cla-750-57.glb"
+  },
+  "src/assets/hotwater/collector__c2500-supply.glb": {
+    "file": "assets/collector__c2500-supply-wX40GcPX.glb",
+    "src": "src/assets/hotwater/collector__c2500-supply.glb"
+  },
+  "src/assets/hotwater/collector__c4000-supply.glb": {
+    "file": "assets/collector__c4000-supply-Bg9NSLwr.glb",
+    "src": "src/assets/hotwater/collector__c4000-supply.glb"
+  },
+  "src/assets/hotwater/e-1000-20260925.glb": {
+    "file": "assets/e-1000-20260925-C5KayICW.glb",
+    "src": "src/assets/hotwater/e-1000-20260925.glb"
+  },
+  "src/assets/hotwater/e-1500-20260925.glb": {
+    "file": "assets/e-1500-20260925-Cu5QGNm0.glb",
+    "src": "src/assets/hotwater/e-1500-20260925.glb"
+  },
+  "src/assets/hotwater/e-2000-20260925.glb": {
+    "file": "assets/e-2000-20260925-AFMc05OU.glb",
+    "src": "src/assets/hotwater/e-2000-20260925.glb"
+  },
+  "src/assets/hotwater/e-2500-20260925.glb": {
+    "file": "assets/e-2500-20260925-lfSxXFlI.glb",
+    "src": "src/assets/hotwater/e-2500-20260925.glb"
+  },
+  "src/assets/hotwater/e-3000-20260925.glb": {
+    "file": "assets/e-3000-20260925-D3sF1Lc5.glb",
+    "src": "src/assets/hotwater/e-3000-20260925.glb"
+  },
+  "src/assets/hotwater/e-3500-20260925.glb": {
+    "file": "assets/e-3500-20260925-DO1m7xfp.glb",
+    "src": "src/assets/hotwater/e-3500-20260925.glb"
+  },
+  "src/assets/hotwater/e-4000-20260925.glb": {
+    "file": "assets/e-4000-20260925-DtnNchr7.glb",
+    "src": "src/assets/hotwater/e-4000-20260925.glb"
+  },
+  "src/assets/hotwater/e-5000-20260925.glb": {
+    "file": "assets/e-5000-20260925-CsOlvQFn.glb",
+    "src": "src/assets/hotwater/e-5000-20260925.glb"
+  },
+  "src/assets/hotwater/e-long-2500-06.glb": {
+    "file": "assets/e-long-2500-06-C7wZdX_O.glb",
+    "src": "src/assets/hotwater/e-long-2500-06.glb"
+  },
+  "src/assets/hotwater/e-long-2500-10.glb": {
+    "file": "assets/e-long-2500-10-Bkx8kGLJ.glb",
+    "src": "src/assets/hotwater/e-long-2500-10.glb"
+  },
+  "src/assets/hotwater/e-long-3500-06.glb": {
+    "file": "assets/e-long-3500-06-BUvx_xoe.glb",
+    "src": "src/assets/hotwater/e-long-3500-06.glb"
+  },
+  "src/assets/hotwater/e-long-3500-10.glb": {
+    "file": "assets/e-long-3500-10-CrBi4mWr.glb",
+    "src": "src/assets/hotwater/e-long-3500-10.glb"
+  },
+  "src/assets/hotwater/e-long-3500-20260609-06.glb": {
+    "file": "assets/e-long-3500-20260609-06-Cuoliy_p.glb",
+    "src": "src/assets/hotwater/e-long-3500-20260609-06.glb"
+  },
+  "src/assets/hotwater/e-long-4000-06.glb": {
+    "file": "assets/e-long-4000-06-DpgAlyIC.glb",
+    "src": "src/assets/hotwater/e-long-4000-06.glb"
+  },
+  "src/assets/hotwater/e-long-4000-10.glb": {
+    "file": "assets/e-long-4000-10-CzwNIcuq.glb",
+    "src": "src/assets/hotwater/e-long-4000-10.glb"
+  },
+  "src/assets/hotwater/e-long-5000-06.glb": {
+    "file": "assets/e-long-5000-06-DjLybbGQ.glb",
+    "src": "src/assets/hotwater/e-long-5000-06.glb"
+  },
+  "src/assets/hotwater/e-long-5000-10.glb": {
+    "file": "assets/e-long-5000-10-DsQQsSHi.glb",
+    "src": "src/assets/hotwater/e-long-5000-10.glb"
+  },
+  "src/assets/hotwater/e-long-6000-06.glb": {
+    "file": "assets/e-long-6000-06-DNHHN-zC.glb",
+    "src": "src/assets/hotwater/e-long-6000-06.glb"
+  },
+  "src/assets/hotwater/e-long-6000-10.glb": {
+    "file": "assets/e-long-6000-10-DJCQzTko.glb",
+    "src": "src/assets/hotwater/e-long-6000-10.glb"
+  },
+  "src/assets/hotwater/e-long-7000-06.glb": {
+    "file": "assets/e-long-7000-06-HdGwpcsC.glb",
+    "src": "src/assets/hotwater/e-long-7000-06.glb"
+  },
+  "src/assets/hotwater/e-long-7000-10.glb": {
+    "file": "assets/e-long-7000-10-BMepprRb.glb",
+    "src": "src/assets/hotwater/e-long-7000-10.glb"
+  },
+  "src/assets/hotwater/plate__cla250-native.glb": {
+    "file": "assets/plate__cla250-native-B-Ch71jA.glb",
+    "src": "src/assets/hotwater/plate__cla250-native.glb"
+  },
+  "src/assets/hotwater/plate__e1500-cib205-plate.glb": {
+    "file": "assets/plate__e1500-cib205-plate-CaVtlesm.glb",
+    "src": "src/assets/hotwater/plate__e1500-cib205-plate.glb"
+  },
+  "src/assets/hotwater/safety__relief-shape.glb": {
+    "file": "assets/safety__relief-shape-DVzuiph9.glb",
+    "src": "src/assets/hotwater/safety__relief-shape.glb"
+  },
+  "src/assets/hotwater/spacer__c3000-rs410.glb": {
+    "file": "assets/spacer__c3000-rs410-KS65XYcR.glb",
+    "src": "src/assets/hotwater/spacer__c3000-rs410.glb"
+  },
+  "src/assets/hotwater/spacer__e1500-cib205.glb": {
+    "file": "assets/spacer__e1500-cib205-Cw06f77N.glb",
+    "src": "src/assets/hotwater/spacer__e1500-cib205.glb"
+  },
+  "src/assets/ratings/1000/S-1000.stp": {
+    "file": "assets/S-1000-NDrjvpoG.stp",
+    "src": "src/assets/ratings/1000/S-1000.stp"
+  },
+  "src/assets/ratings/1000/s4000-0.glb": {
+    "file": "assets/s4000-0-DJLi2cl5.glb",
+    "src": "src/assets/ratings/1000/s4000-0.glb"
+  },
+  "src/assets/ratings/1000/s4000-1.glb": {
+    "file": "assets/s4000-1-CczpegYe.glb",
+    "src": "src/assets/ratings/1000/s4000-1.glb"
+  },
+  "src/assets/ratings/1000/s4000-2.glb": {
+    "file": "assets/s4000-2-BfVz1c6_.glb",
+    "src": "src/assets/ratings/1000/s4000-2.glb"
+  },
+  "src/assets/ratings/1000/s4000-3.glb": {
+    "file": "assets/s4000-3-C0bYSe55.glb",
+    "src": "src/assets/ratings/1000/s4000-3.glb"
+  },
+  "src/assets/ratings/1000/s4000-4.glb": {
+    "file": "assets/s4000-4-Cg7iJ2x2.glb",
+    "src": "src/assets/ratings/1000/s4000-4.glb"
+  },
+  "src/assets/ratings/1000/s4000-5.glb": {
+    "file": "assets/s4000-5-BQ4gEaM4.glb",
+    "src": "src/assets/ratings/1000/s4000-5.glb"
+  },
+  "src/assets/ratings/1000/s4000-6.glb": {
+    "file": "assets/s4000-6-C5KHZvNk.glb",
+    "src": "src/assets/ratings/1000/s4000-6.glb"
+  },
+  "src/assets/ratings/1000/s4000-7.glb": {
+    "file": "assets/s4000-7-CKxLNzWO.glb",
+    "src": "src/assets/ratings/1000/s4000-7.glb"
+  },
+  "src/assets/ratings/1500/EQS2-1500.pdf": {
+    "file": "assets/EQS2-1500-DhP-AerT.pdf",
+    "src": "src/assets/ratings/1500/EQS2-1500.pdf"
+  },
+  "src/assets/ratings/1500/S-1500.stp": {
+    "file": "assets/S-1500-CmT2Hkm4.stp",
+    "src": "src/assets/ratings/1500/S-1500.stp"
+  },
+  "src/assets/ratings/1500/s4000-0.glb": {
+    "file": "assets/s4000-0-DqYz9Rs1.glb",
+    "src": "src/assets/ratings/1500/s4000-0.glb"
+  },
+  "src/assets/ratings/1500/s4000-1.glb": {
+    "file": "assets/s4000-1-5ECtkJuH.glb",
+    "src": "src/assets/ratings/1500/s4000-1.glb"
+  },
+  "src/assets/ratings/1500/s4000-2.glb": {
+    "file": "assets/s4000-2-BIcbBuA8.glb",
+    "src": "src/assets/ratings/1500/s4000-2.glb"
+  },
+  "src/assets/ratings/1500/s4000-3.glb": {
+    "file": "assets/s4000-3-Bb5hAEqA.glb",
+    "src": "src/assets/ratings/1500/s4000-3.glb"
+  },
+  "src/assets/ratings/1500/s4000-4.glb": {
+    "file": "assets/s4000-4-CLD--lpS.glb",
+    "src": "src/assets/ratings/1500/s4000-4.glb"
+  },
+  "src/assets/ratings/1500/s4000-5.glb": {
+    "file": "assets/s4000-5-BuGO2pHl.glb",
+    "src": "src/assets/ratings/1500/s4000-5.glb"
+  },
+  "src/assets/ratings/1500/s4000-6.glb": {
+    "file": "assets/s4000-6-DNjYPbb4.glb",
+    "src": "src/assets/ratings/1500/s4000-6.glb"
+  },
+  "src/assets/ratings/1500/s4000-7.glb": {
+    "file": "assets/s4000-7-B7XmGD3c.glb",
+    "src": "src/assets/ratings/1500/s4000-7.glb"
+  },
+  "src/assets/ratings/2000/EQS2-2000.pdf": {
+    "file": "assets/EQS2-2000-taEI325H.pdf",
+    "src": "src/assets/ratings/2000/EQS2-2000.pdf"
+  },
+  "src/assets/ratings/2000/S-2000.stp": {
+    "file": "assets/S-2000-B8CyM9vT.stp",
+    "src": "src/assets/ratings/2000/S-2000.stp"
+  },
+  "src/assets/ratings/2000/s4000-0.glb": {
+    "file": "assets/s4000-0-naENR7e0.glb",
+    "src": "src/assets/ratings/2000/s4000-0.glb"
+  },
+  "src/assets/ratings/2000/s4000-1.glb": {
+    "file": "assets/s4000-1-nd3DLHkj.glb",
+    "src": "src/assets/ratings/2000/s4000-1.glb"
+  },
+  "src/assets/ratings/2000/s4000-2.glb": {
+    "file": "assets/s4000-2-DUMQQW0d.glb",
+    "src": "src/assets/ratings/2000/s4000-2.glb"
+  },
+  "src/assets/ratings/2000/s4000-3.glb": {
+    "file": "assets/s4000-3-murSmlJG.glb",
+    "src": "src/assets/ratings/2000/s4000-3.glb"
+  },
+  "src/assets/ratings/2000/s4000-4.glb": {
+    "file": "assets/s4000-4-YrK5edlW.glb",
+    "src": "src/assets/ratings/2000/s4000-4.glb"
+  },
+  "src/assets/ratings/2000/s4000-5.glb": {
+    "file": "assets/s4000-5-ULdvaAHC.glb",
+    "src": "src/assets/ratings/2000/s4000-5.glb"
+  },
+  "src/assets/ratings/2000/s4000-6.glb": {
+    "file": "assets/s4000-6-CmNDBW7s.glb",
+    "src": "src/assets/ratings/2000/s4000-6.glb"
+  },
+  "src/assets/ratings/2000/s4000-7.glb": {
+    "file": "assets/s4000-7-DeYfAy53.glb",
+    "src": "src/assets/ratings/2000/s4000-7.glb"
+  },
+  "src/assets/ratings/2500/EQS2-2500.pdf": {
+    "file": "assets/EQS2-2500-CiJCYp1y.pdf",
+    "src": "src/assets/ratings/2500/EQS2-2500.pdf"
+  },
+  "src/assets/ratings/2500/S-2500.stp": {
+    "file": "assets/S-2500-DLt3bVSe.stp",
+    "src": "src/assets/ratings/2500/S-2500.stp"
+  },
+  "src/assets/ratings/2500/s4000-0.glb": {
+    "file": "assets/s4000-0-k32n66A5.glb",
+    "src": "src/assets/ratings/2500/s4000-0.glb"
+  },
+  "src/assets/ratings/2500/s4000-1.glb": {
+    "file": "assets/s4000-1-Dr_dzSJS.glb",
+    "src": "src/assets/ratings/2500/s4000-1.glb"
+  },
+  "src/assets/ratings/2500/s4000-2.glb": {
+    "file": "assets/s4000-2-BEifbl9y.glb",
+    "src": "src/assets/ratings/2500/s4000-2.glb"
+  },
+  "src/assets/ratings/2500/s4000-3.glb": {
+    "file": "assets/s4000-3-CplM7Rb5.glb",
+    "src": "src/assets/ratings/2500/s4000-3.glb"
+  },
+  "src/assets/ratings/2500/s4000-4.glb": {
+    "file": "assets/s4000-4-BP30FGoy.glb",
+    "src": "src/assets/ratings/2500/s4000-4.glb"
+  },
+  "src/assets/ratings/2500/s4000-5.glb": {
+    "file": "assets/s4000-5-Dn29FbGh.glb",
+    "src": "src/assets/ratings/2500/s4000-5.glb"
+  },
+  "src/assets/ratings/2500/s4000-6.glb": {
+    "file": "assets/s4000-6-DoQQ1ha4.glb",
+    "src": "src/assets/ratings/2500/s4000-6.glb"
+  },
+  "src/assets/ratings/2500/s4000-7.glb": {
+    "file": "assets/s4000-7-DwO1vRc9.glb",
+    "src": "src/assets/ratings/2500/s4000-7.glb"
+  },
+  "src/assets/ratings/3000/EQS2-3000.pdf": {
+    "file": "assets/EQS2-3000-CDpAOXt9.pdf",
+    "src": "src/assets/ratings/3000/EQS2-3000.pdf"
+  },
+  "src/assets/ratings/3000/S-3000.stp": {
+    "file": "assets/S-3000-CrNibU-8.stp",
+    "src": "src/assets/ratings/3000/S-3000.stp"
+  },
+  "src/assets/ratings/3000/s4000-0.glb": {
+    "file": "assets/s4000-0-Bijgd8Ih.glb",
+    "src": "src/assets/ratings/3000/s4000-0.glb"
+  },
+  "src/assets/ratings/3000/s4000-1.glb": {
+    "file": "assets/s4000-1-BTr3N5mc.glb",
+    "src": "src/assets/ratings/3000/s4000-1.glb"
+  },
+  "src/assets/ratings/3000/s4000-2.glb": {
+    "file": "assets/s4000-2-BAnVUT5K.glb",
+    "src": "src/assets/ratings/3000/s4000-2.glb"
+  },
+  "src/assets/ratings/3000/s4000-3.glb": {
+    "file": "assets/s4000-3-D0WqpxEV.glb",
+    "src": "src/assets/ratings/3000/s4000-3.glb"
+  },
+  "src/assets/ratings/3000/s4000-4.glb": {
+    "file": "assets/s4000-4-U5taL_Xc.glb",
+    "src": "src/assets/ratings/3000/s4000-4.glb"
+  },
+  "src/assets/ratings/3000/s4000-5.glb": {
+    "file": "assets/s4000-5-CIUVteDp.glb",
+    "src": "src/assets/ratings/3000/s4000-5.glb"
+  },
+  "src/assets/ratings/3000/s4000-6.glb": {
+    "file": "assets/s4000-6-CfnXvVCi.glb",
+    "src": "src/assets/ratings/3000/s4000-6.glb"
+  },
+  "src/assets/ratings/3000/s4000-7.glb": {
+    "file": "assets/s4000-7-9dEQDMRj.glb",
+    "src": "src/assets/ratings/3000/s4000-7.glb"
+  },
+  "src/assets/ratings/3500/EQS2-3500.pdf": {
+    "file": "assets/EQS2-3500-_GGB4B8L.pdf",
+    "src": "src/assets/ratings/3500/EQS2-3500.pdf"
+  },
+  "src/assets/ratings/3500/S-3500.stp": {
+    "file": "assets/S-3500-BKe8ox-C.stp",
+    "src": "src/assets/ratings/3500/S-3500.stp"
+  },
+  "src/assets/ratings/3500/s4000-0.glb": {
+    "file": "assets/s4000-0-Km_Wf9Y4.glb",
+    "src": "src/assets/ratings/3500/s4000-0.glb"
+  },
+  "src/assets/ratings/3500/s4000-1.glb": {
+    "file": "assets/s4000-1-Byl8d9Yd.glb",
+    "src": "src/assets/ratings/3500/s4000-1.glb"
+  },
+  "src/assets/ratings/3500/s4000-2.glb": {
+    "file": "assets/s4000-2-Ds90jPGW.glb",
+    "src": "src/assets/ratings/3500/s4000-2.glb"
+  },
+  "src/assets/ratings/3500/s4000-3.glb": {
+    "file": "assets/s4000-3-ivLDisGM.glb",
+    "src": "src/assets/ratings/3500/s4000-3.glb"
+  },
+  "src/assets/ratings/3500/s4000-4.glb": {
+    "file": "assets/s4000-4-Z9tWEqau.glb",
+    "src": "src/assets/ratings/3500/s4000-4.glb"
+  },
+  "src/assets/ratings/3500/s4000-5.glb": {
+    "file": "assets/s4000-5-C2lgXu5L.glb",
+    "src": "src/assets/ratings/3500/s4000-5.glb"
+  },
+  "src/assets/ratings/3500/s4000-6.glb": {
+    "file": "assets/s4000-6-DgYcvKfh.glb",
+    "src": "src/assets/ratings/3500/s4000-6.glb"
+  },
+  "src/assets/ratings/3500/s4000-7.glb": {
+    "file": "assets/s4000-7-Bc_Hp8Ef.glb",
+    "src": "src/assets/ratings/3500/s4000-7.glb"
+  },
+  "src/assets/ratings/4000/EQS2-4000.pdf": {
+    "file": "assets/EQS2-4000-DW94eAp3.pdf",
+    "src": "src/assets/ratings/4000/EQS2-4000.pdf"
+  },
+  "src/assets/ratings/4000/S-4000.stp": {
+    "file": "assets/S-4000-OR3tRUKK.stp",
+    "src": "src/assets/ratings/4000/S-4000.stp"
+  },
+  "src/assets/ratings/4000/s4000-0.glb": {
+    "file": "assets/s4000-0-BZAQBnmz.glb",
+    "src": "src/assets/ratings/4000/s4000-0.glb"
+  },
+  "src/assets/ratings/4000/s4000-1.glb": {
+    "file": "assets/s4000-1-BLB7sWl7.glb",
+    "src": "src/assets/ratings/4000/s4000-1.glb"
+  },
+  "src/assets/ratings/4000/s4000-2.glb": {
+    "file": "assets/s4000-2-BjrzM9jB.glb",
+    "src": "src/assets/ratings/4000/s4000-2.glb"
+  },
+  "src/assets/ratings/4000/s4000-3.glb": {
+    "file": "assets/s4000-3-DmSf2Vvx.glb",
+    "src": "src/assets/ratings/4000/s4000-3.glb"
+  },
+  "src/assets/ratings/4000/s4000-4.glb": {
+    "file": "assets/s4000-4-BR2VVWBL.glb",
+    "src": "src/assets/ratings/4000/s4000-4.glb"
+  },
+  "src/assets/ratings/4000/s4000-5.glb": {
+    "file": "assets/s4000-5-ClhitT6X.glb",
+    "src": "src/assets/ratings/4000/s4000-5.glb"
+  },
+  "src/assets/ratings/4000/s4000-6.glb": {
+    "file": "assets/s4000-6-BQbTcd4M.glb",
+    "src": "src/assets/ratings/4000/s4000-6.glb"
+  },
+  "src/assets/ratings/4000/s4000-7.glb": {
+    "file": "assets/s4000-7-bNldh3cc.glb",
+    "src": "src/assets/ratings/4000/s4000-7.glb"
+  },
+  "src/assets/ratings/500/S-500.stp": {
+    "file": "assets/S-500-D9iByvI1.stp",
+    "src": "src/assets/ratings/500/S-500.stp"
+  },
+  "src/assets/ratings/500/s4000-0.glb": {
+    "file": "assets/s4000-0-BQLrh6_P.glb",
+    "src": "src/assets/ratings/500/s4000-0.glb"
+  },
+  "src/assets/ratings/500/s4000-1.glb": {
+    "file": "assets/s4000-1-BkpkZM32.glb",
+    "src": "src/assets/ratings/500/s4000-1.glb"
+  },
+  "src/assets/ratings/500/s4000-2.glb": {
+    "file": "assets/s4000-2-hxJRU_Jn.glb",
+    "src": "src/assets/ratings/500/s4000-2.glb"
+  },
+  "src/assets/ratings/500/s4000-3.glb": {
+    "file": "assets/s4000-3-CE-zQmJp.glb",
+    "src": "src/assets/ratings/500/s4000-3.glb"
+  },
+  "src/assets/ratings/500/s4000-4.glb": {
+    "file": "assets/s4000-4-DRDufNBa.glb",
+    "src": "src/assets/ratings/500/s4000-4.glb"
+  },
+  "src/assets/ratings/500/s4000-5.glb": {
+    "file": "assets/s4000-5-Dsu-yIMH.glb",
+    "src": "src/assets/ratings/500/s4000-5.glb"
+  },
+  "src/assets/ratings/500/s4000-6.glb": {
+    "file": "assets/s4000-6-BIlULR9x.glb",
+    "src": "src/assets/ratings/500/s4000-6.glb"
+  },
+  "src/assets/ratings/500/s4000-7.glb": {
+    "file": "assets/s4000-7-CDQTcjkS.glb",
+    "src": "src/assets/ratings/500/s4000-7.glb"
+  },
+  "src/assets/ratings/5000/EQS2-5000.pdf": {
+    "file": "assets/EQS2-5000-BRGGlEFi.pdf",
+    "src": "src/assets/ratings/5000/EQS2-5000.pdf"
+  },
+  "src/assets/ratings/5000/S-5000.stp": {
+    "file": "assets/S-5000-DAjj9E51.stp",
+    "src": "src/assets/ratings/5000/S-5000.stp"
+  },
+  "src/assets/ratings/5000/s4000-0.glb": {
+    "file": "assets/s4000-0-C_JjTU_K.glb",
+    "src": "src/assets/ratings/5000/s4000-0.glb"
+  },
+  "src/assets/ratings/5000/s4000-1.glb": {
+    "file": "assets/s4000-1-C5DZl0Y-.glb",
+    "src": "src/assets/ratings/5000/s4000-1.glb"
+  },
+  "src/assets/ratings/5000/s4000-2.glb": {
+    "file": "assets/s4000-2-MyK7hd68.glb",
+    "src": "src/assets/ratings/5000/s4000-2.glb"
+  },
+  "src/assets/ratings/5000/s4000-3.glb": {
+    "file": "assets/s4000-3-R-x--eo8.glb",
+    "src": "src/assets/ratings/5000/s4000-3.glb"
+  },
+  "src/assets/ratings/5000/s4000-4.glb": {
+    "file": "assets/s4000-4-mJ5MbwC0.glb",
+    "src": "src/assets/ratings/5000/s4000-4.glb"
+  },
+  "src/assets/ratings/5000/s4000-5.glb": {
+    "file": "assets/s4000-5-F3NmsbGH.glb",
+    "src": "src/assets/ratings/5000/s4000-5.glb"
+  },
+  "src/assets/ratings/5000/s4000-6.glb": {
+    "file": "assets/s4000-6-Cpo37hgY.glb",
+    "src": "src/assets/ratings/5000/s4000-6.glb"
+  },
+  "src/assets/ratings/5000/s4000-7.glb": {
+    "file": "assets/s4000-7-DmN2URKI.glb",
+    "src": "src/assets/ratings/5000/s4000-7.glb"
+  },
+  "src/assets/s3000/premium-logo.png": {
+    "file": "assets/premium-logo--EbfrTdO.png",
+    "src": "src/assets/s3000/premium-logo.png"
+  },
+  "src/assets/s3000/web/s3000-boiler.glb": {
+    "file": "assets/s3000-boiler-D6a3-OHI.glb",
+    "src": "src/assets/s3000/web/s3000-boiler.glb"
+  },
+  "src/assets/s3000/web/s3000-cables.glb": {
+    "file": "assets/s3000-cables-BoAppqsS.glb",
+    "src": "src/assets/s3000/web/s3000-cables.glb"
+  },
+  "src/assets/s3000/web/s3000-deaerator.glb": {
+    "file": "assets/s3000-deaerator-BeCqQUxq.glb",
+    "src": "src/assets/s3000/web/s3000-deaerator.glb"
+  },
+  "src/assets/s3000/web/s3000-equipment.glb": {
+    "file": "assets/s3000-equipment-uXmb6TQJ.glb",
+    "src": "src/assets/s3000/web/s3000-equipment.glb"
+  },
+  "src/components/BoilerConfigurator/S3000Configurator.tsx": {
+    "file": "assets/S3000Configurator-DHaeplXH.js",
+    "name": "S3000Configurator",
+    "src": "src/components/BoilerConfigurator/S3000Configurator.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_index-D1PbDDO2.js",
+      "_three.module-D8ZkPw-i.js",
+      "_premium-logo-B45T0Uwn.js",
+      "_S3000Configurator-xHsNG5lx.js"
+    ],
+    "assets": [
+      "assets/s3000-boiler-D6a3-OHI.glb",
+      "assets/s3000-equipment-uXmb6TQJ.glb",
+      "assets/s3000-cables-BoAppqsS.glb",
+      "assets/s3000-deaerator-BeCqQUxq.glb"
+    ]
+  },
+  "src/components/BoilerConfigurator/S4000Configurator.tsx": {
+    "file": "assets/S4000Configurator-Bzn3cMb5.js",
+    "name": "S4000Configurator",
+    "src": "src/components/BoilerConfigurator/S4000Configurator.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_index-D1PbDDO2.js",
+      "_three.module-D8ZkPw-i.js",
+      "_premium-logo-B45T0Uwn.js",
+      "_S3000Configurator-xHsNG5lx.js",
+      "_BufferGeometryUtils-DUaiHPLO.js"
+    ],
+    "css": [
+      "assets/S4000Configurator-DXeJwUb6.css"
+    ],
+    "assets": [
+      "assets/S-500-D9iByvI1.stp",
+      "assets/s4000-0-BQLrh6_P.glb",
+      "assets/s4000-1-BkpkZM32.glb",
+      "assets/s4000-2-hxJRU_Jn.glb",
+      "assets/s4000-3-CE-zQmJp.glb",
+      "assets/s4000-4-DRDufNBa.glb",
+      "assets/s4000-5-Dsu-yIMH.glb",
+      "assets/s4000-6-BIlULR9x.glb",
+      "assets/s4000-7-CDQTcjkS.glb",
+      "assets/S-1000-NDrjvpoG.stp",
+      "assets/s4000-0-DJLi2cl5.glb",
+      "assets/s4000-1-CczpegYe.glb",
+      "assets/s4000-2-BfVz1c6_.glb",
+      "assets/s4000-3-C0bYSe55.glb",
+      "assets/s4000-4-Cg7iJ2x2.glb",
+      "assets/s4000-5-BQ4gEaM4.glb",
+      "assets/s4000-6-C5KHZvNk.glb",
+      "assets/s4000-7-CKxLNzWO.glb",
+      "assets/S-1500-CmT2Hkm4.stp",
+      "assets/s4000-0-DqYz9Rs1.glb",
+      "assets/s4000-1-5ECtkJuH.glb",
+      "assets/s4000-2-BIcbBuA8.glb",
+      "assets/s4000-3-Bb5hAEqA.glb",
+      "assets/s4000-4-CLD--lpS.glb",
+      "assets/s4000-5-BuGO2pHl.glb",
+      "assets/s4000-6-DNjYPbb4.glb",
+      "assets/s4000-7-B7XmGD3c.glb",
+      "assets/EQS2-1500-DhP-AerT.pdf",
+      "assets/S-2000-B8CyM9vT.stp",
+      "assets/s4000-0-naENR7e0.glb",
+      "assets/s4000-1-nd3DLHkj.glb",
+      "assets/s4000-2-DUMQQW0d.glb",
+      "assets/s4000-3-murSmlJG.glb",
+      "assets/s4000-4-YrK5edlW.glb",
+      "assets/s4000-5-ULdvaAHC.glb",
+      "assets/s4000-6-CmNDBW7s.glb",
+      "assets/s4000-7-DeYfAy53.glb",
+      "assets/EQS2-2000-taEI325H.pdf",
+      "assets/S-2500-DLt3bVSe.stp",
+      "assets/s4000-0-k32n66A5.glb",
+      "assets/s4000-1-Dr_dzSJS.glb",
+      "assets/s4000-2-BEifbl9y.glb",
+      "assets/s4000-3-CplM7Rb5.glb",
+      "assets/s4000-4-BP30FGoy.glb",
+      "assets/s4000-5-Dn29FbGh.glb",
+      "assets/s4000-6-DoQQ1ha4.glb",
+      "assets/s4000-7-DwO1vRc9.glb",
+      "assets/EQS2-2500-CiJCYp1y.pdf",
+      "assets/S-3000-CrNibU-8.stp",
+      "assets/s4000-0-Bijgd8Ih.glb",
+      "assets/s4000-1-BTr3N5mc.glb",
+      "assets/s4000-2-BAnVUT5K.glb",
+      "assets/s4000-3-D0WqpxEV.glb",
+      "assets/s4000-4-U5taL_Xc.glb",
+      "assets/s4000-5-CIUVteDp.glb",
+      "assets/s4000-6-CfnXvVCi.glb",
+      "assets/s4000-7-9dEQDMRj.glb",
+      "assets/EQS2-3000-CDpAOXt9.pdf",
+      "assets/S-3500-BKe8ox-C.stp",
+      "assets/s4000-0-Km_Wf9Y4.glb",
+      "assets/s4000-1-Byl8d9Yd.glb",
+      "assets/s4000-2-Ds90jPGW.glb",
+      "assets/s4000-3-ivLDisGM.glb",
+      "assets/s4000-4-Z9tWEqau.glb",
+      "assets/s4000-5-C2lgXu5L.glb",
+      "assets/s4000-6-DgYcvKfh.glb",
+      "assets/s4000-7-Bc_Hp8Ef.glb",
+      "assets/EQS2-3500-_GGB4B8L.pdf",
+      "assets/S-4000-OR3tRUKK.stp",
+      "assets/s4000-0-BZAQBnmz.glb",
+      "assets/s4000-1-BLB7sWl7.glb",
+      "assets/s4000-2-BjrzM9jB.glb",
+      "assets/s4000-3-DmSf2Vvx.glb",
+      "assets/s4000-4-BR2VVWBL.glb",
+      "assets/s4000-5-ClhitT6X.glb",
+      "assets/s4000-6-BQbTcd4M.glb",
+      "assets/s4000-7-bNldh3cc.glb",
+      "assets/EQS2-4000-DW94eAp3.pdf",
+      "assets/S-5000-DAjj9E51.stp",
+      "assets/s4000-0-C_JjTU_K.glb",
+      "assets/s4000-1-C5DZl0Y-.glb",
+      "assets/s4000-2-MyK7hd68.glb",
+      "assets/s4000-3-R-x--eo8.glb",
+      "assets/s4000-4-mJ5MbwC0.glb",
+      "assets/s4000-5-F3NmsbGH.glb",
+      "assets/s4000-6-Cpo37hgY.glb",
+      "assets/s4000-7-DmN2URKI.glb",
+      "assets/EQS2-5000-BRGGlEFi.pdf",
+      "assets/comfort_plus-BgZXyJ9I.glb",
+      "assets/comfort-B2-_dRhL.glb",
+      "assets/cascade-Bky7Y6ng.glb",
+      "assets/adl_is16-CQy1Iafp.glb",
+      "assets/valtec_vt215_dn15-BGGQBXM4.glb",
+      "assets/da3-DJvjEthU.glb",
+      "assets/da15_4-DEB_H07D.glb",
+      "assets/da15_8-DpYE62g8.glb",
+      "assets/da25_15-CLETLHil.glb",
+      "assets/da25_25-Bk56zpdp.glb"
+    ]
+  },
+  "src/components/HotwaterConfigurator/HotwaterConfigurator.tsx": {
+    "file": "assets/HotwaterConfigurator-Drax-E8e.js",
+    "name": "HotwaterConfigurator",
+    "src": "src/components/HotwaterConfigurator/HotwaterConfigurator.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_premium-logo-B45T0Uwn.js",
+      "_three.module-D8ZkPw-i.js",
+      "_BufferGeometryUtils-DUaiHPLO.js"
+    ],
+    "css": [
+      "assets/HotwaterConfigurator-CwULJQmC.css"
+    ],
+    "assets": [
+      "assets/cabinet__premium-boiler-CYu0PbBB.glb",
+      "assets/cabinet__premium-cascade-DKEAzFlT.glb",
+      "assets/cla-1000-51-Dmvrz_iJ.glb",
+      "assets/cla-1000-57-DjCIBDtf.glb",
+      "assets/cla-1250-51-CZnYLas5.glb",
+      "assets/cla-1250-57-NAp7Ir2t.glb",
+      "assets/cla-1500-51-QOlFi4ID.glb",
+      "assets/cla-1500-57-ByjKAVMK.glb",
+      "assets/cla-1750-51-JfPoF49k.glb",
+      "assets/cla-1750-57-DFaGwmOA.glb",
+      "assets/cla-2000-51-D1K3idtF.glb",
+      "assets/cla-2000-57-atqWlakb.glb",
+      "assets/cla-250-51-fX0S-gW1.glb",
+      "assets/cla-250-57-Bs1HaV9t.glb",
+      "assets/cla-2500-51-CkldBJ3Y.glb",
+      "assets/cla-2500-57-CK-xB-66.glb",
+      "assets/cla-3000-51-dn150-CUO-Hg4N.glb",
+      "assets/cla-3000-51-IomjzRaK.glb",
+      "assets/cla-3000-57-Dh-UgG5H.glb",
+      "assets/cla-3500-51-D1ilO9Tg.glb",
+      "assets/cla-3500-57-DOTax2dc.glb",
+      "assets/cla-4000-51-C1iuZKoY.glb",
+      "assets/cla-4000-57-BmoVO05h.glb",
+      "assets/cla-500-51-BxoDmDb-.glb",
+      "assets/cla-500-57-DctS926l.glb",
+      "assets/cla-5000-51-CPJQwHvz.glb",
+      "assets/cla-6000-51-Cet0vap5.glb",
+      "assets/cla-750-51-D5dpPJf-.glb",
+      "assets/cla-750-57-C73fdZ91.glb",
+      "assets/collector__c2500-supply-wX40GcPX.glb",
+      "assets/collector__c4000-supply-Bg9NSLwr.glb",
+      "assets/e-1000-20260925-C5KayICW.glb",
+      "assets/e-1500-20260925-Cu5QGNm0.glb",
+      "assets/e-2000-20260925-AFMc05OU.glb",
+      "assets/e-2500-20260925-lfSxXFlI.glb",
+      "assets/e-3000-20260925-D3sF1Lc5.glb",
+      "assets/e-3500-20260925-DO1m7xfp.glb",
+      "assets/e-4000-20260925-DtnNchr7.glb",
+      "assets/e-5000-20260925-CsOlvQFn.glb",
+      "assets/e-long-2500-06-C7wZdX_O.glb",
+      "assets/e-long-2500-10-Bkx8kGLJ.glb",
+      "assets/e-long-3500-06-BUvx_xoe.glb",
+      "assets/e-long-3500-10-CrBi4mWr.glb",
+      "assets/e-long-3500-20260609-06-Cuoliy_p.glb",
+      "assets/e-long-4000-06-DpgAlyIC.glb",
+      "assets/e-long-4000-10-CzwNIcuq.glb",
+      "assets/e-long-5000-06-DjLybbGQ.glb",
+      "assets/e-long-5000-10-DsQQsSHi.glb",
+      "assets/e-long-6000-06-DNHHN-zC.glb",
+      "assets/e-long-6000-10-DJCQzTko.glb",
+      "assets/e-long-7000-06-HdGwpcsC.glb",
+      "assets/e-long-7000-10-BMepprRb.glb",
+      "assets/plate__cla250-native-B-Ch71jA.glb",
+      "assets/plate__e1500-cib205-plate-CaVtlesm.glb",
+      "assets/safety__relief-shape-DVzuiph9.glb",
+      "assets/spacer__c3000-rs410-KS65XYcR.glb",
+      "assets/spacer__e1500-cib205-Cw06f77N.glb"
+    ]
+  }
+}

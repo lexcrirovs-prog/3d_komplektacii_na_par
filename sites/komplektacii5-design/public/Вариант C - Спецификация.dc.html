@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PREMIUM · Спецификация · вариант C</title>
+<script src="./vendor/runtime.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<nav aria-label="Варианты дизайна" style="display:flex;gap:16px;flex-wrap:wrap;padding:10px 16px;border-bottom:1px solid #ccd4dc;font:12px system-ui;background:#e8edf1;color:#1d1f20"><a href="./" style="color:inherit">← Все три варианта</a><span>Вариант C · Спецификация</span><span>Демо · 2026.10.22.1 · 22.10.2026</span></nav>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/industry-76077696-ce35-4a42-9a68-e23cd73b66b3/styles.css">
+  <script src="_ds/industry-76077696-ce35-4a42-9a68-e23cd73b66b3/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:var(--color-bg)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-700)}
+    .vc{container-type:inline-size}
+    .vc-main{display:grid;grid-template-columns:minmax(0,1fr) 44%;gap:var(--space-8);padding:var(--space-6) var(--space-8) var(--space-8);align-items:start}
+    .vc-stage{position:sticky;top:var(--space-4);height:min(640px,calc(100vh - 40px))}
+    .vc-stamp{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(208px,1.5fr) minmax(0,.9fr);border:1px solid var(--color-text)}
+    .vc-stamp > div{padding:var(--space-2) var(--space-3);border-right:1px solid var(--color-text);min-width:0}
+    .vc-stamp > div:last-child{border-right:0}
+    .vc-row{display:grid;grid-template-columns:36px minmax(0,1fr) 48px max-content max-content 104px;gap:var(--space-3);align-items:center;padding:var(--space-2) var(--space-2);border-bottom:1px solid var(--color-divider);cursor:default}
+    .vc-row:hover{background:var(--color-accent-100)}
+    .vc-mobile{display:none}
+    @container (max-width:760px){.vc-main{grid-template-columns:1fr;gap:var(--space-4);padding:var(--space-4)}.vc-stage{position:sticky;top:0;height:300px;order:-1;z-index:5}.vc-stamp{grid-template-columns:1fr 1fr}.vc-stamp > div:nth-child(2n){border-right:0}.vc-stamp > div:nth-child(-n+2){border-bottom:1px solid var(--color-text)}.vc-row{grid-template-columns:36px minmax(0,1fr) 96px}.vc-hide-m{display:none !important}.vc-mobile{display:flex}.vc-desktop{display:none !important}.vc-nav{flex-wrap:wrap}.vc-nav-tabs{order:5;width:100%}.vc-nav-tabs .seg{width:100%}.vc-nav-tabs .seg-opt{flex:1;justify-content:center}.vc-views{left:var(--space-4) !important;right:auto !important;top:auto !important;bottom:var(--space-4) !important}.vc-views .seg-opt{padding:4px 6px !important;font-size:11px !important}.vc-legend{bottom:52px !important}}
+  </style>
+</helmet>
+<div class="vc" style="min-height:100%;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);display:flex;flex-direction:column">
+  <header class="nav vc-nav" style="min-height:60px;gap:var(--space-4);padding:var(--space-2) var(--space-8);border-bottom:1px solid var(--color-divider)">
+    <div style="display:flex;align-items:center;gap:var(--space-3);margin-right:auto"><img src="assets/premium-logo.png" alt="PREMIUM gas company" style="height:34px;width:auto"><span style="font-family:var(--font-heading);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-700)">Спецификация в 3D</span></div>
+    <div class="vc-nav-tabs seg" role="radiogroup" aria-label="Раздел">
+      <label class="seg-opt" style="white-space:nowrap"><input type="radio" name="vc-sec" checked="{{ isSteam }}" onChange="{{ setSteam }}">Паровые котлы</label>
+      <label class="seg-opt" style="white-space:nowrap"><input type="radio" name="vc-sec" checked="{{ isHW }}" onChange="{{ setHW }}">Водогрейные котлы</label>
+    </div>
+    <a class="vc-desktop" href="./" style="color:inherit">Все варианты</a>
+    <button type="button" class="btn btn-secondary vc-desktop" onClick="{{ toggleManager }}" title="В рабочей версии — вход по паролю для отдела продаж"><sc-if value="{{ client }}" hint-placeholder-val="{{ true }}">Демо менеджера</sc-if><sc-if value="{{ manager }}">Демо · выйти</sc-if></button>
+    <button type="button" class="btn btn-primary blueprint vc-desktop" onClick="{{ openDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Узнать цену</button>
+  </header>
+  <div class="vc-main">
+    <section aria-label="Спецификация" style="min-width:0;display:flex;flex-direction:column;gap:var(--space-6)">
+      <div class="vc-stamp">
+        <div><div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)">Спецификация</div><div style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.1">{{ title }}</div><div style="font-size:12px;color:var(--color-neutral-700)">{{ kicker }}</div></div>
+        <div><div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)"><sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}">Производительность</sc-if><sc-if value="{{ isHW }}">Модель</sc-if></div>
+          <sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}"><select class="input" key="{{ powerValue }}" style="min-height:30px;padding:2px 6px;margin-top:4px" value="{{ powerValue }}" onChange="{{ setPower }}"><sc-for list="{{ powers }}" as="p" hint-placeholder-count="9"><option value="{{ p.p }}">{{ p.label }} кг/ч</option></sc-for></select></sc-if>
+          <sc-if value="{{ isHW }}"><select class="input" key="{{ hwModelValue }}" style="min-height:30px;padding:2px 6px;margin-top:4px" value="{{ hwModelValue }}" onChange="{{ setHwModel }}"><sc-for list="{{ hwModels }}" as="m" hint-placeholder-count="2"><option value="{{ m.id }}">{{ m.label }} · {{ m.kwLabel }}</option></sc-for></select></sc-if>
+        </div>
+        <div><div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)"><sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}">Комплектация</sc-if><sc-if value="{{ isHW }}">Давление · температура</sc-if></div>
+          <sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}"><div class="seg" role="radiogroup" style="margin-top:4px"><sc-for list="{{ trims }}" as="t" hint-placeholder-count="3"><label class="seg-opt" style="white-space:nowrap;padding:5px 8px;font-size:12px"><input type="radio" name="vc-trim" checked="{{ t.on }}" onChange="{{ t.pick }}">{{ t.label }}</label></sc-for></div></sc-if>
+          <sc-if value="{{ isHW }}"><div style="font-family:var(--font-heading);font-weight:600;font-size:20px;margin-top:2px">{{ hwPressureLabel }}</div></sc-if>
+        </div>
+        <div><div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)"><sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}">Давление</sc-if><sc-if value="{{ isHW }}">Габарит Д × Ш × В</sc-if></div>
+          <sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}"><div class="seg" role="radiogroup" style="margin-top:4px"><sc-for list="{{ pressures }}" as="pr" hint-placeholder-count="2"><label class="seg-opt" style="white-space:nowrap;padding:5px 8px;font-size:12px"><input type="radio" name="vc-press" checked="{{ pr.on }}" onChange="{{ pr.pick }}">{{ pr.label }}</label></sc-for></div></sc-if>
+          <sc-if value="{{ isHW }}"><div style="font-size:14px;margin-top:4px">{{ hwDims }}</div></sc-if>
+        </div>
+      </div>
+      <div>
+        <div class="vc-row" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-neutral-600);border-bottom:1px solid var(--color-text);cursor:default"><span>Поз.</span><span>Наименование</span><span class="vc-hide-m">Кол.</span><span class="vc-hide-m">Статус</span><span class="vc-hide-m">Необходимость</span><span style="text-align:right"><sc-if value="{{ manager }}">Цена</sc-if><sc-if value="{{ client }}" hint-placeholder-val="{{ true }}">Действие</sc-if></span></div>
+        <div onMouseLeave="{{ clearSelected }}">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="17">
+            <sc-if value="{{ r.included }}">
+              <div class="vc-row" onMouseEnter="{{ r.hover }}" onClick="{{ r.select }}" style="background:{{ r.bg }}">
+                <span style="font-family:var(--font-heading);font-weight:600;font-size:16px;color:var(--color-accent-700)">{{ r.pos }}</span>
+                <span style="min-width:0"><span style="display:block;font-size:14px;font-weight:500;line-height:1.3">{{ r.label }}</span><span style="display:block;font-size:12px;color:var(--color-neutral-700);line-height:1.35;text-wrap:pretty">{{ r.why }}</span></span>
+                <span class="vc-hide-m" style="font-size:13px">{{ r.qty }}</span>
+                <span class="vc-hide-m"><span class="tag tag-accent" style="white-space:nowrap">{{ r.statusLabel }}</span></span>
+                <span class="vc-hide-m"><sc-if value="{{ r.isNorm }}"><span class="tag tag-outline">{{ r.needLabel }}</span></sc-if><sc-if value="{{ r.isRec }}"><span class="tag tag-neutral">{{ r.needLabel }}</span></sc-if><sc-if value="{{ r.isOpt }}"><span class="tag tag-neutral">{{ r.needLabel }}</span></sc-if></span>
+                <span style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:2px"><sc-if value="{{ manager }}"><span style="font-size:13px;white-space:nowrap">{{ r.priceLabel }}</span></sc-if><sc-if value="{{ r.isAddon }}"><button type="button" class="btn btn-secondary" style="padding:4px 10px;font-size:13px" onClick="{{ r.toggleStop }}" disabled="{{ r.locked }}">Убрать</button></sc-if><sc-if value="{{ r.lockNote }}"><span style="font-size:10px;color:var(--color-neutral-600)">{{ r.lockNote }}</span></sc-if></span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ r.excluded }}">
+              <div class="vc-row" onMouseEnter="{{ r.peekRow }}" style="color:var(--color-neutral-600)">
+                <span style="font-family:var(--font-heading);font-weight:600;font-size:16px">{{ r.pos }}</span>
+                <span style="min-width:0"><span style="display:block;font-size:14px;line-height:1.3;text-decoration:line-through;text-decoration-color:var(--color-neutral-400)">{{ r.label }}</span><span style="display:block;font-size:12px;line-height:1.35;text-wrap:pretty">{{ r.simple }}</span></span>
+                <span class="vc-hide-m" style="font-size:13px">—</span>
+                <span class="vc-hide-m"><span class="tag tag-neutral" style="white-space:nowrap">Не включено</span></span>
+                <span class="vc-hide-m"><sc-if value="{{ r.isNorm }}"><span class="tag tag-outline">{{ r.needLabel }}</span></sc-if><sc-if value="{{ r.isRec }}"><span class="tag tag-neutral">{{ r.needLabel }}</span></sc-if><sc-if value="{{ r.isOpt }}"><span class="tag tag-neutral">{{ r.needLabel }}</span></sc-if></span>
+                <span style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:2px"><sc-if value="{{ manager }}"><span style="font-size:13px;white-space:nowrap">{{ r.priceLabel }}</span></sc-if><button type="button" class="btn btn-primary" style="padding:4px 10px;font-size:13px" onClick="{{ r.toggleStop }}" disabled="{{ r.locked }}">Добавить</button><sc-if value="{{ r.lockNote }}"><span style="font-size:10px">{{ r.lockNote }}</span></sc-if></span>
+              </div>
+            </sc-if>
+          </sc-for>
+        </div>
+        <p style="font-size:12px;color:var(--color-neutral-700);margin:var(--space-3) 0 0">Наведите на строку — узел подсветится в модели, остальное уйдёт в тень. Вычеркнутые строки при наведении показываются контуром. Примерка опций не подтверждает совместимость креплений — проверяется по чертежам.</p>
+      </div>
+      <div class="card blueprint" style="flex-direction:row;align-items:center;gap:var(--space-6);padding:var(--space-4);flex-wrap:wrap"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="flex:1;min-width:220px"><span class="card-kicker">Итого по спецификации · {{ onCount }} опций из {{ optionCount }}</span>
+          <sc-if value="{{ client }}" hint-placeholder-val="{{ true }}"><div style="font-family:var(--font-heading);font-weight:600;font-size:30px;line-height:1.05">По запросу</div><p class="card-body" style="font-size:12px">Пришлём цену и эту спецификацию в PDF в течение рабочего дня.</p></sc-if>
+          <sc-if value="{{ manager }}"><div style="font-family:var(--font-heading);font-weight:600;font-size:30px;line-height:1.05">{{ totalLabel }}</div><p class="card-body" style="font-size:12px">Ориентир прототипа; заводские только шкафы. {{ missingNote }}</p></sc-if>
+        </div>
+        <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+          <button type="button" class="btn btn-secondary" onClick="{{ openDialog }}">Звонок инженера</button>
+          <sc-if value="{{ client }}" hint-placeholder-val="{{ true }}"><button type="button" class="btn btn-primary blueprint" onClick="{{ openDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Узнать цену</button></sc-if>
+          <sc-if value="{{ manager }}"><button type="button" class="btn btn-primary blueprint" onClick="{{ copyLink }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Скопировать ссылку</button></sc-if>
+        </div>
+      </div>
+    </section>
+    <section class="vc-stage blueprint" aria-label="Трёхмерная модель"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <x-import component-from-global-scope="boiler-viewer" from="./boiler-viewer.js" id="{{ vid }}" section="{{ sectionStr }}" model="{{ modelFile }}" enabled="{{ enabledStr }}" highlight="{{ highlightStr }}" ghost="{{ ghostStr }}" view="{{ view }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+      <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:var(--space-4);top:var(--space-4);pointer-events:none;background:var(--color-bg);border:1px solid var(--color-divider);padding:var(--space-2) var(--space-3);max-width:70%"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)">Поз. {{ selRow.pos }}</span><div style="font-family:var(--font-heading);font-weight:600;font-size:18px;line-height:1.15">{{ selRow.label }}</div></div></sc-if>
+      <div class="vc-legend" style="position:absolute;left:var(--space-4);bottom:var(--space-4);display:flex;gap:var(--space-3);font-size:12px;color:var(--color-neutral-800);pointer-events:none;flex-wrap:wrap">
+        <sc-for list="{{ legend }}" as="l" hint-placeholder-count="3"><span style="display:inline-flex;align-items:center;gap:6px"><i style="width:14px;height:14px;background:{{ l.c }};display:inline-block"></i>{{ l.l }}</span></sc-for>
+      </div>
+      <div class="seg vc-views" role="radiogroup" aria-label="Ракурс" style="position:absolute;right:var(--space-4);top:var(--space-4);background:var(--color-bg)">
+        <sc-for list="{{ views }}" as="v" hint-placeholder-count="5"><label class="seg-opt" style="white-space:nowrap;padding:5px 9px;font-size:12px"><input type="radio" name="vc-view" checked="{{ v.on }}" onChange="{{ v.pick }}">{{ v.label }}</label></sc-for>
+      </div>
+    </section>
+  </div>
+  <div class="vc-mobile" style="position:sticky;bottom:0;align-items:center;justify-content:space-between;gap:var(--space-3);padding:var(--space-3) var(--space-4);background:var(--color-bg);border-top:1px solid var(--color-divider)">
+    <div><div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Спецификация · {{ onCount }} опций</div><div style="font-family:var(--font-heading);font-weight:600;font-size:18px">Цена по запросу</div></div>
+    <button type="button" class="btn btn-primary blueprint" onClick="{{ openDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Узнать цену</button>
+  </div>
+  <sc-if value="{{ dialog }}" hint-placeholder-val="{{ false }}">
+    <div class="dialog-backdrop" style="position:absolute;z-index:20" onClick="{{ closeDialog }}">
+      <form class="dialog blueprint elev-lg" style="width:min(520px,100%);background:var(--color-bg)" onSubmit="{{ submit }}" onClick="{{ stop }}"><p role="status" style="font-size:13px;margin:0;color:var(--color-neutral-700)">Демонстрационная форма. Контакты не сохраняются и не отправляются.</p><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <span class="card-kicker">Ваша спецификация</span>
+          <div class="dialog-title" style="font-size:26px">Узнать цену</div>
+          <p class="dialog-body" style="margin:0">{{ summary }}</p>
+          <div style="display:grid;gap:var(--space-1);margin-top:var(--space-2)">
+            <label class="radio"><input type="radio" name="vc-mode" checked="{{ modeEmail }}" onChange="{{ setEmail }}"><span class="dot"></span>Прислать цену и спецификацию PDF на e-mail</label>
+            <label class="radio"><input type="radio" name="vc-mode" checked="{{ modeCall }}" onChange="{{ setCall }}"><span class="dot"></span>Обратный звонок инженера с разбором комплектации</label>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+            <div class="field"><label>Имя</label><input class="input" name="name" autocomplete="name"></div>
+            <div class="field"><label>Телефон *</label><input class="input" name="phone" type="tel" required="{{ true }}" autocomplete="tel"></div>
+            <div class="field"><label>E-mail *</label><input class="input" name="email" type="email" required="{{ true }}" autocomplete="email"></div>
+            <div class="field"><label>Компания</label><input class="input" name="company" autocomplete="organization"></div>
+          </div>
+          <label class="radio" style="align-items:flex-start;font-size:12px;color:var(--color-neutral-700)"><input type="checkbox" required="{{ true }}" style="position:static;opacity:1;width:14px;height:14px;margin-top:3px"><span>Согласен передать контакты и конфигурацию в Premium Gas для подготовки предложения.</span></label>
+          <div class="dialog-actions"><button type="button" class="btn btn-secondary" onClick="{{ closeDialog }}">Вернуться к модели</button><button type="submit" disabled="{{ true }}" class="btn btn-primary blueprint"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Отправка в демоверсии отключена</button></div>
+        </sc-if>
+        <sc-if value="{{ sent }}">
+          <span class="card-kicker">Демонстрация формы</span>
+          <div class="dialog-title" style="font-size:26px">{{ sentTitle }}</div>
+          <p class="dialog-body">Спецификация и ссылка на сборку приложены к запросу — инженер откроет ту же конфигурацию в 3D.</p>
+          <div class="dialog-actions"><button type="button" class="btn btn-primary blueprint" onClick="{{ closeDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Вернуться к модели</button></div>
+        </sc-if>
+      </form>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;section&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;steam&quot;,&quot;hotwater&quot;],&quot;default&quot;:&quot;steam&quot;,&quot;tsType&quot;:&quot;'steam'|'hotwater'&quot;,&quot;section&quot;:&quot;Старт&quot;}}">
+class Component extends DCLogic {
+  state = { ready: false, section: 'steam', power: 4000, pressure: 12, trim: 'comfort', steamAddons: ['burner', 'economizer', 'modulation', 'deaerator', 'gpz', 'bdv'], hwModel: 'e-2500', hwAddons: ['safety', 'cabinet', 'collector'], view: 'overall', selected: '', ghost: '', manager: false, dialog: false, sent: false, mode: 'email', flash: '' };
+  get vid() { return this.props.vid || 'vc-viewer'; }
+  componentDidMount() {
+    import(new URL('models/configurator.js', document.baseURI).href).then(m => { this.cfg = m; this.setState({ ready: true }); });
+    this._onSel = e => { if (e.detail.id !== this.vid || !this.cfg) return; this.setState({ selected: this.cfg.rowForPart(this.state.section, e.detail.part) }); };
+    window.addEventListener('bv-select', this._onSel);
+    if (this.props.section === 'hotwater') this.setState({ section: 'hotwater' });
+  }
+  componentWillUnmount() { window.removeEventListener('bv-select', this._onSel); }
+  renderVals() {
+    const s = this.state;
+    const base = { vid: this.vid, sectionStr: s.section, stop: e => e.stopPropagation(), isSteam: s.section === 'steam', isHW: s.section !== 'steam', client: !s.manager, manager: s.manager, dialog: s.dialog, view: s.view, powerValue: String(s.power), hwModelValue: s.hwModel, setPower: e => this.setState({ power: Number(e.target.value) }), setHwModel: e => this.setState({ hwModel: e.target.value }) };
+    if (!this.cfg) return base;
+    const v = this.cfg.compute(s, p => this.setState(p), this.vid);
+    const hw = v.hwModels.find(m => m.on) || {};
+    v.hwPressureLabel = hw.mpa + ' МПа · до ' + hw.tC + ' °C'; v.hwDims = hw.dims;
+    v.rows = v.rows.map(r => ({ ...r, bg: r.selected ? 'var(--color-accent-100)' : 'transparent', toggleStop: e => { e.stopPropagation(); r.toggle(); }, peekRow: () => this.setState({ selected: '', ghost: r.addon || '' }) }));
+    v.clearSelected = () => this.setState({ selected: '', ghost: '' });
+    return { ...base, ...v };
+  }
+}
+</script>
+</body>
+</html>

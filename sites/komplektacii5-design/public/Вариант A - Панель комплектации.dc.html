@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PREMIUM · Панель комплектации · вариант A</title>
+<script src="./vendor/runtime.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<nav aria-label="Варианты дизайна" style="display:flex;gap:16px;flex-wrap:wrap;padding:10px 16px;border-bottom:1px solid #ccd4dc;font:12px system-ui;background:#e8edf1;color:#1d1f20"><a href="./" style="color:inherit">← Все три варианта</a><span>Вариант A · Панель комплектации</span><span>Демо · 2026.10.22.1 · 22.10.2026</span></nav>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/industry-76077696-ce35-4a42-9a68-e23cd73b66b3/styles.css">
+  <script src="_ds/industry-76077696-ce35-4a42-9a68-e23cd73b66b3/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:var(--color-bg)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-700)}
+    .va{container-type:inline-size}
+    .va-body{display:grid;grid-template-columns:minmax(0,1fr) 400px}
+    .va-stage{position:relative;height:clamp(520px,calc(100vh - 60px),840px)}
+    .va-panel{height:clamp(520px,calc(100vh - 60px),840px);overflow:auto;border-left:1px solid var(--color-divider)}
+    .va-mobile{display:none}
+    @container (max-width:760px){.va-body{grid-template-columns:1fr}.va-stage{height:320px}.va-panel{height:auto;overflow:visible;border-left:0;border-top:1px solid var(--color-divider)}.va-mobile{display:flex}.va-desktop{display:none !important}.va-nav{flex-wrap:wrap}.va-nav-tabs{order:5;width:100%}.va-nav-tabs .seg{width:100%}.va-nav-tabs .seg-opt{flex:1;justify-content:center}.va-views{left:var(--space-4) !important;right:auto !important;bottom:var(--space-4) !important}.va-views .seg-opt{padding:5px 8px;font-size:12px}.va-legend{bottom:56px !important}}
+    @keyframes va-pulse{0%{opacity:.35}100%{opacity:1}}
+  </style>
+</helmet>
+<div class="va" ref="{{ rootRef }}" style="min-height:100%;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);display:flex;flex-direction:column">
+  <header class="nav va-nav" style="height:auto;min-height:60px;gap:var(--space-4);padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-divider)">
+    <div style="display:flex;align-items:center;gap:var(--space-3);margin-right:auto"><img src="assets/premium-logo.png" alt="PREMIUM gas company" style="height:34px;width:auto"><span style="font-family:var(--font-heading);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-700)">3D-комплектации котлов</span></div>
+    <div class="va-nav-tabs seg" role="radiogroup" aria-label="Раздел">
+      <label class="seg-opt" style="white-space:nowrap"><input type="radio" name="va-sec" checked="{{ isSteam }}" onChange="{{ setSteam }}">Паровые котлы</label>
+      <label class="seg-opt" style="white-space:nowrap"><input type="radio" name="va-sec" checked="{{ isHW }}" onChange="{{ setHW }}">Водогрейные котлы</label>
+    </div>
+    <a class="va-desktop" href="./" style="color:inherit">Все варианты</a>
+    <button type="button" class="btn btn-secondary va-desktop" onClick="{{ toggleManager }}" title="В рабочей версии — вход по паролю для отдела продаж"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><sc-if value="{{ client }}" hint-placeholder-val="{{ true }}">Демо менеджера</sc-if><sc-if value="{{ manager }}">Демо · выйти</sc-if></button>
+    <button type="button" class="btn btn-primary blueprint va-desktop" onClick="{{ openDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Узнать цену</button>
+  </header>
+  <div class="va-body">
+    <section class="va-stage" aria-label="Трёхмерная модель">
+      <x-import component-from-global-scope="boiler-viewer" from="./boiler-viewer.js" id="{{ vid }}" section="{{ sectionStr }}" model="{{ modelFile }}" enabled="{{ enabledStr }}" highlight="{{ highlightStr }}" ghost="{{ ghostStr }}" view="{{ view }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+      <div style="position:absolute;left:var(--space-6);top:var(--space-6);pointer-events:none;max-width:420px">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:var(--space-1)">{{ kicker }}</div>
+        <h1 style="font-size:40px;margin:0 0 var(--space-1)">{{ title }}</h1>
+        <div style="font-size:13px;color:var(--color-neutral-700)">{{ meta }}</div>
+      </div>
+      <div class="va-desktop" style="position:absolute;right:var(--space-6);top:var(--space-6);width:300px;display:flex;flex-direction:column;gap:var(--space-3);align-items:flex-end">
+        <div style="font-size:12px;color:var(--color-neutral-700);text-align:right">Вращение — мышью, колесо — масштаб.<br>Нажмите на узел — откроется его карточка.</div>
+        <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+          <div class="card blueprint elev-md" style="width:300px;background:var(--color-bg);gap:var(--space-2)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="card-kicker">Выбранный узел · поз. {{ selRow.pos }}</span><button type="button" class="btn btn-ghost" onClick="{{ clearSelected }}" aria-label="Закрыть" style="padding:0 6px;min-height:0">✕</button></div>
+            <div class="card-title">{{ selRow.label }}</div>
+            <p class="card-body">{{ selRow.why }}</p>
+            <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;align-items:center"><span class="tag tag-accent">{{ selRow.statusLabel }}</span><span class="tag tag-outline">{{ selRow.needLabel }}</span></div>
+            <sc-if value="{{ selRow.isAddon }}"><button type="button" class="btn btn-secondary" onClick="{{ selRow.toggle }}" disabled="{{ selRow.locked }}">{{ selRow.toggleLabel }} из комплектации</button></sc-if>
+          </div>
+        </sc-if>
+      </div>
+      <div class="va-legend" style="position:absolute;left:var(--space-6);bottom:var(--space-6);display:flex;gap:var(--space-4);font-size:12px;color:var(--color-neutral-800);pointer-events:none;flex-wrap:wrap">
+        <sc-for list="{{ legend }}" as="l" hint-placeholder-count="3"><span style="display:inline-flex;align-items:center;gap:6px"><i style="width:14px;height:14px;background:{{ l.c }};display:inline-block"></i>{{ l.l }}</span></sc-for>
+      </div>
+      <div class="seg va-views" role="radiogroup" aria-label="Ракурс" style="position:absolute;right:var(--space-6);bottom:var(--space-6);background:var(--color-bg)">
+        <sc-for list="{{ views }}" as="v" hint-placeholder-count="5"><label class="seg-opt" style="white-space:nowrap"><input type="radio" name="va-view" checked="{{ v.on }}" onChange="{{ v.pick }}">{{ v.label }}</label></sc-for>
+      </div>
+    </section>
+    <aside class="va-panel" aria-label="Комплектация">
+      <div style="padding:var(--space-6) var(--space-6) var(--space-8);display:flex;flex-direction:column;gap:var(--space-8)">
+        <div>
+          <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3)">01 · Котёл</h6>
+          <sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:12px;color:var(--color-neutral-700);margin-bottom:var(--space-2)">Паропроизводительность, кг/ч</div>
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4)">
+              <sc-for list="{{ powers }}" as="p" hint-placeholder-count="9"><sc-if value="{{ p.on }}"><button type="button" class="btn btn-primary" style="min-width:64px">{{ p.label }}</button></sc-if><sc-if value="{{ p.off }}"><button type="button" class="btn btn-secondary" style="min-width:64px" onClick="{{ p.pick }}">{{ p.label }}</button></sc-if></sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--space-3)"><span style="font-size:12px;color:var(--color-neutral-700)">Рабочее давление</span><div class="seg" role="radiogroup"><sc-for list="{{ pressures }}" as="pr" hint-placeholder-count="2"><label class="seg-opt" style="white-space:nowrap"><input type="radio" name="va-press" checked="{{ pr.on }}" onChange="{{ pr.pick }}">{{ pr.label }}</label></sc-for></div></div>
+          </sc-if>
+          <sc-if value="{{ isHW }}">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4)">
+              <sc-for list="{{ hwFamilies }}" as="f" hint-placeholder-count="4"><sc-if value="{{ f.on }}"><button type="button" class="btn btn-primary" title="{{ f.note }}">{{ f.label }}</button></sc-if><sc-if value="{{ f.off }}"><button type="button" class="btn btn-secondary" disabled="{{ f.notReady }}" title="3D-модели серии готовятся к загрузке">{{ f.label }}</button></sc-if></sc-for>
+            </div>
+            <div style="display:grid;gap:var(--space-2)">
+              <sc-for list="{{ hwModels }}" as="m" hint-placeholder-count="2"><label class="radio" style="padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)"><input type="radio" name="va-hwm" checked="{{ m.on }}" onChange="{{ m.pick }}"><span class="dot"></span><span style="flex:1">{{ m.label }}</span><span style="font-size:12px;color:var(--color-neutral-700)">{{ m.kwLabel }} · {{ m.mpa }} МПа</span></label></sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <sc-if value="{{ isSteam }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3)">02 · Комплектация</h6>
+            <div style="display:grid;gap:var(--space-2)">
+              <sc-for list="{{ trims }}" as="t" hint-placeholder-count="3">
+                <sc-if value="{{ t.on }}"><div class="card blueprint" style="border-color:var(--color-accent);gap:var(--space-1)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div style="display:flex;justify-content:space-between;align-items:baseline"><span class="card-title">{{ t.label }}</span><span class="tag tag-accent">выбрано</span></div><p class="card-body">{{ t.summary }}</p><div class="card-meta">{{ t.tagline }} · {{ t.priceNote }}</div></div></sc-if>
+                <sc-if value="{{ t.off }}"><button type="button" class="card" onClick="{{ t.pick }}" style="text-align:left;cursor:pointer;gap:var(--space-1);font:inherit;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline"><span class="card-title">{{ t.label }}</span><span style="font-size:11px;color:var(--color-neutral-700)">{{ t.priceNote }}</span></div><div class="card-meta">{{ t.tagline }}</div></button></sc-if>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:var(--space-3)"><h6 style="color:var(--color-accent-700);margin:0">03 · Оборудование</h6><span style="font-size:12px;color:var(--color-neutral-700)">{{ onCount }} из {{ optionCount }} включено</span></div>
+          <p style="font-size:13px;color:var(--color-neutral-700);margin-bottom:var(--space-3)">Переключатель добавляет узел в сборку и в 3D. Метка показывает, требуется ли он нормами или остаётся на ваше усмотрение.</p>
+          <div style="display:grid;gap:var(--space-2)">
+            <sc-for list="{{ options }}" as="o" hint-placeholder-count="7">
+              <div class="card blueprint" style="flex-direction:row;align-items:center;gap:var(--space-3);padding:var(--space-3)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                <button type="button" onClick="{{ o.select }}" aria-label="Показать в 3D" style="width:44px;height:44px;flex:none;border:1px solid var(--color-divider);background:var(--color-accent-100);display:grid;place-items:center;cursor:pointer;color:var(--color-accent-800)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ o.icon }}"></path></svg></button>
+                <div style="flex:1;min-width:0">
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:16px;line-height:1.15">{{ o.label }}</div>
+                  <div style="font-size:12px;color:var(--color-neutral-700);margin-top:2px">{{ o.simple }}</div>
+                  <div style="display:flex;gap:var(--space-2);margin-top:var(--space-2);flex-wrap:wrap;align-items:center">
+                    <sc-if value="{{ o.isNorm }}"><span class="tag tag-accent">{{ o.needLabel }}</span></sc-if><sc-if value="{{ o.isRec }}"><span class="tag tag-outline">{{ o.needLabel }}</span></sc-if><sc-if value="{{ o.isOpt }}"><span class="tag tag-neutral">{{ o.needLabel }}</span></sc-if>
+                    <sc-if value="{{ o.locked }}"><span style="font-size:11px;color:var(--color-neutral-700)">{{ o.lockNote }}</span></sc-if>
+                    <sc-if value="{{ manager }}"><span style="font-size:11px;color:var(--color-neutral-700);margin-left:auto">{{ o.priceLabel }}</span></sc-if>
+                  </div>
+                </div>
+                <sc-if value="{{ o.on }}"><button type="button" role="switch" aria-checked="true" aria-label="Выключить" onClick="{{ o.toggle }}" disabled="{{ o.locked }}" style="width:44px;height:24px;flex:none;border:1px solid var(--color-accent);background:var(--color-accent);padding:2px;display:flex;justify-content:flex-end;cursor:pointer"><span style="width:18px;height:18px;background:var(--color-bg);display:block"></span></button></sc-if>
+                <sc-if value="{{ o.off }}"><button type="button" role="switch" aria-checked="false" aria-label="Включить" onClick="{{ o.toggle }}" disabled="{{ o.locked }}" style="width:44px;height:24px;flex:none;border:1px solid var(--color-neutral-500);background:transparent;padding:2px;display:flex;justify-content:flex-start;cursor:pointer"><span style="width:18px;height:18px;background:var(--color-neutral-500);display:block"></span></button></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div class="card blueprint" style="gap:var(--space-2);padding:var(--space-4)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <sc-if value="{{ client }}" hint-placeholder-val="{{ true }}">
+            <span class="card-kicker">Стоимость комплектации</span>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:30px;line-height:1.05">По запросу</div>
+            <p class="card-body">Отправим цену и спецификацию выбранной комплектации в течение рабочего дня. При необходимости инженер разберёт состав по телефону.</p>
+            <button type="button" class="btn btn-primary btn-block blueprint" onClick="{{ openDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Узнать цену</button>
+            <button type="button" class="btn btn-secondary btn-block" onClick="{{ openDialog }}">Заказать звонок инженера</button>
+          </sc-if>
+          <sc-if value="{{ manager }}">
+            <span class="card-kicker">Режим менеджера · ориентир стоимости</span>
+            <div style="display:grid;gap:4px;font-size:13px"><sc-for list="{{ lines }}" as="ln" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;gap:var(--space-3);border-bottom:1px solid var(--color-divider);padding:4px 0"><span>{{ ln.label }}</span><span style="white-space:nowrap">{{ ln.valueLabel }}</span></div></sc-for></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:var(--space-2)"><span style="font-size:13px">Итого, ориентир</span><span style="font-family:var(--font-heading);font-weight:600;font-size:26px">{{ totalLabel }}</span></div>
+            <p class="card-body" style="font-size:12px">Цены шкафов — заводские; остальные — ориентиры прототипа, уточнить по прайсу kotelpremium.ru. Клиент эту панель не видит.</p>
+            <p class="card-body" style="font-size:12px">{{ missingNote }}</p>
+            <button type="button" class="btn btn-secondary btn-block" onClick="{{ copyLink }}">Скопировать ссылку на сборку</button>
+          </sc-if>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <div class="va-mobile" style="position:sticky;bottom:0;align-items:center;justify-content:space-between;gap:var(--space-3);padding:var(--space-3) var(--space-4);background:var(--color-bg);border-top:1px solid var(--color-divider)">
+    <div><div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Стоимость</div><div style="font-family:var(--font-heading);font-weight:600;font-size:18px">По запросу</div></div>
+    <button type="button" class="btn btn-primary blueprint" onClick="{{ openDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Узнать цену</button>
+  </div>
+  <sc-if value="{{ dialog }}" hint-placeholder-val="{{ false }}">
+    <div class="dialog-backdrop" style="position:absolute;z-index:20" onClick="{{ closeDialog }}">
+      <form class="dialog blueprint elev-lg" style="width:min(520px,100%);background:var(--color-bg)" onSubmit="{{ submit }}" onClick="{{ stop }}"><p role="status" style="font-size:13px;margin:0;color:var(--color-neutral-700)">Демонстрационная форма. Контакты не сохраняются и не отправляются.</p><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <span class="card-kicker">Ваша комплектация</span>
+          <div class="dialog-title" style="font-size:26px">Узнать цену</div>
+          <p class="dialog-body" style="margin:0">{{ summary }}</p>
+          <div style="display:grid;gap:var(--space-1);margin-top:var(--space-2)">
+            <label class="radio"><input type="radio" name="va-mode" checked="{{ modeEmail }}" onChange="{{ setEmail }}"><span class="dot"></span>Прислать цену и спецификацию на e-mail</label>
+            <label class="radio"><input type="radio" name="va-mode" checked="{{ modeCall }}" onChange="{{ setCall }}"><span class="dot"></span>Обратный звонок инженера с разбором комплектации</label>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+            <div class="field"><label>Имя</label><input class="input" name="name" autocomplete="name"></div>
+            <div class="field"><label>Телефон *</label><input class="input" name="phone" type="tel" required="{{ true }}" autocomplete="tel"></div>
+            <div class="field"><label>E-mail *</label><input class="input" name="email" type="email" required="{{ true }}" autocomplete="email"></div>
+            <div class="field"><label>Компания</label><input class="input" name="company" autocomplete="organization"></div>
+          </div>
+          <div class="field"><label>Комментарий</label><textarea class="input" name="comment" rows="2" placeholder="Топливо, задача, сроки поставки"></textarea></div>
+          <label class="radio" style="align-items:flex-start;font-size:12px;color:var(--color-neutral-700)"><input type="checkbox" required="{{ true }}" style="position:static;opacity:1;width:14px;height:14px;margin-top:3px"><span>Согласен передать контакты и конфигурацию в Premium Gas для подготовки предложения.</span></label>
+          <div class="dialog-actions"><button type="button" class="btn btn-secondary" onClick="{{ closeDialog }}">Вернуться к модели</button><button type="submit" disabled="{{ true }}" class="btn btn-primary blueprint"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Отправка в демоверсии отключена</button></div>
+        </sc-if>
+        <sc-if value="{{ sent }}">
+          <span class="card-kicker">Демонстрация формы</span>
+          <div class="dialog-title" style="font-size:26px">{{ sentTitle }}</div>
+          <p class="dialog-body">Контакты не сохраняются и не отправляются.</p>
+          <div class="dialog-actions"><button type="button" class="btn btn-primary blueprint" onClick="{{ closeDialog }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Вернуться к модели</button></div>
+        </sc-if>
+      </form>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;section&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;steam&quot;,&quot;hotwater&quot;],&quot;default&quot;:&quot;steam&quot;,&quot;tsType&quot;:&quot;'steam'|'hotwater'&quot;,&quot;section&quot;:&quot;Старт&quot;}}">
+class Component extends DCLogic {
+  state = { ready: false, section: 'steam', power: 4000, pressure: 12, trim: 'comfort', steamAddons: ['burner', 'economizer', 'modulation', 'deaerator', 'gpz', 'bdv'], hwModel: 'e-2500', hwAddons: ['safety', 'cabinet', 'collector'], view: 'overall', selected: '', ghost: '', manager: false, dialog: false, sent: false, mode: 'email', flash: '' };
+  rootRef = React.createRef();
+  get vid() { return this.props.vid || 'va-viewer'; }
+  componentDidMount() {
+    import(new URL('models/configurator.js', document.baseURI).href).then(m => { this.cfg = m; this.setState({ ready: true }); });
+    this._onSel = e => { if (e.detail.id !== this.vid || !this.cfg) return; this.setState({ selected: this.cfg.rowForPart(this.state.section, e.detail.part) }); };
+    window.addEventListener('bv-select', this._onSel);
+    if (this.props.section === 'hotwater') this.setState({ section: 'hotwater' });
+  }
+  componentWillUnmount() { window.removeEventListener('bv-select', this._onSel); }
+  renderVals() {
+    const base = { vid: this.vid, rootRef: this.rootRef, sectionStr: this.state.section, stop: e => e.stopPropagation(), isSteam: this.state.section === 'steam', isHW: this.state.section !== 'steam', client: !this.state.manager, manager: this.state.manager, dialog: this.state.dialog, view: this.state.view };
+    if (!this.cfg) return base;
+    const v = this.cfg.compute(this.state, p => this.setState(p), this.vid);
+    v.hwFamilies = v.hwFamilies.map(f => ({ ...f, off: !f.on, notReady: !f.ready }));
+    return { ...base, ...v };
+  }
+}
+</script>
+</body>
+</html>

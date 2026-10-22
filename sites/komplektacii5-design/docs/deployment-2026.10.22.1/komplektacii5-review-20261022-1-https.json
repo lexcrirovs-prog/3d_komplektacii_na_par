@@ -1,0 +1,351 @@
+{
+  "url": "https://prgz.ru/komplektacii5-review-20261022-1/",
+  "files": 43,
+  "allHashesMatch": true,
+  "results": [
+    {
+      "path": "_ds/industry-76077696-ce35-4a42-9a68-e23cd73b66b3/_ds_bundle.js",
+      "status": 200,
+      "bytes": 300,
+      "sha256": "7d1ad60da19d57381ba6fc862d52a5501a2038938d13037f3e6e0f751b5e678d",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "_ds/industry-76077696-ce35-4a42-9a68-e23cd73b66b3/styles.css",
+      "status": 200,
+      "bytes": 12158,
+      "sha256": "5fee433ce29648f605f013e35330e56f4a17961cd9fcdebe07e53a8f714dab08",
+      "encoding": "gzip",
+      "contentType": "text/css"
+    },
+    {
+      "path": "assets/premium-logo.png",
+      "status": 200,
+      "bytes": 48635,
+      "sha256": "a2b34a7788115cacf47fc3405a5b6f9a8a3e18e26a8e5501615b7f1f50a55665",
+      "encoding": "identity",
+      "contentType": "image/png"
+    },
+    {
+      "path": "assets/variant-a.png",
+      "status": 200,
+      "bytes": 134527,
+      "sha256": "f7f1326b820f4df88bc3d9c0f8d0a81f93b54caeb0ca359006cecdf64023d2c6",
+      "encoding": "identity",
+      "contentType": "image/png"
+    },
+    {
+      "path": "assets/variant-b.png",
+      "status": 200,
+      "bytes": 121497,
+      "sha256": "9a9960f91a2823bfd4056fd9435a2702a166e9c321884a129c01e90a85db39e4",
+      "encoding": "identity",
+      "contentType": "image/png"
+    },
+    {
+      "path": "assets/variant-c.png",
+      "status": 200,
+      "bytes": 141763,
+      "sha256": "5f7eff00e344342bb8c7655987bc2ea2834b4786c03ca4c2dfa99efd3227dd97",
+      "encoding": "identity",
+      "contentType": "image/png"
+    },
+    {
+      "path": "boiler-viewer.js",
+      "status": 200,
+      "bytes": 19153,
+      "sha256": "570572bf2dc6113623db9b892f93d98ef7c9e8bc7e2d4ec793bda508b3eb86d5",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "gallery.css",
+      "status": 200,
+      "bytes": 3194,
+      "sha256": "2a244fe233b0c1209399eb90a9eec9060ea22baed89b8e3d29f422d9ed0ea311",
+      "encoding": "gzip",
+      "contentType": "text/css"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 4414,
+      "sha256": "e44976f79c04b2797471762efb694fa9bf8a9701b884550efb35ae2f4e0475eb",
+      "encoding": "gzip",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "models/catalog.js",
+      "status": 200,
+      "bytes": 19957,
+      "sha256": "de8e8925009e90947808ad39cb5d52b0a775e29935178fdef0c5b688a1248665",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "models/configurator.js",
+      "status": 200,
+      "bytes": 12134,
+      "sha256": "291a79ac2c0f3c39f68f697821ffc8116739ee24813aae5f28d23ffd74fa99c1",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "models/dn32h50.glb",
+      "status": 200,
+      "bytes": 1258964,
+      "sha256": "4aea7937c3a8e86d2f468d5604cefb2cfbaa84c6c1be6a338bce09a20bf882c2",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/e-long-2500-10.glb",
+      "status": 200,
+      "bytes": 1360724,
+      "sha256": "cfc9632680cb6d72a8e24208f29c2b998d6d72d35838b9fbb3ef5121738cb7cf",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/e-long-7000-10.glb",
+      "status": 200,
+      "bytes": 1381528,
+      "sha256": "fabcf300e93358cb379e3f2b0da96df79272b2dccf5d021ca0b6f95c68468dbc",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s3000-boiler.glb",
+      "status": 200,
+      "bytes": 4032608,
+      "sha256": "0db244b19e3c61fabee53cf19b253ff056860d2d6cf30ef3d1cb47559f1d6045",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s3000-deaerator.glb",
+      "status": 200,
+      "bytes": 882612,
+      "sha256": "55542f45911906fa8b478dfc17b496250175ee20f9ce6c54cf9a066702bbd733",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s4000-0.glb",
+      "status": 200,
+      "bytes": 3021136,
+      "sha256": "f14377bce9569c770f7077785ecb20b251010db1f3879bd36338b62d0acead3a",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s4000-1.glb",
+      "status": 200,
+      "bytes": 5612272,
+      "sha256": "b7b84c08b7930589cce6ad1d9d5219480cbf3f4750748c0d9eb2213383a92d49",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s4000-3.glb",
+      "status": 200,
+      "bytes": 5514124,
+      "sha256": "1a61abaa015ea3943e83773fea552d8c4cc09c909f2a2f1a007b335c5be7d341",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s4000-4.glb",
+      "status": 200,
+      "bytes": 5699004,
+      "sha256": "98b4d6db19b0b35c2f84d108f1d3e899e9aafa5deeffe5cb97a98d6534f780a2",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s4000-5.glb",
+      "status": 200,
+      "bytes": 6322976,
+      "sha256": "f9607cd70ee53e9c74373b6d7c996c872be1e47c90f8874efd0e4400f37f49b0",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "models/s4000-7.glb",
+      "status": 200,
+      "bytes": 5822868,
+      "sha256": "510319c01c3c528630379d0e156bfa2dee89a50773e7e02ae67667ea51466e9b",
+      "encoding": "gzip",
+      "contentType": "model/gltf-binary"
+    },
+    {
+      "path": "support.js",
+      "status": 200,
+      "bytes": 69150,
+      "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/react-dom.production.min.js",
+      "status": 200,
+      "bytes": 131835,
+      "sha256": "35f4f974f4b2bcd44da73963347f8952e341f83909e4498227d4e26b98f66f0d",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/REACT-LICENSE.txt",
+      "status": 200,
+      "bytes": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "encoding": "gzip",
+      "contentType": "text/plain"
+    },
+    {
+      "path": "vendor/react.production.min.js",
+      "status": 200,
+      "bytes": 10751,
+      "sha256": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/runtime.js",
+      "status": 200,
+      "bytes": 301,
+      "sha256": "171f5542042ac72215ee190d7153f2a8a5c4ce4ae00e50f5418b14078c7ffe7a",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/build/three.core.js",
+      "status": 200,
+      "bytes": 1427497,
+      "sha256": "368dc78835287709a48939e8eb9a7a61d0732098bdf916e56840d458aae9ccf3",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/build/three.module.js",
+      "status": 200,
+      "bytes": 648961,
+      "sha256": "61134198639a10885daf893fb29669ca26386e2a4cde76e8399f51e329f741f2",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/examples/jsm/controls/OrbitControls.js",
+      "status": 200,
+      "bytes": 40504,
+      "sha256": "faabb4e8dfd9235ee4a9fd7c9a3d75f90f1689dbd4944bd6fd32117dacec5f93",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/examples/jsm/environments/RoomEnvironment.js",
+      "status": 200,
+      "bytes": 4960,
+      "sha256": "55f466192cc84298755a424c5e040345006b2ee1455589b3b54126c2ea4123f4",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/examples/jsm/libs/meshopt_decoder.module.js",
+      "status": 200,
+      "bytes": 29256,
+      "sha256": "d428e73a000057c6c94bfcedc3412d0c2dc14ca8800e88553aab05113ad2bf19",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/examples/jsm/loaders/GLTFLoader.js",
+      "status": 200,
+      "bytes": 114959,
+      "sha256": "97642d720f16cc9a0c9844934198e4d0c023bea8e89576d0f7545d03b2d103d2",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "status": 200,
+      "bytes": 35539,
+      "sha256": "d700b4c4584b9ff53a04692624d2363019f6d1df2978a207389168c6ae647a65",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/examples/jsm/utils/SkeletonUtils.js",
+      "status": 200,
+      "bytes": 11535,
+      "sha256": "b1632a703206c3d830de9fcbe515696770d04b71a15ee6b50afa6d2c3298c86f",
+      "encoding": "gzip",
+      "contentType": "application/x-javascript"
+    },
+    {
+      "path": "vendor/three/LICENSE",
+      "status": 200,
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "encoding": "gzip",
+      "contentType": "text/plain; charset=UTF-8"
+    },
+    {
+      "path": "vendor/three/package.json",
+      "status": 200,
+      "bytes": 3574,
+      "sha256": "8308e43d6d6dd4c636c2dfe2e724da07dcd9fe4349bba6afb56f2c5ba6625391",
+      "encoding": "gzip",
+      "contentType": "application/json"
+    },
+    {
+      "path": "version.json",
+      "status": 200,
+      "bytes": 327,
+      "sha256": "41828e4e6b9ed490b9a0b158dec35154cf4a225af9906c6adb3ef2f28fef4cb9",
+      "encoding": "gzip",
+      "contentType": "application/json"
+    },
+    {
+      "path": "Вариант A - Панель комплектации.dc.html",
+      "status": 200,
+      "bytes": 24076,
+      "sha256": "157f68793d23b0d1c9805e02ef25cd41bddf297e6d51d8ce69f0b28e621ff5a5",
+      "encoding": "gzip",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "Вариант B - Пакеты и сравнение.dc.html",
+      "status": 200,
+      "bytes": 22896,
+      "sha256": "1a28a7bf307e221fe34b7e1c26965ada1e7f5f96a2b32a5b5a816650599e19e0",
+      "encoding": "gzip",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "Вариант C - Спецификация.dc.html",
+      "status": 200,
+      "bytes": 23030,
+      "sha256": "ea9108da4095a7affa3714fe9fd090fe9c74103fa17fdfd87122f177001d7005",
+      "encoding": "gzip",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "Варианты сайта.dc.html",
+      "status": 200,
+      "bytes": 7448,
+      "sha256": "861aa6a8251bc34057f525fb75aa14ab38a3d41448603b87a67043680f629f4f",
+      "encoding": "gzip",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "DEPLOY_MANIFEST.json",
+      "status": 200,
+      "bytes": 7581,
+      "sha256": "41f646939126ce7598c6d54f3c29edc21d8b7a8a491f89337888a2e7540b0fba",
+      "encoding": "gzip",
+      "contentType": "application/json"
+    }
+  ]
+}

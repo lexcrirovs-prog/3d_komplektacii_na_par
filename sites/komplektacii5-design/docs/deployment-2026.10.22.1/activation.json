@@ -1,0 +1,13 @@
+{
+  "at": 1792656148.9928563,
+  "published": "/home/p/premiuig/prgz.ru/public_html/komplektacii5",
+  "backup": "/home/p/premiuig/prgz.ru/.komplektacii5-backup-20261022-1",
+  "verification": {
+    "files": 44,
+    "bytes": 44043392,
+    "allHashesMatch": true,
+    "manifestSha256": "41f646939126ce7598c6d54f3c29edc21d8b7a8a491f89337888a2e7540b0fba"
+  },
+  "previousFiles": 227,
+  "protectedUnchanged": true
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/komplektacii5",
+    "status": 200,
+    "finalUrl": "https://prgz.ru/komplektacii5/"
+  },
+  {
+    "path": "/komplektacii5/",
+    "status": 200,
+    "finalUrl": "https://prgz.ru/komplektacii5/"
+  },
+  {
+    "path": "/komplektacii5/.htaccess",
+    "status": 403
+  },
+  {
+    "path": "/komplektacii5/uploads/HANDOFF-2026-10-22.md",
+    "status": 404
+  },
+  {
+    "path": "/komplektacii5/github.md",
+    "status": 404
+  },
+  {
+    "path": "/",
+    "status": 200,
+    "finalUrl": "https://prgz.ru/"
+  },
+  {
+    "path": "/komplektacii4/",
+    "status": 200,
+    "finalUrl": "https://prgz.ru/komplektacii4/"
+  },
+  {
+    "path": "/teplica8/",
+    "status": 200,
+    "finalUrl": "https://prgz.ru/teplica8/"
+  },
+  {
+    "path": "/kaskad/",
+    "status": 200,
+    "finalUrl": "https://prgz.ru/kaskad/"
+  }
+]

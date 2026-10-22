@@ -1,0 +1,5 @@
+public/** -text
+public/vendor/** linguist-vendored
+scripts/*.py text eol=lf
+*.md text eol=lf
+docs/*.json text eol=lf

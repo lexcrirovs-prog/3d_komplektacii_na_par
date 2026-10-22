@@ -1,0 +1,29 @@
+{
+  "version": "2026.10.22.1",
+  "date": "2026-10-22",
+  "executor": "Codex / GPT-6",
+  "status": "PASSED_LOCAL",
+  "checks": {
+    "javascriptSyntax": "node --check: support.js, boiler-viewer.js, models/catalog.js, models/configurator.js PASS",
+    "modelHeaders": "All supplied GLB headers PASS",
+    "sourcePreservation": "All published GLB files and support.js are byte-identical to supplied ZIP",
+    "landing": "HTTP 200, all three variant links and original comparison board link present",
+    "desktop1440x960": "A/B/C visually reviewed with rendered steam 3D models",
+    "steamPackages": "B: Comfort to Standard changes the selected package and disables economizer/modulation",
+    "hotwater": "A: switching Steam to Hotwater loads E-2500; selecting E-7000 changes active model and metadata",
+    "specification": "C: adding FV separator updates row from excluded to included and total 6/7 to 7/7",
+    "leadForm": "C: visible demo notice; submit button isEnabled=false; shared submit handler only prevents default",
+    "mobile390x844": {
+      "gallery": { "clientWidth": 375, "scrollWidth": 375 },
+      "A": { "clientWidth": 375, "scrollWidth": 375 },
+      "B": { "clientWidth": 375, "scrollWidth": 375 },
+      "C": { "clientWidth": 375, "scrollWidth": 375 }
+    }
+  },
+  "limits": [
+    "Mobile width is browser emulation, not a physical-device test.",
+    "Engineering geometry and option compatibility were not changed or certified by this publication.",
+    "The archive's original missing steam chunks and schematic hotwater accessories remain prototype limitations.",
+    "No real lead or email was sent; delivery is disabled explicitly."
+  ]
+}

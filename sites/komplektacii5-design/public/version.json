@@ -1,0 +1,10 @@
+{
+  "version": "2026.10.22.1",
+  "date": "2026-10-22",
+  "executor": "Codex / GPT-6",
+  "target": "https://prgz.ru/komplektacii5/",
+  "kind": "interactive-design-preview",
+  "landing": "all-three-variants",
+  "archiveSha256": "1a853627b878d7c55b191732b3d669b1e7952302ae46e1a52181c32f36e2df1c",
+  "leadDeliveryEnabled": false
+}

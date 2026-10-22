@@ -1,0 +1,18 @@
+{
+  "threeVersion": "0.184.0",
+  "registryTarballSha256": "5c8c75278504ff31cedcd736e043b06c18f2cbf220ad7f85fbfaa1a08d3b3626",
+  "copiedModules": [
+    "LICENSE",
+    "build/three.core.js",
+    "build/three.module.js",
+    "examples/jsm/controls/OrbitControls.js",
+    "examples/jsm/environments/RoomEnvironment.js",
+    "examples/jsm/libs/meshopt_decoder.module.js",
+    "examples/jsm/loaders/GLTFLoader.js",
+    "examples/jsm/utils/BufferGeometryUtils.js",
+    "examples/jsm/utils/SkeletonUtils.js",
+    "package.json"
+  ],
+  "reactVersion": "18.3.1",
+  "reactVerifiedAgainstArchiveSRI": true
+}
